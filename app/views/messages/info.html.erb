@@ -1,0 +1,67 @@
+<style>
+	.info{
+		word-wrap: break-word;
+		text-align:left;
+		color:white;
+	}
+	.whiteee{
+		color:white;
+	}
+	h2,h4{
+		color:white;
+	}
+</style>
+<div class="info">
+	<h4 class="whiteee">About The Project</h4>
+	<p class="alignleft white">
+    	Tortuga is a security project in which we want to secure properly messaging and give a top level of privacy to our members.
+    	<br /><br />
+    	<h4 class="whiteee">Features</h4>
+        <li>Messages are not sent, are encrypted somewhere.</li>
+        <li>Strong Passwords are required to use Tortuga</li>
+        <li>Every message is encrypted multiple times</li>
+        <li>Every message has different keys and entropies</li>
+        <li>Every message is auto destroyed at first read</li>
+        <li>Data Protection: the Database is encrypted</li>
+        <li>Notifications to external Email (with Invite)</li>
+        <li>Encrypted Attachment</li>
+        <li>Close Account</li>
+        <li>Private message with shared Passphrase</li>
+        <li>Anti Shoulder Surfer Switch</li>
+        <li>Block a User</li>
+        <li>Rely on LibreSSL as system library</li>
+    	</ul>
+   </p>	
+  	<br />
+
+	<h4 class="whiteee">The Author</h4>
+	<p class="alignleft white">
+		    &copy; <%= @years = get_setting_value('PROJECT_COPYRIGHT_YEARS') %> <%= @years = get_setting_value('PROJECT_NAME') %>&nbsp;<%= @years = get_setting_value('PROJECT_MOTTO') %>&nbsp;-&nbsp;<%= d4x_sanitizer(t("developer")) %> <%= @author = get_setting_value('PROJECT_AUTHOR') %>&nbsp;-&nbsp;<%= d4x_sanitizer(t("all_rights")) %>
+	</p>
+	<p class="alignleft white">
+			<%= link_to(get_setting_value('LINK_TWITTER')) do %>
+			    <span class="btn btn-xs btn-success"><i class='fa fa-twitter fa-2x white'></i></span>
+			<% end %>
+			<%= link_to(get_setting_value('LINK_LINKEDIN')) do %>
+			    <span class="btn btn-xs btn-success"><i class='fa fa-linkedin fa-2x white'></i></span>
+			<% end %>
+			<%= link_to(get_setting_value('LINK_LINKEDIN')) do %>
+			    <span class="btn btn-xs btn-success"><i class='fa fa-facebook fa-2x white'></i></span>
+			<% end %>
+	</p>
+	<br />
+	<h4 class="whiteee">Contact</h4>
+	<p class="alignleft white">
+			    You can reach us at the info@tortuga.tech
+	</p>
+	<br />
+	<br />
+	<br />
+</div>
+<script>
+	$(function(){
+		$('.info').slimScroll({
+			height: '390'
+		});
+	});
+</script>

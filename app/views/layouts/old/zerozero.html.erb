@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<head>
+			<title><%= get_setting_value('PROJECT_NAME') %></title>
+			<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+			<meta charset="UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="<%= get_setting_value('PROJECT_MOTTO') %>">
+			<meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
+			<meta name="keywords" content="<%= get_setting_value('PROJECT_KEYWORDS')%>" />
+
+			<%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
+			<%= stylesheet_link_tag 'application', media: 'all' %>
+			<%= stylesheet_link_tag 'users' %>
+
+			<%= javascript_include_tag 'devise' %>
+			<%= javascript_include_tag 'typeahead.bundle.min' %>
+			<%= javascript_include_tag 'bootstrap-maxlength' %>
+		
+			<%= csrf_meta_tags %>
+			
+			<%= yield :javascript_includes %>
+			
+			<%= yield :head %>
+			
+			<script type="text/javascript">
+				$(function() {
+				    setTimeout(function() {
+				        toastr.options = {
+				        	  "closeButton": true,
+							  "debug": false,
+							  "progressBar": true,
+							  "positionClass": "toast-top-center",
+							  "onclick": null,
+							  "showDuration": "400",
+							  "hideDuration": "1000",
+							  "timeOut": "4000",
+							  "extendedTimeOut": "1000",
+							  "showEasing": "swing",
+							  "hideEasing": "linear",
+							  "hideMethod": "fadeOut",
+				              "showMethod": 'slideDown'
+				        };
+				    }, 1300);
+				});
+			</script>
+				<style>
+				.minicons{
+					margin-left:-30px;
+					margin-top:12px;
+				}
+				.settings-item{
+					padding-top:4px;	
+					padding-bottom:4px;	
+					height:42px;
+					border-bottom:1px solid grey;
+				}
+				
+				.settings-item:hover{
+					background-color:darkblue;
+				
+				}
+				
+				.counter-received{
+					z-index:9999;
+					margin-left:-30px;
+					
+				}
+			
+				.counter-sent{
+					z-index:9999;
+					margin-left:-40px;
+				}
+			
+				#messages-panel{
+					
+				}
+				.onoff{
+					margin-right:7px;	
+				}
+				.d4xlist{
+					background-color:#FFFFFF;
+					border-bottom:grey;
+					width:100%;
+					height:30px;
+				}
+				.chat-avatara{
+					margin-left:5px;
+				}
+				#message_content{
+					height:320px;
+					padding-right:10px;
+					padding-left:10px;
+					background-color:white;
+					color:black;
+					font-size:14px;
+					font-family: arial;
+				}
+				i {
+					color:grey;
+				}
+				i:hover {
+					cursor:pointer;
+					color:darkgrey;
+				}
+				.count-sent{
+					margin-left:10px;
+					margin-top:10px;
+				}
+				.white{
+					color:white;
+				}
+				#findthis{
+					min-width:270px;
+					max-width:300px;
+				}
+				
+				#searchbox{
+					margin-top:20px;
+				}
+				
+				#icon-reveal{
+					margin-right:-20px;	
+				}
+				
+				#ccthumb{
+					width:64px;	
+				}
+				.thumb-custom{
+					height:48px;
+					width:48px;
+					border-radius:3px;
+					
+				}
+				
+				.tt-suggestion{
+					margin-left:10px;
+				}
+				.motto{
+					color:white;
+					margin-top:-14px;
+				}
+				.tt-dropdown-menu{
+					background-color:white;
+					border:1px solid #D7D7D7;
+					box-shadow: 2px 2px 2px solid grey;
+					border-radius:3px;
+					text-align:left;
+					width:100%;
+					font-size:14px;
+				}
+				
+				#search-submit{
+					margin-top:-5px;
+				}
+				
+				.ttt{
+					width:220px;
+					margin-top:10px;
+					background-color:#white;
+					color:#4231A3;
+					border-style:none;
+					font-size:14px;
+				}
+				.imagelogo{
+					margin-left:20px;
+				}
+				#icon-compose{
+					margin-right:20px;
+					margin-top:10px;
+					color:white;
+				}
+				#icon-compose:hover{
+					color:yellow;
+				}
+				#logolink{
+					margin-top:-5px;
+					margin-left:0px;
+					font-size:36px;
+					font-family: Impact;
+					font-stretch:expanded;
+					color:white;
+				}
+			</style>
+			<%= javascript_include_tag 'typeahead.bundle.min' %>
+			<%= javascript_include_tag 'bootstrap-maxlength' %>
+			<script language="JavaScript">
+				$( document ).ready(function() {
+					
+					$('#areaaa').change(function(){
+						$('#area').val($('#areaaa').val());
+					});
+					
+					var loadResults = new Bloodhound({
+						datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+						queryTokenizer: Bloodhound.tokenizers.whitespace,
+						remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+					});
+					 
+					loadResults.initialize();
+					 
+					$('#remote .typeahead').typeahead(null, {
+						name: 'results-list',
+						displayKey: 'result',
+						hint: true,
+						highlight: true,
+						minLength: 1,
+						source: loadResults.ttAdapter()
+					});
+					
+					$('#icon-received').click(function(){
+						$('#icon-compose').css('color','white');
+						$('#icon-received').css('color','#5D4EB9');
+						$('#icon-sent').css('color','grey');
+						$('#icon-contacts').css('color','grey');
+						$('#icon-settings').css('color','grey');
+					});
+					$('#icon-sent').click(function(){
+						$('#icon-compose').css('color','white');
+						$('#icon-sent').css('color','#5D4EB9');
+						$('#icon-received').css('color','grey');
+						$('#icon-contacts').css('color','grey');
+						$('#icon-settings').css('color','grey');
+					});
+					$('#icon-contacts').click(function(){
+						$('#icon-compose').css('color','white');
+						$('#icon-received').css('color','grey');
+						$('#icon-sent').css('color','grey');
+						$('#icon-contacts').css('color','#5D4EB9');
+						$('#icon-settings').css('color','grey');
+					});
+					$('#icon-compose').click(function(){
+						$('#icon-compose').css('color','#B0A4FB');
+						$('#icon-received').css('color','grey');
+						$('#icon-sent').css('color','grey');
+						$('#icon-contacts').css('color','grey');
+						$('#icon-settings').css('color','grey');
+					});
+					$('#icon-settings').click(function(){
+						$('#icon-compose').css('color','white');
+						$('#icon-received').css('color','grey');
+						$('#icon-sent').css('color','grey');
+						$('#icon-contacts').css('color','grey');
+						$('#icon-settings').css('color','#5D4EB9');
+					});
+					
+					$('.imagelogo').mouseover(function(){
+						$('.imagelogo').addClass('animated bounceIn');
+					});
+					$('.imagelogo').mouseout(function(){
+						$('.imagelogo').removeClass('animated bounceIn');
+					});
+					
+					$('#eye').click(function(){
+						$('#message_content').addClass('white');
+					});
+					
+					
+				});
+			</script>	
+		</head>
+
+		<body>
+			<div id="wrapperx" class="<%= params[:controller] %>.<%= params[:action] %>">
+				<div class="middle-box messages text-center animated slideInDown ibox-content devise_login">
+			        <div class="row" id="zerozero-header">
+			       		<div class="col-sm-3">
+			        		<%=link_to(image_tag("logo15.png",:class=>'imagelogo'),"/")%>
+			    		</div>
+			    		<div class="col-sm-7">
+			        		<h2 id="logolink"><%= get_setting_value('PROJECT_NAME') %></h2>
+							<p class="motto"><%= get_setting_value('PROJECT_MOTTO') %></p>        		
+			    		</div>
+			    		<div class="col-sm-1 alignleft">
+			        		<a class="dropdown-toggle count-info" data-toggle="tab" href="/compose" title="Compose" >
+					            <i class="fa fa-2x fa-edit" id="icon-compose"></i> 
+					        </a>
+			    		</div>
+			    	</div>
+					<%= yield %>
+				
+			       	<% if notice.present? %>
+			           	<script language="JavaScript">
+			         		toastr.options = {
+							  "closeButton": true,
+							  "debug": false,
+							  "progressBar": true,
+							  "positionClass": "toast-top-center",
+							  "onclick": null,
+							  "showDuration": "400",
+							  "hideDuration": "1000",
+							  "timeOut": "4000",
+							  "extendedTimeOut": "1000",
+							  "showEasing": "swing",
+							  "hideEasing": "linear",
+							  "showMethod": "fadeIn",
+							  "hideMethod": "fadeOut"
+							}
+			     			toastr.success('<%= notice.to_s %>','<%= "Notice" %>');
+				      	</script>
+		   		 	<% end %>
+		
+			   		<% if alert.present? %>
+			            <script language="JavaScript">
+				       		toastr.options = {
+								  "closeButton": true,
+								  "debug": false,
+								  "progressBar": true,
+								  "positionClass": "toast-top-center",
+								  "onclick": null,
+								  "showDuration": "400",
+								  "hideDuration": "1000",
+								  "timeOut": "4000",
+								  "extendedTimeOut": "1000",
+								  "showEasing": "swing",
+								  "hideEasing": "linear",
+								  "showMethod": "fadeIn",
+								  "hideMethod": "fadeOut"
+							}
+				     		toastr.warning('<%= alert.to_s %>','<%= "Warning" %>');
+				     	</script>
+			        <% end %>
+
+					<div class="footer zerozerofixed">
+	 	
+						 	<div class="row">
+						 		<div class="col-sm-3">
+					 				<% @received = Message.where(:target_id=>current_user.id).order(:created_at).reverse_order %>
+							    	<a class="dropdown-toggle count-info" data-toggle="tab" href="/received">
+							            <i class="fa fa-2x fa-cloud-download" title="<%= t("inbox")  %>"></i> 
+							            <% if @received %>
+							 	           <span class="label label-success animated rotateInDownLeft"><%= @received.count %></span>
+							            <% else %>
+							          	   <span class="label label-success animated rotateInDownLeft"><%= "0" %></span>
+							            <% end %>
+							        </a>
+							  		<br /><small><%= t("inbox") %></small>
+					 			</div>
+					 			<div class="col-sm-3">
+					 				<% @sent = Message.where(:sender_id=>current_user.id).order(:created_at).reverse_order %>
+							    	<a class="dropdown-toggle count-info" data-toggle="tab" href="/sent">
+							            <i class="fa fa-2x fa-cloud-upload"  title="<%= t("sent")  %>"></i> 
+							            <% if @sent %>
+							 	           <span class="label label-success animated rotateInDownLeft count-sent"><%= @sent.count %></span>
+							            <% else %>
+							          	   <span class="label label-success animated rotateInDownLeft count-sent"><%= "0" %></span>
+							            <% end %>
+							        </a>
+					 			</div>
+					 			<div class="col-sm-3">
+					 		    	<a class="dropdown-toggle count-info" data-toggle="tab" href="/contacts">
+							            <i class="fa fa-2x fa-star" title="<%= t("contacts")  %>"></i> 
+							        </a>
+							  		<br /><small></small>
+					 			</div>
+					 			<div class="col-sm-3">
+					 		    	<a class="dropdown-toggle count-info" data-toggle="tab" href="/settings">
+							            <i class="fa fa-2x fa-cog" title="<%= t("settings")  %>"></i> 
+							        </a>
+							  		<br /><small><%= t("settings") %></small>
+					 			</div>
+							</div>
+
+					</div>
+				</div>
+			</div>
+	
+			<%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
+
+			<%= yield :javascript %>
+
+		</body>
+</html>
+

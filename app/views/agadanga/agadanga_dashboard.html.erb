@@ -1,0 +1,383 @@
+<%= content_for :head do %>
+
+<% end %>
+
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "/agadanga/big_icons_some_active" %>
+<% end %>
+
+<%= content_for :folders_list do %>
+		<%= render :partial => "/agadanga/no_folder_selected" %>
+<% end %>
+<div id="settings-pane">
+<div id="center-content2">
+		<br>
+		<br>
+		<table width="880px" height="220px" class="d4x-grid" cellpadding="0" cellspacing="0" >
+				 <tr class="byline">
+				    <td width="60px" ></td>
+				    <td align="left" class="lcd" ><%=d4x_sanitizer(t("fullname")) %></th>
+					<th align="left" ><%= current_user.firstname+" "+current_user.lastname %></td>
+				    <td align="left" class="lcd" ><%= "Team" %></td>
+				    <th align="center" ><%= @team_count %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+			 	<tr class="byline">
+				    <td width="60px" ></td>
+				    <td align="left" class="lcd" ><%= "Ruolo" %></th>
+					<th align="left" >
+						<%= @role %>
+					</td>
+				    <td align="left" class="lcd" ><%= "Totale Vendite Personali" %></td>
+				    <th align="center" ><%= @tot_orders %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+			 	<tr class="byline">
+				    <td width="60px" ></td>
+				    <td align="left" class="lcd" ><%= "Inizio Incarico" %></th>
+					<th align="left" >
+					<% if not @incarico.blank? %>
+						<%= @incarico.begin_of_relation %>
+					<% else %>
+						<%= "Not Available" %>
+					<% end %>
+					</td>
+				    <td align="left" class="lcd" ><%= "Totale Vendite Team" %></td>
+				    <th align="center" ><%= "213" %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+			 	<tr class="byline">
+				    <td width="60px" ></td>
+				    <td align="left" class="lcd" ><%= "Fine Incarico" %></th>
+					<th align="left" >
+					<% if not @incarico.blank? %>
+						<%= @incarico.end_of_relation %>
+					<% else %>
+						<%= "Not Available" %>
+					<% end %>
+					</td>
+				    <td align="left" class="lcd" ><%= "Totale Mailboxes" %></td>
+				    <th align="center" ><%= @tot_agadanga_box %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+			 	<tr class="byline">
+			  		 <td width="80px" ></td>
+				   <td align="left" class="lcd" ><%= "Indirizzo Email" %></th>
+					<th align="left" ><%= current_user.email %></td>
+				    <td align="left" class="lcd" ><%= "Target Mailboxes" %></td>
+				    <th align="center" ><%= @next_target %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+			 	<tr class="byline">
+			  		 <td width="60px" ></td>
+				   <td align="left" class="lcd" ><%= "Telefono" %></th>
+					<th align="left" ><%= current_user.telephone %></td>
+				    <td align="left" class="lcd" ><%= "Entrate Maturate" %></td>
+				    <th align="center" ><%= @tot_incomes %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+			 	<tr class="byline">
+			  		 <td width="60px" ></td>
+				   <td align="left" class="lcd" ><%= "PayPal Account" %></th>
+					<th align="left" ><%= current_user.paypal_id %></td>
+				    <td align="left" class="lcd" ><%= "Prossimo Pagamento" %></td>
+				    <th align="center" ><%= @next_payment %></td>
+				    <td class="lcd orange" width="1%" ></td>
+				</tr>
+					
+		</table>
+		<br />
+		<table width="435px" height="180px" class="d4x-grid" cellpadding="0" cellspacing="0" align="left">
+				<%= form_for(@request) do |f| %>
+						<tr class="byline back-title">
+									<td colspan="4"><%=d4x_sanitizer(t('request relationship'))%>
+						</td>			
+					</tr>
+					<tr>
+						<td colspan="4">&nbsp;</td>			
+					</tr>
+						
+					<tr class="byline">
+						<td width="20px"></td>
+						<td align="left"><%= f.label d4x_sanitizer(t("fullname")),:class=>''%></td>
+						<td><%= f.text_field :fullname ,:class=>'control center',:maxlength=>30%></td>
+						<td></td>			
+					</tr>
+					<tr class="byline">
+						<td></td>
+						<td align="left"><%= f.label d4x_sanitizer(t("email")),:class=>''%></td>
+						<td><%= f.email_field :target_email,:class=>'control center',:maxlength=>30 %></td>
+						<td></td>			
+					</tr>
+					<tr class="byline">
+						<td></td>
+						<td align="left"><%= f.label d4x_sanitizer(t("request relationship")),:class=>''%></td>
+						<td>
+							<%= f.select(:relation,options_for_select([['CPR', 'CPR'], ['PR', 'PR'],['PRJ', 'PRJ']], 'PR'), :class =>  "agadanga_selects",:size =>"20") %><br />
+						</td>
+						<td></td>			
+					</tr>
+					<tr class="byline">
+						<td colspan="4">&nbsp;
+						</td>			
+					</tr>
+					<tr class="byline">
+						<td colspan="4">
+							<%= button_to d4x_sanitizer(t("send")),nil,:class=>'button-d4x', :form_class=>'request', :action => 'create',:confirm => 'Are you sure you want to add to your network?',:id=>"add-to-ring" %>
+						</td>			
+					</tr>
+					<tr class="byline">
+						<td colspan="4">&nbsp;
+						</td>			
+					</tr>
+				<% end %>
+			</table>
+		
+					<%= form_for(@invitation) do |f| %>
+					  <% if @invitation.errors.any? %>
+					    <div  id="login-messages" class="ui-widget">
+							<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+								<p align="center"><strong class="error-counter"><%= pluralize(@invitation.errors.count, d4x_sanitizer(t("error"))) %> :</strong></p>
+								 <div id="error-list">
+									 <% @invitation.errors.full_messages.each do |msg| %>
+								        <li><%= d4x_sanitizer(msg) %></li>
+								      <% end %>
+							      </div>
+							</div>
+						</div>
+					
+					  <% end %>
+	
+							<table width="440px" height="180px" class="d4x-grid"  margin-left="20" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr class="byline back-title">
+									<td colspan="4"><%=d4x_sanitizer(t('invite a friend'))%>
+									</td>			
+								</tr>
+								<tr>
+									<td colspan="4">&nbsp;</td>			
+								</tr>
+								<tr>
+									<td width="10px">&nbsp;</td>			
+									<td align="left"><%= f.label(d4x_sanitizer(t("from")),:class=>'' )%></td>
+									<td ><%= current_user.nickname %> - <%= current_user.email %></td>
+									<td >&nbsp;</td>			
+								</tr>
+								<tr>
+									<td></td>
+									<td align="left"><%= f.label d4x_sanitizer(t("firstname")),:class=>''%></td>
+									<td><%= f.text_field :subject ,:class=>'control center',:maxlength=>30%></td>
+									<td></td>			
+								</tr>
+								<tr>
+									<td></td>
+									<td align="left"><%= f.label d4x_sanitizer(t("email")),:class=>''%></td>
+									<td><%= f.email_field :recipient_email,:class=>'control center',:maxlength=>30 %></td>
+									<td></td>			
+								</tr>
+									
+								<tr>
+									<td colspan="4">&nbsp;</td>			
+								</tr>
+								<tr>
+									<td colspan="4" align="center"><%= f.submit d4x_sanitizer(t('send')) ,:class=>'button-d4x' %></td>
+								</tr>
+								<tr>
+									<td colspan="4">&nbsp;</td>			
+								</tr>
+							</table>
+						  <% end %>
+	<br />
+				<div class="title">
+				<span class="byline"><%=d4x_sanitizer(t('order'))%></span> 
+			</div>
+		<table width="100%" class="d4x-grid">
+	   		<tr class="d4x-grid-title">
+			 	<th align="center"><%=d4x_sanitizer(t("received")) %></th>
+		   		<th align="left"><%=d4x_sanitizer(t("order")) %></th>
+				<th align="left"><%=d4x_sanitizer(t("customer")) %></th>
+		    	<th align="center"><%=d4x_sanitizer(t("package")) %></th>
+		    	<th align="center"><%=d4x_sanitizer(t("email")) %></th>
+		    	<th align="right"><%=d4x_sanitizer(t("total")) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  	</tr>
+		 <% @orders.each do |order| %>
+		    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			 <td><%= order.created_at.to_s(:long) %></td>
+		   <td><%= order.id %></td>
+			<td><%= order.user_id %></td>
+			<td><%= order.package %></td>
+			<td><%= order.email %></td>
+		    <td align="right"><%= order.total.to_s %></td>
+		    <td align="right"></td>
+		
+		    <td>
+				<%= link_to image_tag("cog.png", :border =>0 , :mouseover => "cog.png", :title => d4x_sanitizer(t("show")) ,:size => "16x16"), order %>
+		 	</td>
+			<td>
+			</td>
+		    <td>
+			</td>
+		
+		  </tr>
+		<% end %>
+	</table>
+			<br />	
+	
+			<div class="title">
+				<span class="byline"><%=d4x_sanitizer(t('requests'))%></span> 
+			</div>
+			<% unless @requests.blank? %>
+			<table width="100%" class="d4x-grid" cellpadding="0" cellspacing="0" align="center">
+			 	<tr class="d4x-grid-title byline">
+					<td class="lcd orange" width="1%" ></td>
+				    <th align="center"><%=d4x_sanitizer(t("sent")) %></th>
+					<th align="center" ><%=d4x_sanitizer(t("fullname")) %></td>
+				    <th align="center" ><%=d4x_sanitizer(t("email")) %></td>
+				    <th align="center" ><%=d4x_sanitizer(t("role")) %></td>
+				    <th align="center" ><%=d4x_sanitizer(t("status")) %></td>
+				    <th align="center" ><%=d4x_sanitizer(t("delete")) %></td>
+				   <td class="lcd orange" width="1%" ></td>
+				  </tr>
+				 <% @requests.each do |request| %>
+					 <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+					 <td class="td-grid-data"></td>
+				     <td class="lcd grey"><%= request.created_at.to_s(:long) %></td>
+					 <td class="lcd yellow"><%= request.fullname %></td>
+				     <td class="lcd nice-red"><%= request.target_email %></td>
+				     <td class="lcd nice-green"><%= request.relation %></td>
+					 <td class="lcd yellow"><%= request.status %></td>
+				     <td class="lcd nice-green"><%= button_to "", request, :confirm => 'are you sure?', :method => :delete, :class => 'odestroy',:title=>'destroy',:name => 'destroy',:size => "16x16" %>
+					</td>
+				 	 <td class="td-grid-data"></td>
+				  </tr>
+				<% end %>
+			</table>
+			<% end %>
+			<br />
+			<div class="title">
+				<span class="byline"><%=d4x_sanitizer(t('incomes'))%></span> 
+			</div>
+			<% unless @incomes.blank? %>
+			<table width="100%" class="d4x-grid" cellpadding="0" cellspacing="0" align="center">
+			 	<tr class="d4x-grid-title byline">
+					<td class=" orange" width="1%" ></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t("registration")) %></td>
+				    <td class="orange" ><%=d4x_sanitizer(t("expiration")) %></td>
+					<td class=" orange" ><%=d4x_sanitizer(t("customer")) %></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t("order")) %></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t("total")) %></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t("income")) %></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t("status")) %></td>
+					<td class=" orange" width="1%" ></td>
+				  </tr>
+				 <% @incomes.each do |income| %>
+					 <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+					 <td class="td-grid-data"></td>
+				     <td class="lcd grey"><%= income.created_at.to_s(:long) %></td>
+				     <td class="lcd nice-red"><%= income.expiration.to_s(:long) %></td>
+					 <td class="lcd yellow left"><%= customername(income.order_id) %></td>
+				     <td class="td-grid-data"><%= emailaddress(income.order_id) %></td>
+					 <td class="lcd yellow right">€<%= totalorder(income.order_id) %></td>
+				     <td class="lcd nice-green">€<%= income.income %></td>
+				     <td class="lcd pink">
+				     	<%= income.status %>
+				     	</td>
+					 <td class="td-grid-data"></td>
+				  </tr>
+				<% end %>
+			</table>
+			<% end %>
+			<br />
+			<div class="title">
+				<span class="byline"><%=d4x_sanitizer(t('invitations'))%></span> 
+			</div>
+			<% unless @invitations.blank? %>
+			<table width="100%" class="d4x-grid" cellpadding="0" cellspacing="0" align="center">
+			 	<tr class="d4x-grid-title byline">
+				    <td class=" orange" ><%=d4x_sanitizer(t('when')) %></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t('status')) %></td>
+					<td class=" orange" ><%=d4x_sanitizer(t('fullname')) %></td>
+				    <td class=" orange" ><%=d4x_sanitizer(t('invitated sir')) %></td>
+					<td class=" orange" width="10px" ></td>
+						<td class=" orange" width="10px" ></td>
+				  </tr>
+				 <% @invitations.each do |invitation| %>
+					 <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+				     <td class="lcd grey"><%= invitation.created_at.to_s(:long) %></td>
+				     <td class="lcd yellow">
+				    	<%= invitation_is_accepted(invitation) %>
+				     </td>
+					 <td class="lcd orange"><%= invitation.subject %></td>
+				     <td class=""><%= invitation.recipient_email %></td>
+					 <td class="td-grid-data">
+		 				<%= button_to "", invitation, :confirm => 'are you sure?', :method => :delete, :class => 'odestroy',:title=>'destroy',:name => 'destroy',:size => "16x16" %>
+					 </td>
+						<td class=" orange" width="10px" ></td>
+					  </tr>
+				<% end %>
+			</table>
+			<% end %>
+			<br />
+			<br />	
+			<div class="title">
+				<span class="byline"><%=d4x_sanitizer(t('targets'))%> - <%= 'quantities are the official targets, incomes are shown by package and position' %></span> 
+			</div>
+			
+		
+			<div >
+			<% @agadanga1GB = Product.find(2) %>
+			<% @agadanga3GB = Product.find(3) %>
+			<% @agadanga5GB = Product.find(4) %>
+			<% @grant_cpr = "20" %>
+			<% @grant_pr  = "10" %>
+			<% @grant_prj = "5" %>
+			<% @quantities = [1,7,10,50,100,200,500,1000,1337,2000,5000,10000,11111,20000,50000,100000,200000,300000,500000,1000000,2000000,3000000,5000000,10000000,11111111] %>
+			<table class="d4x-grid">
+				 	<tr class="d4x-grid-title byline">
+					<td class=" orange" width="1%" ></td>
+				    <td class=" orange" width="10%" ><%=d4x_sanitizer(t("quantity")) %></td>
+				    <td class="orange" width="5%"></td>
+				    <td class=" orange" ><%= "PRJ 1GB" %></td>
+				    <td class=" orange" ><%= "PRJ 3GB" %></td>
+				    <td class=" orange" ><%= "PRJ 5GB" %></td>
+				    <td class="orange" width="5%"></td>
+				    <td class=" orange" ><%= "PR 1GB" %></td>
+				    <td class=" orange" ><%= "PR 3GB" %></td>
+				    <td class=" orange" ><%= "PR 5GB" %></td>
+				    <td class="orange" width="5%"></td>
+				    <td class=" orange" ><%= "CPR 1GB" %></td>
+				    <td class=" orange" ><%= "CPR 3GB" %></td>
+				    <td class=" orange" ><%= "CPR 5GB" %></td>
+					<td class=" orange" width="1%" ></td>
+				  </tr>
+				 <% @quantities.each do |qty| %>
+					 <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+					 <td class="td-grid-data"></td>
+				     <td class="lcd grey" align="right"><%= qty %></td>
+				     <td class="td-grid-data"></td>
+				     <td class="lcd yellow" align="right"><%= number_to_currency(@agadanga1GB.final_price*12*qty/20,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="lcd yellow" align="right"><%= number_to_currency(@agadanga3GB.final_price*12*qty/20,{:unit=>"€",:precision=>0})%></td>
+				     <td class="lcd yellow" align="right"><%= number_to_currency(@agadanga5GB.final_price*12*qty/20,{:unit=>"€",:precision=>0})%></td>
+				     <td class="td-grid-data"></td>
+				     <td class="lcd " align="right"><%= number_to_currency(@agadanga1GB.final_price*12*qty/10,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="lcd " align="right"><%= number_to_currency(@agadanga3GB.final_price*12*qty/10,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="lcd " align="right"><%= number_to_currency(@agadanga5GB.final_price*12*qty/10,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="td-grid-data"></td>
+				     <td class="lcd nice-green" align="right"><%= number_to_currency(@agadanga1GB.final_price*12*qty/5,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="lcd nice-green" align="right"><%= number_to_currency(@agadanga3GB.final_price*12*qty/5,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="lcd nice-green" align="right"><%= number_to_currency(@agadanga5GB.final_price*12*qty/5,{:unit=>"€",:precision=>0}) %></td>
+				     <td class="td-grid-data"></td>
+				  </tr>
+				<% end %>
+			</table>	
+			</div>	
+			<br />	
+	</div>
+</div>
+
+
+</div>
+</div>

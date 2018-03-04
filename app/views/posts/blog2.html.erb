@@ -1,0 +1,42 @@
+<% @title = d4x_sanitizer(t('blogging')) %>
+	<br>
+	
+	<% if @posts %>
+    
+     <% @posts.each do |post| %>
+    	<div id ="d4x-post0">
+    		
+		 	<div id="title-post">
+				<div id="title-post-text">
+					<%= post.title %>
+				</div>
+			</div>
+		 	<div id="body-post">
+		 		<div id="body-post-text">
+			    	<% @contempt = raw(post.content) %>
+		    	 	<%  @contempt.sub! '<img src=','<img class="blog-image" src='%>
+		        	<%= raw(@contempt) %>
+		      </div>
+			</div>
+			<div id="footer-post">
+				<div id="footer-post-left-side">
+					<div id="footer-post-left-text">
+						<% if post.post_tag.count > 0 %>
+								<%=  image_tag("tag_red.png", :border =>0 , :mouseover => "tag_red.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16") %>
+								<% post.post_tag.each do |post_tag| %>
+									<%= Tag.find(post_tag.tag_id).name %>; 
+								<% end %>
+						<% end %>
+					</div>
+				</div>
+				
+				<div id="footer-post-right-side">
+					<div id="footer-post-right-text">
+						<%= d4x_sanitizer(t("posted_by")) %>  <%= post.user.nickname %> <%= time_ago_in_words(post.created_at) %> <%= d4x_sanitizer(t("ago")) %> - <%= d4x_sanitizer(t("comments")) %>  (<%= post.comments.count %>)<br>
+					</div>	
+				</div>
+			</div>
+			
+		</div>
+ 	<% end %>
+	<% end %>

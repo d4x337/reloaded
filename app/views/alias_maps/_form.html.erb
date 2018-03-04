@@ -1,0 +1,17 @@
+<%= form_for(@alias_map) do |f| %>
+  <% if @alias_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alias_map.errors.count, "error") %> prohibited this alias_map from being saved:</h2>
+
+      <ul>
+      <% @alias_map.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

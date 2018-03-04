@@ -1,0 +1,66 @@
+<script language="JavaScript">
+	$( document ).ready(function() {
+		$('#icon-compose').css('color','white');
+		$('#icon-sent').css('color','#2D3736');
+		$('#icon-received').css('color','grey');
+		$('#icon-contacts').css('color','grey');
+		$('#icon-settings').css('color','grey');
+		
+		$('.btdel').click(function(){
+			$('#spinner').removeClass('none');
+			$('#link-compose').addClass('none');
+		});
+	});	
+</script>
+
+<style>
+	.sent-list{
+		margin-left:10px;
+	}
+	.panel-body{
+		padding:0;
+	}
+</style>
+<%= link_to 'New Efile', new_efile_path,:class=>'btn btn-xs btn-warning' %>
+<div class="sent-list">
+<% unless @efiles.blank? %>
+	<% @efiles.each do |efile| %>
+	 <div class="chat-user">
+	    <div class="row">
+	    	<div class="col-sm-2 col-xs-2">
+	    		<img class="chat-avatar" src="/assets/logo15.png" alt="">
+            </div>
+			<div class="col-sm-10 col-xs-10">
+				<div class="row">
+					<div class="col-sm-6 col-xs-6" align="left">
+						<div class="row white" id="starget"><%= efile.original_file_name %></small></a></div>
+		    		</div>
+		    		<div class="col-sm-5 col-xs-5">
+		    			<div class="row">
+		    				<div class="pull-right white" id="tagoin"><small  class="pull-right white"><%= number_to_human_size(efile.original_file_size) %></small></div>
+		    			</div>
+		    		</div>
+				</div>	
+				<div class="row">
+					<div class="col-sm-9 col-xs-10" align="left">
+		    			<div class="row yellow" id="token"><%=efile.original_content_type%></div>
+		    		</div>
+		    		<div class="col-sm-2 col-xs-1">
+		    			<div class="row pull-right white"><%= link_to 'Show', efile, :class=>'btn btn-xs btn-primary' %><small><i class="pull-right fa fa-cancel"></i></small></div>
+		    		</div>
+				</div>
+			</div>
+
+	    </div>				              
+    </div>
+  	<% end %>
+<% end %>
+</div>
+
+<script>
+	$(function(){
+		$('.sent-list').slimScroll({
+			height: '400'
+		});
+	});
+</script>

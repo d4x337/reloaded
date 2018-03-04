@@ -1,0 +1,21 @@
+<div class="listview listview--hover">
+  <% @received = current_user.received_messages.order(:created_at).reverse_order %>
+  <% @received.each do |message| %>
+    <a href="/reveal?token=<%= message.read_token %>" class="listview__item traspa">
+      <% if message.user.avatar(:thumb).present? %>
+        <img class="listview__img" src="<%= message.user.avatar.url(:thumb) %>" alt="">
+      <% else %>
+        <img class="listview__img" src="demo/img/profile-pics/1.jpg" alt="">
+      <% end %>
+      <div class="listview__content">
+        <div class="listview__heading">
+          <%= label_tag user_fullname(message.sender_id),nil,{:class=>'xname'} %>&nbsp;
+          <%= label_tag "@"+user_nick(message.sender_id),nil,{:class=>'lcd orange'} %>
+          <small><%= time_ago_in_words_converter(message.created_at) %>&nbsp;<%= t('ago') %></small>
+        </div>
+        <p class="left yellow"><%=message.read_token%></p>
+      </div>
+    </a>
+  <% end %>
+  <a href="/received" class="view-more"><%= t('view all messages') %></a>
+</div>

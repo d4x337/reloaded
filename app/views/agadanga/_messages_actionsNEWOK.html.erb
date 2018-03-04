@@ -1,0 +1,22 @@
+    	<div id="messages-actions">
+				<%= select(:uberactions,nil,options_for_select([
+					[d4x_sanitizer(t('mark selected as read')), '3'],
+					[d4x_sanitizer(t('mark selected as unread')), '2'],
+					[d4x_sanitizer(t('flag selected with star')), '4'],
+					[d4x_sanitizer(t('remove star from selected')), '5'],
+					[d4x_sanitizer(t('move selected to trash')), '1'], 
+					[d4x_sanitizer(t('delete selected')), 'DD'],
+					[d4x_sanitizer(t('make folder read')), '6'],
+					[d4x_sanitizer(t('make folder unread')), '7'],
+					[d4x_sanitizer(t('archive selected')), 'ZIP'],
+					[d4x_sanitizer(t('mark as junk')), 'JK']], '3')) %>
+				<%= select(:dest_folder,nil,options_for_select([
+					[d4x_sanitizer(t('trash')), 'trash'],
+					[d4x_sanitizer(t('sent')), 'sent'],
+					[d4x_sanitizer(t('draft')), 'drafts'],
+					[d4x_sanitizer(t('archive')), 'archive'],
+					[d4x_sanitizer(t('important')), 'importants'], 
+					[d4x_sanitizer(t('junk')), 'junk'],
+					[d4x_sanitizer(t('inbox')), 'inbox']], 'trash'),{},{:class=>'none'}) %>
+				<%= submit_tag t("apply"),:name=>"apply",:id=>"apply",:class=>'button-agadanga' %>
+			</div>

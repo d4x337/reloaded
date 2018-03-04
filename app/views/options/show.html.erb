@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+	<div class="col-lg-12">
+	<div class="ibox float-e-margins">
+	<div class="ibox-title">
+	    <h5><%= t('option') %></h5>
+	    <div class="ibox-tools">
+    		<%= link_to options_path do %>
+    			<i class="fa fa-arrow-left"></i>
+    		<% end %>
+            <%= link_to edit_option_path(@option) do %>
+    			<i class="fa fa-edit"></i>
+    		<% end %>
+    		<a class="collapse-link">
+	            <i class="fa fa-chevron-up"></i>
+	        </a>
+	        <a class="close-link">
+	            <i class="fa fa-times"></i>
+	        </a>
+	    </div>
+	</div>
+	<div class="ibox-content">
+		<div class="field">
+		    <%= label_tag :name %><br />
+		    <%= @option.name%>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :value %><br />
+		    <%= @option.value %>
+	    </div><br>
+	   
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,169 @@
+<%= content_for :head do %>
+	<%= javascript_include_tag 'd4x-folders-evo' %>
+<% end %>
+
+<% unless @folder.blank? %>
+    <% @folder.reverse_each do |message| %>
+
+      <% if @foldername == 'inbox'    %>
+        <% @xmsg = @maildir.get(message.key)  %>
+      <% elsif @foldername == 'sent'  %>
+        <% @xmsg = @sentdir.get(message.key)  %>
+      <% elsif @foldername == 'drafts' %>
+        <% @xmsg = @draftdir.get(message.key) %>
+      <% elsif @foldername == 'important' %>
+        <% @xmsg = @spamdir.get(message.key) %>
+      <% elsif @foldername == 'spam' %>
+        <% @xmsg = @spamdir.get(message.key) %>
+      <% elsif @foldername == 'archive' %>
+        <% @xmsg = @archivedir.get(message.key) %>
+      <% elsif @foldername == 'draft' %>
+        <% @xmsg = @draftdir.get(message.key) %>
+      <% elsif @foldername == 'trash' %>
+        <% @xmsg = @trashdir.get(message.key) %>
+      <% else %>
+        <% @xmsg = @maildir.get(message.key)  %>
+      <% end %>
+
+  		<% xmail = Mail.new(@xmsg.data)%>
+  		<% msgkey  = message.key %>
+	    <% msgkey.gsub(",","999") %>
+			<%= hidden_field_tag :folder, @foldername %>
+			
+      <% if @foldername == "spam" %>
+        <div id="messages-row-data" class="d4x-row-grid-spam">
+      <% else %>
+
+        <% if @xmsg.flags.to_s.count('S') > 0 %>
+          <div id="messages-row-data" class="<%= cycle("odd","even")%> d4x-row-grid read">
+        <% else %>
+          <div id="messages-row-data" class="<%= cycle("odd","even")%> d4x-row-grid">
+        <% end %>
+      <% end %>
+
+					<% if @foldername == "spam" %>
+						<div id="column_is_important">
+								<%= image_tag("flag-deact.png",:size=>'16x16',:title=>"Flagged as Junk",:class=>'grid-icon') %>
+						</div>
+					<% else %>
+						<div id="column_is_important">
+							<% if @xmsg.flags.to_s.count('F') > 0 %>
+								<%= image_tag("flag.png",:size=>'16x16',:title=>"Flagged as Important",:class=>'grid-icon') %>
+							<% end %>
+						</div>
+					<% end %>	
+						<div id="column_select_all">
+							 <%= check_box "messages","key",{:multiple => true,:class=>'css-checkbox'}, msgkey,nil %>
+						</div>
+						<div id="column_replied">
+							<% if @xmsg.flags.to_s.count('R') > 0 %>
+								<%= image_tag("arrow_turn_right.png",:title=>"Replied",:class=>'grid-icon') %>
+							<% end %>
+							<% if @xmsg.flags.to_s.count('P') > 0 %>
+								<%= image_tag("arrow_right.png",:title=>"Forwarded",:class=>'grid-icon') %>
+							<% end %>
+						</div>
+						<div id="column_attachment">
+							<% if xmail.attachments.count > 0 %>
+								<%= image_tag("attach.png",:title=>xmail.attachments.count.to_s+" file(s)",:class=>'grid-icon') %>
+							<% end %>
+						</div>
+						<div id="column_seen">
+							<% if @xmsg.flags.to_s.count('S') > 0 %>
+				  				<%= link_to_function image_tag("email_open.png",:width=>"12",:class=>'bullet'), "$('#mail-row').children('#view-mail-pane').toggle()" %></td>
+							<% else %>
+								<%= link_to_function image_tag("email.png",:width=>"12",:class=>'bullet'), "$('#mail-row').children('#view-mail-pane').toggle()" %></td>
+							<% end %> 
+						</div>	
+				
+						<% if @foldername == "spam" %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+										<div id="column_date" class="grey">
+								<% else %>
+										<div id="column_date">
+								<% end %>	
+      								<%= xmail.date.to_s(:short) %>
+					  		    </div>
+						<% else %>
+								<%= link_to(:message_id=>msgkey,:folder=>@foldername) do %>
+									<% if @xmsg.flags.to_s.count('S') > 0 %>
+										<div id="column_date" class="grey">
+									<% else %>
+										<div id="column_date">
+									<% end %>	
+									<%= xmail.date.to_s(:short) %>	
+										</div>	
+								<% end %>
+						<% end %>
+	
+						<% if @foldername == "spam" %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+									<div id="column_from" class="grey">
+								<% else %>
+									<div id="column_from">
+								<% end %>	
+									<% if xmail.from.present? %>
+			  							<%= truncate(xmail.from.to_s,:length=>35) %>
+									<% else %>
+										&nbsp;
+									<% end %> 
+								</div>	
+						<% else %>
+								<%= link_to(:message_id=>msgkey,:folder=>@foldername) do %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+									<div id="column_from" class="grey">
+								<% else %>
+									<div id="column_from">
+								<% end %>	
+									<% if xmail.from.present? %>
+			  							<%= truncate(xmail.from.to_s,:length=>24) %>
+									<% else %>
+										&nbsp;
+									<% end %> 
+								</div>	
+								<% end %>
+						<% end %>
+	
+						<% if @foldername == "spam" %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+									<div id="column_subject" class="left grey">
+								<% else %>
+									<div id="column_subject" class="left">
+								<% end %>	
+									<%= truncate(xmail.subject.to_s,:length=>55) %>&nbsp;
+								</div>	
+						<% else %>
+								<%= link_to(:message_id=>msgkey,:folder=>@foldername) do %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+									<div id="column_subject" class="left grey">
+								<% else %>
+									<div id="column_subject" class="left">
+								<% end %>	
+									<%= truncate(xmail.subject.to_s,:length=>55) %>&nbsp;
+								</div>	
+								<% end %>
+						<% end %>
+
+						<% if @foldername == "spam" %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+									<div id="column_recipient" class="grey">
+								<% else %>
+									<div id="column_recipient">
+								<% end %>	
+									<%= truncate(xmail.to.to_s,:length=>40) %>
+								</div>	
+						<% else %>
+								<%= link_to(:message_id=>msgkey,:folder=>@foldername) do %>
+								<% if @xmsg.flags.to_s.count('S') > 0 %>
+									<div id="column_recipient" class="grey">
+								<% else %>
+									<div id="column_recipient">
+								<% end %>	
+									<%= truncate(xmail.to.to_s,:length=>40) %>
+								</div>	
+								<% end %>
+						<% end %>
+					</div>
+	<% end %>
+<% end %>
+

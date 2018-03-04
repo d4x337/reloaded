@@ -1,0 +1,39 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "d4x-activation" %>
+<% end %>
+
+<% if params[:amount].blank? %>
+    <%  params[:amount] = 1000 %>
+<% end %>
+<div class="middle-box text-center animated  ibox-content devise_login">
+  <%= render :partial => "/shared/devise_header_logo" %>
+      <h3 class="font-bold center white"><%= d4x_sanitizer(t('activate_account')) %></h3>
+        <p>
+          <%= d4x_sanitizer(t('Use the email you have already registered')) %>
+        </p>
+        <div class="row">
+            <div class="col-lg-12">
+            <%= form_for('#') do |f| %>
+              <div class="form-group">
+                <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
+                <p align="center">
+                  <%= text_field_tag :couponCode, params[:couponCode],:placeholder=>'Coupon',:class=>'form-control input-sm center' %>
+                </p>
+                <script type="text/javascript" id="js_activation"
+                        src="https://checkout.stripe.com/checkout.js" data-label="<%= d4x_sanitizer(t('Activate and Pay')) %> <%= params[:amount].to_i/100 %>€ <%= d4x_sanitizer(t('with Credit Card')) %>" class="stripe-button"
+                        data-key="pk_live_Lu6ibTa04s1Np4M2TkGu98PN"
+                        data-amount="<%= params[:amount] %>"
+                        data-name="Tortuga 1 Year Subscription"
+                        data-description="Use the email you already registered."
+                        data-locale="auto"
+                        data-zip-code="true"
+                        data-currency="eur">
+                </script>
+              </div>
+
+                <% end %>
+            </div>
+        </div>
+      <%= render :partial => "devise/shared/links_activation" %><br><br>
+      <%= render :partial => "/shared/devise_footer" %>
+</div>

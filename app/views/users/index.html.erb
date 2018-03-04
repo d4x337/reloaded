@@ -1,0 +1,71 @@
+<h4 class="card-title lightlime">Member Registrations</h4>
+<h6 class="card-subtitle"></h6>
+<% unless @users.blank? %>
+    <div class="table-responsive">
+      <table id="data-table" class="table">
+        <thead>
+        <tr>
+          <th><%=d4x_sanitizer(t(:firstname)) %></th>
+          <th><%=d4x_sanitizer(t(:nickname)) %></th>
+          <th><%=d4x_sanitizer(t(:email)) %></th>
+          <th><%= "Last Seen" %></th>
+          <th><%=d4x_sanitizer(t(:acc)) %></th>
+          <th><%=d4x_sanitizer(t(:current)) %></th>
+          <th><%=d4x_sanitizer(t(:failed)) %></th>
+          <th><%=d4x_sanitizer(t(:appr)) %></th>
+          <th><%=d4x_sanitizer(t(:on?)) %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+         <% unless @users.blank? %>
+            <% @users.each do |user| %>
+                <tr>
+                  <td align="left"><%= user.firstname %></td>
+                  <td align="left"><%= link_to user.nickname,user %></td>
+                  <td align="left"><%= link_to user.email,"mailto:"+user.email %></td>
+                  <td><%= user.last_seen.present? ? time_ago_in_words(user.last_seen)+" Ago" : "Never Seen"%></td>
+                  <td><%= user.sign_in_count %></td>
+                  <td><%= user.current_sign_in_ip %></td>
+                  <td><%= user.failed_attempts %></td>
+                  <td align="center">
+                    <% if user.approved? %>
+                        <%= image_tag("bullet_green.png") %>
+                    <% else %>
+                        <%= image_tag("bullet_red.png") %>
+                    <% end %>
+                  </td>
+                  <td align="center">
+                    <% if user.online? %>
+                        <%= image_tag("bullet_green.png") %>
+                    <% else %>
+                        <%= image_tag("bullet_red.png") %>
+                    <% end %>
+                  </td>
+
+                  <td align="center">
+                    <%= link_to(edit_user_path(user)) do %>
+                        <span class="btn btn-sm btn-dark"><i class='fa fa-edit'></i></span>
+                    <% end %>
+                  </td>
+                  <td align="center">
+                    <% if can? :destroy, @user %>
+                        <%= button_to user, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-sm btn-dark" do %>
+                            <i class='fa fa-trash-o'></i>
+                        <% end %>
+                    <% end %>
+                  </td>
+
+                </tr>
+            <% end %>
+         <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>
+
+
+
+

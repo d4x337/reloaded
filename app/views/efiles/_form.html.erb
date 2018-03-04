@@ -1,0 +1,25 @@
+<%= form_for(@efile,:html => { :multipart => true })  do |f| %>
+	<% if @efile.errors.any? %>
+	  <div id="error_explanation">
+	     <h2><%= pluralize(@efile.errors.count, "error") %> prohibited this Efile from being saved:</h2>
+	    <ul>
+		  <% @efile.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	     </ul>
+	  </div>
+	<% end %>
+  
+	<div class="container">
+	  <br />
+	  <div class="field">
+	    <%= f.label :original %><br />
+	    <%= f.file_field :original ,:size =>50,:class=>'form-control'%>
+	  </div>
+	  <br />
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	</div>
+
+<% end %>

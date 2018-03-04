@@ -1,0 +1,37 @@
+<% @title =t('update') %>
+<div id="link-evo">
+	<div id="show-title">
+		<div id="evo-card-icon">
+			<%= image_tag "card-icon-vulns.gif",:size => "24x24",:alt => "notification" %> 						
+		</div>
+		<div id="link-card-title">
+			 <%= @update.sender_id %>	
+		</div>
+		<div id="evo-card-actions">
+			
+		</div>
+	</div>
+	<div id="show-body">
+		
+	
+			<% if (@update.reason != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('reason') %>
+					</div>
+					<div id="show-item-right">
+						<%= raw(@update.reason) %>
+					</div>
+				</div>
+				<br>
+				
+			<% end %>
+			
+		</div>
+	 	<% if can? :update, @update %>  
+			 <%= link_to t('edit'), edit_update_path(@update) %> 
+		<% end %>
+	</div>
+
+</div><!--NEW CARD1 -->

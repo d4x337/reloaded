@@ -1,0 +1,88 @@
+<% @title = d4x_sanitizer(t('new mail_account')) %>
+<div class="big-card">
+	<%= form_for(MailAccount.new) do |f| %>
+
+   		  <%= content_for :head do %>
+			  <%= javascript_include_tag 'd4x-mail-accounts' %>
+		  <% end %>
+
+		  <div id="center-container">
+			 <div id="d4x-title-evox">
+			 	<% if params['prod_id'].present? %>
+			 		<% @prod = Product.find(params['prod_id']) %>
+			 		<%= label_tag "You can create your "+@prod.name %><br />
+		  		<% end %>	
+		  	</div>
+
+			 <div id="center-content">
+				
+			  <div class="field">
+			  	<% @users = users_without_uberbox %>
+			  	<% @domains = available_domains %>
+	
+	    		<%= f.hidden_field :user_id,:value=> current_user.id %>
+	    		<%= f.hidden_field :uid,    :value=> 2000 %>
+	    		<%= f.hidden_field :gid,    :value=> 2000 %>
+	    		<%= f.hidden_field :home,   :value=> '/var/vmail' %>
+	    		
+	    		
+	    		<% if @prod.id == 2 %>	
+	    			<%= f.hidden_field :quota,  :value=> '1000000000S' %>
+	    		<% elsif @prod.id == 3 %>	
+	    			<%= f.hidden_field :quota,  :value=> '3000000000S' %>
+	    		<% elsif @prod.id == 4 %>	
+	    			<%= f.hidden_field :quota,  :value=> '5000000000S' %>
+	    		<% end %>	
+	    	
+	   	  </div>
+	   	  <br>
+			<div class="field">
+			    <div id="left-ubercreate">
+				&nbsp;&nbsp;<%= f.label d4x_sanitizer(t(:login)),:class=>"lcd lcd-bigger orange" %><br />
+			    	<%= f.text_field :login  ,:size => 16, :class=>"big-control center",:value=>current_user.nickname %>
+			    </div>			    
+			 	
+			 	<div id="at">
+					<%= image_tag "/images/att.png"  ,:size => "60x60" %>
+		 		</div>
+			   
+			    <div id="right-ubercreate">
+				   &nbsp;&nbsp;<%= f.label :domain,:class=>"lcd lcd-bigger orange" %><br />
+				    <%= select_tag :domain,options_for_select(@domains,"hackers.it"),{:onchange=>'#',:class=>'bigg-control center'}%>
+			    </div>			
+			        
+			    
+			  </div>
+			  <br>
+			  <br>
+			  <br>
+			  <br>
+			  <br>
+			  <br>
+			  <div class="field">
+			    <%= f.label d4x_sanitizer(t("from name")),:class=>"lcd lcd-bigger orange" %><br />
+			    <%= f.text_field :name,:size => 40, :class=>"big-control center",:value=>current_user.firstname+" "+current_user.lastname %>
+			  </div><br>
+			  
+			  <div class="field">
+			    <%= f.label d4x_sanitizer(t(:password)),:class=>"lcd lcd-bigger orange" %><br />
+			    <%= f.password_field :password ,:size => 40, :class=>"big-control center" %>
+			  </div><br>
+			  <div class="field">
+			    <%= f.label 'confirm',:class=>"lcd lcd-bigger orange" %><br />
+			    <%= f.password_field :password ,:size => 40, :class=>"big-control center" %>
+			  </div>
+				<br>
+				<br>
+			  <br>
+		
+			</div>
+  <div class="center">
+			    <%= f.submit "Create Mailbox",:class=>'button-d4x',:name=>'subscribed' %>
+			  </div>
+			 
+	</div>
+	<% end %>
+	<div id="paginator"></div>
+
+</div>

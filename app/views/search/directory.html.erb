@@ -1,0 +1,116 @@
+<style>
+  .onoff{
+    margin-right:45px;
+  }
+	.picimage{
+		margin-left:-10px;
+	}
+</style>
+<style>
+  .received-list{
+    margin-left:10px;
+    min-height:364px;
+  }
+  .panel-body{
+    padding:0;
+  }
+.lastseen{
+  margin-right:40px;
+}
+  .updates_title{
+    color:white;
+    font-weight: bold;
+  }
+</style>
+<style>
+  .received-list{
+    margin-left:10px;
+    height:100px;
+  }
+  .panel-body{
+    padding:0;
+  }
+  .xname{
+    color:white;
+    font-weight: bold;
+    font-size:12px;
+    margin-left:-5px;
+  }
+  .xtitle{
+    color:white;
+    font-weight: bold;
+  }
+  .orange{
+    color:orange;
+  }
+  #pics{
+    margin-left:10px;
+  }
+  #pdel{
+    padding-top:-5px;
+  }
+</style>
+<% unless @users.blank? %>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
+        <% if not is_banned(current_user.id,user.id)%>
+              <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 col-6">
+                <div class="contacts__item">
+                  <a href="<%=user_path(user)%>" class="contacts__img">
+                    <% if have_to_show_photo(current_user.id,user.id) %>
+                        <% if user.avatar(:thumb).present? %>
+                            <img src="<%= user.avatar.url(:thumb) %>" alt="">
+                        <% else %>
+                            <img src="demo/img/profile-pics/2.jpg" alt="">
+                        <% end %>
+                    <% else %>
+                        <img src="demo/img/profile-pics/2.jpg" alt="">
+                    <% end %>
+                  </a>
+                  <small>
+                    <% if user.online? %>
+                        <%=image_tag "online.png",:class=>'pull-right onoff',:title=>'online'%>
+                    <% end %>
+                  </small>
+                  <div class="contacts__info">
+                    <strong><%= user.firstname %></strong>
+                    <a href="<%= user_path(user) %>">
+                      <small><%= "@"+user.nickname %></small>
+                    </a>
+                    <small><% user.email %></small>
+                    <br>
+                    <small>
+                      <% if current_user.id == user.id %>
+                          <div class="">
+                            <%= label_tag "You",nil,{:class=>"lightlime"} %>
+                          </div>
+                      <% elsif (is_friend(current_user.id.to_s, user.id.to_s) == true) %>
+                          <% friend = Friend.where(:user_id=>current_user.id,:friend_id=>user.id).first %>
+                          <%= form_for(friend) do |f| %>
+                              <%= f.hidden_field :friend_id, :value=> friend.id %>
+                              <%= link_to friend,:class=>"btn btn-xs btn-dark",:method => :delete,:confirm => 'Are you sure you want to disconnect this person?' do %>
+                                  <%= label_tag d4x_sanitizer(t("Connected")),nil,{:class=>""} %></span>
+                              <% end %>
+                          <% end %>
+                      <% elsif (already_requested_and_not_answered(current_user.id.to_s, user.id.to_s) == true) %>
+                          <div class="">
+                            <%= label_tag d4x_sanitizer(t("Request Sent")),nil,{:class=>"orange"} %></span>
+                          </div>
+                      <% else %>
+                          <% if current_user.id != user.id %>
+                              <%= form_for(Request.new) do |f| %>
+                                  <%= f.hidden_field :target_id, :value=> user.id %>
+                                  <%= button_to d4x_sanitizer(t("request connection")),nil,:class=>'btn btn-sm btn-dark', :form_class=>'friend', :action => 'create',:confirm => 'Are you sure you want to add to your network?',:id=>"add-to-ring" %>
+                              <% end %>
+                          <% end %>
+                      <% end %>
+                    </small>
+
+                  </div>
+                </div>
+              </div>
+          <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+

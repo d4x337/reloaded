@@ -1,0 +1,33 @@
+<h4 class="card-title"><%= t('tags') %></h4>
+<h6 class="card-subtitle"></h6>
+<% unless @tags.blank? %>
+  <div class="table-responsive">
+    <table id="data-table" class="table">
+      <thead>
+      <tr>
+        <th align="left"><%= d4x_sanitizer(t(:name)) %></th>
+        <th align="left"><%= d4x_sanitizer(t(:slug)) %></th>
+        <th align="center"></th>
+        <th align="center"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @tags.each do |tag| %>
+        <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+          <td width="35%"><%= tag.name %></td>
+          <td width="35%"><%= tag.slug %></td>
+          <td width="15%">
+            <%= link_to t('edit'), edit_tag_path(tag),:class => 'btn btn-sm btn-outline-primary' %>
+          </td>
+
+          <td width="15%">
+            <% if current_user.role? :admin %>
+              <%= button_to "delete", tag, :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger',:name => 'zdestroy' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

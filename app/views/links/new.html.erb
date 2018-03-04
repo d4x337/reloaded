@@ -1,0 +1,15 @@
+<% @title =t('new link') %>
+<div id="big-card">
+	<div id="big-card-title">
+		<div id="evo-card-icon">
+			<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), links_path %>
+		</div>
+		<div id="d4x-title-evo">
+			<%= t('add new link') %>	
+		</div>
+	</div>
+	<div id="center-container">	
+		<%= render 'form' %>
+	</div>
+	<div id="paginator"></div>
+</div>

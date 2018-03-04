@@ -1,0 +1,6 @@
+<% unless @mini_posts.blank? %>
+	$('.endless_scroll_inner_wrap').append("<%=escape_javascript(render :partial => 'mini_post', :collection => @mini_posts)%>");
+	$('.list').attr('last', '<%=@mini_posts.to_a.last.created_at%>')
+<% else %>
+	$('#infinite-scroll').detach();
+<% end %>

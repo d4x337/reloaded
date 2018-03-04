@@ -1,0 +1,58 @@
+<% @title = "Feedbacks" %>
+	<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<% if current_user.role? :author  %> 
+					<%= link_to image_tag("user_add.png", :border =>0, :mouseover => "bug_add.png", :title => "Vulnerabilities" ), new_feedback_path %>
+				<% else %>
+					<%= image_tag("bug.png", :border =>0, :mouseover => "bug.png", :title => "Vulnerabilities" ) %>
+				<% end %>
+			</div>
+			<div id="d4x-title-evo">
+					Feedbacks
+			</div>
+		</div>
+		<table width="100%" class="d4x-grid">
+	 	  <tr class="d4x-grid-title">
+			 <th></th> 
+		    <th class="td-grid-tit" width="20%" ><%=t(:sent_at) %></th>
+		   <th class="td-grid-tit" width="45%" ><%=t(:from) %></th>
+		     <th class="td-grid-tit" width="15%" ><%=t(:raiting) %></th>
+		    <th class="td-grid-tit" width="15%" ><%=t(:email) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		 <% @feedbacks.each do |feedback| %>
+		  <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		 	<td class="td-grid-data" width="2%">&nbsp;</td>
+		   <td><% if not feedback.created_at.blank? %>
+						<%= feedback.created_at.strftime("%Y-%m-%d") %>
+					<% end %>
+		  </td>
+		     <td><%= link_to feedback.from,feedback %></td>
+		    <td><%= feedback.rating %></td>
+		    <td><%= feedback.email %></td>
+		    
+		      <td>
+				<%= link_to image_tag("bug.png", :border =>0 , :mouseover => "bug.png", :title => t("icon-show") ,:size => "16x16"), feedback %>
+		 	</td>
+			<td>
+				<% if current_user.role? :author  %>
+					<%= link_to image_tag("bug_edit.png", :border =>0, :mouseover => "bug_edit.png", :title => t("icon-edit"),:size => "16x16" ), edit_feedback_path(feedback) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if current_user.role? :author  %>
+						<%= button_to "", feedback, :confirm => 'are you sure?', :method => :delete, :class => 'adestroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+			 <td class="td-grid-data" width="2%">&nbsp;</td>
+    	  </tr>
+		<% end %>
+		</table>
+		<div id="paginator" align="center">
+			<%= will_paginate @feedbacks,:per_page => 25 %>
+		</div>
+	</div>

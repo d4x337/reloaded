@@ -1,0 +1,116 @@
+<style>
+	.info{
+		word-wrap: break-word;
+		text-align:left;
+		color:white;
+
+	}
+	.whiteee{
+		color:white;
+	}
+	h2,h4{
+		color:white;
+	}
+</style>
+<div class="messages middle-box text-center animated">
+
+  <div>
+    <div class="col-sm-2 col-xs-2 d4xlogo">
+      <%=link_to(image_tag("logo15.png",:class=>'imagelogo'),"/")%>
+    </div>
+    <div class="col-sm-8  col-xs-8 left">
+      <%= form_tag "/search",:method => "get",:role=>'search' do %>
+          <%= hidden_field_tag :area, 'firstname' %>
+          <div class="form-group none" id="searchbox">
+            <div class="input-group">
+              <div id="remote">
+                <%= text_field_tag :findthis,params[:query],{:class=>'typeahead form-controls input-sm',:placeholder=>d4x_sanitizer(t('search'))} %>
+              </div>
+              <span class="input-group-btn">
+				   				<%= button_tag raw('<i class="fa fa-search white"></i>'),:id => "search-submit",:class=>'btn btn-primary btn-sm',:method => "post",:title=>d4x_sanitizer(t('search'))%>
+					   		</span>
+            </div>
+          </div>
+      <% end %>
+      <%= image_tag "tortuga.gif" %>
+    </div>
+
+    <div class="col-sm-1 col-xs-1">
+      <a href="#" title="Compose" id="link-compose" >
+        <i class="fa fa-2x fa-search" id="icon-compose"></i>
+      </a>
+      <div class="sk-spinner sk-spinner-wave none" id="spinner">
+        <div class="sk-rect1"></div>
+        <div class="sk-rect2"></div>
+        <div class="sk-rect3"></div>
+        <div class="sk-rect4"></div>
+        <div class="sk-rect5"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <h4></h4>
+  <p class="alignleft white">
+
+    <br /><br />
+  <div>
+    <div class="info"><br />
+      <h4 class="whiteee">About the Project</h4>
+  <p class="alignleft white">
+    Tortuga is a security project in which we want to secure properly messaging and give a top level of privacy to our members.
+    <br /><br />
+  <h4 class="whiteee">Features</h4>
+  <ul>
+    <li>Messages are not sent, are encrypted somewhere.</li>
+    <li>Strong Passwords are required to use Tortuga</li>
+    <li>Every message is encrypted multiple times</li>
+    <li>Every message has different keys and entropies</li>
+    <li>Every message is auto destroyed at first read</li>
+    <li>Data Protection: the Database is encrypted</li>
+    <li>Notifications to external Email (with Invite)</li>
+    <li>Encrypted Attachment</li>
+    <li>Close Account</li>
+    <li>Private message with shared Passphrase</li>
+    <li>Anti Shoulder Surfer Switch</li>
+    <li>Block a User</li>
+    <li>Rely on LibreSSL as system library</li>
+  </ul>
+  </p>
+  <br />
+  <h4 class="whiteee">About the Author</h4>
+  <p class="alignleft white">
+    &copy; <%= @years = get_setting_value('PROJECT_COPYRIGHT_YEARS') %> <%= @years = get_setting_value('PROJECT_NAME') %>&nbsp;<%= @years = get_setting_value('PROJECT_MOTTO') %>&nbsp;-&nbsp;<%= d4x_sanitizer(t("developer")) %> <%= @author = get_setting_value('PROJECT_AUTHOR') %>&nbsp;-&nbsp;<%= d4x_sanitizer(t("all_rights")) %>
+  </p>
+  <p class="alignleft white">
+    <%= link_to(get_setting_value('LINK_TWITTER')) do %>
+        <span class="btn btn-xs btn-success"><i class='fa fa-twitter fa-2x white'></i></span>
+    <% end %>
+    <%= link_to(get_setting_value('LINK_LINKEDIN')) do %>
+        <span class="btn btn-xs btn-success"><i class='fa fa-linkedin fa-2x white'></i></span>
+    <% end %>
+    <%= link_to(get_setting_value('LINK_LINKEDIN')) do %>
+        <span class="btn btn-xs btn-success"><i class='fa fa-facebook fa-2x white'></i></span>
+    <% end %>
+  </p>
+  <br />
+  <h4 class="whiteee">Contact</h4>
+  <p class="alignleft white">
+    You can contact at the info@tortuga.tech
+  </p>
+  <br />
+</div>
+
+  </div>
+  <script>
+    $(function(){
+      $('.info').slimScroll({
+        height: '470'
+      });
+    });
+  </script>
+</div>
+
+
+
+</div>

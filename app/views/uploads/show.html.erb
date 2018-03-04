@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+	<div class="col-lg-12">
+	<div class="ibox float-e-margins">
+	<div class="ibox-title">
+	    <h5><%= t('upload') %></h5>
+	    <div class="ibox-tools">
+    		<%= link_to uploads_path do %>
+    			<i class="fa fa-arrow-left"></i>
+    		<% end %>
+            <%= link_to edit_upload_path(@upload) do %>
+    			<i class="fa fa-edit"></i>
+    		<% end %>
+    		<a class="collapse-link">
+	            <i class="fa fa-chevron-up"></i>
+	        </a>
+	        <a class="close-link">
+	            <i class="fa fa-times"></i>
+	        </a>
+	    </div>
+	</div>
+	<div class="ibox-content">
+		<div class="field">
+		    <%= label_tag :upload %><br />
+		    <%= image_tag @upload.image.url%>
+		   
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :file_name %><br />
+		    <%= @upload.image_file_name %>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :file_size %><br />
+		    <%= number_to_human_size @upload.image_file_size %>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :content_type %><br />
+		    <%= @upload.image_content_type %>
+	    </div><br>
+	     
+	</div>
+</div>
+</div>
+</div>
+</div>

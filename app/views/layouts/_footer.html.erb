@@ -1,0 +1,20 @@
+<div class="footer fixed">
+    <div class="pull-right">
+      <%= link_to image_tag("us.png",:alt=>"English",:title=>'English',:class=>'d4xicon'), url_for( :locale => 'en' ) %>&nbsp;
+      <%= link_to image_tag("es.png",:alt=>"Spanish",:title=>'Spanish',:class=>'d4xicon'), url_for( :locale => 'es' ) %>&nbsp;
+      <%= link_to image_tag("fr.png",:alt=>"French",:title=>'French',:class=>'d4xicon'), url_for( :locale => 'fr' ) %>&nbsp;
+      <%= link_to image_tag("de.png",:alt=>"German",:title=>'German',:class=>'d4xicon'), url_for( :locale => 'de' ) %>&nbsp;
+      <%= link_to image_tag("england.png",:alt=>"English",:title=>'English',:class=>'d4xicon'), url_for( :locale => 'en' ) %>&nbsp;
+      <%= link_to image_tag("pt.png",:alt=>"Portuguese",:title=>'Portuguese',:class=>'d4xicon'), url_for( :locale => 'pt' ) %>&nbsp;
+      <%= link_to image_tag("it.png",:title=>"Italian",:alt=>'Italian',:class=>'d4xicon'), url_for( :locale => 'it' )%>&nbsp;
+      <%= link_to image_tag("nl.png",:alt=>"Dutch",:title=>'Dutch',:class=>'d4xicon'), url_for( :locale => 'nl' ) %>&nbsp;
+      <%= link_to image_tag("ru.png",:alt=>"Russian",:title=>'Russian',:class=>'d4xicon'), url_for( :locale => 'ru' ) %>&nbsp;
+      <%= link_to image_tag("cn.png",:alt=>"Chinese",:title=>'Chinese',:class=>'d4xicon'), url_for( :locale => 'cn' ) %>&nbsp;
+      <%= link_to image_tag("se.png",:alt=>"Swedish",:title=>'Swedish',:class=>'d4xicon'), url_for( :locale => 'se' ) %>&nbsp;
+      <%= link_to image_tag("il.png",:alt=>"Hebrew",:title=>'Hebrew',:class=>'d4xicon'), url_for( :locale => 'il' ) %>&nbsp;
+      <%= link_to image_tag("pl.png",:alt=>"Polish",:title=>'Polish',:class=>'d4xicon'), url_for( :locale => 'pl' ) %>&nbsp;
+    </div>
+    <div>
+      &copy; <%= @years = get_setting_value('PROJECT_COPYRIGHT_YEARS') %> <%= @years = get_setting_value('PROJECT_NAME') %>&nbsp;-&nbsp;<%= d4x_sanitizer(t("all_rights")) %>
+    </div>
+</div>

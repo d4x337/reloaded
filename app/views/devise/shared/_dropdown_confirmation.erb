@@ -1,0 +1,8 @@
+
+<a id='forgot-link' class="dropdown-item" href="<%= new_password_path(resource_name)%>"><%= t("forgot password")%></a>
+  <a id='unlock-link' class="dropdown-item" href="<%= new_unlock_path(resource_name) %>"><%= t("unlock instructions")%></a>
+  <a id='signup-link' class="dropdown-item" href="/signup"><%=  t("registration")%></a>
+  <a id='activation-link' class="dropdown-item" href="/activation"><%= t("activate_account")%></a>
+  <a id='login-link' class="dropdown-item" href="<%= new_session_path(resource_name) %>"><%=  t("login")%></a>
+  <a id='confirm-link' class="dropdown-item" href="<%= new_confirmation_path(resource_name) %>"><%=  t("confirm account")%></a>
+

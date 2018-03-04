@@ -1,0 +1,31 @@
+.btn-d4x {
+    background-color: darkgreen !important;
+    color:white;
+}
+.btn-d4x:hover{
+    background-color: green !important;
+    color:yellow;
+}
+.btn-d4x:visited,
+.btn-d4x:active
+{
+    background-color: lime !important;
+}
+#user_nickname,
+#user_email,
+#user_firstname,
+#user_password{
+    background-color:#1d1d1d;
+    border:2px solid lime;
+    color:lime;
+}
+.none{
+    display:none;
+}
+#spinner{
+    margin-top:10px;
+    margin-left:-20px;
+}
+.motto{
+    color:white
+}

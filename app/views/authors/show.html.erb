@@ -1,0 +1,73 @@
+<% @title = t('author') %>
+<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<% if current_user.role? :admin %>  
+					<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), authors_path %>
+					<%= link_to image_tag("user_add.png", :border =>0, :mouseover => "user_add.png", :title => "new",:size => "16x16" ), new_author_path %>
+					<%= link_to image_tag("user_edit.png", :border =>0, :mouseover => "user_edit.png", :title => t(:edit),:size => "16x16" ), edit_author_path(@author) %>
+				<% end %>
+				
+			</div>
+			<div id="d4x-title-evox">
+				<%= image_tag @author.photo.url %><br />
+				<%= image_tag @author.photo.url(:medium) %><br />
+				<%= image_tag @author.photo.url(:thumb) %><br />
+				<%= image_tag @author.photo.url(:icon) %><br />
+			</div>
+		</div>
+		<div id="center-container">
+			<table id="show-author">
+				<tr>
+					<td colspan="5" class="show-item-title"><%= @author.fullname %></td>
+				</tr>
+				
+				<% if not @author.headline.blank? %>
+				<tr>
+					<td width="30%">&nbsp;</td>
+					<td class="show-item-label"><%= t('headline') %></td>
+					<td width="2%">&nbsp;</td>
+					<td class="show-item-data"><%= @author.headline %></td>
+					<td width="2%">&nbsp;</td>
+				</tr>
+				<% end %>
+				
+				<% if @author.dates.blank? %>
+				<tr>
+					<td></td>
+					<td class="show-item-label"><%= t('dates') %></td>
+					<td></td>
+					<td class="show-item-data"><%= @author.dates %></td>
+					<td></td>
+				</tr>
+				<% end %>
+				
+				<% if @author.notes.blank? %>
+				<tr>
+					<td></td>
+					<td class="show-item-label"><%= t('notes') %></td>
+					<td></td>
+					<td class="show-item-data"><%= @author.notes %></td>
+					<td></td>
+				</tr>
+				<% end %>
+				
+				<% if (@author.quotes.count>0) %>
+				<tr>
+					<td></td>
+					<td class="show-item-label"><%= t('quotes present') %></td>
+					<td></td>
+					<td class="show-item-data"> <%= @author.quotes.count.to_s %></td>
+					<td></td>
+				</tr>
+				<% end %>
+				<tr>
+					<td colspan="5">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="5">&nbsp;</td>
+				</tr>	
+			</table>
+		</div>
+		<div id="paginator"></div>
+</div>

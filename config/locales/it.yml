@@ -1,0 +1,1881 @@
+it: 
+  BCC: "BCC:"
+  TO: "A:"
+  CC: "CC:"
+  no drafts: "Bozze non presenti"
+  Inbox is Empty: "Posta in Arrivo non presente"
+  sent is empty: "Posta Spedita non presente"
+  trash is empty: "Il Cestino e' vuoto"
+  no importants: "Non ci sono messaggi importanti"
+  archive is empty: "L'archivio e' vuoto"
+  junk is empty: "Spam  vuoto"
+  Select a Message to Reply!: "Seleziona il Messaggio a cui rispondere"
+  Select a Message to Reply All: "Seleziona il Messaggio a cui rispondere a tutti"
+  change your password: "Cambia Password"
+  use a custom background: "Utilizza sfondo personalizzato"
+  use a custom header: "Utilizza intestazione personalizzatar"
+  choose your favourite theme: "Imposta tema grafico"
+  choose your language: "Imposta Lingua"
+  Insert First Name: "Inserisci Nome"
+  Last Name: "Cognome"
+  e-Mail Address: "Indirizzo eMail"
+  unknown action: "Azione Sconosciuta"
+  Select Messages to Process: "Seleziona i messaggi da elaborare"
+  Mail Sent Seccessfully: "Mail Spedita con successo"
+  Error while Saving message in Sent Folder: "Errore durante la memorizzazione nella cartella spediti"
+  Error while saving message to Drafts: "Errore durante la memorizzazione nelle bozze"
+  your message has been saved in draft folder.: "Messaggio salvato nella cartella bozze"
+  your message has been discarted: "Il tuo messaggio e' stato scartato"
+  unknow action: "Azione Sconosciuta"
+  Mail Sent Seccessfully: "Email Spedita con Successo"
+  Successfully marked as unread: "Messaggi segnati come da leggere"
+  select an account before continuing: "seleziona un account prima di proseguire"
+  Select an Account to Check: "Seleziona un account da controllare"
+  Select a Message to Reply!: "Seleziona un messaggio a cui rispondere"
+  Select a Message to Reply All: "Seleziona un messaggio a cui rispondere a tutti"
+  Select a Message to Forward: "Seleziona un messaggio da inoltrare"
+  select an account before continuing: "Seleziona un account prima di continuare"
+  Select an Account first: "Seleziona prima un account"
+  Successfully Moved Messages to Trash: "Messaggi spostati nel cestino"
+  Error while moving to Trash: "Errore durante lo spostamento nel cestino "
+  Select Messages to Delete: "Seleziona i Messaggi da Eliminare"
+  Successfully Moved Messages to Junk!: "Messaggi contrassegnati come spam"
+  Error while moving to Junk : "Errore durante lo spostamento in area spam"
+  Select Messages to set Junk: "Seleziona i messaggi da contrassegnare come spam"
+  Successfully Moved Messages to Archive: "Successfully Moved Messages to Archive"
+  Error while moving to Archive : "Errore durante lo spostamento in Archivio"
+  Select Messages to Archive: "Seleziona i Messaggi da Archiviare"
+  Selected Messages Flagged as Important: "Seleziona i messaggi da segnare come importanti"
+  Error While Settings Flag Important on Messages: "Errore durante l'operazione"
+  Select Messages to Flag as Important!: "Seleziona i messaggi da segnare come Importanti"
+  Select an Account first: "Seleziona prima un account" 
+  select an account before continuing: "Seleziona un account prima di continuare"
+  You must to set your Default Account: "Seleziona l'account predefinito"
+  contacts in your address-book: " contatti nella tua rubrica"
+  used space: "Utilizzato"
+  percent used: "Percentuale"
+  available2: "Disponibile"
+  There are No New Messages on: "Non ci sono nuovi messaggi su "
+  You have 1 New Message on: "Hai un nuovo messaggio su "
+  You have: "Hai "
+  New Messages on: " Nuovi Messaggi su "
+  apply: "Applica"
+  change password: "Cambia Password"
+  from name: "Nome Mittente Messaggio"
+  current language: "Lingua Corrente"
+  custom Tortuga: "Personalizza Tortuga"
+  new passwords: "Nuova Password"
+  your password has been updated: "La tua password e' stata aggiornata "
+  menu-configure: "Configura"
+  menu-contact: "Contattaci"
+  menu-about: "Info"
+  menu-demo: "Live Demo"
+  menu-subscribe: "Sottoscrivi"
+  menu-terms: "Termini Servizio"
+  menu-create-account: "Crea Mailbox"
+  starter: "Starter 1GB"
+  premium: "Premium 3GB"
+  professional: "Professional 20GB"
+  vai: "VAI!"
+  step1: "Step 1 - Controlla Nome Acount"
+  step2: "Step 2 - Scegli un Dominio"
+  step3: "Step 3 - Seleziona il pacchetto"
+  system: "Sistema"
+  total space: "Spazio Totale"
+  used space: "Utilizzato"
+  available: "Disponibile"
+  resend_unlock_instructions: "Resend Unlock Instructions"
+  rights2: "(c) 2014 tortuga.tech - Sistema Ideato e Sviluppato da Davide Gonnella - Tutti i diritti sono riservati"
+  compose: "Scrivi Mail"
+  refresh: "Aggiorna"
+  junk: "Spam"
+  archive: "Archivio"
+  archivied: "Archiviati"
+  important: "Importanti"
+  delete: "Elimina"
+  reply all: "Risp a Tutti"
+  forward: "Inoltra"
+  mark: "Segna"
+  address book: "Contatti"
+  disk space: "Spazio su Disco"
+  folders: "Cartelle"
+  spam: "Spam"
+  contacts: "Contatti"
+  backoffice: "backoffice"
+  confirm account: "Conferma Account"
+  unlock instructions: "Istruzioni sblocco"
+  forgot password: "Hai dimenticato la password?"
+  unfriend: "Disconnetti"
+  developer: "Sistema Ideato e Sviluppato da"
+  all_rights: "Tutti i diritti sono riservati"
+  home: "Home"
+  age: "Eta'"
+  tel: "Tel"
+  sex: "Sesso"
+  location: "Luogo"
+  messag3: "Messaggio"
+  connections: "Connessioni"
+  trash: "Cestino"
+  available: "Disponibile"
+  keys: "Password"
+  inbox: "Entrata"
+  sent: "Spedite"
+  reply: "Rispondi"
+  draft: "Bozze"
+  apply: "Applica"
+  settings: "Impostazioni"
+  privacy by default: "Your Privacy by Default"
+  Tortuga mail system: "Tortuga System"
+  received: "Data"
+  to: "Destinatario"
+  email: "Indirizzo eMail"
+  password: "Password"
+  keep me logged: "Ricorda Login"
+  remember me: "Remember me"
+  logout: "Esci"
+  login: "Accedi"
+  configure: "Configura"
+  annual subscription: "Sottoscrizione Annuale"
+  month: "Mese"
+  firstname: "Nome"
+  lastname: "Cognome"
+  nickname: "Nick" 
+  confirm: "Conferma"
+  gender: "Sesso"
+  country: "Nazione"
+  join us today: "Registrazione"
+  birthday: "Compleanno"
+  confirm account: "Conferma Email"
+  resend confirmation instructions: "Invia Istruzioni per la Conferma"
+  send me reset instructions: "Invia Istruzioni per il Ripristino"
+  unlock your account: "Sblocco Account"
+  confirm account: "Confirma Account"
+  resend confirmation instructions: "Invia le istruzioni di conferma"
+  send me reset instructions: "Invia le istruzioni per il Reset"
+  NEW ENTRIES: "NEW ENTRIES"
+  checking: "Controllo incorso"
+  not available: "Non disponibile"
+  choose a username first: "Scegli il nome utente"
+  username available: "Disponibile"
+  already taken: "Già assegnato"
+  package_p1: "The ideal single-user solution with"
+  package_p2: "the features, storage and mobile"
+  package_p3: "access you need to keep up with"
+  package_p4_1: "a starter email use."
+  package_p4_3: "a normal email use."
+  package_p4_5: "a professional email use."
+  package_tip1_1: "1 GB di spazio per i tuoi messaggi."  
+  package_tip3_1: "3 GB di spazio per i tuoi messaggi."  
+  package_tip5_1: "20 GB di spazio per i tuoi messaggi."  
+  package_tip2: "Indirzzo con uno dei domini Tortuga."  
+  package_tip3: "Accesso POP3 con supporto SSLv3."
+  package_tip4: "Accesso IMAP con Mobile criptato SSLv3 IMAP"  
+  package_tip5: "Webmail con gestione contatti"  
+  package_tip6: "Protezione Anti-spam e Anti-Virus." 
+  continue: "Continua" 
+  card type: "Tipo di Carta"
+  card number: "Numero di Carta"
+  card verification value: "Valore di verifica carta (CVV)"
+  card expires on: "Scadenza"
+  order: "Ordine"
+  place your order: "Completa il tuo ordine"
+  months: "Mesi"
+  total: "Totale"
+  year: "anno"
+  years: "anni"    
+  package: "Pacchetto"
+  error: "Errore"
+  error while processing order: "Error durante l'elaborazione dell'ordine"
+  transaction failed: "Transazione Fallita"
+  credit card problem: "Si è verificato un problema con la sua carta di credito."
+  try another one: "Per favore provi ancora o provi con un'altra carta"
+  team: "Team"
+  account registration: "Registrazione Account"
+  congratulations: "CONGRATULAZIONI!"
+  account finalization: "Finalizzazione Account"
+  purchase completed: "Hai acquistato con successo una mailbox Agandaga! Imposta la password per completare il processo"
+  invitated sir: "Signore Invitato"
+  invalid invite: "Invito non Valido"
+  weak: "Debole"
+  good: "Buona"
+  strong: "Forte"
+  permission denied: "Autorizzazione negata"
+  welcome to the Tortuga System: "Benvenuto su Tortuga"
+  you are invited to Tortuga: "Sei invitato in Tortuga"
+  mailbox: "Mailbox"
+  added to your cart: " aggiunto al carrello"
+  from recent to old: "dal piu recente al più vecchio"
+  sender_from_a_to_z: "Ordina Mittente dalla A alla Z"
+  sender_from_z_to_a: "Ordina Mittente dalla Z alla A"
+  subject_from_a_to_z: "Ordina Oggetto dalla A alla Z"
+  subject_from_z_to_a: "Ordina Oggetto dalla Z alla A"
+  recipient_from_a_to_z: "Ordina Destinatario dalla A alla Z"
+  recipient_from_a_to_a: "Ordina Destinatario dalla Z alla A"    
+  mark selected as read: "Segna selezionati come già letti"
+  mark selected as unread: "Segna selezionati come da leggere"
+  flag selected with star: "Segna con flag importante"
+  remove star from selected: "Rimuovi flag importante"
+  move selected to trash: "Sposta selezionati nel Cestino"
+  delete selected: "Elimina Selezionati"
+  make folder read: "Segna Cartella come Letta"
+  make folder unread: "Segna Cartella come da Leggere"
+  sign up: "Registrati"
+  i agree with terms and conditions: "Sono d'accordo con i termini e condizioni di Tortuga"
+  NEW LOAD: "nuovo carico"
+  from name: "Nome e Cognome"  
+  save draft: "Salva Bozza"
+  send: "Spedisci"
+  cancel: "Cancella" 
+  text: "Testo"
+  xhtml: "HTML"
+  attach file(s): "Allega File"
+  discard: "Abbandona"
+  send plain text: "Invia solo testo"
+  save settings: "Salva Impostazioni"
+  upload: "Carica"
+  choose: "Scegli"
+  male: "Maschio"
+  female: "Femmina"
+  configure POP3 access: "Configura Accesso POP3"
+  configure your mobile with IMAP: "Configura il tuo cellulare con IMAP"
+  send mail with your preferred client: "invia mail con il vostro client preferito"
+  Tortuga webmail: "Tortuga Webmail"
+  faq: "FAQ"
+  online store: "Negozio"
+  about the project: "Il Progetto"
+  about the company: "Chi Siamo"
+  contact Tortuga team: "contattare Tortuga team"
+  system status: "Stato del Sistema"
+  new password: "Nuova Password"
+  incomes: "Redditi"
+  invitations: "Inviti"
+  invite a friend: "Dillo ad un Amico"
+  communications: "Comunicazioni"
+  fullname: "Nome e Cognome"
+  status: "Stato"
+  when: "DatA"
+  registration: "Registrazione"
+  database: "Database"
+  income: "Reddito"
+  expiration: "Scadenza"
+  customer: "Cliente"
+  targets: "Obiettivi"
+  administration: "Amministrazione"
+  products: "Prodotti"
+  statistics: "Statistiche"
+  payments: "Pagamenti"
+  you are logged as: "Sei autenticato come "
+  reminders: "Promemoria"
+  profile: "Profilo"
+  static-config-01: "Ecco la configurazione di posta elettronica per l'accesso e-mail utilizzando il protocollo POP o IMAP ."
+  incoming server address: "Incoming Server Address"
+  incoming port (POP3) 995: "Porta in Arrivo POP3 SSLv3: 995"
+  incoming port (IMAP) 993: "Porta in Entrata IMAP SSLv3: 993"
+  outgoing server address: "Indirizzo Server in Uscita"
+  outgoing port (SMTP) 465: "Porta in Uscita SMTP tramite SSLv3: 465"
+  account name your login name (email address): "username: il tuo indirizzo email"
+  require authentication: "richiedere l'autenticazione: si"
+  further assistance: "Se hai bisogno di ulteriore assistenza o se hai domande , è possibile contattare l'helpdesk all'indirizzo support@tortuga.tech "
+  sending server address: "Indirizzo Server in Entrata"
+  account password: "password: la password dell'account"
+  subject: "Oggetto"
+  sender: "Mittente"
+  from: "Da"
+  received: "Ricevuto"
+  you are logged as: "Sei autenticato come "
+  mobile: "Cellulare"
+  show: "Visualizza"
+  edit: "Modifica"
+  delete: "Elimina"
+  update: "Aggiorna"
+  create: "Crea"
+  destroy: "Distruggi"
+  copy to folder: "Copia nella cartella  "
+  city: "Città "
+  photo: "Foto"
+  headers: "Headers"
+  message: "Messaggio"
+  received: "Ricevuto"
+  quantity: "Quantità"
+  move to folder: "Move to Folder"
+  copy to folder: "Copy to Folder"
+  no messages: "No messages"
+  archive selected: "Archive Selected"
+  mark as junk: "Segna come Spam"
+  from old to recent: "Dal più vecchio al più recente"
+  request relationship: "Richiesta di Collaborazione"
+  requests: "Richieste"
+  role: "Ruolo"
+  requested sir: "Requested Sir"
+  invalid request: "Richiesta non Valida"
+  ago: "fa"
+  profile successfully updated: "Profilo Aggiornato"
+  current password: "Password Attuale"
+  confirmation: "Conferma"
+  save settings: "Salva Impostazioni"
+  extra load: "EXTRA LOAD"
+  Successfully Deleted Messages: "Messaggi eliminati"
+  proceed with mailbox payment: "prosegui con il pagamento del servizio"
+  problem with credit card transaction: "si è verificato un problema durante la transazione con la carta di credito"
+  finalizing mailbox creation registrate your account: "finalizzazione della creazione mailbox : registra il tuo account" 
+  all systems are stable and running: "Sistema in Funzione"
+  system is under maintenance: "Sistema in Manutenzione"
+  sublogo01: "Tortuga è il nuovo sistema di Email focalizzata sulla sicurezza e la privacy per i propri clienti ."
+  sublogo02: "Puoi creare la tua mailbox personalizzata scegliendo il nome, uno fra i domini disponibili ed infine il pacchetto."
+  sublogo03: "Se hai una ditta o una società e vuoi che Tortuga gestica il tuo dominio di posta clicca qui"
+  welcome to Tortuga the new email system: "Benvenuto in Tortuga, il sistema professionale di posta elettronica"
+  configure Tortuga: "Ancora qualche asso per configurare la tua mailbox Tortuga"
+  user agreement: "Accordo con l'utente: Termini e Condizioni"
+  contact01: "Grazie per aver dedicato del tempo per entrare in contatto con noi."
+  contact02: "Noi facciamo del nostro meglio per rispondere a tutte le email entro un giorno lavorativo."
+  contact Tortuga: "per qualsiasi feedback scrivi una mail a team@tortuga.tech"
+  about Tortuga: "Riguardo il sistema Tortuga"
+  reset password instructions: "Instruzioni per il Reset della Password"
+  unlock password instructions: "Istruzioni per lo sblocco dell'account"
+  configure iphone01: "Configura il tuo iPhone passo per passo "
+  configure iphone02: "(funziona anche per altri telefoni o client di posta elettronica)"
+  about01: "Il Sistema Tortuga è un servizio di posta elettronica focalizzato sulla sicurezza e la privacy per i suoi utenti."
+  about02: "Siamo molto attenti al servizio, curanto infrastruttura e prestazioni, sempre pronti a realizzare qualsiasi nuova soluzione per una migliore protezione delle comunicazioni e dei dati del cliente."
+  about03: "Tortuga implementa anche un innovativo sistema commerciale che puoi guadagnare da casa come un'attività in più."
+  about04: "Se accettato come partner, sarete in grado di contribuire alla diffusione Tortuga invitando i tuoi contatti."
+  about05: "Allora per ogni cliente invitato Tortuga vi garantirà un reddito."
+  about06: "Siamo alla ricerca di partner che possano operare in diversi paesi."
+  about07: "Per maggiori informazioni scrivi a team@tortuga.tech"
+  will_paginate:
+     previous_label: "&#8592;"
+     next_label: "&#8594"
+     page_gap: "&hellip;"
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Domenica
+      - Lunedi
+      - Martedì
+      - Mercoledì
+      - Giovedi
+      - Venerdì
+      - Sabato
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - Gennaio
+      - Febbraio
+      - marzo
+      - Aprile
+      - maggio
+      - Giugno
+      - Luglio
+      - Agosto
+      - Settembre
+      - Ottobre
+      - Novembre
+      - Dicembre
+  dates: period
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "circa un ora"
+        other: "circa %{count} ore"
+      about_x_months: 
+        one: "circa un mese"
+        other: "circa %{count} mesi"
+      about_x_years: 
+        one: "circa un anno"
+        other: "circa %{count} anni"
+      almost_x_years: 
+        one: "quasi un anno"
+        other: "quasi %{count} anni"
+      half_a_minute: "mezzo minuto"
+      less_than_x_minutes: 
+        one: "meno di un minuto"
+        other: "meno di %{count} minuti"
+      less_than_x_seconds: 
+        one: "meno di 1 second"
+        other: "meno di %{count} secondi"
+      over_x_years: 
+        one: "oltre 1 anno"
+        other: "oltre %{count} anni"
+      x_days: 
+        one: "1 giorno"
+        other: "%{count} giorni"
+      x_minutes: 
+        one: "1 minuto"
+        other: "%{count} minuti"
+      x_months: 
+        one: "1 mese"
+        other: "%{count} mesi"
+      x_seconds: 
+        one: "1 secondo"
+        other: "%{count} secondi"
+    prompts: 
+      day: Giorno
+      hour: Ora
+      minute: Minuto
+      month: Mese
+      second: Secondi
+      year: Anno 
+    404_h2: "La pagina che stavi cercando non esiste"
+  404_h3: "Potresti aver sbabliato a scrivere l'indirizzo o la pagina e stata spostata."
+  ? "8453 monitor"
+  : "8453 monitor"
+  ? ":: 1337 ::"
+  : "1337"
+  ? ":: Author ::"
+  : Autore
+  ? ":: Operator ::"
+  : ":: Operatore :: "
+  ? ":: Premium ::"
+  : ":: Premium :: "
+  ? ":: Public ::"
+  : Public
+  ? ":: Requests ::"
+  : Richieste
+  ? ":: Sections ::"
+  : Sezioni
+  ? ":: Social ::"
+  : Social
+  ? "Didn't receive unlock instructions?"
+  : "Non hai ricevuto le istruzioni di sblocco?"
+  ? "Forgot your password?"
+  : "Password dimenticata?"
+  Help: "Bisogno di aiuto?"
+  Help001: "Contenuti in fase di sviluppo"
+  ? "How to unlock your account"
+  : "Sblocco Account"
+  ? "Listing Mailboxes"
+  : "Cassette postali listate"
+  ? "Megam4x activities"
+  : "Attività Megam4x"
+  ? "New Mailbox"
+  : "Nuova cassetta postale"
+  ? "Resend unlock instructions"
+  : "Inoltra le istruzioni di sblocco"
+  ? "Send me reset instructions"
+  : "Spediscimi le istruzioni per il reset"
+  ? "Send me reset password instructions"
+  : "Spedisci le istruzioni per il reset"
+  ? "Signin"
+  : Accedi
+  ? "Sign in here"
+  : Accedi
+  ? "Signup"
+  : Registrazione
+  Statistics: Statistiche
+  Where: "Dove"
+  about: Info
+  about_bio: "Fondatore e' Davide Gonnella, noto anche come d4x, specialista in sicurezza informatica e ingegneria del software, ultimamente scrive codice in Ruby e C#;  presta consulenze inerenti test di penetratione, investigazioni su prove digitali, e gestione di incidenti informatici in scenari complessi. Nel 2009 consegue le certificazioni GIAC GCIH e GCFA, quale forensic analyst e incident handler."
+  about_bio_tit: Bio
+  about_pgp_key: "I soggetti sensibili, e le menti paranoiche, possono  tranquillamente utilizzare la nostra chiave pubblica GnuPG per crittografare le comunicazioni che volete effettuare con noi. Non è obbligatorio, ma consigliato per un ulteriore livello di sicurezza e privacy."
+  about_pgp_tit: "Chiave pubblica PGP"
+  about_staff_p0: "Potete utilizzare questo indirizzo email per un feedback direttamente allo Staff di tortuga. Cerchiamo di rispondere a tutte le mail in modo tempestivo, ogni tanto però ci possono essere ritardi nella risposta. Se trovate un errore sul sito, dato che utilizziamo i browser più aggiornati e moderni, è possibile che il sito venga visualizzato in modo diverso a seconda del browser prescelto."
+  about_staff_p1: "Se volete inviare nuovi file nell'archivio tortuga, includete una descrizione del file, i dettagli d'autore, eventuale fonte e tutte le informazioni pertinenti"
+  about_staff_tit: "staff[at]Tortuga"
+  about_me_p0: "Davide Gonnella è l'ideatore e fondatore di Tortuga."
+  about_me_p1: "Esperto di sicurezza informatica e sviluppo software da oltre 20 anni, avvia nel 2003, questo progetto senza scopo di lucro, con la missione di fornire alla comunità di sicurezza informatica un punto di riferimento altamente tecnico e di sostenere la libertà di pensiero, parola ed informazione. "
+  about_me_p2: "Nel 2012 riprende attivamente il progetto con nuovi collaboratori, idee e rinnovata filosofia, per dar vita ad una versione che implementi le azioni tipiche dei social odierni, un database di informazioni tecniche, news e servizi fruibili da web."
+  about_me_p3: "Conosciuto anche come d4x nasce a Milano nel 1974."
+  ? "abuse reports"
+  : "Segnalazioni di abusi"
+  ? "account settings"
+  : "Impostazioni account"
+  activerecord: 
+    errors: 
+      messages: 
+        record_invalid: "Errori di validazione: %{errors}"
+        taken: "è stato già assegnato"
+  human:
+    storage_units:
+      units:
+        KB: "KB"
+  activities: Attività
+  ? "add image"
+  : "Aggiungi immagine"
+  ? "add to ring"
+  : "Aggiungi al Network"
+  add_tag: "Aggiungi TAG"
+  ? "admin blog"
+  : "Gestione Blog"
+  ? "admin links"
+  : "Gestione Links"
+  ? "admin quotes"
+  : "Gestione Frasi Celebri"
+  ? "admin terms"
+  : "Gestione Termini"
+  admin_archive: "Gestione Archivio"
+  admin_blog: "Gestione Blog"
+  admin_categories: "Gestione Categorie"
+  admin_links: "Gestione Links"
+  admin_quotes: "Gestione Frasi Celebri"
+  admin_registrations: "Registrazioni Utenti"
+  admin_translations: "Gestione Traduzioni"
+  administrator: Amministratore
+  advisores: Vulnerabilità
+  hash: MD5
+  ago: "fa"
+  aka: "Anche conosciuto come"
+  alerts: Avvisi
+  ? "already in the ring?"
+  : "Sei già Registrato?"
+  ? "alternative_self_definition"
+  : "Definizione alternativa"
+  anon_level: "Anon level"
+  anything: tutti
+  app_desc: "Information Security Corner"
+  app_keywords: "pentest, hacking, network security, pentest, malware analysis, d4x1974,netevil,davide gonnella,it security, giac, gcih, gcfa,exploits, vulnerabilities, vulns, security advisors, coding, ruby, openbsd, cyber war news, underground news, zeroday, 0day"
+  app_title: "tortuga :: Information Security Corner"
+  approved: Approvato
+  attachment: Allegato
+  author: Autore
+  authors: Autori
+  auto-draft: Auto-Bozza
+  avatar: "Carica Foto"
+  back: Indietro
+  ? "become a premium member today!"
+  : "Diventa un membro premium oggi!"
+  bio: Bio
+  birthday: "Nascita"
+  blog: Blog
+  books: "Libri Interessanti"
+  by_clicking: "Registrandoti o utilizzando il sito stai indicando che hai letto, compreso e accetti le condizioni e i termini di utilizzo"
+  category: Categoria
+  categories: Categorie
+  challenges: "Prove di Abilità"
+  ? "change your password"
+  : "Modifica la tua password"
+  chat: Chat
+  ? "chat room (soon)"
+  : "Chat (prossimamente)"
+  ? "check nick availability"
+  : "Verifica disponibilità"
+  check_proxy: "Controlla Proxy"
+  choose: seleziona
+  ? "click here if you want to be redirect to the homepage"
+  : "clicca qui se vuoi essere reindirizzato alla homepage"
+  closed: Chiusi
+  code: Codice
+  comment: Commento
+  comment_status: "Stato Commenti"
+  commented: ha commentato
+  comments: Commenti
+  completess: "Percentuale completata"
+  conditions: Condizioni
+  conditions_ua_tit: "Accordo con l'utente"
+  conditions_user_agr: "Accedendo a questo sito web, l'utente ne accetta i termini, le condizioni d'uso, tutte le leggi e i regolamenti applicabili. Accetta altresì di essere responsabile del rispetto di qualsiasi legge locale vigente. Se l'utente non è d'accordo con nessuna di queste condizioni, gli è vietato l'utilizzo e/o l'accesso al sito. "
+  conditionz: Condizioni
+  confirm: Conferma
+  contact: Contatti
+  content: Contenuto
+  content_type: "Contenuto File"
+  ? "cool links"
+  : "Cool Links"
+  country: Nazione
+  ? "country blocks"
+  : "Subnet per Nazione"
+  ? "crack hashes"
+  : "Crack hashes"
+  crack_wireless: "Crack Wireless"
+  credits: Ringraziamenti
+  ? "credits friends txt"
+  : "Credits friends txt"
+  ? "credits intro"
+  : "Credits intro"
+  ? "credits sponsors txt"
+  : "Credits sponsors txt"
+  ? "credits team txt"
+  : "Credits team txt"
+  ? "credits tech txt"
+  : "Credits tech txt"
+  crew: Staff
+  current: Attuale
+  ? "currently you have"
+  : "Attualmente hai"
+  cv: "Curriculum Vitae"
+  cve: Cve
+  dashboard: Bacheca Personale
+  date: 
+    abbr_day_names: 
+      - "Lu"
+      - "Ma"
+      - "Me"
+      - "Gi"
+      - "Ve"
+      - "Sa"
+      - "Do"
+    abbr_month_names: 
+      - ~
+      - "Gen"
+      - "Feb"
+      - "Mar"
+      - "Apr"
+      - "Mag"
+      - "Giu"
+      - "Lug"
+      - "Ago"
+      - "Set"
+      - "Ott"
+      - "Nov"
+      - "Dic"
+    day_names: 
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+    formats: ~
+    month_names: 
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+    order: 
+      - ""
+      - ""
+      - ""
+  datetime: 
+    distance_in_words:
+      about_x_hours:
+        one: "circa un'ora"
+        other: "circa %{count} ore"
+      about_x_months:
+        one: "circa un mese"
+        other: "circa %{count} mesi"
+      about_x_years:
+        one: "circa un anno"
+        other: "circa %{count} anni"
+      almost_x_years:
+        one: "quasi un anno"
+        other: "quasi %{count} anni"
+      half_a_minute: "mezzo minuto"
+      less_than_x_minutes:
+        one: "meno di un minuto"
+        other: "meno di  %{count} minuti"
+      less_than_x_seconds:
+        one: "meno di 1 secondo"
+        other: "meno di %{count} secondi"
+      over_x_years:
+        one: "oltre 1 anno"
+        other: "oltre %{count} anni"
+      x_days:
+        one: "1 giorno"
+        other: "%{count} giorni"
+      x_minutes:
+        one: "1 Minuto"
+        other: "%{count} minuti"
+      x_months:
+        one: "1 mese"
+        other: "%{count} mesi"
+      x_seconds:
+        one: "1 secondo"
+        other: "%{count} secondi"
+    prompts: 
+      day: Giorno
+      hour: Ora
+      minute: Minuto
+      month: Mese
+      second: Secondi
+      year: Anno
+  del_tag: "Elimina TAG"
+  description: Descrizione
+  destination: Indirizzo
+  destroy: Elimina
+  devise: 
+    confirmations: 
+      confirmed: "Il tuo account e stato confermato con successo. Ora sei iscritto a Tortuga."
+      destroyed: "Ciao! Il tuo accont è stato cancellato con successo. Speriamo di rivederci presto!"
+      inactive_signed_up: "Sei stato registrato correttamente. Tuttavia, non possiamo farti accedere in quanto il tuo account è %{reason}."
+      reasons: 
+        inactive: inattivo
+        locked: bloccato
+        unconfirmed: "non confermato"
+      send_instructions: "In pochi minuti riceverai un email con le istruzioni per la procedura di conferma del tuo account."
+      send_paranoid_instructions: "Se la tua email esiste nel nostro archivio, riceverai un email con le istruzioni per la procedura di conferma del tuo account."
+      signed_up: "Benvenuto, sei stato registrato con successo."
+      signed_up_but_inactive: "Sei stato registrato con successo, ed il tuo account non è stato ancora attivato."
+      signed_up_but_locked: "%u%n"
+      signed_up_but_unconfirmed: "Un messaggio con un link di conferma è stato spedito al tuo indirizzo email. Per favore apri il link per attivare il tuo account."
+      updated: "Hai aggiornato il tuo account con successo"
+    failure: 
+      already_authenticated: "Sei gia autenticato."
+      inactive: "Il tuo account non e stato ancora attivato."
+      invalid: "Username or Password non validi."
+      invalid_token: "Token di autenticazione non valido."
+      locked: "Il tuo account e bloccato."
+      not_approved: "Il tuo account non è ancora stato approvato da un amministratore"
+      timeout: "La tua sessione e scaduta, effettua nuovamente laccesso."
+      unauthenticated: "Devi effettuare l'accesso o registrarti per continuare."
+      unconfirmed: "Devi confermare il tuo indirizzo email prima di continuare."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Istruzioni per la conferma"
+      reset_password_instructions: 
+        subject: "Istruzioni per il reset della password"
+      unlock_instructions: 
+        subject: "Istruzioni sblocco"
+    omniauth_callbacks: 
+      failure: "Accesso non autorizzato a %{kind} in quanto %{reason}."
+      success: "Autorizzato con successo a %{kind} account."
+    passwords: 
+      no_token: "Hai aggiornato il tuo account con successo ma abbiamo bisogno di verificare il tuo nuovo indirizzo email. Controlla la tua posta che apri il link di conferma del tuo nuovo indirizzo. Grazie."
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "Se il tuo indirizzo email esiste nel nostro archivio, riceverai un link via mail con le istruzioni per il recupero della password"
+      updated: "La tua password e stata aggiornata con successo. Ora sei autenticato."
+      updated_not_active: "La tua password e stata aggiornata con successo."
+    registrations: 
+      destroyed: "Ciao! Il tuo account e stato cancellato con successo. Speriamo di rivederci presto."
+      inactive_signed_up: "La tua registrazione ha avuto successo. Tuttavia non possiamo farti accedere in quanto il tuo account è %{reason}."
+      reasons: 
+        inactive: inattivo
+        locked: bloccato
+        unconfirmed: "non confermato"
+      signed_up: "Benvenuto! Accesso effettuato con successo."
+      signed_up_but_inactive: "Ti sei registrato con successo. Tuttavia non può ancora accedere in quando il tuo account non è stato ancora attivato."
+      signed_up_but_locked: "Ti sei registrato con successo. Tuttavia non puoi accedere in quanto il tuo account è bloccato."
+      signed_up_but_unconfirmed: "Un messaggio con un link di conferma è stato spedito al tuo indirizzo email. Apri il link per attivare il tuo account."
+      update_needs_confirmation: "Hai aggiornato il tuo account con successo ma abbiamo bisogno di verificare il tuo nuovo indirizzo email. Controlla la tua posta che apri il link di conferma del tuo nuovo indirizzo. Grazie."
+      updated: "Il tuo account e stato aggiornato con successo."
+      users: 
+        signed_up_but_not_approved: "La registrazione ha avuto successo, tuttavia non puoi ancora accedere in quanto è necessaria l'approvazione di un amministratore"
+    sessions: 
+      signed_in: "Accesso effettuato con successo."
+      signed_out: "Logout effettuato con successo."
+    unlocks: 
+      send_instructions: "Riceverai un email con le istruzioni di sblocco per il tuo account."
+      send_paranoid_instructions: "Se l'account esiste, riceverai in pochi minuti un email con le istruzioni per lo sblocco."
+      unlocked: "Il tuo account e stato attivato. Ora puoi effettuare l'accesso."
+  disclaimer: "I materiali contenuti nel sito Tortuga sono forniti così come sono. Tortuga non fornisce alcuna garanzia, espressa o implicita e declina e nega tutte le altre garanzie, comprese e senza limitazioni, garanzie o condizioni implicite di commerciabilità e idoneità per un particolare scopo o non violazione della proprietà intellettuale o altra violazione dei diritti. Inoltre, Tortuga non garantisce l'accuratezza, i risultati probabili, o l'affidabilità nell'utilizzo dei materiali contenuti nel proprio sito Internet o su altri siti collegati."
+  disclaimer_tit: "Dichiarazione di non responsabilita'"
+  ? "disclose date"
+  : "Data di rilevazione"
+  dislike: "Non Piace"
+  dowloads: Download
+  ? "download area"
+  : "Area download"
+  downloads: Downloads
+  draft: Bozze
+  edit: Modifica
+  edition: Edizione
+  ? "edition:"
+  : Edizione
+  email: Email
+  email_address: "Indirizzo Email"
+  english: Inglese
+  enter: Entra
+  entry_welcome0: "After years Tortuga comes back on the web with the mission to offer the information security community, another place to get in touch, learn, collaborate, and have fun with technologies. "
+  error: "Errore di validazione"
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "deve essere accettato"
+      already_confirmed: "e' stata gia' confermata, prova l'accesso"
+      blank: "non può essere vuoto"
+      confirmation: "Non è uguale alla conferma"
+      empty: "Non può essere vuoto"
+      equal_to: "deve essere uguale a %{count}"
+      even: "deve essere uguale"
+      exclusion: "è riservata"
+      expired: "e' scaduta, richiedine una nuova"
+      greater_than: "deve essere maggiore di %{count}"
+      greater_than_or_equal_to: "deve essere maggiore o uguale a %{count}"
+      inclusion: "non è incluso nella lista"
+      invalid: "è invalida"
+      less_than: "deve essere minore di %{count}"
+      less_than_or_equal_to: "deve essere minore o uguale a %{count}"
+      not_a_number: "non è un numero"
+      not_an_integer: "deve essere un intero"
+      not_found: "non trovato"
+      not_locked: "non era bloccato"
+      not_saved: 
+        one: "Un errore ha impedito l'esecuzione:"
+        other: "%{count} errori hanno impedito l'esecuzione:"
+      odd: "deve essere compreso"
+      taken: "Indirizzo email già registrato"
+      too_long: "è troppo lungo (massimo %{count} caratteri)"
+      too_short: "è troppo corta (minimo è %{count} caratteri)"
+      wrong_length: "è della dimensione errata (dovrebbe essere %{count} caratteri)"
+  event: Evento
+  events: Eventi
+  ? "events around the world"
+  : "Eventi in giro per il mondo"
+  ? "exploitable ?"
+  : "Utilizzabile ?"
+  exploits: Exploits
+  ? "external link"
+  : link
+  facebook: "Facebook"
+  failed: Respinto
+  failure: 
+    not_approved: "Il tuo account potrebbe non esser stato ancora validato"
+  ? "famous quotes"
+  : "Frasi celebri"
+  faqs: FAQ
+  ? "fill up your contacts"
+  : "Completa i tuoi contatti"
+  first: Nome
+  firstname: Nome
+  footer-menuitem-about: Info
+  footer-menuitem-abuse: "Riporta Abuso"
+  footer-menuitem-archive: Archivio
+  footer-menuitem-bugs: "Segnala un Bug"
+  footer-menuitem-causes: "Cause benefiche"
+  footer-menuitem-chat: Chat
+  footer-menuitem-conditions: Condizioni
+  footer-menuitem-credits: Ringraziamenti
+  footer-menuitem-defenses: Difese
+  footer-menuitem-events: "Eventi di Hacking nel mondo"
+  footer-menuitem-exploits: Exploits
+  footer-menuitem-faq: FAQ
+  footer-menuitem-geekstuff: Geek
+  footer-menuitem-home: Home
+  footer-menuitem-links: "Collegamenti Esterni"
+  footer-menuitem-pgp-key: "Chiave PGP"
+  footer-menuitem-privacy-policy: "Condizioni Privacy"
+  footer-menuitem-quotes: "Frasi Famose"
+  footer-menuitem-snippets: "Frammenti di Codice"
+  footer-menuitem-ssl: "Solo SSL"
+  footer-menuitem-tools: "Strumenti Software"
+  footer-menuitem-vulns: Vulnerabilità
+  footer-menuitem-whatis: "Cos'è Tortuga"
+  ? "forgot your password"
+  : "Password dimenticata?"
+  forgot_password: "Hai dimenticato la password?"
+  forgot_your_password: "Hai dimenticato la password?"
+  form: "Da"
+  friends: "Amici"
+  from: "Da:"
+  TO: "A:"
+  CC: "CC:"
+  BCC: "BCC:"
+  theme: "Tema grafico"
+  out of ring: "Rimuovi"
+  add to ring: "Aggiungi"
+  updates: "Notifiche"
+  ring shots: "In condivisione"
+  no news: "Nuovi Messaggi"
+  other connections: "altre fuori dal tuo network"
+  subject: "Oggetto:"
+  body: "Messaggio:"
+  save draft: "Salva Bozza"
+  compose new mail: "Nuovo Messaggio Email"
+  inbox: "Ricevuta"
+  compose: "Nuova Mail"
+  discard: "Cancella"
+  send: "Spedisci"
+  gate_sms: "Spedisci SMS"
+  gender: Sesso
+  general: Generale
+  ? "general info"
+  : "Informazioni generali"
+  gid: Gid
+  ? "global tags"
+  : "TAGS globali"
+  headline: Titolo
+  help: Aiuto
+  ? "help center"
+  : Assistenza
+  help001: Help001
+  help002: Help002
+  helpers: 
+    button: 
+      create: "Crea %{model}"
+      submit: "Salva %{model} "
+      update: "Aggiorna %{model}"
+    select: 
+      prompt: "Per favore seleziona"
+    submit: 
+      create: "Crea %{model}"
+      submit: "Salva %{model}"
+      update: "Aggiorna %{model}"
+  home: Home
+  home_intro0: "Benvenuto su Tortuga! Attualmente l'applicazione è ancora in fase di sviluppo e momentaneamente è consentito l'accesso ai soli collaboratori in quanto stiamo opererando sul backoffice, sui contenuti ed effettuando test di regressione e  di sicurezza."
+  home_intro1: "Siamo alla ricerca di programmatori ruby, sistemisti unix, e redattori di contenuti. Se sei interessato  o hai segnalazioni da inoltrarci, scrivici all'indirizzo staff[at]Tortuga."
+  home_intro2: "Nota: Tutte le richieste di attivazione rimangono valide e verranno attivate all'apertura del sito e sarà confermata attraverso un messaggio mail al vostro indirizzo di riferimento."
+  home_intro3: "Tortuga's staff"
+  home_lb: Home
+  hosted: "Tipo Hosting"
+  ? "hosted files_tit"
+  : "File Ospitati"
+  hosted_files: "Su Tortuga non ci sono numeri di serie, crack, warez, etc.; le richieste di materiale illegale sono idirizzate ad un'interlocutore sbagliato e vengono pertanto ignorate."
+  ? "how to subscribe"
+  : "Come iscriversi"
+  ? "i agree with terms and conditions"
+  : "Aderisco alle condizioni, privacy policy e utilizzo cookie"
+  iberbox_p2: iberbox_p2
+  icon-advisores: Vulnerabilità
+  icon-archive: Downloads
+  icon-authors: Autori
+  icon-back: Indietro
+  icon-blog: Blog
+  icon-categories: Categorie
+  icon-causes: "Supporta cause benefiche con Tortuga"
+  icon-cencel: Annulla
+  icon-chat: Chat
+  icon-credits: Ringraziamenti
+  icon-dashboard: Plancia
+  icon-defenses: Vulnerabilità
+  icon-delete: Elimina
+  icon-downloads: Downloads
+  icon-edit: Modifica
+  icon-events: Eventi
+  icon-exploits: Exploits
+  icon-gatesms: "Spedisci SMS"
+  icon-geekstuff: "Materiale Interessante"
+  icon-home: Home
+  icon-invitations: "Spedisci Invito"
+  icon-links: Collegamenti
+  icon-logout: Esci
+  icon-mailboxes: "Casella Mail"
+  icon-messages: Messaggi
+  icon-newpost: "Nuovo Post"
+  icon-notification: Notifiche
+  icon-notifications: Notifiche
+  icon-options: Opzioni
+  icon-orders: Ordini
+  icon-papers: Documenti
+  icon-posts: "Gestione Blog"
+  icon-profile: "Personal Profile"
+  icon-proxies: "Server Proxy"
+  icon-quotes: Blog
+  icon-ranking: Posizione
+  icon-requests: Richieste
+  icon-ring-of-trust: "Il mio network"
+  icon-rules: Regole
+  icon-save: Salva
+  icon-search: Ricerca
+  icon-share: Condividi
+  icon-show: Visualizza
+  icon-signin: Accedi
+  icon-sms: "Spedisci SMS"
+  icon-snippets: Frammenti
+  icon-statz: Statistiche
+  icon-tags: "Parole Chiave"
+  icon-tools: Download
+  icon-translations: Traduzioni
+  icon-uberbox: "Uberbox Mail"
+  icon-updates: Aggiornamenti
+  icon-users: Utenti
+  icon-video: Video
+  icon-videos: Video
+  icon-vulns: Vulnerabilità
+  icon-wall: "Bacheca pubblica"
+  icon-whoson: "Chi è online?"
+  id: identificativo
+  ? "im uin"
+  : "Nome utente messaggi istantanei"
+  image: Immagine
+  index_p0: "Dopo anni Tortuga torna sul web con la missione di offrire alla comunita' di sicurezza informatica, un altro luogo per socializzare, imparare, collaborare e divertirsi con le tecnologie. Ci concentreremo su: penetration testing, news e eventi di hacking, tools e altre sezioni che riterremo interessanti."
+  index_p3: "Tortuga non incoraggia ne approva qualsiasi attivita' illegale. Riguardo le tecniche e strumenti più offensivi, ricordiamo che si possono migliorare le abilita' utilizzando un vostro laboratorio virtuale, ma nella realta' per poterlo effettuare è necessaria una richiesta scritta del cliente o un'autorizzazione formale da parte delle Autorita'. "
+  index_p1: "Con le recenti rivelazioni riguardanti i sistemi sorveglianza, che impattano prevalentemente le infrastrutture di rete, abbiamo deciso per il momento di concentrarci sulla sicurezza applicativa e tutela della privacy dei nostri utenti." 
+  index_p2: "Tecnicamente seguendo ed implementando le miglior pratiche di sviluppo, per contrastrare al meglio ogni tipologia di attacco all'applicazione."
+  index_p2a: "Sarà poi indispensabile l'ausilio di canali di comunicazione con significativi livelli di cifratura, sistemi di posta elettronica crittografati ed evoluzioni nel backend, sempre con un occhio alle tecnologie che supportano comunicazioni tramite scambio di chiavi."
+  inherit: Eredita
+  interests: Interessi
+  ? "invite to join"
+  : Invita
+  ip: Ip
+  ? "it mini store"
+  : "Mini store"
+  italian: Italiano
+  iuberbox_p2: Iuberbox_p2
+  javascript_disabled: "Devi abilitare Javascript per utilizzare Tortuga correttamente"
+  keep_me_logged: "Ricorda Credenziali"
+  lang: Lingua
+  language: Lingua
+  last: Cognome
+  last_seen_online: "Ultima volta online"
+  lastname: Cognome
+  ? "latest registration"
+  : "Ultima registrazione"
+  like: "Mi piace"
+  likings: Gusti
+  limitations: "In nessun caso Tortuga o i suoi fornitori saranno responsabili per danni (inclusi, senza limitazioni, danni per perdita di dati o profitti, o a causa di interruzione di attivita') derivanti dall'uso o dall'impossibilità di utilizzare i materiali presenti sul proprio sito, anche se Tortuga o un rappresentante autorizzato di Tortuga è stato avvisato oralmente o per iscritto della possibilità di tali danni. Poichè alcune giurisdizioni non ammettono limitazioni di garanzie implicite o limitazioni di responsabilità per danni diretti o indiretti, tali limitazioni si applicano nella misura massima possibile, in quelle giurisdizioni. "
+  limitations_tit: Limitazioni
+  linkedin: "Linkedi  n"
+  links: "Tortuga non ha esaminato tutti i siti collegati al proprio e non e' pertanto responsabile del contenuto quest'ultimi. La presenza di qualsiasi link non implica l'approvazione degli stessi da parte di Tortuga. L'utilizzo di tali siti web collegati è a rischio e pericolo dell'utente."
+  links-tit: Collegamenti
+  links_tit: Collegamenti
+  ? "listing links"
+  : "Gestione Link Esterni"
+  ? "listing posts"
+  : "Lista dei Post"
+  ? "listing quotes"
+  : "Gestione Frasi Celebri"
+  ? "listing tags"
+  : "Parole chiave listate"
+  ? "listing users"
+  : "Registrazioni Utenti"
+  loading: Attendere Prego
+  loc: Loc
+  locale: Lingua
+  target_address: "Indirizzo Email Invitato"
+  send invitation!: "Spedisci Invito"
+  fullname: "Nome completo"
+  login: Accedi
+  logout: Esci
+  invite_from: "Invito da:"
+  mailboxes: "Caselle di posta"
+  maildir: Maildir
+  ? "manage users"
+  : "Gestione Utenti"
+  member_menu_tit: "Master Menu"
+  members: Utenti
+  menu_admin: Amministratore
+  menu_premium_member: "Utente Premium"
+  metasploit?: Metasploit?
+  mobile: Cellulare
+  ? "moderate comments"
+  : "Moderazione Commenti"
+  more: "...altri"
+  name: Link
+  nav_menu_item: "Voce Menu"
+  ? "new Paper"
+  : "Nuovo documento"
+  ? "new link"
+  : "Aggiungi un nuovo Link"
+  ? "new post"
+  : "Aggiungi Nuovo Post!"
+  ? "new quote"
+  : "Aggiungi una Frase"
+  ? "new session_url"
+  : "Nuova sessione url"
+  new_post: "Nuovo Post"
+  new_tag: "Nuovo TAG"
+  ? "newbie lifestyle basic rule"
+  : "Regole di base per Newbie"
+  nick: Nick
+  nickname: Nome Utente
+  notes: nota
+  notification: Notifiche
+  notifications: Notifiche
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        significant: falso
+        strip_insignificant_zeros: falso
+        unit: $
+    format: 
+      delimiter: ","
+      separator: "."
+      significant: falso
+      strip_insignificant_zeros: ""
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Miliardo
+          million: Milione
+          quadrillion: Quadriglione
+          thousand: Mille
+          trillion: Triglione
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+  ? "official page"
+  : ""
+  ? "online visitors"
+  : ""
+  online?: Online?
+  open: Aperti
+  operator: Operatore
+  option: Opzione
+  options: Opzioni
+  ? "options list"
+  : ""
+  orders: Ordini
+  ? "out of my ring"
+  : "Fuori dal Network"
+  owner: suggeritore
+  page: Pagina
+  papers: Documenti
+  password: Password
+  payments: Pagamenti
+  ? "pending notifications"
+  : "Nuove Notifiche"
+  people: Persone
+  ? "people you may know"
+  : "Persone che potresti conoscere"
+  ? "people, in your ring of trust"
+  : "Persone nel tuo cerchio della fiducia"
+  performances: Prestazioni
+  phil_p0: "La Sicurezza Informatica al giorno d'oggi riguarda un po' tutti: persone, aziende o organizzazioni in generale. Potremmo pensare di avere già un alto livello di sicurezza e sperare che nessuno mai si impadronisca dei nostri dati ma questo non e' un mondo perfetto e dobbiamo difenderci; essere attaccati non e' una questione di se, ma di quando."
+  phil_p1: "Sul piano difensivo non pensiamo che la sicurezza fatta  attraverso l'oscurità delle informazioni di vulnerabilità dei sistemi sia la soluzione migliore.  La filosofia contrapposta che supportiamo invece riguarda il movimento full-disclosure, ovvero confidiamo che la piena divulgazione delle vulnerabilità ed exploits, costringa le parti coinvolte a proteggersi, innalzando il livello di sicurezza e contribuendo alla naturale evoluzione tecnologica di tutta la comunità."
+  phil_p2: "Riguardo al lato più offensivo della security pensiamo che il test di penetrazione sia molto utile per valutare i veri punti deboli di una organizzazione, ignorando totalmente la loro percezione di sicurezza. Solitamente tutti i dati acquisiti in questi test vengono utilizzati per 'imparare la lezione' e innalzare i livelli di difesa."
+  phil_p3: "Penetration testing is very useful for evaluate real weaknesses of an organization, ignoring totally their perception of security. Usually all data gained in a these tests are used to learn the lesson and improve defense levels."
+  philosophy_tit: Filosofia
+  photo: Foto
+  picture: Foto Profilo
+  ping_status: "Stato Ping"
+  platform: Piattaforma
+  poc: Poc
+  points: Punti
+  port: Porta
+  portfolio: Portfolio
+  post: Post
+  posted_by: "Pubblicato da"
+  premium: "Soci Premium"
+  ? "preview home"
+  : "Anteprima home"
+  private: ""
+  priviledges: ""
+  profile: Profilo
+  ? "profile successfully updated"
+  : "Sezione profilo aggiornata con successo."
+  ? "profile successfully updated5"
+  : "Profilo aggiornato con successo."
+  proxies: "Proxy Servers"
+  ? "proxies database"
+  : "Database proxies "
+  ? "proxy checker"
+  : "Controlla proxy "
+  public: ""
+  publish: Pubblicato
+  published: Pubblicato
+  qtext: Frase
+  qualifications: Qualifiche
+  quota: Quota
+  quote: Citazione
+  quotes: "Frasi Celebri"
+  rainbow: "Rainbow crack"
+  ranking: Posizione
+  rankings: Classifiche
+  rating: punteggio
+  read: Letto
+  reason: Motivazioni
+  ? "recent posts"
+  : "Ultimi Post "
+  ? "ref url"
+  : "Url di riferimento"
+  register: Registrati
+  registrations: Registrazioni
+  ? "report a bug"
+  : "Segnala un errore"
+  ? "report abuse"
+  : "Segnala un abuso"
+  requests: Richieste
+  resend_unlock_instructions: "Rispedisci Istruzioni di Sblocco"
+  revision: Revisione
+  revisions_errata: "I materiali che appaiono sul sito web Tortuga potrebbero includere errori tecnici, tipografici o fotografici. Tortuga non garantisce che i materiali contenuti nel proprio sito web siano accurati, completi o aggiornati. Tortuga può apportare modifiche in qualsiasi momento senza preavviso. Tortuga inoltre non si assume alcun impegno ad aggiornare i materiali."
+  revisions_tit: "Revisioni ed Errata Corriege"
+  rights: "(c) 2013 Tortuga - Tutti i diritti riservati"
+  ? "ring members"
+  : ""
+  ? "ring of trust"
+  : Cerchio
+  rule: Regola
+  rule_1: "rule#1  Don't be manipulated"
+  rule_2: "rule#2  "
+  rule_3: "rule#3: Trust no one "
+  rule_4: "rule#4: Do not assume anything"
+  rule_5: "rule#5: Be paranoid, stay paranoid"
+  rule_6: "rule#6  "
+  rule_7: "rule#7  "
+  rule_8: "rule#8  "
+  rule_9: "rule#9  "
+  rules: Regole
+  save: Salva
+  ? "save settings"
+  : "Salva impostazioni"
+  search: Ricerca
+  section: Sezione
+  sender: Mittente
+  sent: Inviate
+  ? "sent invitations"
+  : ""
+  ? "sent sms"
+  : "Sms inviato"
+  ? "set your avatar"
+  : "Imposta il tuo avatar"
+  set_language: Lingua
+  settings: Impostazioni
+  severity: Difficoltà
+  ? "shared items"
+  : ""
+  shared_by: "Condiviso da"
+  show: Visualizza
+  sign: Segno
+  ? "sign in"
+  : Accedi
+  ? "sign in or"
+  : "Accedi o"
+  ? "sign up"
+  : Registrati
+  sign_up: "Sei nuovo? Registrati"
+  size: Dimensione
+  skype: "Skype"
+  slug: Slug
+  smsGate: SmsGate
+  snippets: Frammenti
+  socks_type: "Socks type"
+  source: Sorgenti
+  sponsors: Sostenitori
+  statistics: Statistiche
+  status: Stato
+  statz: Statistiche
+  stuff: Materiale
+  subscription: Sottoscrizione
+  summary: Sommario
+  support: 
+    array: 
+      last_word_connector: ", and"
+      two_words_connector: and
+      words_connector: ","
+  tags: "Parole chiave"
+  target: destinazione
+  task: ""
+  technologies: Tecnologie
+  telefone: Telefono
+  telephone: "Numero di telefono"
+  temp_msg: "Nota : Stiamo ancora sviluppando, momentaneamente è consentito l'accesso unicamente allo staff"
+  term_group: "Term group"
+  terms: "Tortuga può modificare le condizioni d'uso per il priprio sito web in qualsiasi momento senza preavviso. Utilizzando il presente sito web l'utente accetta di essere vincolato alla versione in vigore dei Termini e Condizioni d'Uso."
+  ? "terms and conditions"
+  : Condizioni
+  terms_footer: " di Tortuga"
+  terms_tit: "Modifica delle Condizioni d'Utilizzo"
+  tests: Test
+  text: Testo
+  ? "the Page You Were Looking For Doesn't Exist"
+  : "La pagina che stai cercando non esiste"
+  ? "the page you were looking for doesn't exist"
+  : "La pagina che stavi cercando non esiste"
+  tit_signin_box: "Accesso Tortuga"
+  title: Titolo
+  title_welcome: "Benvenuto su Tortuga"
+  tools: Download
+  toolz: Programmi
+  top_links: "Top Links"
+  trash: Cestino
+  twitter: "Twitter"
+  type: Tipo
+  types: Generi
+  uberbox: Uberbox
+  uberbox_order: uberbox_order
+  uberbox_p0: uberbox_p0
+  uberbox_p1: uberbox_p1
+  uberbox_p2: uberbox_p2
+  uberbox_tit: uberbox_tit
+  uberlabel: ""
+  uboxorder_p0: uboxorder_p0
+  uboxorder_p1: uboxorder_p1
+  uboxorder_p2: uboxorder_p2
+  uid: Uid
+  ? "unauthorized operation"
+  : "Operazione non Autorizzata"
+  unknown: ""
+  ? "update contacts"
+  : "Aggiorna Contatti"
+  ? "update password"
+  : "Imposta Password"
+  upload: Carica
+  url: URL
+  userid: E-mail
+  value: Valore
+  verified: Verificato
+  video_group: Video_group
+  videos: Video
+  ? "view comments"
+  : "Vedi i commenti"
+  visible: visibile
+  visitors: Visitatori
+  vulnerabilities: Vulnerabilità
+  wall: Muro
+  warVPN: WarVPN
+  wargames: "Giochi di guerra"
+  ? "website language"
+  : "Linguaggio web preferito"
+  welcome: Benvenuto
+  welcome_folks: "Benvenuto su Tortuga"
+  ? "what is tortuga"
+  : "Cos'è tortuga"
+  ? "what you get"
+  : "Cosa ottieni"
+  ? "what you wanna share today? leave your 2Ç!"
+  : "Che cosa vuoi condividere oggi? Lascia 2Ç!"
+  whatis: "Tortuga staff vuole offrire servizi di rete sicuro e informazioni legate al mondo dell'Information Security\n"
+  whatis_lb: "Cos'è Tortuga"
+  whatis_tit: "Cos'e' Tortuga"
+  whatistortugait: "What is Tortuga"
+  when: Il
+  where: ""
+  will_paginate: 
+    next_label: "Sucessivo &#8594;"
+    page_entries_info: 
+      multi_page: "Visualizzazione %{model} %{from} - %{to} di %{count} in totale"
+      multi_page_html: "Visualizzazione %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> di <b>%{count}</b> in totale"
+      single_page: 
+        one: "Visualizzazione 1 %{model}"
+        other: "Visualizzazione completa %{count} %{model}"
+        zero: "Non trovato %{model}"
+      single_page_html: 
+        one: "Visualizzazione <b>1</b> %{model}"
+        other: "Visualizzazione <b>tuttil&nbsp;%{count}</b> %{model}"
+        zero: "Non trovato %{model} "
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Precedente"
+  year: Anno
+  ? "yes"
+  : "yes"
+  ? "you dont like this post"
+  : "Non ti piace"
+  ? "you have"
+  : Hai
+  ? "you like this post"
+  : "Ti piace"
+  ? "you may have mistyped the address or the page may have moved"
+  : "potresti aver sbagliato a scrivere l'indirizzo o la pagina che cercavi è stata spostata"
+  web statistics: "Statistiche"
+  global settings: "Opzioni"
+  8109 orders: "Ordini"
+  admin mailboxes: "Caselle Posta"
+  megaM4X: "Database"
+  translations: "Traduzioni"
+  d4xboard: "Cruscotto"
+  prod & services: "Listino"
+  simple_captcha:
+    label: "Inserisci il codice sopra"
+  join us today: "Registrazione"
+  confirm account: "Conferma Email"
+  unlock instructions: "Sblocco Account"
+  forgot password: "Recupera Password"
+  resend confirmation instructions: "Spedisci Istruzioni"
+  areas: "Aree"
+  Unhappy?: "Non sei soddisfatto?"
+  Cancel my account: "Cancella il mio Account"
+  homepage: "Homepage personale"
+  second address: "Indirizzo Email aggiuntivo"
+  alternative self definition: "Definizione Personale"
+  update: "Aggiorna"
+  frequency: "Frequenza"
+  costs: "Costi"
+  disclose_date: "Data divulgazione"
+  content type: "Tipo contenuto"
+  last seen_online: "Ultimo controllo"
+  ref_url: "URL Rif."
+  md5: "MD5"
+  author_contact: "Contatto Autore"
+  what you wanna share today?: "Condividi col tuo network"
+  confirmation: "Conferma"
+  new password: "Nuova Password"
+  current password: "Password attuale"
+  key: "Chiave"
+  user_id: "ID Utente"
+  "joined on": "Registrato il"
+  "in the main ring for": "Nel network da"
+  "% profile completeness": "% Completamento Profilo"    
+  "own ring members": "Componenti del network"
+  "visibility in other rings": "Visibilità in altri network"
+  "posts": "Numero di post"
+  "reputation": "Reputazione"
+  "Posizion": "Posizione"
+  "test points": "Punti nel Test"     
+  "self definition": "Definizione personale"
+  others: "Altri"
+  newcomment: "Scrivi un commento..."
+  be the first to like this: "Aggiungi la tua sensazione per primo"
+  person likes this: " persona ha messo mi piace"
+  unlike: "togli mi piace"
+  undislike: "togli non mi piace"
+  message: "Tipo:"
+  tox: "A:"
+  attach file(s): "Allega:"
+  HTML: "HTML"
+  TEXT: "Testo"
+  home_welcome: "Inizia subito, senza alcun costo"
+  format: "format"
+  KB: "KB"
+  content type: "Contenuto File"
+  sha256: "SHA256"
+  Find!: "Cerca"
+  disconnect: "Disconnetti"
+  cfp: "Call for Papers"
+  first name: "Name"
+  city: "città"
+  forgot password: "Recupera Password"
+  keep me logged: "Ricorda accesso"
+  send us your feedback: "Lascia il tuo feedback!"
+  cover: "Foto di Sfondo"
+  background: "Sfondo"  
+  slides: "Marketing"
+  h4x0r5 store: "tortuga online shop"
+  backstore: "retro negozio"
+  carts: "scontrini"
+  catalog: "catalogo"
+  transactions: "transactions"
+  invoices: "fatture"
+  shippings: "spedizioni"
+  Status: "Stato"
+  Items: "Articoli"
+  Your Shopping Cart: "Il tuo carrello"
+  Total: "Totale"
+  last revision: "Ultima Revisione"
+  in stock: "In Magazzino"
+  brand: "Marca"
+  remote exploits: "Remote Exploits"
+  local exploits: "Local Exploits"
+  shellcodes: "Shellcodes"
+  denial-of-service: "Denial of Service"
+  poc: "Proof Of Concept"
+  other exploits: "Other Exploits"
+  most viewed: "Più Visti"
+  top rated: "Più Votati"
+  last added: "Ultime Aggiunte"
+  zero day: ":: Zero Day ::"
+  windows: "Windows"
+  nix: "Linux / Unix"
+  osx: "OSX"
+  programming: "Programmazione"
+  offensive: "Offensivo"
+  defensive: "Defensivo"
+  networking: "Networking"
+  wireless: "Wireless"
+  other: "Altro"
+  newbie rules: "Regole per neofiti"
+  d4x blog: "d4x blog"
+  security news: "Security News"
+  recent news: "News Recenti"
+  month: " / mese"
+  subscribe!: "Iscriviti"
+  marketing: "Marketing"
+  Tortuga mail system: "Tortuga mail system"
+  total space: "Spazio Totale"
+  sent: "Spedite"
+  inbox: "Arrivate"
+  outbox: "In Uscita"
+  trash: "Cestino"
+  junk: "Spam"
+  important: "Importanti"
+  archivied: "Archiviate"
+  rights2: "(c) 2013 tortuga.tech - Sistema Creato e Ideato da d4x - Tutti i diritti riservati"
+  keys: "Password"
+  mark as: "Segna come"
+  reply: "Rispondi"
+  forward: "Inoltra"
+  privacy by default: "your privacy by default"
+  address book: "Contatti"
+  archive: "Archivia"
+  refresh: "Aggiorna"
+  reply all: "Risp. a tutti"
+  delete: "Elimina"
+  mark: "Segna"
+  age: "Eta'"
+  sex: "Sesso"
+  location: "Luogo"
+  received: "Ricevuta"
+  from: "Da"
+  subject: "Oggetto"
+  recipient: "Destinatario"
+  send plain text: "Solo Testo"
+  tel: "Tel"
+  BCC: "BCC:"
+  TO: "A:"
+  CC: "CC:"
+  no drafts: "Bozze non presenti"
+  Inbox is Empty: "Posta in Arrivo non presente"
+  sent is empty: "Posta Spedita non presente"
+  trash is empty: "Il Cestino e' vuoto"
+  no importants: "Non ci sono messaggi importanti"
+  archive is empty: "L'archivio e' vuoto"
+  junk is empty: "Spam  vuoto"
+  Select a Message to Reply!: "Seleziona il Messaggio a cui rispondere"
+  Select a Message to Reply All: "Seleziona il Messaggio a cui rispondere a tutti"
+  change your password: "Cambia Password"
+  use a custom background: "Utilizza sfondo personalizzato"
+  use a custom header: "Utilizza intestazione personalizzatar"
+  choose your favourite theme: "Imposta tema grafico"
+  choose your language: "Imposta Lingua"
+  Insert First Name: "Inserisci Nome"
+  Last Name: "Cognome"
+  e-Mail Address: "Indirizzo eMail"
+  unknown action: "Azione Sconosciuta"
+  Select Messages to Process: "Seleziona i messaggi da elaborare"
+  Mail Sent Seccessfully: "Mail Spedita con successo"
+  Error while Saving message in Sent Folder: "Errore durante la memorizzazione nella cartella spediti"
+  Error while saving message to Drafts: "Errore durante la memorizzazione nelle bozze"
+  your message has been saved in draft folder.: "Messaggio salvato nella cartella bozze"
+  your message has been discarted: "Il tuo messaggio e' stato scartato"
+  unknow action: "Azione Sconosciuta"
+  Mail Sent Seccessfully: "Email Spedita con Successo"
+  Successfully marked as unread: "Messaggi segnati come da leggere"
+  select an account before continuing: "seleziona un account prima di proseguire"
+  Select an Account to Check: "Seleziona un account da controllare"
+  Select a Message to Reply!: "Seleziona un messaggio a cui rispondere"
+  Select a Message to Reply All: "Seleziona un messaggio a cui rispondere a tutti"
+  Select a Message to Forward: "Seleziona un messaggio da inoltrare"
+  select an account before continuing: "Seleziona un account prima di continuare"
+  Select an Account first: "Seleziona prima un account"
+  Successfully Moved Messages to Trash: "Messaggi spostati nel cestino"
+  Error while moving to Trash: "Errore durante lo spostamento nel cestino "
+  Select Messages to Delete: "Seleziona i Messaggi da Eliminare"
+  Successfully Moved Messages to Junk!: "Messaggi contrassegnati come spam"
+  Error while moving to Junk : "Errore durante lo spostamento in area spam"
+  Select Messages to set Junk: "Seleziona i messaggi da contrassegnare come spam"
+  Successfully Moved Messages to Archive: "Successfully Moved Messages to Archive"
+  Error while moving to Archive : "Errore durante lo spostamento in Archivio"
+  Select Messages to Archive: "Seleziona i Messaggi da Archiviare"
+  Selected Messages Flagged as Important: "Seleziona i messaggi da segnare come importanti"
+  Error While Settings Flag Important on Messages: "Errore durante l'operazione"
+  Select Messages to Flag as Important!: "Seleziona i messaggi da segnare come Importanti"
+  Select an Account first: "Seleziona prima un account" 
+  select an account before continuing: "Seleziona un account prima di continuare"
+  You must to set your Default Account: "Seleziona l'account predefinito"
+  contacts in your address-book: " contatti nella tua rubrica"
+  used space: "Utilizzato"
+  percent used: "Percentuale"
+  available2: "Disponibile"
+  There are No New Messages on: "Non ci sono nuovi messaggi su "
+  You have 1 New Message on: "Hai un nuovo messaggio su "
+  You have: "Hai "
+  New Messages on: " Nuovi Messaggi su "
+  apply: "Applica"
+  change password: "Cambia Password"
+  from name: "Nome Mittente Messaggio"
+  current language: "Lingua Corrente"
+  custom Tortuga: "Custom Tortuga"
+  new passwords: "Nuova Password"
+  your password has been updated: "La tua password e' stata aggiornata "
+  menu-configure: "Configura"
+  menu-create-account: "Crea Casella"
+  menu-about: "Info"
+  menu-contact: "Contatta"
+  menu-package: "Pacchetti"
+  menu-demo: "Live Demo"
+  menu-subscribe: "Sottoscrivi"
+  menu-terms: "Termini"
+  starter: "Starter"
+  premium: "Premium"
+  professional: "Professional"
+  vai: "VAI!"
+  step1: "Passo 1 - Controlla il tuo nome utente preferito"
+  step2: "Passo 2 - Scegli fra i nostri domini"
+  step3: "Passo 3 - Seleziona un pacchetto Tortuga"
+  system: "Sistema"
+  total space: "Spazio Totale"
+  used space: "Utilizzato"
+  available: "Disponibile"
+  resend_unlock_instructions: "Spedisci Istruzioni di Sblocco"
+  compose: "Componi"
+  refresh: "Aggiorna"
+  junk: "Spam"
+  archive: "Archivio"
+  archivied: "Archiviate"
+  important: "Importanti"
+  delete: "Elimina"
+  reply all: "Rispondi Tutti"
+  forward: "Inoltra"
+  mark: "Segna"
+  address book: "Contatti"
+  disk space: "Spazio Disco"
+  folders: "Cartelle"
+  spam: "Spam"
+  contacts: "Contatti"
+  MEGAMAX: "MEGAMAX"
+  backoffice: "backoffice"
+  confirm account: "Conferma Account"
+  unlock instructions: "Istruzioni Sblocco"
+  unfriend: "Disconnetti"
+  home: "Home"
+  age: "Età"
+  tel: "Tel"
+  sex: "Sesso"
+  location: "Luogo"
+  messag3: "Messaggio"
+  connections: "Connessioni"
+  trash: "Cestino"
+  available: "Disponibile"
+  keys: "Password"
+  inbox: "Inbox"
+  sent: "Spedita"
+  reply: "Rispondi"
+  draft: "Bozze"
+  apply: "Applica"
+  settings: "Impostazioni"
+  wit load: "wit load"
+  learn more: "Continua a leggere"
+  view details: "Vedi dettagli"
+  intro_blogs: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+  intro_email: "Il servizio di email che proponiamo ai nostri clienti è fondato sulla sicurezza delle comunicazioni e protezione contro virus, spam e malware. I prodotti si articolano su 3 offerte in base allo spazio disponibile piuttosto che sulle funzionalità. Non ci sono banner o pubblicità sull'interfaccia web che riprende quella dei client di posta tradizionali."
+  intro_email02: "L'account è configurabile con servizi IMAP o POP3, accessibile quindi anche da mobile disponendo di un'alta cifratura del canale. Inoltre seguiamo e implementiamo costantemente tutti gli accorgimenti che possano garantire il massimo della sicurezza e della privacy nelle comunicazioni."
+  intro_social: "Con la nostra offerta gratuita di social media vogliamo offrire un servizio che riparta dagli albori dei social piu diffusi traendo esperienza da ciò che si è evoluto negli ultimi anni. Anche qui la sicurezza dell'applicazione e dei nostri utenti è la nostra priorità. "
+  intro_database: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+  intro_chat: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+  intro_store: "Il nostro negozio online, oltre ai servizi, offre gadget legati al marchio e prodotti tecnologici che riteniamo di interesse per la nostra clientela. Attualmente è in fase di allestimento e selezione dei prodotti."
+  index_marketing_info: "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
+  index_marketing_hello_world: "Benvenuto su Tortuga"
+  index_tecno_hello_world: "Benvenuto su TecnoBike"
+  rights_tecnobike: "2014 TecnoBike.biz - Sistema Ideato e Sviluppato da d4x337 - All rights reserved"
+  empty_cart: "Il Carrello è vuoto"
+  messages: "Messaggi"
+  terms: "Termini e Condizioni"
+  cookies: "Cookies"
+  advertising: "Pubblicità"
+  intro_advertising: "Introduzione Pubblicità"
+  help: "Aiuto"  
+  privacy: "Privacy"
+  zip: "C.A.P."
+  town: "Paese"
+  city: "Città"
+  blog: "Blog"
+  free signup: "Registrati Gratis"
+  read news: "Leggi Notizie"
+  go to store: "Vai allo Store"
+  store: "Negozio"
+  create account: "Crea Account"
+  hope you are fine today: "Spero tu sia in gran forma!"
+  privacy: "Impostazioni Privacy"
+  index_email_info: ""
+  member_for: "Membro da"
+  member_since: "Registrato il"
+  help center: "Centro d'Aiuto"
+  index_help_Center: ""
+  index_blog_info: " "
+  upcoming features: "Funzionalità in arrivo"
+  credits: "Ringraziamenti"
+  about the author: "L'Autore"
+  report a bug: "Segnala un Errore"
+  advertising: "Pubblicità"
+  intro_advertising: " "
+  intro_contact_info: " "
+  uptime: "Uptime"
+  code: "Codice"
+  product: "Prodotto"
+  details: "Dettagli"
+  price: "Prezzo"
+  your current cart: "Il Tuo Carrello"
+  checkout: "Cassa"
+  continue shopping: "Continua la Spesa"
+  are you sure: "Sei sicuro?"
+  address: "Indirizzo"
+  ZIP: "C.A.P."
+  telephone: "Telefono"
+  mobile: "Mobile"
+  social: "Social Media"
+  shipping address: "Indirizzo Spedizione"
+  shipping city: "Città Spedizione"
+  shipping town: "Paese Spedizione"
+  shipping zip: "CAP Spedizione"
+  shipping telephone: "Telefono Spedizione"
+  place order: "Conferma Ordine"
+  notes for delivery: "Note per la Consegna"
+  total order: "Totale Ordine"
+  order summary: "Riepilogo dell'Ordine"
+  shipping address is billing address: "Indirizzo di Spedizione uguale a Fatturazione"   
+  search for people: "Ricerca persone"
+  search here: "Ricerca qui"
+  share with your network: "Condividi col tuo network"
+  sponsored: "Sponsorizzati"
+  query ip: "Query IP"
+  localize: "Localizza"
+  registration live counter: "Contatore Live Registrationi"
+  emporio: "Emporio"
+  my tracks: "Le mie Tracce"
+  Share your status or thoughts with your network: "Condividi il tuo stato o pensieri col tuo network"
+  share picture: "Condividi Immagine"
+  location: "Luogo Attuale"
+  religion: "Religione"
+  relationship: "Relazione"
+  works at: "Lavora a "
+  TortugaTortugaLOAD: "TortugaTortugaLOAD"
+  add to cart: "Aggiungi al Carrello"
+  compose new: "Componi Nuovo"
+  invites: "Inviti"
+  network: "Connessioni"
+  edit profile: "Aggiorna Profilo"
+  email service: "Sistema Email"
+  free signup: "Registrati Gratis"
+  preferences: "Preferenze"
+  friends wall: "Timeline"
+  Last Password update: "Ultimo Aggiornamento della Password"
+  SOCIAL: "Social"
+  ACCOUNT: "Account"
+  about1: "Mi è stato insegnato che le nostre vite sono il messaggio che portiamo nel mondo e il progetto Tortuga e il mezzo attraverso il quale il mio prende forma e spero incontri la filosofia e aspettative di tutti voi." 
+  about2: "L'innovazione che porta Tortuga è l'attitudine nel gestire servizi di utilizzo ormai comune che, oltre alle funzionalità, le interazioni sociali e il marketing d'impatto dietro ci debba essere una filosofia volta alla sicurezza e protezione della privacy degli utenti." 
+  about3: "Per trasparenza i capisaldi della filosofia Tortuga:" 
+  about4: "non ti tracciamo. Rispettiamo la tua privacy e quando esci dal sistema non ci interessa sapere 'dove vai'" 
+  about5: "non rivendiamo le tue informazioni personali. C'è rispetto della persona per cui foto, eventi di vita personale, ecc non vengono divulgati a terze parti." 
+  about6: "non leggiamo le tue email. Anche qui la privacy è fondamentale e attueremo tutte gli accorgimenti necessari a mantenere un alto livello di sicurezza delle comunicazioni." 
+  about7: "ti proteggiamo dai cybercriminali e dagli attacchi che possono essere perpetrati, compresi virus, link malevoli, spam e molto altro." 
+  about8: "C'è chi è più avanti di noi riguardo funzionalità, struttura e risorse, ma siamo sicuri che chi condivide i nostri principi avrà voglia di stare con Tortuga, che vuol essere un'evoluzione non ordinaria del social netowrk e della posta elettronica." 
+  about9: "Per dare una forte impennata allo sviluppo potremmo decidere di rilasciare alla comunità i sorgenti dei progetti, in modo che sia tutto trasparente. Attualmente questa è un'opzione di quelle possibili, in quanto dobbiamo prima avere la certezza di avere risorse finanziare sufficienti allo sviluppo di nuove versioni e all'espansione della struttura, fatta di tecnologie e di menti che desiderano collaborare con noi."
+  about10: "Se tutto ciò ti entusiasma puoi contribuire al progetto direttamente con una donazione paypal, oltre ad un menzione e ringraziamento pubblico, avrai accesso gratuito ai nostri servizi a pagamento, gadget e la certezza di aver sostenuto direttamente una filosofia che condividi. " 
+  author1: "Sono Davide 40 anni Italiano, nato a Milano e mi occupo di sviluppo software e di sicurezza delle informazioni"
+  author2: "Ho lavorato per molte grandi aziende ma negli ultimi anni ho preferito dedicare il mio tempo alla fondazione di Tortuga: questo progetto/messaggio che spero apprezzerete."
+  author3: "Per ulteriori informazioni potete seguirmi anche su Twitter e Linkedin. "
+  credits1: "Premesso che la lista è lunga e in costante aggiornamento, vogliamo ringraziare:"
+  credits2: "I progetti open source e le risorse gratuite che abbiamo utilizzato nello sviluppo e speriamo di poter donare presto per contribuire direttamente anche noi ad essi. "
+  credits3: "Ruby on Rails"
+  credits4: "OpenBSD "
+  credits5: "Postgresql "
+  credits6: "Librerie, tecnologie varie che dettaglieremo in secondo momento."
+  credits7: "I piu grandi social e gestori di posta elettronica, in quanto sono stati da ottimo esempio su come far connettere le persone fra loro in modo sempre piu semplice ed efficace, portando in rete la maggior parte della popolazione mondiale."
+  credits8: "Hanno definito interfacce e interazioni ormai divenute standard e riconosciute sia dai più giovani che dai piu anziani: per questo ringraziamo profondamente anche a loro."
+  credits9: "La comunita infosec che diffonde prontamente le migliori pratiche da seguire (vulnerabilità comprese) per una rete piu sicura, integra, in modo che la cybercriminalità trovi sempre spazi d'azione minori. Mi ha insegnato molto negli anni, soprattutto su come costruire sistemi e programmi sicuri, e senza questo Tortuga non avrebbe potuto prender vita. "
+  credits10: "Collaboratori, amici, parenti e liberi pensatori."
+  credits11: "Ognuno, in queste categorie ha dato un apporto veramente fondamentale. Chi con l'analisi e lo sviluppo diretto, chi con critiche, la segnalazione di errori o l'indicazione di funzionalità, ma anche con tanta pazienza, risorse economiche, sostentamento morale nei periodi peggiori e appoggio incondizionato alla nostra filosofia. Tecnici, ma soprattutto non tecnici, sia giovani che anziani hanno pian piano aiutato a definire il messaggio. "
+  credits12: "Quindi, questo messaggio è anche il vostro messaggio, vi terremo presenti e vi portiamo sempre nel cuore."
+  credits13: "A tutti voi, un gigantesco GRAZIE."
+  newload: "NEWLOAD"
+  choose username: "Scegli nome Utente"
+  select domain: "Scegli un Dominio"
+  shipping details: "Dettagli Spedizione"
+  order summary: "Riepilogo dell'Ordine"
+  choose: "Scegli"
+  "Are you sure you want to disconnect this person?": "Sei sicuro di voler disconnettere questa persona?"
+  "Are you sure you want to add to your network?": "Sei sicuro di voler aggiungere questa persona al tuo network?"
+  connected: "Connesso"
+  membership: "Membership"
+  requested: "Richiesta Spedita"
+  timeline: "Timeline"
+  e-mail: "E-Mail"
+  "Sorry, No results found with ": "Spiacente, non è stato trovato nessun risultato"
+  accept: "Accetta"
+  ignore: "Ignora"
+  pending: "In Sospeso"
+  no results found: "Nessun risultato trovato"
+  lifetime: "A VITA"
+  you do not have any new notification: "non hai nuove notifiche"
+  statement: "Statement"
+  favorite quote: "Frase Preferita"
+  username: "Nome Utente"
+  current email: "Attuale E-Mail"
+  sent requests: "Richieste Spedite"
+  is already registered: "è gua registrato"
+  cancel invitation: "Cancella Invito"
+  "Are you sure you want to cancel this invitation?": "Sei sicuro di voler cancellare questo invito?"
+  your request has been accepted: "La tua richiesta è stata accettata"
+  request processed: "Richiesta Elaborata"
+  request destroyed: "Richiesta Eliminata"
+  you have a request of connection: "Hai una richiesta di connessione"
+  "are you sure you want to cancel this request?": "Sei sicuro di voler eliminare questa richiesta?"
+  "Are you sure you want to delete this notification?": "Sei sicuro di voler eliminare questa notifica?"
+  delete notification: "Elimina Notifica"
+  cancel request: "Cancella Richiesta"
+  "Are you sure you want to delete this request?": "Sei sicuro di voler eliminare questa richiesta?"
+  remove comment: "Rimuovi Commento"
+  remove post: "Rimuovi Post"
+  sensation: "Sensazione"
+  some people in your network: "Alcune Connessioni"
+  post deleted successfully: "Post Rimosso!"
+  feedback sent successfully: "Feedback Ricevuto! Grazie!"
+  request connection: "Invia Richiesta"
+  Request Sent: "Richiesta Inviata"
+  Connected: "Connesso"
+  invitations list: "Carica una lista di persone da invitare nel formato: nome, indirizzo per ogni riga"
+  received requests: "Richieste Ricevute"
+  newload_adb: "newload_adb"
+  welcome to: "Benvenuto su "
+  do not have an account: "Non hai un account?"
+  create your account on: "Crea il tuo Account su "
+  already have an account: "Hai già un Account?"
+  password policy: "Usa almeno 8 caratteri con maiuscole, minuscole, numeri e punteggiatura."
+  enter your address and a confirmation link will be sent to you: "Inserisci il tuo indirizzo per ricevere il link di conferma."
+  currently waiting confirmation for: "Attualemente in attesa di conferma di  "
+  we need your current password to perform changes: "Inserisci la tua password attuale per effettuare le modifiche"
+  unhappy: "Non sei soddisfatto?"
+  cancel my account: "Cancella il mio Account"
+  create your account: "Crea il tuo Account "
+  enter your address and the unlock link will be sent to you: "Inserisci il tuo indirizzo e per ricevere il link di sblocco"
+  providers: "Providers"
+  zones: "Zone"
+  timezones: "Timezone"
+  countries: "Nazioni"
+  contacts: "Contatti"
+  upload: "Carica"
+  options: "Opzioni"
+  contracts: "Contratti"
+  devices: "Dispositivi"
+  sensors: "Sensori"
+  relatives: "Famigliari"
+  sites: "Siti"
+  scenario: "Scenario"
+  Tortuga: "Tortuga"
+  big isp: "Big ISP"
+  enter your address and the reset link will be sent to you: "Inserisci il tuo indirizzo e ti sarà inviato il link di reset"
+  set on: "Aggiornato"
+  last seen: "Visto"
+  never: "Mai"
+  results found for: " risultati trovati con: "
+  request time: "Tempo Richiesta"
+  messagging: "Messagging"
+  reveal: "Rivela"
+  destroy: "Distruggi"
+  revealing encrypted message: "Messaggio Crittografato Rivelato"
+  message from: "Messaggio Da"
+  the message has been destroyed: "Il messaggio è stato distutto"
+  crop image: "Ritaglia Immagine"
+  online: "In Linea"
+  offline: "Non in Linea"
+  Warning: "Attenzione"
+  Error: "Errore"
+  Notice: "Avviso"
+  logging in please wait: "Accesso in corso.. Attendere prego"
+  already have an account: "Hai già un account?"
+  member since: "Registrato il"
+  activate_account: "Attiva Account"
+  confirm address: "Conferma E-Mail"
+  Use the email you have already registered: "Utilizza l'indirizzo email che hai registrato"
+  Activate and Pay: "Attiva e paga "
+  with Credit Card: " con carta di credito"
+  login: "Accedi"
+  new status has been set: "Nuovo Stato aggiornato"
+  Message does not exist: "Messaggio non esiste"
+  Contact added successfully: "Contatto aggiunto con successo"
+  Contact updated: "Contatto aggiornato!"
+  Message has been destroyed: "Messaggio è stato distrutto"
+  Sender required a passphrase to reveal: "Mittente richiesta una passphrase per rivelare"
+  Efile successfully created: "File creato con successo"
+  EFile updated successfully: "File aggiornato con successo"
+  File deleted: "File cancellato"
+  New status has been set: "Nuovo Stato impostato con successo"
+  Status reused: "Stato riutilizzato"
+  Status updated: "Stato aggiornato"
+  Status deleted: "Stato cancellato"
+  Passphrase is not valid: "Passphrase non è valida"
+  Private message revealed for you: "Messaggio privato rivelato per te"
+  Destination not found: "Destinazione non trovata"
+  Message created, invitation sent: "Messaggio creato, invito spedito."
+  Message contains invalid characters: "Il messaggio contiene caratteri non validi"
+  Message created, notification sent: "Messaggio creato, notifica inviata"

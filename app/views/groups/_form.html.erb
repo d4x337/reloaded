@@ -1,0 +1,67 @@
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+     <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all">
+			<p align="center"><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<strong class="error-counter"><%= pluralize(@group.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @group.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+
+<div id="center-content2">
+ <div class="field">
+    <%= f.label t('group name'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_field :title ,:size => 60,:class=>'def-input'%>
+  </div><br>
+  <div class="field">
+    <%= f.label t('headline'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_field :headline,:class=>'def-input' %>
+  </div><br>
+  <div class="field">
+    <%= f.label t('description'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_area :description,:size=>'60x4' %>
+  </div><br>
+  <div class="field">
+    <%= f.label t('motto'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_area :motto,:size=>'60x4' %>
+  </div><br>
+  <div class="field">
+    <%= f.label t('founder'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_field :founder,:class=>'def-input' %>
+  </div><br>
+  <div class="field">
+    <%= f.label t('fundation'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_field :creation_date,:class=>'def-input' %>
+  </div><br>
+  <div class="field">
+    <%= f.label t('mission'),nil,{:class=>'lcd'} %><br />
+    <%= f.text_area :mission ,:size=>'60x4'%>
+  </div><br>
+  <div class="field">
+    <%= f.label t('visibility'),nil,{:class=>'lcd'} %><br />
+    <%= f.select(:visibility, options_for_select([['Public', 'PUBLIC'],['Closed', 'CLOSED'],['Secret', 'SECRET']], '0')) %>
+  </div><br>
+
+  <div class="field">
+    <%= f.label t('front image'),nil,{:class=>'lcd'} %><br />
+    <%= f.file_field :image %>
+  </div><br>
+
+  <div class="field">
+    <%= f.label t('cover image'),nil,{:class=>'lcd'} %><br />
+    <%= f.file_field :cover %>
+  </div><br>
+
+  <div class="actions">
+   <%= f.submit :class=>'button-d4x' %>
+  </div>
+  <br>
+<% end %>
+</div>

@@ -1,0 +1,28 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "d4x-forgot-unlock" %>
+<% end %>
+<div class="login__block active" id="l-login">
+  <div class="login__block__header">
+    <i class="zmdi zmdi-email"></i>
+    <h4 class="orange"><%= d4x_sanitizer(t("confirm account")) %></h4><br>
+    <%= t('enter your address and a confirmation link will be sent to you')%>
+    <div class="actions actions--inverse login__block__actions">
+      <div class="dropdown">
+        <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+        <div class="dropdown-menu dropdown-menu-right ddd4x">
+          <%= render :partial => 'devise/shared/dropdown_confirmation' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="login__block__body">
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+      <div class="form-group">
+        <%= f.email_field :email, :autofocus=>true, :placeholder=>d4x_sanitizer(t("email")),:class=>'form-control text-center' %>
+      </div>
+
+      <%= f.submit t("confirm account"), :id => "bt-signin",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
+    <% end %>
+  </div>
+  <%= render :partial => '/shared/devise_footer' %>
+</div>

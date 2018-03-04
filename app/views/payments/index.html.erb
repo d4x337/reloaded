@@ -1,0 +1,43 @@
+<%= content_for :head do %>
+
+<% end %>
+
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "/agadanga/big_icons_some_active" %>
+<% end %>
+
+<%= content_for :folders_list do %>
+		<%= render :partial => "/agadanga/no_folder_selected" %>
+<% end %>
+<div id="settings-pane">
+	<div id="center-content2" class="left">
+<br />
+		<div id="d4x-title-evo">
+				<%= d4x_sanitizer(t("sent requests")) %>
+		</div>
+	<table width="100%" class="">
+	    <tr class="d4x-grid-title">
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"><%=d4x_sanitizer(t(:from)) %></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"><%=d4x_sanitizer(t(:when)) %></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"><%=d4x_sanitizer(t('request status')) %></th>
+		    <th class="td-grid-tit"></th>
+		</tr>
+		 <% @sent_requests.each do |request| %>
+		<tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			    <td></td>
+		    	<td><%= link_to label_tag(request.user.nickname,nil,{:class=>'lcd orange'}) ,request.user %></td>
+			    <td class="td-grid-data"><%= request.created_at %></td>
+			  	<td class="unread"><%= time_ago_in_words(request.created_at) %> <%=  d4x_sanitizer(t("ago")) %> </td>
+				<td class="td-grid-data"><%= request.message %></td>
+		    	<td><%= label_tag request.status,nil,{:class=>'lcd yellow'} %></td>
+				<td>
+					<%= button_to "", request, :confirm => 'are you sure?', :method => :delete, :class => 'request_destroy',:name => 'destroy',:size => "16x16" %>
+				</td>
+		</tr>
+		<% end %>
+	</table>
+</div>		
+</div>		

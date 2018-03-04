@@ -1,0 +1,171 @@
+<% content_for :head do %>
+	<script language="JavaScript">
+			$( document ).ready(function() {
+				$('#areaaa').change(function(){
+					$('#area').val($('#areaaa').val());
+				});
+
+				var loadResults = new Bloodhound({
+					datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+					queryTokenizer: Bloodhound.tokenizers.whitespace,
+					remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+				});
+
+				loadResults.initialize();
+
+				$('#remote .typeahead').typeahead(null, {
+					name: 'results-list',
+					displayKey: 'result',
+					hint: true,
+					highlight: true,
+					minLength: 1,
+					source: loadResults.ttAdapter()
+				});
+
+				$('#icon-received').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','#5D4EB9');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+
+				});
+
+				$('#icon-sent').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-sent').css('color','#5D4EB9');
+					$('#icon-received').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+
+				$('#icon-contacts').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','#5D4EB9');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+
+				$('#icon-compose-new').click(function(){
+					$('#icon-compose-new').css('color','#B0A4FB');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+
+				$('#icon-settings').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','#5D4EB9');
+					$('#icon-profile').css('color','grey');
+				});
+
+				$('#icon-profile').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','#grey');
+					$('#icon-profile').css('color','#5D4EB9');
+				});
+
+				$('.imagelogo').mouseover(function(){
+					$('.imagelogo').addClass('animated bounceIn');
+				});
+				$('.imagelogo').mouseout(function(){
+					$('.imagelogo').removeClass('animated bounceIn');
+				});
+
+			});
+		</script>
+<% end %>
+<style>
+
+  .count-sent{
+    color:black;
+  }
+  .microd4x{
+    margin-top:-5px;
+    font-size:2px;
+  }
+  .updatescounter,
+  .connectionscounter {text-align:center; float:right; padding-top:1px; padding-bottom:1px;position:relative}
+
+  .mpcounter{ color:white;position:absolute; top:2px; right:20px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;box-shadow:1px 1px 1px  black;padding-bottom:-2px;padding-top:-2px;padding-right:2px;padding-left:2px;font-size:11px;font-weight:bold;}
+  .updcounter{ color:white;position:absolute; top:2px; right:20px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;box-shadow:1px 1px 1px  black;padding-bottom:-2px;padding-top:-2px;padding-right:2px;padding-left:2px;font-size:11px;font-weight:bold;}
+  .conncounter{ color:white;position:absolute; top:2px; right:20px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;box-shadow:1px 1px 1px  black;padding-bottom:-2px;padding-top:-2px;padding-right:2px;padding-left:2px;font-size:11px;font-weight:bold;}
+
+  .iconminiposts,
+  .iconupdates,
+  .iconconnections{max-width:125px; border:0px; margin:auto;}
+
+    #pluto{
+      background-color: #1c1c1c;
+      height:45px;
+      margin-bottom:-5px;
+    }
+  .baseline{
+    margin-top: 10px;
+  }
+</style>
+  <div id="pluto" class="zerozerofixed">
+ 		 	<div class="row">
+
+	 		<div class="col-sm-2 col-xs-2">
+        <a href="#">
+          <i class="fa fa-2x fa-pencil baseline" title="<%= t("new_post") %>" id="icon-compose-new" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></i>
+        </a>
+ 			</div>
+
+	 		<div class="col-sm-2 col-xs-2">
+ 		    	<a href="/<%= current_user.nickname%>">
+              <i class="fa fa-2x fa-user baseline" title="<%= t("profile") %>" id="icon-profile"></i>
+          </a>
+ 			</div>
+
+ 			<div class="col-sm-2 col-xs-2">
+ 				<% if current_user %>
+            <div id="minipostscounter">
+              <% @posts = MiniPost.where(:author_id => current_user.id).count %>
+              <span class="mpcounter " id="creceived"><%= @posts %></span>
+              <a href="/wall"><i class="iconminiposts baseline fa fa-2x fa-clock-o" title="<%= t("timeline") %>" id="icon-received"></i></a>
+            </div>
+
+        <% end %>
+      </div>
+
+ 			<div class="col-sm-2 col-xs-2">
+ 				<% if current_user %>
+          <div id="updatescounter">
+   				<% @updates = Update.where(:target_id => current_user.id,:read => false).count %>
+            <span id="updatecount" class="updcounter" id="csent"><%= @updates %></span>
+            <a href="/updates"><i class="iconupdates baseline fa fa-2x fa-globe" title="<%= t("notifications") %>" id="icon-sent"></i></a>
+          </div>
+        <% end %>
+ 			</div>
+
+ 			<div class="col-sm-2 col-xs-2">
+        <div id="connectionscounter">
+          <% @friends = current_user.friends.count %>
+          <span id="conncount" class="conncounter"><%= @friends %></span>
+          <a href="/friends"><i class="iconconnections baseline fa fa-2x fa-users" title="<%= t("connections")  %>" id="icon-contacts"></i></a>
+        </div>
+ 			</div>
+
+ 			<div class="col-sm-2 col-xs-2">
+ 		    	<a href="/settings">
+              <i class="fa fa-2x fa-cogs baseline" title="<%= t("settings") %>" id="icon-settings"></i>
+          </a>
+ 			</div>
+
+		</div>
+
+</div>

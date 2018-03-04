@@ -1,0 +1,249 @@
+<%= javascript_include_tag 'd4x-theme' %>
+<%= javascript_include_tag 'typeahead.bundle.min' %>
+<script language="JavaScript">
+  $( document ).ready(function() {
+
+      $('#areaaa').change(function(){
+          $('#area').val($('#areaaa').val());
+      });
+
+      var loadResults = new Bloodhound({
+          datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+      });
+
+      loadResults.initialize();
+
+      $('#remote .typeahead').typeahead(null, {
+          name: 'results-list',
+          displayKey: 'result',
+          hint: true,
+          highlight: true,
+          minLength: 1,
+          source: loadResults.ttAdapter()
+      });
+
+      $('.imagelogo').mouseover(function(){
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('.imagelogo').mouseout(function(){
+          $('.imagelogo').removeClass('animated rotateIn');
+      });
+
+
+
+      $( document ).submit(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-settings').click(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-profile').click(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-sent').click(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-inbox').click(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-contacts').click(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-compose-new').click(function() {
+          //$('#spinner').removeClass('none');
+          $('.imagelogo').addClass('animated rotateIn');
+      });
+
+
+  });
+</script>
+
+<header class="header">
+
+  <div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
+    <i class="zmdi zmdi-menu"></i>
+  </div>
+
+  <div class="logo hidden-sm-down">
+    <%= link_to(image_tag('logo15.png',:class=>'imagelogo',:alt=>'(x.0)'),'/')%>
+    <h1><a href="/"><%= get_setting_value('PROJECT_NAME') %><br>
+      <small><%= get_setting_value('PROJECT_MOTTO') %></small>
+    </a></h1>
+  </div>
+
+  <form action="/search" class="search" method="get">
+    <%= hidden_field_tag :area, 'firstname' %>
+    <div class="search__inner" id="remote">
+      <%= text_field_tag :findthis,params[:query],{:class=>'search__text typeahead',:placeholder=>t('search for people')} %>
+      <i class="zmdi zmdi-search search__helper" data-sa-action="search-close"></i>
+      <input type="submit" style="position: absolute;left: -9999px" tabindex="-1" />
+    </div>
+  </form>
+
+  <ul class="top-nav">
+    <li class="hidden-xl-up"><a href="" data-sa-action="search-open"><i class="zmdi zmdi-search"></i></a></li>
+    <li class="dropdown">
+      <% if current_user.received_messages.count > 0 %>
+          <a href="" data-toggle="dropdown" class="top-nav__notify">
+            <i class="zmdi zmdi-lock-outline lightlime"></i>
+          </a>
+      <% else %>
+          <a href="" data-toggle="dropdown">
+            <i class="zmdi zmdi-lock-outline"></i>
+          </a>
+      <% end %>
+
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
+        <div class="dropdown-header">
+          New Secret Message
+          <div class="actions">
+            <a href="/compose" class="actions__item zmdi zmdi-plus"></a>
+          </div>
+        </div>
+        <%= render :partial => '/shared/header_messages' %>
+      </div>
+    </li>
+
+    <li class="dropdown top-nav__notifications">
+      <% if current_user.updates.where(:read=>false).count > 0 %>
+        <a href="" data-toggle="dropdown" class="top-nav__notify">
+          <i class="zmdi zmdi-notifications yellow"></i>
+        </a>
+      <% else %>
+        <a href="" data-toggle="dropdown">
+          <i class="zmdi zmdi-notifications yellow"></i>
+        </a>
+      <% end %>
+      <%= render :partial => '/shared/header_notifications' %>
+    </li>
+
+    <li class="dropdown hidden-xs-down">
+      <% if current_user.friends.count > 0 %>
+          <a href="" data-toggle="dropdown" class="top-nav__notify">
+            <i class="zmdi zmdi-globe-alt bluesocial"></i>
+          </a>
+      <% else %>
+          <a href="" data-toggle="dropdown">
+            <i class="zmdi zmdi-globe-alt bluesocial"></i>
+          </a>
+      <% end %>
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
+        <%= render :partial => '/shared/header_connections' %>
+      </div>
+    </li>
+    <%
+      if session[:cart_id].present?
+        begin
+           @cart = Cart.find(session[:cart_id])
+        rescue
+           @cart = Cart.new
+        end
+      elsif not params[:cart_id].blank?
+        @cart  = Cart.find(params[:cart_id])
+      else
+        if current_user
+          @cart = Cart.where(:user_id=>current_user.id).first
+          if not @cart
+            @cart  = Cart.new(params[:cart])
+            session[:cart_id] = @cart.id
+            @cart.user_id = current_user.id
+            @cart.currency = 'euro'
+            @cart.items = 0
+            @cart.status = "EMPTY CART"
+            @cart.total_price = 0
+            @cart.last_operation = DateTime.now
+            @cart.ip = request.env["REMOTE_ADDR"]
+            @cart.save!
+          end
+
+        end
+      end
+    %>
+
+    <li class="dropdown hidden-xs-down">
+      <% if @cart.cart_products.count > 0 %>
+        <a href="" data-toggle="dropdown" class="top-nav__notify">
+          <i class="zmdi zmdi-shopping-cart orange"></i>
+        </a>
+      <% else %>
+        <a href="" data-toggle="dropdown">
+          <i class="zmdi zmdi-shopping-cart"></i>
+        </a>
+      <% end %>
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
+        <div class="dropdown-header"><%= t('product')%>   <%= t('items')%>    <%= @cart.cart_products.count.to_s %>    (<%= t('total')%>    <%= number_to_currency(@cart.total_price,{:unit=>"€"})%>)</span>
+          <% button_to d4x_sanitizer(t('empty cart')), @cart, :confirm => 'are you sure?', :method => :delete,   :name => 'destroy', :class=>'btn btn-sm btn-outline-warning' %>
+        </div>
+        <div class="listview listview--hover">
+          <% if @cart.cart_products.count > 0 %>
+
+            <% @cart.cart_products.each do |cart_product| %>
+              <% @product = Product.find(cart_product.product_id) %>
+              <a href="" class="listview__item">
+                <% if @product.photo.present? %>
+                  <img src="<%= @product.photo.url(:thumb) %>" class="listview__img" alt="">
+                <% else %>
+                  <img src="/demo/img/headers/5.png" class="listview__img" alt="">
+                <% end %>
+
+                <div class="listview__content">
+                  <div class="listview__heading"><%= @product.name %>&nbsp;<%= @product.final_price %></div>
+                  <p><%= @product.description %></p>
+                </div>
+              </a>
+            <% end %>
+            <a href="/carts/<%= @cart.id.to_s%>" class="view-more"><%= t('your shopping cart') %></a>
+            <a href="/orders/new/?cart=<%= @cart.id.to_s%>" class="view-more"><%= t('go to checkout') %></a>
+          <% else %>
+            <a href="/store" class="view-more"><%= t('go to shopping') %></a>
+          <% end %>
+
+        </div>
+      </div>
+    </li>
+
+    <li class="dropdown hidden-xs-down">
+      <a href="" data-toggle="dropdown"><i class="zmdi zmdi-wallpaper lime"></i></a>
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-item theme-switch">
+          <%= t('theme') %>
+          <div class="btn-group btn-group--colors mt-2 d-block" data-toggle="buttons">
+            <label class="btn active border-0" style="background-color: #772036"><input id="bg1" type="radio" value="1" autocomplete="off" checked></label>
+            <label class="btn border-0" style="background-color: #273C5B"><input id="bg2" type="radio" value="2" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #174042"><input id="bg3" type="radio" value="3" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #383844"><input id="bg4" type="radio" value="4" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #49423F"><input id="bg5" type="radio" value="5" autocomplete="off"></label>
+            <br>
+            <label class="btn border-0" style="background-color: #5e3d22"><input id="bg6" type="radio" value="6" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #234d6d"><input id="bg7" type="radio" value="7" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #3b5e5e"><input id="bg8" type="radio" value="8" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #0a4c3e"><input id="bg9" type="radio" value="9" autocomplete="off"></label>
+            <label class="btn border-0" style="background-color: #7b3d54"><input id="bg10" type="radio" value="10" autocomplete="off"></label>
+          </div>
+        </div>
+        <a href="" class="dropdown-item" data-sa-action="fullscreen">Fullscreen</a>
+      </div>
+    </li>
+
+    <li class="dropdown hidden-xs-down" title="Logout">
+      <a href="/logout" ><i class="zmdi red zmdi-power"></i></a>
+    </li>
+  </ul>
+
+  <div class="clock hidden-md-down">
+    <div class="time">
+      <span class="hours lightlime"></span>
+      <span class="min lightlime"></span>
+      <span class="sec lightlime"></span>
+    </div>
+  </div>
+
+</header>

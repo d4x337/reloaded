@@ -1,0 +1,33 @@
+<div id="text-content">
+		<h2><%= t('listing term taxonomies') %></h2>
+		<br>
+		<%= link_to t('new post_tags'), new_post_tag_path %>
+		<br><br>
+		<table width="100%">
+		  <tr>
+			<th align="left"><%=t(:id) %></th>
+			<th align="left"><%=t(:post_id) %></th>
+			<th align="left"><%=t(:tag_id) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		 <% @post_tags.each do |post_tags| %>
+		  <tr>
+			<td><%= post_tags.id %></td>
+			<td><%= post_tags.post_id %></td>
+			<td><%= post_tags.tag_id %></td>
+		    <td><%= link_to t('show'), post_tags %></td>
+			<td>
+			<% if can? :update, @post_tags %>  
+				<%= link_to t('edit'), edit_post_tag_path(post_tags) %>
+			<% end %>
+			</td>
+		    <td><% if can? :destroy, @post_tags %>  
+					<%= button_to t('destroy'), post_tags, :confirm => 'are you sure?', :method => :delete %>
+				<% end %>
+			</td>
+		  </tr>
+		<% end %>
+		</table>
+</div>

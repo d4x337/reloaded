@@ -1,0 +1,142 @@
+<% @title =t('famous quotes') %>
+<% @quotes.each do |quote| %>
+<div id="link-evo">
+	<div id="link-evo-title">
+		<div id="evo-card-icon">
+			<%= image_tag "card-icon-quotes.gif",:size => "24x24",:alt => "quotes" %> 						
+		</div>
+		<div id="link-card-title">
+	  		<%= quote.author.fullname %>					
+		</div>
+		<div id="evo-card-actions">
+			
+		</div>
+	</div>
+	<div id="show-body">
+		<div id="show-body-left">
+			<div id="snapshot-link">
+				<%= image_tag quote.author.photo.url 	 %>
+			</div>
+		</div>
+		<div id="show-body-right">
+			<br>
+			<% if (quote.qtext != nil) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('quote') %>		
+					</div>
+					<div id="show-item-right">
+						<%= quote.qtext %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.author_id != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('author') %>
+					</div>
+					<div id="show-item-right">
+						<%= quote.author.fullname %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.author.country != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('country') %>
+					</div>
+					<div id="show-item-right">
+						<%= quote.author.country %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.author.dates != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('dates') %>
+					</div>
+					<div id="show-item-right">
+						<%= quote.author.dates %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.author.headline != nil) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('headline') %>
+					</div>
+					<div id="show-item-right">
+						<%= quote.author.headline %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.lang != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('language') %>
+					</div>
+					<div id="show-item-right">
+						<%= quote.lang %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.notes != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('notes') %>
+					</div>
+					<div id="show-item-right">
+						<%= quote.notes %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (quote.approved = true) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('approved') %>
+					</div>
+					<div id="show-item-right">
+						<%= t('yes') %>
+					</div>
+				</div>
+				<br>
+			<% else %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('approved') %>
+					</div>
+					<div id="show-item-right">
+						<%= t('no') %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+		</div>
+	
+	</div>
+</div>
+
+<% end %>
+<div align="center">
+	<%= will_paginate @quotes,:per_page => 25 %>
+</div>

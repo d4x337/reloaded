@@ -1,0 +1,147 @@
+<% content_for :head do %>
+		<script language="JavaScript">
+			$( document ).ready(function() {
+				$('#areaaa').change(function(){
+					$('#area').val($('#areaaa').val());
+				});
+				
+				var loadResults = new Bloodhound({
+					datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+					queryTokenizer: Bloodhound.tokenizers.whitespace,
+					remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+				});
+				 
+				loadResults.initialize();
+				 
+				$('#remote .typeahead').typeahead(null, {
+					name: 'results-list',
+					displayKey: 'result',
+					hint: true,
+					highlight: true,
+					minLength: 1,
+					source: loadResults.ttAdapter()
+				});
+				
+				$('#icon-received').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','#5D4EB9');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+			
+				});
+		
+				$('#icon-sent').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-sent').css('color','#5D4EB9');
+					$('#icon-received').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-contacts').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','#5D4EB9');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-compose-new').click(function(){
+					$('#icon-compose-new').css('color','#B0A4FB');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-settings').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','#5D4EB9');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-profile').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','#grey');
+					$('#icon-profile').css('color','#5D4EB9');
+				});
+				
+				$('.imagelogo').mouseover(function(){
+					$('.imagelogo').addClass('animated bounceIn');
+				});
+				$('.imagelogo').mouseout(function(){
+					$('.imagelogo').removeClass('animated bounceIn');
+				});
+				
+				$('#eye').click(function(){
+					$('#message_content').addClass('white');
+				});
+				
+				
+			});
+		</script>	
+		<style>
+			.footer.zerozerofixed {
+			  position: fixed;
+			  margin-top:0px;
+			  bottom: 0;
+			  left: 0;
+			  right: 0;
+			  z-index: 1000;
+			  background:white;
+			  height:45px;
+			  border-top: 1px solid grey;
+			
+			}
+			.count-sent{
+				color:black;
+			}
+			.microd4x{
+				margin-top:-5px;
+				font-size:2px;
+			}
+		</style>
+<% end %>
+
+ <div class="footer zerozerofixed">
+ 	
+	 	<div class="row">
+	 				
+ 			<div class="col-sm-3 col-xs-3">
+	    		<a href="/blog">
+		            <i class="fa fa-2x fa-calendar" title="Public Blog" id="icon-posts"></i>
+		        </a>
+  		    </div>
+ 			
+ 			<div class="col-sm-3 col-xs-3">
+	    		<a href="/posts">
+		            <i class="fa fa-2x fa-archive" title="Archive" id="icon-archive"></i>
+		        </a>
+  		    </div>
+
+  	 		<div class="col-sm-3 col-xs-3">
+ 		    	<a href="/author-d4x337">
+		            <i class="fa fa-2x fa-user" title="Author Profile" id="icon-author"></i>
+		        </a>
+ 			</div>
+
+			<div class="col-sm-3 col-xs-3">
+ 		    	<a href="/tags-d4x337">
+		            <i class="fa fa-2x fa-tags" title="Tags" id="icon-tags"></i>
+		        </a>
+ 			</div>
+ 			
+	
+		</div>
+</div>

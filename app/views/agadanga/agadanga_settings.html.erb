@@ -1,0 +1,30 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-home').removeClass("navigation__active").addClass("navigation__sub");
+        $('#main-menu-email').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-account-settings').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+
+<div id="settings-pane">
+	<div id="center-content3" class="left">
+			<br />
+			<%= label_tag d4x_sanitizer(t("custom agadanga")),nil,{:class=>'lcd lcd-bigger grey'} %>
+			<br />
+			<br />
+			<%= form_for(@mail_account) do |g| %>
+			<div id="agadanga-custom-theme">	
+				<%= label_tag d4x_sanitizer(t("from name")),nil,{:class=>'lcd orange center'} %>
+				<br />
+				<%= g.text_field :name,:class=>"form-control center"%>
+			 <br>
+	 		</div>	
+			 <br>
+		     <%= g.submit d4x_sanitizer(t('update')),:class=>'btn btn-outline-warning'%>
+			 <br>
+			<% end %>
+
+
+  	</div>
+</div>
+	

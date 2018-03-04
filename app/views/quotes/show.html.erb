@@ -1,0 +1,34 @@
+<% @title = "Quotez :: "+@quote.qtext %>
+<div id="single-download">
+		<div id="big-card-title-2013" class="center">
+			<%= t('quote') %>
+			&nbsp;
+				<% if @quote.lang.downcase == "en" %>
+		    		<%= image_tag "us.png",:title=>"English",:class=>"middle" %>
+		    	<% elsif @quote.lang.downcase == "it" %>
+		    		<%= image_tag "it.png",:title=>"Italian",:class=>"middle" %>
+		    	<% end %>
+		    
+			<div id="quote" class="green center">
+				
+				<%= @quote.qtext %>
+			</div>
+			<div class="d4x-title-2013 center">
+				<% if can? :manage,@quote %>  
+					<div id="author-name-prof"><%= link_to @quote.author.fullname, edit_quote_path(@quote) %><br><%= @quote.author.headline %></div>
+				<% else %>
+					<div id="author-name-prof"><%= @quote.author.fullname %> <br><%= @quote.author.headline %></div>
+				<% end %>
+				<div id="vert-spacer">
+					&nbsp;<%= ratings_for @quote %>
+
+				</div>
+				<div id="author-dates"><%= @quote.author.dates %></div>
+				<% if not @quote.notes.blank? %>
+					<%= @quote.notes %>
+				<% end %>
+			</div>
+		</div>
+</div>
+				
+				

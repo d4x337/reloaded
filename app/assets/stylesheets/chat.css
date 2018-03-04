@@ -1,0 +1,246 @@
+
+.chatbox {
+	position: fixed;
+	position:expression("absolute");
+	width: 225px;
+	display:none;
+	z-index:9999;
+}
+
+.chatlist {
+	position: fixed;
+	position:expression("absolute");
+	width: 225px;
+	display:none;
+}
+
+.chatboxhead {
+	background-color: #0A019A;
+	padding:5px;
+	color: #FFF;
+	border-top-right-radius: 5px 5px;
+	border-top-left-radius: 5px 5px;
+	
+	border-right:1px solid #0A037C;
+	border-left:1px solid #0A037C;
+	border-top:1px solid #0A037C;
+}
+
+.chatboxblink {
+	background-color: #176689;
+	border-right:1px solid #85CAE7;
+	border-left:1px solid #85CAE7;
+}
+
+.chatboxcontent {
+	font-family: arial,sans-serif;
+	font-size: 13px;
+	color: #333333;
+	min-height: 200px;
+	width:225px;
+	overflow-y:auto;
+	overflow-x:auto;
+	padding:7px;
+	border-right:1px solid #85CAE7;
+	border-left:1px solid #85CAE7;
+	border-bottom:0px solid #eeeeee;
+	background-color: #DCE0DC;
+	line-height: 1.3em;
+	text-align:left;
+}
+
+.chatboxlist {
+	font-family: arial,sans-serif;
+	font-size: 13px;
+	color: #333333;
+	max-height: 100%;
+	min-height: 270px;
+	width:225px;
+	overflow-y:auto;
+	overflow-x:auto;
+	border-right:1px solid #85CAE7;
+	border-left:1px solid #85CAE7;
+	background-color: #CDD7DB;
+	line-height: 1.3em;
+	text-align:left;
+}
+
+.chatsearch{
+	float:left;
+	height:22px;
+	background-color:#222222;
+}
+
+.chatlist {
+	font-family: arial,sans-serif;
+	font-size: 13px;
+	color: #333333;
+	max-height:300px;
+	width:207px;
+	overflow-y:auto;
+	overflow-x:auto;
+	padding:7px;
+	border-right:1px solid #85CAE7;
+	border-left:1px solid #85CAE7;
+	border-bottom:0px solid #eeeeee;
+	background-color: #DCE0DC;
+	line-height: 1.3em;
+	text-align:left;
+}
+
+.chat_spacer{
+	width:221px;
+	height:1px;
+	border-bottom:1px solid #85CAE7;
+	
+}
+
+.chatlistitem {
+	font-family: arial,sans-serif;
+	font-size: 10px;
+	color: #381244;
+	height:35px;
+	width:221px;
+	line-height: 1.3em;
+	text-align:left;
+}
+
+.chatmenu{
+
+	width:100px;
+	background-color:#4395B8;
+	border-top:1px solid #85CAE7;
+	border-left:1px solid #85CAE7;
+	border-right:1px solid #85CAE7;
+	position: fixed;
+	position:expression("absolute");
+	margin-right:0px;
+	margin-top:0px;	
+	display:none;
+	right:37px;
+	
+	z-index: 99999;
+}
+.chatmenuitem{
+	height:20px;
+	text-align:left;
+	font-size:10px;
+	color:yellow;
+	font-weight:bold;
+	padding-left:5px;
+	border-bottom:1px solid #85CAE7;
+}
+
+.chatmenuitem:hover{
+	background-color:#4C7D92;
+	color:#FFF;
+}
+
+.chatlistitem:hover{
+	background-color: #487E95;
+}
+
+
+.chatpic{
+	width:32px;
+	height:32px;
+	margin-top:1px;
+	margin-left:2px;
+		border-radius:3px;
+}
+
+.chatavi{
+	width:35px;
+	float: left;
+	margin-top:1px; 	
+
+}
+
+.chatnick{
+	color: #1C546B;
+	font-size:12px;
+	font-weight:bold;
+	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	width:120px;
+	float: left;
+	padding-top:10px;
+	padding-left:5px;
+}
+.online{
+	border:0px solid #49A4CB;
+}
+.onffline{
+	border:0px solid red;
+}
+
+.chatonline{
+	float: right;
+	padding-right:10px;
+	padding-top:10px;
+}
+
+.chatboxinput {
+	padding: 5px;
+	background-color: #C8DBE3;
+	border-right:1px solid #85CAE7;
+	border-left:1px solid #85CAE7;
+}
+
+.chatboxtextarea {
+	width: 206px;
+	height:44px;
+	padding:3px 0pt 3px 3px;
+	border: 1px solid #85CAE7;
+	margin: 1px;
+	overflow:hidden;
+	background-color:#E1F1FF;
+}
+
+.chatboxtextareaselected {
+	border: 2px solid #366C9A;
+	margin:0;
+}
+
+.chatboxmessage {
+	margin-left:1em;
+}
+
+.chatboxinfo {
+	margin-left:-1em;
+	color:#666666;
+}
+
+.chatboxmessagefrom {
+	margin-left:-1em;
+	font-weight: bold;
+	color:#4395B8;
+}
+
+.chatboxmessagecontent {
+	color:#061A23;
+}
+
+.chatboxoptions {
+	float: right;
+}
+
+.chatboxoptions a {
+	text-decoration: none;
+	color: white;
+	font-weight:bold;
+	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+}
+
+.chatboxtitle {
+	float: left;
+	color: #FFFF00;
+	font-size:12px;
+	font-weight:bold;
+	font-family:Arial,"Bitstream Vera Sans",sans-serif;
+	padding-left:5px;
+	margin-top:1px;
+}
+
+.tick{
+	width:14px;
+}

@@ -1,0 +1,81 @@
+
+<div class="middle-box text-center animated">
+    <div class="row">
+        <div class="col-md-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="pull-right">
+                	<% @option = Option.where(:name=>'REGISTRATIONS_STATUS').first %>
+                	<% if @option.value == "INVITED_ONLY" %>
+                		<%= check_box_tag "INVITED_ONLY", @option.id , true, :class => "task-check" %>
+                	<% else %>
+                		<%= check_box_tag "OPEN", @option.id , false, :class => "task-check" %>
+                	<% end %>
+                </span>
+              
+				
+            <% if @option.value == "INVITED_ONLY" %>
+            	<h5 id="regstatus">Sign Up: Invitation Only</h5>
+            <% else %>
+            	<h5 id="regstatus">Sign Up: Open Registrations</h5>
+            <% end %>
+            </div>
+            <div class="ibox-content">
+               	<div class="row">
+               	<div class="col-sm-5">
+               		<h2 class="no-margins"><%= User.all.count %></h2>
+               		<small>Total Members</small>	
+               	</div>
+                <div class="col-sm-7">
+                	<small class="pull-right">Last</small><br />
+                	<div class="stat-percent font-bold text-navy"><%= User.last.nickname %></div><br />
+                	<small class="pull-right"><%= User.last.created_at.to_s(:short) %>&nbsp;-&nbsp;<%= time_ago_in_words User.last.created_at %>&nbsp;<%= t('ago') %></small>
+ 	          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+		<script language="JavaScript">
+				$( document ).ready(function() {
+					
+					$(".task-check").bind('change', function(){
+					  if (this.checked){
+					    $.ajax({
+					      beforeSend: function(xhr){
+						 		xhr.setRequestHeader('X-CSRF-Token',$('meta[name="csrf-token"]').attr('content')) 
+		  				  },
+					      url: '/registrations_mode',
+					      type: 'POST',
+					      data: {"INVITED_ONLY": true}
+					    });
+					    $("#regstatus").text('Sign Up: Invitation Only')
+					  }
+					  else {
+					    $.ajax({
+					      beforeSend: function(xhr){
+						 		xhr.setRequestHeader('X-CSRF-Token',$('meta[name="csrf-token"]').attr('content')) 
+		  				  },
+					      url: '/registrations_mode',
+					      type: 'POST',
+					      data: {"INVITED_ONLY": false}
+					    });
+					    $("#regstatus").text('Sign Up: Open Registrations')
+					  }
+					});
+				});
+				</script>
+
+<nav>
+  <ul>
+    <li class="animated fadeInDown"><a href="/login" class="fa fa-sign-in" ><span><%= d4x_sanitizer(t('login'))%></span></a></li>
+
+    <li class="animated fadeInDown"><a href="/landing/index.html" class="fa fa-home" ><span><%= d4x_sanitizer("home")%></span></a></li>
+    <li class="animated fadeInDown"><a href="/blog" class="fa fa-calendar" ><span><%= d4x_sanitizer("blog")%></span></a></li>
+    <br />
+    <li class="animated fadeInDown"><a href="/shop" class="fa fa-shopping-cart" ><span><%= d4x_sanitizer("shop")%></span></a></li>
+    <li class="animated fadeInDown"><a href="/signup" class="fa fa-user" ><span><%= d4x_sanitizer("register")%></span></a></li>
+    <li class="animated fadeInDown"><a href="/about" class="fa fa-info-circle" ><span><%= d4x_sanitizer("about")%></span></a></li>
+  </ul>
+</nav>

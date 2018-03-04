@@ -1,0 +1,24 @@
+<% if current_user.role? :admin %>
+	
+	<% @totregs   = tot_regs %>
+		
+	<div class="widget">
+	
+		  <div id="menu-title-2013" class="lcd-link">
+				<%= link_to(d4x_sanitizer(t('registrations live counter')),"/counter") %>
+		  </div>
+ 	<br />	  
+		  <div class="star-sx">
+	  	 	<%= image_tag "star50.png",:class=>"middle",:height=>"40"%>
+		  </div>
+		  
+		  <div id="counter-regs">	
+		  	<%= label_tag @totregs,nil,{} %>
+		  </div>
+		  
+		  <div class="star-dx">
+	  	  	<%= image_tag "star50.png",:class=>"middle",:height=>"40"%>
+		  </div>
+	</div>	  
+	
+<% end %>

@@ -1,0 +1,57 @@
+<% @title =t('parsonal requests') %>
+<div id="text-content">
+		<h3><%= t('personal requests') %></h3>
+			<p id="notice">
+				<%= notice %>
+			</p>
+		<%= link_to t('new request'), new_request_path %>
+		<br><br>
+		<table width="100%">
+		  <tr>
+		  	<th class="td-grid-tit"><%=t(:id) %></th>
+		    <th class="td-grid-tit"><%=t(:sender_id) %></th>
+		    <th class="td-grid-tit"><%=t(:target_id) %></th>
+		    <th class="td-grid-tit"><%=t(:reason) %></th>
+		    <th class="td-grid-tit"><%=t(:sent) %></th>
+		
+		  </tr>
+		 <% @requests.each do |request| %>
+		  <tr class="d4x-row">
+		  	<td class="td-grid-data"><%= request.sender_id %></td>
+		    <td class="td-grid-data"><%= request.target_id %></td>
+		    <td class="td-grid-data"><%= request.reason %></td>
+		    <td class="td-grid-data"><%= request.created_at %></td>
+		 	<td>
+		 		<%= link_to image_tag("icon-list-new.gif", :border =>0, :mouseover => "icon-list-new-over.gif", :title => t("icon-show") ,:size => "16x16"), request %>
+		 	</td>
+			<td>
+				<% if can? :update, @request %>  
+					<%= link_to image_tag("icon-list-update.gif", :border =>0, :mouseover => "icon-list-update-over.gif", :title => t("icon-edit"),:size => "16x16" ), edit_request_path(request) %>
+				<% end %>
+			</td>
+		    <td>
+				<% if can? :destroy, @request %>  
+					
+					<%= button_to "", request, :confirm => 'Are you sure?', :method => :delete ,:size => "20x20"%>
+				<% end %>
+			</td>
+		  </tr>
+		<% end %>
+		</table>
+</div>
+<%= content_for :leftcol do %>
+		<% if current_user.role? :admin %>  
+	    	<%= render :partial => "shared/menu_admin" %>
+	    <% else %>
+	    	<%= render :partial => "shared/menu_member" %>
+		<% end %>
+<% end %>
+<%= content_for :rightcol do %>
+	<% if current_user.role? :admin %>  
+	    	<%= render :partial => "shared/menu_right_admin" %>
+	    <% else %>
+	    	<%= render :partial => "shared/menu_right_member" %>
+		<% end %>
+<% end %>
+
+

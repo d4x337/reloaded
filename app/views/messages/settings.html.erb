@@ -1,0 +1,143 @@
+    <script language="JavaScript">
+		$( document ).ready(function() {
+			$('#icon-compose').css('color','grey');
+			$('#icon-received').css('color','grey');
+			$('#icon-sent').css('color','grey');
+			$('#icon-contacts').css('color','grey');
+			$('#icon-settings').css('color','lime');
+			
+			$('#profile-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#update-avi-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#set-status-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			$('#privacy-settings-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#language-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#invite-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#about-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#change-pass-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#logout-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','lime');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+		});	
+    </script>
+    <style>
+    	.settings-item{
+    		height:32px;
+    	}
+    </style>
+
+    <div id="tab-settings" class="tab-pane active">
+    	<% if current_user.role? :admin %>
+    	  <div class="settings-item">
+            <a href="/dashboard" id="dashboard-link"><p align="left" class="white"><i class="fa fa-dashboard white"></i>&nbsp;&nbsp;<%= t('admin')%></p></a>
+        </div>
+      <% end %>
+
+      <div class="settings-item">
+            <a href="/avatar" id="update-avi-link"><p align="left" class="white"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;<%= t('avatar')%></p></a>
+        </div>	
+
+    	<div class="settings-item">
+            <a href="/tell-a-friend" id="invite-link"><p align="left" class="white"><i class="fa fa-arrow-circle-o-right"></i>&nbsp;&nbsp;<%= t('invite a friend')%></p></a>
+        </div>	
+
+        <div class="settings-item">
+            <a href="/close-account"  id="close-account-link"><p align="left" class="white"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;&nbsp;<%= t('close my account')%></p></a>
+        </div>	
+
+
+	</div>

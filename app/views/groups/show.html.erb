@@ -1,0 +1,168 @@
+<% @title =d4x_sanitizer(t('group details')) %>
+<div id="show-group">
+	<div id="group-name">		
+		<div class='lcd lcd-bigger orange'>
+			<% if can? :manage,@group %>  
+				<%= label_tag @group.title,nil,{:class=>'lcd-giant yellow'} %>
+			<% else %>
+				<%= label_tag @group.title,nil,{:class=>'lcd-giant yellow'} %>
+			<% end %>
+			<br />
+			<br />
+			(<%= label_tag @group.visibility,nil,{:class=>'lcd lcd-bigger orange'} %> GROUP)	
+			<br />
+			<% if @group.visibility == "PUBLIC" %>
+				<%= label_tag "Searchable; Contents for Members; Public Membership: Just Join",nil,{:class=>'d4x-text yellow'} %>
+			<% elsif @group.visibility == "CLOSED" %>
+				<%= label_tag "Searchable, Membership by Invite or Authorized Request",nil,{:class=>'yellow'} %>	
+			<% elsif @group.visibility == "SECRET" %>
+				<%= label_tag "Not searchable; Membership by Invite Only",nil,{:class=>'yellow'} %> 	
+			<% end %>
+
+			<br />
+			<br />
+			<% if @group.visibility == "PUBLIC" %>
+
+				<% if not is_member(current_user.id,@group.id) %>
+					
+					<%= form_tag("/join-group") do |f| %>
+						<%= hidden_field_tag :group_id,@group.id%>
+						<%= hidden_field_tag :user_id,current_user.id %>
+						<%= submit_tag "Join Group Now",:class=>'button-d4x-2013' %>
+					<% end %>	
+					
+				<% end %>
+				
+			<% elsif @group.visibility == "CLOSED" %>
+				<% if not is_member(current_user.id,@group.id) %>
+			
+					<%= form_tag("/request-membership") do |f| %>
+						<%= hidden_field_tag :group_id,@group.id%>
+						<%= hidden_field_tag :user_id,current_user.id %>
+						<%= submit_tag "Request Membership",:class=>'button-d4x-2013' %>
+					<% end %>	
+				<% end %>
+			<% elsif @group.visibility == "SECRET" %>
+
+
+			<% end %>
+		</div>
+		
+		<br />
+		<%= image_tag @group.image.url,:class=>'group-image'%>
+		<br />
+		
+		<div id="description2">
+		   <%= label_tag 'GROUP DESCRIPTION',nil,{:class=>'lcd lcd-bigger orange'} %><br>	
+			<%= @group.description %>
+		</div>
+		<div id="description2" class="lcd">
+				<%= image_tag "user_gray.png",:class=>"bullet" %>
+				&nbsp;&nbsp;<%= label_tag d4x_sanitizer(t('founder')),nil,{:class=>'lcd orange'} %>
+				&nbsp; <%= label_tag @group.founder,nil,{:class=>'lcd yellow'} %>
+				 &nbsp;<%= label_tag d4x_sanitizer(t('oon')),nil,{:class=>'lcd orange'} %>
+				 <%= label_tag @group.creation_date.to_s(:long) ,nil,{:class=>'lcd orange'} %>
+				 &nbsp;(<%= label_tag time_ago_in_words(@group.creation_date),nil,{:class=>'lcd yellow'} %>
+				 &nbsp;<%= label_tag d4x_sanitizer(t('ago')),nil,{:class=>'lcd yellow'} %>)
+		</div>
+		<div id="description2" class="description lcd">
+			<div id="left45" class="left">
+				<%= image_tag "user_green.png",:class=>"middle" %>
+				&nbsp;<%= label_tag d4x_sanitizer(t('group-admins')),nil,{:class=>'lcd orange'} %>:
+				&nbsp; <%= @group.admins %><br />
+				<%= image_tag "group.png",:class=>"middle" %>
+				&nbsp;<%= label_tag d4x_sanitizer(t('group-members')),nil,{:class=>'lcd orange'} %>:
+				&nbsp; <%= @group.group_members.count %><br />
+				<%= image_tag "user_red.png",:class=>"middle" %>
+				&nbsp;<%= label_tag d4x_sanitizer(t('last-member')),nil,{:class=>'lcd orange'} %>:
+				&nbsp; <%= last_member(@group.id) %><br />
+				
+			</div>
+			<div id="right45" class="center">
+			   <%= label_tag 'Release Membership',nil,{:class=>'lcd orange'} %><br>	
+				<% if is_member(current_user.id,@group.id) %>
+					<%= form_tag("/leave-group") do |f| %>
+						<%= hidden_field_tag :group_id,@group.id%>
+						<%= hidden_field_tag :user_id,current_user.id %>
+						<%= submit_tag "Leave Group Now",:class=>'button-d4x-2013 middle' %>
+					<% end %>	
+				<% end %>
+			</div>
+		</div>
+		
+		<div id="description2">
+			<%= render :partial => 'shared/widget_group_member' %>
+		</div>
+		
+		<div id="description2">
+			<div id="left50" class="center">
+			<% if is_member(current_user.id,@group.id) %>
+			<%= label_tag "Tell a friend, send an Invite",nil,{:class=>'lcd orange'} %>
+				<%= form_for(@invitation) do |f| %>
+					<%= hidden_field_tag :group_id,@group.id %>  
+					<%= f.text_field :reason,:class=>'def-input center',:value=>'Invitation to join '+@group.title+ " group ("+@group.id.to_s+")"%><br />
+					<%= f.text_field :subject ,:class=>'def-input center',:value=>"Your friend name" %><br />
+					<%= f.email_field :recipient_email,:class=>'center',:value=>"Your friend email address" %><br /><br />
+					<%= f.submit "Send Invitation to Join this Group" ,:class=>'button-d4x-2013' %>
+				<% end %>
+			<% end %>
+			</div>
+			<div id="right50" class="center">
+			<% if is_member(current_user.id,@group.id) %>
+			<%= label_tag "Add more Connections",nil,{:class=>'lcd orange'} %>
+				<%= form_for(@group_member) do |f| %>
+					<%= f.hidden_field_tag :group_id,@group.id.to_s %>  
+					<%= f.hidden_field_tag :user_id,@group.id %>  
+					<%= f.hidden_field_tag :role,"Member" %>  
+					<%= f.hidden_field_tag :invited_by,current_user.nickname %>  
+					<%= f.submit "Add Person to this Group" ,:class=>'button-d4x-2013' %>
+				<% end %>
+			<% end %>
+		
+			<% if @group.visibility == "PUBLIC" %>
+		
+			<% elsif (@group.visibility == "CLOSED") or (@group.visibility == "SECRET") %>
+		
+			<% end %>
+			</div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+		<% if is_member(current_user.id,@group.id) %>
+		    <%= label_tag d4x_sanitizer(t('group-wall')),nil,{:class=>'lcd lcd-bigger orange'} %>	
+	
+			<% @mini_posts = group_posts(@group.id) %>
+			    <div class="inner">
+				    <%= render :partial => "shared/d4x_group_share" %>
+				<br />
+			<br />
+			      <% unless @mini_posts.blank?%>
+			        <ul class='list' last="<%=@mini_posts.to_a.last.created_at %>">
+			          <%=render :partial => "mini_post", :collection => @mini_posts%>
+			          <div id="infinite-scroll"></div>
+			        </ul>
+			      <% end %>
+			    <div class="center">
+			     	<% if (current_user.theme == 'girlie') %>
+			      		<%=image_tag "loader-girlie001.gif", :class => 'loading none'%>
+			      	<% else %>
+			      		<%=image_tag "loading.gif", :class => 'loading none'%>
+			      	<% end %>
+			    </div>
+		    </div>      
+		<% end %>
+	<br>
+</div>
+

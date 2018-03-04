@@ -1,0 +1,47 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-social').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-network').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+<h4 class="card-title bluesocial"><i class="zmdi zmdi-accounts-list socialblue"></i>&nbsp;<%= t("connections") %></h4>
+<% unless @friends.blank? %>
+  <% @friends.each do |friend| %>
+      <% @xuser = User.find(friend.friend_id) %>
+      <%= link_to @xuser.nickname do %>
+          <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 col-6">
+            <div class="contacts__item">
+              <a href="" class="contacts__img">
+                <% if have_to_show_photo(current_user.id,user.id) %>
+                    <% if user.avatar(:thumb).present? %>
+                        <img src="<%= @xuser.avatar.url(:thumb) %>" alt="">
+                    <% else %>
+                        <img src="demo/img/profile-pics/2.jpg" alt="">
+                    <% end %>
+                <% else %>
+                    <img src="demo/img/profile-pics/2.jpg" alt="">
+                <% end %>
+              </a>
+              <div class="contacts__info">
+                <strong><%= @xuser.firstname %></strong>
+                <small><%= "@"+@xuser.nickname %></small>
+                <small><% @xuser.email %></small>
+              </div>
+              <button class="contacts__btn">Following</button>
+              <%= link_to raw('<i class="fa fa-envelope white"></i>'), "/compose?target_id="+@xuser.id.to_s, :class=>'btn btn-xs btn-dark',:title=>'send message' %></span>
+              <%= form_for(friend) do |f| %>
+                  <%= f.hidden_field :friend_id, :value=> friend.id %>
+                  <%= button_to friend,:class=>"btn btn-xs btn-success",:method => :delete,data:{:confirm => 'Are you sure you want to disconnect this person?'},:title=>"Want to remove this connection?" do %>
+                      <span class="glyphicon glyphicon-user"></span>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+    <% end %>
+  <% end %>
+<% else %>
+    <h6 class="card-subtitle">You do not have any connection.</h6>
+<% end %>
+
+
+

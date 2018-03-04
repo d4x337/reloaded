@@ -1,0 +1,51 @@
+<% @title = t('authors list') %>
+<div id="big-card">
+	<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= link_to image_tag("user_add.png", :border =>0, :mouseover => "user_add.png", :title => t("icon-authors") ), new_author_path %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= t('authors list') %>	
+			</div>
+		</div>
+	<table width="100%" class="d4x-grid">
+	   <tr class="d4x-grid-title">
+	   	 <th></th>
+			<th class="td-grid-tit"><%=t(:fullname) %></th>
+		    <th class="td-grid-tit"><%=t(:headline) %></th>
+		    <th class="td-grid-tit"><%=t(:dates) %></th>
+		    <th class="td-grid-tit"><%=t(:country) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		     <th></th>
+		  </tr>
+		 <% @authors.each do |author| %>
+		   <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		   	<td class="td-grid-data" width="2%">&nbsp;</td>
+			<td class="td-grid-data"><%= author.fullname %></td>
+		    <td class="td-grid-data"><%= author.headline %></td>
+		    <td class="td-grid-data"><%= author.dates %></td>
+		    <td class="td-grid-data"><%= author.country %></td>
+		   
+			<td class="td-grid-data">
+				<%= link_to image_tag("user.png", :border =>0 , :mouseover => "user.png", :title => t("icon-show") ,:size => "16x16"), author %>
+		 	</td>
+			<td class="td-grid-data">
+				<% if current_user.role? :author  %>  
+					<%= link_to image_tag("user_edit.png", :border =>0, :mouseover => "user_edit.png", :title => t("icon-edit"),:size => "16x16" ), edit_author_path(author) %>
+				<% end %>
+			</td>
+		    <td class="td-grid-data">
+			    <% if current_user.role? :author  %>
+						<%= button_to "", author, :confirm => 'are you sure?', :method => :delete, :class => 'udestroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+			<td class="td-grid-data" width="2%">&nbsp;</td>
+		  </tr>
+		<% end %>
+	</table>
+	<div id="paginator">
+		<%= will_paginate @author,:per_page => 25 %>
+	</div>
+</div>

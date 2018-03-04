@@ -1,0 +1,72 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "d4x-cart" %>
+<% end %>
+<br />
+<br />
+<table align="center" class="d4x-shopping-evo">
+	  <tr>
+	      <td colspan="7" class="grey">
+	      	<h1 align="center"><%= d4x_sanitizer(t("your current cart"))%></h1><br />
+	      </td>
+	  </tr>
+	  <tr>
+	      <td colspan="7" class="grey">
+	      </td>
+	  </tr>
+	  <tr class="d4x-grid-title">
+			<td align="center" width="80px"><%= d4x_sanitizer(t("code")) %></th>
+	    	<td align="center" width="220px"><%= d4x_sanitizer(t("product")) %></th>
+	    	<td align="center" width="170px"><%= d4x_sanitizer(t("details")) %></th>
+	    	<td align="center" width="50px"><%= d4x_sanitizer(t("quantity")) %></th>
+	    	<td align="right" width="120px"><%= d4x_sanitizer(t("price")) %></th>
+	    	<td align="right" width="120px"><%=d4x_sanitizer(t("Total")) %></th>
+	    	<td align="right" width="50px"><%=d4x_sanitizer(t("remove")) %></th>
+  	</tr>
+	  <% @cart.cart_products.each do |item| %>
+ 		  <% if is_product(item.product_id)%>
+			<tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			    <td align="center"><%= item.product_id %></td>
+				<td align="center"><%= prod_name_by_code(item.product_id) %></td>
+				<td align="center"><%= item.status %></td>
+				<td align="center"><%= item.quantity %></td>
+				<td align="right"><%= number_to_currency(item.single_price,{:unit=>"€"}) %></td>
+				<td align="right"><%= number_to_currency(item.total_price,{:unit=>"€"}) %></td>
+			    <td align="center">
+					<%= button_to "", item ,  :confirm => 'are you sure?', :method => :delete, :class => 'itemdestroy', :title => d4x_sanitizer(t("delete")),:name => 'destroy',:size => "16x16" %>
+				</td>
+			</tr>
+		  <% elsif is_service(item.product_id)%>
+			<tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		  	     <td align="center"><%= item.product_id %></td>
+			    <td align="center">
+			    		<%= prod_name_by_code(item.product_id) %>
+		     	 </td>
+				<td align="center">
+					 	<%= item.status %>
+				 </td>
+			     <td align="center">
+					<%= item.quantity  %> <%= d4x_sanitizer(t('year')) %>
+				 </td>
+			  	 <td align="right"><%= number_to_currency(item.single_price,{:unit=>"€"}) %></td>
+				 <td align="right"><%= number_to_currency(item.total_price,{:unit=>"€"}) %></td>
+			     <td align="center">
+					<%= button_to "", item , :confirm => 'are you sure?', :method => :delete, :class => 'itemdestroy', :title => d4x_sanitizer(t("delete")),:name => 'destroy',:size => "16x16" %>
+			     </td>
+			 </tr>
+		  <% end %>		
+      <% end %>		
+		<tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			  <td class="total price yellow" align="center" colspan="7">
+		     <%= label_tag(d4x_sanitizer(t('total')),nil,{:class=>'yellow'})%>
+		     <%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>'black',:id=>'total_cart'})%>
+		  </td>
+	  </tr>
+  	  <tr>
+	  	<td align="center" colspan="3"><br>
+			<%= link_to d4x_sanitizer(t("continue shopping")), "/store" %>
+		</td><td align="center" colspan="4"><br>
+			<%= link_to d4x_sanitizer(t("checkout")),new_order_path %>
+	    </td>
+	  </tr>
+</table>
+

@@ -1,0 +1,14 @@
+<p>
+  <b>Commenter:</b>
+  <%= mini_post_comment.user.nickname %>
+</p>
+ 
+<p>
+  <b>Comment:</b>
+  <%= mini_post_comment.content %>
+</p>
+<p>
+  <%= button_to 'Destroy Comment', [mini_post_comment.mini_post, mini_post_comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>

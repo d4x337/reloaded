@@ -1,0 +1,34 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "d4x-signin" %>
+<% end %>
+<!-- Login -->
+<div class="login__block active" id="l-login">
+  <div class="login__block__header">
+    <i class="zmdi zmdi-lock"></i>
+    <h4 class="orange"><%= d4x_sanitizer(t("login")) %></h4>
+    <div class="actions actions--inverse login__block__actions">
+      <div class="dropdown">
+        <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+        <div class="dropdown-menu dropdown-menu-right ddd4x">
+          <%= render :partial => 'devise/shared/dropdown_confirmation' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login__block__body">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :nickname,:class=> "form-control center",:size =>"26",:placeholder=>d4x_sanitizer(t("nickname")),:maxlength=>20 %>
+        <br>
+        <%= f.password_field :password ,:class=>'form-control center input-transparent',:placeholder=>d4x_sanitizer(t("password"))%>
+      </div>
+      <%= f.submit t("login"), :id => "bt-signin",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
+    <% end %>
+  </div>
+  <%= render :partial => '/shared/devise_footer' %>
+</div>
+
+
+
+

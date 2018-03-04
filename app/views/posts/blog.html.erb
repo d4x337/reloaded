@@ -1,0 +1,239 @@
+<h4 class="card-title"><%=@blog.title%> - <%=@blog.motto%></h4>
+<h6 class="card-subtitle"><%=@blog.description%></h6>
+<div class="blog">
+<% if @posts %>
+	<% @posts.each do |post| %>
+      <div class="card">
+        <%= image_tag(post.image.url,:class=>'card-img-top') %>
+        <div class="card-body">
+          <h4 class="card-title"><%= post.title %></h4>
+          <h6 class="card-subtitle">by <%= user_nick(post.author) %> on
+            <% if post.updated_at.present? %>
+              <%= post.updated_at.to_s(:long) %>
+            <% else %>
+              <%= post.created_at.to_s(:long) %>
+            <% end %>
+          </h6>
+          <div id="body-post-text">
+            <%= @contempt = raw(post.content) %>
+
+          </div>
+          <div id="avatar" class="center">
+            <% if post.user.avatar(:thumb).present? %>
+              <img alt="image" class="widget-profile__img animated tada"  width="70px" src="<%= post.user.avatar.url(:thumb) %>">
+            <% else %>
+              <img alt="image" class="widget-profile__img" src="<%= image_url 'missing_avatar.png' %>" width="20px"/>
+            <% end %>
+            <br>
+            <%= d4x_sanitizer(t("author")) %>:  <b class="lime"><%= post.user.nickname %></b> - <%= time_ago_in_words(post.created_at) %> <%= d4x_sanitizer(t("ago")) %> <br>
+
+          </div>
+          <% if post.post_tag.count > 0 %>
+            <%=  image_tag("tag_red.png", :border =>0 , :mouseover => "tag_red.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16") %>
+            <% post.post_tag.each do |post_tag| %>
+              <%= Tag.find(post_tag.tag_id).name %>;
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <br>
+
+
+	<% end %>
+<% end %>
+</div>
+<%= content_for :head do %>
+  <%= javascript_include_tag 'summernote.js' %>
+  <%= stylesheet_link_tag 'summernote.css' %>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.summernote').summernote({
+              height: 300,
+              tabsize: 2,
+              codemirror: { // codemirror options
+                  theme: 'darkly'
+              }
+          });
+      });
+  </script>
+  <style>
+    .none{
+      display:none;
+    }
+    #message_efile,
+    #pubkey,
+    #privkey
+    {
+      background-color:black;
+      border: 2px solid #4F6260;
+      border-radius: 3px;
+      color:lime;
+      font-size:12px;
+      height:80px;
+    }
+    #input,
+    #message_content{
+      background-color: #001100;
+      border: 2px solid #4F6260;
+      border-radius: 3px;
+      color:lime;
+      font-size:14px;
+      height:200px;
+    }
+    .d4xcontrol{
+      background-color:white;
+      border:0px;
+    }
+    #remote{
+
+    }
+    .tt-suggestions,
+    .tt-suggestion{
+      color:yellow;
+    }
+    .tt-dropdown-menu{
+      background-color:#001100;
+      color:yellow;
+      border:none;
+      border-top-left-radius:0px;
+      border-top-right-radius:0px;
+    }
+    .none{
+      display:none;
+    }
+    .orange{
+      color:orange;
+    }
+    .lime{
+      color:lime;
+    }
+    .red{
+      color:red;
+    }
+    #spinner{
+      margin-top:10px;
+      margin-left:-20px;
+    }
+    #target_name{
+      margin-left:7px;
+      background-color:#001100;
+      border:0px solid white;
+      color:yellow;
+      border-radius:3px;
+      width:93%;
+    }
+    .ttt{
+      background-color:#1AB393;
+      color:white;
+    }
+    #aespass{
+      background-color:black;
+      color:lime;
+      border-radius:5px;
+      border: 2px solid #005500;
+
+
+    }
+    #message_content{
+      background-color:#001100;
+      border: 2px solid #4F6260;
+      border-radius: 3px;
+      color:lime;
+      font-size:14px;
+    }
+    .minicons{
+      border:0px solid white;
+
+    }
+    .shipgrey{
+      background-color:#4F6260;
+      border: 2px solid darkgrey;
+    }
+
+    .d4xsearch{
+      margin-left:7px;
+      border:0px solid white;
+      color:yellow;
+      border-top-left-radius:3px;
+      border-bottom-left-radius:3px;
+      width:auto;
+      max-width:290px;
+      background-color:#001100;
+    }
+  </style>
+<% end %>
+
+<%= content_for :rightside_content do %>
+  <div class="card">
+    <div class="card-body">
+      <%= form_for(@post) do |f| %>
+
+          <div class="field">
+            <%= f.text_field :title,:class=>'form-control input-sm',:placeholder=>'Post Title' %>
+          </div>
+          <br>
+          <div class="row" id="content-div">
+            <div class="col-xs-12">
+              <%= f.text_area :content,:class=>'form-control custom-control input-transparent summernote',:placeholder=>"Post Content",:maxlength=>"337",:rows=>6,:style=>"resize:none" %>
+              <script>
+                  $("#message_content").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+              </script>
+            </div>
+          </div>
+          <br>
+          <div class="row" id="content-div">
+            <div class="col-xs-3 alignleft">
+              <select id="status" data-placeholder="status" class="select2 form-control " name="comment_status" data-name="comment_status">
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+              </select>
+            </div>
+            <div class="col-xs-4">
+              <%= f.select(:status,options_for_select([[t('publish'), 'publish'], [t('draft'), 'draft']], @post.status ), :class =>  "d4xItem") %>
+            </div>
+            <div class="col-xs-5 right">
+              <%= collection_select(:tags, :id,Tag.all,:id, :slug,{:selected => @post.post_tag.map(&:tag_id)},:name => 'post[tags][]', :multiple => true, :size=>2, :id =>"existing-tags"  )%>
+            </div>
+          </div>
+          <div class="input-group">
+              <span class="input-group-btn">
+                  <span class="btn btn-sm btn-dark" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-upload"></i></span>
+                <%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+              </span>
+              <span class="form-control"></span>
+          </div>
+        <%= f.submit :class=>'btn btn-outline-warning btn-sm block full-width m-b' %>
+      <% end %>
+    </div>
+  </div>
+
+  <% unless @allposts.blank? %>
+    <div class="listview listview--hover">
+
+        <% @allposts.each do |post| %>
+
+        <div class="listview__item traspa">
+            <% if post.user.avatar(:thumb).present? %>
+              <img class="listview__img" src="<%= post.user.avatar.url(:thumb) %>" alt="">
+            <% else %>
+              <img class="listview__img" src="/demo/img/profile-pics/1.jpg" alt="">
+            <% end %>
+            <div class="listview__content">
+              <div class="listview__heading">
+                <%= link_to(post) do %><%= link_to post.title[0,35],edit_post_path(post) %><% end %>
+                <small><%= time_ago_in_words_converter(post.created_at) %>&nbsp;<%= t('ago') %>
+                  <% if current_user %>
+                    <% if current_user.blog.id = post.blog_id %>
+                      <%= button_to t('delete'), post, :confirm => 'really want to delete this post?', :method => :delete, :class => 'btn btn-sm btn-outline-danger ',:name => 'destroy',:size => "16x16" %>
+                    <% end %>
+                  <% end %>
+                </small>
+              </div>
+              <p><%=post.content[0,100]%></p>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+<% end %>
+<% end %>

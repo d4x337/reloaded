@@ -1,0 +1,40 @@
+<%= content_for :head do %>
+
+<% end %>
+<div class="chat-widget">
+	
+	<div id="menu-title-2013" class="lcd-link">
+		<%= link_to d4x_sanitizer(t('Invite a friend!')),"/invitations"%>
+	</div>
+
+	<div id="widget-controls">
+		<%= form_for(Invitation.new) do |f| %>
+<br />
+		  <div id="actions">
+			<%= f.label(d4x_sanitizer(t("invite_from")),nil,{:class=>'lcd'})%><br />
+			<%= select_tag(:type , options_for_select([
+				[current_user.nickname, current_user.email],
+				['anonymous', 'anonymous'],
+				]),:id=>"invite-sender",:width=>"1x10") %>
+		  </div>
+	<br />
+		  <div id="actions">
+ 			<%= f.label d4x_sanitizer(t("fullname")),nil,{:class=>'lcd'}%>
+			<%= f.text_field :subject,:size => 26,:class=>'def-input' %>
+		  </div>
+<br />
+		  <div id="actions">
+			<%= f.label d4x_sanitizer(t("target_address")),nil,{:class=>'lcd',:width=>10}%>
+			<%= f.email_field :recipient_email,:size => 26 %>
+		  </div>
+		  
+    	  <br />
+		  
+		  <div id="actions" class="center">
+			<%= f.submit d4x_sanitizer(t('send')) ,:class=>'button-grey-d4x' %>
+		  </div>	
+
+	   <% end %>
+	</div>
+
+</div>

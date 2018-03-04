@@ -1,0 +1,702 @@
+<style>
+  #single-connection,
+  #single-post{
+    float:left;
+    width:100%;
+    text-align:left;
+    padding-top:-10px;
+  }
+  #mpactions{
+    height:32px;
+  }
+  #favorite-2014{
+    float:left;
+    margin-bottom:5px;
+  }
+  #new-post-area{
+    border:0px solid red;
+    float:left;
+    height:100%;
+    width:100%;
+    margin-top:20px;
+    padding-bottom: 10px;
+    border-bottom:1px solid #DCE0DC;
+
+  }
+
+  #post-body{
+    float:left;
+    width:83%;
+    border:0px solid red;
+    min-height:18px;
+    margin-right:0px;
+    margin-left:5px;
+    margin-top:5px;
+    height:100%;
+  }
+
+
+
+  #author-avi{
+    float:left;
+    height: 73px;
+    width: 73px;
+    margin-top:5px;
+    margin-left:5px;
+  }
+
+  #comment-text{
+    margin-top:0px;
+    margin-left:5px;
+    align:left;
+
+  }
+
+  #fullname-area{
+    float:left;
+    height:20px;
+    max-width: 60%;
+    border:0px solid lime;
+    font-size:16px;
+    margin-top:0px;
+    font-weight:bold;
+    margin-left:5px;
+  }
+
+  #username-area{
+    float:left;
+    height:20px;
+    max-width: 60%;
+    border:0px solid lime;
+    font-size:14px;
+    margin-top:-2px;
+    font-weight:bold;
+    margin-left:5px;
+  }
+
+  #elapsed-time{
+    float:right;
+    height:18px;
+    max-width: 80px;
+    border:0px solid orange;
+    font-size:12px;
+    margin-right:5px;
+    margin-top:0px;
+    color: #7a7a7a;
+  }
+
+  #post-del{
+    border:0px solid red;
+    height:12px;
+    width:12px;
+    float:right;
+    margin-right:4px;
+    margin-top:-2px;
+    cursor: pointer;
+    text-align: left;
+    font-size:12px;
+    color: #7a7a7a;
+  }
+
+  #post-text{
+    max-width:95%;
+    border:0px solid white;
+    min-height:18px;
+    margin-top:20px;
+    margin-bottom:5px;
+    margin-left:5px;
+    font-size:12px;
+    word-wrap: break-word;
+  }
+
+  #post-text p{
+    text-align:left;
+    margin-bottom:0px;
+    margin-left:0px;
+  }
+
+  #sensation-button{
+    font-size:12px;
+    margin-left:5px;
+    color:black;
+  }
+
+  #sensation-bt,
+  #feed-icon-2013{
+    font-size:12px;
+    margin-left:5px;
+  }
+
+  #post-actions{
+    float:left;
+    width:80%;
+    border:0px solid violet;
+    min-height:22px;
+    padding-bottom:0px;
+    height:24px;
+    margin-right:5px;
+    margin-left:-10px;
+    margin-top:5px;
+    font-family: Tahoma;
+    font-size:10px;
+  }
+
+  #like-2014{
+    float:left;
+    margin-left:0px;
+    border: 0px solid pink;
+    margin-right:40px;
+    margin-bottom:20px;
+    font-size:8px;
+  }
+
+  #dislike-2014{
+    float:left;
+    margin-bottom: 0px;
+    border: 0px solid pink;
+    margin-right:40px;
+    margin-bottom:20px;
+  }
+
+  #liked-2014{
+    float:left;
+    margin-left:0px;
+    border: 0px solid pink;
+    margin-right:40px;
+    margin-bottom:20px;
+    font-size:8px;
+  }
+
+  #disliked-2014{
+    float:left;
+    margin-bottom: 0px;
+    margin-right:40px;
+    margin-bottom:20px;
+    border: 0px solid pink;
+  }
+  #sensation-2014{
+    float:left;
+    margin-bottom: 0px;
+    border: 0px solid pink;
+  }
+
+  #sensation-2014 a{
+    color:#ffffff;
+  }
+
+  .sensation{
+    font-size:20px;
+    font-family:Tahoma;
+  }
+
+  #like-2013{
+    float:left;
+    margin-left:0px;
+    background-color:#FFFFFF;
+    font-family:Tahoma;
+  }
+
+  #dislike-2013{
+    float:left;
+    margin-bottom: 0px;
+  }
+
+
+  #comments-list{
+    float:left;
+    width:100%;
+    border:0px solid blue;
+    min-height:18px;
+    margin-left:0px;
+    margin-top:5px;
+  }
+
+  #single-comment-2013{
+    padding-top:2px;
+    margin-top:3px;
+    border-top:1px solid #0d8ddb;
+  }
+
+  .thumbnail-comment{
+    width:40px;
+    height:40px;
+    border-radius:3px;
+    border:0px white solid;
+    margin-top:2px;
+    margin-left:10px;
+  }
+
+  #commenter-image{
+    margin-top:3px;
+    margin-left:13px;
+  }
+
+  #comm-left{
+    float:left;
+    width:34px;
+    margin-left:0px;
+    border:0px solid violet;
+  }
+
+  #comm-right{
+    float:left;
+    border:0px solid green;
+    width:100%;
+    padding-left:5px;
+  }
+
+  #comment-username{
+    float:left;
+    color:#333333;
+    margin-top:2px;
+    margin-left:0px;
+    margin-bottom:5px;
+    width:78%;
+    height:18px;
+    font-family:Arial;
+    font-size:14px;
+    font-weight:bold;
+    border:0px solid black;
+  }
+
+  #comment-del{
+    border:0px solid red;
+    float:right;
+    margin-right:2px;
+    margin-top:2px;
+    cursor: pointer;
+    font-size:12px;
+    color: #7a7a7a;
+  }
+
+  #comment-content{
+    float:left;
+    margin-left:-5px;
+  }
+
+  #new-comment-bt{
+    margin-bottom:0px;
+  }
+
+  #comment-liking{
+    margin-top:5px;
+    margin-left:-5px;
+    padding-bottom:3px;
+    font-size:10px;
+    float:left;
+  }
+
+
+  #feeds-totals{
+    padding-left:1px;
+    padding-bottom:3px;
+    font-size:10px;
+    float:left;
+    margin-top:10px;
+  }
+
+
+  #delete-comment{
+    float:right;
+  }
+  .YTT{
+    width:210px;
+    height:130px;
+  }
+  .white{
+    color:white;
+  }
+
+  #user-feed-area{
+    float:left;
+    width:100%;
+    border:0px solid red;
+    margin-top:10px;
+    margin-left:3px;
+  }
+
+  #tb-comment-2013{
+    text-align:left;
+    margin-top:18px;
+    margin-left:-80px;
+    width:300px;
+  }
+
+  #liked,
+  #disliked{
+    margin-right:10px;
+    font-size:12px;
+    color:#000000;
+  }
+
+  .contentpost{
+    width:94%;
+    margin-top:1px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    word-wrap: break-word;
+    margin-left:5px;
+    border:0px solid white;
+    text-shadow:1px 1px 1px black;
+    background-color:black;
+    border-radius: 5px;
+    padding-top:5px;
+    padding-bottom:2px;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .contentcomm{
+    width:310px;
+    margin-top:5px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    word-wrap: break-word;
+    margin-left:10px;
+    border:0px solid white;
+    text-shadow:1px 1px 1px black;
+    background-color:black;
+    border-radius: 5px;
+    padding-top:5px;
+    padding-bottom:2px;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  #commentime{
+    margin-right:20px;
+    color:yellow;
+  }
+  #comment-time{
+    margin-right:10px;
+    color:yellow;
+  }
+  #comment-div{
+    margin-top:-10px;
+
+  }
+  small{
+    color:white;
+  }
+  #minipost-time{
+    margin-right:25px;
+    color:yellow;
+  }
+  #profile-pic{
+    margin-left:5px;
+
+    border:2px solid white;
+    box-shadow: 1px 1px 1px black;
+  }
+
+  .media-body{
+    margin-left:5px;
+    color:white;
+  }
+  .media-body a{
+    color:lime;
+  }
+  #username{
+    font-weight: bold;
+    color:orange;
+    margin-left:0px;
+  }
+  #firstline-comment{
+    margin-left:10px;
+  }
+  #username-comment{
+    font-weight: bold;
+    color:orange;
+    margin-left:10px;
+  }
+
+  #visibility,
+  #firstline{
+    margin-left:0px;
+  }
+
+  #postext{
+    color:white;
+  }
+  #minipost-time{
+    margin-right:5px;
+    float:right;
+  }
+  #dbutton{
+    float:right;
+    margin-left:38px;
+  }
+
+
+  p{
+    color:white;
+  }
+  .pdel{
+    border:0px;
+    background:transparent;
+    float:right;
+    margin-right:0px;
+  }
+  .d4xcomment{
+
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+  #addcomm{
+    width:50px;
+    float:right;
+  }
+
+  #whole-first{
+    margin-left:5px;
+  }
+  #countercomm{
+    float:left;
+  }
+
+  .icon-del-comment{
+    background-color:transparent;
+    float:right;
+    border:0px;
+    color:white;
+    margin-right:10px;
+  }
+
+  .icon-del-post{
+    background-color:transparent;
+    float:right;
+    border:0px;
+    color:white;
+    margin-right:-5px;
+  }
+
+  .img-responsive{padding-bottom:8px;}
+  .countercomm {text-align:center; float:right; padding-top:1px; padding-bottom:1px;position:relative}
+  .counterfav {text-align:center; float:right; padding-top:1px; padding-bottom:1px;position:relative}
+  .counterdontlikes,
+  .counterlikes {text-align:center; float:right; padding-top:1px; padding-bottom:1px}
+
+  .comm-counter { position:absolute; top:-3px; left:22px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+  .fav-counter { position:absolute; top:-3px; left:15px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+  .dontlikes-counter { position:absolute; top:-3px; left:20px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+  .likes-counter { position:absolute; top:-3px; left:35px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+
+  .iconcomm{max-width:125px; border:0px; margin:auto;background-color:transparent;}
+  .iconfav,
+  .icondontlike,
+  .iconlike{max-width:125px; border:0px; margin:auto;}
+
+
+</style>
+
+<div id="single-post">
+
+
+  <div class="media-body">
+    <div class="row">
+
+      <div class="col-sm-2 col-xs-2">
+        <a href="#" class="pull-left">
+          <% if mini_post.user.avatar(:thumb).present? %>
+              <img alt="image" class="img-circle animated tada" src="<%= mini_post.user.avatar.url(:thumb) %>" width="50px" id="profile-pic">
+          <% else %>
+              <img alt="image" class="img-circle" src="<%= image_url 'missing_avatar.png' %>" width="50px" id="profile-pic"/>
+          <% end %>
+        </a>
+      </div>
+
+      <div class="col-sm-7 col-xs-7" id="whole-first">
+        <strong id="firstline"><%= link_to(mini_post.user.firstname,current_user.nickname) %></strong> posted <br>
+        <strong class="white" id="username">@<%= mini_post.user.nickname %></strong><br>
+        <p id="visibility">Visibility:<strong class="white"> Lounge</strong>
+      </div>
+      <div class="col-sm-2 col-xs-2">
+        <div class="row">
+          <span id="minipost-time"><%= time_ago_in_words_converter(mini_post.created_at) %></span>
+        </div>
+        <div class="row">
+          <% if current_user.id == mini_post.user.id %>
+              <%= button_to mini_post,:class=>"pdel",:method => :delete, data: {:confirm => 'Are you sure you want to delete this post?'}, :title=>"remove post" do %>
+                  <span id='dbutton' class="fa fa-times-circle"></span>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <div class="contentpost" id="postext">
+          <%= raw(mini_post.content_html) %>
+          <% if not mini_post.image_file_name.blank? %>
+              <%= image_tag mini_post.image,:class=>'img-responsive' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row" id="mpactions">
+      <div class="col-sm-2 col-xs-2">
+
+      </div>
+      <div id="post-actions" class="col-sm-10 col-xs-10">
+
+        <% @likescount = count_likes(mini_post.id) %>
+        <% @dontlikescount = count_dontlikes(mini_post.id) %>
+
+        <% if user_has_voted(mini_post.id) %>
+            <% @like_dislike = liked_or_disliked(mini_post.id) %>
+            <% mini_post.mini_post_liking.each do |mini_post_liking| %>
+                <% if (current_user.id == mini_post_liking.user_id) && mini_post_liking.liking %>
+                    <div id="like-2014">
+                      <%= form_for(mini_post_liking) do |f| %>
+                          <%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+                          <%= f.hidden_field :mini_post_liking_id, :value=> mini_post_liking.id.to_s,:class=>'mplid_'+mini_post.id.to_s %>
+                          <%= hidden_field_tag 'act_'+mini_post_liking.mini_post.id.to_s, 0,:class=>'act' %>
+                          <% button_to t("you like this post"), [mini_post_liking.mini_post, mini_post_liking], :confirm => 'are you sure you want to unlike?',:alt =>'unlike', :class=>"btn btn-xs btn-success", :method => :delete ,:id=>"feed-icon-2013" %>
+                          <div class="counterlikes">
+                            <i class="iconlike icon-large-red icon-heart liking"  id="liking_<%= mini_post.id.to_s %>"></i>
+                            <span id="likescount" class="likes-counter"><%= @likescount %></span>
+                          </div>
+                      <% end %>
+                    </div>
+                <% elsif (current_user.id==mini_post_liking.user_id) && !mini_post_liking.liking %>
+                    <div id="dislike-2014" class="none">
+                      <%= form_for(mini_post_liking) do |f| %>
+                          <%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s %>
+                          <%= f.hidden_field :mini_post_liking_id, :value=> mini_post_liking.id.to_s ,:class=>'mpdid_'+mini_post.id.to_s%>
+                          <%= hidden_field_tag 'disact_'+mini_post_liking.mini_post.id.to_s, 0,:class=>'disact' %>
+                          <% button_to t("you dont like this post"), [mini_post_liking.mini_post, mini_post_liking], :confirm => 'are you sure you want to undislike?', :alt =>'undislike', :class=>"btn btn-xs btn-danger",:method => :delete ,:id=>"feed-icon-2013" %>
+                          <div class="counterdontlikes">
+                            <i class="icon-large-violet icon-thumbs-down disliking" id="disliking_<%= mini_post.id.to_s %>"></i>
+                            <span id="dontlikescount" class="dontlikes-counter"><%= @dontlikescount %></span>
+                          </div>
+                      <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+        <% else %>
+            <div id="like-2014">
+              <%= form_for(mini_post.mini_post_liking.build) do |f| %>
+                  <%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+                  <%= f.hidden_field :mini_post_liking_id, :value=> '-337',:class=>'mplid_'+mini_post.id.to_s %>
+                  <%= hidden_field_tag 'act_'+mini_post.id.to_s, 1,:class=>'act' %>
+                  <%= f.hidden_field :liking, :value=> true %>
+                  <div class="counterlikes">
+                    <i class="iconlike icon-large-grey icon-heart liking" id="liking_<%= mini_post.id.to_s %>"></i>
+                    <span id="likescount" class="likes-counter"><%= @likescount  %></span>
+                  </div>
+                  <% submit_tag t("like"),:name=>"feed",:id=>"feed-icon-2013",:class=>'btn btn-xs btn-success' %>
+              <% end %>
+            </div>
+            <div id="dislike-2014" class="none">
+              <%= form_for(mini_post.mini_post_liking.build) do |f| %>
+                  <%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+                  <%= f.hidden_field :mini_post_liking_id, :value=> '-337',:class=>'mpdid_'+mini_post.id.to_s %>
+                  <%= hidden_field_tag 'disact_'+mini_post.id.to_s, 1,:class=>'disact' %>
+                  <% submit_tag t("dislike"),:name=>"feed",:id=>"feed-icon-2013 dislike",:class=>'btn btn-xs btn-danger' %>
+                  <span id="dontlikescount" class="dontlikes-counter"><%= @dontlikescount %></span>
+                  <i class="icon-large-grey icon-thumbs-down disliking" id="disliking_<%= mini_post.id.to_s %>"></i>
+              <% end %>
+            </div>
+        <% end %>
+        <div id="addcomm">
+          <div class="countercomm">
+            <% @minipostcomments = mini_post.mini_post_comment.count %>
+            <button type="button" class="iconcomm icon-large-blue icon-comment" data-toggle="modal" data-target="#commentModal" data-whatever="<%= mini_post.id.to_s %>"></button>
+            <span id="commcount" class="comm-counter"><%= @minipostcomments %></span>
+          </div>
+        </div>
+
+
+        <div id="favorite-2014">
+          <% @favorites = count_favorites(mini_post.id) %>
+          <% if is_user_favorite(current_user.id,mini_post.id) == true %>
+              <% mini_post.mini_post_favorite.each do |mini_post_favorite| %>
+                  <% if (current_user.id == mini_post_favorite.user_id) && mini_post_favorite.favorite %>
+                      <%= form_for(mini_post_favorite) do |f| %>
+                          <%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+                          <%= f.hidden_field :mini_post_favorite_id, :value=> mini_post_favorite.id.to_s,:class=>'mpfav_'+mini_post.id.to_s %>
+                          <%= hidden_field_tag 'favact_'+mini_post_favorite.mini_post.id.to_s, 0,:class=>'favact' %>
+                          <div class="counterfav">
+                            <i class="iconfav icon-large-green icon-fire favoriting " id="favoriting_<%= mini_post.id.to_s %>"></i>
+                            <span id="favcount" class="fav-counter"><%= @favorites %></span>
+                          </div>
+                      <% end %>
+
+                  <% end %>
+              <% end %>
+          <% else %>
+              <%= form_for(mini_post.mini_post_favorite.build) do |f| %>.
+                  <%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+                  <%= f.hidden_field :mini_post_favorite_id, :value=> '-337',:class=>'mpfav_'+mini_post.id.to_s %>
+                  <%= hidden_field_tag 'favact_'+mini_post.id.to_s, 1,:class=>'favact' %>
+                  <%= f.hidden_field :favoriting, :value=> true %>
+                  <div class="counterfav">
+                    <i class="iconfav icon-large-grey icon-fire favoriting left" id="favoriting_<%= mini_post.id.to_s %>"></i>
+                    <span id="favcount" class="fav-counter"><%= @favorites %></span>
+                  </div>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+
+    </div><!-- post-actions -->
+
+
+
+    <% if mini_post.mini_post_comment.count > 0 %>
+        <div id="comments-list" class="row">
+          <% mini_post.mini_post_comment.each do |mpcomment| %>
+              <div id="single-comment-2013" class="row">
+
+                <div class="row">
+                  <div class="col-sm-2 col-xs-2" id="commenter-image">
+                    <% if mpcomment.user.avatar(:thumb).present? %>
+                        <img alt="image" class="img-circle animated thumbnail-comment" src="<%= mpcomment.user.avatar.url(:thumb) %>">
+                    <% else %>
+                        <img alt="image" class="img-circle animated thumbnail-comment" src="<%= image_url 'missing_avatar.png' %>"/>
+                    <% end %>
+                  </div>
+                  <div class="col-sm-7 col-xs-7">
+                    <div class="row">
+                      <strong id="firstline-comment"><%= link_to(mpcomment.user.firstname ) %></strong> commented
+                    </div>
+                    <div class="row">
+                      <small class="white" id="username-comment">@<%= mpcomment.user.nickname %></small>
+                    </div>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                    <div class="row">
+                      <span id="commentime" class="pull-right"><%= time_ago_in_words_converter(mpcomment.created_at).split(',').first %></span>
+                    </div>
+                    <div class="row">
+                      <% if (current_user.id == mpcomment.user.id) or (current_user.id == mpcomment.mini_post.user.id) %>
+                          <%= button_to [mpcomment.mini_post, mpcomment],:class=>"btn-alert icon-del-comment",:method => :delete, data: {confirm:'Are you sure you want to delete this comment?'}, :title=>"remove comment" do %>
+                              <span class="glyphicon glyphicon-remove-circle"></span>
+                          <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row" id="comment-div">
+                  <div class="col-sm-2 col-xs-2">
+                  </div>
+                  <div class="col-sm-9 col-xs-9" id="comment-content">
+                    <%= raw(cr2br(h(mpcomment.content))) %>
+                  </div>
+                </div>
+
+
+
+
+              </div><!-- single-comment-2013 -->
+          <% end %>
+        </div><!-- comments-list -->
+    <% end %>
+  </div><!-- comments-list -->
+  <hr>
+</div>

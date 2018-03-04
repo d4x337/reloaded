@@ -1,0 +1,36 @@
+<%= form_for(@option) do |f| %>
+  <% if @option.errors.any? %>
+     <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center"><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<strong class="error-counter"><%= pluralize(@option.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @option.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+     <div id="center-content">
+     	<br><br>
+   <div class="field">
+    <%= f.label :key,:class=>"show-item-label" %><br />
+    <%= f.text_field :name ,:size =>50,:class=>'def-input'%>
+  </div><br>
+  <div class="field">
+    <%= f.label :value,:class=>"show-item-label" %><br />
+    <%= f.text_field :value,:size => 50,:class=>'def-input' %>
+  </div><br>
+  <div class="field">
+    <%= f.label :description,:class=>"show-item-label" %><br />
+    <%= f.text_area :description,:size =>"50x7" %>
+  </div><br>
+  <div class="actions">
+   <%= f.submit "update" ,:class=>'button-d4x' %>
+  </div>
+  <br>
+  </div>
+<% end %>

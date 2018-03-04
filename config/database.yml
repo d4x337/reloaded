@@ -1,0 +1,28 @@
+development:
+  adapter: postgresql
+  encoding: UTF8
+  database: reloaded
+  pool: 5
+  username: postgres
+  password: laMIAzia 
+  host: 127.0.0.1
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: UTF8
+  database: test_reloaded
+  pool: 5
+  username: postgres
+  password: laMIAzia
+  host: 127.0.0.1
+  port: 5432
+  
+production:
+  adapter: postgresql
+  encoding: UTF8
+  database: reloaded
+  pool: 5
+  username: _postgresql
+  host: 127.0.0.1
+  port: 5432

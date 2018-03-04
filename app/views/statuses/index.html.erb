@@ -1,0 +1,58 @@
+
+         	<div class="panel-body" id="messages-panel">
+                <div class="tab-content">
+                    <div id="tab-compose" class="tab-pane active">
+                   <%= form_for(current_user.status.new) do |f| %>
+                    <div class="row">
+                      <div class="col-sm-4 col-xs-4">
+                         <% if current_user.avatar(:thumb).present? %>
+                            <img class="chat-avatara" src="<%= current_user.avatar.url(:thumb) %>" alt="" width="100">
+                         <% else %>
+                            <img class="chat-avatara" src="/images/missing_avatar.png" alt="" width="100">
+                         <% end %>
+                      </div>
+                      <div class="col-sm-8 col-xs-8">
+                         <div class="current_status">
+                            <%=get_current_status(current_user.id)%>
+                           </div>
+                           <br />
+                          <p class="yellow"><%= last_status_set(current_user.id).to_s(:short)%>&nbsp;-&nbsp;<%= time_ago_in_words(last_status_set(current_user.id)) %>&nbsp;<%= t('ago') %></p>
+                         </div>
+                			</div>
+                			<br />
+                      <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                          <%= f.text_area :status,:class=>'form-control message-new',:placeholder=>t('status'),:maxlength=>"250",:rows=>2,:style=>"resize:none" %>
+                            <script>
+                            $("#status_status").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+                          </script>
+                        </div>
+                      </div>
+						          <br />
+						          <%= f.submit d4x_sanitizer(t("update")), :id => "signup-submit",:class=>'btn btn-dark block full-width m-b'  %>
+				        <% end %>
+              <% @statuses = Status.where(:user_id=>current_user.id).order(:set_at).reverse_order %>
+							<% unless @statuses.blank? %>
+							<div class="status_list">
+								<% @statuses.each do |status| %>
+                  <div class="row col-xs-12">
+										<div class="col-sm-9 col-xs-9" id="old_status">
+									    	<%= status.status %>
+									    </div>
+									    <div class="col-sm-1 col-xs-1">
+									    	<%= button_to "",:class=> "btn btn-xs btn-success" do %>
+											    <i class='fa fa-comment white'></i>
+											<% end %>
+										</div>
+										<div class="col-sm-1 col-xs-1">
+									    	<%= button_to status, method: :delete,data: { confirm: t('are you sure') },:class=> "btn btn-xs btn-dark" do %>
+											    <i class='fa fa-trash-o white'></i>
+											<% end %>
+										</div>
+						        	</div>
+            					<% end %>
+            				</div>
+						  <% end %>
+			    </div>
+		    </div>
+		</div>

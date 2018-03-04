@@ -1,0 +1,13 @@
+<% @title = d4x_sanitizer(t('new mail_account')) %>
+<div class="big-card">
+	<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= image_tag("box.png", :border =>0, :mouseover => "box.png", :name => "new mail account") %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= d4x_sanitizer(t('mail_accounts')) %>	
+			</div>
+		</div>
+	<%= render 'form' %>
+
+</div>

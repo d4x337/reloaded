@@ -1,0 +1,42 @@
+	<% @recents = Post.where(:status => 'publish',:content_type => 'post').limit(@quanti).order(:published).reverse_order %>
+
+  <% @recents.each do |post| %>
+  <article class="entry style-media media type-post">
+
+    <figure class="media-object pull-left entry-thumbnail hidden-xs">
+
+      <!-- to disable lazy loading, remove data-src and data-src-retina -->
+      <img src="../img/placeholder.gif" data-src="http://placehold.it/230x230" data-src-retina="http://placehold.it/460x460" width="230" height="230" class="" alt="">
+
+      <!--fallback for no javascript browsers-->
+      <noscript>
+        <img src="http://placehold.it/230x230" alt="">
+      </noscript>
+
+    </figure>
+
+    <div class="media-body">
+
+      <header class="entry-header">
+        <h3 class="entry-title">
+          <%= link_to post.title,post %>
+        </h3>
+
+        <div class="entry-meta">
+          <span class="author">by <a href="index_static.html">Davide Gonnella</a></span>
+          <span class="entry-date"><%= post.published.strftime("%Y-%m-%d")  if not post.published.blank? %></span>
+          <span class="category">In <a href="index_static.html">Entertaintment</a></span>
+        </div>
+      </header>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <a href="single.html" class="more-link">Continue Reading<i class="icon icon-long-arrow-right"></i></a>
+      </p>
+
+    </div>
+
+  </article>
+
+<% end %>
+

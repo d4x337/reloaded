@@ -1,0 +1,109 @@
+<h3 align="center"><%= d4x_sanitizer(t('order summary'))%></h3>
+
+<br />
+<% @order.rows.each do |row| %>
+<h5 class="show-order">
+    <%= label_tag(prod_name_by_code(row.product_id),nil,{:class=>'d4x-label'})%>
+    <%= label_tag(number_to_currency(row.single,{:unit=>"€"}),nil,{:class=>'d4x-label'})%>
+    <%= label_tag(row.quantity,nil,{:class=>''})%>
+    <%= label_tag(number_to_currency(row.total,{:unit=>"€"}),nil,{:class=>''})%>
+</h5>
+<% end %>
+<br />
+<h5 class="show-order">
+	<%= label_tag(d4x_sanitizer(t('total order')),nil,{:class=>'d4x-label'})%>
+	<%= label_tag(number_to_currency(@order.total,{:unit=>"€"}),nil,{:class=>'yellow'})%>
+</h5>
+<br />
+<h3 align="center"><%= label_tag(d4x_sanitizer(t('billing to')),nil,{:class=>'d4x-label'})%></h3>
+
+<h5 class="show-order">
+	   <%= d4x_sanitizer(t('firstname')) %>
+	   <%= label_tag(@order.first_name,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+	   <%= d4x_sanitizer(t('lastname')) %>
+	   <%= label_tag(@order.last_name,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+
+	   <%= d4x_sanitizer(t('address')) %>
+	   <%= label_tag(@order.address,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+
+	   <%= d4x_sanitizer(t('zip'))%>
+	   <%= label_tag(@order.zip,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+
+	   <%= d4x_sanitizer(t('city'))%>
+	   <%= label_tag(@order.city,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+
+	   <%= d4x_sanitizer(t('town'))%>
+	   <%= label_tag(@order.town,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+
+	   <%= d4x_sanitizer(t('country'))%>
+	   <%= label_tag(@order.country,nil,{:class=>'micro'})%>
+</h5>
+<h5 class="show-order">
+	
+	   <%= d4x_sanitizer(t('telephone'))%>
+	   <%= label_tag(@order.telephone,nil,{:class=>''})%>
+</h5>
+</p>
+<% if all_services(@cart.id) %>
+<br />
+<h3 align="center"><%= d4x_sanitizer(t('shipping details'))%></h3>
+
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('firstname')) %>
+	    <%= label_tag(@order.shipping_first_name,nil,{:class=>''})%>
+</h5>
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('lastname')) %>
+	    <%= label_tag(@order.shipping_last_name,nil,{:class=>''})%>
+</h5>
+
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('address'))%>
+	    <%= label_tag(@order.shipping_address,nil,{:class=>''})%>
+</h5>
+
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('zip'))%>
+	    <%= label_tag(@order.shipping_zip,nil,{:class=>''})%>
+</h5>
+
+<h5 class="show-order">
+	   	<%= d4x_sanitizer(t('city'))%>
+	    <%= label_tag(@order.shipping_city,nil,{:class=>''})%>
+</h5>
+
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('town'))%>
+	    <%= label_tag(@order.shipping_town,nil,{:class=>''})%>
+</h5>
+
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('country'))%>
+	    <%= label_tag(@order.shipping_country,nil,{:class=>''})%>
+</h5>
+
+<h5 class="show-order">
+	    <%= d4x_sanitizer(t('telephone'))%>
+	    <%= label_tag(@order.shipping_telephone,nil,{:class=>''})%>
+</h5>
+	    
+<h5 class="show-order">
+		<% unless @order.customer_notes.blank? %>
+			   <%= label_tag(d4x_sanitizer(t('notes')),nil,{:class=>''})%>
+		  	   <%= @order.customer_notes %>
+		<% end %>
+</h5>
+<% end %>
+</p>

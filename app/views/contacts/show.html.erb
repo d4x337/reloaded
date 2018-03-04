@@ -1,0 +1,132 @@
+<style>
+	#current_status{
+		word-wrap: break-word;
+	}
+</style>
+<script language="JavaScript">
+	$( document ).ready(function() {
+		$('#icon-compose-new').css('color','grey');
+		$('#icon-received').css('color','grey');
+		$('#icon-sent').css('color','grey');
+		$('#icon-contacts').css('color','grey');
+		$('#icon-settings').css('color','grey');
+		$('#icon-profile').css('color','#2D3736');
+		
+		$( document ).submit(function() {
+			$('#spinner').removeClass('none');
+			$('#link-compose').addClass('none');
+		});	
+	});	
+</script>
+
+<% if params[:id].present? %>
+	<% user = User.find(params[:id]) %>
+<% else %>
+	<% user = current_user %>
+<% end %>
+
+	<div class="row">
+		<div class="col-sm-4 col-xs-4">
+			 <% if user.avatar(:thumb).present? %>
+           	 	<img class="chat-avatara" src="<%= user.avatar.url(:thumb) %>" alt="" width="100">
+           	 <% else %>
+        		<img class="chat-avatara" src="/images/missing_avatar.png" alt="" width="100">
+   			 <% end %>
+		 </div>
+		 <div class="col-sm-8 col-xs-8">
+		 		<h2 class="white bold"><%=user.firstname%></h2>
+		 		<h3 class="yellow">@<%=user.nickname%></h3>
+		 		<% if user.headline.present? %>
+					<h5><%= user.headline %></h5>
+                <% end %>
+		 </div>
+	</div>
+	
+	<br />
+	
+	<div class="row">
+		 <div class="col-sm-4 col-xs-4">
+			<p class="white" align="left">Status</p> 
+		 </div>
+		 <div class="col-sm-7 col-xs-7" id="current_status">
+		 	<p class="white" align="left"><%=get_current_status(user.id)%></p>
+		 </div>
+	</div>	
+	
+	<div class="row">
+		 <div class="col-sm-4 col-xs-4">
+			<p class="white" align="left">Set on</p> 
+		 </div>
+		 <div class="col-sm-7 col-xs-7">
+		 	<p class="white" align="left">
+		 		<% if has_set_at_status?(user.id) %>
+		 				<%= last_status_set(user.id).to_s(:short)%>&nbsp;-&nbsp;<%= time_ago_in_words(last_status_set(user.id)) %>&nbsp;<%= t('ago') %>
+		 		<% else %>
+		 			<%= t('never') %>
+		 		<% end %>
+		 		
+		 	</p>
+		 </div>
+	</div>	
+  	<% if user.online? %>
+		<div class="row">
+			 <div class="col-sm-4 col-xs-4">
+    			<p class="white" align="left">Last Seen</p> 
+   			 </div>
+   			 <div class="col-sm-8 col-xs-8">
+   			 	<p class="white" align="left"><%= image_tag "online.png" %>&nbsp; Online</p>
+   			 </div>
+		</div>	
+    <% else %>	
+		<% if user.last_seen.present? %>
+			<div class="row">
+				 <div class="col-sm-4 col-xs-4">
+        			<p class="white" align="left">Last Seen</p> 
+       			 </div>
+       			 <div class="col-sm-8 col-xs-8">
+       			 	<p class="white" align="left"><%= user.last_seen.to_s(:short)%>&nbsp;-&nbsp;<%= time_ago_in_words(user.last_seen) %>&nbsp;<%= t('ago') %></p>
+       			 </div>
+			</div>	
+		<% else %>
+			<div class="row">
+				 <div class="col-sm-4 col-xs-4">
+        			<p class="white" align="left">Last Seen</p> 
+       			 </div>
+       			 <div class="col-sm-8 col-xs-8">
+       			 	<p class="white" align="left"><%= t('never') %></p>
+       			 </div>
+			</div>
+   	  	<% end %> 
+    <% end %>
+    
+    <% if user.mobile.present? and user.show_mobile %>
+		<div class="row">
+			 <div class="col-sm-4 col-xs-4">
+    			<p class="white" align="left"><%= t('mobile') %></p> 
+   			 </div>
+   			 <div class="col-sm-8 col-xs-8">
+   			 	<p class="white" align="left"><%= user.mobile %></p>
+   			 </div>
+		</div>
+    <% end %>
+    
+    <% if user.email.present? and user.show_email %>
+		<div class="row">
+			 <div class="col-sm-4 col-xs-4">
+    			<p class="white" align="left"><%= t('email') %></p> 
+   			 </div>
+   			 <div class="col-sm-8 col-xs-8">
+   			 	<p class="white" align="left"><%= user.email %></p>
+   			 </div>
+		</div>
+    <% end %>
+
+	<div class="row">
+		 <div class="col-sm-4 col-xs-4">
+			<p class="white" align="left"><%= t('member since') %></p> 
+		 </div>
+		 <div class="col-sm-8 col-xs-8">
+		 	<p class="white" align="left"><%= user.created_at.to_s(:short) %>&nbsp;-&nbsp;<%= time_ago_in_words(user.created_at) %>&nbsp;<%= t('ago')%></p>
+		 </div>
+	</div>
+

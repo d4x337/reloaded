@@ -1,0 +1,43 @@
+<script language="JavaScript">
+  $( document ).ready(function() {
+
+    $('#icon-compose-new').css('color','grey');
+    $('#icon-posts').css('color','grey');
+    $('#icon-archive').css('color','#2D3736');
+    $('#icon-tags').css('color','grey');
+    $('#icon-settings').css('color','grey');
+    $('#icon-author').css('color','grey');
+
+  });
+</script>
+<% @title =t('admin blog') %>
+<div id="big-card">
+  <table width="100%" class="d4x-grid">
+    <tr class="d4x-grid-title">
+      <th class="small yellow"><%=t(:post) %></th>
+      <th class="small yellow center"><%=t(:author) %></th>
+      <th class="small yellow center"><%=t(:published) %></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @posts.each do |post| %>
+        <tr class="<%= cycle("odd","even")%> d4x-row-grid post-item">
+          <th class="small white alignleft">
+            <%= link_to(post) do %>
+                <%= post.title%>
+            <% end %>
+          </td>
+
+
+          <td class="td-grid-data">
+
+                    <%= button_to "X", post, data:{:confirm => 'really want to delete this post?'}, :method => :delete, :class => 'postdestroy ',:name => 'destroy',:size => "16x16" %>
+
+          </td>
+        </tr>
+    <% end %>
+  </table>
+  <div id="paginator">
+    <%= will_paginate @posts,:per_page => 10 %>
+  </div>
+</div>

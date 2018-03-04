@@ -1,0 +1,8 @@
+<% @title = d4x_sanitizer(t('set your avatar')) %>
+
+
+<% content_for :where do %>
+	<%= label_tag t('avatar'),nil,{:class=>"navbar-where"} %>
+<% end %>
+
+<%= render 'picture' %>

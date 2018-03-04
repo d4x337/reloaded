@@ -1,0 +1,51 @@
+<% @title =t('admin invitations') %>
+<div id="big-card">
+	<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= link_to image_tag("invitations.gif", :border =>0, :mouseover => "invitations1.gif", :title => t("icon-invitations"),:size =>"30x30" ), new_invitation_path %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= t('sent listing') %>	
+			</div>
+		</div>
+	<table width="100%" class="d4x-grid">
+	 	<tr class="d4x-grid-title">
+			<th class="td-grid-tit" ></th>
+			<th class="td-grid-tit" ><%=t(:sender) %></th>
+		    <th class="td-grid-tit" ><%=t(:target_id) %></th>
+		    <th class="td-grid-tit" ><%=t(:email) %></th>
+		    <th class="td-grid-tit" ><%=t(:invite_status) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		 <% @invitations.each do |invitation| %>
+		    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			 <td class="td-grid-data"></td>
+			 <td class="td-grid-data"><%= current_user.nickname %></td>
+		    <td class="td-grid-data"><%= invitation.target_id %></td>
+		     <td class="td-grid-data"><%= invitation.target_email %></td>
+		     <td class="td-grid-data"><%= invitation.read_at %></td>
+		
+		     <td class="td-grid-data"><%= link_to t('show'), invitation %></td>
+				
+		 	    <td>
+				<%= link_to image_tag("star_green.png", :border =>0 , :mouseover => "star_green.png", :title => t("icon-show") ,:size => "16x16"), invitation %>
+		 	</td>
+			 <td class="td-grid-data">
+				<% if can? :update, @invitation %>  
+					<%= link_to image_tag("edit.gif", :border =>0, :mouseover => "update.gif", :title => t("icon-edit"),:size => "16x16" ), edit_invitation_path(invitation) %>
+				<% end %>
+			</td>
+		     <td class="td-grid-data">
+		    	<% if can? :destroy, @invitation %>  
+						<%= button_to "", invitation, :confirm => 'are you sure?', :method => :delete, :class => 'destroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+		
+		  </tr>
+		<% end %>
+	</table>
+	<div id="paginator">
+	</div>
+</div>

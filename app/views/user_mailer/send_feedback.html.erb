@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head>
+		<title>Reloaded</title>
+	</head>
+	<body>
+	    <div id="wrapper-mailer" align="center">
+			<div id="header-mailer">
+
+      </div>
+      <div id="content-mailer" align="left">
+     &nbsp;  Hello staff,
+				<%= @feedback.from %> has sent you a feedback
+				message at <% @feedback.created_at %>.<br /> 
+			  <br><br>
+				From   : <%= @feedback.from %><br />
+				Email  : <%= @feedback.email %><br />
+				IP     : <%= @feedback.ip %><br />
+				Country: <%= @feedback.country %><br />
+				
+				<br><br>
+				<br><br>
+				Feedback: 
+				<%= @feedback.message %><br />
+				<br><br>
+				Rating (1-10): <%= @feedback.rating %><br />
+				:: eof ::<br>
+				<br><br>
+			</div>
+
+		</div>
+		<div id="vert-spacer">
+			&nbsp;
+		</div>
+	</body>
+</html>
+
+

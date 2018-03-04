@@ -1,0 +1,48 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "d4x-signin" %>
+<% end %>
+
+<div class="middle-box text-center animated  ibox-content devise_login">
+      	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <%= render :partial => "/shared/devise_header_logo" %>
+      <h3 class="font-bold center"><%= d4x_sanitizer(t("login")) %></h3>
+ 	        <div class="form-group">
+               	<%= f.text_field :nickname,:class=> "form-control center",:size =>"26",:placeholder=>d4x_sanitizer(t("nickname")),:maxlength=>20 %>
+            </div>
+            <div class="form-group">
+                <%= f.password_field :password ,:class=>'form-control center input-transparent',:placeholder=>d4x_sanitizer(t("password"))%>
+            </div>
+          	<%= f.submit d4x_sanitizer(t("enter")), :id => "bt-signin",:class=>'btn btn-d4x block full-width m-b'  %>
+
+            <p align="center">
+            <%= render :partial => "devise/shared/links_signin" %>
+            </p>
+            <small id="socialtoggle" style="display: none;"><%= t('login with social network')%></small>
+
+  			
+       		<div style="display: none;" id="social-login-div">
+	   			<%- if devise_mapping.omniauthable? %>
+				  <%- resource_class.omniauth_providers.each do |provider| %>
+				  	<% if provider.to_s == "facebook"%>
+				  	      <a class="btn btn-block btn-social btn-s btn-facebook" href="<%= omniauth_authorize_path(resource_name, provider)%>">
+						    <i class="fa fa-facebook"></i> Sign in with Facebook
+						  </a>
+				  	<% elsif provider.to_s == "linkedin"%>
+				  	 	 <a class="btn btn-block btn-social btn-s btn-linkedin" href="<%= omniauth_authorize_path(resource_name, provider)%>">
+						    <i class="fa fa-linkedin"></i> Sign in with Linkedin
+						  </a>
+					<% elsif provider.to_s == "twitter"%>
+				  	  	<a class="btn btn-block btn-social btn-s btn-twitter" href="<%= omniauth_authorize_path(resource_name, provider)%>">
+						    <i class="fa fa-twitter"></i> Sign in with Twitter
+						</a>
+				  	<% end -%>
+				  <% end -%>
+				<% end -%>   	
+				<br />
+			</div>
+    <% end %>
+  <%= render :partial => "/shared/devise_footer" %>
+</div>
+
+
+	

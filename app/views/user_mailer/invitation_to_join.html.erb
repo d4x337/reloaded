@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head>
+		<title>Reloaded</title>
+	</head>
+	<body>
+	    <div id="wrapper-mailer" align="center">
+			<div id="header-mailer">
+		    </div><!-- header-welcome -->
+	        <div id="content-mailer" align="left">
+				&nbsp;  Hello &nbsp;<%= @user.nickname %>,
+				<br><br>		
+				<%= @user.firstname %> has invited you to join 
+				us at Reloaded.<br> Follow the link below to sign up
+				and accept this invitation.
+				<br><br>
+				<%= @url %>
+				<br>
+				<br>
+				Best Regards,
+				<br>
+            Reloaded Team
+				<br>
+
+			</div>
+		</div>
+	</body>
+</html>
+
+

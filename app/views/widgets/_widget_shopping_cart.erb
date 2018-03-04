@@ -1,0 +1,64 @@
+<%= content_for :head do %>
+	<%= javascript_include_tag "d4x-store" %>
+<% end %>
+
+<%		
+      if session[:cart_id].present?
+        @cart  = Cart.find(session[:cart_id])
+      elsif not params[:cart_id].blank?
+        @cart  = Cart.find(params[:cart_id])
+      else
+        if current_user
+ 			@cart = Cart.where(:user_id=>current_user.id).first
+ 			if not @cart
+ 			    @cart  = Cart.new(params[:cart])
+        		session[:cart_id] = @cart.id
+   	 		    @cart.user_id = current_user.id
+ 		        @cart.currency = 'euro'
+		        @cart.items = 0
+		        @cart.status = "EMPTY CART"
+		        @cart.total_price = 0
+		        @cart.last_operation = DateTime.now
+		        @cart.ip = request.env["REMOTE_ADDR"]
+		      	@cart.save!
+		 	end	
+         
+         end	
+      end
+         	
+%>
+
+
+<div class="right-col-item-2013">
+	<div id="menu-title-2013" class="lcd-link">
+		
+	   <%= link_to(t('Your Shopping Cart')+"   (AGA"+@cart.id.to_s+")","/carts/"+@cart.id.to_s) %>
+	</div>
+
+	<div id="basket-label">
+	   <%= label_tag d4x_sanitizer(t('products')),nil,{:class=>""} %><br />
+       <%= label_tag d4x_sanitizer(t('quantity')),nil,{:class=>""} %><br />
+       <%= label_tag d4x_sanitizer(t('Total')),nil,{:class=>""} %>
+		<br />
+		<br />
+	   <%= link_to(image_tag("express-checkout-hero.png",:width=>130,:alt=>"Checkout",:class=>'center',:title=>'checkout'),"/orders/new/?cart="+@cart.id.to_s) %> 
+    </div>
+
+	<div id="basket-data">
+   		<%= label_tag(@cart.cart_products.count.to_s,nil,{:class=>''}) %><br />
+		<%= label_tag(@cart.cart_products.count.to_s,nil,{:class=>''}) %><br />
+  	    <%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>''})%>
+	</div>
+
+	<div id="image-basket">
+	   <%= link_to(image_tag("basket222.png",:size=>"60x60",:class=>"round-corners10"),"/carts/"+@cart.id.to_s) %><br />
+     	<%= button_to d4x_sanitizer(t('empty')), @cart, :confirm => 'are you sure?', :method => :delete, :name => 'destroy', :class=>'button-search none' %>
+ 	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+</div>

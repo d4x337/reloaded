@@ -1,0 +1,100 @@
+<h4 class="card-title"><%= t('your current cart') %></h4>
+<% if @cart.cart_products.count > 0 %>
+  <h6 class="card-subtitle"><%= t('manage items')%></h6>
+<% else %>
+  <h6 class="card-subtitle"><%= t('manage items')%></h6>
+<% end %>
+<table class="table-responsive">
+  <tr>
+    <td class="col-sm-2"><%=t('product')%></td>
+    <td class="col-sm-2" align="right"><%=t('quantity')%></td>
+    <td class="col-sm-2" align="right"><%=t('price')%></td>
+    <td class="col-sm-2" align="right"><%=t('total')%></td>
+    <td class="col-sm-2"></td>
+  </tr>
+  <tr>
+<% @cart.cart_products.each do |item| %>
+  <% @product = Product.find(item.product_id)%>
+   <% if is_product(item.product_id)%>
+      <td class="col-sm-4">
+        <%=prod_name_by_code(item.product_id) %>
+        <% if not item.status.blank? %>
+          <%= item.status %>
+        <% end %>
+      </td>
+      <td class="col-sm-2" align="right">
+        <% if @product.subscription == "annual" %>
+          <%= item.quantity %> <%= d4x_sanitizer(t('year')) %>
+        <% elsif @product.subscription == "unatantum" %>
+          <%= item.quantity %> <%= "LIFETIME" %>
+        <% elsif @product.subscription == "free" %>
+          <%= item.quantity %>
+        <% elsif @product.subscription == "single" %>
+          <%= item.quantity %>
+        <% end %>
+      </td>
+      <td class="col-sm-2" align="right">
+        <%= number_to_currency(item.single_price,{:unit=>"€"}) %>
+      </td>
+      <td class="col-sm-2" align="right">
+        <%= number_to_currency(item.total_price,{:unit=>"€"}) %>
+      </td>
+      </td>
+      <td class="col-sm-2">
+        <%= button_to d4x_sanitizer(t("delete")), item ,  :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger block full-width m-b', :title => d4x_sanitizer(t("delete")),:name => 'destroy' %>
+      </td>
+    </tr>
+   <% elsif is_service(item.product_id)%>
+      <tr>
+        <td class="col-sm-4">
+          <%= label_tag prod_name_by_code(item.product_id),nil,{:class=>"label label-primary"} %>
+          <% if not item.status.blank? %>
+          <%= label_tag item.status,nil,{:class=>"real-yellow"} %>
+        <% end %>
+         </td>
+        <td class="col-sm-2" align="right">
+
+        <% if @product.subscription == "annual" %>
+          <%= item.quantity %> <%= d4x_sanitizer(t('year')) %>
+        <% elsif @product.subscription == "unatantum" %>
+          <%= item.quantity %> <%= label_tag "LIFETIME" %>&nbsp;&nbsp;
+        <% elsif @product.subscription == "free" %>
+          <%= item.quantity %>
+        <% elsif @product.subscription == "single" %>
+          <%= item.quantity %>
+        <% end %>
+         </td>
+        <td class="col-sm-2">
+        <%= number_to_currency(item.single_price,{:unit=>"€"}) %>
+         </td>
+        <td class="col-sm-2" align="right">
+        <%= number_to_currency(item.total_price,{:unit=>"€"}) %>
+         </td>
+        <td class="col-sm-2">
+          <%= button_to d4x_sanitizer(t("delete")), item , :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger block full-width m-b', :title => d4x_sanitizer(t("delete")),:name => 'destroy' %>
+         </td>
+      </tr>
+   <% end %>
+<% end %>
+ <% if @cart.cart_products.count > 0 %>
+    <tr>
+      <td class="col-sm-4">
+        <%= t('total') %>
+       </td>
+      <td class="col-sm-2">
+       </td>
+      <td class="col-sm-2">
+       </td>
+      <td class="col-sm-1" align="right">
+        <%= number_to_currency(@cart.total_price,{:unit=>"€"})%>
+       </td>
+      <td class="col-sm-3">
+          <%= link_to t("go to checkout"),new_order_path,:class=>'btn btn-outline-warning btn-sm block full-width m-b' %>
+       </td>
+    </tr>
+    </td>
+   </tr>
+ <% end %>
+</table>
+<p align="center"><%= link_to d4x_sanitizer(t("continue shopping")), "/store",:class=>'btn btn-sm btn-outline-success block full-width m-b' %></p>
+ 

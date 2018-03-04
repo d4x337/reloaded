@@ -1,0 +1,49 @@
+
+		<table width="100%" class="d4x-grid">
+	 	  <tr>
+        <th><%=t(:qtext) %></th>
+		    <th><%=t(:author) %></th>
+		    <th><%=t("lang.") %></th>
+		    <th><%=t("appr") %></th>
+        <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		<% @quotes.each do |quote| %>
+      <tr class="<%= cycle("odd","even")%> d4x-mobile-row-grid">
+		    <td width="65%"><%= link_to quote.qtext,quote %></td>\
+        <td width="10%"><%= quote.author.fullname %></td>
+		    <td width="2%">
+		    	<% if quote.lang.downcase == "en" %>
+		    		<%= image_tag "us.png",:title=>"English" %>
+		    	<% elsif quote.lang.downcase == "it" %>
+		    		<%= image_tag "it.png",:title=>"Italian" %>
+		    	<% end %>
+		   	</td>
+		   	  <td width="2%">
+		    	<% if quote.approved? %>
+		    		<%= image_tag "tick.png" ,:title=>"approved"%>
+		    	<% else %>
+		    		<%= image_tag "time.png" ,:title=>"approvation is pending"%>
+		    	<% end %>
+		   	</td>
+	    	<td width="2%">
+				<%= link_to image_tag("comment.png", :border =>0 , :mouseover => "comment.png", :title => t("icon-show") ,:size => "16x16"), quote %>
+			</td>
+			<td width="2%">
+			<% if current_user.role? :operator %>
+				<%= link_to image_tag("comment_edit.png", :border =>0, :mouseover => "comment_edit.png", :title => t("icon-edit"),:size => "16x16" ), edit_quote_path(quote)%>
+			<% end %>
+			</td>
+			<td width="2%">
+			<% if current_user.role? :operator %>
+				<%= button_to "", quote, :confirm => 'are you sure?', :method => :delete, :class => 'quote-destroy',:name => 'zdestroy',:size => "16x16" %>
+			<% end %>
+			</td>
+		  </tr>
+		 <% end %>
+		</table>
+		<div id="paginator">
+			<%= will_paginate @quotes,:per_page => 25 %>
+		</div>
+

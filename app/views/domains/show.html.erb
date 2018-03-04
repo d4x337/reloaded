@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+	<div class="col-lg-12">
+	<div class="ibox float-e-margins">
+	<div class="ibox-title">
+	    <h5><%= t('domain') %></h5>
+	    <div class="ibox-tools">
+    		<%= link_to domains_path do %>
+    			<i class="fa fa-arrow-left"></i>
+    		<% end %>
+    	
+	        <%= link_to edit_domain_path(@domain) do %>
+    			<i class="fa fa-edit"></i>
+    		<% end %>
+    		<a class="collapse-link">
+	            <i class="fa fa-chevron-up"></i>
+	        </a>
+	        <a class="close-link">
+	            <i class="fa fa-times"></i>
+	        </a>
+	    </div>
+	</div>
+	<div class="ibox-content">
+		<div class="field">
+		    <%= label_tag :domain %><br />
+		    <%= @domain.domain%>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :description %><br />
+		    <%= @domain.description %>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :homedir %><br />
+		    <%= @domain.homedir %>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag :vmaildir %><br />
+		    <%= @domain.vmaildir %>
+	    </div><br>
+	      	<%= label_tag :active %>
+		    <%= @domain.active%>
+	    </div><br>
+	</div>
+</div>
+</div>
+</div>
+

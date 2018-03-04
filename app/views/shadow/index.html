@@ -1,0 +1,85 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#icon-compose').css('color','grey');
+        $('#icon-sent').css('color','#grey');
+        $('#icon-received').css('color','grey');
+        $('#icon-contacts').css('color','grey');
+        $('#icon-settings').css('color','grey');
+
+        $('.btdel').click(function(){
+            $('#spinner').removeClass('none');
+            $('#link-compose').addClass('none');
+        });
+    });
+</script>
+
+<style>
+    .sent-list{
+        margin-left:10px;
+    }
+    .panel-body{
+        padding:0;
+    }
+</style>
+
+<div class="sent-list">
+    <% unless @shadows.blank? %>
+    <% @shadows.each do |shadow| %>
+    <div class="chat-user">
+        <div class="row">
+            <div class="col-sm-4 col-xs-4">
+
+                <% @sender = User.find(shadow.sender_id)%>
+                <% @recipient = User.find(shadow.recipient_id)%>
+
+                <% if @sender.avatar(:thumb).present? %>
+                <img class="chat-avatar" src="<%= @sender.avatar.url(:thumb) %>" alt="">
+                <% else %>
+                <img class="chat-avatar" src="/assets/missing_avatar.png" alt="">
+                <% end %>
+
+                <% if @recipient.avatar(:thumb).present? %>
+                <img class="chat-avatar" src="<%= @sender.avatar.url(:thumb) %>" alt="">
+                <% else %>
+                <img class="chat-avatar" src="/assets/missing_avatar.png" alt="">
+                <% end %>
+
+            </div>
+
+            <div class="col-sm-8 col-xs-8">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-6" align="left">
+                        <% if !@recipient.firstname.blank?%>
+                            <div class="row white" id="starget"><%= @recipient.firstname %></div>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-5 col-xs-5">
+                        <div class="row">
+                            <div class="pull-right white" id="tagoin"><small  class="pull-right white"><%= time_ago_in_words_converter(shadow.created_at) %>&nbsp;<%= t('ago') %></small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9 col-xs-10" align="left">
+                        <div class="row yellow" id="token"><%= shadow.content %></div>
+                    </div>
+                    <div class="col-sm-2 col-xs-1">
+                        <div class="row pull-right white"><%= button_to t('delete'), shadow, method: :delete, data: { confirm: 'Are you sure?' },:class=>'btn btn-xs btn-danger bt-sm-d4x btdel' %><small><i class="pull-right fa fa-cancel"></i></small></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>
+
+<script>
+    $(function(){
+        $('.sent-list').slimScroll({
+            height: '400'
+        });
+    });
+</script>
+

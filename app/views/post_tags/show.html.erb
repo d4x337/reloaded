@@ -1,0 +1,29 @@
+<div id="text-content">
+		<p>
+		  <b><%= t(:id) %></b><br>
+		  <%= @post_tags.id %>
+		</p>
+		<p>
+		  <b><%= t(:term_id) %></b><br>
+		  <%= @post_tags.term_id %>
+		</p>
+		<p>
+		  <b><%= t(:texonomy) %></b><br>
+		  <%= @post_tags.taxonomy %>
+		</p>
+		<p>
+		  <b><%= t(:description) %></b><br>
+		  <%= @post_tags.description %>
+		</p>
+		<p>
+		  <b><%= t(:parent) %></b><br>
+		  <%= @post_tags.parent %>
+		</p>
+		<p>
+		  <b><%= t(:count) %></b><br>
+		  <%= @post_tags.count %>
+		</p>
+		<hr>
+		<%= link_to t('edit'), edit_post_tag_path(@post_tags) %> |
+		<%= link_to t('back'), post_tags_path %>
+</div>

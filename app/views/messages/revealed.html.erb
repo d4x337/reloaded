@@ -1,0 +1,94 @@
+<style>
+	#download-attachment a{
+		color:yellow;
+	}
+	#download-attachment a:hover{
+		color:orange;
+	}
+	#destroyed{
+		background-color:#D4253A;
+		color:white;
+		font-size:16px;
+		padding:10px;
+		border-radius:10px;
+		border:0px solid white;
+	}
+	#decrypted{
+		background-color:black;
+		font-family:courier;
+		color:white;
+		font-size:14px;
+		padding:10px;
+		border-radius:5px;
+		
+		word-wrap:break-word;
+	}
+	#sender{
+		color:yellow;
+		font-size:12px;
+		padding:20px;
+	}
+	#revealing{
+		background-color:darkblue;
+		color:white;
+		font-size:16px;
+		padding:10px;
+		border-radius:10px;
+		border:2px solid white;
+	}
+</style>
+<% if @sender_id.present? and @target_id.present? %>
+    <div class="row">
+    	<div class="col-sm-12 col-xs-12">
+	    	<span class="btn btn-primary block full-width m-b">
+	    		<%= t('revealing encrypted message')%>
+	 		</span>
+ 		</div>
+ 		
+	</div>
+<% end %>
+
+<div class="chat-user" id="sender">
+    <div class="row">
+    	<div class="col-sm-3 col-xs-3">
+		 	<% if @sender.avatar(:thumb).present? %>
+           	 	<img class="chat-avatara round3" src="<%= @sender.avatar.url(:thumb) %>" alt="" width="50">
+           	 <% else %>
+        		<img class="chat-avatara round3" src="/images/missing_avatar.png" width="50" alt="">
+   			 <% end %>
+		</div>
+		<div class="col-sm-4 col-xs-4" align="left">
+			<div class="row"><a href="#"><%= user_fullname(@sender_id) if @sender_id.present? %>
+			<br />@<%= user_nick(@sender_id) if @sender_id.present? %></a></div>
+		</div>
+		<div class="col-sm-5 col-xs-5">
+			<div class="row">
+				</span class="white"><%= @sent_at.to_s(:short) %></span>
+				<br />
+				<span class="white"><%= time_ago_in_words(@sent_at) %>&nbsp;<%= t('ago') %></span>
+			</div>
+		</div>
+    </div>				              
+</div>
+<br />
+<h3 class="white" id="decrypted">
+	<%= raw(@content) if @content.present? %>
+</h3>
+<% if @efile.present? %>
+	<% if @efile.original_content_type == 'image/jpeg' or @efile.original_content_type == 'image/png' or @efile.original_content_type == 'image/gif' %>
+		<%= link_to image_tag(@efile.original.url(),:width=>'150px'), @efile.original.url() %>
+		<br />
+	<% else %>
+		<span class="btn btn-success block full-width m-b" id="download-attachment">
+			<%= t('attachment')%>&nbsp;<%= link_to @efile.original_file_name, @efile.original.url() %>
+		</span>
+	<% end %>
+<% end %>
+<br />
+ <div class="row">
+	<div class="col-sm-12 col-xs-12">
+    	<span class="btn btn-danger block full-width m-b">
+    		<%= t('the message has been destroyed')%>
+ 		</span>
+	</div>
+</div>

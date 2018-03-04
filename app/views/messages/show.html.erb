@@ -1,0 +1,80 @@
+<style>
+	#destroyed{
+		background-color:#D4253A;
+		color:white;
+		font-size:16px;
+		padding:10px;
+		border-radius:10px;
+		border:2px solid white;
+	}
+	#decrypted{
+		background-color:black;
+		font-family:courier;
+		color:white;
+		font-size:14px;
+		padding:10px;
+		border-radius:5px;
+		border:2px solid lime;
+		word-wrap:break-word;
+	}
+	#sender{
+		color:yellow;
+		font-size:12px;
+		padding:20px;
+	}
+	#revealing{
+		background-color:darkblue;
+		color:white;
+		font-size:16px;
+		padding:10px;
+		border-radius:10px;
+		border:2px solid white;
+	}
+</style>
+<% if @sender_id.present? and @target_id.present? %>
+    <div class="row">
+    	<div class="col-sm-1 col-xs-1"></div>
+    	<div class="col-sm-10 col-xs-10">
+	    	<span class="btn btn-success">
+	 			Revealing Encrypted Message
+	 		</span>
+ 		</div>
+ 		<div class="col-sm-1 col-xs-1"></div>
+	</div>
+<% end %>
+
+<div class="chat-user" id="sender">
+	<h3 class="white">
+	 		Message From
+	</h3>
+    <div class="row">
+    	<div class="col-sm-2 col-xs-2">
+    		<img class="chat-avatar" src="<%= @sender.avatar.url(:thumb) %>" alt="">
+		</div>
+		<div class="col-sm-5 col-xs-5" align="left">
+			<div class="row"><a href="#"><%= user_fullname(@sender_id) if @sender_id.present? %>
+				<br /><small class="white">@<%= user_nick(@sender_id) if @sender_id.present? %></small></a></div>
+		</div>
+		<div class="col-sm-5 col-xs-5">
+			<div class="row">
+				</span class="white"><%= @sent_at.to_s(:short) %></span>
+				<br />
+				<span class="white"><%= time_ago_in_words(@sent_at) %>&nbsp;<%= t('ago') %></span>
+			</div>
+		</div>
+    </div>				              
+</div>
+<br />
+<h3 class="white" id="decrypted">
+	<%= @content  if @content.present? %>
+</h3>
+<br />
+ <div class="row">
+    	<div class="col-sm-1 col-xs-1"></div>
+    	<div class="col-sm-10 col-xs-10">
+	    	<span class="btn btn-danger">
+	 			The Message has been destroyed
+	 		</span>
+ 		</div>
+ 		<div class="col-sm-1 col-xs-1"></div>
+	</div>

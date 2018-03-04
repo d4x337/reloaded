@@ -1,0 +1,54 @@
+<div id="mini_post_liking-evo" onmouseover="style.border='2px #00FF00 solid';"  onmouseout="style.border='2px #004B00 solid';">
+	<div id="mini_post_liking-evo-title">
+		<div id="evo-card-icon">
+			<%= image_tag "card-icon-mini_post_likings.gif",:size => "24x24",:alt => "cool mini_post_liking!" %> 						
+		</div>
+		<div id="mini_post_liking-card-title">
+			<%= @mini_post_liking.liking %>					
+		</div>
+		<div id="evo-card-actions">
+		</div>
+	</div>
+	<br>
+		<table id="single-mini_post_liking">
+			<tr>
+				<td width="30"></td>
+				<td width="50"></td>
+				<td width="30"></td>
+				<td></td>
+				<td rowspan="9" align="center">
+					<div id="snapshot-mini_post_liking">
+					
+					</div>
+				 	<% if can? :update, @mini_post_liking %>  
+						| <%= link_to t('edit this entry'), edit_mini_post_liking_path(@mini_post_liking) %> | 
+						<%= link_to t('back to mini_post_likings list'), mini_post_likings_path %> |
+					<% end %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" width="320" class="d4x-title1"><%= @mini_post_liking.user_id %></td>
+				<td></td>
+			</tr>
+			<tr>
+				
+				<td colspan="4" width="65%" class="d4x-title2"><%= @mini_post_liking.mini_post_id %></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4" width="65%" class="d4x-title3"><div id="summary-content"><%= @mini_post_liking.created_at %></div></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4" width="320" class="d4x-title3"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	<br>
+</div><!--NEW CARD1 -->

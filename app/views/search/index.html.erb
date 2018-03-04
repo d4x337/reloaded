@@ -1,0 +1,69 @@
+<h4 class="card-title"><%=@results.length if @results%> <%=t('results found for')%> <span class="text-navy">"<%=@searched_item if @searched_item%>"</span></h4>
+<h6 class="card-subtitle"></h6>
+<div class="contacts row">
+  <% if @results != nil %>
+      <% if @results.length > 0 %>
+          <% @results.each do |result| %>
+              <% if result.searchable_type.downcase == "user" %>
+                  <% user = User.find(result.searchable_id)%>
+                  <% if not is_banned(current_user.id,user.id)%>
+                      <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 col-6">
+                        <div class="contacts__item">
+                          <a href="<%=user_path(user)%>" class="contacts__img">
+                            <% if have_to_show_photo(current_user.id,user.id) %>
+                                <% if user.avatar(:thumb) %>
+                                    <img src="<%= user.avatar.url(:thumb) %>" alt="">
+                                <% else %>
+                                    <img src="demo/img/profile-pics/2.jpg" alt="">
+                                <% end %>
+                            <% else %>
+                                <img src="demo/img/profile-pics/2.jpg" alt="">
+                            <% end %>
+                          </a>
+                          <% if user.online? %>
+                              <%=image_tag "online.png",:class=>'pull-right onoff',:title=>'online'%>
+                          <% end %>
+                          <div class="contacts__info">
+                            <strong><%= user.firstname %></strong>
+                            <a href="<%= user_path(user) %>">
+                              <small><%= "@"+user.nickname %></small>
+                            </a>
+                            <small><% user.email %></small>
+                            <br>
+                            <small>
+                              <% if current_user.id == user.id %>
+                                  <div class="">
+                                    <%= label_tag "You",nil,{:class=>"btn btn-md btn-outline-success"} %>
+                                  </div>
+                              <% elsif (is_friend(current_user.id.to_s, user.id.to_s) == true) %>
+                                  <% friend = Friend.where(:user_id=>current_user.id,:friend_id=>user.id).first %>
+                                  <%= form_for(friend) do |f| %>
+                                      <%= f.hidden_field :friend_id, :value=> friend.id %>
+                                      <%= link_to friend,:class=>"btn btn-xs btn-info",:method => :delete,:confirm => 'Are you sure you want to disconnect this person?' do %>
+                                          <%= label_tag d4x_sanitizer(t("Connected")),nil,{:class=>"btn btn-md btn-outline-success"} %></span>
+                                      <% end %>
+                                  <% end %>
+                              <% elsif (already_requested_and_not_answered(current_user.id.to_s, user.id.to_s) == true) %>
+                                  <div class="">
+                                    <%= label_tag d4x_sanitizer(t("Request Sent")),nil,{:class=>"btn btn-md btn-outline-warning"} %></span>
+                                  </div>
+                              <% else %>
+                                  <% if current_user.id != user.id %>
+                                      <%= form_for(Request.new) do |f| %>
+                                          <%= f.hidden_field :target_id, :value=> user.id %>
+                                          <%= button_to d4x_sanitizer(t("request connection")),nil,:class=>'btn btn-md btn-outline-primary', :form_class=>'friend', :action => 'create',:confirm => 'Are you sure you want to add to your network?',:id=>"add-to-ring" %>
+                                      <% end %>
+                                  <% end %>
+                              <% end %>
+                            </small>
+
+                          </div>
+                        </div>
+
+                      </div>
+                  <% end %>
+              <% end %>
+          <% end %>
+      <% end %>
+  <% end %>
+</div>

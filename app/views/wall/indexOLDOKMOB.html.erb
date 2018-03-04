@@ -1,0 +1,1172 @@
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq<% @title = d4x_sanitizer(t('timeline')) %>
+
+<% content_for :head do %>
+	<script language="JavaScript">
+ 	 $( document ).ready(function() {
+	
+		$(document).on("click", ".docomment", function(e) {
+			bootbox.dialog({
+                title: "Post a Comment",
+              	className: "modal-style",
+                message: 
+                 '<form accept-charset="UTF-8" action="/posts" class="edit_post" enctype="multipart/form-data" id="edit_post_1" method="post">' +
+				 '<div class="row">' +
+			         '<div class="col-md-12">' +
+			        	'<textarea class="form-control" id="tshare" name="xyz" maxlength="250"></textarea>' +
+						'<script>$("#tshare").maxlength({alwaysShow: true,validate: false,allowOverMax: false});'+
+						'</script\>' +
+				   	 '</div>' +
+			     '</div>' +
+			     '</form>',
+		            buttons: {
+	                    success: {
+	                        label: "Comment",
+	                        className: "btn-primary",
+	                        callback: function () {
+	                            var name = $('#tshare').val();
+	                            var type = $('#tshare').val();
+	                            var mpid = $('#tshare').val();
+	                            //var answer = $("input[name='awesomeness']:checked").val()
+	                            //Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+
+	                            $.ajax({ url: 'sharel',
+								  type: 'POST',
+								  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+								  data: {xvalue: name, stype: type, id: mpid },
+								  dataType: 'json',
+								  success: function(response) {
+								
+									var Xcontent = "";
+								    var json = $.parseJSON(response);
+									$(json).each(function(i,val){
+									    $.each(val,function(k,v){
+									    	if (k == "content") {
+									    		Xcontent = v;
+									    	}
+										});
+									});
+								
+								    $("#result").hide(function(){$("div.ajaxResult").fadeIn();});
+								    $("#success").show(function(){
+								    	$("#success").append(Xcontent);
+								    	$("#success").fadeIn(3000);
+								    });  
+								  },
+								  error: function(XMLHttpRequest, textStatus, errorThrown) { 
+					                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+					              }
+					                   
+								});
+	                
+	                        }
+	                    }
+	                }
+	            }); 
+		});
+	
+		$(document).on("click", ".sharel", function(e) {
+			bootbox.dialog({
+                title: "Share with Lounge",
+              	className: "modal-style",
+                message: 
+                 '<form accept-charset="UTF-8" action="/posts" class="edit_post" enctype="multipart/form-data" id="edit_post_1" method="post">' +
+				 '<div class="row">' +  
+			         '<div class="col-md-12">' + 
+			        	'<textarea class="form-control" id="tshare" name="xyz" maxlength="250"></textarea>' +
+						'<script>$("#tshare").maxlength({alwaysShow: true,validate: false,allowOverMax: false});'+
+						'</script\>' +
+				   	 '</div>' +
+			     '</div>' +
+			     '</form>',
+		            buttons: {
+	                    success: {
+	                        label: "Share with Lounge",
+	                        className: "btn-warning",
+	                        callback: function () {
+	                            var name = $('#tshare').val();
+	                            var type = $('#tshare').val();
+	                            var mpid = $('#tshare').val();
+	                            //var answer = $("input[name='awesomeness']:checked").val()
+	                            //Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+	                            
+	                            $.ajax({ url: 'sharel',
+								  type: 'POST',
+								  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+								  data: {xvalue: name, stype: type, id: mpid },
+								  dataType: 'json',
+								  success: function(response) {
+								
+									var Xcontent = "";
+								    var json = $.parseJSON(response);
+									$(json).each(function(i,val){
+									    $.each(val,function(k,v){
+									    	if (k == "content") {
+									    		Xcontent = v;
+									    	}
+										});
+									});
+								
+								    $("#result").hide(function(){$("div.ajaxResult").fadeIn();});
+								    $("#success").show(function(){
+								    	$("#success").append(Xcontent);
+								    	$("#success").fadeIn(3000);
+								    });  
+								  },
+								  error: function(XMLHttpRequest, textStatus, errorThrown) { 
+					                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+					              }
+					                   
+								});
+	                
+	                        }
+	                    }
+	                }
+	            }); 
+		});
+	
+		$(document).on("click", ".sharep",function(e) {
+			bootbox.dialog({
+                title: "Share to Public",
+              	className: "modal-style",
+                message: 
+                 '<form accept-charset="UTF-8" action="/posts" class="edit_post" enctype="multipart/form-data" id="edit_post_1" method="post">' +
+				 '<div class="row">' +  
+			         '<div class="col-md-12">' + 
+			        	'<textarea class="form-control" id="tshare" name="xyz" maxlength="250"><%= %></textarea>' +
+						'<script>$("#tshare").maxlength({alwaysShow: true,validate: false,allowOverMax: false});'+
+						'</script\>' +
+				   	 '</div>' +
+			     '</div>' +
+			     '</form>',
+		            buttons: {
+	                    success: {
+	                        label: "Share to Public",
+	                        className: "btn-primary",
+	                        callback: function () {
+	                            var name = $('#tshare').val();
+	                            var type = $('#tshare').val();
+	                            var mpid = $('#tshare').val();
+	                            //var answer = $("input[name='awesomeness']:checked").val()
+	                            //Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+	                            
+	                            $.ajax({ url: 'sharel',
+								  type: 'POST',
+								  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+								  data: {xvalue: name, stype: type, id: mpid },
+								  dataType: 'json',
+								  success: function(response) {
+								
+									var Xcontent = "";
+								    var json = $.parseJSON(response);
+									$(json).each(function(i,val){
+									    $.each(val,function(k,v){
+									    	if (k == "content") {
+									    		Xcontent = v;
+									    	}
+										});
+									});
+								
+								    $("#result").hide(function(){$("div.ajaxResult").fadeIn();});
+								    $("#success").show(function(){
+								    	$("#success").append(Xcontent);
+								    	$("#success").fadeIn(3000);
+								    });  
+								  },
+								  error: function(XMLHttpRequest, textStatus, errorThrown) { 
+					                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+					              }
+					                   
+								});
+	                
+	                        }
+	                    }
+	                }
+	            }); 
+		});
+	
+
+		
+		$(".disliking").click(function() {
+			action = $(this).closest('#dislike-2014').find('.disact').val();
+			mini_post_liking_id  = $(this).closest('#dislike-2014').find('#mini_post_liking_mini_post_liking_id').val();
+			mini_post_id = $(this).closest('#dislike-2014').find('#mini_post_liking_mini_post_id').val();
+			
+			$.ajax({ url: 'disliking',
+			  type: 'POST',
+			  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			  data: {mp_id: + mini_post_id,act: + action,mpl_id: + mini_post_liking_id},
+			  success: function(response) {
+			  	if (response > 0) {
+			  	
+			  		$('#disliking_'+mini_post_id).removeClass('icon-large-grey').addClass('icon-large-violet').text;
+					$('#disact_'+mini_post_id).val('0')
+					$('.mpdid_'+mini_post_id).val(response)
+			  	} else if (response == 0) {
+			 
+			 		$('#disliking_'+mini_post_id).removeClass('icon-large-violet').addClass('icon-large-grey').text;
+					$('#disact_'+mini_post_id).val('1')
+					$('.mpdid_'+mini_post_id).val('-337')
+			  	} else if (response < 0) {
+			  		alert('error')
+			  	}
+			  }
+			});
+			return false;
+		});
+	
+
+	
+		$(".like").click(function() {
+			//mini_post_id = $("#mini_post_liking_mini_post_id").val();
+			mini_post_id = $(this).closest('#like-2014').find('#mini_post_liking_mini_post_id').val();
+			//alert(mini_post_id);
+			$.ajax({ url: 'like',
+			  type: 'POST',
+			  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			  data: 'mp_id=' + mini_post_id,
+			  success: function(response) {
+			  	if (response == 'true') {
+			  		$('#like_'+mini_post_id).removeClass('icon-large-grey like').addClass('icon-large-green liked').text;
+			  	} else {
+			  	}
+			  }
+			});
+			return false;
+		});
+	
+		$(".liked").click(function() {
+			mini_post_id = $(this).closest('#liked-2014').find('#mini_post_liking_mini_post_id').val();
+			mini_post_liking_id = $(this).closest('#liked-2014').find('#mini_post_liking_mini_post_liking_id').val();
+			//alert(mini_post_id);
+			//alert(mini_post_liking_id);
+			$.ajax({ url: 'liked',
+			  type: 'POST',
+			  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			  data: 'mpl_id=' + mini_post_liking_id,
+			  success: function(response) {
+			  	if (response == 'true') {
+			  		$('#liked_'+mini_post_id).removeClass('icon-large-green liked').addClass('icon-large-grey like').text;
+			  	} else {
+			  		
+			  	}
+			  }
+			});
+			return false;
+		});
+
+		$("#dislike").click(function() {
+			alert('ok dislike');
+			return false;
+			
+			xvalue = $("#result").html()
+			$.ajax({ url: 'reset',
+			  type: 'POST',
+			  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			  data: 'xvalue=' + xvalue,
+			  success: function(response) {
+			    $('#result').html(response);
+			  }
+			});
+			return false;
+		});
+
+	});
+	</script>	
+<% end %>
+	
+<% content_for :where do %>
+	<%= label_tag t('timeline'),nil,{:class=>"navbar-where"} %>
+<% end %>
+
+<% content_for :javascript_includes do %>
+
+<% end %>
+
+<script language="JavaScript">
+  $( document ).ready(function() {
+    $('#icon-compose-new').css('color','grey');
+    $('#icon-received').css('color','lime');
+    $('#icon-sent').css('color','grey');
+    $('#icon-contacts').css('color','grey');
+    $('#icon-profile').css('color','grey');
+    $('#icon-settings').css('color','grey');
+
+    $('.btnreveal').click(function(){
+      $('#spinner').removeClass('none');
+      $('#link-compose').addClass('none');
+    });
+    $('.btnreveal').click(function(){
+      $('#spinner').removeClass('none');
+      $('#link-compose').addClass('none');
+    });
+
+  });
+</script>
+
+<script language="JavaScript">
+  $( document ).ready(function() {
+    $('#icon-comment').click(function() {
+        $('#groupfile').addClass('none');
+        $('#icon-comment').removeClass('white').addClass('lime');
+        $('#icon-photo').removeClass('lime').addClass('white');
+        $('#icon-video').removeClass('lime').addClass('white');
+        $('#icon-youtube').removeClass('lime').addClass('white');
+        $('#mini_post_content').attr("placeholder", "Share your status or thoughts with your network");
+        return false;
+    });
+
+    $('#icon-photo').click(function() {
+      $('#groupfile').removeClass('none');
+      $('#icon-comment').removeClass('lime').addClass('white');
+      $('#icon-photo').removeClass('white').addClass('lime');
+      $('#icon-video').removeClass('lime').addClass('white');
+      $('#icon-youtube').removeClass('lime').addClass('white');
+      $('#icon-file').removeClass('fa-video-camera').addClass('fa-photo');
+      $('#mini_post_content').attr("placeholder", "Add a caption for your picture and choose the file");
+      return false;
+    });
+
+    $('#icon-video').click(function() {
+      $('#groupfile').removeClass('none');
+      $('#icon-comment').removeClass('lime').addClass('white');
+      $('#icon-photo').removeClass('lime').addClass('white');
+      $('#icon-video').removeClass('white').addClass('lime');
+      $('#icon-youtube').removeClass('lime').addClass('white');
+      $('#icon-file').removeClass('fa-photo').addClass('fa-video-camera');
+      $('#mini_post_content').attr("placeholder", "Add a caption for your video and choose the file");
+      return false;
+    });
+
+    $('#icon-youtube').click(function() {
+      $('#groupfile').addClass('none');
+      $('#icon-comment').removeClass('lime').addClass('white');
+      $('#icon-photo').removeClass('lime').addClass('white');
+      $('#icon-video').removeClass('lime').addClass('white');
+      $('#icon-youtube').removeClass('white').addClass('lime');
+      $('#mini_post_content').attr("placeholder", "YouTube video: write a caption and paste the link");
+      return false;
+    });
+
+    $('#icon-map').click(function() {
+      return false;
+    });
+
+  });
+</script>
+
+<style>
+  .received-list{
+    margin-left:-40px;
+    height:100px;
+  }
+  .panel-body{
+    padding:0;
+  }
+  #share-submit-2013{
+    margin-left:12px;
+    margin-top:3px;
+
+  }
+  #pic-span{
+    background-color:transparent;
+    height:30px;
+    border-left:0px;
+    border-color:#0B4D8F;
+    margin-bottom:0px;
+    width:100%;
+
+  }
+  #groupfile{
+    margin-left:3px;
+    width:105%;
+    margin-bottom:3px;
+  }
+  #mini_post_content{
+    padding:10px;
+    background-color:#1d1d1d;
+    border:2px solid lime;
+    color:lime;
+    margin-left:12px;
+    margin-bottom:5px;
+    margin-top:2px;
+    width:100%;
+
+    border-radius:5px;
+
+
+  }
+  #single-post{
+
+  }
+
+  .close{
+    margin-top:-30px;
+  }
+
+  .modal-content{
+    background-color:#0a6aa1;
+    color:black;
+    z-index:9999;
+  }
+
+  .modal-header{
+    background-color:#0B4D8F;
+    color:yellow;
+  }
+  .modal-title{
+
+    color:yellow;
+  }
+    #newpost{
+      margin-left:1px;
+    }
+    .orange{
+      color:orange;
+    }
+    .lime{
+      color:lime;
+    }
+  .pagination {
+    padding: 3px;
+    margin: 3px;
+  }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    text-decoration: none;
+    color: #000099;
+  }
+  .pagination a:hover, .pagination a:active {
+    border: 1px solid #000099;
+    color: #000;
+  }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #000099;
+    font-weight: bold;
+    background-color: #000099;
+    color: #FFF;
+  }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: yellow;
+  }
+</style>
+
+<style>
+  #single-connection,
+  #single-post{
+    float:left;
+    width:100%;
+    text-align:left;
+    padding-top:-10px;
+  }
+  #mpactions{
+    height:32px;
+  }
+  #favorite-2014{
+    float:left;
+    margin-bottom:5px;
+  }
+  #new-post-area{
+    border:0px solid red;
+    float:left;
+    height:100%;
+    width:100%;
+    margin-top:20px;
+    padding-bottom: 10px;
+    border-bottom:1px solid #DCE0DC;
+  }
+
+  #post-body{
+    float:left;
+    width:83%;
+    border:0px solid red;
+    min-height:18px;
+    margin-right:0px;
+    margin-left:5px;
+    margin-top:5px;
+    height:100%;
+  }
+
+  #author-avi{
+    float:left;
+    height: 73px;
+    width: 73px;
+    margin-top:5px;
+    margin-left:5px;
+  }
+
+  #comment-text{
+    margin-top:0px;
+    margin-left:5px;
+    align:left;
+
+  }
+
+  #fullname-area{
+    float:left;
+    height:20px;
+    max-width: 60%;
+    border:0px solid lime;
+    font-size:16px;
+    margin-top:0px;
+    font-weight:bold;
+    margin-left:5px;
+  }
+
+  #username-area{
+    float:left;
+    height:20px;
+    max-width: 60%;
+    border:0px solid lime;
+    font-size:14px;
+    margin-top:-2px;
+    font-weight:bold;
+    margin-left:5px;
+  }
+
+  #elapsed-time{
+    float:right;
+    height:18px;
+    max-width: 80px;
+    border:0px solid orange;
+    font-size:12px;
+    margin-right:5px;
+    margin-top:0px;
+    color: #7a7a7a;
+  }
+
+  #post-del{
+    border:0px solid red;
+    height:12px;
+    width:12px;
+    float:right;
+    margin-right:4px;
+    margin-top:-2px;
+    cursor: pointer;
+    text-align: left;
+    font-size:12px;
+    color: #7a7a7a;
+  }
+
+  #post-text{
+    max-width:95%;
+    border:0px solid white;
+    min-height:18px;
+    margin-top:20px;
+    margin-bottom:5px;
+    margin-left:5px;
+    font-size:12px;
+    word-wrap: break-word;
+  }
+
+  #post-text p{
+    text-align:left;
+    margin-bottom:0px;
+    margin-left:0px;
+  }
+
+  #sensation-button{
+    font-size:12px;
+    margin-left:5px;
+    color:black;
+  }
+
+  #sensation-bt,
+  #feed-icon-2013{
+    font-size:12px;
+    margin-left:5px;
+  }
+
+  #post-actions{
+    float:left;
+    width:80%;
+    border:0px solid violet;
+    min-height:22px;
+    padding-bottom:0px;
+    height:24px;
+    margin-right:5px;
+    margin-left:-10px;
+    margin-top:5px;
+    font-family: Tahoma;
+    font-size:10px;
+  }
+
+  #like-2014{
+    float:left;
+    margin-left:0px;
+    border: 0px solid pink;
+    margin-right:40px;
+    margin-bottom:20px;
+    font-size:8px;
+  }
+
+  #dislike-2014{
+    float:left;
+    margin-bottom: 0px;
+    border: 0px solid pink;
+    margin-right:40px;
+    margin-bottom:20px;
+  }
+
+  #liked-2014{
+    float:left;
+    margin-left:0px;
+    border: 0px solid pink;
+    margin-right:40px;
+    margin-bottom:20px;
+    font-size:8px;
+  }
+
+  #disliked-2014{
+    float:left;
+    margin-bottom: 0px;
+    margin-right:40px;
+    margin-bottom:20px;
+    border: 0px solid pink;
+  }
+
+  #sensation-2014{
+    float:left;
+    margin-bottom: 0px;
+    border: 0px solid pink;
+  }
+
+  #sensation-2014 a{
+    color:#ffffff;
+  }
+
+  .sensation{
+    font-size:20px;
+    font-family:Tahoma;
+  }
+
+  #like-2013{
+    float:left;
+    margin-left:0px;
+    background-color:#FFFFFF;
+    font-family:Tahoma;
+  }
+
+  #dislike-2013{
+    float:left;
+    margin-bottom: 0px;
+  }
+
+  #comments-list{
+    float:left;
+    width:100%;
+    border:0px solid blue;
+    min-height:18px;
+    margin-left:0px;
+    margin-top:5px;
+  }
+
+  #single-comment-2013{
+    padding-top:2px;
+    margin-top:3px;
+    border-top:1px solid #0d8ddb;
+  }
+
+  .thumbnail-comment{
+    width:40px;
+    height:40px;
+    border-radius:3px;
+    border:0px white solid;
+    margin-top:2px;
+    margin-left:10px;
+  }
+
+  #commenter-image{
+    margin-top:3px;
+    margin-left:13px;
+  }
+
+  #comm-left{
+    float:left;
+    width:34px;
+    margin-left:0px;
+    border:0px solid violet;
+  }
+
+  #comm-right{
+    float:left;
+    border:0px solid green;
+    width:100%;
+    padding-left:5px;
+  }
+
+  #comment-username{
+    float:left;
+    color:#333333;
+    margin-top:2px;
+    margin-left:0px;
+    margin-bottom:5px;
+    width:78%;
+    height:18px;
+    font-family:Arial;
+    font-size:14px;
+    font-weight:bold;
+    border:0px solid black;
+  }
+
+  #comment-del{
+    border:0px solid red;
+    float:right;
+    margin-right:2px;
+    margin-top:2px;
+    cursor: pointer;
+    font-size:12px;
+    color: #7a7a7a;
+  }
+
+  #comment-content{
+    float:left;
+    margin-left:-5px;
+  }
+
+  #new-comment-bt{
+    margin-bottom:0px;
+  }
+
+  #comment-liking{
+    margin-top:5px;
+    margin-left:-5px;
+    padding-bottom:3px;
+    font-size:10px;
+    float:left;
+  }
+
+  #feeds-totals{
+    padding-left:1px;
+    padding-bottom:3px;
+    font-size:10px;
+    float:left;
+    margin-top:10px;
+  }
+
+  #delete-comment{
+    float:right;
+  }
+
+  .YTT{
+    width:210px;
+    height:130px;
+  }
+
+  .white{
+    color:white;
+  }
+
+  #user-feed-area{
+    float:left;
+    width:100%;
+    border:0px solid red;
+    margin-top:10px;
+    margin-left:3px;
+  }
+
+  #tb-comment-2013{
+    text-align:left;
+    margin-top:18px;
+    margin-left:-80px;
+    width:300px;
+  }
+
+  #liked,
+  #disliked{
+    margin-right:10px;
+    font-size:12px;
+    color:#000000;
+  }
+
+  .contentpost{
+    width:94%;
+    margin-top:1px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    word-wrap: break-word;
+    margin-left:5px;
+    border:0px solid white;
+    text-shadow:1px 1px 1px black;
+    background-color:black;
+    border-radius: 5px;
+    padding-top:5px;
+    padding-bottom:2px;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .contentcomm{
+    width:310px;
+    margin-top:5px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    word-wrap: break-word;
+    margin-left:10px;
+    border:0px solid white;
+    text-shadow:1px 1px 1px black;
+    background-color:black;
+    border-radius: 5px;
+    padding-top:5px;
+    padding-bottom:2px;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  #commentime{
+    margin-right:20px;
+    color:yellow;
+  }
+  #comment-time{
+    margin-right:10px;
+    color:yellow;
+  }
+  #comment-div{
+    margin-top:-10px;
+
+  }
+  small{
+    color:white;
+  }
+  #minipost-time{
+    margin-right:25px;
+    color:yellow;
+  }
+  #profile-pic{
+    margin-left:5px;
+
+    border:2px solid white;
+    box-shadow: 1px 1px 1px black;
+  }
+
+  .media-body{
+    margin-left:5px;
+    color:white;
+  }
+  .media-body a{
+    color:lime;
+  }
+  #username{
+    font-weight: bold;
+    color:orange;
+    margin-left:0px;
+  }
+  #firstline-comment{
+    margin-left:10px;
+  }
+  #username-comment{
+    font-weight: bold;
+    color:orange;
+    margin-left:10px;
+  }
+
+  #visibility,
+  #firstline{
+    margin-left:0px;
+  }
+
+  #postext{
+    color:white;
+  }
+  #minipost-time{
+    margin-right:5px;
+    float:right;
+  }
+  #dbutton{
+    float:right;
+    margin-left:38px;
+  }
+
+
+  p{
+    color:white;
+  }
+  .pdel{
+    border:0px;
+    background:transparent;
+    float:right;
+    margin-right:0px;
+  }
+  .d4xcomment{
+
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+  #addcomm{
+    width:50px;
+    float:right;
+  }
+
+  #whole-first{
+    margin-left:5px;
+  }
+  #countercomm{
+    float:left;
+  }
+
+  .icon-del-comment{
+    background-color:transparent;
+    float:right;
+    border:0px;
+    color:white;
+    margin-right:10px;
+  }
+
+  .icon-del-post{
+    background-color:transparent;
+    float:right;
+    border:0px;
+    color:white;
+    margin-right:-5px;
+  }
+
+  .img-responsive{padding-bottom:8px;}
+  .countercomm {text-align:center; float:right; padding-top:1px; padding-bottom:1px;position:relative}
+  .counterfav {text-align:center; float:right; padding-top:1px; padding-bottom:1px;position:relative}
+  .counterdontlikes,
+  .counterlikes {text-align:center; float:right; padding-top:1px; padding-bottom:1px}
+
+  .comm-counter { position:absolute; top:-3px; left:22px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+  .fav-counter { position:absolute; top:-3px; left:15px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+  .dontlikes-counter { position:absolute; top:-3px; left:20px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+  .likes-counter { position:absolute; top:-3px; left:35px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px; box-shadow:1px 1px 1px solid black;padding-top:-1px;padding-right:2px;padding-left:2px;font-size:10px;font-weight:bold;}
+
+  .iconcomm{max-width:125px; border:0px; margin:auto;background-color:transparent;}
+  .iconfav,
+  .icondontlike,
+  .iconlike{max-width:125px; border:0px; margin:auto;}
+
+  .btn-d4x {
+    background-color: darkgreen !important;
+    color:white;
+  }
+  .btn-d4x:hover{
+    background-color: green !important;
+    color:yellow;
+  }
+  .btn-d4x:visited,
+  .btn-d4x:active
+  {
+    background-color: lime !important;
+  }
+
+</style>
+
+<script language="javascript">
+  $(document).ready(function(){
+
+    $(".iconlike").click(function(){
+      if ($(this).hasClass('icon-large-red')) {
+        var curSpan = $(this).parent(".counterlikes").children('#likescount').get(0);
+        var spansText = curSpan.innerText;
+        var icurrent =  parseInt(spansText,10);
+        --icurrent;
+        var i = icurrent;
+        $(this).parent(".counterlikes").children('#likescount').html(i.toString());
+        return false;
+      }else if ($(this).hasClass('icon-large-grey')){
+        var curZpan = $(this).parent(".counterlikes").children('#likescount').get(0);
+        var spanzText = curZpan.innerText;
+        var iicurrent =  parseInt(spanzText,10);
+        ++iicurrent;
+        var ii = iicurrent;
+        $(this).parent(".counterlikes").children('#likescount').html(ii.toString());
+        return false;
+      }
+    });
+
+    $(".favoriting").click(function(){
+      if ($(this).hasClass('icon-large-green')) {
+        var curSpan = $(this).parent(".counterfav").children('#favcount').get(0);
+        var spansText = curSpan.innerText;
+        var icurrent =  parseInt(spansText,10);
+        --icurrent;
+        var i = icurrent;
+        $(this).parent(".counterfav").children('#favcount').html(i.toString());
+        return false;
+      }else if ($(this).hasClass('icon-large-grey')){
+        var curZpan = $(this).parent(".counterfav").children('#favcount').get(0);
+        var spanzText = curZpan.innerText;
+        var iicurrent =  parseInt(spanzText,10);
+        ++iicurrent;
+        var ii = iicurrent;
+        $(this).parent(".counterfav").children('#favcount').html(ii.toString());
+        return false;
+      }
+    });
+
+  });
+</script>
+<script language="JavaScript">
+  $( document ).ready(function() {
+
+    $('#add-image').click(function() {
+      $('#groupfile').toggle();
+      return false;
+    });
+
+  });
+
+</script>
+
+  <div class="received-list">
+
+    <div class="modal fade bd-example-modal-sm" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Place Your Comment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= form_for(MiniPostComment.new,:html => { :multipart => true })  do |f| %>
+                <%= f.hidden_field :mini_post_id %>
+                <%= f.text_area :content,:class=>"sharze-tarea",:multiline=>false,:class=>'form-control'%></div>
+                <div class="modal-footer">
+                  <%= f.submit d4x_sanitizer(t('comment')), class: 'btn btn-sm btn-d4x' %>
+                </div>
+            <% end %>
+            </div>
+      </div>
+    </div>
+
+      <div class="row">
+
+        <div class="col-sm-1 col-xs-1">
+        </div>
+
+        <div class="col-sm-10 col-xs-10">
+          <div class="row" id="actions-div">
+            <div class="col-sm-1 col-xs-1">
+
+            </div>
+
+            <div class="col-sm-2 col-xs-2">
+              <span class="btn btn-sm" title="Post your Status or Thought"><i class='fa fa-2x fa-comment lime' id="icon-comment" ></i></span>
+            </div>
+
+            <div class="col-sm-2 col-xs-2">
+              <span class="btn btn-sm white" title="Upload a Picture"><i class='fa fa-2x fa-camera-retro white' id="icon-photo" ></i></span>
+            </div>
+
+            <div class="col-sm-2 col-xs-2">
+              <span class="btn btn-sm" title="Upload a Video"><i class='fa fa-2x fa-video-camera white' id="icon-video"></i></span>
+            </div>
+
+            <div class="col-sm-2 col-xs-2">
+              <span class="btn btn-sm white" title="Share a Youtube Video"><i class='fa fa-2x fa-youtube white' id="icon-youtube" ></i></span>
+            </div>
+
+            <div class="col-sm-2 col-xs-2">
+              <span class="btn btn-sm" title="Share a cool place"><i class='fa fa-2x fa-map-marker' id="icon-map" ></i></span>
+            </div>
+
+          </div>
+
+          <div class="row" id="newpost">
+          <%= form_for(MiniPost.new,:html => { :multipart => true })  do |f| %>
+              <%= f.text_area :content,:multiline=>false,:class=>'form-control', :placeholder=>d4x_sanitizer(t('Share your status or thoughts with your network'))%>
+              <div class="input-group input-sm none" id="groupfile">
+                <span class="input-group-btn">
+                  <span class="btn btn-sm btn-d4x btn-inverse" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-photo white" id="icon-file"></i></span>
+                  <%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+                </span>
+                <span class="form-control none" id="pic-span"></span>
+              </div>
+              <%= button_to d4x_sanitizer(t('post')),nil,:class=> "btn btn-d4x btn-sm block full-width m-b",:id => "share-submit-2013" %>
+          <% end %>
+          </div>
+        </div>
+
+        <div class="col-sm-1 col-xs-1">
+        </div>
+
+      </div>
+
+      <% if !@mini_posts.blank? %>
+          <div class="feed-activity-list" last="<%=@mini_posts.to_a.last.created_at %>">
+      <% else %>
+          <div class="feed-activity-list" last="">
+      <% end %>
+
+        <% unless @mini_posts.blank? %>
+            <%= hidden_field_tag :totalpages, @mini_posts.total_pages %>
+            <%= hidden_field_tag :currentpage, @mini_posts.next_page %>
+            <div id='mini_posts_page-2013' class='lists' last="<%=@mini_posts.to_a.last.created_at %>">
+              <div class='page'>
+                    <ul class='list' last="<%=@mini_posts.to_a.last.created_at %>">
+                      <%=render :partial => "wall/mini_post", :collection => @mini_posts%>
+                      <div id="infinite-scroll"></div>
+                    </ul>
+              </div>
+            </div>
+            <p align="center">
+              <%= image_tag "ajax-loader.gif", :class => 'loading none',:id=>"d4x-spinner" %>
+            </p>
+        <% end %>
+
+      <% if @mini_posts.next_page %>
+          <div id="infinite-scrolling" class="none">
+            <%= will_paginate @mini_posts ,:style => 'color:blue'%>
+          </div>
+      <% end %>
+
+      </div>
+  </div>
+
+
+
+  <script language="JavaScript">
+
+    $(function(){
+      $('.received-list').slimScroll({
+        height: '400px',
+        disableFadeOut: false,
+        cache: false,
+        railVisible: true,
+        touchScrollStep: 50,
+        alwaysVisible: false
+      }).bind('slimscroll', function(event, pos){
+
+        var loading = false;
+        var totalpages = $('#totalpages').val();
+        var currentpage = $('#currentpage').val();
+        var page = 1;
+        var xdata;
+
+        if (pos == 'bottom') {
+          if (typeof loading != 'undefined' && loading) return;
+          if (currentpage > totalpages) return;
+          //if (page == totalpages) return;
+          loading=true;
+          var current = page++;
+          $('#d4x-spinner').removeClass('none')
+          $.ajax({ // send an ajax-request to load the next page
+            //url: '/wall?page='+currentpage+'&last='+$('.list').attr('last'),
+            url: '/updwall?page='+currentpage,
+            type: 'get',
+            data: xdata,
+            cache: false,
+            dataType: 'html',
+            success: function(xdata) { // after successfully completing the ajax-request redraw the sausage-navigation.
+              currentpage++;
+              $('#currentpage').val(currentpage);
+              $(".list").append(xdata);
+              $('.received-list').slimScroll({ scrollBy: '-200px' });
+              if (currentpage = totalpages) $('#d4x-spinner').addClass('none');
+            }
+          });
+
+        }
+      });
+    });
+  </script>
+

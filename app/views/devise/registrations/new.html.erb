@@ -1,0 +1,76 @@
+<% content_for :head do %>
+	<% javascript_include_tag "d4x-signup" %>
+<% end %>
+
+<div class="login__block active" id="l-login">
+  <div class="login__block__header">
+    <i class="zmdi zmdi-account-circle"></i>
+    <h4 class="orange"><%= d4x_sanitizer(t('sign up')) %></h4>
+    <h6 id="reg-title"></h6>
+    <% if not params[:invitation_token].blank? %>
+      <% if is_invited(params[:invitation_token])%>
+        <% invited_email = get_token_email(params[:invitation_token]) %>
+        <% invited_name = get_token_name(params[:invitation_token]) %>
+        <%= f.hidden_field :invitation_token,:value => params[:invitation_token] %>
+        <%= f.hidden_field :invite_email,:value => invited_email %>
+        <%= d4x_sanitizer(t('invitated sir')) %>
+      <% else %>
+        <%= d4x_sanitizer(t('invalid invite')) %>
+      <% end %>
+    <% end %>
+    <div class="actions actions--inverse login__block__actions">
+      <div class="dropdown">
+        <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+        <div class="dropdown-menu dropdown-menu-right ddd4x">
+          <%= render :partial => 'devise/shared/dropdown_confirmation' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="login__block__body">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :firstname,:class=> "form-control firstname center",:placeholder=>d4x_sanitizer(t('fullname'))%>
+        <span id="pFirstname"></span>
+      </div>
+      <div id="group-email" class="form-group">
+        <%= f.email_field :email,:value => invited_email,:class=> "form-control email center" ,:placeholder=>t('current email')%>
+        <span id="pEmail"></span>
+        <span id="email-icon"class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>
+      <div id="group-nick" class="form-group" >
+        <%= f.text_field :nickname,:value => invited_name,:class=> "form-control nickname center",:placeholder=>d4x_sanitizer(t('nickname')) %>
+        <span id="pNickname"></span>
+        <span id="nick-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>
+      <div id="group-pass" class="form-group">
+        <%= f.password_field :password, :class=> "form-control password center",:placeholder=>d4x_sanitizer(t('new password'))%>
+        <span id="strength"></span>
+        <span id="pass-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>
+      <div class="form-group">
+        <span>
+          <%= check_box_tag :agreement,{:class=>'i-checks'} %>&nbsp;
+          <%= link_to d4x_sanitizer(t("i agree with terms and conditions")),"/terms" %>
+        </span>
+        <script type="text/javascript">
+            $(function() {
+                $('#agreement').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
+      </div>
+      <%= f.submit t("login"), :id => "signup-submit",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
+
+      <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
+      <p align="center">
+        <%= t('already have an account')%>
+        <%= link_to d4x_sanitizer(t("login")), new_session_path(resource_name) ,:id=>'login-link'%>
+      </p>
+    <% end %>
+    <%= render :partial => '/shared/devise_footer' %>
+  </div>
+</div>
+

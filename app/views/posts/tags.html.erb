@@ -1,0 +1,31 @@
+  <script language="JavaScript">
+    $( document ).ready(function() {
+
+      $('#icon-compose-new').css('color','grey');
+      $('#icon-posts').css('color','grey');
+      $('#icon-archive').css('color','grey');
+      $('#icon-tags').css('color','#2D3736');
+      $('#icon-settings').css('color','grey');
+      $('#icon-author').css('color','grey');
+
+    });
+  </script>
+
+  <style>
+    .settings-item{
+      height:32px;
+    }
+  </style>
+    
+	<div id="tab-settings" class="tab-pane active">
+   		<% @tags = PostTag.where('ID is not null').group(:tag_id).count('tag_id')  %>
+      <% @tags.each do |tag| %>
+        <% Tag.find(tag.first) %>
+        <%= form_tag('idtag') do |f| %>
+            <div class="settings-item">
+              <a href="/idtag/<%= tag.first %>"  id="language-link"><h4 align="left" class="white"><i class="fa fa-tag white"></i>&nbsp;&nbsp;<%= Tag.find(tag.first).name %>&nbsp;(<%= tag.last %>)</h4></a>
+            </div>
+        <% end %>
+
+      <% end %>
+  </div>

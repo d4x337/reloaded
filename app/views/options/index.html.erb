@@ -1,0 +1,38 @@
+<h4 class="card-title">Global Options Configurator</h4>
+<h6 class="card-subtitle"></h6>
+<% unless @options.blank? %>
+    <div class="table-responsive">
+      <table id="data-table" class="table">
+        <thead>
+          <tr>
+            <th><%= t('option')%></th>
+            <th><%= t('value')%></th>
+            <th><%= t('edit')%></th>
+            <th align="center"><%= t('delete')%></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @options.each do |option| %>
+              <tr>
+                <td>
+                  <%= option.name %>
+                </td>
+                <td>
+                  <%= option.value %>
+                </td>
+                <td>
+                  <%= link_to(edit_option_path(option)) do %>
+                      <span class="btn btn-sm btn-outline-primary white"><i class='fa fa-edit white'></i></span>
+                  <% end %>
+                </td>
+                <td>
+                  <%= button_to option, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-sm btn-outline-danger" do %>
+                      <i class='fa fa-trash-o white'></i>
+                  <% end %>
+                </td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>

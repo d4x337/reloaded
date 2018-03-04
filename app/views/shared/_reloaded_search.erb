@@ -1,0 +1,34 @@
+<%= javascript_include_tag 'typeahead.bundle.min' %>
+<script language="JavaScript">
+  $( document ).ready(function() {
+
+      $('#areaaa').change(function(){
+          $('#area').val($('#areaaa').val());
+      });
+
+      var loadResults = new Bloodhound({
+          datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+      });
+
+      loadResults.initialize();
+
+      $('#remote .typeahead').typeahead(null, {
+          name: 'results-list',
+          displayKey: 'result',
+          hint: true,
+          highlight: true,
+          minLength: 1,
+          source: loadResults.ttAdapter()
+      });
+  });
+</script>
+<form action="/search" class="search" method="get">
+  <%= hidden_field_tag :area, 'firstname' %>
+  <div class="search__inner" id="remote">
+    <%= text_field_tag :findthis,params[:query],{:class=>'search__text typeahead',:placeholder=>t('search for people')} %>
+    <i class="zmdi zmdi-search search__helper" data-sa-action="search-close"></i>
+    <input type="submit" style="position: absolute;left: -9999px" tabindex="-1" />
+  </div>
+</form>

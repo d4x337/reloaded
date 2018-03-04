@@ -1,0 +1,53 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center">
+			<strong class="error-counter"><%= pluralize(@post.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @post.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+<div id="center-content2">
+	
+	<div class="field">
+	    <%= f.text_field :title,:class=>'form-control input-sm',:placeholder=>'Post Title' %>
+	</div><br>
+	 
+ 	<div class="row" id="content-div">	
+   		<div class="col-xs-12">  
+		<%= f.text_area :content,:class=>'form-control custom-control',:placeholder=>"Post Content",:maxlength=>"337",:rows=>6,:style=>"resize:none" %>   
+	    <script>
+	 		$("#message_content").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+		</script>
+       </div>
+    </div>
+	<BR>
+	<div class="row" id="content-div">	
+   		<div class="col-xs-3 alignleft">  
+			<%= f.select(:comment_status,options_for_select([[t('open'), 'open'], [t('closed'), 'closed']], @post.comment_status)) %>
+	    </div>
+    	<div class="col-xs-4">
+    		<%= f.select(:status,options_for_select([[t('publish'), 'publish'], [t('draft'), 'draft']], @post.status ), :class =>  "d4xItem") %>
+	    </div>
+    	<div class="col-xs-5 right">  
+			<%= collection_select(:tags, :id,Tag.all,:id, :slug,{:selected => @post.post_tag.map(&:tag_id)},:name => 'post[tags][]', :multiple => true, :size=>2, :id =>"existing-tags"  )%>
+       </div>
+    </div>
+
+	<%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display:;" %>
+
+ 	<div class="actions">
+		  	<%= f.submit :class=>'btn btn-primary btn-sm block full-width m-b' %>
+	 </div>
+
+<% end %>
+
+</div>
+ 

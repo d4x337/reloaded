@@ -1,0 +1,38 @@
+<h4 class="card-title"><%= "Products and Services - Backoffice" %></h4>
+<h6 class="card-subtitle"></h6>
+<% unless @products.blank? %>
+  <div class="table-responsive">
+    <table id="data-table" class="table">
+      <thead>
+      <tr>
+        <th class="td-grid-tit"><%=t('products') %></th>
+        <th class="td-grid-tit"><%=t(:final_price) %></th>
+        <th class="td-grid-tit"><%=t(:category) %></th>
+
+        <th><%= t('edit')%></th>
+        <th><%= t('delete')%></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.name,product  %></td>
+          <td><%= product.final_price %></td>
+          <td><%= product.category %></td>
+          <td>
+            <%= link_to(edit_product_path(product)) do %>
+              <span class="btn btn-sm btn-outline-primary white"><i class='fa fa-edit white'></i></span>
+            <% end %>
+          </td>
+          <td>
+            <%= button_to product, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-sm btn-outline-danger" do %>
+              <i class='fa fa-trash-o white'></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+

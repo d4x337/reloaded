@@ -1,0 +1,75 @@
+<%= form_for(@mail_account) do |f| %>
+  <% if @mail_account.errors.any? %>
+     <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center">
+			<strong class="error-counter"><%= pluralize(@mail_account.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @mail_account.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+	<%= content_for :head do %>
+		<%= javascript_include_tag 'd4x-mail-accounts' %>
+	<% end %>
+<div id="center-container">
+		<div id="center-content">
+			<br><br />
+		  <div class="field">
+		  	<% @users = users_without_uberbox %>
+		  	<% @domains = available_domains %>
+		    <%= f.label "choose account and domain for Uberbox creation" %><br /><br />
+		    <%= select_tag :domain,options_for_select(@domains,"hackers.it"),{:onchange=>'#'}%>
+		  </div><br>
+		<div class="field">
+		    <%= f.label t(:user_id),:class=>"show-item-label" %><br />
+		    <%= f.text_field :user_id  ,:size => 20, :class=>"thin-control"%>
+		  </div><br>
+		<div class="field">
+		    <%= f.label t(:login),:class=>"show-item-label" %><br />
+		    <%= f.email_field :login  ,:size => 60, :class=>"thin-control"%>
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t("from name"),:class=>"show-item-label" %><br />
+		    <%= f.text_field :name ,:size => 60, :class=>"thin-control" %>
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t(:password),:class=>"show-item-label" %><br />
+		    <%= f.password_field :password ,:size => 60, :class=>"thin-control" %>
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t(:uid),:class=>"show-item-label" %><br />
+		    <%= f.text_field :uid,:size => 6 , :class=>"thin-control"%>
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t(:gid),:class=>"show-item-label" %><br />
+		    <%= f.text_field :gid,:size => 6, :class=>"thin-control" %>
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t(:quota),:class=>"show-item-label" %><br />
+		    <%= f.select(:quota,options_for_select([['100 MegaByte', '100000000S'],['1 GigaByte', '1000000000S'], ['3 GigaByte', '3000000000S'],['5 GigaByte', '5000000000S']], '1000000000S'), :class =>  "thin-control",:size =>"20") %>
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t(:home),:class=>"show-item-label" %><br />
+		    <%= f.text_field :home,:size => 60, :class=>"thin-control" %>
+
+		  </div><br>
+		  <div class="field">
+		    <%= f.label t(:maildir),:class=>"show-item-label" %><br />
+		    <%= f.text_field :maildir,:size => 40, :class=>"thin-control" %> 
+		     </div><br>
+	
+		   <div class="actions">
+		    <%= f.submit :class=>'button-d4x' %>
+		  </div>
+		  <br>
+	
+		</div>
+</div>
+<% end %>
+<div id="paginator"></div>

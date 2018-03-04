@@ -1,0 +1,39 @@
+<% @exist_option =  Option.where(:name=>'DASHBOARD_MYTRACKS_VISIBLE').count > 0 %>
+<% if @exist_option %>
+	<% @option =  Option.where(:name=>'DASHBOARD_MYTRACKS_VISIBLE').first.value %>
+	<% if @option == "Y" %>
+		<%= content_for :head do %>
+		<% end %>
+		<% @useragent = UserAgent.parse(request.env["HTTP_USER_AGENT"]) %>
+		<% @browser   = @useragent.browser %>
+		<% @version   = @useragent.version %>
+		<% @platform  = @useragent.platform %>
+		<% @remoteip  = request["REMOTE_ADDR"]%>
+
+		<% @client_ip = request.remote_ip %>
+		<% @remote_ip = request.env["HTTP_X_FORWARDED_FOR"] %>
+		<% @my_ip     = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_addr %>
+		<% @ip_addr   = request.env['REMOTE_ADDR'] %>
+    
+		<div class="chat-widget">
+			
+			<div id="menu-title-2013">
+				<%= t('my tracks') %>
+			</div>
+			
+			<div id="widget-controls">
+				<%= label_tag 'agent' %>:&nbsp; <%= request.env['HTTP_USER_AGENT'] %><br />
+				
+				<% if @ip_addr.present? %>
+					<%= label_tag 'ip address' %>:&nbsp; <%= @ip_addr %><br />
+				<% end %>
+				
+				<% if @platform.present? %>
+					<%= label_tag 'country' %>:&nbsp; <%= @platform %><br>
+		   		<% end %>
+			</div>
+			
+		</div>
+	<% end %>
+<% end %>	
+	

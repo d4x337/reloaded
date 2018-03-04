@@ -1,0 +1,365 @@
+
+<% if not params[:message_id].blank? %>
+
+	<% msgkey  = params[:message_id] %>
+	<% msgkey.gsub("999", ",") %>
+		
+	<% if @foldername == 'inbox'    %>
+		<% @xmsg = @maildir.get(msgkey)  %>
+	<% elsif @foldername == 'new'  %>
+		<% @xmsg = @maildir.get(msgkey)  %>
+	<% elsif @foldername == 'sent'  %>
+		<% @xmsg = @sentdir.get(msgkey)  %>
+	<% elsif @foldername == 'draft' %>
+		<% @xmsg = @draftdir.get(msgkey) %>
+	<% elsif @foldername == 'spam' %>
+		<% @xmsg = @spamdir.get(msgkey) %>
+	<% elsif @foldername == 'archive' %>
+		<% @xmsg = @archivedir.get(msgkey) %>
+	<% elsif @foldername == 'drafts' %>
+		<% @xmsg = @draftdir.get(msgkey) %>
+	<% elsif @foldername == 'trash' %>
+		<% @xmsg = @trashdir.get(msgkey) %>
+	<% else %>
+		<% @xmsg = @maildir.get(msgkey)  %>
+	<% end %>
+		
+	<% if @xmsg.present? %>
+	
+		<% xmail = Mail.new(@xmsg.data) %>	
+	<% end %>
+<% end %>
+
+<%= content_for :head do %>
+
+	<%= javascript_include_tag 'd4x-compose' %>
+    <script type="text/javascript" src="/javascripts/tinymce-4.16/js/tinymce/tinymce.min.js"></script>
+	
+	<script type="text/javascript">
+		tinyMCE.init({
+			selector: "textarea",
+			mode : "textareas",
+			theme : "modern",
+			plugins : ["advlist autolink lists image charmap print preview hr anchor pagebreak",
+			"wordcount visualblocks visualchars code fullscreen",
+			"insertdatetime media nonbreaking save table contextmenu directionality",
+			"emoticons template paste textcolor"],
+			editor_deselector: "mceNoEditor",
+			height: "262",
+			width: "770",
+			toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |",
+			toolbar2: " link image | print preview media | forecolor backcolor emoticons"
+			
+		});
+	
+		function showLoading() {
+		  $("#loading").show();
+		}
+		
+		function hideLoading() {
+		  $("#loading").hide();
+		}
+		
+		function showATTACHMENTSpane() {
+		  $("#attachments").show();
+		}
+	
+		
+		function showHTMLpane() {
+		  $("#html-message").hide();
+		  $("#text-message").show();
+		}
+		
+		function showTEXTpane() {
+		  $("#html-message").show();
+		  $("#text-message").hide();
+		}
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		
+			$("#htmlmsg").change(function(){
+				if ($("#htmlmsg").is(':checked')){
+				  $("#html-message").removeClass('none')
+				  $("#text-message").addClass('none')
+				}else{
+				  $("#html-message").addClass('none')
+				  $("#text-message").removeClass('none')
+				}
+			});
+	
+		$("input:checkbox").click(function(){
+			if ($(this).is(':checked'))
+			{
+				var xdialog = $(this).closest('div').attr('id')
+			
+				if (xdialog == "dialog"){
+					var old = $('#to').val()
+					var nnew = old+$(this).val()+","
+					$('#to').val(nnew);
+				}
+				else if (xdialog == "dialog2"){
+					var old = $('#cc').val()
+					var nnew = old+$(this).val()+","
+					$('#cc').val(nnew);
+				}
+				else if (xdialog == "dialog3"){
+					var old = $('#bcc').val()
+					var nnew = old+$(this).val()+","
+					$('#bcc').val(nnew);
+				}
+		    }else{
+				var xdialog = $(this).closest('div').attr('id')
+			
+				if (xdialog == "dialog"){
+					var old = $('#to').val()
+					var nnew = old.replace($(this).val()+",",'')
+					$('#to').val(nnew);
+				}
+				else if (xdialog == "dialog2"){
+					var old = $('#cc').val()
+					var nnew = old.replace($(this).val()+",",'')
+					$('#cc').val(nnew);
+				}
+				else if (xdialog == "dialog3"){
+					var old = $('#bcc').val()
+					var nnew = old.replace($(this).val()+",",'')
+					$('#bcc').val(nnew);
+				}
+		    }
+		});
+		
+	});
+	</script>
+<% end %>
+
+<%
+        from       = MailAccount.where(:user_id=>current_user.id,:defaultbox=>true).first
+        message_id = params[:messages_id]
+        folder     = params[:folder]
+ 
+        if folder == 'inbox'
+           @maildir   = Maildir.new(from.home+"/"+from.maildir,false) 
+           @xmsg = @maildir.get(params[:message_id]) 
+        elsif folder == 'sent'
+          @sentdir = Maildir.new(from.home+"/"+from.maildir+".Sent",false)
+           @xmsg = @sentdir.get(params[:message_id]) 
+        elsif folder == 'drafts'
+           @draftdir = Maildir.new(from.home+"/"+from.maildir+".Drafts",false)
+           @xmsg = @draftdir.get(params[:message_id]) 
+        elsif folder == 'archive'
+           @archivedir= Maildir.new(from.home+"/"+from.maildir+".Archive",false)
+           @xmsg = @archivedir.get(params[:message_id]) 
+        elsif folder == 'spam'
+           @spamdir   = Maildir.new(from.home+"/"+from.maildir+".Spam",false)
+           @xmsg = @spamdir.get(params[:message_id]) 
+        elsif folder == 'trash'
+           @trashdir  = Maildir.new(from.home+"/"+from.maildir+".Trash",false)
+           @xmsg = @trashdir.get(params[:message_id]) 
+        end 
+
+        zmail = Mail.new(@xmsg.data)   
+        @message_id = zmail.message_id
+        
+        @to = zmail.to
+        @cc = zmail.cc
+        @bcc = zmail.bcc
+
+		if zmail.subject
+			@subject = zmail.subject
+		else
+			@subject = ""
+		end
+
+        @from = zmail.from
+		
+		@type = "html"     
+     	if zmail.multipart? 
+		    if zmail.html_part.present?
+			   email_html = zmail.html_part.body.decoded 
+			   email_html.force_encoding("UTF-8")
+		  	   @message = email_html
+		  	   @type = "html"
+		    else
+			   email_text = "" 
+			   @message = email_text
+			   @type = "text"
+		    end
+	    else
+		   email_text = zmail.body.decoded 
+		   @message = email_text
+		   @type = "text"
+		end 
+
+%>
+
+<div id="settings-pane">
+<%= form_tag 'actions',:method=>'post', :multipart =>'true' do -%>
+	<%= hidden_field_tag :action, "reply" %>
+	<%= hidden_field_tag :reply_message, @message_id %>
+					<div class="field" id="to-div">
+						<br>
+						<table width="100%">
+							<tr>
+								<td width="6%">
+									<a href="#" id="dialog-link" class="button-agadanga2">
+										<span class="ui-icon ui-icon-folder-open"></span>
+										<%= label_tag "", nil, {:class=>"lcd"} %>
+									</a>
+								</td>
+								<td width="94%">
+									<%= text_field_tag :to,@to ,{:class=>"form-control",:placeholder=>d4x_sanitizer(t("TO"))} %>
+									<% @contacts = current_user.contacts.order(:surname) %>
+									<div id="dialog" title="TO:">
+										<table>
+										 	<% @contacts.each do |contact| %>
+											    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+										   			<td width="5%" class="different-title1">
+										   				<%= check_box_tag :selected, contact.name+" "+contact.surname+" <"+contact.email.downcase+">" %> 
+										   			</td>
+													<td width="40%" align="left">
+														<%= label_tag contact.name, nil, {:class=>"lcd yellow"} %> <%= label_tag contact.surname, nil, {:class=>"lcd orange"} %> 
+													</td>
+													<td width="40%" align="left">
+									 					<%= contact.email.downcase %>
+									 				</td>
+													<td width="5%">&nbsp;</td>
+											    </tr>
+											<% end %>	
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>	
+					</div>
+		
+					<div class="field" id="cc-div">
+						<table width="100%">
+							<tr>
+								<td width="6%">
+					
+									<a href="#" id="dialog-link2" class="button-agadanga2">
+										<span class="ui-icon ui-icon-folder-open middle"></span>
+										<%= label_tag "", nil, {:class=>"lcd"} %>
+									</a>
+								</td>
+								<td width="94%">
+					
+									<%= text_field_tag :cc,@cc ,{:size => 86,:class=>"form-control input_cc",:placeholder=>d4x_sanitizer(t("CC"))} %>
+									<div id="dialog2" title="CC:">
+										<table>
+										 	<% @contacts.each do |contact| %>
+											    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+										   			<td width="5%" class="different-title1">
+										   					<%= check_box_tag :selected, contact.name+" "+contact.surname+" <"+contact.email.downcase+">" %> 
+										   			</td>
+													<td width="40%" align="left">
+															<%= label_tag contact.name, nil, {:class=>"lcd yellow"} %> <%= label_tag contact.surname, nil, {:class=>"lcd orange"} %> 
+													</td>
+													<td width="40%" align="left">
+									 					<%= contact.email.downcase %>
+									 				</td>
+													<td width="5%">&nbsp;</td>
+											    </tr>
+											<% end %>	
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>	
+					</div>
+
+					<div class="field" id="bcc-div">
+					<table width="100%">
+							<tr>
+								<td width="6%">
+					
+									<a href="#" id="dialog-link3" class="button-agadanga2">
+										<span class="ui-icon ui-icon-folder-open"></span>
+										<%= label_tag "", nil, {:class=>"lcd yellow"} %>
+									</a>
+								</td>
+								<td width="94%">
+									<div id="dialog3" title="BCC:">
+										<table>
+										 	<% @contacts.each do |contact| %>
+											    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+										   			<td width="5%" class="different-title1">
+										   					<%= check_box_tag :selected, contact.name+" "+contact.surname+" <"+contact.email.downcase+">" %> 
+										   			</td>
+													<td width="40%" align="left">
+															<%= label_tag contact.name, nil, {:class=>"lcd yellow"} %> <%= label_tag contact.surname, nil, {:class=>"lcd orange"} %> 
+													</td>
+													<td width="40%" align="left">
+									 					<%= contact.email.downcase %>
+									 				</td>
+													<td width="5%">&nbsp;</td>
+											    </tr>
+											<% end %>	
+										</table>
+									</div>
+											<%= text_field_tag :bcc,@bcc ,{:size => 85,:class=>"form-control input_bcc",:placeholder=>d4x_sanitizer(t("BCC"))} %><br />
+										</div>
+								</td>
+							</tr>
+						</table>	
+				
+					<div class="field">
+						<%= text_field_tag :subject,@subject ,{:size => 90,:class=>"form-control input_subject",:placeholder=>d4x_sanitizer(t("subject"))} %>
+					</div>
+			
+					<br />	
+				
+						<%= check_box_tag :htmlmsg,nil,:checked %>&nbsp;
+						<%= label_tag(d4x_sanitizer(t("send plain text")),nil,{:class=>'lcd'}) %>
+									
+						<% if @type == "text" %>
+							<div id="text-message">
+								<%= text_area_tag :message,@message,{:size => '100x16',:class=>'mceNoEditor d4x-control input_tarea'} %>
+							</div>
+							<div id="html-message" class="none">
+								<%= text_area_tag :message_html, @message,{:class =>"tinymce input_tarea", :theme_advanced_toolbar_location => "top", :theme_advanced_toolbar_align => "left",
+										:theme_advanced_statusbar_localtion => "bottom",:theme_advanced_button3_add => "tablecontrols",	:plugins => "all",:available_languages => "en"} %>
+							</div>
+						<% elsif @type == "html" %>
+							<div id="text-message" class="none">
+								<%= text_area_tag :message,@message,{:size => '100x16',:class=>'mceNoEditor d4x-control input_tarea'} %>
+							</div>
+							<div id="html-message">
+								<%= text_area_tag :message_html, @message,{:class =>"tinymce input_tarea", :theme_advanced_toolbar_location => "top", :theme_advanced_toolbar_align => "left",
+										:theme_advanced_statusbar_localtion => "bottom",:theme_advanced_button3_add => "tablecontrols",	:plugins => "all",:available_languages => "en"} %>
+							</div>
+						<% end %>			
+		
+					<div class="center"><br />
+							
+							<%= link_to_function image_tag('attach.png',:class=>'bullet')+" "+d4x_sanitizer(t("attach file(s)")), "$('#attachments').toggle()",:class=>'button-d4x right'%> 
+							
+							<div id="attachments" class="none">
+							<br />		
+									<%= file_field_tag :attachment,:class=>'button-d4x' %><br />
+									<%= file_field_tag :attachment1,:class=>'button-d4x' %><br />
+									<%= file_field_tag :attachment2,:class=>'button-d4x' %><br />
+									<%= file_field_tag :attachment3,:class=>'button-d4x' %><br />
+									<%= file_field_tag :attachment4,:class=>'button-d4x' %><br />
+							</div>
+					</div>
+					<div id="left-buttons" class="left">
+						<%= submit_tag d4x_sanitizer(t("save draft")),:name=>"savedraft",:class=>'button-d4x',:id=>"savedraft" %>&nbsp;&nbsp;&nbsp;
+						<%= submit_tag d4x_sanitizer(t("discard")),:name=>"discard",:class=>'button-d4x',:id=>"discard" %>
+					</div>
+					
+					<div id="send-spinner">
+							<%= image_tag "post-spinner.gif",:id=>"sending",:class=>"none" %>
+					</div>
+					
+					<div id="right-buttons">
+						<%= submit_tag d4x_sanitizer(t("send")),:name=>"send",:id=>"send",:class=>'button-d4x' %>&nbsp;
+						
+					</div>
+					<br />	
+				<br />
+				<br />
+</div>  
+			

@@ -1,0 +1,21 @@
+<% @title =t('links') %>
+<% @links.each do |link| %>
+<div id="single-exploit">
+		<div class="d4x-title-2013 center">
+			<% if can? :manage,link %>  
+				<%= link_to link.name, edit_link_path(link) %>
+			<% else %>
+					<%=  link.name %>	
+			<% end %>
+		</div>
+		
+		<div id="description" class="green">
+			<%= link_to link.url,link.url,:target=>"_blank" %>
+		</div>
+		<div id="description" class="white">
+			<%= link.description %>
+		</div>
+		<br />
+		<%= image_tag link.image.url,:class=>"snapshot",:width=>"700" %><br />
+</div>
+<% end %>

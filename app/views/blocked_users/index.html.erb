@@ -1,0 +1,40 @@
+<% @title = d4x_sanitizer(t('timeline')) %>
+<script language="JavaScript">
+  $( document ).ready(function() {
+    $('#main-menu-social').addClass("navigation__sub--active navigation__sub--toggled");
+    $('#menu-blocked').removeClass("navigation__sub").addClass("navigation__active");
+  });
+</script>
+<h4 class="card-title red"><i class="zmdi zmdi-block-alt red"></i>  <%= t("blocked users") %></h4>
+<% unless @blocked_user.blank? %>
+    <div class="contacts row">
+    <% @blocked_user.each do |user| %>
+        <% @user = User.find(user.blocked_id) %>
+        <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+          <div class="contacts__item">
+            <a href="" class="contacts__img">
+              <% if @user.avatar(:thumb).present? %>
+                <img src="<%= @user.avatar.url(:thumb) %>" alt="">
+              <% else %>
+                <img src="demo/img/profile-pics/2.jpg" alt="">
+              <% end %>
+            </a>
+            <div class="contacts__info">
+              <strong><%= @user.firstname %></strong>
+              <small><%= "@"+@user.nickname %></small>
+              <small><% @user.email %></small>
+            </div>
+            <br>
+            <% blocked_user = get_blocked_user(current_user.id,@user.id) %>
+            <%= button_to "Remove Block",blocked_user, method: :delete,data: { confirm: "Are you sure?" },:class=> " btn btn-md btn-outline-danger" %>
+          </div>
+        </div>
+    <% end %>
+    </div>
+<% else %>
+    <h6 class="card-subtitle">There are no Blocked people.</h6>
+<% end %>
+</div>
+
+
+

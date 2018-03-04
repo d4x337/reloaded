@@ -1,0 +1,39 @@
+<% @title =t('request') %>
+<div id="text-content">
+	
+	<p>
+	  <b><%= t(:sender_id) %></b><br>
+	  <%= @request.sender_id %>
+	</p>
+	<p>
+	  <b><%= t(:target_id) %></b><br>
+	  <%= @request.target_id %>
+	</p>
+	<p>
+	  <b><%= t(:reason) %></b><br>
+	  <%= @request.reason %>
+	</p>
+	<p>
+	  <b><%= t(:relationship) %></b><br>
+	  <%= @request.relationship %>
+	</p>
+	<p>
+	  <b><%= t(:message) %></b><br>
+	  <%= @request.message %>
+	</p>
+	<p>
+	  <b><%= t(:status) %></b><br>
+	  <%= @request.status %>
+	</p>
+	<p>
+	  <b><%= t(:sent_at) %></b><br>
+	  <%= @request.sent_at %>
+	</p>
+	<p>
+	  <b><%= t(:read_at) %></b><br>
+	  <%= @request.read_at %>
+	</p>
+	<hr>
+	<%= link_to t('edit'), edit_request_path(@request) %> |
+	<%= link_to t('back'), requests_path %>
+</div>

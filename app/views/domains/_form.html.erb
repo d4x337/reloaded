@@ -1,0 +1,64 @@
+<%= form_for(@domain) do |f| %>
+  <% if @domain.errors.any? %>
+      <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
+     <ul>
+      <% @domain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+  <% end %>
+  
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+	<div class="col-lg-12">
+	<div class="ibox float-e-margins">
+	<div class="ibox-title">
+	    <h5><%= t('domain')%></h5>
+	    <div class="ibox-tools">
+    		<%= link_to domains_path do %>
+    			<i class="fa fa-arrow-left"></i>
+    		<% end %>
+	        <a class="collapse-link">
+	            <i class="fa fa-chevron-up"></i>
+	        </a>
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	            <i class="fa fa-wrench"></i>
+	        </a>
+	        <a class="close-link">
+	            <i class="fa fa-times"></i>
+	        </a>
+	    </div>
+	</div>
+	<div class="ibox-content">
+		<div class="field">
+		    <%= f.label :domain %>
+		    <%= f.text_field :domain,:class=>'form-control'%>
+	    </div><br>
+	    <div class="field">
+		    <%= f.label :description %>
+		    <%= f.text_field :description,:class=>'form-control'%>
+	    </div><br>
+	    <div class="field">
+		    <%= f.label :homedir %>
+		    <%= f.text_field :homedir,:class=>'form-control'%>
+	    </div><br>
+	      <div class="field">
+		    <%= f.label :vmaildir %>
+		    <%= f.text_field :vmaildir,:class=>'form-control'%>
+	    </div><br>
+	    
+	      <div class="field">
+		    <%= f.label :active %>
+		    <%= f.check_box :active%>
+	    </div><br>
+	    <div class="actions">
+	     	<%= link_to t('cancel'), domains_path,:class=>'btn btn-warning' %>
+	     	<span class="pull-right font-noraml"><%= f.submit t('save'),:class=>'btn btn-success' %></span>
+		    
+	    </div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<% end %>

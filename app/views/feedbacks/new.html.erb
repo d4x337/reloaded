@@ -1,0 +1,16 @@
+<% @title = d4x_sanitizer(t('add feedback')) %>
+<div id="big-card">
+	<div id="big-card-title">
+		<div id="evo-card-icon">
+			<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), feedbacks_path %>
+		</div>
+		<div id="d4x-title-evo">
+			<%= d4x_sanitizer(t('send feedback')) %>	
+		</div>
+	</div>
+	<div id="center-container">	
+		<%= render 'form' %>
+	</div>
+	<div id="paginator"></div>
+</div>
+

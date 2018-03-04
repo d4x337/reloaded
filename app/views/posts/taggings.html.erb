@@ -1,0 +1,133 @@
+    <script language="JavaScript">
+		$( document ).ready(function() {
+			$('#icon-compose').css('color','grey');
+			$('#icon-received').css('color','grey');
+			$('#icon-sent').css('color','grey');
+			$('#icon-contacts').css('color','grey');
+			$('#icon-settings').css('color','#2D3736');
+			
+			$('#profile-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#update-avi-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#set-status-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			$('#privacy-settings-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#language-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#invite-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#about-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#change-pass-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+			
+			$('#logout-link').click(function(){
+				$('#icon-compose-new').css('color','grey');
+				$('#icon-received').css('color','grey');
+				$('#icon-sent').css('color','grey');
+				$('#icon-contacts').css('color','grey');
+				$('#icon-profile').css('color','grey');
+				$('#icon-settings').css('color','#2D3736');
+				
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+		});	
+    </script>
+    <style>
+    	.settings-item{
+    		height:32px;
+    	}
+    	
+    </style>
+    
+	<div id="tab-settings" class="tab-pane active">
+   
+   		<%= @tags = Tag.select("name.*,count(post_tags.tag_id) as count").joins(:post_tag).group("post_tags.tag_id")  %>
+   		    
+        <div class="settings-item">
+            <a href="/language"  id="language-link"><h4 align="left" class="white"><i class="fa fa-picture-o white"></i>&nbsp;&nbsp;Border Picture</h4></a>
+        </div>
+        
+        	
+  </div>

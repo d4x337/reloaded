@@ -1,0 +1,75 @@
+<% @title = t('sponsored') %>
+<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), ads_path %>
+				<% if can? :manage,@ad %>  
+					<%= link_to image_tag("bug_add.png", :border =>0, :mouseover => "bug_add.png", :title => "new",:size => "16x16" ), new_ad_path %>
+					<%= link_to image_tag("bug_edit.png", :border =>0, :mouseover => "bug_edit.png", :title => t(:edit),:size => "16x16" ), edit_ad_path(@ad) %>
+				<% end %>
+			</div>
+			<div id="d4x-title-evox">
+					
+			</div>
+		</div>
+		<div id="center-container">
+			<table id="show-ad">
+				<tr>
+					<td colspan="5" class="show-item-title"> <%= @ad.title %>	</td>
+				</tr>
+				<tr>
+					<td width="10%"></td>
+					<td class="show-item-label"><%= t('created_at') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= @ad.created_at.to_s(:long) %></td>
+					<td width="2%"></td>
+				</tr>
+				<tr>
+					<td width="10%"></td>
+					<td class="show-item-label"><%= t('url') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data">	<%= link_to @ad.url, @ad.url,:target => "_blank" %></td>
+					<td width="2%"></td>
+				</tr>
+				<tr>
+					<td width="10%"></td>
+					<td class="show-item-label"><%= t('picture') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= image_tag @ad.image.url %></td>
+					<td width="2%"></td>
+				</tr>
+			
+				<tr>
+					<td width="10%"></td>
+					<td class="show-item-label"><%= t('content') %></td>
+					<td width="2%"></td>
+					<td><%= raw(@ad.content) %></td>
+					<td width="2%"></td>
+				</tr>	
+				<% if (@ad.active = true) %>
+				<tr>
+					<td width="10%"></td>
+					<td class="show-item-label"><%= t('active ?') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= t("yes") %></td>
+					<td width="2%"></td>
+				</tr>	
+				<% else %>
+				<tr>
+					<td width="10%"></td>
+					<td class="show-item-label"><%= t('active ?') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= t("no") %></td>
+					<td width="2%"></td>
+				</tr>	
+				<% end %>
+				<tr>
+					<td colspan="5">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="5">&nbsp;</td>
+				</tr>	
+			</table>
+		</div>
+		<div id="paginator"></div>
+</div>

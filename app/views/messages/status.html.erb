@@ -1,0 +1,91 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+       $('#main-menu-messages').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-status').removeClass("navigation__sub").addClass("navigation__active");
+
+        $('.re-use-status').click(function(){
+            var id=$(this).attr('id');
+            $.ajax({
+                url: "set-status",
+                cache: false,
+                type: 'POST',
+                beforeSend: function(xhr){
+                    // IMPORTANTO FOR APPSEC AGAINST CSRF ATTACKS, Add this header to ALL Ajax Requests!!!!!!!!!!!!!! :)
+                    xhr.setRequestHeader('X-CSRF-Token',$('meta[name="csrf-token"]').attr('content'))
+                },
+                data: {
+                    status_id:id
+                },
+                dataType: "json",
+
+                success: function(data) {
+
+                }
+            });
+            //return false;
+        });
+    });
+</script>
+<h4 class="card-title lightlime"><i class="zmdi zmdi-mood lightlime"></i>&nbsp;&nbsp;&nbsp;<%= label_tag(t("status"),nil,:class=>'lightlime' )%></h4>
+<h6 class="card-subtitle">Set a new one!</h6>
+    <%= form_for(current_user.status.new) do |f| %>
+  <div class="row traspa">&nbsp;</div>
+
+		<div class="row traspa">
+			<div class="col-sm-3  col-xs-3">
+        <div id="profpic" class="profile__img">
+          <a href="" class="contacts__img">
+            <% if current_user.avatar(:thumb).present? %>
+                <img src="<%= current_user.avatar.url(:thumb) %>" alt="">
+            <% else %>
+                <img src="/images/missing_avatar.png" alt="">
+            <% end %>
+          </a>
+        </div>
+      </div>
+   			 <div class="col-sm-1  col-xs-1">
+    		 </div>
+   			 <div class="col-sm-8 col-xs-8">
+           <h2><%=current_user.firstname%></h2><p>@<%=current_user.nickname %></p>
+           <div class="current_status">
+             <h4 class="orange"><%=get_current_status(current_user.id)%></h4>
+    			 </div>
+            <% if has_set_at_status?(current_user.id) %>
+                <p class="white"><%= last_status_set(current_user.id).to_s(:short)%>&nbsp;-&nbsp;<%= time_ago_in_words(last_status_set(current_user.id)) %>&nbsp;<%= t('ago') %></p>
+            <% else %>
+                <p class="white"><%= t('never') %></p>
+            <% end %>
+    		 </div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<%= f.text_field :status,:class=>'form-control message-new',:placeholder=>t('status'),:maxlength=>"50",:style=>"resize:none" %>
+			    <script>
+			 		$("#status_status").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+				</script>
+			</div>
+	    </div>
+	    <br />
+	    <%= f.submit d4x_sanitizer(t("update")), :id => "signup-submit",:class=>'btn btn-outline-success block full-width m-b'  %>
+    <% end %>
+	
+	<% @statuses = Status.where(:user_id=>current_user.id).order(:set_at).reverse_order %>
+	<% unless @statuses.blank? %>
+		<div class="status_list listview listview--hover">
+			<% @statuses.each do |status| %>
+        <a href="" class="listview__item traspa re-use-status" id="<%= status.id %>">
+          <div class="listview__content">
+            <div class="listview__heading">
+              <%= status.status %>
+              <small class="pull-right">
+                <%= button_to status, method: :delete,data: { confirm: 'Are you sure?' },:class=> 'btn btn-sm btn-outline-danger',:title=>'delete' do %>
+                  <i class='fa fa-trash-o white'></i>
+                <% end %>
+              </small>
+            </div>
+          </div>
+        </a>
+			<% end %>
+		</div>
+	<% end %>

@@ -1,0 +1,105 @@
+<% @title = d4x_sanitizer(t('mail_account')) %>
+<div id="big-card">
+	<div id="big-card-title">
+		<div id="evo-card-icon">
+			<%= link_to image_tag("box.png", :border =>0, :mouseover => "box.png", :title => "new mail_account" ), new_mail_account_path %>
+		</div>
+		<div id="d4x-title-evo">
+			<%= d4x_sanitizer(t('mail accounts')) %>	
+		</div>
+	</div>
+	
+	<div id="center-container">
+		<div id="center-content">
+			<% if (@mail_account.name != nil) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= d4x_sanitizer(t('name')) %>		
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.name %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (@mail_account.user_id != nil) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('user') %>
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.user_id %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (@mail_account.uid != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('uid') %>
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.uid %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+	
+			<% if (@mail_account.gid != nil) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('gid') %>
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.gid %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (@mail_account.home != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('home') %>
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.home %> <br>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (@mail_account.maildir != nil) %>
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('maildir') %>
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.maildir %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+			
+			<% if (@mail_account.quota != nil) %>
+				
+				<div id="show-item">
+					<div id="show-item-left">
+						<%= t('quota') %>
+					</div>
+					<div id="show-item-right">
+						<%= @mail_account.quota %>
+					</div>
+				</div>
+				<br>
+			<% end %>
+		</div>
+	</div>	 
+
+	<div id="paginator"></div>
+</div>
+

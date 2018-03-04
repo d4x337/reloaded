@@ -1,0 +1,95 @@
+<% @title =t('invitation') %>
+<div id="text-content">
+		
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:from) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.sender_id %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:to) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.target_id %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:email) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.target_email %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:subject) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.subject %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:description) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.description %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:reason) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.reason %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:archivied) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.archivied %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:email_sent) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.email_sent %>
+	</div>
+  </div>
+  <br>
+  
+  <div id="show-item">
+	<div id="show-item-left">
+		 <%=t(:read_at) %>	
+	</div>
+	<div id="show-item-right">
+		<%= @invitation.read_at %>
+	</div>
+  </div>
+  <br>
+		<%= link_to t('edit'), edit_invitation_path(@invitation) %> |
+		<%= link_to t('back'), invitations_path %>
+</div>

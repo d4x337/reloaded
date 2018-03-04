@@ -1,0 +1,86 @@
+<% @title = d4x_sanitizer(t('groups')) %>
+	<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<% if current_user.role? :author  %> 
+					<%= link_to image_tag("group_add.png", :border =>0, :mouseover => "group_add.png", :title => "Create a New Group" ), new_group_path %>
+				<% end %>
+		
+			</div>
+			<div id="d4x-title-evo">
+				<%= d4x_sanitizer(t('founded groups')) %>
+			</div>
+		</div>
+<br />
+		<table width="100%">
+		  <tr>
+		  	<th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t('group name')) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t('group founder')) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t('visibility')) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t('group members')) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t('group admins')) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t('group creation')) %></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"></th>
+		  </tr>
+		  
+		 <% unless @owned_groups.blank? %>
+		 <% @owned_groups.each do |group| %>
+		  <tr>
+		  	<td class="td-grid-data"></td>
+		    <td class="td-grid-data"><%= group.title %></td>
+		    <td class="td-grid-data"><%= group.founder %></td>
+		    <td class="td-grid-data"><%= group.visibility %></td>
+		    <td class="td-grid-data"><%= group.group_members.count %></td>
+		    <td class="td-grid-data"><%= group.admins %></td>
+		    <td class="td-grid-data"><%= group.creation_date.to_s(:long) %></td>
+		 	<td>
+		 		<%= link_to image_tag("group.png", :border =>0, :mouseover => "group_edit.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16"), group %>
+		 	</td>
+			<td>
+				<% if can? :update, @owned_groups %>  
+					<%= link_to image_tag("group_edit.png", :border =>0, :mouseover => "group_edit.png", :title => d4x_sanitizer(t("icon-edit")),:size => "16x16" ), edit_group_path(group) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @owned_groups %>  
+					<%= button_to "", group, :confirm => 'Are you sure?', :method => :delete, :class => 'udestroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+		  </tr>
+		<% end %>
+		<% end %>
+<br />		
+		<% unless @joined_groups.blank? %>
+		<% @joined_groups.each do |group| %>
+		  <tr>
+		  	<td class="td-grid-data"></td>
+		    <td class="td-grid-data"><%= group.title %></td>
+		    <td class="td-grid-data"><%= group.founder %></td>
+		    <td class="td-grid-data"><%= group.group_members.count %></td>
+		    <td class="td-grid-data"><%= group.admins %></td>
+		    <td class="td-grid-data"><%= group.creation_date.to_s(:long) %></td>
+		 	<td>
+		 		<%= link_to image_tag("group.png", :border =>0, :mouseover => "group_edit.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16"), group %>
+		 	</td>
+			<td>
+				<% if can? :update, @joined_groups %>  
+					<%= link_to image_tag("group_edit.png", :border =>0, :mouseover => "group_edit.png", :title => d4x_sanitizer(t("icon-edit")),:size => "16x16" ), edit_group_path(group) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @joined_groups %>  
+					<%= button_to "", group, :confirm => 'Are you sure?', :method => :delete, :class => 'udestroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+		  </tr>
+		<% end %>
+		<% end %>
+		
+		</table>
+</div>
+
+
+

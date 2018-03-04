@@ -1,0 +1,30 @@
+<%= form_for(@option) do |f| %>
+    <% if @option.errors.any? %>
+       <h2><%= pluralize(@option.errors.count, "error") %> prohibited this option from being saved:</h2>
+       <ul>
+        <% @option.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+    <% end %>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><%= t('option')%></h4>
+        <h6 class="card-subtitle"></h6>
+
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name,:class=>'form-control'%>
+          </div><br>
+          <div class="field">
+            <%= f.label :value %>
+            <%= f.text_field :value,:class=>'form-control'%>
+          </div><br>
+          <div class="actions">
+            <%= link_to t('cancel'), options_path,:class=>'btn btn-warning' %>
+            <span class="pull-right font-noraml"><%= f.submit t('save'),:class=>'btn btn-success' %></span>
+          </div>
+      </div>
+    </div>
+<% end %>
+

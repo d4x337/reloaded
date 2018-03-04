@@ -1,0 +1,53 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "d4x-cart" %>
+<% end %>
+
+<%
+  if session[:cart_id].present?
+    @cart  = Cart.find(session[:cart_id])
+  elsif not params[:cart_id].blank?
+    @cart  = Cart.find(params[:cart_id])
+  else
+    if current_user
+      @cart = Cart.where(:user_id=>current_user.id).first
+      if not @cart
+        @cart  = Cart.new(params[:cart])
+        session[:cart_id] = @cart.id
+        @cart.user_id = current_user.id
+        @cart.currency = 'euro'
+        @cart.items = 0
+        @cart.status = "EMPTY CART"
+        @cart.total_price = 0
+        @cart.last_operation = DateTime.now
+        @cart.ip = request.env["REMOTE_ADDR"]
+        @cart.save!
+      end
+    end
+  end
+%>
+
+<div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
+  <div class="dropdown-header">
+    <%= t('notifications') %>
+    <div class="actions">
+      <a href="" class="actions__item zmdi zmdi-check-all" data-sa-action="notifications-clear"></a>
+    </div>
+  </div>
+  <div class="listview listview--hover">
+
+    <div class="listview__scroll scrollbar-inner">
+      <% if current_user.updates.where(:read=>false).count > 0 %>
+        <% @notifications = current_user.updates %>
+        <% @notifications.each do |update| %>
+          <a href="" class="listview__item">
+            <img src="demo/img/profile-pics/1.jpg" class="listview__img" alt="">
+            <div class="listview__content">
+              <div class="listview__heading"><%= time_ago_in_words_converter(update.created_at) %>&nbsp;<%= t('ago') %></div>
+              <p><%= update.reason %></p>
+            </div>
+          </a>
+        <% end %>
+      <% end %>
+
+      <div class="p-1"></div>
+    </div>

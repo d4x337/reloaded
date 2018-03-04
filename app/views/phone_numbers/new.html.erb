@@ -1,0 +1,99 @@
+<% content_for :head do %>
+
+<% end %>
+<style>
+	#verify-pin, #status-box, #continue {
+	  display: none;
+	}
+	.country{
+		text-align: left;
+		width:220px;
+	}
+</style>	
+
+
+
+<div class="middle-box text-center animated slideInDown">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox-content devise_box center">
+                <div class="row" id="zerozero-header">
+      	  			<div class="col-xs-2">
+		        		<%=link_to(image_tag("logo15.png",:class=>'imagelogo'),"/")%>
+		    		</div>
+		    		<div class="col-xs-8">
+		        		<%= image_tag "tortuga0.gif",:title=>raw('&copy; ' + get_setting_value('PROJECT_COPYRIGHT_YEARS') +' '+ get_setting_value('PROJECT_NAME') +'&nbsp;-&nbsp;'+ d4x_sanitizer(t("developer")) +' '+ get_setting_value('PROJECT_AUTHOR')+'&nbsp;-&nbsp;'+ d4x_sanitizer(t("all_rights"))) %>
+		    		</div>
+		    		<div class="col-xs-2 alignleft">
+		    			<div class="sk-spinner sk-spinner-wave none" id="spinner">
+					        <div class="sk-rect1"></div>
+			                <div class="sk-rect2"></div>
+			                <div class="sk-rect3"></div>
+			                <div class="sk-rect4"></div>
+			                <div class="sk-rect5"></div>
+			        	</div>
+		    		</div>
+	    		</div>
+                <h2 class="font-bold center" id="titlebox">What's your phone number?</h2>
+                <p id="desc">
+                	You will receive PIN to insert for number verification
+                </p>
+                <div class="row">
+                	<div class="col-sm-12">
+                   <div id="send-pin">
+						  <%= form_for @phone_number, remote: true do |f| %>
+						  	<% if params['mode'] == "CONFIRMATION" %>
+						  		<%= hidden_field_tag :confirmation_or_auth,"CONFIRMATION" %>
+						  	<% else %>
+						  		<%= hidden_field_tag :confirmation_or_auth,"AUTH" %>
+						  	<% end %>
+						    <div class="form-group">
+						      <%= f.telephone_field :phone_number,:class=>'form-control demo center',:placeholder=>'',:value=>current_user.mobile %>
+						    </div>
+						    <%= f.submit "Send PIN", class: "btn btn-primary block full-width m-b", id: 'send-pin-link' %>
+						  <% end %>
+						</div>
+						<script>
+							$(".demo").intlTelInput();
+						</script>
+
+						<div id="verify-pin">
+							
+							<%= form_tag phone_numbers_verify_path, remote: true do |f| %>
+								<% if params['mode'] == "CONFIRMATION" %>
+							  		<%= hidden_field_tag :confirmation_or_auth,"CONFIRMATION" %>
+							  	<% else %>
+							  		<%= hidden_field_tag :confirmation_or_auth,"AUTH" %>
+							  	<% end %>
+							  <%= hidden_field_tag 'hidden_phone_number', '' %>
+							  <div class="form-group">
+							    <%= text_field_tag :pin ,nil,{:class=>'form-control center'}%>
+							  </div>
+							  <%= submit_tag "Verify PIN", class: "btn btn-primary block full-width m-b" %>
+						  	<% end %>
+						</div>
+						
+						<div id="status-box" class="alerts alert-successs">
+						  <p id="status-message">Status: Haven’t done anything yet</p>
+						</div>
+						
+						<%= link_to edit_user_path(current_user), :class=> "btn btn-primary btn-xs block full-width m-b",:id=>'continue' do %>
+							Continue
+						<% end %>
+						
+						</div>
+                </div>
+              
+            
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+             Copyright ADB Broadband
+        </div>
+        <div class="col-md-6 text-right">
+            <small>© 2014-2015</small>
+        </div>
+    </div>
+</div>

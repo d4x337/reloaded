@@ -1,0 +1,23 @@
+<% @title =t('ring member') %>
+<div id="text-content">
+			<p>
+			  <b><%= t(:id) %></b><br>
+			  <%= @friend.id %>
+			</p>
+			<p>
+			  <b><%= t(:user) %></b><br>
+			  <%= @friend.user_id %>
+			</p>
+			<p>
+			  <b><%= t(:friend) %></b><br>
+			  <%= @friend.friend_id %>
+			</p>
+			
+			<p>
+			  <b><%= t(:deleted) %></b><br>
+			  <%= @friend.deleted %>
+			</p>
+			<hr>
+			<%= link_to t('edit'), edit_friend_path(@friend) %> |
+			<%= link_to t('back'), friends_path %>
+</div>

@@ -1,0 +1,28 @@
+<%= content_for :head do %>
+	<%= javascript_include_tag "d4x-settings" %>
+<% end %>
+
+<%= form_for(@user,:html => { :multipart => true })  do |f| %>
+
+	<p align="center">	
+ 	</p>	
+  	<br>
+	
+	<% if current_user.role? :admin %>  
+		<p align="center">	
+		    <%= f.label t('approved'),:class=>'show-item-data' %><br />
+			 <%= f.select(:approved,options_for_select([[d4x_sanitizer(t('approved')), true], [d4x_sanitizer(t('pending')), false]], @user.approved)) %>
+			<br />
+		    <% for role in User::ROLES %>  
+		      <%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>  
+		      <%= h role.humanize %>  
+		    <% end %>  
+		    <%= hidden_field_tag "user[roles][]"%>  
+		</p>
+	 <% end %>  
+
+	<p align="center">	
+	   <%= f.submit d4x_sanitizer(t('save settings')),:class=>'btn btn-xs btn-info'%>
+	</p>
+	  
+<% end %>

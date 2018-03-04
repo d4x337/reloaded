@@ -1,0 +1,27 @@
+<% @exist_option =  Option.where(:name=>'DASHBOARD_GEOIP_VISIBLE').count > 0 %>
+<% if @exist_option %>
+		<% @option =  Option.where(:name=>'DASHBOARD_GEOIP_VISIBLE').first.value %>
+		<% if @option == "Y" %>
+		<%= content_for :head do %>
+			<%= javascript_include_tag "d4x-geoip" %>
+		<% end %>
+		
+		<div class="menu-member-card">
+			<br />
+			<div id="menu-admin-title-text">
+				<%= t('Query IP') %> 
+			</div>
+			<br />
+			<div align="center">
+				<%= text_field_tag :ipx ,request.headers["CLIENT_IP"],:maxlength=>15,:size=>20,:class=>'ip-input thin-control center' %> 
+		    </div>
+		    <br />
+			<div id="actions" align="center">
+				<%= submit_tag "localize", :class=>'button-grey-d4x'%>
+		    </div>
+			<br />
+			<div id="vert-menu-item">
+		    </div>
+		</div>
+		<% end %>
+<% end %>

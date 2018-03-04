@@ -1,0 +1,2192 @@
+---
+pl: 
+  BCC: "BCC:"
+  TO: "TO:"
+  CC: "CC:"
+  no drafts: "Drafts folder is Empty"
+  Inbox is Empty: "Inbox is Empty"
+  sent is empty: "Sent Folder is Empty"
+  trash is empty: "Trash is Empty"
+  junk is empty: "Junk is Empty"
+  no importants: "There are no important messages"
+  archive is empty: "Archive is Empty"
+  Select a Message to Reply!: "Select a Message to Reply"
+  Select a Message to Reply All: "Select a Message to Reply All"
+  change your password: "Change Your Password"
+  use a custom background: "Use a Custom Background"
+  use a custom header: "Use a Custom Header"
+  choose your favourite theme: "Choose Your Favourite Theme"
+  choose your language: "Choose Your Language"
+  unknown action: "unknown action"
+  Select Messages  to Process! : "Select Messages to Process"
+  Mail Sent Seccessfully: "Mail Sent Seccessfully"
+  Error while Saving message in Sent Folder: "Error while Saving message in Sent Folder"
+  Error while saving message to Drafts: "Error while saving message to Drafts"
+  your message has been saved in draft folder.: "your message has been saved in draft folder"
+  your message has been discarted.: "your message has been discarted"
+  unknow action: "unknow action"
+  Mail Sent Seccessfully: "Mail Sent Seccessfully"
+  Error while Saving message in Sent Folder: "Error while Saving message in Sent Folder"
+  Error while saving message to Drafts: "Error while saving message to Drafts"
+  your message has been saved in draft folder.: "your message has been saved in draft folder"
+  Your message has been discarted.: "Your message has been discarted"
+  Successfully marked as unread: "Successfully marked as unread"
+  select an account before continuing: "select an account before continuing"
+  Select an Account to Check: "Select an Account to Check"
+  Select a Message to Reply: "Select a Message to Reply"
+  Select a Message to Reply All: "Select a Message to Reply All"
+  Select a Message to Forward: "Select a Message to Forward"
+  select an account before continuing: "select an account before continuing"
+  Select an Account first: "Select an Account first"
+  Successfully Moved Messages to Trash: "Successfully Moved Messages to Trash"
+  Error while moving to Trash: "Error while moving to Trash"
+  Select Messages to Delete : "Select Messages to Delete"
+  Successfully Moved Messages to Junk!: "Successfully Moved Messages to Junk"
+  Error while moving to Junk : "Error while moving to Junk"
+  Select Messages to set Junk: "Select Messages to set Junk"
+  Successfully Moved Messages to Archive: "Successfully Moved Messages to Archive"
+  Error while moving to Archive: "Error while moving to Archive"
+  Select Messages to Archive: "Select Messages to Archive"
+  Selected Messages Flagged as Important: "Selected Messages Flagged as Important"
+  Error While Settings Flag Important on Messages: "Error While Settings Flag Important on Messages"
+  Select Messages to Flag as Important!: "Select Messages to Flag as Important"
+  Select an Account first: "Select an Account first"
+  select an account before continuing: "select an account before continuing"
+  You must to set your Default Account: "You must to set your Default Account"
+  Marked Folder: "Marked folder"
+  Error while setting folder unread: "Error while setting folder unread"
+  Messages Flagged successfully: "Messages Flagged successfully"
+  Error while setting Flag on messages: "Error while setting Flag on messages"
+  Successfully Removed Flag Important: "Successfully Removed Flag Important"
+  Error while removing Flags: "Error while removing Flags"
+  Selected Messages Moved to Trash: "Selected Messages Moved to Trash"
+  Error While Moving Messages to Trash: "Error While Moving Messages to Trash"
+  Successfully copied messages from: "Successfully copied messages from"
+  Error while copying messages: "Error while copying messages"
+  Successfully moved messages from: "Successfully moved messages from"
+  Error while moved messages: "Error while moving messages"
+  Messages Moved to Inbox: "Messages Moved to Inbox"
+  Error while moving messages: "Error while moving messages"
+  Successfully Deleted Messages: "Successfully Deleted Messages"
+  Error White Deleting Messages: "Error White Deleting Messages"
+  as Read: " as Read "
+  Error while setting folder read: "Error while setting folder read"
+  as UnRead: " as UnRead "
+  Insert First Name: "Insert First Name"
+  Last Name: "Last Name"
+  e-Mail Address: "e-Mail Address"
+  contacts in your address-book: " contacts in your address-book"
+  used space: "Used Space"
+  percent used: "Percent Used"
+  available2: "Available"
+  There are No New Messages on: "There are No New Messages on "
+  You have 1 New Message on: "You have 1 New Message on "
+  You have: "You have "
+  New Messages on: " New Messages on "
+  current language: "Current Language"
+  change password: "Change Password"
+  custom Tortuga: "Custom Tortuga"
+  new password: "New Password"
+  your password has been updated: "Your Password Has Been Updated"
+  menu-configure: "Configure"
+  menu-contact: "Contact"
+  menu-about: "About"
+  menu-demo: "Live Demo"
+  menu-subscribe: "Subscribe"
+  menu-terms: "Terms"
+  menu-create-account: "Create Account"
+  starter: "Starter"
+  premium: "Premium"
+  professional: "Professional"
+  vai: "GO!"
+  step1: "Step 1 - Check for your name"
+  step2: "Step 2 - Choose a domain"
+  step3: "Step 3 - Select a package"
+  system: "System"
+  total space: "Total Space"
+  used space: "Used Space"
+  available: "Available"
+  resend_unlock_instructions: "Resend Unlock Instructions"
+  rights2: "2014 tortuga.tech - System Designed and Developed by Tortuga LTD - All rights reserved"
+  developer: "System Designed and Developed by"
+  all_rights: "All rights reserved"
+  compose: "Compose"
+  refresh: "Refresh"
+  junk: "Junk"
+  archive: "Archive"
+  archivied: "Archivied"
+  important: "Important"
+  delete: "Delete"
+  reply all: "Reply All"
+  forward: "Forward"
+  mark: "Mark"
+  address book: "Address-book"
+  disk space: "Disk Quota"
+  folders: "Folders"
+  spam: "Spam"
+  contacts: "Contacts"
+  MEGAMAX: "MEGAMAX"
+  backoffice: "backoffice"
+  confirm account: "Confirm Account"
+  unlock instructions: "Unlock Instructions"
+  keep me logged: "Keep me logged"
+  forgot password: "Forgotten Password?"
+  unfriend: "Disconnect"
+  home: "Home"
+  age: "Age"
+  tel: "Tel"
+  sex: "Sex"
+  location: "Location"
+  messag3: "Message"
+  connections: "Connections"
+  trash: Trash
+  available: Available
+  keys: "Password"
+  inbox: "Inbox"
+  sent: "Sent"
+  reply: "Reply"
+  draft: "Drafts"
+  apply: "Apply"
+  email service: "E-Mail"
+  settings: "Settings"
+  privacy by default: "Your Privacy by Default"
+  Tortuga mail system: "Tortuga System"
+  received: "Date"
+  to: "Recipient"
+  email: "E-mail address"
+  password: "Password"
+  keep me logged: "Keep me logged"
+  remember me: "Remember me"
+  logout: "Logout"
+  login: "Sign In"
+  annual subscription: "Annual Subscription"
+  month: "Month"
+  firstname: "Firstname"
+  lastname: "Lastname"
+  nickname: "Username" 
+  confirm: "Confirmation"
+  gender: "Gender"
+  country: "Country"
+  join us today: "Join Us Today"
+  birthday: "Birthday"
+  unlock your account: "Account Unlock"
+  confirm account: "Confirm Account"
+  resend confirmation instructions: "Resend Confirmation Instructions"
+  send me reset instructions: "Send Me Reset Instructions"
+  NEW ENTRIES: "NEW ENTRIES"
+  checking: "Checking"
+  not available: "Not Available"
+  choose a username first: "choose a username first"
+  username available: "username available"
+  username available: "username already taken"
+  package_p1: "The ideal single-user solution with"
+  package_p2: "the features, storage and mobile"
+  package_p3: "access you need to keep up with"
+  package_p4_1: "a starter email use."
+  package_p4_3: "a normal email use."
+  package_p4_5: "a professional email use."
+  package_tip1_1: "1 GB of storage for messages."  
+  package_tip3_1: "3 GB of storage for messages."  
+  package_tip5_1: "20 GB of storage for messages."  
+  package_tip2: "Address with an Tortuga domain."  
+  package_tip3: "POP3 Access with SSLv3 support."
+  package_tip4: "Mobile Access encrypted SSLv3 IMAP"  
+  package_tip5: "Webmail with integrated contacts."  
+  package_tip6: "Anti-spam and virus protection." 
+  continue: "Continue" 
+  card type: "Card Type"
+  card number: "Card Number"
+  card verification value: "Card Verification Value (CVV)"
+  card expires on: "Card Expires On"
+  order: "Order"
+  place your order: "Place your order"
+  months: "Months"
+  total: "Total"
+  year: "year"
+  years: "years"    
+  package: "Package"
+  error: "Error"
+  error while processing order: "error while processing order"
+  transaction failed: "Transaction Failed"
+  credit card problem: "There is a problem with your credit card."
+  try another one: "Please check again, or try with another one"
+  team: "Team"
+  account registration: "Account Registration"
+  congratulations: "CONGRATULATIONS!"
+  account finalization: "Account Finalization"
+  purchase completed: "you have successfully purchased an Tortuga mailbox! set your password to complete the process."
+  invitated sir: "Invitated Sir"
+  invalid invite: "Invalid Invite"
+  weak: "Weak"
+  good: "Good"
+  strong: "Strong"
+  permission denied: "Permission Denied"
+  welcome to the Tortuga System: "Welcome to Tortuga"
+  you are invited to Tortuga: "You are invited to Tortuga"
+  mailbox: "Mailbox"
+  added to your cart: " added to your cart"
+  from recent to old: "from recent to old"
+  sender_from_a_to_z: "order by sender from A to Z"
+  sender_from_z_to_a: "order by sender from Z to A"
+  subject_from_a_to_z: "order by subject from A to Z"
+  subject_from_z_to_a: "order by subject from Z to A"
+  recipient_from_a_to_z: "order by recipient from A to Z"
+  recipient_from_a_to_a: "order by recipient from Z to A"    
+  mark selected as read: "Mark selected as Read"
+  mark selected as unread: "Mark selected as Unread"
+  flag selected with star: "Flag selected with Star"
+  remove star from selected: "Remove star from selected"
+  move selected to trash: "Move selected to Trash"
+  delete selected: "Delete Selected"
+  make folder read: "Make folder Read"
+  make folder unread: "Make folder Unread"
+  sign up: "Signup"
+  i agree with terms and conditions: "I Agree with Tortuga Terms and Conditions"
+  NEW LOAD: "new load"
+  from name: "From Name"  
+  save draft: "Save Draft"
+  send: "Send"
+  cancel: "Cancel" 
+  text: "Text"
+  xhtml: "HTML"
+  attach file(s): "Attach File(s)"
+  discard: "Discard"
+  send plain text: "Send Plain Text"
+  save settings: "Save Settings"
+  upload: "Upload"
+  choose: "Choose"
+  male: "Male"
+  female: "Female"
+  configure POP3 access: "Configure POP3"
+  configure your mobile with IMAP: "Configure your mobile with IMAP"
+  send mail with your preferred client: "send mail with your preferred client"
+  Tortuga webmail: "Tortuga Webmail"
+  faq: "FAQ"
+  about the project: "About the Project"
+  about the company: "About the Company"
+  contact Tortuga team: "contact Tortuga team"
+  system status: "System Status"
+  new password: "New Password"
+  incomes: "Incomes"
+  invitations: "Invitations"
+  invite a friend: "Invite a Friend"
+  communications: "Communications"
+  fullname: "Full Name"
+  status: "Status"
+  when: "Date"
+  registration: "Registration"
+  income: "Income"
+  expiration: "Expiration"
+  customer: "Customer"
+  targets: "Targets"
+  statistics: "Statistics"
+  payments: "Payments"
+  you are logged as: "You are logged as"
+  reminders: "Reminders"
+  profile: "Profile"
+  static-config-01: "Here are the email configuration for accessing email using the POP or IMAP protocol."
+  incoming server address: "Incoming Server Address"
+  incoming port (POP3) 995: "Incoming Port POP3 SSLv3: 995"
+  incoming port (IMAP) 993: "Incoming Port IMAP SSLv3: 993"
+  outgoing server address: "Outgoing Server Address"
+  outgoing port (SMTP) 465: "Outgoing Port SMTP through SSLv3: 465"
+  account name your login name (email address): "username: your email address"
+  require authentication: "require authentication: YES (password)"
+  further assistance: "If you need further assistance or have any questions, please either email the helpdesk at support@tortuga.tech"
+  sending server address: "Sending Server Address"
+  account password: "password: your account password"
+  subject: "Subject"
+  sender: "Sender"
+  from: "From"
+  received: "Received"
+  you are logged as: "You are logged as "
+  mobile: "Mobile"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  update: "Update"
+  create: "Create"
+  destroy: "Destroy"
+  copy to folder: "Copy to folder "
+  city: "City "
+  photo: "Photo"
+  headers: "Headers"
+  message: "Message"
+  received: "Received"
+  quantity: "Quantity"
+  move to folder: "Move to Folder"
+  copy to folder: "Copy to Folder"
+  no messages: "No messages"
+  archive selected: "Archive Selected"
+  mark as junk: "Mark as Junk"
+  from old to recent: "From Oldest to most Recent"
+  request relationship: "Request Relationship"
+  requests: "Requests"
+  role: "Role"
+  requested sir: "Requested Sir"
+  invalid request: "Invalid Request"
+  ago: "Ago"
+  profile successfully updated: "Profile Updated"
+  current password: "Current Password"
+  confirmation: "Confirmation"
+  save settings: "Save Settings"
+  extra load: "EXTRA LOAD"
+  Successfully Deleted Messages: "Messages deleted"
+  proceed with mailbox payment: "proceed with mailbox payment"
+  problem with credit card transaction: "problem with credit card transaction"
+  finalizing mailbox creation registrate your account: "finalizing mailbox creation: register your account" 
+  all systems are stable and running: "System Up and Running"
+  system is under maintenance: "System Under Maintenance"
+  sublogo01: "Tortuga is the new Email System focused on security and privacy for its clients."
+  sublogo02: "You can create your custum mailbox by choosing your name, one of our available domains and then a package."
+  sublogo03: "If you have a firm or a company and want Tortuga to manage your current domain click here."
+  welcome to Tortuga the new email system: "Welcome to Tortuga, the professional email system"
+  configure Tortuga: "Few steps to configure your favourite email client"
+  user agreement: "User Agreement: Terms and Conditions"
+  contact01: "Thank you for taking the time to get in touch with us."
+  contact02: "We do our best to answer all emails within one business day."
+  contact Tortuga: "for any feedback drop a line to team@tortuga.tech"
+  about Tortuga: "About Tortuga System"
+  reset password instructions: "Password Reset Instructions"
+  unlock password instructions: "Unlock Account Instructions"
+  configure iphone01: "Configure your iPhone Step by Step"
+  configure iphone02: "(works also for other phones and email client)"
+  about01: "Tortuga system is a email service focused on security and privacy for its users."
+  about02: "We care about the service, infrastructure and performance, always ready to implement any new solution for a better protection of communications, and data of out customers."
+  about03: "Tortuga implements also an innovative commercial system that let you earn from home like an extra job."
+  about04: "If acceted as partner, you will be able to contribute to the Tortuga diffusion by inviting your contacts."
+  about05: "Then for every invited customer Tortuga will grant you an income."
+  about06: "We are looking for partners that may operate in different countries"
+  about07: "For more information drop a line to team@tortuga.tech"
+  will_paginate:
+     previous_label: "&#8592;"
+     next_label: "&#8594"
+     page_gap: "&hellip;"
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+  dates: period
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years: 
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days: 
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months: 
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds: 
+        one: "1 second"
+        other: "%{count} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  404_h2: "The page you were looking for doesn't exist."
+  404_h3: "You may have mistyped the address or the page may have moved."
+  ? "8453 monitor"
+  : "8453 monitor"
+  ? ":: 1337 ::"
+  : "1337"
+  ? ":: Author ::"
+  : Author
+  ? ":: Operator ::"
+  : ":: Operatore :: "
+  ? ":: Premium ::"
+  : ":: Premium :: "
+  ? ":: Public ::"
+  : Public
+  ? ":: Requests ::"
+  : Requests
+  ? ":: Sections ::"
+  : Sections
+  ? ":: Social ::"
+  : Social
+  ? "Didn't receive unlock instructions?"
+  : "Didn't receive unlock instructions?"
+  ? "Forgot your password?"
+  : "Forgot your password?"
+  Help: "Need help?"
+  Help001: "Contents under development"
+  ? "How to unlock your account"
+  : "Unlock your account"
+  ? "Listing Mailboxes"
+  : "Listing mailboxes"
+  ? "Megam4x activities"
+  : "Megam4x activities"
+  ? "New Mailbox"
+  : "New mailbox"
+  ? "Resend unlock instructions"
+  : "Resend unlock instructions"
+  ? "Send me reset instructions"
+  : "Send me Reset Instructions"
+  ? "Send me reset password instructions"
+  : "Send me reset password instructions"
+  ? "Sign in"
+  : "Sign In"
+  ? "Sign in here"
+  : "Sign In"
+  ? "Sign up"
+  : "Sign up"
+  Where: Where
+  about: About
+  about_bio: "Founder of tortuga is Davide Gonnella, also know as d4x, aka netevil, he is an information security specialist with a deep experience in software engineering. Most recently writes code in Ruby or C#, provides consultancy on penetration tests, digital forensics investigations, and  manages incidents in complex scenarios. Earns with SANS Institute the GIAC GCIH and GCFA on July 2009"
+  about_bio_tit: Bio
+  about_pgp_key: "For sensitive subjects and paranoid minds, please feel free to use our GnuPG Public key to encrypt any communication you may choose to conduct with us. This is not required, but is recommended for an additional level of security and privacy."
+  about_pgp_tit: "PGP Public Key"
+
+  about_me_p0: "Davide Gonnella is the ideator and creator."
+  about_me_p1: "Expert in computer security and software development for over 20 years, starts in 2003 this non-profit project, with a mission to provide the information security community a landmark highly technical and uphold the freedom of thought, speech and information."
+  about_me_p2: "In 2012, actively resumes the project with new collaborators, ideas and renewed philosophy, to give life to a version that implements the actions typical of today's social, a database of technical information, news and services available from the web."
+  about_me_p3: "Davide, also known as d4x, born in Milan in 1974."
+  about the author: "About the Author"
+  about_staff_p0: "Please use this email address for general feedback for the Tortuga Staff. Note that while we do try to respond to all emails in a timely fashion, there can however occasionally be a delay. If you find an error on the site, note that while we try to support most modern browsers, the site may display differently depending on your browser of choice."
+  about_staff_p1: "If you want to submit new files to the Tortuga archive. We ask that you please include a description of the file, author details, homepage details, and any pertinent information you may have about the file. "
+  about_staff_tit: "staff[at]Tortuga"
+  ? "abuse reports"
+  : "Abuse reports"
+  ? "account settings"
+  : "Account settings"
+  activerecord: 
+    errors: 
+      messages: 
+        record_invalid: "Validation failed: %{errors}"
+        taken: "has already been taken"
+  activities: "DB Activities"
+  ? "add image"
+  : "Attach Image"
+  ? "add to ring"
+  : "Add to my Ring"
+  ? "add vulnerability"
+  : "Aggiungi Vulnerabilità"
+  add_tag: "Add TAG"
+  ? "admin blog"
+  : " Blog Posts"
+  ? "admin links"
+  : Links
+  ? "admin quotes"
+  : Quotes
+  ? "admin terms"
+  : "Admin Terms"
+  admin_archive: "Admin Archive"
+  admin_blog: "Admin Blog Posts"
+  admin_categories: "Admin Categories"
+  admin_links: "Admin Links"
+  admin_quotes: "Admin Quotes"
+  admin_registrations: "Admin Registrations"
+  admin_translations: "Admin Translations"
+  administrator: Administrator
+  advisores: Advisores
+  hash: md5
+  ago: ago
+  aka: AKA
+  alerts: Alerts
+  ? "already in the ring?"
+  : "Already registered?"
+  ? "alternative self definition"
+  : dsfasd
+  anon_level: "Anon level"
+  anything: Qualsiasi
+  app_desc: "Information Security Corner"
+  app_keywords: "pentest, hacking, network security, pentest, malware analysis, d4x1974,netevil,davide gonnella,it security, giac, gcih, gcfa,exploits, vulnerabilities, vulns, security advisors, coding, ruby, openbsd, cyber war news, underground news, zeroday, 0day"
+  app_title: "tortuga :: Information Security Corner"
+  approved: Approved
+  article: Articolo
+  attachment: Attachment
+  author: Author
+  author_contact: "Contatto Autore"
+  authors: Authors
+  ? "authors list"
+  : "Lista Autori"
+  auto-draft: Auto-Draft
+  available: Available
+  keys: "Password"
+  avatar: "Upload your picture"
+  back: Back
+  ? "become a premium member today!"
+  : "Become a premium member today!"
+  bio: Bio
+  birthday: Birthdate
+  blog: Blog
+  books: "Cool Books"
+  by_clicking: "By clicking SignUp or using Tortuga, you are indicating you have read, understood, and agree to Tortuga's"
+  category: Category
+  cfp: cfp
+  challenges: Challenges
+  ? "change your password"
+  : "Change your password"
+  chat: Chat
+  ? "chat room (soon)"
+  : "Chat room (soon)"
+  ? "check nick availability"
+  : "check nickname"
+  check_proxy: "Check Proxy Server"
+  choose: ""
+  city: città
+  ? "click here if you want to be redirect to the homepage"
+  : "click here if you want to be redirect to the homepage"
+  closed: Closed
+  code: Code
+  comment: Comment
+  comment_status: "Comments Status"
+  commented: Commented
+  comments: Comments
+  completess: "Completed percentual"
+  conditions: "Terms and Conditions"
+  conditionz: "Conditions"
+  conditions_ua_tit: "User Agreement"
+  conditions_user_agr: "By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. "
+  conditionz: Conditions
+  confirm: Confirm
+  contact: Contact
+  content: "Post Content"
+  content_type: "Content Type"
+  ? "cool links"
+  : "Cool Links"
+  costs: costi
+  country: Country
+  ? "country blocks"
+  : "Country Blocks"
+  ? "crack hashes"
+  : "Crack hashes"
+  crack_wireless: "Crack WPA Wireless"
+  credits: Credits
+  ? "credits earned"
+  : "crediti ricevuti"
+  ? "credits friends txt"
+  : "Credits friends txt"
+  ? "credits intro"
+  : "Credits intro"
+  ? "credits sponsors txt"
+  : "Credits sponsors txt"
+  ? "credits team txt"
+  : "Credits team txt"
+  ? "credits tech txt"
+  : "Credits tech txt"
+  crew: Crew
+  current: Current
+  ? "currently you have"
+  : "Currently you have"
+  cv: "Curriculum Vitae"
+  cve: Cve
+  dashboard: Dashboard
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  dates: periodo
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years: 
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days: 
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months: 
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds: 
+        one: "1 second"
+        other: "%{count} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  del_tag: "Del TAG"
+  description: Description
+  destination: Destination
+  destroy: Destroy
+  devise: 
+    confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      inactive_signed_up: "You have signed up successfully. However, we could not sign you in because your account is %{reason}."
+      reasons: 
+        inactive: inactive
+        locked: locked
+        unconfirmed: unconfirmed
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address.<br /> Please open the link to activate your account."
+      updated: "You updated your account successfully."
+    failure: 
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid login or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      not_approved: "Your account has not been approved by an administrator yet."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to Sign In or Register up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    omniauth_callbacks: 
+      failure: "Could not authorize you from %{kind} because %{reason}."
+      success: "Successfully authorized from %{kind} account."
+    passwords: 
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      inactive_signed_up: ""
+      reasons: 
+        inactive: ""
+        locked: ""
+        unconfirmed: ""
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_not_approved: "Your registration is under approval"
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      updated: "You updated your account successfully."
+      users: 
+        signed_up_but_not_approved: ""
+    sessions: 
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
+      unlocked: "Your account was successfully unlocked. You are now able to signed in."
+  disclaimer: "The materials on Tortuga's web site are provided 'as is'. Tortuga makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Tortuga does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site."
+  disclaimer_tit: Disclaimer
+  ? "disclose date"
+  : "Disclose date"
+  disclose_date: divulgazione
+  dislike: Dislike
+  dislikes: ""
+  dowloads: Downloads
+  ? "download area"
+  : "Download area"
+  downloads: Downloads
+  draft: Drafts
+  edit: Edit
+  ? "editing friend"
+  : "Aggiornamento amicizia"
+  ? "editing friendship"
+  : "Aggiornamento amicizia"
+  ? "editing group"
+  : "Aggiornamento Gruppo"
+  ? "editing notification"
+  : "Aggiornamento Notifica"
+  ? "editing option"
+  : "Aggiornamento Opzione"
+  ? "editing quote"
+  : "Aggiornamento Frase Celebre"
+  ? "editing ranking"
+  : "Aggiornamento Posizione"
+  ? "editing request"
+  : "Aggiornamento Richiesta"
+  editing_proxy: "Aggiornamento Proxy Server"
+  edition: Edition
+  ? "edition:"
+  : Edition
+  email: E-Mail Address
+  email_address: "Email Address"
+  english: English
+  enter: Enter
+  entry_welcome0: "After years Tortuga comes back on the web with the mission to offer the information security community, another place to get in touch, learn, collaborate, and have fun with technologies. "
+  error: "Validation error"
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "must be accepted"
+      already_confirmed: "was already confirmed, please try signing in"
+      blank: "can't be blank"
+      confirmation: "doesn't match confirmation"
+      empty: "can't be empty"
+      equal_to: "must be equal to %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      expired: "has expired, please request a new one"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "is not included in the list"
+      invalid: "is invalid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      not_found: "not found"
+      not_locked: "was not locked"
+      odd: "must be odd"
+      taken: ""
+      too_long: "is too long (maximum is %{count} characters)"
+      too_short: "is too short (minimum is %{count} characters)"
+      wrong_length: "is the wrong length (should be %{count} characters)"
+  event: Event
+  events: Events
+  ? "events around the world"
+  : "Events around the world"
+  exploit: Exploit
+  ? "exploitable ?"
+  : "Exploitable ?"
+  exploits: Exploits
+  ? "external link"
+  : link
+  externally: esternamente
+  ezines: ezines
+  facebook: "Facebook userid"
+  failed: Failed
+  failure: 
+    not_approved: "Your account might be still unapproved"
+  ? "famous quotes"
+  : "Famous quotes"
+  faqs: Faqs
+  ? "fill up your contacts"
+  : "Fill up your contacts"
+  first: First
+  firstname: "Full Name"
+  privacy by default: "Your Privacy by Default"
+  Tortuga mail system: "Tortuga mail system"
+  received: "Date"
+  to: "Recipient"
+  footer-menuitem-about: About
+  footer-menuitem-contact: Contact
+  footer-menuitem-abuse: "Report Abuse"
+  footer-menuitem-archive: Archive
+  footer-menuitem-bugs: "Report a Bug"
+  footer-menuitem-causes: Causes
+  footer-menuitem-chat: Chat
+  footer-menuitem-conditions: "Terms and Conditions"
+  footer-menuitem-credits: Credits
+  footer-menuitem-defenses: Defenses
+  footer-menuitem-events: Events
+  footer-menuitem-exploits: Exploits
+  footer-menuitem-faq: FAQ
+  footer-menuitem-geekstuff: "Geek Stuff"
+  footer-menuitem-home: Home
+  footer-menuitem-links: Links
+  footer-menuitem-pgp-key: "PGP Key"
+  footer-menuitem-privacy-policy: "Privacy Policy"
+  footer-menuitem-quotes: Quotes
+  footer-menuitem-snippets: "Code Snippets"
+  footer-menuitem-ssl: "SSL only"
+  footer-menuitem-tools: Toolz
+  footer-menuitem-vulns: Vulnerabilities
+  footer-menuitem-whatis: "What is Tortuga"
+  ? "forgot your password"
+  : "Forgot your password?"
+  forgot_password: ""
+  forgot_your_password: "Forgot your password?"
+  form: Form
+  frequency: frequency
+  ffriends: Connections
+  from: From
+  gate_sms: "Send SMS"
+  gender: Gender
+  general: General
+  ? "general info"
+  : "General info"
+  gid: Gid
+  ? "global tags"
+  : "Global TAGS"
+  ? "hash md5"
+  : "hash md5"
+  headline: headline
+  help: Help
+  ? "help center"
+  : "Help center"
+  help001: Help001
+  help002: Help002
+  helpers: 
+    button: 
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+    select: 
+      prompt: "Please select"
+    submit: 
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+  home: Home
+  home_intro0: ""
+  home_intro1: ""
+  home_intro2: ""
+  home_intro3: "Tortuga's staff"
+  home_lb: Home
+  homepage: homepage
+  hosted: "Hosting Type"
+  ? "hosted files_tit"
+  : "Hosted Files"
+  hosted_files: "On Tortuga there are no serials, cracks, warez etc and requests for anything illegal are simply directed to the wrong party, and get ignored."
+  ? "how to subscribe"
+  : "How to subscribe"
+  ? "i agree with terms and conditions"
+  : "I Agree with Terms and Conditions"
+  iberbox_p2: iberbox_p2
+  icon-advisores: Vulnerabilità
+  icon-archive: Archive
+  icon-authors: Authors
+  icon-back: Back
+  icon-blog: Blog
+  icon-categories: Categorie
+  icon-causes: "Support benefic causes with Tortuga"
+  icon-cencel: Cancel
+  icon-chat: Chat
+  icon-credits: Credits
+  icon-dashboard: Plancia
+  icon-defenses: Vulnerabilities
+  i_a: "I Agree with Terms and Conditions of tortuga.tech"
+  icon-delete: Delete
+  icon-downloads: Downloads
+  icon-edit: Edit
+  icon-events: "Hacking Events"
+  icon-exploits: Exploits
+  icon-gatesms: "Gate SMS"
+  icon-geekstuff: "Geek Interesting Stuff"
+  icon-home: Home
+  icon-invitations: "Send Invitations"
+  icon-links: "Cool Links"
+  icon-logout: "Logout now"
+  icon-mailboxes: Mailbox
+  icon-messages: Messages
+  icon-newpost: "New Post"
+  icon-notification: ""
+  icon-notifications: Notifications
+  icon-options: Options
+  icon-orders: Ordini
+  icon-papers: Papers
+  icon-posts: "Manage Blog"
+  icon-profile: "Personal Profile"
+  icon-proxies: Proxies
+  icon-quotes: "Ispirational quotes"
+  icon-ranking: Ranking
+  icon-requests: Requests
+  on: "on"
+  founder: "founded by"
+  icon-ring-of-trust: "My Ring"
+  icon-rules: Rules
+  icon-save: Save
+  icon-search: Search
+  icon-share: Share
+  icon-show: Show
+  icon-signin: "Sign In"
+  icon-sms: "Send SMS"
+  icon-snippets: "Code Snippets"
+  icon-statz: Statistics
+  icon-tags: "Parole Chiave"
+  icon-tools: "Top Tools"
+  icon-translations: Dictionary
+  icon-uberbox: "Uberbox Mail"
+  icon-updates: Updates
+  icon-users: Registrations
+  icon-video: Videos
+  friend name: "Friend Name"
+  friend address: "Friend Address"
+  icon-videos: Videos
+  icon-vulns: Vulnerabilities
+  icon-wall: "Public Wall"
+  icon-whoson: "Who's online?"
+  id: id
+  ? "im uin"
+  : "Istant messagging user"
+  image: Image
+  index_p0: "After years Tortuga back on the web with a mission to offer to the information security community, another place to socialize, learn, collaborate and have fun with technology. We will focus on: penetration testing, news, CONs, cyber-culture and other sections we feel is interesting."
+  index_p3: "Tortuga not encourage or endorse any illegal activities. For the penetration test should be remembered that we can improve the skills using our own virtual lab, but in reality, to be able to perform, is required a written request of the customer or formal authorization by the Authority."
+  index_p1: "With the recent revelations about surveillance systems, impacting mainly network infrastructure, we have decided for the moment to focus on application security and privacy of our users."
+  index_p2: "Technically following and implementing the best practices of development, fighting every type of attack to the application."
+  index_p2a: "It will then be essential means of communication channels with significant levels of encryption, encrypted e-mail systems and developments in the backend, always with an eye to the technologies that support communication through the exchange of keys."
+  inherit: Inherit
+  interests: interests
+  ? "invalid image"
+  : ""
+  ? "invite to join"
+  : "Invite to Join"
+  ip: Ip
+  ? "it mini store"
+  : "It mini store"
+  italian: Italian
+  iuberbox_p2: Iuberbox_p2
+  javascript_disabled: "You have to enable Javascript in order to use Tortuga properly"
+  keep_me_logged: "Keep me logged"
+  lang: Language
+  language: Language
+  last: Last
+  last_seen_online: "Last seen online"
+  lastname: "Last Name"
+  ? "latest registration"
+  : "Latest registration"
+  like: Like
+  likes: ""
+  likings: Likings
+  limitations: "In no event shall Tortuga or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Tortuga's Internet site, even if Tortuga or a Tortuga authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations shall apply to the fullest extent possible in those jurisdictions. "
+  limitations_tit: Limitations
+  linkedin: "Linkedin profile"
+  links: "Tortuga has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Tortuga of the site. Use of any such linked web site is at the user's own risk."
+  links-tit: Links
+  links_tit: Links
+  ? "listing device"
+  : "Elenco Dispositivi"
+  ? "listing links"
+  : "Admin External Links"
+  ? "listing mailboxes"
+  : "Elenco Caselle Email"
+  ? "listing mini_post_comment_likings"
+  : ""
+  ? "listing mini_post_likings"
+  : ""
+  ? "listing posts"
+  : "Posts List"
+  ? "listing quotes"
+  : "Admin Famous Quotes"
+  ? "listing session"
+  : ""
+  ? "listing sponsor"
+  : ""
+  ? "listing tags"
+  : "Listing tags"
+  ? "listing terms"
+  : ""
+  ? "listing users"
+  : "Admin Tortuga Registrations"
+  loading: "please wait"
+  loc: Loc
+  locale: Locale
+  locally: localmente
+  login: Sign In
+  logout: Logout
+  mailboxes: Mailboxes
+  maildir: Maildir
+  ? "manage users"
+  : "Manage Users"
+  md5: md5
+  ? "member for"
+  : ""
+  ? "member since"
+  : ""
+  member_menu_tit: "Master Menu"
+  members: Registrations
+  menu_admin: Administrator
+  menu_premium_member: "Premium Member"
+  metasploit?: Metasploit?
+  mobile: Mobile
+  ? "moderate comments"
+  : "Moderate Comments"
+  more: "...more"
+  name: Link
+  nav_menu_item: NavMenuItem
+  ? "new Paper"
+  : "New paper"
+  ? "new author"
+  : "Nuovo Autore"
+  ? "new device"
+  : "Nuovo Dispositivo"
+  ? "new friendship"
+  : "New Friendship"
+  ? "new group"
+  : "Nuovo Gruppo"
+  ? "new invitation"
+  : "new Invitation"
+  ? "new link"
+  : "Add a new Link"
+  ? "new link_tags"
+  : ""
+  ? "new mailbox"
+  : "Nuova Mailbox"
+  ? "new mini_post_comment_liking"
+  : ""
+  ? "new mini_post_liking"
+  : ""
+  ? "new post"
+  : "Add a new Post"
+  ? "new post_tags"
+  : ""
+  ? "new quote"
+  : "Add a New Quote"
+  ? "new ranking"
+  : ""
+  ? "new request"
+  : "Nuova Richiesta"
+  ? "new session"
+  : "Nuova Sessione"
+  ? "new session_url"
+  : "New session_url"
+  ? "new sponsor"
+  : "Nuovo Sponsor"
+  ? "new term"
+  : "Nuovo Termine"
+  ? "new term_taxonomies"
+  : "Nuova Categoria"
+  new_post: "New Post"
+  new_tag: "New TAG"
+  ? "newbie lifestyle basic rule"
+  : "Newbie lifestyle basic rule"
+  news: News
+  nick: Nick
+  nickname: Username
+  ? "no comments"
+  : "Nessun Commento"
+  ? "no dislikes"
+  : "Nessun non mi piace"
+  ? "no likes"
+  : "Nussun mi piace"
+  ? "not available"
+  : "non disponibile"
+  notes: note
+  notification: Notification
+  available2: "Available"
+  percent used: "Percent Used"
+  notifications: Notifications
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: "false"
+        strip_insignificant_zeros: "false"
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: "false"
+      strip_insignificant_zeros: "false"
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ""
+      format: 
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  ? "official page"
+  : "Pagina Ufficiale"
+  ? "online visitors"
+  : "Online Visitors"
+  online?: Online?
+  open: Open
+  operator: Operator
+  option: Option
+  options: Options
+  ? "options list"
+  : "Elenco Opzioni"
+  orders: Orders
+  ? "out of my ring"
+  : "Out of my Ring"
+  owner: submitter
+  page: Page
+  papers: Papers
+  password: Password
+  payments: Payments
+  ? "pending notifications"
+  : "Pending notifications"
+  people: persone
+  ? "people you may know"
+  : "People you may know"
+  ? "people, in your Ring"
+  : "People, in your Ring"
+  performances: Performances
+  ? "permission denied"
+  : "Permission Denied"
+  phil_p0: "Information Security today involves a bit all: individuals, companies or organizations in general. We might think that you have already a high level of security and hope that nobody will ever get control of our data but this is not a perfect world and we must defend ourselves. Definately being attacked is not a matter of if but of when."
+  phil_p1: "On the defensive plan we do not think that security through obscurity without disclose information system vulnerabilities is the best solution. The philosophy that we support as opposed instead is full-disclosure movement, meaning we trust that full disclosure of vulnerabilities and exploits will force the parties involved to protect themselves from their weaknesses, raising the level of security and contributing to the natural technological evolution of the whole community."
+  phil_p2: "With regard to the offensive side of the security we think that the penetration test is very useful to evaluate the real weaknesses of an organization, totally ignoring their perception of safety. Usually all data acquired in these tests are used to 'learn the lesson' and raise defenses."
+  phil_p3: ""
+  philosophy_tit: Philosophy
+  photo: avatar
+  picture: Avatar
+  ping_status: "Ping Status"
+  platform: Platform
+  poc: Poc
+  points: Points
+  port: Port
+  portfolio: Portfolio
+  post: Post
+  posted_by: "Posted by"
+  premium: Premium
+  ? "preview home"
+  : "Home Preview"
+  private: privato
+  priviledges: privilegi
+  profile: Profile
+  ? "profile successfully updated"
+  : "Profile Section successfully updated"
+  ? "profile successfully updated5"
+  : "Profile updated."
+  proxies: Proxies
+  ? "proxies database"
+  : "Proxies database"
+  ? "proxy checker"
+  : "Proxy checker"
+  public: pubblico
+  publish: Publish
+  published: Published
+  qtext: Quote
+  qualifications: Qualifications
+  quota: Quota
+  quote: Quote
+  quotes: Quotes
+  rainbow: "Rainbow crack"
+  ranking: Ranking
+  rankings: Rankings
+  rating: rating
+  read: Read
+  reason: Reason
+  ? "recent posts"
+  : "Recent posts"
+  ? "ref url"
+  : "Ref url"
+  register: Get Started
+  registrations: Members
+  ? "report a bug"
+  : ""
+  ? "report abuse"
+  : "Report Abuse"
+  requests: Requests
+  other actions: "Other Actions"
+  system: "System"
+  total space: "Total Space"
+  used space: "Used Space"
+  available: "Available"
+  resend_unlock_instructions: "Resend Unlock Instructions"
+  revision: Revision
+  revisions_errata: "The materials appearing on Tortuga's web site could include technical, typographical, or photographic errors. Tortuga does not warrant that any of the materials on its web site are accurate, complete, or current. Tortuga may make changes to the materials contained on its web site at any time without notice. Tortuga does not, however, make any commitment to update the materials. "
+  revisions_tit: "Revisions and Errata"
+  rights: " 2013 Tortuga - All rights reserved"
+  rights2: "2014 Tortuga - System Created and Developed by d4x - All rights reserved"
+  rights_agandaga: "(c) 2013 tortuga.tech - All rights reserved"
+  ? "ring members"
+  : "componenti cerchio"
+  ? "ring of trust"
+  : "Network"
+  rule: Rule
+  compose: "Compose"
+  refresh: "Refresh"
+  junk: "Junk"
+  archive: "Archive"
+  archivied: "Archivied"
+  important: "Important"
+  delete: "Delete"
+  reply all: "Reply All"
+  forward: "Forward"
+  mark: "Mark"
+  address book: "Address-book"
+  disk space: "Disk Quota"
+  folders: "Folders"
+  rule_1: "rule#1  Don't be manipulated"
+  rule_2: "rule#2  "
+  rule_3: "rule#3: Trust no one "
+  rule_4: "rule#4: Do not assume anything"
+  rule_5: "rule#5: Be paranoid, stay paranoid"
+  rule_6: "rule#6  "
+  rule_7: "rule#7  "
+  rule_8: "rule#8  "
+  rule_9: "rule#9  "
+  rules: Newbie Rules
+  save: Save
+  ? "save settings"
+  : "Save settings"
+  search: Search
+  ? "second address"
+  : "Add another mail address"
+  section: Section
+  sender: Sender
+  sent: Sent
+  ? "sent invitations"
+  : "sent invitations"
+  ? "sent listing"
+  : ""
+  ? "sent sms"
+  : "Sent sms"
+  ? "set your avatar"
+  : "Set your avatar"
+  set_language: Language
+  settings: Settings
+  severity: Severity
+  ? "shared items"
+  : "Elementi condivisi"
+  shared_by: "Shared by"
+  show: Show
+  sign: Sign
+  ? "sign in"
+  : "Sign in"
+  ? "sign in or"
+  : "Sign in or"
+  ? "sign up"
+  : "Sign up"
+  sign_up: "Sign up to Tortuga"
+  size: Size
+  skype: "Skype name"
+  slug: Slug
+  smsGate: SmsGate
+  snippets: Snippets
+  socks_type: "Socks type"
+  source: Source
+  sponsors: Sponsors
+  web statistics: Statistics
+  status: "Post Status"
+  statz: Statistics
+  stuff: Stuff
+  subscription: Subscription
+  summary: Summary
+  support: 
+    array: 
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  tags: Tags
+  target: target
+  task: processo
+  technologies: Technologies
+  telefone: Telephone
+  telephone: "telephone number"
+  temp_msg: "Note : Currently coding on the app. Access is granted only to staff members"
+  term_group: "Term group"
+  terms: "Tortuga may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use. "
+  ? "terms and conditions"
+  : "Terms and Conditions"
+  terms_footer: "Terms of Use Modifications"
+  terms_tit: "Terms of Use Modifications"
+  tests: tests
+  text: Text
+  ? "the Page You Were Looking For Doesn't Exist"
+  : ""
+  ? "the page you were looking for doesn't exist"
+  : "The page you were looking for doesn't exist"
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  tit_signin_box: "Sign in"
+  title: Title
+  title_welcome: "Welcome to Tortuga"
+  tools: Tools
+  toolz: ""
+  top_links: "Top Links"
+  trash: Trash
+  twitter: "Twitter nick"
+  type: "Post Type"
+  types: Types
+  uberbox: Uberbox
+  uberbox_order: uberbox_order
+  uberbox_p0: uberbox_p0
+  uberbox_p1: uberbox_p1
+  uberbox_p2: uberbox_p2
+  uberbox_tit: uberbox_tit
+  uberlabel: Tipologia
+  uboxorder_p0: uboxorder_p0
+  uboxorder_p1: uboxorder_p1
+  uboxorder_p2: uboxorder_p2
+  uid: Uid
+  ? "unauthorized operation"
+  : "Unauthorized Operation"
+  unknown: sconosciuto
+  ? "update contacts"
+  : "Update Contacts"
+  ? "update password"
+  : "Set Password"
+  upload: Upload
+  url: URL
+  userid: E-mail
+  value: Value
+  verified: Verified
+  video_group: Video_group
+  videos: Videos
+  ? "view comments"
+  : "View Comments"
+  visible: visible
+  visitors: Visitors
+  vulnerabilities: Vulnerabilities
+  wall: Social
+  warVPN: WarVPN
+  wargames: Wargames
+  ? "website language"
+  : "website favourite l anguage"
+  welcome: Welcome
+  welcome_folks: "Welcome folks!"
+  ? "what is tortuga"
+  : "What is tortuga"
+  ? "what you get"
+  : "What you get"
+  ? "what you wanna share today? leave your 2Ç!"
+  : "What you wanna share today? leave your 2Ç!"
+  whatis: "Tortuga staff want to offer secure network services and news related to the information security in all its aspects."
+  whatis_lb: "What is Tortuga"
+  whatis_tit: "What is Tortuga"
+  whatistortugait: "What is Tortuga"
+  when: When
+  where: Where
+  will_paginate: 
+    next_label: "Next &#8594;"
+    page_entries_info: 
+      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+      single_page: 
+        one: "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}"
+        zero: "No %{model} found"
+      single_page_html: 
+        one: "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+        zero: "No %{model} found"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Previous"
+  writing_new_post: ""
+  year: Year
+  ? "yes"
+  : si
+  ? "you dont like this post"
+  : "You don't like"
+  ? "you have"
+  : "You have"
+  ? "you like this post"
+  : "You Like"
+  ? "you may have mistyped the address or the page may have moved"
+  : "you may have mistyped the address or the page may have moved"
+  web statistics: "Statistics"
+  "send invitation!": "Send Invitation!"
+  "invite_from": "Invite from"
+  "target_address": "Target Address"
+  "subject": "Subject"
+  simple_captcha:
+    label: "digit the code above"
+  join us today: "Join us Today"
+  resend confirmation instructions: "Resend Instructions"
+  out of ring: "Out of Ring"
+  what you wanna share today?: "Ring Sharing Board"
+  update: "Update"
+  theme: "Theme"
+  send: "Send"
+  fullname: "Full Name"
+  metasploit: "Metasploit"
+  ref_url: "Ref URL"
+  others: "Other"
+  from name: "from name"
+  tox: "TO:"
+  message: "Message"
+  discard: "Discard"
+  save draft: "Save Draft"
+  CC: "CC:"
+  BCC: "BCC:"
+  reply: "Reply"
+  reply all: "Reply All"
+  add pic: "Add Pic: "
+  visibility: "Visibility: "
+  Frequently Asked Questions: "Frequently Asked Questions"
+  forward: "Forward"
+  attach file(s): "Attach file(s)"
+  inbox: "Inbox"
+  newcomment: "Write a comment..."
+  be the first to like this: "be the first to add your sensation"
+  unlike: "unlike"
+  undislike: "undislike"
+  message: "Type:"
+  tox: "TO:"
+  attach file(s): "Attach file(s)"
+  HTML: "HTML"
+  TEXT: "Text"
+  home_welcome: "Get Started, It's free"
+  content type: "Content-Type"
+  Find!: "Search"
+  sha256: SHA256
+  disconnect: "Disconnect"
+  cfp: "CFP"
+  first name: "Name"
+  city: "City"
+  SOCIAL: "SOCIAL"
+  network: "Connections"
+  updates: "Updates"
+  spam: "Spam"
+  contacts: "Contacts"
+  MEGAMAX: "MEGAMAX"
+  backoffice: "backoffice"
+  confirm account: "Confirm Account"
+  unlock instructions: "Unlock Instructions"
+  keep me logged: "Keep me logged"
+  forgot password: "Forgotten Password?"
+  unfriend: "Disconnect"
+  home: "Home"
+  age: "Age"
+  tel: "Tel"
+  sex: "Sex"
+  location: "Location"
+  messag3: "Message"
+  connections: "Connections"
+  what is: "WhatIs"
+  "2012": "d4x Blog"
+  privacy policy: "Privacy Policy"
+  support on freenode: "IRC Support"
+  report abuse: "Report Abuse"
+  Blog: "Blogs"
+  nuovo messaggio: "Compose"
+  disconnect: "Disconnect"
+  UBERMAIL: "Ubermail"
+  admin mailboxes: "Mailboxes"
+  faq: "FAQ"
+  backoffice: "Backoffice"
+  Advertising: "Advertising"
+  Applications: "tortuga Apps"
+  preview home: "Home Preview"
+  manage FAQ: "Manage FAQ"
+  d4xboard: "Dashboard"
+  megaM4X: "DB Activities"
+  global settings: "Options"
+  translations: "Dictionary"
+  prod & services: "Store"
+  xsupport: "Support"
+  slides: "Slides"          
+  invites: "Invites"
+  "Invite a friend!": "Invite a friend to join"
+  irc support: "Support"
+  admins: "Admins"
+  PROFILE: "PROFILE"
+  view profile: "View Profile"
+  ACCOUNT: "ACCOUNT"
+  photos: "Photos"
+  create group: "create group"
+  groups: "Groups"
+  network feeds: "Lounge Feeds"
+  wall: "Social"
+  "people, in your network": "people, in your network"
+  AKA: "AKA"
+  "SMS Blast!": "SMS Blaster!"
+  "some people in your network": "some people in your network"
+  feeds: "Social"
+  sponsored: "sponsored"
+  FAQ: FAQ
+  accept: "Accept"
+  ignore: "Ignore"
+  ignored: "Ignored"
+  accepted: "Accepted"
+  request status: "Request Status"
+  request connection: "Send Request"
+  you have: "You have"
+  pending requests of connection: "pending requests of connection"
+  sent request: "Sent Requests"
+  send us your feedback: "Send us your feedback!"
+  feedback sent successfully: "Thank you for Your Feedback! :: staff :: "
+  cover: "Cover Photo"
+  background: "Background"  
+  h4x0r5 store: "Tortuga store"
+  backstore: "backstore"
+  carts: "carts"
+  catalog: "catalog"
+  transactions: "transactions"
+  invoices: "invoices"
+  shippings: "tracking"
+  Status: "Status"
+  share your stuff: "Sharing Wall"
+  Items: "Items"
+  Your Shopping Cart: "View Shopping Cart"
+  Total: "Total"
+  items: "Items"
+  last revision: "Last Revision"
+  in stock: "In Stock"
+  place your order: "Place Your Order"
+  add to cart: "Add to Cart"
+  brand: "Brand"
+  remote exploits: "Remote Exploits"
+  local exploits: "Local Exploits"
+  shellcodes: "Shellcodes"
+  denial-of-service: "Denial of Service"
+  poc: "Proof Of Concept"
+  other exploits: "Other Exploits"
+  most viewed: "Most Viewed"
+  top rated: "Top Rated"
+  last added: "Last Added"
+  zero day: ":: Zero Day ::"
+  windows: "Windows"
+  nix: "Linux / Unix"
+  osx: "OSX"
+  programming: "Programming"
+  offensive: "Offensive"
+  defensive: "Defensive"
+  networking: "Networking"
+  wireless: "Wireless"
+  other: "Other"
+  newbie rules: "Newbie Rules"
+  d4x blog: "d4x blog"
+  security news: "Security News"
+  recent news: "Recent News"
+  month: " / month"
+  paper: "Technical Paper"
+  product: "Products and Services"
+  subscribe!: "Subscribe"
+  marketing: "Marketing"
+  MEMBER OF: "Group Member"
+  FOUNDER OF: "Founded Groups"
+  founded groups: "Founded Groups"
+  group name: "Group"
+  group founder: "Founder"
+  group members: "Members"
+  oon: "on"
+  sending account: "Sending Account"
+  group-members: "Group Members"
+  group-wall: "Group Shares. (Visibility is Exclusive for Members Only)"
+  group-admins: "Group Admins"
+  last-member: "Last Member"
+  group creation: "Created on"
+  past events: "Past Events"
+  upcoming events: "Upcoming Events"
+  compose new message: "Write New Message"
+  founder: "Founded by"
+  foundation: "Created on"
+  address: "Address"
+  account: "Account"
+  full name: "Full Name"
+  Approved: "Approved"
+  Pending: "Pending"
+  Credits: "Credits for the Project"
+  personal wall: "Personal Wall"
+  mini store: "Mini Store"
+  store: "Store"
+  members live counter: "Members Live Counter"
+  database: "Database"
+  forensics: "Forensics"
+  hacking: "Hacking"
+  ruby stuff: "Ruby & C."
+  video: "Video"
+  your shopping cart: "View Shopping Cart"
+  advisore: "Advisore"
+  download: "Download"
+  snippet: "Snippet"
+  networking: "Networking"
+  openbsd: "OpenBSD"
+  famous: "Famous"
+  ispirational: "Ispirational"
+  group: "Group"
+  movie: "Movie"
+  popularity: "Popularity"
+  by author: "Author"
+  xsocial: "Social"
+  xpersonal: "Personal"
+  xstatistics: "Statistics"
+  proverbs: "Proverbs"
+  by lang: "Language"
+  social: "Socialize"
+  footer-menuitem-config: "Configuration"
+  footer-menuitem-about: "About"
+  footer-menuitem-packages: "Choose your package"
+  rights_Tortuga: "(c) 2013 tortuga.tech - All rights reserved"
+  footer-menuitem-demotour: "Try Tortuga Demo"
+  member_since: "Member Since"
+  member_for: "Member For"  
+  connections: "Connections"
+  Registrations Live Counter: "Registrations Live Counter"
+  No results found: "No results found"
+  No results found with: "No results found with: "
+  results for: "results for: "
+  articles: "Articles"
+  BCC: "BCC:"
+  TO: "TO:"
+  CC: "CC:"
+  no drafts: "Drafts folder is Empty"
+  Inbox is Empty: "Inbox is Empty"
+  sent is empty: "Sent Folder is Empty"
+  trash is empty: "Trash is Empty"
+  junk is empty: "Junk is Empty"
+  no importants: "There are no important messages"
+  archive is empty: "Archive is Empty"
+  Select a Message to Reply!: "Select a Message to Reply"
+  Select a Message to Reply All: "Select a Message to Reply All"
+  change your password: "Change Your Password"
+  use a custom background: "Use a Custom Background"
+  use a custom header: "Use a Custom Header"
+  choose your favourite theme: "Choose Your Favourite Theme"
+  choose your language: "Choose Your Language"
+  unknown action: "unknown action"
+  Select Messages to Process! : "Select Messages to Process"
+  Mail Sent Seccessfully: "Mail Sent Seccessfully"
+  Error while Saving message in Sent Folder: "Error while Saving message in Sent Folder"
+  Error while saving message to Drafts: "Error while saving message to Drafts"
+  your message has been saved in draft folder.: "your message has been saved in draft folder"
+  your message has been discarted.: "your message has been discarted"
+  unknow action: "unknow action"
+  Mail Sent Seccessfully: "Mail Sent Seccessfully"
+  Error while Saving message in Sent Folder: "Error while Saving message in Sent Folder"
+  Error while saving message to Drafts: "Error while saving message to Drafts"
+  your message has been saved in draft folder.: ""
+  Your message has been discarted.: "Your message has been discarted"
+  Successfully marked as unread: "Successfully marked as unread"
+  select an account before continuing: "select an account before continuing"
+  Select an Account to Check: "Select an Account to Check"
+  Select a Message to Reply: "Select a Message to Reply"
+  Select a Message to Reply All: "Select a Message to Reply All"
+  Select a Message to Forward: "Select a Message to Forward"
+  select an account before continuing: "select an account before continuing"
+  Select an Account first: "Select an Account first"
+  Successfully Moved Messages to Trash: "Successfully Moved Messages to Trash"
+  Error while moving to Trash: "Error while moving to Trash"
+  Select Messages to Delete : "Select Messages to Delete"
+  Successfully Moved Messages to Junk!: "Successfully Moved Messages to Junk"
+  Error while moving to Junk : "Error while moving to Junk"
+  Select Messages to set Junk: "Select Messages to set Junk"
+  Successfully Moved Messages to Archive: "Successfully Moved Messages to Archive"
+  Error while moving to Archive: "Error while moving to Archive"
+  Select Messages to Archive: "Select Messages to Archive"
+  Selected Messages Flagged as Important: "Selected Messages Flagged as Important"
+  Error While Settings Flag Important on Messages: "Error While Settings Flag Important on Messages"
+  Select Messages to Flag as Important!: "Select Messages to Flag as Important"
+  Select an Account first: "Select an Account first"
+  select an account before continuing: "select an account before continuing"
+  You must to set your Default Account: "You must to set your Default Account"
+  Marked Folder: "Marked folder"
+  Error while setting folder unread: "Error while setting folder unread"
+  Messages Flagged successfully: "Messages Flagged successfully"
+  Error while setting Flag on messages: "Error while setting Flag on messages"
+  Successfully Removed Flag Important: "Successfully Removed Flag Important"
+  Error while removing Flags: "Error while removing Flags"
+  Selected Messages Moved to Trash: "Selected Messages Moved to Trash"
+  Error While Moving Messages to Trash: "Error While Moving Messages to Trash"
+  Successfully copied messages from: "Successfully copied messages from"
+  Error while copying messages: "Error while copying messages"
+  Successfully moved messages from: "Successfully moved messages from"
+  Error while moved messages: "Error while moving messages"
+  Messages Moved to Inbox: "Messages Moved to Inbox"
+  Error while moving messages: "Error while moving messages"
+  Successfully Deleted Messages: "Successfully Deleted Messages"
+  Error White Deleting Messages: "Error White Deleting Messages"
+  as Read: " as Read "
+  Error while setting folder read: "Error while setting folder read"
+  as UnRead: " as UnRead "
+  Insert First Name: "Insert First Name"
+  Last Name: "Last Name"
+  e-Mail Address: "e-Mail Address"
+  contacts in your address-book: " contacts in your address-book"
+  used space: "Used Space"
+  percent used: "Percent Used"
+  available2: "Available"
+  There are No New Messages on: "There are No New Messages on "
+  You have 1 New Message on: "You have 1 New Message on "
+  You have: "You have "
+  New Messages on: " New Messages on "
+  current language: "Current Language"
+  change password: "Change Password"
+  custom Tortuga: "Custom Tortuga"
+  new password: "New Password"
+  your password has been updated: "Your Password Has Been Updated"
+  wit load: "wit load"
+  learn more: "Learn More"
+  view details: "View Details"
+  intro_blogs: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+  intro_database: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+  intro_chat: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+  intro_email: "The email service that we offer to our customers is based on communications security and protection against viruses, spam and malware. products are organized on 3 bids based on the available space rather than on functionality. There are no banners or advertising web interface that takes the traditional email clients. "
+  intro_social: "With our Free social network we want to offer a service that colder the dawn of the most popular social learning lessons from what has evolved in recent years. Again, application security and of our users is our priority . "
+  intro_store: "Our online store, in addition to offering brand-related gadgets and technology products that we consider of interest to our customers. Currently it is under construction and product selection."
+  index_marketing_info: "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
+  index_marketing_hello_world: "Welcome to Tortuga"
+  index_tecno_hello_world: "Welcome to TecnoBike"
+  rights_tecnobike: "2014 TecnoBike.biz - System Designed and Developed by d4x - All rights reserved"
+  empty_cart: "Cart is Empty!"
+  messages: "Messages"
+  terms: "Terms and Conditions"
+  cookies: "Cookies"
+  advertising: "Advertising"
+  help: "Help"  
+  privacy: "Privacy"
+  zip: "ZIP"
+  town: "Town"
+  city: "City"
+  blog: "Blog"
+  free signup: "Signup Free"
+  read news: "Read News"
+  go to store: "Go to Store"
+  store: "Store"
+  create account: "Create Account"
+  hope you are fine today: "Hope you are fine today!"
+  privacy: "Privacy Policy"
+  index_email_info: " "
+  help center: "Help Center"
+  index_help_Center: " "
+  index_blog_info: " "
+  upcoming features: "Upcoming Features"
+  credits: "Credits"
+  about the author: "About the Author"
+  report a bug: "Report a bug"
+  advertising: "Advertising"
+  intro_advertising: " "
+  intro_contact_info: " "
+  uptime: "Uptime"
+  code: "Code"
+  product: "Product"
+  details: "Details"
+  price: "Price"
+  your current cart: "Your Current Cart"
+  checkout: "Checkout"
+  continue shopping: "Continue Shopping"
+  are you sure: "Are you sure?"
+  address: "Address"
+  ZIP: "ZIP"
+  telephone: "Telephone"
+  mobile: "Mobile"
+  shipping address: "Shipping Address"
+  shipping city: "Shipping City"
+  shipping town: "Shipping Town"
+  shipping zip: "Shipping ZIP"
+  shipping telephone: "Shipping Telephone"
+  place order: "Place Order"
+  notes for delivery: "Notes for Delivery"
+  total order: "Total Order"
+  order summary: "Order Summary"
+  shipping address is billing address: "Shipping address is Billing address"   
+  search for people: "Search for people"
+  search here: "Search Here"
+  share with your network: "Share with your network"
+  sponsored: "Sponsored"
+  query ip: "Query IP"
+  localize: "Localize"
+  registration live counter: "Registration Live Counter"
+  emporio: "Emporio"
+  my tracks: "My Tracks"
+  Share your status or thoughts with your network: "Share your status or thoughts with your network"
+  share picture: "Share Picture"
+  location: "Location"
+  religion: "Religion"
+  relationship: "Relationship"
+  works at: "Works At "
+  wit load: "wit load"
+  learn more: "Learn More"
+  view details: "View Details"
+  index_marketing_hello_world: "Welcome to Tortuga"
+  index_tecno_hello_world: "Welcome to TecnoBike"
+  rights_tecnobike: "2014 TecnoBike.biz - System Designed and Developed by d4x - All rights reserved"
+  empty_cart: "Cart is Empty!"
+  messages: "Messages"
+  terms: "Terms and Conditions"
+  cookies: "Cookies"
+  advertising: "Advertising"
+  help: "Help"  
+  privacy: "Privacy"
+  zip: "ZIP"
+  town: "Town"
+  city: "City"
+  blog: "Blog"
+  free signup: "Signup Free"
+  read news: "Read News"
+  go to store: "Go to Store"
+  store: "Store"
+  create account: "Create Account"
+  hope you are fine today: "Hope you are fine today!"
+  privacy: "Privacy Policy"
+  index_email_info: ""
+  help center: "Help Center"
+  index_help_Center: ""
+  index_blog_info: " "
+  upcoming features: "Upcoming Features"
+  credits: "Credits"
+  about the author: "About the Author"
+  report a bug: "Report a bug"
+  advertising: "Advertising"
+  intro_advertising: " "
+  intro_contact_info: " "
+  uptime: "Uptime"
+  code: "Code"
+  product: "Product"
+  details: "Details"
+  price: "Price"
+  your current cart: "Your Current Cart"
+  checkout: "Checkout"
+  continue shopping: "Continue Shopping"
+  are you sure: "Are you sure?"
+  address: "Address"
+  ZIP: "ZIP"
+  telephone: "Telephone"
+  mobile: "Mobile"
+  shipping address: "Shipping Address"
+  shipping city: "Shipping City"
+  shipping town: "Shipping Town"
+  shipping zip: "Shipping ZIP"
+  shipping telephone: "Shipping Telephone"
+  place order: "Place Order"
+  notes for delivery: "Notes for Delivery"
+  total order: "Total Order"
+  order summary: "Order Summary"
+  shipping address is billing address: "Shipping address is Billing address"   
+  search for people: "Search for people"
+  search here: "Search Here"
+  share with your network: "Share with your network"
+  sponsored: "Sponsored"
+  query ip: "Query IP"
+  localize: "Localize"
+  registration live counter: "Registration Live Counter"
+  emporio: "Emporio"
+  my tracks: "My Tracks"
+  Share your status or thoughts with your network: "Share your status or thoughts with your network"
+  share picture: "Share Picture"
+  location: "Location"
+  religion: "Religion"
+  relationship: "Relationship"
+  works at: "Works At "
+  wit load: "wit load"
+  learn more: "Learn More"
+  view details: "View Details"
+  index_marketing_hello_world: "Welcome to Tortuga"
+  index_tecno_hello_world: "Welcome to TecnoBike"
+  rights_tecnobike: "2014 TecnoBike.biz - System Designed and Developed by d4x - All rights reserved"
+  empty_cart: "Cart is Empty!"
+  messages: "Messages"
+  terms: "Terms and Conditions"
+  cookies: "Cookies"
+  advertising: "Advertising"
+  help: "Help"  
+  privacy: "Privacy"
+  zip: "ZIP"
+  town: "Town"
+  city: "City"
+  blog: "Blog"
+  free signup: "Signup Free"
+  read news: "Read News"
+  go to store: "Go to Store"
+  store: "Store"
+  create account: "Create Account"
+  hope you are fine today: "Hope you are fine today!"
+  privacy: "Privacy Policy"
+  index_email_info: ""
+  help center: "Help Center"
+  index_help_Center: ""
+  index_blog_info: " "
+  upcoming features: "Upcoming Features"
+  credits: "Credits"
+  about the author: "About the Author"
+  report a bug: "Report a bug"
+  advertising: "Advertising"
+  intro_advertising: " "
+  intro_contact_info: " "
+  uptime: "Uptime"
+  code: "Code"
+  product: "Product"
+  details: "Details"
+  price: "Price"
+  your current cart: "Your Current Cart"
+  checkout: "Checkout"
+  continue shopping: "Continue Shopping"
+  are you sure: "Are you sure?"
+  address: "Address"
+  ZIP: "ZIP"
+  telephone: "Telephone"
+  mobile: "Mobile"
+  shipping address: "Shipping Address"
+  shipping city: "Shipping City"
+  shipping town: "Shipping Town"
+  shipping zip: "Shipping ZIP"
+  shipping telephone: "Shipping Telephone"
+  place order: "Place Order"
+  notes for delivery: "Notes for Delivery"
+  total order: "Total Order"
+  order summary: "Order Summary"
+  shipping address is billing address: "Shipping address is Billing address"   
+  search for people: "Search for people"
+  search here: "Search Here"
+  share with your network: "Share with your network"
+  sponsored: "Sponsored"
+  query ip: "Query IP"
+  localize: "Localize"
+  registration live counter: "Registration Live Counter"
+  emporio: "Emporio"
+  my tracks: "My Tracks"
+  Share your status or thoughts with your network: "Share your status or thoughts with your network"
+  share picture: "Share Picture"
+  location: "Location"
+  religion: "Religion"
+  relationship: "Relationship"
+  works at: "Works At "
+  witwitload: "witwitload"
+  chatzone: "ChatZone"
+  'teenchat>18': "TeenChat > 18"
+  '20something': "20Something"
+  '30something': "30Something"
+  '40something': "40Something"
+  '50something': "50Something"
+  over60: "Over60"
+  singles: "Singles"
+  compose new: "Compose New"
+  network: "Network"
+  invites: "Invites"
+  messages: "Messages"
+  notifications: "Notifications"
+  friends wall: "Friends Wall"
+  preferences: "Preferences"
+  edit profile: "Edit Profile"
+  social re-engineering: "Social re-engineering"
+  about1: "I was taught that our lives are the message that we bring to the world and the project Tortuga and the means by which my takes shape I hope it meet the philosophy and expectations of many of you." 
+  about2: "The innovation that brings Tortuga is the ability to manage services now common usage, in addition to functionality, social interactions and the impact of marketing behind there must be a philosophy of safety and protection of privacy users." 
+  about3: "For transparency the cornerstones of the philosophy Tortuga:" 
+  about4: "You are not tracked. We respect your privacy when you exit the system and we do not care to know 'where to go'" 
+  about5: "We don't resell your personal information. There is respect for the person whose photos, events, personal life, etc. will not be disclosed to third parties." 
+  about6: "We don't read your email. Here, too, privacy is paramount and we will implement all necessary steps to maintain a high level of security of communications." 
+  about7: "We protect you. From attack by cybercriminals and that can be perpetrated, including viruses, malicious links, spam and much more." 
+  about8: "Some companies are way ahead of us regarding functionality, structure and resources, but we are confident that those who share our principles will want to be with Tortuga, who wants to be not ordinary evolution of social netowrk and e-mail." 
+  about9: "To give a strong surge in development we may decide to release to the community the sources of the projects, so that everything is transparent. Currently this is an option of those possible, as we must first make sure that you have sufficient financial resources to the development of new versions and expansion of the structure, made ​​of technology and minds that want to collaborate with us."
+  about10: "If all this excites you can directly contribute to the project with a donation paypal as well as a mention and thank the public, you'll get free access to our fee-based services, gadgets, and the certainty of having supported directly to a philosophy you share." 
+  author1: "I'm David, 40 years Italian, born in Milan and I am in software development and information security."
+  author2: "I worked for many large companies, but in recent years I have preferred to devote my time to the founding of Tortuga: this project / message that I hope you will appreciate."
+  author3: "For more information you can also follow me on Twitter and Linkedin."
+  credits1: "Given that the list is long and constantly updated, we would like to thank:"
+  credits2: "Open source projects and free resources that we have used in the development and we hope soon to be able to donate directly to help ourselves to them."
+  credits3: "Ruby on Rails"
+  credits4: "OpenBSD "
+  credits5: "Postgresql "
+  credits6: "Libraries, various technologies that will detail in later."
+  credits7: "The biggest social and mail vendors, as they have been as an excellent example of how to connect people to each other in an ever more simple and effective, resulting in the network most of the world population."
+  credits8: "They defined interfaces and interactions that have become standard and is recognized by the younger that from the most elderly: for this we thank them too deeply."
+  credits9: "The InfoSec community that readily diffuses best practices to be followed (including vulnerability disclosure) for a more secure network, integrates, so that cybercrime has always room for action minors. He taught me a lot over the years, especially on how to build secure systems and programs, and without Tortuga this could not have come to life."
+  credits10: "Co-workers, friends, relatives and freethinkers."
+  credits11: "Everyone in these categories has played a very vital. Who with the analysis and the direct development, some with critical reporting errors or indication of functionality, but also with a lot of patience, resources, moral support in the worst of times and unconditional support to our philosophy. Technical, but mostly non-technical, both young and old have gradually helped to define the message."
+  credits12: "So, this message is also your message, we will keep you there and take you forever in my heart."
+  credits13: "To you all, a giant THANK YOU."
+  newload: "NEWLOAD"
+  choose username: "Choose Username"
+  select domain: "Select Domain"
+  shipping details: "Shipping Details"
+  order summary: "Order Summary"
+  choose: "Choose"  
+  "Are you sure you want to disconnect this person?": "Are you sure you want to disconnect this person?"
+  "Are you sure you want to add to your network?": "Are you sure you want to add to your network?"
+  connected: "Connected"
+  Connected: "Connected"
+  Request Sent: "Request Sent"
+  membership: "Membership"
+  requested: "Request Sent"
+  timeline: "Timeline"
+  e-mail: "E-Mail"
+  "Sorry, No results found with ": "Sorry, No results found with "
+  accept: "Accept"
+  ignore: "Ignore"
+  pending: "Pending"
+  no results found: "No results found"
+  lifetime: "LIFETIME"
+  you do not have any new notification: "you do not have any new notification"
+  statement: "Statement"
+  favorite quote: "Favorite Quote"
+  username: "Username"
+  current email: "Current E-Mail"
+  sent requests: "Sent Requests"
+  is already registered: "is already registered"
+  cancel invitation: "Cancel Invitation"
+  "Are you sure you want to cancel this invitation?": "Are you sure you want to cancel this invitation?"
+  your request has been accepted: "Your request has been accepted"
+  request processed: "Request Processed"
+  request destroyed: "Request Deleted"
+  you have a request of connection: "You have a request of connection"
+  "are you sure you want to cancel this request?": "Are you sure you want to cancel this request?"
+  "Are you sure you want to delete this notification?": "Are you sure you want to delete this notification?"
+  delete notification: "Delete Notification"
+  cancel request: "Cancel Request"
+  "Are you sure you want to delete this request?": "Are you sure you want to cancel this request?"
+  remove comment: "Remove Comment"
+  remove post: "Remove Post"
+  sensation: "Sensation"
+  be the first to add your feedback: "be the first to add your feedback"
+  invitations list: "Upload a list or people to invite in a text file with the format: name, address for each row"
+  received requests: "Received Requests"
+  newload_adb: "newload_adb"
+  welcome to: "Welcome to "
+  do not have an account: "nie masz konto?"
+  create your account on: "Załóż konto na "
+  already have an account: "Masz już konto?"
+  password policy: "Użyj przynajmniej 8 znaków z wykorzystaniem wielkimi i małymi literami, liczbami i specjalnym char"
+  enter your address and a confirmation link will be sent to you: "Wpisz swój adres i link z potwierdzeniem zostanie wysłany do Ciebie."
+  currently waiting confirmation for: "Obecnie czeka potwierdzenie "
+  we need your current password to perform changes: "Musimy aktualne hasło do wykonywania zmian"
+  unhappy: "Nieszczęśliwy?"
+  cancel my account: "Moje konto"
+  create your account: "Stwórz konto "
+  enter your address and the unlock link will be sent to you: "Wpisz swój adres i link unlock zostanie wysłane do Ciebie."
+  providers: "Dostawcy"
+  zones: "Strefy"
+  timezones: "Strefy czasowe"
+  countries: "Kraje"
+  contacts: "Kontakty"
+  upload: "Prześlij"
+  options: "Opcje"
+  contracts: "Umowy"
+  devices: "Wyroby"
+  sensors: "Czujniki"
+  relatives: "krewni"
+  sites: "Witryny"
+  scenario: "Scenariusz"
+  Tortuga: "Tortuga"
+  enter your address and the reset link will be sent to you: "Podaj swój adres i link zresetowane zostaną wysłane do Ciebie"
+  big isp: "Duży ISP"

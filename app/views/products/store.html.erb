@@ -1,0 +1,29 @@
+<h4 class="card-title"><%= "Online Store" %></h4>
+<h6 class="card-subtitle"></h6>
+<% unless @products.blank? %>
+  <% @products.each do |product| %>
+    <%= form_for(@cart_product) do |f| %>
+      <%= hidden_field_tag :prod_id,product.id %>
+      <%= hidden_field_tag :cart_id,@cart.id %>
+      <div class="col-lg-6">
+        <div class="card">
+          <% if product.photo.present? %>
+            <%= image_tag product.photo.url,:class=>'card-img-top' %>
+          <% else %>
+            <img class="card-img-top" src="demo/img/headers/5.png">
+          <% end %>
+          <div class="card-body">
+            <h4 class="card-title orange"><%= link_to product.name,product  %></h4>
+            <div class="row">
+              <div class="col-sm-4"><%= number_to_currency(product.final_price,{:unit=>'€',:precision=>2})%></div>
+              <div class="col-sm-4"><%= number_field_tag :items,1, in: 1..100,:class=>'qty form-control' %></div>
+              <div class="col-sm-4"><%= f.submit d4x_sanitizer(t('add to cart')) ,:class=>'btn btn-sm btn-outline-success',:id=>"proceed"%></div>
+            </div>
+            <br>
+            <p><%= product.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

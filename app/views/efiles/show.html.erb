@@ -1,0 +1,77 @@
+<div class="container">
+	<br />
+	<br />
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+		  	<div class="row">
+				  <div class="col-md-4 col-xs-1 col-sm-3">
+					
+				  </div>
+				  <div class="col-md-4 col-xs-10 col-sm-6">
+					<p align="center">
+			  			 Revelead File
+			  		</p>
+				  </div>
+				  <div class="col-md-4 col-xs-1 col-sm-3">
+		
+				  </div>
+			</div>
+	    </div>
+	    <br />
+	    <div class="row">
+	    	  <div class="col-md-3 col-xs-1 col-sm-3">
+			  </div>
+			  <div class="col-md-2 col-xs-1 col-sm-3">
+					<%= label_tag :serial_number %>
+			  </div>
+			  <div class="col-md-4 col-xs-10 col-sm-6">
+				<p align="left">
+		  			<%= label_tag @efile.original_file_name %>
+		  		</p>
+			  </div>
+			  <div class="col-md-3 col-xs-1 col-sm-3">
+	
+			  </div>
+		</div>
+	  
+	    <div class="row">
+	   	  <div class="col-md-3 col-xs-1 col-sm-3">
+		  </div>
+		  <div class="col-md-2 col-xs-1 col-sm-3">
+				<%= label_tag :content %>
+		  </div>
+		  <div class="col-md-4 col-xs-10 col-sm-6">
+			<p align="left">
+	  			<%= label_tag @efile.original_content_type%>
+	  		</p>
+		  </div>
+		  <div class="col-md-3 col-xs-1 col-sm-3">
+		  </div>
+		</div>
+		 <div class="row">
+	   	  <div class="col-md-3 col-xs-1 col-sm-3">
+		  </div>
+		  <div class="col-md-6 col-xs-1 col-sm-3">
+				<p align="center">
+				File or Video PlaceHolder
+				</p>
+		  </div>
+		  <div class="col-md-3 col-xs-1 col-sm-3">
+		  </div>
+		</div>
+	    <br>
+	    <div class="actions text-center">
+	   		<%= link_to 'Back', efiles_path,:class=>'btn btn-xs btn-warning' %>
+	  	</div>
+	  	<br /> 
+		<script language="JavaScript">
+		    $("table").tablecloth({
+		      theme: "paper",
+		      striped: true,
+		      sortable: true,
+		      condensed: true
+		    });
+		</script>
+	</div>
+</div>
+

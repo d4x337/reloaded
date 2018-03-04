@@ -1,0 +1,57 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-home').removeClass("navigation__active").addClass("navigation__sub");
+        $('#main-menu-email').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-spam').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-body">
+      <%= form_tag 'actions',:method=>'post' do -%>
+        <div class="row traspa">&nbsp;
+        </div>
+        <div class="row traspa">
+
+          <div class="col-lg-2">
+            <h4 class="card-title orange"><i class="zmdi zmdi-inbox orange"></i>&nbsp;
+              <% if ((@tot_spam)>0) %>
+                <%= t("you have") %>
+                @tot_spam
+                <%= t("messages") %>
+              <% else %>
+                <%= t("junk is empty") %>
+              <% end %>
+            </h4>
+            d4x337@reloaded.com
+          </div>
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-refresh-alt orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-email orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-mail-reply orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-mail-reply-all orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-cloud-off orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-archive orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-flag orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-delete orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= render :partial => "messages_actions" %>
+        </div>
+        <div class="row traspa">&nbsp;
+        </div>
+        <div class="row traspa">
+          <%= render :partial => "agadanga_row_titles" %>
+        </div>
+        <br>
+        <div id="messages-list">
+          <%= render :partial => "agadanga_folder_evo" %>
+        </div>
+        <div id="commands-list">
+          <%= will_paginate @folder,:per_page => 12 %>
+        </div>
+        </div>
+      <% end %>
+      <div id="preview-message">
+
+      </div>
+      </div>
+</div>
+

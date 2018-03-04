@@ -1,0 +1,14 @@
+<% @title =d4x_sanitizer(t('sponsored')) %>
+	<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<% if current_user.role? :author  %> 
+					<%= link_to image_tag("layout_add.png", :border =>0, :mouseover => "layout_add.png", :title => "Advertisings" ), new_ad_path %>
+				<% end %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= d4x_sanitizer(t('sposored')) %>	
+			</div>
+		</div>
+
+	</div>

@@ -1,0 +1,16 @@
+<% @recents = Post.where(:status => 'publish',:content_type => 'post').limit(@quanti).order(:published).reverse_order %>
+<% @recents.each do |post| %>
+    <article class="entry type-post style-thumbnail col-sm-3 col-md-3">
+
+      <figure class="entry-thumbnail">
+        <a href="single.html">
+          <img src="/img/placeholder.gif" data-src="http://placehold.it/230x230" data-src-retina="http://placehold.it/460x460" width="230" height="230" alt="">
+          <noscript>
+            <img src="http://placehold.it/230x230" alt="">
+          </noscript>
+        </a>
+      </figure>
+
+      <h3 class="entry-title"><a href="single.html"><%= link_to post.title,post %><%= post.published.strftime("%Y-%m-%d")  if not post.published.blank? %></a> </h3>
+    </article>
+<% end %>

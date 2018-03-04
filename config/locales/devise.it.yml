@@ -1,0 +1,64 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+it:
+  tit_signin_box: 'Log in'
+  lang: "Lingua"
+  qtext: "Frase"
+
+  errors:
+    messages:
+      expired: "e' scaduta, richiedine una nuova"
+      not_found: 'non trovato'
+      already_confirmed: "e' stata gia' confermata, prova l'accesso"
+      not_locked: "non era bloccato"
+      not_saved:
+        one: "1'errore ha impedito la memorizzazione di %{resource}:"
+        other: "%{count} errori hanno impedito la memorizzazione di %{resource}:"
+
+  devise:
+    failure:
+      already_authenticated: 'Sei gia autenticato.'
+      unauthenticated: "Devi effettuare l'accesso o registrarti per continuare."
+      unconfirmed: 'Devi confermare il tuo indirizzo email prima di continuare.'
+      locked: 'Il tuo account e bloccato.'
+      invalid: 'Email o Password non validi.'
+      invalid_token: 'Token di autenticazione non valido.'
+      timeout: 'La tua sessione e scaduta, effettua nuovamente laccesso.'
+      inactive: 'Il tuo account non e stato ancora attivato.'
+    sessions:
+      signed_in: 'Accesso effettuato con successo.'
+      signed_out: 'Logout effettuato con successo.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'La tua password e stata aggiornata con successo. Ora sei autenticato.'
+      updated_not_active: 'La tua password e stata aggiornata con successo.'
+      send_paranoid_instructions: "Se il tuo indirizzo email esiste nel nostro archivio, riceverai un link via 
+mail con le istruzioni per il recupero della password"
+    confirmations:
+      send_instructions: 'In pochi minuti riceverai un email con le istruzioni per la procedura di conferma del tuo account.'
+      send_paranoid_instructions: 'Se la tua email esiste nel nostro archivio, riceverai un email con le istruzioni per la procedura di conferma del tuo account.'
+      confirmed: 'Il tuo account e stato confermato con successo. Ora sei iscritto a tortuga.tech'
+    registrations:
+      signed_up: 'Benvenuto! Accesso effettuato con successo.'
+      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      updated: 'Il tuo account e stato aggiornato con successo.'
+      destroyed: 'Ciao! Il tuo account e stato cancellato con successo. Speriamo di rivederci presto.'
+      reasons:
+        inactive: 'inattivo'
+        unconfirmed: 'non confermato'
+        locked: 'bloccato'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Il tuo account e stato attivato. Ora puoi effettuare laccesso.'
+      send_paranoid_instructions: 'Se laccount esiste, riceverai in pochi minuti un email con le istruzioni per lo sblocco.'
+    omniauth_callbacks:
+      success: 'Autorizzato con successo a %{kind} account.'
+      failure: 'Accesso non autorizzato a %{kind} in quanto %{reason}.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Istruzioni per la conferma'
+      reset_password_instructions:
+        subject: 'Istruzioni per il reset della password'
+      unlock_instructions:
+        subject: 'Istruzioni di sblocco'
+

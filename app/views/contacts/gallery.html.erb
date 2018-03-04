@@ -1,0 +1,73 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-9">
+		<h2>Contacts</h2>
+		<ol class="breadcrumb">
+
+		</ol>
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+	<div class="row">
+	
+		<% unless @contacts.blank? %>
+			<% @contacts.each do |contact| %>
+				<div class="col-lg-4 col-xs-4">
+					<div class="contact-box animated bounceIn">
+							<a href="">
+						<div class="col-sm-4 col-xs-4">
+							<div class="text-center">
+							   <% if contact.picture(:thumb).present? %>
+	                           	 	<img alt="image" class="img-circle m-t-xs img-responsive" src="<%= contact.picture.url(:thumb) %>">
+	                           	 <% else %>
+	                        		<%= image_tag 'missing_avatar.png',:class=>'img-circle m-t-xs img-responsive' %>
+	              				 <% end %>
+								
+								<div class="m-t-xs font-bold">
+									<%= contact.headline %>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-8 col-xs-8">
+							<h3><strong><%= contact.fullname %></strong>
+								<%= link_to edit_contact_path(contact) do %>
+					    			<small><i class="fa fa-edit pull-right"></i></small>
+					    		<% end %>
+							</h3>
+							<i class="fa fa-envelope-o"></i> &nbsp;<%= contact.email %><br />
+							<i class="fa fa-mobile"></i>&nbsp;<%= contact.mobile %>
+							<p>
+							<address>
+								<strong><%= contact.company %></strong>
+								<br>
+								<%= contact.address %>
+								<br>
+								<%= contact.postal_code %>,&nbsp;<%= contact.city %> (<%= contact.country %>)
+							</address>
+							</p>
+						</div> <div class="clearfix"></div> </a>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+
+		
+	</div>
+</div>
+
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+	$(function() {
+
+		$('.contact-box').each(function() {
+			animationHover(this, 'pulse');
+		});
+
+	});
+
+</script>
+
+<% end %>
+

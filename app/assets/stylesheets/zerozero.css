@@ -1,0 +1,14 @@
+
+
+.footer.zerozerofixed {
+  position: fixed;
+  margin-top:5px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background:lightgrey;
+  height:65px;
+  border-top: 1px solid blue;
+
+}

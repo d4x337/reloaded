@@ -1,0 +1,48 @@
+ <% @exist_option =  Option.where(:name=>'DASHBOARD_STORE_VISIBLE').count > 0 %>
+<% if @exist_option %>
+	<% @option =  Option.where(:name=>'DASHBOARD_STORE_VISIBLE').first.value %>
+	<% if @option == "Y" %>
+		<%= content_for :head do %>
+			<%= javascript_include_tag "d4x-store" %>
+		<% end %>
+		<% product = Product.where(:active=>true).first(:order=>"RANDOM()") %>
+		
+		<div id="menu-title-2013" class="lcd-link">
+			<%= link_to d4x_sanitizer(t('store')),"/store"%>
+		</div>
+   		<%  @cart_product = CartProduct.new %>
+   		
+   		<% if product %>
+   		<%= form_for(@cart_product) do |f| %>
+   		
+	      	<%= hidden_field_tag :prod_id,product.id %>
+	
+		<div class="right-col-item-2013">
+			<div id="menu-admin-title-text">
+			</div>
+			<div align="center" id="image-product">
+				<%= image_tag(product.photo.url,:width=>130) %>
+		 	</div>
+			<div align="center">
+				cod.<%= product.name %>
+		    </div>
+			<div align="center">
+				<%= product.final_price %>   <%= product.currency %>  
+		    </div>
+			<div align="center">
+				<%= product.description %>
+		    </div>
+	        <br />
+			<div id="actions" align="center">
+				<%= submit_tag d4x_sanitizer(t("add to cart")), :class=>'btn btn-xs btn-info'%>
+		    </div>
+			<br />
+			<div id="vert-menu-item">
+		    </div>
+		</div>
+	   <% end %>
+	<% end %>
+	
+	<% end %>
+<% end %>
+	

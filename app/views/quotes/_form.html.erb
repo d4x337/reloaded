@@ -1,0 +1,52 @@
+<%= form_for(@quote) do |f| %>
+  <% if @quote.errors.any? %>
+   <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center">
+			<strong class="error-counter"><%= pluralize(@quote.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @quote.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+<div id="center-content2">
+  <div class="field">
+    <%= f.label t(:qtext) ,:class=>'show-item-label' %><br />
+    <%= f.text_area :qtext,  :size => "80"%>
+  </div><br>
+  <div class="field">
+  	 <%= f.label t(:author) ,:class=>'show-item-label' %><br />
+ 	<%= f.collection_select(:author_id,Author.all,:id,:fullname)%>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:qtype) ,:class=>'show-item-label' %><br />
+    <%= f.collection_select(:quote_type_id,QuoteType.all,:id,:type_of_quote) %>
+  </div><br>
+
+  <div class="field">
+    <%= f.label t(:approved) ,:class=>'show-item-label' %><br />
+    <%= f.check_box(:approved) %>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:visible) ,:class=>'show-item-label' %><br />
+    <%= f.check_box(:visible) %>
+  </div><br>
+<div class="field">
+    <%= f.label t(:today) ,:class=>'show-item-label' %><br />
+    <%= f.check_box(:today) %>
+  </div><br>
+ <div class="field">
+    <%= f.label t(:lang) ,:class=>'show-item-label' %><br />
+    <%= f.select(:lang,options_for_select([['English', 'en'], ['Italian', 'it']], @quote.lang), :class =>  "d4xItem") %><br>
+  </div>
+  <div class="actions"><br>
+   <%= f.submit :class=>'button-d4x' %>
+  </div>
+<br>
+<% end %>
+</div>

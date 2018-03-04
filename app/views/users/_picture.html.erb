@@ -1,0 +1,32 @@
+<% content_for :head do %>
+		<script language="JavaScript">
+			$( document ).submit(function() {
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+		</script>
+<% end %>
+
+<%= form_for(@user, :html => { :multipart => true })  do |f| %>
+
+<% if @user.errors.any? %>
+  <h5><%= pluralize(@user.errors.count, "error") %> prohibited from being saved:</h5>
+  <ul>
+	  <% @user.errors.full_messages.each do |msg| %>
+	    <li><%= d4x_sanitizer(msg) %></li>
+	  <% end %>
+  </ul>
+<% end %>
+
+<p align="center">
+	<%= f.file_field :avatar ,:class=>'button-d4x-tiny'%>
+	<%= f.submit d4x_sanitizer(t('upload')),:class=>'button-d4x-tiny' %>
+</p>
+	
+<% end %>
+<p align="center">
+	<%= image_tag @user.avatar.url,:class=>"jcrop-preview", :id=>"target", :width=>"70%" %> 
+</p>
+
+
+				

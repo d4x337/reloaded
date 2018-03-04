@@ -1,0 +1,49 @@
+<% @option =  Option.find_by_name('USER_SHOW_ADS') %>
+<% if @option %>
+<% if @option.value == "Y" %>
+	<% @quanti =  Option.find_by_name('USER_ADS_COUNT') %>
+	
+	<% if @quanti %>
+		<% q = @quanti.value %>
+	<% else %>
+		<% q = 3 %>
+	<% end %>
+
+	<% @ads =  Ad.where(:active=>1,:locale=>current_user.locale) %>
+	<% @ads =  Ad.where(:active=>1) %>
+
+	<% @ads =  @ads.shuffle %>
+		
+	<div id="ads-list">
+		
+		<div id="menu-title-2013" class="lcd-link">
+			<%= link_to d4x_sanitizer(t('sponsored')),"/sponsored" %>   
+		</div>
+	
+		<% @ads.first(q.to_i).each do |ad| %>
+	
+			 <%= link_to(ad.url,:target=>"_blank") do %>
+			 <div id="single-add" class="right-col-item-2013">
+			    <div id="ad-title">
+					<%= ad.title %>
+			    </div>
+			    <div id="ad-url">
+					<%= ad.url %>
+			    </div>
+			    <div id="ad-body">
+				    <div id="ad-pic">
+						 <%= image_tag ad.image.url,:class=>'' %>
+				    </div>
+				    <div id="ad-content">
+				    	<%= ad.content %>
+						<div id="ad-actions">
+							<%= ad.action %>
+					    </div>
+				    </div>
+			    </div>
+			</div>    
+			<% end %>
+		<% end %>
+	</div>    
+<% end %>
+<% end %>

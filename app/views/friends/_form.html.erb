@@ -1,0 +1,35 @@
+<%= form_for(@friends) do |f| %>
+  <% if @friends.errors.any? %>
+     <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center"><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<strong class="error-counter"><%= pluralize(@friends.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @friends.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+   <div id="center-content">
+   <div class="field">
+    <%= f.label t(:user) %><br />
+    <%= f.text_field :user_id %>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:friend) %><br />
+    <%= f.text_field :friend_id %>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:deleted) %><br />
+    <%= f.check_box :deleted %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %><br>
+  </div>
+  <br>
+  </div>
+<% end %>

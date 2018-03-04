@@ -1,0 +1,22 @@
+<div id="messages-row-titles row">
+		<div id="title_is_important" class="col-xs-1"><%= image_tag("flag.png",:size=>'16x16',:title=>d4x_sanitizer(t('flagged as important')),:class=>'2px-margin-top') %></div>
+		<div id="title_select_all" class="col-xs-1"><%= check_box_tag :select_all, false,:id=>'select-all',:class=>'2px-margin-top' %></div>
+		<div id="title_has_attachment" class="col-xs-1"><%= image_tag("attach.png",:title=>d4x_sanitizer(t('has attachments')),:class=>'2px-margin-top') %></div>
+		<div id="title_is_seen" class="col-xs-1"><%= image_tag("email.png",:title=>d4x_sanitizer(t('message unread')),:class=>'') %></div>
+		<div id="title_date" class="col-xs-2">
+			<%= image_tag("bullet_arrow_up.png",:title=>d4x_sanitizer(t('from old to recent')),:class=>"middle none") %>
+			<%= label_tag(d4x_sanitizer(t('received')),nil,{:class=>'yellow'}) %>
+			&nbsp;<%= image_tag("bullet_arrow_down.png",:title=>d4x_sanitizer(t('from recent to old')),:class=>"middle none") %>
+		</div>	
+		<div id="title_from" class="col-xs-2">
+			<%= image_tag("bullet_arrow_up.png",:title=>d4x_sanitizer(t('sender_from_a_to_z')),:class=>"middle none") %>
+			<%= label_tag(d4x_sanitizer(t('from')),nil,{:class=>'yellow'}) %>
+			&nbsp;<%= image_tag("bullet_arrow_down.png",:title=>d4x_sanitizer(t('sender_from_z_to_a')),:class=>"middle none") %>
+		</div>	
+		<div id="title_subject" class="col-xs-4">
+			<%= image_tag("bullet_arrow_up.png",:title=>d4x_sanitizer(t('subject_from_a_to_z')),:class=>"middle none") %>
+			<%= label_tag(d4x_sanitizer(t('subject')),nil,{:class=>'yellow'}) %>
+			&nbsp;<%= image_tag("bullet_arrow_down.png",:title=>d4x_sanitizer(t('subject_from_z_to_a')),:class=>"middle none") %>
+		</div>	
+</div>
+	

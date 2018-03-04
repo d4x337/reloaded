@@ -1,0 +1,60 @@
+<%= content_for :head do %>
+
+<% end %>
+
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "/agadanga/big_icons_some_active" %>
+<% end %>
+
+<%= content_for :folders_list do %>
+		<%= render :partial => "/agadanga/no_folder_selected" %>
+<% end %>
+	<div id="big-card-title"><br />
+		<div id="evo-card-icon">
+			<%= link_to image_tag("cog_add.png", :border =>0, :mouseover => "cog_add.png", :title => "options" ), new_option_path %>
+		</div>
+		<div class="extratit">
+			<%= "Agadanga Global Settings" %>	
+			
+		</div>
+	</div><br /><br />
+	<table width="100%" class="d4x-grid">
+	   <tr class="d4x-grid-title">
+	  	 	<th></th>
+		     <th class="td-grid-tit"><%=t(:option) %></th>
+		    <th class="td-grid-tit"><%=t(:value) %></th>
+		    <th class="td-grid-tit"><%=t(:description) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		 <% unless @options.blank? %>
+		 <% @options.each do |option| %>
+		   <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		   	<td class="td-grid-data" width="2%">&nbsp;</td>
+		    <td class="td-grid-data"><%= option.name %></td>
+		    <td class="td-grid-data"><%= option.value %></td>
+		    <td class="td-grid-data"><%= option.description %></td>
+		 	<td>
+				<%= link_to image_tag("cog.png", :border =>0 , :mouseover => "cog.png", :title => t("show") ,:size => "16x16"), option %>
+		 	</td>
+			<td>
+				<% if can? :update, @option %>  
+					<%= link_to image_tag("cog_edit.png", :border =>0, :mouseover => "cog_edit.png", :title => t("edit"),:size => "16x16" ), edit_option_path(option) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @option %>  
+					<%= button_to "", option, :confirm => 'are you sure?', :method => :delete, :class => 'odestroy',:title=>t('delete'),:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+			<td class="td-grid-data" width="2%">&nbsp;</td>
+		  </tr>
+		<% end %>
+		<% end %>
+	</table>
+	<br />
+
+
+

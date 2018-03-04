@@ -1,0 +1,40 @@
+
+.center {
+    text-align:center;
+}
+a {
+	color: grey;
+}
+a:hover {
+	color: darkgrey;
+}
+
+.devise_box{
+	box-shadow: 2px 2px 2px 2px #000000;
+}
+
+
+.devise_login{
+	background-image: url(bg05.jpg);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	margin-top:0px;
+}
+.devise_login h2,h3,h4,p,small{
+	color:grey;
+}
+.devise_login a{
+	color:#FFFFFF;
+}
+.devise_login a:hover{
+	color:#FFFD57;
+}
+
+.devise_login .form-control{
+	background-color:lightgrey;
+	border-radius:3px;
+	border-color:darkgrey;
+}
+

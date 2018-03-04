@@ -1,0 +1,30 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-messages').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-received').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+
+<h4 class="card-title lightlime"><i class="zmdi zmdi-inbox lightlime"></i>&nbsp;&nbsp;&nbsp;Received Messages</h4>
+<h6 class="card-subtitle">The message will be destroyed just after first read. Extra passphrase may be required by the sender.</h6>
+<div class="listview listview--hover">
+  <% unless @received.blank? %>
+      <% @received.each do |message| %>
+      <a href="/reveal?token=<%= message.read_token %>" class="listview__item traspa">
+        <% if message.user.avatar(:thumb).present? %>
+            <img class="listview__img" src="<%= message.user.avatar.url(:thumb) %>" alt="">
+        <% else %>
+            <img class="listview__img" src="demo/img/profile-pics/1.jpg" alt="">
+        <% end %>
+          <div class="listview__content">
+          <div class="listview__heading">
+              <%= label_tag user_fullname(message.sender_id),nil,{:class=>'xnamea'} %>&nbsp;
+              <%= label_tag "@"+user_nick(message.sender_id),nil,{:class=>'lcd orange'} %>
+            <small><%= time_ago_in_words_converter(message.created_at) %>&nbsp;<%= t('ago') %></small>
+          </div>
+          <p><%=message.read_token%></p>
+        </div>
+      </a>
+      <% end %>
+  <% end %>
+</div>

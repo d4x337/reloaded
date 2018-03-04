@@ -1,0 +1,63 @@
+<%= content_for :head do %>
+
+<% end %>
+
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "/agadanga/big_icons_some_active" %>
+<% end %>
+
+<%= content_for :folders_list do %>
+		<%= render :partial => "/agadanga/no_folder_selected" %>
+<% end %>
+<div id="settings-pane">
+<div id="center-content2">
+	<div id="big-card-title">
+			<div id="evo-card-icon">
+			</div>
+			<div id="d4x-title-evox">
+				<%= d4x_sanitizer(t('order')) %>	
+			</div>
+		</div><br />
+		<table width="100%" class="d4x-grid">
+	   		<tr class="d4x-grid-title">
+			 	<th align="center"><%=d4x_sanitizer(t("received")) %></th>
+		   		<th align="left"><%=d4x_sanitizer(t("order")) %></th>
+				<th align="left"><%=d4x_sanitizer(t("customer")) %></th>
+		    	<th align="center"><%=d4x_sanitizer(t("package")) %></th>
+		    	<th align="center"><%=d4x_sanitizer(t("email")) %></th>
+		    	<th align="right"><%=d4x_sanitizer(t("total")) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  	</tr>
+		 <% @orders.each do |order| %>
+		    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			 <td><%= order.created_at.to_s(:long) %></td>
+		   <td><%= order.id %></td>
+			<td><%= order.user_id %></td>
+			<td><%= order.package %></td>
+			<td><%= order.email %></td>
+		    <td align="right"><%= order.total.to_s %></td>
+		    <td align="right"></td>
+		
+		    <td>
+				<%= link_to image_tag("cog.png", :border =>0 , :mouseover => "cog.png", :title => d4x_sanitizer(t("show")) ,:size => "16x16"), order %>
+		 	</td>
+			<td>
+				<% if can? :update, @order %>  
+					<%= link_to image_tag("cog_edit.png", :border =>0, :mouseover => "cog_edit.png", :title => d4x_sanitizer(t("edit")),:size => "16x16" ), edit_order_path(order) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @order %>  
+						<%= button_to "", order, :confirm => 'are you sure?', :method => :delete, :class => 'odestroy', :title => d4x_sanitizer(t("delete")),:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+		
+		  </tr>
+		<% end %>
+	</table>
+	<div id="paginator"></div>
+</div>
+</div>

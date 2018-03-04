@@ -1,0 +1,38 @@
+<h4 class="card-title orange"><%= t('domains')%></h4>
+<h6 class="card-subtitle">Manange your domains</h6>
+<% unless @domains.blank? %>
+    <div class="table-responsive">
+      <table id="data-table" class="table">
+        <thead>
+        <tr>
+          <th><%=t(:domain) %></th>
+          <th><%=t(:homedir) %></th>
+          <th><%=t(:vmaildir) %></th>
+          <th><%=t(:active) %></th>
+          <th><%= t('edit')%></th>
+          <th align="center"><%= t('delete')%></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @domains.each do |domain| %>
+            <tr>
+              <td class="left"><%= domain.domain %></td>
+              <td class="left"><%= domain.homedir %></td>
+              <td class="left"><%= domain.vmaildir %></td>
+              <td class="left"><%= domain.active %></td>
+              <td>
+                <%= link_to(edit_domain_path(domain)) do %>
+                    <span class="btn btn-sm btn-outline-primary white"><i class='fa fa-edit white'></i></span>
+                <% end %>
+              </td>
+              <td>
+                <%= button_to domain, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-sm btn-outline-danger" do %>
+                    <i class='fa fa-trash-o white'></i>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>

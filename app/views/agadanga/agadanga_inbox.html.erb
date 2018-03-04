@@ -1,0 +1,137 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-home').removeClass("navigation__active").addClass("navigation__sub");
+        $('#main-menu-email').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-inbox').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-body">
+      <%= form_tag 'actions',:method=>'post' do -%>
+      <div class="row traspa">&nbsp;
+       </div>
+      <div class="row traspa">
+
+        <div class="col-lg-2">
+          <h4 class="card-title orange"><i class="zmdi zmdi-inbox orange"></i>&nbsp;
+            <% if ((@tot_inbox+@tot_new)>0) %>
+              <%= label_tag(t("inbox"),nil,:class=>'' )%>
+              <%= t("you have") %>
+              @tot_inbox+@tot_new
+              <%= t("messages") %>
+            <% else %>
+              <%= t("Inbox is Empty") %>
+
+            <% end %>
+          </h4>
+          d4x337@reloaded.com
+        </div>
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-refresh-alt orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-email orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-mail-reply orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-mail-reply-all orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-cloud-off orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-archive orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-flag orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="agabutton"><i class="zmdi zmdi-hc-3x zmdi-delete orange"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= render :partial => "messages_actions" %>
+      </div>
+      <div class="row traspa">&nbsp;
+      </div>
+      <div class="row traspa">
+        <%= render :partial => "agadanga_row_titles" %>
+      </div>
+      <br>
+      <div id="messages-list">
+        <%= render :partial => "agadanga_folder_evo" %>
+      </div>
+      <div id="commands-list">
+        <%= will_paginate @folder,:per_page => 12 %>
+      </div>
+    </div>
+    <% end %>
+    <div id="preview-message">
+
+    </div>
+  </div>
+</div>
+
+<div class="row none">
+  <div class="col-lg-2">
+    <div class="card">
+      <div class="card-body traspa">
+        <div id="single-folder">
+          <%= link_to("/agadanga-inbox") do %>
+            <div id="inbox" class="folder-item current-item">
+              <%= image_tag "archive2.png",:size=>"32x32",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('inbox')),nil,{:class=>'current-folder'}) %>
+
+              <%= image_tag "checking-current.gif",:id=>"checking-current",:class=>"none"%>
+
+              <div id="counter-agadanga"><%= @tot_inbox %></div>
+            </div>
+          <% end %>
+          <br />
+          <%= link_to("/agadanga-sent") do %>
+            <div id="sent" class="folder-item">
+              <%= image_tag "sent.png",:size=>"32x32",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('sent')),nil,{:class=>'folder-name'}) %>
+              <div id="counter-agadanga"><%= @tot_sent %></div>
+            </div>
+          <% end %>
+          <br />
+          <%= link_to("/agadanga-drafts") do %>
+            <div id="drafts" class="folder-item">
+              <%= image_tag "compose2.png",:size=>"40x40",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('draft')),nil,{:class=>'folder-name'}) %>
+              <div id="counter-agadanga"><%= @tot_draft %></div>
+            </div>
+          <% end %>
+          <br />
+          <%= link_to("/agadanga-junk") do %>
+            <div id="junk" class="folder-item">
+              <%= image_tag "junk.png",:size=>"40x40",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('junk')),nil,{:class=>'folder-name'}) %>
+              <div id="counter-agadanga" class="middle"><%= @tot_spam %></div>
+            </div>
+          <% end %>
+          <br />
+          <%= link_to("/agadanga-important") do %>
+            <div id="favourite" class="folder-item">
+              <%= image_tag "flag.png",:size=>"40x40",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('important')),nil,{:class=>'folder-name'}) %>
+              <div id="counter-agadanga"><%= @tot_important %></div>
+            </div>
+          <% end %>
+          <br />
+          <%= link_to("/agadanga-archivied") do %>
+            <div id="archive" class="folder-item">
+              <%= image_tag "archive3.png",:size=>"40x40",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('archive')),nil,{:class=>'folder-name'}) %>
+              <div id="counter-agadanga"><%= @tot_archivied %></div>
+            </div>
+          <% end %>
+          <br />
+          <%= link_to("/agadanga-trash") do %>
+            <div id="trash" class="folder-item">
+              <%= image_tag "trash4.png",:size=>"40x40",:class=>'left folder-icon'%>
+              <%= label_tag(d4x_sanitizer(t('trash')),nil,{:class=>'folder-name'}) %>
+              <div id="counter-agadanga"><%= @tot_trash %></div>
+            </div>
+          <% end %>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+

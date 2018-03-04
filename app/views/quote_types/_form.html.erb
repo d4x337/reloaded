@@ -1,0 +1,31 @@
+<%= form_for(@quote_type) do |f| %>
+  <% if @quote_type.errors.any? %>
+     <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center"><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<strong class="error-counter"><%= pluralize(@quote_type.errors.count, d4x_sanitizer(t("error"))) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @quote_type.errors.full_messages.each do |msg| %>
+			        <li><%= d4x_sanitizer(msg) %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+  <div id="center-content">
+   <div class="field">
+    <%= f.label 'type of quote',nil,{:class=>'lcd'} %><br />
+    <%= f.text_field :type_of_quote ,:size => 64,:class=>'def-input'%>
+  </div><br>
+  <div class="field">
+    <%= f.label d4x_sanitizer(t(:visible)),nil,{:class=>'lcd'} %><br />
+    <%= f.check_box :visible %>
+  </div><br>
+  <div class="actions">
+   <%= f.submit :class=>'button-d4x' %>
+  </div>
+  <br>
+<% end %>
+</div>

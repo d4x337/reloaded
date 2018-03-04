@@ -1,0 +1,43 @@
+
+Bugs:
+- compose message - contacts
+- compose message - picture
+- do backoffice: permissions on maildir
+- do backoffice: create blog
+
+Requested Features
+- web sockets - push notifications
+- login with user o email o tel
+- new languages support
+- use slugs for nicknames
+- hashtags
+- likes page
+- fav page
+- secure message rating
+
+GDPR Ready:
+- User record encrypted
+- Photos encrypted
+- Delete My Account
+- Complete management of own data record
+
+Security:
+- ACL Review
+- Improved Model Validations
+- brakeman audit - applied fixes
+- Two factor authentication (draft)
+
+UX Tests:
+- Tablet view
+- Mobile view
+
+Produzione:
+- git repo
+- RubyEncoder
+
+Monitoring:
+- New Relic
+- Rollbar
+- CircleCI
+- WorldPing
+- Grafana

@@ -1,0 +1,23 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "d4x-forgot-unlock" %>
+<% end %>
+<br><br><br>
+<div class="middle-box text-center animated  ibox-content devise_login">
+    <%= render :partial => "/shared/devise_header_logo" %>
+    <h3 class="font-bold center"><%= d4x_sanitizer(t("confirm account")) %></h3>
+    <p><%= t('enter your address and a confirmation link will be sent to you')%></p>
+    <div class="row">
+        <div class="col-lg-12">
+        <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+          <div class="form-group">
+                  <%= f.email_field :email, :autofocus=>true, :placeholder=>d4x_sanitizer(t("email")),:class=>'form-control center' %>
+          </div>
+          <%= f.submit d4x_sanitizer(t("resend confirmation instructions")),:class=>'btn btn-d4x block full-width m-b' %>
+        <% end %>
+        </div>
+    </div>
+    <p align="center">
+      <%= render :partial => "devise/shared/links_confirmation" %>
+    </p>
+    <%= render :partial => "/shared/devise_footer" %>
+</div>

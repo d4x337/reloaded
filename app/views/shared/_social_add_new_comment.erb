@@ -1,0 +1,17 @@
+<div id="add-new-comment-2013" class="nosne">
+  <br>
+  <%= form_for([mini_post, mini_post.mini_post_comment.build]) do |f| %>
+      <div class="row new-comment-div">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-7">
+          <div class="input-group">
+            <%= f.text_field :content ,:id => "comment-textbox",:placeholder=>t("newcomment") ,:class=>'form-control input-xs'%>
+            <span class="input-group-btn">
+              <%= f.submit t('comment'),:id => "new-comment-bt",:class =>'btn btn-sm btn-outline-primary',:title=>t('comment')%>
+            </span>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

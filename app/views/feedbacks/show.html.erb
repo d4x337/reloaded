@@ -1,0 +1,31 @@
+<% @title = "Guest Feedback" %>
+<div id="single-download">
+				<div id="d4x-title-evo">
+					Feedback # <%= @feedback.id %>
+			</div>
+<br />
+<br />
+	<div id="left45">
+			<%= image_tag "user_gray.png",:class=>"middle" %>&nbsp;<%= label_tag t('from')%>:&nbsp; <%= link_to @feedback.from,@feedback.from %><br />
+		</div>
+		<div id="right45">
+			<%= image_tag "star.png",:class=>"middle" %>&nbsp;<%= label_tag d4x_sanitizer(t('rating')) %>&nbsp; <%= label_tag @feedback.rating.to_s %><br />
+		</div>
+		<br />
+		<div id="big-card-title-2013">
+		
+			<div class="d4x-title-2013 center">
+				<% if can? :manage,@feedback %>  
+					<%= link_to @feedback.from, edit_feedback_path(@feedback) %>
+				<% else %>
+					<%= @feedback.from %><br />	
+					<%= @feedback.email %>	
+				<% end %>
+				
+			</div><br />
+			<div id="description" class="white">
+				<%= @feedback.message%>
+			</div>
+		</div>
+	</div>
+</div>

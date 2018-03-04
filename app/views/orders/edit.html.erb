@@ -1,0 +1,15 @@
+<% @title =t('editing order') %>
+<div id="big-card">
+	<div id="big-card-title">
+		<div id="evo-card-icon">
+			<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), orders_path %>
+		</div>
+		<div id="d4x-title-evo">
+			<%= t('editing order') %>	
+		</div>
+	</div>
+	<div id="center-container">
+		<%= render 'form' %>
+	</div>
+	<div id="paginator"></div>
+</div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title><%= get_setting_value('PROJECT_NAME') %></title>
+  	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	  <meta charset="UTF-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <meta name="description" content="<%= get_setting_value('PROJECT_MOTTO') %>">
+    <meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
+	  <meta name="keywords" content="<%= get_setting_value('PROJECT_KEYWORDS')%>" />
+
+    <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
+	  <%= stylesheet_link_tag 'application', media: 'all' %>
+	  <%= stylesheet_link_tag 'users' %>
+	  <%= javascript_include_tag 'jquery-3.2.1.min.js' %>
+    <%= stylesheet_link_tag 'css/dstyle.css',:title=> 'main-css' %>
+
+    <link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+
+    <!-- App styles -->
+    <%= stylesheet_link_tag 'css/app.min.css' %>
+
+	  <%= csrf_meta_tags %>
+ 	  <%= yield :javascript_includes %>
+	  <%= yield :head %>
+	  <%= javascript_include_tag 'bootstrap-maxlength' %>
+</head>
+
+  <% @bg = current_user.background %>
+  <% if !@bg.blank? %>
+     <body data-sa-theme="<%= @bg %>">
+  <% else %>
+    <body data-sa-theme="1">
+  <% end %>
+
+  <main class="main">
+    <%= render :partial => '/shared/reloaded_loader' %>
+    <%= render :partial => '/shared/reloaded_header' %>
+    <aside class="sidebar">
+      <div class="scrollbar-inner">
+
+        <%= render :partial => '/shared/reloaded_summary' %>
+        <%= render :partial => '/shared/reloaded_sidebar' %>
+      </div>
+    </aside>
+
+    <section class="content">
+      <%= render :partial => '/shared/alerts_toaster' %>
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body traspa">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+            <%= yield :rightside_content %>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Vendors -->
+  <script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+  <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+  <script src="vendors/bower_components/autosize/dist/autosize.min.js"></script>
+
+
+  <%= javascript_include_tag 'js/app.min.js' %>
+
+  </body>
+</html>

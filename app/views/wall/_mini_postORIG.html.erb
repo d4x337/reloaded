@@ -1,0 +1,575 @@
+<style>
+	 #single-connection,
+	  #single-post{
+	  	float:left;
+
+	  	width:100%;
+	  	text-align:left;
+	  	padding-bottom:10px;
+	  }
+	  
+	#new-post-area{
+	 	border:0px solid red;
+	 	float:left;
+	 	height:100%;
+	 	width:100%;
+	 	margin-top:20px;
+	 	padding-bottom: 10px;
+		border-bottom:1px solid #DCE0DC;
+
+	 }
+	
+	  #post-body{
+	  	float:left;
+	  	width:83%;
+	  	border:0px solid red;
+	  	min-height:18px;
+	  	margin-right:0px;
+	  	margin-left:5px;
+	  	margin-top:5px;
+	  	height:100%;
+	  }
+
+		
+
+	 #author-avi{
+	  	float:left;
+	  	height: 73px;
+	  	width: 73px;
+	  	margin-top:5px;
+	  	margin-left:5px;
+	  }
+
+	  #fullname-area{
+	 	float:left;
+	  	height:20px;
+	  	max-width: 60%;
+	  	border:0px solid lime;
+	  	font-size:16px;
+	  	margin-top:0px;
+	  	font-weight:bold;
+	 	margin-left:5px;
+ 	  }
+	 
+	  #username-area{
+	 	float:left;
+	  	height:20px;
+	  	max-width: 60%;
+	  	border:0px solid lime;
+	  	font-size:14px;
+	  	margin-top:-2px;
+	  	font-weight:bold;
+	 	margin-left:5px;
+ 	  }
+	  
+	  #elapsed-time{
+	  	float:right;
+	  	height:18px;
+	  	max-width: 80px;
+	  	border:0px solid orange;
+	  	font-size:12px;
+	  	margin-right:5px;
+	  	margin-top:0px;
+		color: #7a7a7a;
+	  }
+
+	  #post-del{
+	  	border:0px solid red;
+	  	height:12px;
+	  	width:12px;
+		float:right;	
+	  	margin-right:4px;
+	  	margin-top:-2px;
+	  	cursor: pointer;
+	  	text-align: left;
+	  	font-size:12px;
+		color: #7a7a7a;
+	  }
+	  
+	  #post-text{
+	  	max-width:95%;
+	  	border:0px solid white;
+	  	min-height:18px;
+		margin-top:20px;
+	  	margin-bottom:5px;
+		margin-left:5px;
+		font-size:12px;
+		word-wrap: break-word;
+
+	  }	 
+	  
+	  #post-text p{
+		text-align:left;
+	  	margin-bottom:0px;
+	  	margin-left:0px;
+	  }
+	
+	  #sensation-button{
+	  	font-size:12px;
+      	margin-left:5px;
+    	color:black;  	
+	  }
+	  
+	  #sensation-bt,
+      #feed-icon-2013{
+      	font-size:12px;
+      	margin-left:5px;
+      }
+	  
+	  #post-actions{
+	  	float:left;
+	  	width:96%;
+	  	border:0px solid violet;
+	  	min-height:18px;
+	  	height:22px;
+	  	margin-left:2px;
+	  	margin-top:10px;
+	  	margin-bottom:10px;
+	  	font-family: Tahoma;
+	  	font-size:10px;
+	  }
+
+  	  #like-2014{
+		float:left;
+		margin-left:0px;	
+		border: 0px solid pink;
+		margin-right:40px;
+		margin-bottom:20px;
+		font-size:8px;
+	  }
+		
+	  #dislike-2014{
+		 float:left;	
+		 margin-bottom: 0px;
+		 border: 0px solid pink;
+		 margin-right:40px;
+		 margin-bottom:20px;
+	  }
+
+	  #liked-2014{
+		float:left;
+		margin-left:0px;	
+		border: 0px solid pink;
+		margin-right:40px;
+		margin-bottom:20px;
+		font-size:8px;
+	  }
+		
+	  #disliked-2014{
+		 float:left;	
+		 margin-bottom: 0px;
+		 margin-right:40px;
+		 margin-bottom:20px;
+		 border: 0px solid pink;
+	  }
+	  #sensation-2014{
+		 float:left;	
+		 margin-bottom: 0px;
+		 border: 0px solid pink;
+	  }
+	  
+	  #sensation-2014 a{
+	  	color:#ffffff;
+	  }
+
+	  .sensation{
+	  	font-size:20px;
+	  	font-family:Tahoma;
+	  }
+
+	  #like-2013{
+		float:left;
+		margin-left:0px;	
+		background-color:#FFFFFF;
+		font-family:Tahoma;
+	  }
+		
+	  #dislike-2013{
+		 float:left;	
+		 margin-bottom: 0px;
+	  }
+
+	  
+	  #comments-list{
+ 		float:left;
+	  	width:100%;
+	  	border:0px solid blue;
+	  	min-height:18px;
+	  	margin-left:0px;
+	  	margin-top:0px;
+   	  }
+   	  
+	  #single-comment-2013{
+		width:100%;
+		float:left;
+		border-top: 1px solid #DCE0DC;
+		margin-left:0px;
+		margin-top:3px;
+		margin-bottom:1px;
+	  }
+	
+	  .thumbnail-comment{
+		width:50px;
+		height:50px;
+		border-radius:3px;
+		border:0px white solid;
+		margin-top:2px;
+		float:left;
+		margin-left:-40px;
+	  }
+
+	  #commenter-image{
+			margin-top:3px;
+			margin-left:-30px;
+	  }
+
+	  #comm-left{
+			float:left;
+			width:34px;
+			margin-left:0px;
+			border:0px solid violet;
+	  }
+	
+	  #comm-right{
+			float:left;
+			border:0px solid green;
+			width:100%;
+			padding-left:5px;
+	  }
+
+	  #comment-username{
+			float:left;
+			color:#333333;
+			margin-top:2px;
+			margin-left:0px;
+			margin-bottom:5px;
+			width:78%;
+			height:18px;
+			font-family:Arial;
+			font-size:14px;
+			font-weight:bold;
+			border:0px solid black;
+	  }
+
+	  #comment-del{
+	  	border:0px solid red;
+	  	float:right;	
+	  	margin-right:2px;
+	  	margin-top:2px;
+	  	cursor: pointer;
+	  	font-size:12px;
+		color: #7a7a7a;
+	  }
+	
+	  #comment-content{
+		font-size:12px;
+		width:100%;
+		height:100%;
+		float:left;
+		margin-top:5px;
+		border:0px solid red;
+   		word-wrap: break-word;
+      }
+
+	  #new-comment-bt{
+	  	margin-bottom:0px;
+	  }
+	
+		#comment-liking{
+			margin-top:5px;
+			margin-left:-5px;
+			padding-bottom:3px;
+			font-size:10px;
+			float:left;
+		}
+
+		#feeds-totals{
+			padding-left:1px;
+			padding-bottom:3px;
+			font-size:10px;
+			float:left;
+			margin-top:10px;
+		}
+
+	   
+	   #delete-comment{
+			float:right;
+	   }
+	  
+  
+  	 
+	  #user-feed-area{
+		float:left;
+		width:100%;
+		border:0px solid red;
+		margin-top:10px;
+		margin-left:3px;
+	  }
+
+	  #tb-comment-2013{
+		text-align:left;
+		margin-top:18px;
+		margin-left:-80px;
+		width:300px;
+	  }
+	
+	  #liked,
+	  #disliked{
+		margin-right:10px;
+		font-size:12px;
+		color:#000000;
+	  }
+	  
+	  .contentpost{
+       width:300px;
+	  	margin-top:5px;
+	  	font-size:14px;
+	  }
+
+</style>
+<div id="single-post">
+	 <div class="feed-element">
+        <a href="#" class="pull-left">
+             <% if mini_post.user.avatar(:thumb).present? %>
+           	 	<img alt="image" class="img-circle animated tada" src="<%= mini_post.user.avatar.url(:thumb) %>">
+           	 <% else %>
+        		<img alt="image" class="img-circle" src="<%= image_url 'missing_avatar.png' %>" width="100px"/>
+			 <% end %>
+        </a>
+        <div class="media-body ">
+            <small class="pull-right"><%= time_ago_in_words(mini_post.created_at) %>&nbsp;<%= t('ago') %> 
+            <% if current_user.id == mini_post.user.id %>  
+				<%= link_to mini_post,:class=>"btn-alert icon-del-post",:method => :delete, :confirm => 'Are you sure you want to delete this post?', :title=>"remove post" do %>
+					<span class="fa fa-times-circle"></span>
+				<% end %>
+			<% end %>
+            </small>
+            <strong><%= link_to(mini_post.user.firstname,"/profiles/"+mini_post.user.id.to_s) %></strong> posted a message<br>
+            <small class="text-muted">@<%= mini_post.user.nickname %></small>
+            <div class="contentpost">
+                <%= raw(mini_post.content_html) %>
+            </div>
+            <% if not mini_post.image_file_name.blank? %>
+                <%= image_tag mini_post.image,:class=>'img-responsive' %>
+              </div>
+            <% end %>
+            
+            <div id="post-actions" class="col-sm-12">
+            	
+          	<% if user_has_voted(mini_post.id) %>
+				<% @like_dislike = liked_or_disliked(mini_post.id) %>
+				<% mini_post.mini_post_liking.each do |mini_post_liking| %>
+						<% if (current_user.id == mini_post_liking.user_id) && mini_post_liking.liking %>  
+							<div id="like-2014">
+							  <%= form_for(mini_post_liking) do |f| %>
+								<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+								<%= f.hidden_field :mini_post_liking_id, :value=> mini_post_liking.id.to_s,:class=>'mplid_'+mini_post.id.to_s %>
+								<%= hidden_field_tag 'act_'+mini_post_liking.mini_post.id.to_s, 0,:class=>'act' %>
+								<% button_to t("you like this post"), [mini_post_liking.mini_post, mini_post_liking], :confirm => 'are you sure you want to unlike?',:alt =>'unlike', :class=>"btn btn-xs btn-success", :method => :delete ,:id=>"feed-icon-2013" %>
+								<i class="icon-large-red icon-heart liking"  id="liking_<%= mini_post.id.to_s %>"></i>
+							  <% end %>
+							</div>		
+						<% elsif (current_user.id==mini_post_liking.user_id) && !mini_post_liking.liking %>
+							<div id="dislike-2014">
+							  <%= form_for(mini_post_liking) do |f| %>
+								<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s %>
+								<%= f.hidden_field :mini_post_liking_id, :value=> mini_post_liking.id.to_s ,:class=>'mpdid_'+mini_post.id.to_s%>
+								<%= hidden_field_tag 'disact_'+mini_post_liking.mini_post.id.to_s, 0,:class=>'disact' %>
+								<% button_to t("you dont like this post"), [mini_post_liking.mini_post, mini_post_liking], :confirm => 'are you sure you want to undislike?', :alt =>'undislike', :class=>"btn btn-xs btn-danger",:method => :delete ,:id=>"feed-icon-2013" %>
+				
+								<i class="icon-large-violet icon-thumbs-down disliking" id="disliking_<%= mini_post.id.to_s %>"></i>
+							  <% end %>
+							</div>	
+						<% end %>
+				<% end %>
+			<% else %>
+				<div id="like-2014">
+					<%= form_for(mini_post.mini_post_liking.build) do |f| %>
+						<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+						<%= f.hidden_field :mini_post_liking_id, :value=> '-337',:class=>'mplid_'+mini_post.id.to_s %>
+						<%= hidden_field_tag 'act_'+mini_post.id.to_s, 1,:class=>'act' %>
+						<%= f.hidden_field :liking, :value=> true %>
+						<i class="icon-large-grey icon-heart liking" id="liking_<%= mini_post.id.to_s %>"></i>
+						<% submit_tag t("like"),:name=>"feed",:id=>"feed-icon-2013",:class=>'btn btn-xs btn-success' %>
+					<% end %>	
+				</div>
+				<div id="dislike-2014">
+					<%= form_for(mini_post.mini_post_liking.build) do |f| %>
+						<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+						<%= f.hidden_field :mini_post_liking_id, :value=> '-337',:class=>'mpdid_'+mini_post.id.to_s %>
+						<%= hidden_field_tag 'disact_'+mini_post.id.to_s, 1,:class=>'disact' %>
+						<% submit_tag t("dislike"),:name=>"feed",:id=>"feed-icon-2013 dislike",:class=>'btn btn-xs btn-danger' %>
+						<i class="icon-large-grey icon-thumbs-down disliking" id="disliking_<%= mini_post.id.to_s %>"></i>
+					<% end %>	
+				</div>
+			
+				
+			<% end %>
+			
+			<div id="favorite-2014">
+				<% @favorites = count_favorites(mini_post.id) %>
+				<% if is_user_favorite(current_user.id,mini_post.id) == true %>  
+					<% mini_post.mini_post_favorite.each do |mini_post_favorite| %>
+						<% if (current_user.id == mini_post_favorite.user_id) && mini_post_favorite.favorite %>  
+						  	<%= form_for(mini_post_favorite) do |f| %>
+								<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+								<%= f.hidden_field :mini_post_favorite_id, :value=> mini_post_favorite.id.to_s,:class=>'mpfav_'+mini_post.id.to_s %>
+								<%= hidden_field_tag 'favact_'+mini_post_favorite.mini_post.id.to_s, 0,:class=>'favact' %>
+								<i class="icon-large-green icon-fire favoriting new-icon-feed left" id="favoriting_<%= mini_post.id.to_s %>"></i>
+							<% end %>
+							<span class="feed-total feed-grey"><%= @favorites %></span>
+						<% end %>	
+					<% end %>	
+				<% else %>
+					<%= form_for(mini_post.mini_post_favorite.build) do |f| %>
+						<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s,:class=>'mpid' %>
+						<%= f.hidden_field :mini_post_favorite_id, :value=> '-337',:class=>'mpfav_'+mini_post.id.to_s %>
+						<%= hidden_field_tag 'favact_'+mini_post.id.to_s, 1,:class=>'favact' %>
+						<%= f.hidden_field :favoriting, :value=> true %>
+						<i class="icon-large-grey icon-fire favoriting left" id="favoriting_<%= mini_post.id.to_s %>"></i>
+					<% end %>	
+					<span class="feed-total feed-grey"><%= @favorites %></span>
+				<% end %>	
+			</div>
+		</div><!-- post-actions -->
+		
+		
+		<% if not current_user.locale.present? %>
+			<% @locale = 'en' %>
+		<% else %>
+			<% @locale = current_user.locale %>
+		<% end %>
+			
+	
+		<div id="feeds-totals" class="none">
+			<% if mini_post.mini_post_feed.count > 0 %>
+				<% mini_post.mini_post_feed.each do |feed| %>
+					<% @feed = Feed.where(:feedtag=>feed.feedtag,:locale=>@locale).first %>
+					<% tot = how_many_this_sensation(mini_post.id,feed.feedtag)%>
+					
+					<% if (current_user.id == feed.user_id) or (current_user.id == mini_post.author_id) %>
+						<% if @feed %>
+						<%= form_for(feed) do |h| %>
+							<%= h.hidden_field :feed_id, :value=> feed.id.to_s %>
+							<%= button_to @feed.feedtext+" ["+tot.to_s+"]", [feed.mini_post, feed], :confirm => 'are you sure you want to remove your sensation?', :alt =>'remove-feed', :class=>"btn btn-xs btn-warning",:method => :delete ,:id=>"feed-icon-2013" %>
+						<% end %>	
+						<% end %>	
+					<% else %>
+						<% if @feed %>
+							<% if @user_sensation.present? %>
+								<% if @user_sensation != @feed.feedtag %>
+									<%= label_tag @feed.feedtext+" ["+tot.to_s+"]" ,nil,:class=>'feedtext' %>				
+									<br />
+								<% end %>
+								
+							<% else %>
+								<%= label_tag @feed.feedtext+" ["+tot.to_s+"]" ,nil,:class=>'feedtext' %>
+								<br />
+							<% end %>
+						<% end %>
+					<% end %>
+					
+			 	<% end %>
+		 	<% end %>
+		</div>
+	
+		
+		<% if mini_post.mini_post_comment.count > 0%>
+			<div id="comments-list">
+				<% mini_post.mini_post_comment.each do |mpcomment| %>
+				 	<div id="single-comment-2013">
+				 	
+			 			<div id="commenter-image">
+							  <%= image_tag mpcomment.user.avatar.url,:class => "thumbnail-comment" %>
+						</div>
+					
+				 		<div id="comm-right">
+			
+				 			<div id="comment-author">
+								<%= mpcomment.user.firstname %>
+							</div>
+					
+							<div id="time-ago-comment">
+								<%= time_ago_in_words(mpcomment.created_at) %>
+							</div>
+					
+							<div id="comment-username">
+						   	    <%= link_to mpcomment.user.nickname,mpcomment.user %>
+							</div>
+							
+							<div id="comment-del">
+								<% if (current_user.id == mpcomment.user.id) or (current_user.id == mpcomment.mini_post.user.id) %>  
+										<%= link_to [mpcomment.mini_post, mpcomment],:class=>"btn-alert icon-del-post",:method => :delete, :confirm => 'Are you sure you want to remove this comment?', :title=>"remove comment" do %>
+											<span class="glyphicon glyphicon-remove-circle"></span>
+										<% end %>
+								<% end %>
+							</div>
+
+							<div id="comment-content">
+								<%= raw(cr2br(h(mpcomment.content))) %>
+							</div>
+				
+							<div id="comment-liking">
+				 		    	<% if user_has_voted_comm(mpcomment.id) %>
+									<% @like_dislike = comment_liked_or_disliked(mpcomment.id) %>
+									<% mpcomment.mini_post_comment_liking.each do |mini_post_comm_liking| %>
+										<% if (current_user.id == mini_post_comm_liking.user_id) && mini_post_comm_liking.liking %> 
+												<%= form_for(mini_post_comm_liking) do |f| %>
+													<%= f.hidden_field :mini_post_comment_liking_id, :value=> mini_post_comm_liking.id.to_s %>
+													<%= button_to t("you like this post"), mini_post_comm_liking,:class => 'btn btn-xs btn-success', :confirm => 'Are you sure?',:title=>'delete_comment', :method => :delete,:id=>"feed-icon-2013"%>
+												<% end %>	
+										<% elsif (current_user.id == mini_post_comm_liking.user_id) && !mini_post_comm_liking.liking  %>
+											<%= form_for(mini_post_comm_liking) do |f| %>
+												<%= f.hidden_field :mini_post_comment_liking_id, :value=> mini_post_comm_liking.id.to_s %>
+												<%= button_to t("you dont like this post"), mini_post_comm_liking,:class => 'btn btn-xs btn-danger', :confirm => 'Are you sure?', :title=>'delete_comment',:method => :delete,:id=>"feed-icon-2013"%>
+											<% end %>	
+										<% end %>	
+									<% end %>
+								<% else %>
+								<div id="like-2014">
+									<%= form_for(mpcomment.mini_post_comment_liking.build) do |f| %>
+										<%= f.hidden_field :liking, :value=> true %>
+								    	<%= f.hidden_field :mini_post_comment_id, :value=> mpcomment.id.to_s %>
+										<%= submit_tag t("like"),:name=>"feed",:id=>"feed-icon-2013",:class=>'btn btn-xs btn-success' %>
+									<% end %>
+								</div>
+								<div id="dislike-2014">	
+									<%= form_for(mpcomment.mini_post_comment_liking.build) do |f| %>
+										<%= f.hidden_field :liking, :value=> false %>
+								    	<%= f.hidden_field :mini_post_comment_id, :value=> mpcomment.id.to_s %>
+										<%= submit_tag t("dislike"),:name=>"feed",:id=>"feed-icon-2013",:class=>'btn btn-xs btn-danger' %>
+									<% end %>
+								</div>	
+								<% end %>
+			    			</div><!-- comment-liking -->
+			 			</div><!-- comm-right -->
+				    </div><!-- single-comment-2013 -->
+				<% end %>
+				</div><!-- comments-list -->
+	 	<% end %>
+		<div id="add-new-comment-2013" class="nosne">
+			<%= form_for([mini_post, mini_post.mini_post_comment.build]) do |f| %>
+					
+					<div class="row new-comment-div">
+						<div class="col-xs-12">
+							<div class="input-group">
+								<%= f.text_field :content ,:id => "comment-textbox",:placeholder=>t("newcomment") ,:class=>'form-control input-xs'%>
+								<span class="input-group-btn">
+									<%= f.submit t('comment'),:id => "new-comment-bt",:class =>'btn btn-xs btn-success',:title=>t('comment')%>
+								</span>
+							</div>	
+						</div>
+					</div>
+	
+			<% end %>
+		</div>
+	</div>
+	
+		
+   </div>
+ </div>
+
+</div>	
+
+
+

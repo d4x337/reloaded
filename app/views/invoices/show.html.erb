@@ -1,0 +1,50 @@
+<% @title =t('option') %>
+<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<% if current_user.role? :admin %>  
+					<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), options_path %>
+					<%= link_to image_tag("cog_add.png", :border =>0, :mouseover => "cog_add.png", :title => "new",:size => "16x16" ), new_option_path %>
+					<%= link_to image_tag("cog_edit.png", :border =>0, :mouseover => "cog_edit.png", :title => t(:edit),:size => "16x16" ), edit_option_path(@option) %>
+				<% end %>
+				
+			</div>
+			<div id="d4x-title-evox">
+			</div>
+		</div>
+		<div id="center-container">
+			<table id="show-snippet">
+				<tr>
+					<td colspan="5" class="show-item-title"><%= @option.id %></td>
+				</tr>
+				<tr>
+					<td width="20%"></td>
+					<td class="show-item-label"><%= t('name') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= @option.name %></td>
+					<td width="2%"></td>
+				</tr>
+				<tr>
+					<td width="20%"></td>
+					<td class="show-item-label"><%= t('value') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= @option.value %></td>
+					<td width="2%"></td>
+				</tr>
+				<tr>
+					<td width="20%"></td>
+					<td class="show-item-label"><%= t('description') %></td>
+					<td width="2%"></td>
+					<td class="show-item-data"><%= @option.description %></td>
+					<td width="2%"></td>
+				</tr>
+				<tr>
+					<td colspan="5">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="5">&nbsp;</td>
+				</tr>	
+			</table>
+		</div>
+		<div id="paginator"></div>
+</div>

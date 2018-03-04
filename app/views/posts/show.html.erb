@@ -1,0 +1,65 @@
+<% @title = d4x_sanitizer(t('blogging')) %>
+<div class="blog">
+	
+<% if @post %>
+		<div id="d4x-post0" border="black">
+			<a href="#" class="pull-left">
+		        <% if @post.user.avatar(:thumb).present? %>
+		       		<img alt="image" class="img-circle animated tada"  width="70px" src="<%= @post.user.avatar.url(:thumb) %>">
+		       	<% else %>
+		    		<img alt="image" class="img-circle" src="<%= image_url 'missing_avatar.png' %>" width="20px"/>
+				<% end %>
+	   	    </a>
+		 	<p align="right" class="yellow small">
+				<% if @post.updated_at.present? %>
+					<%= @post.updated_at.to_s(:long) %> 
+				<% else %> 
+					<%= @post.created_at.to_s(:long) %>
+				<% end %>
+			</p>
+			<br />
+		 	<p align="center" class="white">
+				<b><%= @post.title %></b>
+			</p>
+			<br />
+			<div id="body-post">
+		 		<div id="body-post-text">
+			    	<% @contempt = raw(@post.content) %>
+		    	 	<%  @contempt.sub! '<img src=','<img class="blog-image" src='%>
+		        	<%= raw(@contempt) %>
+		     	 </div>
+			</div>
+			<div id="body-image">
+		 		<div id="body-post-text" class="center">
+			    	 <% if @post.image.present? %>
+			    	 	 <%= image_tag(@post.image.url,:class=>'post-image') %>
+		   			 <% end %>
+		     	 </div>
+			</div>
+			
+			<div id="footer-post">
+				<div id="footer-post-left-text">
+					<% if @post.post_tag.count > 0 %>
+							<%=  image_tag("tag_red.png", :border =>0 , :mouseover => "tag_red.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16") %>
+							<% @post.post_tag.each do |post_tag| %>
+								<%= Tag.find(post_tag.tag_id).name %>; 
+							<% end %>
+					<% end %>
+				</div>
+			
+				<div id="footer-post-right-text">
+					<%= d4x_sanitizer(t("author")) %>:  <b class="lime"><%= @post.user.nickname %></b> - <%= time_ago_in_words(@post.created_at) %> <%= d4x_sanitizer(t("ago")) %> <br>
+				</div>	
+			</div>
+		</div>		
+<% end %>
+	
+</div>
+			
+<script>
+	$(function(){
+		$('.blog').slimScroll({
+			height: '420'
+		});
+	});
+</script>

@@ -1,0 +1,23 @@
+<% @title =t('keyword') %>
+<div id="text-content">
+		<p>
+		  <b><%= t(:id) %></b><br>
+		  <%= @tag.id %>
+		</p>
+		<p>
+		  <b><%= t(:name) %></b><br>
+		  <%= @tag.name %>
+		</p>
+		<p>
+		  <b><%= t(:slug) %></b><br>
+		  <%= @tag.slug %>
+		</p>
+		<p>
+		  <b><%= t(:tag_group) %></b><br>
+		  <%= @tag.tag_group %>
+		</p>
+		<hr>
+		
+		<%= link_to t('edit'), edit_tag_path(@tag) %> |
+		<%= link_to t('back'), tags_path %>
+</div>

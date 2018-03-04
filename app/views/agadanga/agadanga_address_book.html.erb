@@ -1,0 +1,345 @@
+<%= content_for :folders_list do %>
+		<%= render :partial => "no_folder_selected" %>
+<% end %>
+
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "big_icons_some_active" %>
+<% end %>
+
+<div id="settings-pane">
+	<%= form_for(@contact) do |f| %>
+ 		<div id="agadanga-contact-new">
+						<div id="big-card">
+							<div id="badge-card-icon">
+							</div>
+							<div id="badge-title" class="lcd center orange">
+							    <%= f.text_field :name,:class=>'def-input agadanga-name center ',:value=>t("Insert First Name") %>
+							    <%= f.text_field :surname,:class=>'def-input agadanga-surname center',:value=>t("Last Name") %>
+							    <%= f.email_field :email,:class=>'def-input agadanga-email center',:value=>t("e-Mail Address") %>
+							</div>
+							<div id="badge-options">
+						    	    <%= f.submit "add",:class=>'button-agadanga right top',:id=>'add-contact' %>
+							</div>
+						</div>
+						
+						 <div id="left-member-card">
+			 					<div id="photo_container">
+									<div class="wrapper-photo">
+										 <%= f.file_field :photo,:class=>"wrapper_image roundimage round-corners5"%>
+										<%= image_tag "missing_avatar.png",:size =>"60x60",:class=>'roundimage round-corners5 agadanga-avi' %>
+									</div>
+								</div>
+						 </div>
+						
+				    	 <div id="agadanga-right-data-card">
+						    	<%= label_tag d4x_sanitizer(t('age')),nil,{:class=>'lcd'} %><br />
+						    	<%= label_tag d4x_sanitizer(t('sex')),nil,{:class=>'lcd'} %><br />
+						    	<%= label_tag d4x_sanitizer(t('location')),nil,{:class=>'lcd'} %><br />
+						 </div>
+					
+						 <div id="right-data-card">   
+					    	    <%= f.text_field :age,:class=>'def-input agadanga-age' %>				  
+				
+				<%= f.select(:gender,options_for_select([[t('male'), 'M'], [t('female'), 'F'],[t('choose'), '0']], '0'), :class =>  "thin-control",:size =>"20") %><br />
+		
+				<%= f.select(:country , options_for_select([
+				[t('choose'), ' '],
+				['Afghanistan', 'AF'],
+				['Albania', 'AL'],
+				['Algeria', 'DZ'],
+				['American Samoa', 'AS'],
+				['Andorra', 'AD'], 
+				['Angola', 'AO'],
+				['Anguilla', 'AI'],
+				['Antarctica', 'AQ'],
+				['Antigua & Barbuda', 'AG'], 
+				['Argentina', 'AR'],
+				['Armenia', 'AM'], 
+				['Aruba', 'AW'], 
+				['Australia', 'AU'], 
+				['Austria', 'AT'], 
+				['Azerbaijan', 'AZ'],
+				['Bahamas', 'BS'], 
+				['Bahrain', 'BH'], 
+				['Bangladesh', 'BD'],
+				['Barbados', 'BB'],
+				['Belarus', 'BY'], 
+				['Belgium', 'BE'], 
+				['Belize', 'BZ'],
+				['Benin', 'BJ'],
+				['Bermuda', 'BM'], 
+				['Bhutan', 'BT'],
+				['Bolivia', 'BO'], 
+				['Bosnia and Herzeg.', 'BA'],
+				['Botswana', 'BW'],
+				['Bouvet Island', 'BV'], 
+				['Brazil', 'BR'],
+				['British Ind. Ocean', 'IO'], 
+				['Brunei Darussalam', 'BN'], 
+				['Bulgaria', 'BG'],
+				['Burkina Faso', 'BF'],
+				['Burundi', 'BI'], 
+				['Cambodia', 'KH'],
+				['Cameroon', 'CM'],
+				['Canada', 'CA'],
+				['Cape Verde', 'CV'],
+				['Cayman Islands', 'KY'],
+				['Central Afr.Republic', 'CF'],
+				['Chad', 'TD'],
+				['Chile', 'CL'], 
+				['China', 'CN'], 
+				['Christmas Island', 'CX'],
+				['Cocos Islands', 'CC'], 
+				['Colombia', 'CO'],
+				['Comoros', 'KM'],
+				['Congo', 'CG'],
+				['Congo, Republic of', 'CD'], 
+				['Cook Islands', 'CK'],
+				['Costa Rica', 'CR'],
+				['Cote d`Ivoire', 'CI'],
+				['Croatia (Hrvatska)', 'HR'],
+				['Cuba', 'CU'],
+				['Cyprus', 'CY'],
+				['Czech Republic', 'CZ'],
+				['Denmark', 'DK'],
+				['Djibouti', 'DJ'],
+				['Dominica', 'DM'],
+				['Dominican Republic', 'DO'],
+				['East Timor', 'TP'],
+				['Ecuador', 'EC'], 
+				['Egypt', 'EG'], 
+				['El Salvador', 'SV'],
+				['Equatorial Guinea', 'GQ'],
+				['Eritrea', 'ER'],
+				['Estonia', 'EE'],
+				['Ethiopia', 'ET'],
+				['Falkland Islands', 'FK'],
+				['Faroe Islands', 'FO'],
+				['Fiji', 'FJ'],
+				['Finland', 'FI'], 
+				['France', 'FR'],
+				['France, Metropol.', 'FX'],
+				['French Guiana', 'GF'],
+				['French Polynesia', 'PF'],
+				['French Sout Terr.', 'TF'], 
+				['Gabon', 'GA'],
+				['Gambia', 'GM'],
+				['Georgia', 'GE'],
+				['Germany', 'DE'],
+				['Ghana', 'GH'],
+				['Gibraltar', 'GI'],
+				['Greece', 'GR'],
+				['Greenland', 'GL'],
+				['Grenada', 'GD'],
+				['Guadeloupe', 'GP'],
+				['Guam', 'GU'],
+				['Guatemala', 'GT'],
+				['Guinea', 'GN'],
+				['Guinea-Bissau', 'GW'],
+				['Guyana', 'GY'],
+				['Haiti', 'HT'],
+				['Heard Mc Donald', 'HM'],
+				['Holy See (Vatican)', 'VA'],
+				['Honduras', 'HN'],
+				['Hong Kong', 'HK'],
+				['Hungary', 'HU'],
+				['Iceland', 'IS'],
+				['India', 'IN'],
+				['Indonesia', 'ID'], 
+				['Iran', 'IR'],
+				['Iraq', 'IQ'],
+				['Ireland', 'IE'],
+				['Israel', 'IL'],
+				['Italy', 'IT'],
+				['Jamaica', 'JM'],
+				['Japan', 'JP'],
+				['Jordan', 'JO'],
+				['Kazakhstan', 'KZ'],
+				['Kenya', 'KE'],
+				['Kiribati', 'KI'],
+				['Korea, Democratic', 'KP'],
+				['Korea, Republic of', 'KR'],
+				['Kuwait', 'KW'],
+				['Kyrgyzstan', 'KG'],
+				['Lao Peoples', 'LA'],
+				['Latvia', 'LV'],
+				['Lebanon', 'LB'],
+				['Lesotho', 'LS'],
+				['Liberia', 'LR'],
+				['Libyan', 'LY'],
+				['Liechtenstein', 'LI'],
+				['Lithuania', 'LT'],
+				['Luxembourg', 'LU'],
+				['Macau', 'MO'],
+				['Macedonia', 'MK'],
+				['Madagascar', 'MG'],
+				['Malawi', 'MW'],
+				['Malaysia', 'MY'],
+				['Maldives', 'MV'],
+				['Mali', 'ML'],
+				['Malta', 'MT'],
+				['Marshall Islands', 'MH'],
+				['Martinique', 'MQ'],
+				['Mauritania', 'MR'],
+				['Mauritius', 'MU'],
+				['Mayotte', 'YT'],
+				['Mexico', 'MX'],
+				['Micronesia', 'FM'],
+				['Moldova', 'MD'],
+				['Monaco', 'MC'],
+				['Mongolia', 'MN'],
+				['Montserrat', 'MS'],
+				['Morocco', 'MA'],
+				['Mozambique', 'MZ'],
+				['Myanmar', 'MM'],
+				['Namibia', 'NA'],
+				['Nauru', 'NR'],
+				['Nepal', 'NP'],
+				['Netherlands', 'NL'], 
+				['Netherlands Antilles', 'AN'],
+				['New Caledonia', 'NC'],
+				['New Zealand', 'NZ'],
+				['Nicaragua', 'NI'],
+				['Niger', 'NE'],
+				['Nigeria', 'NG'],
+				['Niue', 'NU'],
+				['Norfolk Island', 'NF'],
+				['Northern Mariana Isl', 'MP'],
+				['Norway', 'NO'],
+				['Oman', 'OM'],
+				['Pakistan', 'PK'],
+				['Palau', 'PW'],
+				['Panama', 'PA'],
+				['Papua New Guinea', 'PG'],
+				['Paraguay', 'PY'],
+				['Peru', 'PE'],
+				['Philippines', 'PH'],
+				['Pitcairn', 'PN'],
+				['Poland', 'PL'],
+				['Portugal', 'PT'],
+				['Puerto Rico', 'PR'],
+				['Qatar', 'QA'],
+				['Reunion', 'RE'],
+				['Romania', 'RO'],
+				['Russian Federation', 'RU'],
+				['Rwanda', 'RW'],
+				['Saint Kitts & Nevis', 'KN'],
+				['Saint LUCIA', 'LC'],
+				['Saint Vincent', 'VC'],
+				['Samoa', 'WS'],
+				['San Marino', 'SM'],
+				['Sao Tome & Principe', 'ST'], 
+				['Saudi Arabia', 'SA'],
+				['Senegal', 'SN'],
+				['Seychelles', 'SC'],
+				['Sierra Leone', 'SL'],
+				['Singapore', 'SG'],
+				['Slovakia', 'SK'],
+				['Slovenia', 'SI'],
+				['Solomon Islands', 'SB'],
+				['Somalia', 'SO'],
+				['South Africa', 'ZA'],
+				['South Georgia', 'GS'],
+				['Spain', 'ES'],
+				['Sri Lanka', 'LK'],
+				['St. Helena', 'SH'],
+				['St.Pierre & Miquelon', 'PM'],
+				['Sudan', 'SD'],
+				['Suriname', 'SR'],
+				['Svalbard', 'SJ'],
+				['Swaziland', 'SZ'],
+				['Sweden', 'SE'],
+				['Switzerland', 'CH'],
+				['Syrian Arab Republic', 'SY'],
+				['Taiwan', 'TW'],
+				['Tajikistan', 'TJ'],
+				['Tanzania', 'TZ'],
+				['Thailand', 'TH'],
+				['Togo', 'TG'],
+				['Tokelau', 'TK'],
+				['Tonga', 'TO'],
+				['Trinidad and Tobago', 'TT'],
+				['Tunisia', 'TN'],
+				['Turkey', 'TR'],
+				['Turkmenistan', 'TM'],
+				['Turks & Caicos Isl.', 'TC'],
+				['Tuvalu', 'TV'],
+				['Uganda', 'UG'],
+				['Ukraine', 'UA'],
+				['United Arab Emir.', 'AE'],
+				['United Kingdom', 'GB'],
+				['United States', 'US'],
+				['United States Minor', 'UM'],
+				['Uruguay', 'UY'],
+				['Uzbekistan', 'UZ'],
+				['Vanuatu', 'VU'],
+				['Venezuela', 'VE'],
+				['Viet Nam', 'VN'],
+				['Virgin Islands (Brit)', 'VG'],
+				['Virgin Islands (U.S.)', 'VI'],
+				['Wallis & Futuna Isl.', 'WF'], 
+				['Western Sahara', 'EH'],
+				['Yemen', 'YE'],
+				['Yugoslavia', 'YU'],
+				['Zambia', 'ZM'],
+				['Zimbabwe', 'ZW']], '0'), :class =>  "thin-control" ,:size =>"20") %><br />
+			  </div>
+						 	<br />
+						</div>
+	
+<% end %>	
+<% unless @contacts.blank? %>
+		<% @contacts.each do |contact| %>
+					<div id="agadanga-contact">
+						<div id="big-card">
+							<div id="badge-card-icon">
+							</div>
+							<div id="badge-title" class="lcd center orange">
+								<%= label_tag contact.name,nil,{:class=>'lcd2 orange'} %> 
+								<%= label_tag contact.surname,nil,{:class=>'lcd2 yellow'} %> <br />
+								<%= label_tag contact.email.to_s.downcase,nil,{:id=>'email-format',:class=>'agadanga-email-contact'} %> 
+							</div>
+							<div id="badge-options">
+								<%= button_to "X", contact, :confirm => 'Are you sure you want to delete this Contact?', :method => :delete, :class => 'button-agadanga right',:name => 'zdestroy',:size => "16x16" %>
+							</div>
+						</div>
+						
+						 <div id="left-member-card">
+							<% if File.exists?("#{RAILS_ROOT}/"+contact.photo.url) %>
+									<%= image_tag contact.photo.url,:size =>"60x60",:class=>'roundimage round-corners5 agadanga-avi2' %>
+							<% else %>
+					 			<%= image_tag "missing_avatar.png",:size =>"60x60",:class=>'roundimage round-corners5' %>
+							<% end %>
+					
+					
+					
+						 </div>
+						
+				    	 <div id="right-data-card">
+						    	<%= label_tag d4x_sanitizer(t('age')),nil,{:class=>'lcd2 orange'} %><br /> 
+								<%= label_tag d4x_sanitizer(t('sex')),nil,{:class=>'lcd2 orange'} %><br /> 
+					
+								<%= label_tag d4x_sanitizer(t('location')),nil,{:class=>'lcd2 orange'} %><br /> 
+						 </div>
+					
+						 <div id="right-data-card">   
+					      	<%= label_tag contact.age.to_s,nil,{:class=>'lcd2 yellow'} %> <br /> 
+							<%= label_tag contact.gender,nil,{:class=>'lcd2 yellow'} %> 
+						     	<% if (contact.gender.upcase == 'M') %>
+									<%= image_tag "male.png",:alt=>'male',:title=>'male',:class=>'bullet' %>
+								<% elsif contact.gender.upcase == 'F' %>
+									<%= image_tag "female.png",:alt=>'female',:title=>'female',:class=>'bullet' %>
+								<% end %><br />
+						    	<%= label_tag contact.country,nil,{:class=>'lcd2 yellow'} %>&nbsp;
+						    	<%=image_tag contact.country.downcase+".png",:title=>contact.country %>
+					    	<br />
+						 	<br />
+						</div>
+						<div id="right-data-icons">
+						 
+						</div>
+					</div>	
+			<% end %>
+	<% end %>
+</div>
+<% flash[:notice] = @contacts.count.to_s+ t("contacts in your address-book") %>

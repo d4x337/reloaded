@@ -1,0 +1,41 @@
+<div id="text-content">
+			<h3><%= t('listing mini_post_likings') %></h3>
+			<p id="notice">
+				<%= notice %>
+			</p>
+		<%= link_to t('new mini_post_liking'), new_mini_post_liking_path %>
+		<br><br>
+		<table width="100%">
+		  <tr>
+		  	<th align="left" width="5%" ><%=t(:id) %></th>
+		    <th align="left" width="15%" ><%=t(:mini_post_id) %></th>
+		    <th align="left" width="20%" ><%=t(:user_id) %></th>
+		    <th align="left" width="25%" ><%=t(:created_at) %></th>
+		    <th align="left" width="10%" ><%=t(:linking) %></th>
+		    <th align="left" width="10%" ><%=t(:deleted) %></th>
+		  </tr>
+		 <% @mini_post_likings.each do |mini_post_liking| %>
+		  <tr>
+		  	<td><%= mini_post_liking.id %></td>
+		    <td><%= mini_post_liking.mini_post_id %></td>
+		    <td><%= mini_post_liking.user_id %></td>
+		    <td><%= mini_post_liking.created_at %></td>
+		    <td><%= mini_post_liking.liking %></td>
+		 	<td><%= mini_post_liking.deleted %></td>
+		 	<td>
+		 		<%= link_to image_tag("icon-list-new.gif", :border =>0, :mouseover => "icon-list-new-over.gif", :title => t("icon-show") ,:size => "16x16"), mini_post_liking %>
+		 	</td>
+			<td>
+				<% if can? :update, @mini_post_liking %>  
+					<%= link_to image_tag("icon-list-update.gif", :border =>0, :mouseover => "icon-list-update-over.gif", :title => t("icon-edit"),:size => "16x16" ), edit_mini_post_liking_path(mini_post_liking) %>
+				<% end %>
+			</td>
+		    <td>
+			
+					<%= button_to "", mini_post_liking, :confirm => 'Are you sure?', :method => :delete ,:size => "20x20"%>
+				
+			</td>
+		  </tr>
+		<% end %>
+		</table>
+</div>

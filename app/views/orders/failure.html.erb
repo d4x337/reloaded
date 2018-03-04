@@ -1,0 +1,5 @@
+<h2 class="nice-red center"><%= d4x_sanitizer(t('transaction failed'))%></h2>
+<h4 class="center"><%= d4x_sanitizer(t('credit card problem'))%></h4>
+<h5 class="grey">Agadanga <%= d4x_sanitizer(t('team'))%></h5>
+<% flash[:alert] = t("problem with credit card transaction") %>	
+<% flash[:notice] = "Your Transaction is #{params[:st]} fort amount of €#{params[:amt]}. " if params[:st] %>

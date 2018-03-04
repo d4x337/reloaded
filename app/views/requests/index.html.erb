@@ -1,0 +1,103 @@
+<script language="JavaScript">
+  $( document ).ready(function() {
+    $('#main-menu-social').addClass("navigation__sub--active navigation__sub--toggled");
+    $('#menu-requests').removeClass("navigation__sub").addClass("navigation__active");
+  });
+</script>
+<h4><%= label_tag t("received requests"),nil,{:class=>"bluesocial"} %></h4>
+<div class="listview listview--hover">
+<% unless @received_requests.blank? %>
+    <% @received_requests.each do |request| %>
+        <% @sender = User.find(request.user_id) %>
+        <a href="/reveal?token=<%= request.id %>" class="listview__item traspa">
+          <% if @sender.avatar(:thumb).present? %>
+              <img class="listview__img" src="<%= @sender.avatar.url(:thumb) %>" alt="">
+          <% else %>
+              <img class="listview__img" src="/assets/missing_avatar.png" alt="">
+          <% end %>
+
+          <div class="listview__content">
+            <div class="listview__heading">
+              <%= label_tag @sender.firstname,nil,{:class=>'xname'} %>&nbsp;&nbsp;<%= label_tag "@"+@sender.nickname.downcase,nil,{:class=>'lcd orange'} %>
+              <%= t("requested") %>
+              <%= t("You") %>
+              <small class="pull-right">
+                <%= time_ago_in_words_converter(request.created_at) %>&nbsp;<%= t('ago') %>
+                <br>
+                <% if request.answered? %>
+                    <%= form_for(request) do |f| %>
+                        <%= f.hidden_field :target_id, :value=> request.target_id %>
+                        <%= button_to request,:class=>"contacts__btn",:method => :delete,:id=>"btrequest",:title=>"delete request",:confirm => t('Are you sure you want to delete this request?') do %>
+                            IGNORE
+                        <% end %>
+                    <% end %>
+                <% else %>
+                    <%= form_for(request)  do |f| %>
+                        <%= f.button t("accept"),:name=>'accept',:class=>'btn btn-xs btn-dark',:value=>"accept" %>
+                        <% f.button t("ignore"),:name=>'ignore',:class=>'btn btn-xs btn-dark',:value=>"ignore" %>
+                    <% end %>
+                <% end %>
+              </small>
+              <br>
+              <%= t("status") %>
+              <%= label_tag request.status,nil,{:class=>'lcd yellow'} %>
+            </div>
+
+          </div>
+        </a>
+    <% end %>
+<% else %>
+    You do not have any New Requests
+    <br>
+    <br>
+    <br>
+<% end %>
+</div>
+
+<h4><%= label_tag t('sent requests'),nil,{:class=>"bluesocial"} %></h4>
+<div class="listview listview--hover">
+<% unless @sent_requests.blank? %>
+    <% @sent_requests.each do |request| %>
+    <% @destination = User.find(request.target_id) %>
+
+        <a href="/reveal?token=<%= request.id %>" class="listview__item traspa">
+          <% if @destination.avatar(:thumb).present? %>
+              <img class="listview__img" src="<%= @destination.avatar.url(:thumb) %>" alt="">
+          <% else %>
+              <img class="listview__img" src="/assets/missing_avatar.png" alt="">
+          <% end %>
+
+          <div class="listview__content">
+            <div class="listview__heading">
+              <%= t("You") %>&nbsp;<%= t("Requested") %>&nbsp;&nbsp;&nbsp;<%= label_tag @destination.firstname,nil,{:class=>''} %>&nbsp;&nbsp;<%= label_tag "@"+@destination.nickname.downcase,nil,{:class=>'orange'} %>
+              <small class="pull-right">
+                <%= time_ago_in_words_converter(request.created_at) %>&nbsp;<%= t('ago') %>
+                <br>
+                <% if request.answered? %>
+                    <%= form_for(request) do |f| %>
+                        <%= f.hidden_field :target_id, :value=> request.target_id %>
+                        <%= button_to request,:class=>"btn btn-sm btn-outline-warning",:method => :delete,:id=>"btrequest",:title=>"delete request",data: {:confirm => 'Are you sure you want to delete this request?'} do %>
+                            REVOKE
+                        <% end %>
+                    <% end %>
+                <% else %>
+                    <%= button_to request,:class=>"btn btn-sm btn-outline-warning",:method => :delete,:id=>"btrequest",:title=>"delete request",:confirm => t('Are you sure you want to delete this request?') do %>
+                        REVOKE
+                    <% end %>
+                <% end %>
+              </small>
+              <br>
+              <%= t("status") %>
+              <%= label_tag request.status,nil,{:class=>'yellow'} %>
+
+            </div>
+
+          </div>
+        </a>
+    <% end %>
+<% else %>
+    You do not have any Sent Requests
+    <br>
+    <br>
+<% end %>
+</div>

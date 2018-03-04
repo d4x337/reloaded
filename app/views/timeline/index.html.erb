@@ -1,0 +1,673 @@
+<% @title = d4x_sanitizer(t('timeline')) %>
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-home').removeClass("navigation__active").addClass("navigation__sub");
+        $('#main-menu-social').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-timeline').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+<% content_for :head do %>
+    <script language="JavaScript">
+      $( document ).ready(function() {
+
+        $(document).on("click", ".docomment", function(e) {
+          bootbox.dialog({
+            title: "Post a Comment",
+            className: "modal-style",
+            message:
+            '<form accept-charset="UTF-8" action="/posts" class="edit_post" enctype="multipart/form-data" id="edit_post_1" method="post">' +
+            '<div class="row">' +
+            '<div class="col-md-12">' +
+            '<textarea class="form-control" id="tshare" name="xyz" maxlength="250"></textarea>' +
+            '<script>$("#tshare").maxlength({alwaysShow: true,validate: false,allowOverMax: false});'+
+            '</script\>' +
+    '</div>' +
+    '</div>' +
+    '</form>',
+    buttons: {
+    success: {
+    label: "Comment",
+    className: "btn-primary",
+    callback: function () {
+    var name = $('#tshare').val();
+    var type = $('#tshare').val();
+    var mpid = $('#tshare').val();
+    //var answer = $("input[name='awesomeness']:checked").val()
+    //Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+
+    $.ajax({ url: 'sharel',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: {xvalue: name, stype: type, id: mpid },
+    dataType: 'json',
+    success: function(response) {
+
+    var Xcontent = "";
+    var json = $.parseJSON(response);
+    $(json).each(function(i,val){
+    $.each(val,function(k,v){
+    if (k == "content") {
+    Xcontent = v;
+    }
+    });
+    });
+
+    $("#result").hide(function(){$("div.ajaxResult").fadeIn();});
+    $("#success").show(function(){
+    $("#success").append(Xcontent);
+    $("#success").fadeIn(3000);
+    });
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+    }
+
+    });
+
+    }
+    }
+    }
+    });
+    });
+
+    $(document).on("click", ".sharel", function(e) {
+    bootbox.dialog({
+    title: "Share with Lounge",
+    className: "modal-style",
+    message:
+    '<form accept-charset="UTF-8" action="/posts" class="edit_post" enctype="multipart/form-data" id="edit_post_1" method="post">' +
+  '<div class="row">' +
+  '<div class="col-md-12">' +
+  '<textarea class="form-control" id="tshare" name="xyz" maxlength="250"></textarea>' +
+  '<script>$("#tshare").maxlength({alwaysShow: true,validate: false,allowOverMax: false});'+
+'</script\>' +
+'</div>' +
+  '</div>' +
+  '</form>',
+    buttons: {
+    success: {
+    label: "Share with Lounge",
+    className: "btn-warning",
+    callback: function () {
+    var name = $('#tshare').val();
+    var type = $('#tshare').val();
+    var mpid = $('#tshare').val();
+    //var answer = $("input[name='awesomeness']:checked").val()
+    //Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+
+    $.ajax({ url: 'sharel',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: {xvalue: name, stype: type, id: mpid },
+    dataType: 'json',
+    success: function(response) {
+
+    var Xcontent = "";
+    var json = $.parseJSON(response);
+    $(json).each(function(i,val){
+    $.each(val,function(k,v){
+    if (k == "content") {
+    Xcontent = v;
+    }
+    });
+    });
+
+    $("#result").hide(function(){$("div.ajaxResult").fadeIn();});
+    $("#success").show(function(){
+    $("#success").append(Xcontent);
+    $("#success").fadeIn(3000);
+    });
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+    }
+
+    });
+
+    }
+    }
+    }
+    });
+    });
+
+    $(document).on("click", ".sharep",function(e) {
+    bootbox.dialog({
+    title: "Share to Public",
+    className: "modal-style",
+    message:
+    '<form accept-charset="UTF-8" action="/posts" class="edit_post" enctype="multipart/form-data" id="edit_post_1" method="post">' +
+  '<div class="row">' +
+  '<div class="col-md-12">' +
+  '<textarea class="form-control" id="tshare" name="xyz" maxlength="250"><%= %></textarea>' +
+  '<script>$("#tshare").maxlength({alwaysShow: true,validate: false,allowOverMax: false});'+
+'</script\>' +
+'</div>' +
+  '</div>' +
+  '</form>',
+    buttons: {
+    success: {
+    label: "Share to Public",
+    className: "btn-primary",
+    callback: function () {
+    var name = $('#tshare').val();
+    var type = $('#tshare').val();
+    var mpid = $('#tshare').val();
+    //var answer = $("input[name='awesomeness']:checked").val()
+    //Example.show("Hello " + name + ". You've chosen <b>" + answer + "</b>");
+
+    $.ajax({ url: 'sharel',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: {xvalue: name, stype: type, id: mpid },
+    dataType: 'json',
+    success: function(response) {
+
+    var Xcontent = "";
+    var json = $.parseJSON(response);
+    $(json).each(function(i,val){
+    $.each(val,function(k,v){
+    if (k == "content") {
+    Xcontent = v;
+    }
+    });
+    });
+
+    $("#result").hide(function(){$("div.ajaxResult").fadeIn();});
+    $("#success").show(function(){
+    $("#success").append(Xcontent);
+    $("#success").fadeIn(3000);
+    });
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+    }
+
+    });
+
+    }
+    }
+    }
+    });
+    });
+
+    $(".liking").click(function() {
+    action = $(this).closest('#like-2014').find('.act').val();
+    mini_post_liking_id  = $(this).closest('#like-2014').find('#mini_post_liking_mini_post_liking_id').val();
+    mini_post_id = $(this).closest('#like-2014').find('#mini_post_liking_mini_post_id').val();
+
+    $.ajax({ url: 'liking',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: {mp_id: + mini_post_id,act: + action,mpl_id: + mini_post_liking_id},
+    success: function(response) {
+    if (response > 0) {
+    $('#liking_'+mini_post_id).removeClass('icon-large-grey').addClass('icon-large-red').text;
+    $('#act_'+mini_post_id).val('0')
+    $('.mplid_'+mini_post_id).val(response)
+    } else if (response == 0) {
+    $('#liking_'+mini_post_id).removeClass('icon-large-red').addClass('icon-large-grey').text;
+    $('#act_'+mini_post_id).val('1')
+    $('.mplid_'+mini_post_id).val('-337')
+    } else if (response < 0) {
+    alert('error')
+    }
+    }
+    });
+    return false;
+    });
+
+    $(".disliking").click(function() {
+    action = $(this).closest('#dislike-2014').find('.disact').val();
+    mini_post_liking_id  = $(this).closest('#dislike-2014').find('#mini_post_liking_mini_post_liking_id').val();
+    mini_post_id = $(this).closest('#dislike-2014').find('#mini_post_liking_mini_post_id').val();
+
+    $.ajax({ url: 'disliking',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: {mp_id: + mini_post_id,act: + action,mpl_id: + mini_post_liking_id},
+    success: function(response) {
+    if (response > 0) {
+
+    $('#disliking_'+mini_post_id).removeClass('icon-large-grey').addClass('icon-large-violet').text;
+    $('#disact_'+mini_post_id).val('0')
+    $('.mpdid_'+mini_post_id).val(response)
+    } else if (response == 0) {
+
+    $('#disliking_'+mini_post_id).removeClass('icon-large-violet').addClass('icon-large-grey').text;
+    $('#disact_'+mini_post_id).val('1')
+    $('.mpdid_'+mini_post_id).val('-337')
+    } else if (response < 0) {
+    alert('error')
+    }
+    }
+    });
+    return false;
+    });
+
+    $(".favoriting").click(function() {
+    action = $(this).closest('#favorite-2014').find('.favact').val();
+    mini_post_favorite_id  = $(this).closest('#favorite-2014').find('#mini_post_favorite_mini_post_favorite_id').val();
+    mini_post_id = $(this).closest('#favorite-2014').find('#mini_post_favorite_mini_post_id').val();
+
+    $.ajax({ url: 'favoriting',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: {mp_id: + mini_post_id,act: + action,mpf_id: + mini_post_favorite_id},
+    success: function(response) {
+    if (response > 0) {
+    $('#favoriting_'+mini_post_id).removeClass('icon-large-grey').addClass('icon-large-green').text;
+    $('#favact_'+mini_post_id).val('0')
+    $('.mpfav_'+mini_post_id).val(response)
+    } else if (response == 0) {
+    $('#favoriting_'+mini_post_id).removeClass('icon-large-green').addClass('icon-large-grey').text;
+    $('#favact_'+mini_post_id).val('1')
+    $('.mpfav_'+mini_post_id).val('-337')
+    } else if (response < 0) {
+    alert('error')
+    }
+    }
+    });
+    return false;
+    });
+
+    $(".like").click(function() {
+    //mini_post_id = $("#mini_post_liking_mini_post_id").val();
+    mini_post_id = $(this).closest('#like-2014').find('#mini_post_liking_mini_post_id').val();
+    //alert(mini_post_id);
+    $.ajax({ url: 'like',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: 'mp_id=' + mini_post_id,
+    success: function(response) {
+    if (response == 'true') {
+    $('#like_'+mini_post_id).removeClass('icon-large-grey like').addClass('icon-large-green liked').text;
+    } else {
+    }
+    }
+    });
+    return false;
+    });
+
+    $(".liked").click(function() {
+    mini_post_id = $(this).closest('#liked-2014').find('#mini_post_liking_mini_post_id').val();
+    mini_post_liking_id = $(this).closest('#liked-2014').find('#mini_post_liking_mini_post_liking_id').val();
+    //alert(mini_post_id);
+    //alert(mini_post_liking_id);
+    $.ajax({ url: 'liked',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: 'mpl_id=' + mini_post_liking_id,
+    success: function(response) {
+    if (response == 'true') {
+    $('#liked_'+mini_post_id).removeClass('icon-large-green liked').addClass('icon-large-grey like').text;
+    } else {
+
+    }
+    }
+    });
+    return false;
+    });
+
+    $("#dislike").click(function() {
+    alert('ok dislike');
+    return false;
+
+    xvalue = $("#result").html()
+    $.ajax({ url: 'reset',
+    type: 'POST',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: 'xvalue=' + xvalue,
+    success: function(response) {
+    $('#result').html(response);
+    }
+    });
+    return false;
+    });
+
+    });
+    </script>
+<% end %>
+
+<% content_for :where do %>
+    <%= label_tag t('timeline'),nil,{:class=>"navbar-where"} %>
+<% end %>
+
+<% content_for :javascript_includes do %>
+    <%= javascript_include_tag 'jquery.sausage' %>
+
+    <script type="text/javascript">
+    $(window).sausage();
+    (function() {
+    var page = 1,
+    loading = false;
+
+    function nearBottomOfPage() {
+    return $(window).scrollTop() > $(document).height() - $(window).height() - 50;
+    }
+
+    $(window).scroll(function(){
+    if (loading) { // do nothing if already loading a new page
+    return;
+    }
+
+    if(nearBottomOfPage()) {
+    loading=true;
+    page++;
+    $('#d4x-spinner').removeClass('none');
+    $.ajax({ // send an ajax-request to load the next page
+    url: '/wall?page'+page+'&last='+$('.list').attr('last'),
+    type: 'get',
+    dataType: 'script',
+    success: function() { // after successfully completing the ajax-request redraw the sausage-navigation.
+    $(window).sausage('draw');
+    loading=false;
+    $('#d4x-spinner').addClass('none');
+    }
+    });
+    }
+    });
+
+
+    }());
+    </script>
+<% end %>
+
+<script language="JavaScript">
+  $( document ).ready(function() {
+    $('#icon-compose-new').css('color','grey');
+    $('#icon-received').css('color','#0000A0');
+    $('#icon-sent').css('color','grey');
+    $('#icon-contacts').css('color','grey');
+    $('#icon-profile').css('color','grey');
+    $('#icon-settings').css('color','grey');
+
+    $('.btnreveal').click(function(){
+      $('#spinner').removeClass('none');
+      $('#link-compose').addClass('none');
+    });
+    $('.btnreveal').click(function(){
+      $('#spinner').removeClass('none');
+      $('#link-compose').addClass('none');
+    });
+  });
+</script>
+<script language="JavaScript">
+  $( document ).ready(function() {
+    $('#icon-comment').click(function() {
+      $('#groupfile').addClass('none');
+      $('#icon-comment').removeClass('white').addClass('orange');
+      $('#icon-photo').removeClass('orange').addClass('white');
+      $('#icon-video').removeClass('orange').addClass('white');
+      $('#icon-youtube').removeClass('orange').addClass('white');
+      $('#mini_post_content').attr("placeholder", "Share your status or thoughts with your network");
+      return false;
+    });
+
+    $('#icon-photo').click(function() {
+      $('#groupfile').removeClass('none');
+      $('#icon-comment').removeClass('orange').addClass('white');
+      $('#icon-photo').removeClass('white').addClass('orange');
+      $('#icon-video').removeClass('orange').addClass('white');
+      $('#icon-youtube').removeClass('orange').addClass('white');
+      $('#icon-file').removeClass('fa-video-camera').addClass('fa-photo');
+      $('#mini_post_content').attr("placeholder", "Add a caption for your picture and choose the file");
+      return false;
+    });
+
+    $('#icon-video').click(function() {
+      $('#groupfile').removeClass('none');
+      $('#icon-comment').removeClass('orange').addClass('white');
+      $('#icon-photo').removeClass('orange').addClass('white');
+      $('#icon-video').removeClass('white').addClass('orange');
+      $('#icon-youtube').removeClass('orange').addClass('white');
+      $('#icon-file').removeClass('fa-photo').addClass('fa-video-camera');
+      $('#mini_post_content').attr("placeholder", "Add a caption for your video and choose the file");
+      return false;
+    });
+
+    $('#icon-youtube').click(function() {
+      $('#groupfile').addClass('none');
+      $('#icon-comment').removeClass('orange').addClass('white');
+      $('#icon-photo').removeClass('orange').addClass('white');
+      $('#icon-video').removeClass('orange').addClass('white');
+      $('#icon-youtube').removeClass('white').addClass('orange');
+      $('#mini_post_content').attr("placeholder", "YouTube video: write a caption and paste the link");
+      return false;
+    });
+
+    $('#icon-map').click(function() {
+      return false;
+    });
+
+  });
+</script>
+<style>
+  .received-list{
+    margin-left:-40px;
+    height:100px;
+  }
+  .panel-body{
+    padding:0;
+  }
+  #share-submit-2013{
+    margin-left:12px;
+    margin-top:3px;
+
+  }
+  #pic-span{
+    background-color:transparent;
+    height:30px;
+    border-left:0px;
+    border-color:#0B4D8F;
+    margin-bottom:0px;
+    width:100%;
+
+  }
+  #groupfile{
+    margin-left:3px;
+    width:105%;
+    margin-bottom:3px;
+  }
+  #mini_post_content{
+    padding:10px;
+    background-color:#0B4D8F;
+    margin-left:12px;
+    margin-bottom:5px;
+    margin-top:2px;
+    width:100%;
+
+    border-radius:5px;
+    border:2px solid white;
+    color:white;
+
+  }
+  .close{
+    margin-top:-30px;
+
+  }
+  .modal-content{
+    background-color:#0a6aa1;
+    color:black;
+  }
+  .modal-header{
+    background-color:#0B4D8F;
+    color:yellow;
+  }
+  .modal-title{
+
+    color:yellow;
+  }
+  #newpost{
+    margin-left:1px;
+  }
+  .orange{
+    color:orange;
+  }
+</style>
+<script language="javascript">
+  $(document).ready(function(){
+
+    $(".iconlike").click(function(){
+      if ($(this).hasClass('icon-large-red')) {
+        var curSpan = $(this).parent(".counterlikes").children('#likescount').get(0);
+        var spansText = curSpan.innerText;
+        var icurrent =  parseInt(spansText,10);
+        --icurrent;
+        var i = icurrent;
+        $(this).parent(".counterlikes").children('#likescount').html(i.toString());
+        return false;
+      }else if ($(this).hasClass('icon-large-grey')){
+        var curZpan = $(this).parent(".counterlikes").children('#likescount').get(0);
+        var spanzText = curZpan.innerText;
+        var iicurrent =  parseInt(spanzText,10);
+        ++iicurrent;
+        var ii = iicurrent;
+        $(this).parent(".counterlikes").children('#likescount').html(ii.toString());
+        return false;
+      }
+    });
+
+    $(".favoriting").click(function(){
+      if ($(this).hasClass('icon-large-green')) {
+        var curSpan = $(this).parent(".counterfav").children('#favcount').get(0);
+        var spansText = curSpan.innerText;
+        var icurrent =  parseInt(spansText,10);
+        --icurrent;
+        var i = icurrent;
+        $(this).parent(".counterfav").children('#favcount').html(i.toString());
+        return false;
+      }else if ($(this).hasClass('icon-large-grey')){
+        var curZpan = $(this).parent(".counterfav").children('#favcount').get(0);
+        var spanzText = curZpan.innerText;
+        var iicurrent =  parseInt(spanzText,10);
+        ++iicurrent;
+        var ii = iicurrent;
+        $(this).parent(".counterfav").children('#favcount').html(ii.toString());
+        return false;
+      }
+
+    });
+
+  });
+</script>
+<script language="JavaScript">
+  $( document ).ready(function() {
+
+    $('#add-image').click(function() {
+      $('#groupfile').toggle();
+      return false;
+    });
+
+  });
+</script>
+<div class="received-list">
+  <div class="row">
+
+    <div class="col-sm-1 col-xs-1">
+    </div>
+    <div class="col-sm-10 col-xs-10">
+      <div class="row" id="actions-div">
+        <div class="col-sm-1 col-xs-1">
+
+        </div>
+
+        <div class="col-sm-2 col-xs-2">
+          <span class="btn btn-sm" title="Post your Status or Thought"><i class='fa fa-2x fa-comment orange' id="icon-comment" ></i></span>
+        </div>
+
+        <div class="col-sm-2 col-xs-2">
+          <span class="btn btn-sm white" title="Upload a Picture"><i class='fa fa-2x fa-camera-retro white' id="icon-photo" ></i></span>
+        </div>
+
+        <div class="col-sm-2 col-xs-2">
+          <span class="btn btn-sm" title="Upload a Video"><i class='fa fa-2x fa-video-camera white' id="icon-video"></i></span>
+        </div>
+
+        <div class="col-sm-2 col-xs-2">
+          <span class="btn btn-sm white" title="Share a Youtube Video"><i class='fa fa-2x fa-youtube white' id="icon-youtube" ></i></span>
+        </div>
+
+        <div class="col-sm-2 col-xs-2">
+          <span class="btn btn-sm" title="Share a cool place"><i class='fa fa-2x fa-map-marker' id="icon-map" ></i></span>
+        </div>
+
+
+
+      </div>
+
+      <div class="row" id="newpost">
+        <%= form_for(MiniPost.new,:html => { :multipart => true })  do |f| %>
+            <%= f.text_area :content,:class=>"sharze-tarea btn btn-success",:multiline=>false,:class=>'form-control', :placeholder=>d4x_sanitizer(t('Share your status or thoughts with your network'))%>
+            <div class="input-group input-sm none" id="groupfile">
+                <span class="input-group-btn">
+                  <span class="btn btn-sm btn-success btn-inverse" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-photo white" id="icon-file"></i></span>
+                  <%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+                </span>
+              <span class="form-control none" id="pic-span"></span>
+            </div>
+            <%= button_to d4x_sanitizer(t('post')),nil,:class=> "btn btn-success btn-sm block full-width m-b",:id => "share-submit-2013" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-1 col-xs-1">
+    </div>
+  </div>
+
+  <% if !@mini_posts.blank? %>
+      <div class="feed-activity-list" last="<%=@mini_posts.to_a.last.created_at %>">
+  <% else %>
+      <div class="feed-activity-list" last="">
+  <% end %>
+
+  <% unless @mini_posts.blank? %>
+<div id="static-pagination" class="none">
+  <%= will_paginate @mini_posts %>
+</div>
+
+<div id="my-posts">
+  <div class="page-delimiter first-page" data-page="<%= params[:page] || 1 %>"></div>
+  <div id='mini_posts_page-2013' class='list' last="<%=@mini_posts.to_a.last.created_at %>">
+    <div class='page'>
+
+         <%=render :partial => "wall/mini_post", :collection => @mini_posts%>
+
+  </div>
+  </div>
+</div>
+
+<% if @mini_posts.next_page %>
+    <div id="infinite-scrolling">
+      <%= will_paginate @mini_posts %>
+    </div>
+<% end %>
+  <% end %>
+
+  </div>
+  </div>
+
+  <script>
+    $(function(){
+      $('.received-list').slimScroll({
+        height: '400px',
+        disableFadeOut: false,
+        // width:'300px',
+        railVisible: true,
+        alwaysVisible: false
+      }).bind('slimscroll', function(event, pos){
+        if (pos == 'bottom') {
+          $('.received-list').slimScroll({ scrollBy: '-30px' });
+          //$('#d4x-spinner').removeClass('none');
+          alert('load!');
+
+          <% unless @mini_posts.next_page %>
+          $('#infinite-scrolling .pagination').remove();
+          <% end %>
+
+        }
+      });
+    });
+  </script>
+
+
+
+

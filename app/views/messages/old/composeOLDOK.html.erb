@@ -1,0 +1,577 @@
+<style>
+	.none{
+		display:none;
+	}
+	#message_efile,
+	#pubkey,
+	#privkey
+	{
+		background-color:black;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:12px;
+		height:80px;
+	}
+
+	#remote{
+		
+	}
+	.tt-suggestions,
+	.tt-suggestion{
+		color:yellow;
+	}
+	.tt-dropdown-menu{
+		background-color:#001100;
+		color:yellow;
+		border:none;
+		border-top-left-radius:0px;
+		border-top-right-radius:0px; 
+	}
+	.none{
+		display:none;
+	}
+	.orange{
+		color:orange;
+	}
+	.lime{
+		color:lime;
+	}
+	.red{
+		color:red;
+	}
+	#spinner{
+		margin-top:10px;
+		margin-left:-20px;
+	}
+	#target_name{
+		margin-left:7px;
+		background-color:#001100;
+		border:0px solid white;
+		color:yellow;
+		border-radius:3px;
+		width:93%;
+	}
+
+
+
+	.minicons{
+		border:0px solid white;
+		
+	}
+	.shipgrey{
+		background-color:#4F6260;
+		border: 2px solid darkgrey;
+	}
+	
+	.d4xsearch{
+		margin-left:7px;
+		border:0px solid white;
+		color:yellow;
+		border-top-left-radius:3px;
+		border-bottom-left-radius:3px;
+		width:auto;
+		max-width:290px;
+		background-color:#001100;
+	}
+	
+	#execute,
+	#anti-shoulder-on,
+	#add-attachment,
+	#add-shared-pass,
+	#anti-shoulder-on,
+	#change-keyss,
+	#anti-shoulder-off,
+	#shoulders{
+		margin-top:10px;
+		margin-left:0px;
+		border-top-left-radius:0px;
+		border-bottom-left-radius:0px;
+	}
+	#external-user{
+		margin-top:10px;
+		margin-left:0px;
+		border-radius:0px;
+	}
+	#internal-user{
+		margin-top:10px;
+		margin-left:0px;
+		border-top-left-radius:0px;
+		border-bottom-left-radius:0px;
+	}
+</style>
+
+<script language="JavaScript">
+     $( document ).ready(function() {
+     	$('#change-keys').click(function() {
+ 			$('#gen-keys-div').removeClass('none');
+ 			$('#skey-div').removeClass('none');
+ 			$('#pkey-div').removeClass('none');
+ 			$('#key-size-div').removeClass('none');
+ 			$('#time-div').removeClass('none');
+ 			$('#return-div').removeClass('none');
+ 			$('#return-to-message').removeClass('none');
+ 			$('#compose-div').addClass('none');
+ 			return false;
+ 		});
+ 		$('#change-keyss').click(function() {
+ 			$('#gen-keys-div').removeClass('none');
+ 			$('#skey-div').removeClass('none');
+ 			$('#pkey-div').removeClass('none');
+ 			$('#key-size-div').removeClass('none');
+ 			$('#time-div').removeClass('none');
+ 			$('#return-div').removeClass('none');
+ 			$('#return-to-message').removeClass('none');
+ 			$('#compose-div').addClass('none');
+ 			return false;
+ 		});
+ 		
+ 		$('#return-to-message').click(function() {
+ 			$('#gen-keys-div').addClass('none');
+ 			$('#skey-div').addClass('none');
+ 			$('#pkey-div').addClass('none');
+ 			$('#return-div').addClass('none');
+ 			$('#compose-div').removeClass('none');
+ 			$('#time-div').addClass('none');
+ 			$('#key-size-div').addClass('none');
+ 			$('#return-to-message').addClass('none');
+ 			return false;
+ 		});
+ 		$('#add-attachment').click(function() {
+ 			$('#attachment-div').toggle();
+ 			$('#add-attachment-icon').attr('color','lime');
+ 			return false;
+ 		});
+ 		$('#anti-shoulder-off').click(function() {
+ 			$('#gen-keys-div').addClass('none');
+ 			$('#skey-div').addClass('none');
+ 			$('#pkey-div').addClass('none');
+ 			$('#return-div').addClass('none');
+ 			$('#search-div').addClass('none');
+ 			$('#time-div').addClass('none');
+ 			$('#key-size-div').addClass('none');
+ 			$('#return-to-message').addClass('none');
+ 			
+ 			$('#shared-pass-div').addClass('none');
+ 			
+ 			return false;
+ 		});
+ 		
+ 		$('#anti-s-off').click(function() {
+ 			$('#destination-div').addClass('none');
+ 			$('#input-div').addClass('none');
+ 			$('#sendmsg').addClass('none');
+ 			$('#external-icon').addClass('none');
+			$('#internal-icon').addClass('none');
+			$('#change-key-icon').addClass('none');
+			$('#add-attachment-icon').addClass('none');
+			$('#execute-icon').addClass('none');
+			$('#content-div').addClass('none');
+			
+			$('#anti-shoulder-on').removeClass('none');
+			$('#anti-s-off').addClass('none');
+				$('#shared-pass-div').addClass('none');
+ 		
+			$('#anti-s-on').removeClass('white').addClass('red');
+ 			return false;
+ 		});
+ 	
+ 		$('#anti-s-on').click(function() {
+ 			$('#destination-div').removeClass('none');
+ 			$('#input-div').addClass('none');
+ 			$('#sendmsg').removeClass('none');
+ 			$('#external-icon').removeClass('none');
+			$('#internal-icon').removeClass('none');
+			$('#change-key-icon').removeClass('none');
+			$('#add-attachment-icon').removeClass('none');
+			$('#execute-icon').removeClass('none');
+			$('#content-div').removeClass('none');
+			
+			$('#attachment-div').addClass('none');
+			$('#anti-shoulder-on').addClass('none');
+			$('#anti-s-off').removeClass('none');
+			$('#shared-pass-div').removeClass('none');
+ 		
+ 			return false;
+ 		});
+ 		
+ 	
+ 		
+ 		$('#anti-shoulder-on').click(function() {
+			$('#gen-keys-div').removeClass('none');
+ 			$('#skey-div').removeClass('none');
+ 			$('#pkey-div').removeClass('none');
+ 			$('#return-div').removeClass('none');
+ 			$('#compose-div').removeClass('none');
+ 			$('#time-div').removeClass('none');
+ 			$('#key-size-div').removeClass('none');
+ 			$('#return-to-message').removeClass('none');
+ 			$('#shared-pass-div').removeClass('none');
+ 			return false;
+ 		});
+ 		
+ 		
+ 		$('#icon-compose-new').css('color','lime');
+		$('#icon-received').css('color','grey');
+		$('#icon-sent').css('color','grey');
+		$('#icon-contacts').css('color','grey');
+		$('#icon-settings').css('color','grey');
+		$('#icon-profile').css('color','grey');
+		
+		$( document ).submit(function() {
+			$('#spinner').removeClass('none');
+			$('#link-compose').addClass('none');
+		});	
+		
+		$('#external-user').click(function() {
+			$('.viaemail').removeClass('none');	
+			$('#searchdiv').addClass('none');
+			$('.d4xsearch').addClass('none');
+			
+			$('#external-icon').removeClass('white').addClass('lime');
+			$('#internal-icon').removeClass('lime').addClass('white');
+		});
+		
+		$('#internal-user').click(function() {
+			$('#searchdiv').removeClass('none');
+			$('.d4xsearch').removeClass('none');
+			$('.viaemail').addClass('none');
+			
+			$('#external-icon').removeClass('lime').addClass('white');
+			$('#internal-icon').removeClass('white').addClass('lime');
+		});
+     });
+</script>
+
+<%= javascript_include_tag "jsencrypt.js" %>
+
+<%= form_for(@message ,:html => { :multipart => true })  do |f| %>
+<%= hidden_field_tag :genpkey %>
+<%= hidden_field_tag :genskey %>
+<%= hidden_field_tag :encrypted %>
+<div id="tab-compose" class="tab-pane">
+    <div class="row">
+	  <% if @message.errors.any? %>
+	      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+	      <ul>
+		      <% @message.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>	  	
+	      </ul>
+	  <% end %>
+      <div class="col-xs-12" id="compose-div">
+      		<div class="row" id="destination-div">
+	    		<div class="col-sm-2 col-xs-2">
+	    			 <% if current_user.avatar(:thumb).present? %>
+                <img class="chat-avatara round3" src="<%= current_user.avatar.url(:thumb) %>" alt="" width="50">
+             <% else %>
+                <img class="chat-avatara round3" src="/assets/missing_avatar.png" alt="" width="50">
+             <% end %>
+				  </div>
+				<div class="col-sm-10 col-xs-10">
+	    	  		
+		    		<div class="form-group" >
+			   			 <div class="input-group">	
+			   			 	<div class="viaemail none">
+					    		<%= email_field_tag :target_name,nil,{:class=>'form-control input-sm ttt',:placeholder=>t('email')} %>
+				    		</div>	
+			   			  	<div id="remote" id="searchdiv">
+				    		  	 <% if params[:target_id].present? %>
+			    				 	<% @user = User.find(params[:target_id])%>
+			    				  	<%= hidden_field_tag :target_id, params[:target_id] %>
+			    				  	<%= text_field_tag :remote,@user.firstname,{:class=>'typeahead ttt input-sm d4xsearch',:placeholder=>'Recipient'} %>
+			    				 <% else %> 	
+					     		 	<%= text_field_tag :remote,params[:query],{:class=>'typeahead ttt input-sm d4xsearch',:placeholder=>'Recipient'} %>
+					     		 <% end %>	
+							</div>
+							
+						</div>		
+				    </div>
+				    
+				</div>
+			</div>
+	 	<div class="row" id="actions-div">
+	 		
+	 		<div class="col-sm-2 col-xs-1">
+ 				<span class="btn btn-sm white" id="internal-user" title="Notify to Tortuga Member (default)"><i class='fa fa-2x fa-user lime' id="internal-icon"></i></span>
+			</div>
+ 			
+ 			<div class="col-sm-2 col-xs-2">
+				<span class="btn btn-sm white" id="external-user" title="Notify to External Email Address"><i class='fa fa-2x fa-envelope white' id="external-icon"></i></span>
+ 			</div>
+	 		
+	 		<div class="col-sm-2 col-xs-2">
+ 				<span class="btn btn-sm" id="change-keyss" title="Change RSA Key for Transport"><i class='fa fa-2x fa-key yellow' id="change-key-icon"></i></span>
+ 			</div>
+ 		
+ 			<div class="col-sm-2 col-xs-2">
+ 				<span class="btn btn-sm" id="add-attachment" title="Add Attachment and Encrypt"><i class='fa fa-2x fa-paperclip white' id="add-attachment-icon"></i></span>
+			</div>
+ 			
+ 			<div class="col-sm-2 col-xs-2">
+ 				<span class="btn btn-sm" id="execute" title="Encrypt / Decrypt"><i class='fa fa-2x fa-unlock orange' id="execute-icon"></i></span>
+ 			</div>
+ 		
+ 			<div class="col-sm-2 col-xs-1">
+ 				<span class="btn btn-sm white none" id="anti-shoulder-on" title="Anti Shoulder Surfer Switch On"><br /><br /><br /><i class='fa fa-2x fa-eye-slash white' id="anti-s-on"></i></span>
+ 				<span class="btn btn-sm white" id="anti-shoulder-off" title="Anti Shoulder Surfer Switch Off"><i class='fa fa-2x fa-eye white' id="anti-s-off"></i></span>
+ 			</div>
+		</div>
+	
+       	<div class="row" id="shared-pass-div">
+   			<div class="col-sm-12 col-xs-12">
+   				<%= password_field_tag :aespass,nil,:class=>'form-control input-sm center',:id=>'aespass',:placeholder=>'Pre Shared Passphrase'%>
+   			</div>
+ 		</div>
+        <br />
+        <div class="row" id="input-div">
+			<div class="col-xs-12">
+				<textarea id="input" name="input" style="width: 100%" rows="3" class="form-control pipppo" placeholder="Message Content" maxlength="337"></textarea>
+			    <script>
+			 		$(".pipppo").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+				</script>
+			</div>
+		</div>
+
+    <div class="row none" id="content-div">
+      <div class="col-xs-12">
+        <%= f.text_area :content,:class=>'form-control custom-control',:placeholder=>"Content",:maxlength=>"337",:rows=>2,:style=>"resize:none" %>
+        <script>
+          $("#message_content").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+        </script>
+      </div>
+    </div>
+
+		<div class="row none" id="attachment-div">
+			<br />
+			<div class="col-xs-12"><span class="input-group-btn">
+   				<div class="input-group">
+             	  <span class="input-group-btn">
+				    <span class="btn btn-small btn-dark btn-inverse" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-upload white"></i></span>
+				    <%= f.file_field :efile, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+				  </span>
+				  <span class="form-control btn-info btn-inverse"></span>
+				 </div>
+			 </div>
+	    </div>
+				    
+	    <div class="row">
+	    	<div class="col-xs-12">
+				<br />
+	      		 <button id="sendmsg" class="btn btn-dark btn-sm block full-width m-b" onclick="$('#new_message').submit();" disabled="true">Send Message</button>
+			</div>
+	    </div>
+
+	<% end %>
+    
+        <div class="row none" id="encrypted-div">
+	      	<div class="col-xs-12">
+	        	<label for="crypted">Encrypted:</label><br/>
+	        	<textarea id="crypted" name="crypted" style="width: 100%" rows="4" class="form-control"></textarea>
+	        </div>
+        </div>
+      
+    </div>
+    </div>
+
+	<div class="row none" id="gen-keys-div">   
+      <div class="col-xs-12">
+      	<h4>RSA Key Generator</h4>
+      	
+      </div>
+    </div>
+    <div class="row none" id="key-size-div">   
+      <div class="col-xs-5">
+        <div class="btn-group">
+          <div class="input-group">
+            <span class="input-group-addon btn-warning">Key Size</span>
+            <button class="btn btn-dark dropdown-toggle btn-sm" id="key-size" type="button" data-value="2048"
+                    data-toggle="dropdown">2048 bit <span class="caret"></span></button>
+            <ul class="dropdown-menu">	  
+              <li><a class="change-key-size" data-value="2048" href="#">2048 bit</a></li>
+              <li><a class="change-key-size" data-value="4096" href="#">4096 bit</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2">
+      
+      </div>
+      <div class="col-xs-5">
+        <spam id="generate" class="btn btn-warning btn-sm pull-right">Generate New Keys</span>
+      </div>  
+   </div>    
+    <div class="row none" id="time-div">
+   	  <div class="col-xs-5">
+        <span><i><small id="time-report" class="white"></small></i></span>
+       </div>
+       <div class="col-xs-6">
+        <label for="async-ck"><input id="async-ck" type="checkbox" class="white"> Async</label>
+      </div>
+    </div>
+    <div class="row none" id="skey-div">
+         <div class="col-xs-12">
+            <label for="privkey" class="white">Private Key</label><br/>
+            <small>
+              <textarea id="privkey" rows="5" style="width:100%" class="form-control input-sm"></textarea>
+              <br />
+            </small>
+          </div>
+          
+    </div>
+  	<div class="row none" id="pkey-div">
+          <div class="col-xs-12">
+            <label for="pubkey" class="white">Public Key</label><br/>
+            <small><textarea id="pubkey" rows="5" style="width:100%" readonly="readonly" class="form-control input-sm"></textarea></small>
+          </div>
+    </div>
+    <br />
+    <div class="row none" id="pkey-div">
+          <div class="col-xs-12">
+            <label for="pubkey" class="white">Public Key</label><br/>
+            <small><textarea id="pubkey" rows="5" style="width:100%" readonly="readonly" class="form-control input-sm"></textarea></small>
+          </div>
+    </div>
+    <div class="row none" id="return-div">
+          <div class="col-xs-12">
+    			<button class="btn btn-dark btn-lg block full-width m-b none" id="return-to-message">Return To Message</button>
+   			    <br />
+          </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+  
+  $(function () {
+    //Change the key size value for new keys
+    $(".change-key-size").each(function (index, value) {
+      var el = $(value);
+      var keySize = el.attr('data-value');
+      el.click(function (e) {
+        var button = $('#key-size');
+        button.attr('data-value', keySize);
+        button.html(keySize + ' bit <span class="caret"></span>');
+        e.preventDefault();
+      });
+    });
+
+    // Execute when they click the button.
+    $('#execute').click(function () {
+
+      // Create the encryption object.
+      var crypt = new JSEncrypt();
+
+      // Set the private.
+      crypt.setPrivateKey($('#privkey').val());
+       $('#genskey').val($('#privkey').val());
+      //return;
+     
+      // If no public key is set then set it here...
+      var pubkey = $('#pubkey').val();
+      if (!pubkey) {
+        $('#pubkey').val(crypt.getPublicKey());
+      }
+
+      // Get the input and crypted values.
+      var input = $('#input').val();
+      var crypted = $('#crypted').val();
+
+      // Alternate the values.
+      if (input) {
+        $('#crypted').val(crypt.encrypt(input));
+        $('#input').val('');
+        
+        $('#message_content').val(crypt.encrypt(input));
+       
+        $('#encrypted').val(crypt.encrypt(input));
+       
+        $('#genpkey').val(crypt.getPublicKey());
+        
+        $('#genskey').val($('#privkey').val());
+        
+  	    $('#content-div').removeClass('none');
+ 	
+ 		$('#input-div').addClass('none');
+ 	
+ 		$('#sendmsg').prop('disabled',false);
+ 		
+ 		$('#execute-icon').removeClass('fa-unlock').addClass('fa-lock');
+        $('#execute-icon').removeClass('white').addClass('lime');
+	//	var encrypted = '' + CryptoJS.AES.encrypt($('#privkey').val(), 'd4x337gmail.com');
+	//	console.log("ENC"+encrypted);
+
+	//	var decrypted = CryptoJS.AES.decrypt($('#privkey').val(), 'd4x337gmail.com');
+	//	console.log("DEC"+decrypted.toString(CryptoJS.enc));
+
+        return;
+      }
+      else if (crypted) {
+        var decrypted = crypt.decrypt(crypted);
+        if (!decrypted)
+          decrypted = 'Write your message';
+        $('#input').val(decrypted);
+        $('#crypted').val('');
+        $('#message_content').val('');
+        
+        $('#content-div').addClass('none');
+ 		$('#input-div').removeClass('none');
+ 		$('#sendmsg').prop('disabled',true);
+ 		
+ 		$('#execute-icon').removeClass('fa-lock').addClass('fa-unlock');
+ 		$('#execute-icon').removeClass('lime').addClass('white');
+      }
+      
+      return;
+    });
+
+    var generateKeys = function () {
+      var sKeySize = $('#key-size').attr('data-value');
+       $('#change-keys').html("Change Keys ["+sKeySize.toString()+" bit]");
+      var keySize = parseInt(sKeySize);
+      var crypt = new JSEncrypt({default_key_size: keySize});
+      var async = $('#async-ck').is(':checked');
+      var dt = new Date();
+      var time = -(dt.getTime());
+      if (async) {
+        $('#time-report').text('.');
+        var load = setInterval(function () {
+          var text = $('#time-report').text();
+          $('#time-report').text(text + '.');
+        }, 500);
+        crypt.getKey(function () {
+          clearInterval(load);
+          dt = new Date();
+          time += (dt.getTime());
+          $('#time-report').text('Generated in ' + time + ' ms');
+          $('#privkey').val(crypt.getPrivateKey());
+          $('#pubkey').val(crypt.getPublicKey());
+         
+           $('#genskey').val(crypt.getPrivateKey());
+           $('#genpkey').val(crypt.getPublicKey());
+        });
+        return;
+      }
+      crypt.getKey();
+      dt = new Date();
+      time += (dt.getTime());
+      $('#time-report').text('Generated in ' + time + ' ms');
+      $('#privkey').val(crypt.getPrivateKey());
+      $('#pubkey').val(crypt.getPublicKey());
+       
+       $('#genskey').val(crypt.setPrivateKey());
+       $('#genpkey').val(crypt.getPublicKey());
+       
+      
+       
+      return;
+    };
+
+    // If they wish to generate new keys.
+    $('#generate').click(generateKeys);
+    	generateKeys();
+    	return false;
+  	});
+  	   
+  	
+</script>

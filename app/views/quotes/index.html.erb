@@ -1,0 +1,44 @@
+<h4 class="card-title"><%= t('quotes') %></h4>
+<h6 class="card-subtitle"><%= t("ispirational quotes") %></h6>
+<% unless @quotes.blank? %>
+  <div class="table-responsive">
+    <table id="data-table" class="table">
+      <thead>
+      <tr>
+        <th align="left"><%= d4x_sanitizer(t(:qtext)) %></th>
+        <th align="left"><%= d4x_sanitizer(t(:author)) %></th>
+        <th align="center"><%= d4x_sanitizer(t("lang.")) %></th>
+        <th align="center"><%= d4x_sanitizer(t("appr")) %></th>
+        <th align="center"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @quotes.each do |quote| %>
+        <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+          <td width="65%"><%= link_to quote.qtext,quote %></td>
+          <td width="10%"><%= quote.author.fullname %></td>
+          <td width="2%">
+            <% if quote.lang.downcase == "en" %>
+              <%= image_tag "us.png",:title=>"English" %>
+            <% elsif quote.lang.downcase == "it" %>
+              <%= image_tag "it.png",:title=>"Italian" %>
+            <% end %>
+          </td>
+          <td width="2%">
+            <% if quote.approved? %>
+              <%= image_tag "tick.png" ,:title=>"approved"%>
+            <% else %>
+              <%= image_tag "time.png" ,:title=>"approvation is pending"%>
+            <% end %>
+          </td>
+          <td width="2%">
+            <% if current_user.role? :admin %>
+              <%= button_to "delete", quote, :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger',:name => 'zdestroy' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

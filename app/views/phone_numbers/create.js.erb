@@ -1,0 +1,7 @@
+$('#hidden_phone_number').val('<%= @phone_number.phone_number %>' )
+$('#send-pin').hide()
+$('#titlebox').html('Enter your PIN')
+$('#desc').html('We have sent you the PIN for verification')
+
+$('#verify-pin').fadeToggle()
+$('#pin').focus()

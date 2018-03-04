@@ -1,0 +1,31 @@
+<% content_for :head do %>
+    <%= javascript_include_tag 'd4x-check-email' %>
+<% end %>
+<% if current_user %>  
+<% if current_user.role? :admin %>  
+	<%= link_to image_tag("arrow_left.png", :border =>0,  :title => t("back") ), products_path %>
+	<%= link_to image_tag("cog_add.png", :border =>0, :mouseover => "cog_add.png", :title => "new",:size => "16x16" ), new_product_path %>
+	<%= link_to image_tag("cog_edit.png", :border =>0, :mouseover => "cog_edit.png", :title => t(:edit),:size => "16x16" ), edit_product_path(@product) %>
+<% end %>
+<% end %>
+<br />
+<%= form_for(@cart_product) do |f| %>
+   <div class="col-md-4 product-square">
+      <%= hidden_field_tag :prod_id,@product.id %>
+      <%= hidden_field_tag :cart_id,@cart.id %>
+      <h3><%= @product.name %><span align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= number_to_currency(@product.final_price,{:unit=>'€',:precision=>2})%></h3>
+      <p><%= image_tag @product.photo.url,:width=>"200px",:class=>'round-corners10' %></p>
+      <p><%= @product.description %></p>
+      <% if @product.category == "service"%>
+        <p align="center">
+          <span id="pNickname" class="byline">&nbsp;</span>
+          <%= text_field_tag :nickname,nil,{:class=>'agadanga-check-nick form-control',:size =>"32",:id=>"user_nick",:placeholder=>'choose username'} %>@
+          <%= select_tag :domain,options_for_select([['agadanga.com', 'agadanga.com'],['d4x.cc', 'd4x.cc'],"agadanga.com"]),{:multiline=>true,:onchange=>'#',:class=>'agadanga-selects',:placeholder=>'choose domain'}%>
+          <span id="pEmail" class="none">&nbsp;</span>
+          <br />
+      <% end %>
+      <p align="center"><%= number_field_tag :items,1, in: 1..100,:class=>'qty form-control' %>
+        <%= f.submit d4x_sanitizer(t('add to cart')) ,:class=>'button-d4x-tiny',:id=>"proceed"%>
+      </p>
+   </div>
+<% end %>

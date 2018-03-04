@@ -1,0 +1,53 @@
+<%= form_for(@ad) do |f| %>
+  <% if @ad.errors.any? %>
+    <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center">
+			<strong class="error-counter"><%= pluralize(@ad.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @ad.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+<div id="center-content2">
+   <div class="field">
+    <%= f.label t(:title),:class=>'show-item-label' %><br />
+    <%= f.text_field :title ,:size => 90,:class=>'def-input'%>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:content),:class=>'show-item-label' %><br />
+    <%= f.text_area :content ,:size => "88x5"%>
+  </div><br>
+<div class="field">
+    <%= f.label t(:url),:class=>'show-item-label' %><br />
+    <%= f.url_field :url %>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:expire_at),:class=>'show-item-label' %><br />
+   <%= f.text_field :expire_at,:size=>90,:class=>'def-input' %>
+  </div><br>
+   <div class="field">
+    <%= f.label t(:active),:class=>'show-item-label' %><br />
+  	<%= f.check_box :active ,:size => 90,:class=>'def-input'%>
+  </div><br>
+   <div class="field">
+    <%= f.label t(:lang),:class=>'show-item-label' %><br />
+  	<%= f.text_field :locale ,:size => 90,:class=>'def-input'%>
+  </div><br>
+ 
+  <div class="field">
+    <%= f.label t(:image) ,:class=>'show-item-label' %><br />
+    <%= f.text_field :image_file_name ,:size =>40,:class=>'def-input'%> <%= f.file_field :image%>
+  </div><br />
+  <div class="actions">
+    <%= f.submit :class=>'button-d4x' %><br>
+  </div>
+  <br>
+  
+  </div>
+<% end %>

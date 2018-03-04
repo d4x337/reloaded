@@ -1,0 +1,43 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-social').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-notifications                                                  ').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+<h4 class="card-title bluesocial"><i class="zmdi zmdi-notifications bluesocial"></i>   <%= label_tag(t("notifications"),nil,:class=>'' )%> <%= "@"+current_user.nickname %></h4>      &nbsp;
+<% if @count_new > 0 %><%= t("you have") %>&nbsp;<%= @count_new.to_s %>&nbsp;<%= d4x_sanitizer(t("pending notifications")) %><% end %>
+
+<% unless @updates.blank? %>
+  <div class="listview listview--hover">
+  <% @updates.each do |update| %>
+    <% @xuser = User.find(update.sender_id) %>
+        <a href="" class="listview__item traspa">
+
+          <% if @xuser.avatar(:thumb).present? %>
+              <img class="listview__img" src="<%= @xuser.avatar.url(:thumb) %>" alt="">
+          <% else %>
+              <img class="listview__img" src="/assets/demo/img/profile-pics/1.jpg" alt="">
+          <% end %>
+
+          <div class="listview__content">
+            <div class="listview__heading">
+              <%= label_tag "@"+user_nick(@xuser.id),nil,{:class=>'orange'} %>&nbsp;
+              <small class="pull-right">
+                <%= time_ago_in_words_converter(update.created_at) %>&nbsp;<%= t('ago') %>
+                <%= button_to update,:class=>"btn btn-sm btn-outline-warning",:method => :delete,:title=>t('cancel invitation'),:confirm => t('Are you sure you want to cancel this invitation?') do %>
+                    <%= t('read') %>
+                <% end %>
+              </small>
+              <br>
+              <%= update.reason %>
+            </div>
+          </div>
+        </a>
+
+  <% end %>
+  </div>
+<% else %>
+  <%= t('you do not have any new notification') %>
+  <br>
+<% end %>
+

@@ -1,0 +1,10 @@
+<style>
+  h2 a,p,small{
+    color:white;
+  }
+</style>
+<div>
+  <h2><%= link_to ipost.title, ipost_path(ipost) %></h2>
+  <small><em><%= ipost.timestamp %></em></small>
+  <p><%= truncate(strip_tags(ipost.body), length: 600) %></p>
+</div>

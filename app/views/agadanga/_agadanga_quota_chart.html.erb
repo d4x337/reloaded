@@ -1,0 +1,49 @@
+<div id="quota-chart"><br />
+	<%= image_tag "quota.png",:size=>"90x90",:class=>'quotaleft left none' %>
+	<% require 'google_chart' %>
+	<% pc = GoogleChart::PieChart.new("90x90", "disk Quota") do |pc| %>
+		<% pc.data "Total", 100 %>
+		<% pc.data "Available", 70 %>
+		<% pc.data "Used", 30 %>
+		<% @graph = pc.to_url %>
+	<% end %>
+
+<% from = MailAccount.where(:user_id=>current_user.id,:defaultbox=>true).first %>
+	<% if from %>  
+	 <div id="menu-title-2013" class="links-item orange">
+  &nbsp;&nbsp;<%= d4x_sanitizer(t('total space')) %>
+	
+	<% if from.quota == "1000000000S" %>  
+		<%= "1 GB" %>
+		<% @total = 1073741824 %>
+	<% elsif from.quota == "3000000000S" %>  
+		<%= "3 GB" %>
+		<% @total = 3221225472 %>
+	<% elsif from.quota == "5000000000S" %>  
+		<%= "5 GB" %>
+		<% @total = 5368708120 %>
+	<% elsif from.quota == "10000000000S" %>  
+		<%= "10 GB" %>
+		<% @total = 10737416240 %>
+	<% elsif from.quota == "20000000000S" %>  
+		<%= "20 GB" %>
+		<% @total = 21474832480 %>
+	<% end %>  
+	</div>
+	<div id="menu-title-2013" class="links-item orange">
+		
+	    	&nbsp;&nbsp;<%= d4x_sanitizer(t('used space')) %>
+	 			<% @used = used_quota(from.home+"/"+from.maildir) %>
+			&nbsp;&nbsp;	<%=number_to_human_size(@used,:locale=>'en') %>
+	</div>
+	<div id="menu-title-2013" class="links-item orange">
+		    &nbsp;&nbsp;<%= d4x_sanitizer(t('percent used')) %>
+		       <% @percent = (@used*100/@total) %>
+	         &nbsp;&nbsp;  <%= number_to_percentage(@percent,:precision=>2,:locale=>'en') %>
+	</div>
+	<div id="menu-title-2013" class="links-item orange">
+	    &nbsp;&nbsp;<%= d4x_sanitizer(t('available2')) %>
+			<% @available = (@total-@used) %>
+			&nbsp;&nbsp;<%= number_to_human_size(@available,:locale=>'en') %>
+	</div>
+<% end %>  	

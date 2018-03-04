@@ -1,0 +1,182 @@
+<% content_for :head do %>
+		<script language="JavaScript">
+			$( document ).ready(function() {
+				$('#areaaa').change(function(){
+					$('#area').val($('#areaaa').val());
+				});
+				
+				var loadResults = new Bloodhound({
+					datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+					queryTokenizer: Bloodhound.tokenizers.whitespace,
+					remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+				});
+				 
+				loadResults.initialize();
+				 
+				$('#remote .typeahead').typeahead(null, {
+					name: 'results-list',
+					displayKey: 'result',
+					hint: true,
+					highlight: true,
+					minLength: 1,
+					source: loadResults.ttAdapter()
+				});
+				
+				$('#icon-received').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','lime');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+			
+				});
+		
+				$('#icon-sent').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-sent').css('color','lime');
+					$('#icon-received').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-contacts').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','lime');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-compose-new').click(function(){
+					$('#icon-compose-new').css('color','lime');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-settings').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','lime');
+					$('#icon-profile').css('color','grey');
+				});
+		
+				$('#icon-profile').click(function(){
+					$('#icon-compose-new').css('color','grey');
+					$('#icon-received').css('color','grey');
+					$('#icon-sent').css('color','grey');
+					$('#icon-contacts').css('color','grey');
+					$('#icon-settings').css('color','grey');
+					$('#icon-profile').css('color','lime');
+				});
+				
+				$('.imagelogo').mouseover(function(){
+					$('.imagelogo').addClass('animated bounceIn');
+				});
+				$('.imagelogo').mouseout(function(){
+					$('.imagelogo').removeClass('animated bounceIn');
+				});
+				
+				$('#eye').click(function(){
+					$('#message_content').addClass('white');
+				});
+				
+				
+			});
+		</script>	
+
+<% end %>
+<style>
+  zerozerofixed {
+    position: fixed;
+    margin-top:0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #1c1c1c;
+    height:45px;
+    border-top: 1px solid #1d1d1d;
+
+  }
+  .count-sent{
+    color:black;
+  }
+  .microd4x{
+    margin-top:-5px;
+    font-size:2px;
+  }
+  #bbbb{
+    background-color: #1c1c1c;
+    height:45px;
+    margin-bottom:-5px;
+  }
+  .baseline{
+    margin-top: 10px;
+  }
+  .receivedcounter,
+  .sentcounter {text-align:center; float:right; padding-top:1px; padding-bottom:1px;position:relative}
+  .reccounter,
+  .secounter{ color:white;position:absolute; top:2px; right:20px;background-color:red; border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;box-shadow:1px 1px 1px  black;padding-bottom:-2px;padding-top:-2px;padding-right:2px;padding-left:2px;font-size:11px;font-weight:bold;}
+
+</style>
+
+<div id="bbbb" class="zerozerofixed">
+	 	<div class="row">
+	 		<div class="col-sm-2 col-xs-2">
+ 		    	<a href="/compose">
+		            <i class="fa fa-2x fa-magic baseline" title="<%= t("compose") %>" id="icon-compose-new"></i>
+		        </a>
+ 			</div>
+	 		<div class="col-sm-2 col-xs-2">
+        <% if current_user %>
+            <a href="/<%= current_user.nickname%>">
+              <i class="fa fa-2x fa-user baseline" title="<%= t("profile") %>" id="icon-profile"></i>
+            </a>
+        <% else %>
+              <i class="fa fa-2x fa-user" title="<%= t("profile") %>" id="icon-profile"></i>
+        <% end %>
+
+ 			</div>
+ 			<div class="col-sm-2 col-xs-2">
+ 				<% if current_user %>
+            <div id="receivedcounter">
+              <% @received = Message.where(:target_id=>current_user.id).order(:created_at).reverse_order %>
+              <span id="updatecount" class="reccounter" id="csent"><%= @received.count %></span>
+              <a href="/received"><i class="iconreceived fa fa-2x fa-inbox baseline" title="<%= t("inbox") %>" id="icon-received"></i></a>
+            </div>
+		        <% end %>
+		   </div>
+ 			<div class="col-sm-2 col-xs-2">
+ 				<% if current_user %>
+            <div id="sentcounter">
+              <% @sent = Message.where(:sender_id=>current_user.id).order(:created_at).reverse_order %>
+              <span id="updatecount" class="secounter" id="csent"><%= @sent.count %></span>
+              <a href="/sent"><i class="iconsent baseline fa fa-2x fa-envelope" title="<%= t("sent") %>" id="icon-sent"></i></a>
+            </div>
+        <% end %>
+ 			</div>
+ 			<div class="col-sm-2 col-xs-2">
+        <% if current_user %>
+            <div id="contactscounter">
+              <% @contacts = current_user.contacts %>
+              <span id="updatecount" class="secounter" id="csent"><%= @contacts.count %></span>
+              <a href="/contacts"><i class="iconsent baseline fa fa-2x fa-users" title="<%= t("contacts") %>" id="icon-contacts"></i></a>
+            </div>
+        <% end %>
+
+ 			</div>
+ 			<div class="col-sm-2 col-xs-2">
+ 		    	<a href="/settings">
+		            <i class="fa fa-2x fa-cogs baseline" title="<%= t("settings") %>" id="icon-settings"></i>
+		        </a>
+ 			</div>
+		</div>
+</div>

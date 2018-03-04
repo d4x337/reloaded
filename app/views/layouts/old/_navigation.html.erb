@@ -1,0 +1,55 @@
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                     <span>
+                    	<% @user = User.find(current_user.id)%>
+                        <%= link_to edit_user_path(@user) do %>
+                        	 <% if @user.avatar(:thumb).present? %>
+                           	 	<img alt="image" class="img-circle animated tada" src="<%= @user.avatar.url(:thumb) %>">
+                           	 <% else %>
+                        		<img alt="image" class="img-circle" src="<%= image_url 'missing_avatar.png' %>" width="150px"/>
+              				 <% end %>
+               			<% end %>
+                   </span>
+                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold"><%= @user.firstname if current_user %></strong>
+                            </span> 
+                            <span class="text-muted text-xs block"><%= highest_role(current_user.id) if @user.present? %><b class="caret"></b></span>
+                        </span>
+                    </a>
+                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                    	<li><%= link_to "/" do %>Dashboard<% end %></li>
+                        <li><%= link_to user_path(@user) do %>Profile<% end %></li>
+                        <li> <%= link_to edit_user_path(@user) do %>Edit Profile<% end %></li>
+                        <li> <%= link_to edit_registration_path(@user) do %>Change Password<% end %></li>
+                        <li> <%= link_to edit_user_path(@user) do %>Settings<% end %></li>
+                        <li class="divider"></li>
+                        <li><a href="/logout"><%= t('logout') %></a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    +++
+                </div>
+            </li>
+
+            <li class="<%= is_active_controller('dashboards') %>">
+                 <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Social</span><span class="label label-info pull-right"></span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level <%= is_active_controller('dashboards') %>">
+                    <li class=""><%= link_to t("profile"), user_path(current_user.id) %> </li>
+                    <li class=""><%= link_to t("timeline"), "/wall" %> </li>
+                    <li class=""><%= link_to t("requests"), requests_path %> </li>
+                    <li class=""><%= link_to t("invitations"), invitations_path %> </li>
+                    <li class=""><%= link_to t("connections"), friends_path %> </li>
+                </ul>
+            </li>
+
+
+        </ul>
+
+    </div>
+</nav>

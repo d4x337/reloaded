@@ -1,0 +1,451 @@
+<%= form_for(@user) do |f| %>
+      <h4 class="bluesocial"><%= t("edit profile")%>&nbsp;<%= @user.firstname	%></h4>
+      <br>
+      <div class="form-group">
+          <label class="control-label col-sm-4 col-xs-4" for="first-name"><%= t("fullname")%>&nbsp;<span class="required">*</span></label>
+          <div class="col-sm-8 col-xs-8">
+         <%= f.text_field :firstname,:value=>@user.firstname,:class=>'form-control input-transparent'  %>
+          </div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label class="control-label col-sm-4 col-xs-4" for="last-name"><%= t("headline")%>&nbsp;</label>
+          <div class="col-sm-8">
+           <%= f.text_field :headline,:value=>@user.headline,:class=>'form-control input-transparent'  %>
+          </div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label image_tag for="date-of-birth" class="control-label col-sm-4"><%= t("birthday")%>&nbsp;</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <div class="form-group">
+                <%= f.date_field :birthday,:value=>@user.birthday,:class=>'form-control date-picker',:placeholder=>"Pick a date" %>
+                <i class="form-group__bar"></i>
+              </div>
+            </div>
+          </div>
+      </div>
+      <br>
+    <div class="form-group">
+      <label class="control-label col-sm-4 col-xs-4" for="last-name"><%= t("gender")%>&nbsp;</label>
+      <div class="col-sm-8">
+        <%= f.select(:gender,options_for_select([[t('male'), 'M'], [t('female'), 'F']], @user.gender),{}, { :class => 'select2 form-control input-transparent' }) %>
+      </div>
+    </div>
+    <br>
+    <h5 class="orange">
+      <%= t("contact")%>
+    </h5>
+    <br>
+      <div class="form-group">
+          <label id="email-label" for="email" class="control-label col-sm-4"><%= t("email")%>&nbsp;<span class="required">*</span></label>
+          <div class="col-xs-12 col-sm-8">
+              <div class="input-group">
+                  <%= f.email_field :email,:value=>@user.email,:class=>'form-control input-transparent'  %>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="phone" class="control-label col-sm-4"><%= t("mobile")%>&nbsp;<span class="required">*</span></label>
+          <div class="col-xs-12 col-sm-8">
+              <div class="input-group">
+                    <%= f.text_field :mobile,:value=>@user.mobile,:class=>'form-control input-transparent mask'  %>
+              </div>
+          </div>
+      </div>
+    <br>
+      <div class="form-group">
+          <label for="phone" class="control-label col-sm-4">Skype</label>
+            <div class="col-xs-12 col-sm-8">
+              <div class="input-group">
+                    <%= f.text_field :skype_id,:value=>@user.skype_id,:class=>'form-control input-transparent mask'  %>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="phone" class="control-label col-sm-4">Facebook</label>
+          <div class="col-xs-12 col-sm-8">
+              <div class="input-group">
+                    <%= f.text_field :facebook_user,:value=>@user.facebook_user,:class=>'form-control'   %>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="twitter" class="control-label col-sm-4">Twitter</label>
+
+          <div class="col-xs-12 col-sm-8">
+              <div class="input-group">
+                    <%= f.text_field :twitter_user,:value=>@user.twitter_user,:class=>'form-control input-transparent mask'  %>
+              </div>
+          </div>
+      </div>
+      <br>
+    <div class="form-group">
+      <label for="twitter" class="control-label col-sm-4">GitHub</label>
+
+      <div class="col-xs-12 col-sm-8">
+        <div class="input-group">
+          <%= f.text_field :github_id,:value=>@user.github_id,:class=>'form-control input-transparent mask'  %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="twitter" class="control-label col-sm-4">Instagram</label>
+
+      <div class="col-xs-12 col-sm-8">
+        <div class="input-group">
+          <%= f.text_field :instagram_id,:value=>@user.instagram_id,:class=>'form-control input-transparent mask'  %>
+        </div>
+      </div>
+    </div>
+    <br>
+      <div class="form-group">
+          <label for="phone" class="control-label col-sm-4">LinkedIn</label>
+          <div class="col-xs-12 col-sm-8">
+              <div class="input-group">
+                    <%= f.text_field :linkedin_url,:value=>@user.linkedin_url,:class=>'form-control'  %>
+              </div>
+          </div>
+      </div>
+      <br>
+    <div class="form-group">
+      <label class="control-label col-sm-4 col-xs-4" for="last-name"><%= t("photo")%>&nbsp;</label>
+      <div class="col-sm-8 col-xs-8">
+        <div class="input-group">
+              <span class="input-group-btn">
+                  <span class="btn btn-sm btn-dark" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-upload"></i></span>
+                <%= f.file_field :avatar, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+              </span>
+          <span class="form-control"></span>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h5 class="orange">
+      <%= t("address")%>
+    </h5>
+    <br>
+    <div class="form-group">
+      <label for="location" class="control-label col-sm-4"><%= t("location")%>&nbsp;</label>
+      <div class="col-xs-12 col-sm-8">
+        <div class="input-group">
+          <%= f.text_field :location,:value=>@user.location,:class=>'form-control'  %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label for="country" class="control-label col-sm-4"><%= t("country")%>&nbsp;<span class="required">*</span></label>
+      <div class="col-sm-4">
+        <%= f.select(:country,options_for_select([
+               ["United States",'United States'],
+               ["United Kingdom",'United Kingdom'],
+               ["Afghanistan",'Afghanistan'],
+               ["Albania",'Albania'],
+               ["Algeria",'Algeria'],
+               ["American Samoa",'American Samoa'],
+               ["Andorra",'Andorra'],
+               ["Angola",'Angola'],
+               ["Anguilla",'Anguilla'],
+               ["Antarctica",'Antarctica'],
+               ["Antigua and Barbuda",'Antigua and Barbuda'],
+               ["Argentina",'Argentina'],
+               ["Armenia",'Armenia'],
+               ["Aruba",'Aruba'],
+               ["Australia",'Australia'],
+               ["Austria",'Austria'],
+               ["Azerbaijan",'Azerbaijan'],
+               ["Bahamas",'Bahamas'],
+               ["Bahrain",'Bahrain'],
+               ["Bangladesh",'Bangladesh'],
+               ["Barbados",'Barbadados'],
+               ["Belarus",'Belarus'],
+               ["Belgium",'Belgium'],
+               ["Belize",'Belize'],
+               ["Benin",'Benin'],
+               ["Bermuda",'Bermuda'],
+               ["Bhutan",'Bhutan'],
+               ["Bolivia",'Bolivia'],
+               ["Bosnia and Heimage_tagrzegovina",'Bosnia and Herzegovina'],
+               ["Botswana",'Botswana'],
+               ["Bouvet Island",'Bouvet Island'],
+               ["Brazil",'Brazil'],
+               ["British Indian Ocean Territory",'British Indian Ocean Territory'],
+               ["Brunei Darussalam",'Brunei Darussalam'],
+               ["Bulgaria",'Bulgaria'],
+               ["Burkina Faso",'Burkina Faso'],
+               ["Burundi",'Burundi'],
+               ["Cambodia",'Cambodia'],
+               ["Cameroon",'Cameroon'],
+               ["Canada",'Canada'],
+               ["Cape Verde",'Cape Verde,'],
+              ["Cayman Islands",'Cayman Islands'],
+              ["Central African Republic",'Central African Republic'],
+              ["Chad",'Chad'],
+              ["Chile",'Chile'],
+              ["China",'China'],
+              ["Christmas Island",'Christmas Island'],
+              ["Cocos (Keeling) Islands",'Cocos (Keeling) Islands'],
+              ["Colombia",'Colombia'],
+              ["Comoros",'Comoros'],
+              ["Congo",'Congo'],
+              ["Congo, The Democratic Republic of The",'Congo, The Democratic Republic of The'],
+              ["Cook Islands",'Cook Islands'],
+              ["Costa Rica",'Costa Rica'],
+              ["Cote Ivoire",'Cote D Ivoire'],
+              ["Croatia",'Croatia'],
+              ["Cuba",'Cuba'],
+              ["Cyprus",'Cyprus'],
+              ["Czech Republic",'Czech Republic'],
+              ["Denmark",'Denmark'],
+              ["Djibouti",'Djibouti'],
+              ["Dominica",'Dominica'],
+              ["Dominican Republic",'Dominican Republic'],
+              ["Ecuador",'Ecuador'],
+              ["Egypt",'Egypt'],
+              ["El Salvador",'El Salvador'],
+              ["Equatorial Guinea",'Equatorial Guinea'],
+              ["Eritrea",'Eritrea'],
+              ["Estonia",'Estonia'],
+              ["Ethiopia",'Ethiopia'],
+              ["Falkland Islands (Malvinas)",'Falkland Islands (Malvinas)'],
+              ["Faroe Islands",'Faroe Islands'],
+              ["Fiji",'Fiji'],
+              ["Finland",'Finland'],
+              ["France",'France'],
+              ["French Guiana",'French Guiana'],
+              ["French Polynesia",'French Polynesia'],
+              ["French Southern Territories",'French Southern Territories'],
+              ["Gabon",'Gabon'],
+              ["Gambia",'Gambia'],
+              ["Georgia",'Georgia'],
+              ["Germany",'Germany'],
+              ["Ghana",'Ghana'],
+              ["Gibraltar",'Gibraltar'],
+              ["Greece",'Greece'],
+              ["Greenland",'Greenland'],
+              ["Grenada",'Grenada'],
+              ["Guadeloupe",'Guadeloupe'],
+              ["Guam",'Guam'],
+              ["Guatemala",'Guatemala'],
+              ["Guinea",'Guinea'],
+              ["Guinea-bissau",'Guinea-bissau'],
+              ["Guyana",'Guyana'],
+              ["Haiti",'Haiti'],
+              ["Heard Island and Mcdonald Islands",'Heard Island and Mcdonald Islands'],
+              ["Holy See (Vatican City State)",'Holy See (Vatican City State)'],
+              ["Honduras",'Honduras'],
+              ["Hong Kong",'Hon g Kong'],
+              ["Hungary",'Hungary'],
+              ["Iceland",'Iceland'],
+              ["India",'India'],
+              ["Indonesia",'Indonesia'],
+              ["Iran, Islamic Republic of",'Iran, Islamic Republic of'],
+              ["Iraq",'Iraq'],
+              ["Ireland",'Ireland'],
+              ["Israel",'Israel'],
+              ["Italy",'Italy'],
+              ["Jamaica",'Jamaica'],
+              ["Japan",'Japan'],
+              ["Jordan",'Jordan'],
+              ["Kazakhstan",'Kazakhstan'],
+              ["Kenya",'Kenya'],
+              ["Kiribati",'Kiribati'],
+              ["Korea, Democratic People Republic of",'Korea, Democratic People Republic of'],
+              ["Korea, Republic of",'Korea, Republic of'],
+              ["Kuwait",'Kuwait'],
+              ["Kyrgyzstan",'Kyrgyzstan'],
+              ["Lao People Democratic Republic",'Lao People Democratic Republic'],
+              ["Latvia",'Latvia'],
+              ["Lebanon",'Lebanon'],
+              ["Lesotho",'Lesotho'],
+              ["Liberia",'Liberia'],
+              ["Libyan Arab Jamahiriya",'Libyan Arab Jamahiriya'],
+              ["Liechtenstein",'Liechtenstein'],
+              ["Lithuania",'Lithuania'],
+              ["Luxembourg",'Luxembourg'],
+              ["Macao",'Macao'],
+              ["Macedonia, The Former Yugoslav Republic of",'Macedonia, The Former Yugoslav Republic of'],
+              ["Madagascar",'Madagascar'],
+              ["Malawi",'Malawi'],
+              ["Malaysia",'Malaysia'],
+              ["Maldives",'Maldives'],
+              ["Mali",'Mali'],
+              ["Malta",'Malta'],
+              ["Marshall Islands",'Marshall Islands'],
+              ["Martinique",'Martinique'],
+              ["Mauritania",'Mauritania'],
+              ["Mauritius",'Mauritius'],
+              ["Mayotte",'Mayotte'],
+              ["Mexico",'Mexico'],
+              ["Micronesia, Federated States of",'Micronesia, Federated States of'],
+              ["Moldova, Republic of",'Moldova, Republic of'],
+              ["Monaco",'Monaco'],
+              ["Mongolia",'Mongolia'],
+              ["Montserrat",'Montserrat'],
+              ["Morocco",'Morocco'],
+              ["Mozambique",'Mozambique'],
+              ["Myanmar",'Myanmar'],
+              ["Namibia",'Namibia'],
+              ["Nauru",'Nauru'],
+              ["Nepal",'Nepal'],
+              ["Netherlands",'Netherlands'],
+              ["Netherlands Antilles",'Netherlands Antilles'],
+              ["New Caledonia",'New Caledonia'],
+              ["New Zealand",'New Zealand'],
+              ["Nicaragua",'Nicaragua'],
+              ["Niger",'Niger'],
+              ["Nigeria",'Nigeria'],
+              ["Niue",'Niue'],
+              ["Norfolk Island",'Norfolk Island'],
+              ["Northern Mariana Islands",'Northern Mariana Islands'],
+              ["Norway",'Norway'],
+              ["Oman",'Oman'],
+              ["Pakistan",'Pakistan'],
+              ["Palau",'Palau'],
+              ["Palestinian Territory, Occupied",'Palestinian Territory, Occupied'],
+              ["Panama",'Panama'],
+              ["Papua New Guinea",'Papua New Guinea'],
+              ["Paraguay",'Paraguay'],
+              ["Peru",'Peru'],
+              ["Philippines",'Philippines'],
+              ["Pitcairn",'Pitcairn'],
+              ["Poland",'Poland'],
+              ["Portugal",'Portugal'],
+              ["Puerto Rico",'Puerto Rico'],
+              ["Qatar",'Qatar'],
+              ["Reunion",'Reunion'],
+              ["Romania",'Romania'],
+              ["Russian Federation",'Russian Federation'],
+              ["Rwanda",'Rwanda'],
+              ["Saint Helena",'Saint Helena'],
+              ["Saint Kitts and Nevis",'Saint Kitts and Nevis'],
+              ["Saint Lucia",'Saint Lucia'],
+              ["Saint Pierre and Miquelon",'Saint Pierre and Miquelon'],
+              ["Saint Vincent and The Grenadines",'Saint Vincent and The Grenadines'],
+              ["Samoa",'Samoa'],
+              ["San Marino",'San Marino'],
+              ["Sao Tome and Principe",'Sao Tome and Principe'],
+              ["Saudi Arabia",'Saudi Arabia'],
+              ["Senegal",'Senegal'],
+              ["Serbia and Montenegro",'Serbia and Montenegro'],
+              ["Seychelles",'Seychelles'],
+              ["Sierra Leone",'Sierra Leone'],
+              ["Singapore",'Singapore'],
+              ["Slovakia",'Slovakia'],
+              ["Slovenia",'Slovenia'],
+              ["Solomon Islands",'Solomon Islands'],
+              ["Somalia",'Somalia'],
+              ["South Africa",'South Africa'],
+              ["South Georgia and The South Sandwich Islands",'South Georgia and The South Sandwich Islands'],
+              ["Spain",'Spain'],
+              ["Sri Lanka",'Sri Lanka'],
+              ["Sudan",'Sudan'],
+              ["Suriname",'Suriname'],
+              ["Svalbard and Jan Mayen",'Svalbard and Jan Mayen'],
+              ["Swaziland",'Swaziland'],
+              ["Sweden",'Sweden'],
+              ["Switzerland",'Switzerland'],
+              ["Syrian Arab Republic",'Syrian Arab Republic'],
+              ["Taiwan, Province of China",'Taiwan, Province of China'],
+              ["Tajikistan",'Tajikistan'],
+              ["Tanzania, United Republic of",'Tanzania, United Republic of'],
+              ["Thailand",'Thailand'],
+              ["Timor-leste",'Timor-leste'],
+              ["Togo",'Togo'],
+              ["Tokelau",'Tokelau'],
+              ["Tonga",'Tonga'],
+              ["Trinidad and Tobago",'Trinidad and Tobago'],
+              ["Tunisia",'Tunisia'],
+              ["Turkey",'Turkey'],
+              ["Turkmenistan",'Turkmenistan'],
+              ["Turks and Caicos Islands",'Turks and Caicos Islands'],
+              ["Tuvalu",'Tuvalu'],
+              ["Uganda",'Uganda'],
+              ["Ukraine",'Ukraine'],
+              ["United Arab Emirates",'United Arab Emirates'],
+              ["United Kingdom",'United Kingdom'],
+              ["United States",'United States'],
+              ["United States Minor Outlying Islands",'US Minor Islands'],
+              ["Uruguay",'Uruguay'],
+              ["Uzbekistan",'Uzbekistan'],
+              ["Vanuatu",'Vanuatu'],
+              ["Venezuela",'Venezuela'],
+              ["Viet Nam",'Viet Nam'],
+              ["Virgin Islands, British",'Virgin Islands, British'],
+              ["Virgin Islands, U.S.",'Virgin Islands, U.S.'],
+              ["Wallis and Futuna",'Wallis and Futuna'],
+              ["Western Sahara",'Western Sahara'],
+              ["Yemen",'Yemen'],
+              ["Zambia",'Zambia'],
+              ["Zimbabwe",'Zimbabwe']], @user.country),{}, { :class => 'select2 form-control input-transparent' }) %>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label class="control-label col-sm-4 col-xs-4" for="last-name"><%= t('favorite quote')%>&nbsp;</label>
+      <div class="col-sm-8">
+        <%= f.text_field :quote,:value=>@user.quote,:class=>'form-control input-transparent'  %>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label class="control-label col-sm-4 col-xs-4" for="last-name"><%= t('about')%>&nbsp;</label>
+      <div class="col-sm-8">
+        <%= f.text_area :about,:value=>@user.about,:class=>'form-control input-transparent'  %>
+      </div>
+    </div>
+  <br><br><br>
+  <% if current_user.role? :admin %>
+      <div class="form-group">
+          <label for="address" class="control-label col-sm-4"><%= f.label 'approvation'%></label>
+          <div class="col-xs-12 col-sm-6">
+              <div class="input-group">
+                   <%= f.select(:approved,options_for_select([[d4x_sanitizer(t('Approved')), true], [d4x_sanitizer(t('Pending')), false]], @user.approved),{}, { :class => 'select2' }) %>
+               </div>
+          </div>
+      </div>
+    <br><br>
+    <div class="form-group">
+          <label for="address" class="control-label col-sm-4"><%= f.label d4x_sanitizer(t(:role)) %></label>
+          <div class="col-xs-12 col-sm-6">
+              <div class="input-group">
+                  <% for role in User::ROLES %>
+                      <%= check_box_tag "user[roles][]", role, @user.roles.include?(role),:class=>'i-checks' %>
+                      <%= h role.humanize %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <% end %>
+                    <%= hidden_field_tag "user[roles][]"%>
+              </div>
+          </div>
+      </div>
+  <% end %>
+    <br>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-sm-12">
+                <%= f.submit t("update") ,:class=>'btn btn-outline-success block full-width m-b' %>
+            </div>
+        </div>
+    </div>
+ <% end %>
+<% content_for :javascript do %>
+	<script type="text/javascript">
+		$(function() {
+		    $('.i-checks').iCheck({
+		        checkboxClass: 'icheckbox_square-green',
+		        radioClass: 'iradio_square-green',
+		    });
+		});
+	</script>
+<% end %>
+
+      

@@ -1,0 +1,58 @@
+<%= content_for :head do %>
+
+<% end %>
+
+<div id="settings-pane">
+	<div id="big-card-title">
+		<div id="evo-card-icon">
+		</div>
+		<div id="d4x-title-evo">
+			<%= "carts" %> 	
+		</div>
+	</div>
+	<% unless @carts.blank? %>
+	<table width="100%" class="d4x-grid">
+	 	<tr class="d4x-grid-title">
+			<th class="td-grid-tit" width="5%" >ID</th>
+		    <th class="td-grid-tit" ><%=d4x_sanitizer(t("order")) %></th>
+			<th class="td-grid-tit" ><%=d4x_sanitizer(t(:last_operation)) %></th>
+			<th class="td-grid-tit" ><%=d4x_sanitizer(t(:items)) %></th>
+		    <th class="td-grid-tit" ><%=d4x_sanitizer(t(:total_price)) %></th>
+		    <th class="td-grid-tit" ><%=d4x_sanitizer(t("currency")) %></th>
+		    <th class="td-grid-tit" ><%=d4x_sanitizer(t(:last_status)) %></th>
+		  </tr>
+		 <% @carts.each do |cart| %>
+			 <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			 <td class="td-grid-data"><%= cart.id %></td>
+		     <td class="td-grid-data"><%= cart.order_id %></td>
+		     <td class="td-grid-data"><%= cart.last_operation.to_s %></td>
+			 <td class="td-grid-data"><%= cart.items %></td>
+		     <td class="td-grid-data right"><%= cart.total_price %></td>
+		     <td class="td-grid-data right"><%= cart.currency %></td>
+		    <td class="td-grid-data">	<%= cart.purchased_at.to_s %>
+		    </td>
+		    
+		   	<td>
+				<%= link_to image_tag("plugin.png", :border =>0 , :mouseover => "plugin.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16"), cart %>
+			</td>
+			<td>
+				<% if current_user.role? :admin  %>
+					<%= link_to image_tag("plugin_edit.png", :border =>0, :mouseover => "plugin_edit.png", :title => d4x_sanitizer(t("icon-edit")),:size => "16x16" ), edit_cart_path(cart) %>
+				<% end %>
+			</td>
+			<td>
+				<% if current_user.role? :admin  %> 
+					<%= button_to "", cart, :confirm => 'are you sure?', :method => :delete, :class => 'pdestroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+			 <td class="td-grid-data" width="2%">&nbsp;</td>
+		
+		    
+		  </tr>
+		<% end %>
+	</table>
+	<% end %>
+	<div id="paginator">
+		
+	</div>
+</div>

@@ -1,0 +1,376 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "d4x-signup.js" %>
+  <%= javascript_include_tag 'd4x-check-nick' %>
+
+<% end %>
+	<h2 class="center"><%= d4x_sanitizer(t('congratulations'))%></h2>
+	<br />
+	<h4 class="center"><%= d4x_sanitizer(t('purchase completed'))%></h4>
+	<br />
+	<%= form_for("user", :url => user_registration_path) do |f| %>
+	
+		<%= f.hidden_field :order_id,:value=>@order.id %>		
+		
+		<table id="registration" align="center">
+			<tr>
+				
+				<td class="td-signup" align="center">
+					<%= f.text_field :firstname,:class=> "form-control center",:placeholder=>d4x_sanitizer(t('firstname')),:value=>@order.first_name%>
+				</td>
+				<td class="td-result">
+					<span id="pFirstname">&nbsp;</span>
+		 		</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= f.text_field :lastname,:class=> "form-control center",:placeholder=>d4x_sanitizer(t('lastname')),:value=>@order.last_name  %>
+				</td>
+				<td class="td-result">
+					<span id="pLastname">&nbsp;</span>
+		  		</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= f.text_field :nickname,:class=> "form-control center",:placeholder=>d4x_sanitizer(t('nickname')) %>
+				</td>
+				<td class="td-result">
+				  	<span id="pNickname">&nbsp;</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= f.email_field :email,:class=> "form-control email center" ,:placeholder=>d4x_sanitizer(t('email'))%>
+				</td>
+				<td class="td-result">
+					<span id="pEmail">&nbsp;</span>
+ 				</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= f.password_field :password, :class=> "form-control password center",:placeholder=>d4x_sanitizer(t('password'))%>
+				</td>
+				<td class="td-result">
+					<span id="strength">&nbsp;</span>
+ 				</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= f.password_field :password_confirmation, :class=> "form-control password center" ,:placeholder=>d4x_sanitizer(t('confirm'))%>
+				</td>
+				<td class="td-result">
+					<span id="pmatch">&nbsp;</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= f.select(:gender,options_for_select([[d4x_sanitizer(t('male')), 'M'], [d4x_sanitizer(t('female')), 'F'],[d4x_sanitizer(t('gender')), '0']], '0'), :class =>  "agadanga-selects gender center",:size =>"20") %>
+				</td>
+				<td class="td-result">
+					<span id="pGender">&nbsp;</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+				<%= f.select(:country , options_for_select([
+				[d4x_sanitizer(t('country')), ' '],
+				['Afghanistan', 'AF'],
+				['Albania', 'AL'],
+				['Algeria', 'DZ'],
+				['American Samoa', 'AS'],
+				['Andorra', 'AD'], 
+				['Angola', 'AO'],
+				['Anguilla', 'AI'],
+				['Antarctica', 'AQ'],
+				['Antigua & Barbuda', 'AG'], 
+				['Argentina', 'AR'],
+				['Armenia', 'AM'], 
+				['Aruba', 'AW'], 
+				['Australia', 'AU'], 
+				['Austria', 'AT'], 
+				['Azerbaijan', 'AZ'],
+				['Bahamas', 'BS'], 
+				['Bahrain', 'BH'], 
+				['Bangladesh', 'BD'],
+				['Barbados', 'BB'],
+				['Belarus', 'BY'], 
+				['Belgium', 'BE'], 
+				['Belize', 'BZ'],
+				['Benin', 'BJ'],
+				['Bermuda', 'BM'], 
+				['Bhutan', 'BT'],
+				['Bolivia', 'BO'], 
+				['Bosnia and Herzeg.', 'BA'],
+				['Botswana', 'BW'],
+				['Bouvet Island', 'BV'], 
+				['Brazil', 'BR'],
+				['British Ind. Ocean', 'IO'], 
+				['Brunei Darussalam', 'BN'], 
+				['Bulgaria', 'BG'],
+				['Burkina Faso', 'BF'],
+				['Burundi', 'BI'], 
+				['Cambodia', 'KH'],
+				['Cameroon', 'CM'],
+				['Canada', 'CA'],
+				['Cape Verde', 'CV'],
+				['Cayman Islands', 'KY'],
+				['Central Afr.Republic', 'CF'],
+				['Chad', 'TD'],
+				['Chile', 'CL'], 
+				['China', 'CN'], 
+				['Christmas Island', 'CX'],
+				['Cocos Islands', 'CC'], 
+				['Colombia', 'CO'],
+				['Comoros', 'KM'],
+				['Congo', 'CG'],
+				['Congo, Republic of', 'CD'], 
+				['Cook Islands', 'CK'],
+				['Costa Rica', 'CR'],
+				['Cote d`Ivoire', 'CI'],
+				['Croatia (Hrvatska)', 'HR'],
+				['Cuba', 'CU'],
+				['Cyprus', 'CY'],
+				['Czech Republic', 'CZ'],
+				['Denmark', 'DK'],
+				['Djibouti', 'DJ'],
+				['Dominica', 'DM'],
+				['Dominican Republic', 'DO'],
+				['East Timor', 'TP'],
+				['Ecuador', 'EC'], 
+				['Egypt', 'EG'], 
+				['El Salvador', 'SV'],
+				['Equatorial Guinea', 'GQ'],
+				['Eritrea', 'ER'],
+				['Estonia', 'EE'],
+				['Ethiopia', 'ET'],
+				['Falkland Islands', 'FK'],
+				['Faroe Islands', 'FO'],
+				['Fiji', 'FJ'],
+				['Finland', 'FI'], 
+				['France', 'FR'],
+				['France, Metropol.', 'FX'],
+				['French Guiana', 'GF'],
+				['French Polynesia', 'PF'],
+				['French Sout Terr.', 'TF'], 
+				['Gabon', 'GA'],
+				['Gambia', 'GM'],
+				['Georgia', 'GE'],
+				['Germany', 'DE'],
+				['Ghana', 'GH'],
+				['Gibraltar', 'GI'],
+				['Greece', 'GR'],
+				['Greenland', 'GL'],
+				['Grenada', 'GD'],
+				['Guadeloupe', 'GP'],
+				['Guam', 'GU'],
+				['Guatemala', 'GT'],
+				['Guinea', 'GN'],
+				['Guinea-Bissau', 'GW'],
+				['Guyana', 'GY'],
+				['Haiti', 'HT'],
+				['Heard Mc Donald', 'HM'],
+				['Holy See (Vatican)', 'VA'],
+				['Honduras', 'HN'],
+				['Hong Kong', 'HK'],
+				['Hungary', 'HU'],
+				['Iceland', 'IS'],
+				['India', 'IN'],
+				['Indonesia', 'ID'], 
+				['Iran', 'IR'],
+				['Iraq', 'IQ'],
+				['Ireland', 'IE'],
+				['Israel', 'IL'],
+				['Italy', 'IT'],
+				['Jamaica', 'JM'],
+				['Japan', 'JP'],
+				['Jordan', 'JO'],
+				['Kazakhstan', 'KZ'],
+				['Kenya', 'KE'],
+				['Kiribati', 'KI'],
+				['Korea, Democratic', 'KP'],
+				['Korea, Republic of', 'KR'],
+				['Kuwait', 'KW'],
+				['Kyrgyzstan', 'KG'],
+				['Lao Peoples', 'LA'],
+				['Latvia', 'LV'],
+				['Lebanon', 'LB'],
+				['Lesotho', 'LS'],
+				['Liberia', 'LR'],
+				['Libyan', 'LY'],
+				['Liechtenstein', 'LI'],
+				['Lithuania', 'LT'],
+				['Luxembourg', 'LU'],
+				['Macau', 'MO'],
+				['Macedonia', 'MK'],
+				['Madagascar', 'MG'],
+				['Malawi', 'MW'],
+				['Malaysia', 'MY'],
+				['Maldives', 'MV'],
+				['Mali', 'ML'],
+				['Malta', 'MT'],
+				['Marshall Islands', 'MH'],
+				['Martinique', 'MQ'],
+				['Mauritania', 'MR'],
+				['Mauritius', 'MU'],
+				['Mayotte', 'YT'],
+				['Mexico', 'MX'],
+				['Micronesia', 'FM'],
+				['Moldova', 'MD'],
+				['Monaco', 'MC'],
+				['Mongolia', 'MN'],
+				['Montserrat', 'MS'],
+				['Morocco', 'MA'],
+				['Mozambique', 'MZ'],
+				['Myanmar', 'MM'],
+				['Namibia', 'NA'],
+				['Nauru', 'NR'],
+				['Nepal', 'NP'],
+				['Netherlands', 'NL'], 
+				['Netherlands Antilles', 'AN'],
+				['New Caledonia', 'NC'],
+				['New Zealand', 'NZ'],
+				['Nicaragua', 'NI'],
+				['Niger', 'NE'],
+				['Nigeria', 'NG'],
+				['Niue', 'NU'],
+				['Norfolk Island', 'NF'],
+				['Northern Mariana Isl', 'MP'],
+				['Norway', 'NO'],
+				['Oman', 'OM'],
+				['Pakistan', 'PK'],
+				['Palau', 'PW'],
+				['Panama', 'PA'],
+				['Papua New Guinea', 'PG'],
+				['Paraguay', 'PY'],
+				['Peru', 'PE'],
+				['Philippines', 'PH'],
+				['Pitcairn', 'PN'],
+				['Poland', 'PL'],
+				['Portugal', 'PT'],
+				['Puerto Rico', 'PR'],
+				['Qatar', 'QA'],
+				['Reunion', 'RE'],
+				['Romania', 'RO'],
+				['Russian Federation', 'RU'],
+				['Rwanda', 'RW'],
+				['Saint Kitts & Nevis', 'KN'],
+				['Saint LUCIA', 'LC'],
+				['Saint Vincent', 'VC'],
+				['Samoa', 'WS'],
+				['San Marino', 'SM'],
+				['Sao Tome & Principe', 'ST'], 
+				['Saudi Arabia', 'SA'],
+				['Senegal', 'SN'],
+				['Seychelles', 'SC'],
+				['Sierra Leone', 'SL'],
+				['Singapore', 'SG'],
+				['Slovakia', 'SK'],
+				['Slovenia', 'SI'],
+				['Solomon Islands', 'SB'],
+				['Somalia', 'SO'],
+				['South Africa', 'ZA'],
+				['South Georgia', 'GS'],
+				['Spain', 'ES'],
+				['Sri Lanka', 'LK'],
+				['St. Helena', 'SH'],
+				['St.Pierre & Miquelon', 'PM'],
+				['Sudan', 'SD'],
+				['Suriname', 'SR'],
+				['Svalbard', 'SJ'],
+				['Swaziland', 'SZ'],
+				['Sweden', 'SE'],
+				['Switzerland', 'CH'],
+				['Syrian Arab Republic', 'SY'],
+				['Taiwan', 'TW'],
+				['Tajikistan', 'TJ'],
+				['Tanzania', 'TZ'],
+				['Thailand', 'TH'],
+				['Togo', 'TG'],
+				['Tokelau', 'TK'],
+				['Tonga', 'TO'],
+				['Trinidad & Tobago', 'TT'],
+				['Tunisia', 'TN'],
+				['Turkey', 'TR'],
+				['Turkmenistan', 'TM'],
+				['Turks & Caicos Isl.', 'TC'],
+				['Tuvalu', 'TV'],
+				['Uganda', 'UG'],
+				['Ukraine', 'UA'],
+				['United Arab Emir.', 'AE'],
+				['United Kingdom', 'GB'],
+				['United States', 'US'],
+				['United States Minor', 'UM'],
+				['Uruguay', 'UY'],
+				['Uzbekistan', 'UZ'],
+				['Vanuatu', 'VU'],
+				['Venezuela', 'VE'],
+				['Viet Nam', 'VN'],
+				['Virgin Islands (Brit)', 'VG'],
+				['Virgin Islands (U.S.)', 'VI'],
+				['Wallis & Futuna Isl.', 'WF'], 
+				['Western Sahara', 'EH'],
+				['Yemen', 'YE'],
+				['Yugoslavia', 'YU'],
+				['Zambia', 'ZM'],
+				['Zimbabwe', 'ZW']], '0'), :class =>  "control-nick country center" ,:size =>"20",:value=>"EH") %>
+			</td>
+				<td class="td-result">
+					<span id="pCountry">&nbsp;</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="td-signup" align="center">
+					<%= d4x_sanitizer(t("birthday")) %><br />
+					<%= f.date_select(:birthday, :order => [:day, :month, :year],:start_year => 1930,:end_year => 1998,:use_short_month=>true,:include_blank=>true,:class=>'agadanga-selects center' ) %>
+				</td>
+				<td class="td-result">
+					<span id="pBirthdate">&nbsp;</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<%= check_box_tag :agreement %>&nbsp;<%= d4x_sanitizer(t("i agree with terms and conditions"))%>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" height="20px">&nbsp;
+						<%= image_tag "registering-spinner.gif",:class=>'none',:id=>'reg-spinner' %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<span class="btn center"> 
+						<%= f.submit d4x_sanitizer(t("sign up")), :id => "signup-submit",:class=>'button-d4x' %><br />
+					</span>	
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<% if not notice.blank? %>
+						<div id="login-feed" class="ui-widget">
+							<div class="ui-state-highlight ui-corner-all" >
+								<span id="notice"><%= d4x_sanitizer(notice) %></span>
+							</div>
+						</div>
+					<% end %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<% if not alert.blank? %>
+						<div  id="login-feed" class="ui-widget">
+							<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+								<span id="alert"><%= d4x_sanitizer(alert) %></span>
+							</div>
+						</div>
+					<% end %>
+				</td>
+			</tr>
+		</table>	
+
+<% end %>
+
+<% flash[:notice] = "Your Transaction is #{params[:st]} fort amount of €#{params[:amt]}. " if params[:st] %>

@@ -1,0 +1,36 @@
+<h4 class="card-title lightlime"><%=t('online visitors') %></h4>
+<h6 class="card-subtitle"><%= t("Who's online") %></h6>
+<% unless @visitors.blank? %>
+  <div class="table-responsive">
+    <table id="data-table" class="table">
+      <thead>
+      <tr>
+        <th><%= t("nick") %></th>
+        <th><%= t("IP Address") %></td>
+        <th><%= t("Timestamp") %></td>
+        <th><%= t("Session") %></td>
+        <th><%= t("Method") %></td>
+        <th><%= t("URL") %></td>
+      </tr>
+      </thead>
+      <tbody>
+      <% unless @visitors.blank? %>
+        <% @visitors.each do |visitor| %>
+          <tr>
+            <td><%= visitor.nickname %></td>
+            <td><%= visitor.remote_ip %></td>
+            <td><%= visitor.created_at.to_s(:short) %></td>
+            <td><%= visitor.session_id %></td>
+            <td><%= visitor.method %></td>
+            <td><%= visitor.visited_url %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
+    <div id="paginator">
+      <%= will_paginate @visitors,:per_page => 50 %>
+    </div>
+  </div>
+<% end %>
+

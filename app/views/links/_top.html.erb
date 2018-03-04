@@ -1,0 +1,68 @@
+<% @option =  Option.where(:name=>'HOME_PAGE_SHOW_LINKS').first.value %>
+
+<% if @option == "Y" %>
+	<% @link =  Link.where(:visible=>true).first(:order=>"RANDOM()") %>
+	<div id="vert-spacer">
+		&nbsp;
+	</div>
+	<div id="big-card">
+			<div id="big-card-title">
+				<div id="evo-card-icon">
+					<%= image_tag("link.png", :border =>0, :mouseover => "link.png", :title =>"Cool Links",:size => "16x16" ) %>
+					
+				</div>
+				<div id="d4x-title-evo4" class="d4x-title-evo3">
+						<%= t('favourite links') %> 
+				</div>
+			</div>
+			<div id="center-container">
+				<table id="show-advisore">
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="5" id="d4x-title-evo"><%=  @link.name %></td>
+					</tr>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr>
+					<% if not @link.description.blank? %>
+					<tr>
+						<td width="5%"></td>
+						<td colspan="3" class="show-item-data center">	<%= @link.description %></td>
+						<td width="2%"></td>
+					</tr>
+					<% end %>
+					<% if not @link.notes.blank? %>
+					<tr>
+						<td width="5%"></td>
+						<td class="show-item-label"><%= t('notes') %></td>
+						<td width="2%"></td>
+						<td class="show-item-data">	<%= @link.notes %></td>
+						<td width="2%"></td>
+					</tr>
+					<% end %>
+					<% if not @link.url.blank? %>
+					<tr>
+						<td width="5%"></td>
+						<td colspan="3" class="show-item-data center"><%= link_to @link.url,@link.url,:target=>"_blank" %></td>
+						<td width="2%"></td>
+					</tr>
+					<% end %>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="5%"></td>
+						<td colspan="3"><%= link_to image_tag(@link.image.url,:class=>"snapshot"), @link.url,:target=>"_blank"  %></td>
+						<td width="2%"></td>
+					</tr>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr>	
+				</table>	
+			</div>	
+			<div id="paginator"></div>
+	</div>
+
+<% end %>

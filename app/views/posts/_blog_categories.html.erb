@@ -1,0 +1,28 @@
+	<% exist_quanti =  Option.where(:name=>'HOME_PAGE_RECENT_BLOG_COUNT').count %>
+	<% @quanti =  Option.where(:name=>'HOME_PAGE_RECENT_BLOG_COUNT').first.value if exist_quanti %>
+	<% quanti = 10 if @quanti.blank? %>
+	<% @recents = Post.where(:status => 'publish',:content_type => 'post').limit(@quanti).order(:published).reverse_order %>
+    <br /><br /> 
+    	<div class="chat-widget">
+				<div id="menu-title-2013">
+					<%= t("categories") %>
+				</div>
+			<table width="100%" class="d4x-grid">
+				<% @recents.each do |post| %>
+			    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+			   			<td width="1%" class="different-title1">&nbsp;</td>
+						<td width="25%">
+								<%= post.category %>
+						</td>
+						<td width="58%"><%= link_to post.title,post %></td>
+						<td width="1%">&nbsp;</td>
+			    </tr>
+				<% end %>	
+				 <tr>
+					<td colspan="5"></td>
+				</tr>
+				 <tr>
+					<td colspan="5"></td>
+				</tr>
+			</table>
+		</div>

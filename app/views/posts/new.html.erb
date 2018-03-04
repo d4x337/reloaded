@@ -1,0 +1,153 @@
+<script language="JavaScript">
+  $( document ).ready(function() {
+
+    $('#icon-compose-new').css('color','#2D3736');
+    $('#icon-posts').css('color','grey');
+    $('#icon-archive').css('color','grey');
+    $('#icon-tags').css('color','grey');
+    $('#icon-settings').css('color','grey');
+    $('#icon-author').css('color','grey');
+
+  });
+</script>
+<%= content_for :head do %>
+	<script type="text/javascript" src="/javascripts/tinymce/tinymce.min.js" >
+	</script>
+	<script type="text/javascript">
+		tinyMCE.init({
+			mode : "textareas",
+			theme : "modern",
+			plugins : "image,spellchecker,insertdatetime,preview",	
+			menubar: false,
+			statusbar: false,
+				
+			// Theme options - button# indicated the row# only
+			theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+			theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor",
+			theme_advanced_buttons3 : "insertdate,inserttime,|,spellchecker,removeformat,|,sub,sup,|,charmap",	
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "bottom"
+			
+		});
+		function showLoading() {
+		  $("#loading").show();
+		}
+		
+		function hideLoading() {
+		  $("#loading").hide();
+		}
+	</script>
+	<style>
+	.none{
+		display:none;
+	}
+	#message_efile,
+	#pubkey,
+	#privkey
+	{
+		background-color:black;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:12px;
+		height:80px;
+	}
+	#input,
+	#message_content{
+		background-color: #001100;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:14px;
+		height:200px;
+	}
+	.d4xcontrol{
+		background-color:white;
+		border:0px;
+	}
+	#remote{
+		
+	}
+	.tt-suggestions,
+	.tt-suggestion{
+		color:yellow;
+	}
+	.tt-dropdown-menu{
+		background-color:#001100;
+		color:yellow;
+		border:none;
+		border-top-left-radius:0px;
+		border-top-right-radius:0px; 
+	}
+	.none{
+		display:none;
+	}
+	.orange{
+		color:orange;
+	}
+	.lime{
+		color:lime;
+	}
+	.red{
+		color:red;
+	}
+	#spinner{
+		margin-top:10px;
+		margin-left:-20px;
+	}
+	#target_name{
+		margin-left:7px;
+		background-color:#001100;
+		border:0px solid white;
+		color:yellow;
+		border-radius:3px;
+		width:93%;
+	}
+	.ttt{
+		background-color:#1AB393;
+		color:white;
+	}
+	#aespass{
+		background-color:black;
+		color:lime;
+		border-radius:5px;
+		border: 2px solid #005500;
+		
+		
+	}
+	#message_content{
+		background-color:#001100;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:14px;
+	}
+	.minicons{
+		border:0px solid white;
+		
+	}
+	.shipgrey{
+		background-color:#4F6260;
+		border: 2px solid darkgrey;
+	}
+	
+	.d4xsearch{
+		margin-left:7px;
+		border:0px solid white;
+		color:yellow;
+		border-top-left-radius:3px;
+		border-bottom-left-radius:3px;
+		width:auto;
+		max-width:290px;
+		background-color:#001100;
+	}
+	
+	
+</style>
+
+<% end %>
+<% @title =t('add new post') %>
+	<div id="center-container">
+		<%= render 'form' %>
+	</div>

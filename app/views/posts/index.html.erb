@@ -1,0 +1,39 @@
+<h4 class="card-title"><%=t('admin blog') %></h4>
+<h6 class="card-subtitle"></h6>
+<% unless @posts.blank? %>
+  <div class="table-responsive">
+    <table id="data-table" class="table">
+      <thead>
+      <tr>
+        <th><%=t(:post) %></th>
+        <th><%=t(:author) %></th>
+        <th><%=t(:published) %></th>
+        <th><%=t('edit')%></th>
+        <th><%=t('delete')%></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to(post) do %><%= post.title[0,35] %><% end %></td>
+          <td><%= post.author %></td>
+          <td>
+            <% if current_user %>
+              <% if current_user.blog.id = post.blog_id %>
+                <%= link_to image_tag("note_edit.png", :border =>0, :mouseover => "note_edit.png", :title => t("icon-edit"),:size => "16x16" ), edit_post_path(post) %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if current_user %>
+              <% if current_user.blog.id = post.blog_id %>
+                <%= button_to "", post, :confirm => 'really want to delete this post?', :method => :delete, :class => 'postdestroy ',:name => 'destroy',:size => "16x16" %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= link_to image_tag("quotes.gif", :border =>0, :mouseover => "quotes1.gif", :title => t("icon-quotes"),:size =>"32x32" ), new_quote_type_path %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= t('types of quote') %>	
+			</div>
+		</div>
+		<br>
+		<div id="center-content2">
+			<p>
+			  <b><%= t(:id) %></b><br>
+			  <%= @quote_type.id %>
+			</p>
+			<p>
+			  <b><%= t(:type_of_quote) %></b><br>
+			  <%= @quote_type.type_of_quote %>
+			</p>
+			<p>
+			  <b><%= t(:visible) %></b><br>
+			  <%= @quote_type.visible %>
+			</p>
+			</div>
+</div>

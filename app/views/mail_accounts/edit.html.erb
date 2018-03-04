@@ -1,0 +1,12 @@
+<div class="big-card">
+	<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= link_to image_tag("user_add.png", :border =>0, :mouseover => "user_add.png", :name=>"admin mail_accountes" ), new_mail_account_path %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= d4x_sanitizer(t('update mail account')) %>	
+			</div>
+		</div>
+		<%= render 'form' %>
+		
+</div>

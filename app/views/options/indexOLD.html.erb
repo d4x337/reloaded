@@ -1,0 +1,63 @@
+<script language="JavaScript">
+$( document ).ready(function() {
+	$('#icon-compose').css('color','white');
+	$('#icon-received').css('color','grey');
+	$('#icon-sent').css('color','grey');
+	$('#icon-contacts').css('color','#5D4EB9');
+	$('#icon-settings').css('color','grey');
+});	
+</script>
+<style>
+	.lastseen{
+		margin-right: 5px;
+		cursor: pointer;
+	}
+	#button-message{
+		margin-right: 5px;	
+	}
+	.onoff{
+		margin-top:-5px;
+		margin-bottom:3px;
+	}
+</style>
+<div class="users-list">
+	<% unless @options.blank? %>
+		<% @options.each do |option| %>
+		  		<div class="chat-user">
+				    <div class="row">
+				    	
+			    		<div class="col-sm-8 col-xs-8" align="left">
+			    			<div class="row"><a href="#"><%= option.name %></a></div>
+			    			<div class="row yellow"><%= option.value %></div>
+			    		</div>
+			    		<div class="col-sm-3 col-xs-3">
+			    			<div class="row">
+			    				<%= link_to(edit_option_path(option)) do %>
+								    <span class="btn btn-xs btn-success white"><i class='fa fa-edit white'></i></span>
+								<% end %>
+							</div>
+			    			<div class="row">
+			    				<span class="pull-right" id="button-message">
+			    					<%= button_to option, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-xs btn-success" do %>
+							   			<i class='fa fa-trash-o white'></i>
+									<% end %>
+			    				</span>
+			    			</div>
+			    		</div>
+				    </div>				              
+			    </div>
+		  
+		    
+		    
+	
+		<% end %>
+	<% end %>
+</div>
+<script>
+	$(function(){
+		$('.users-list').slimScroll({
+			height: '467px'
+		});
+	});
+</script>
+

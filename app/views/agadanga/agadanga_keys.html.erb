@@ -1,0 +1,51 @@
+<%= content_for :head do %>
+	<%= javascript_include_tag 'd4x-mail-accounts' %>
+<% end %>
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "big_icons_some_active" %>
+<% end %>
+<%= content_for :folders_list do %>
+		<%= render :partial => "no_folder_selected" %>
+<% end %>
+<div id="settings-pane">
+	<div id="center-content-agadanga1" class="left">
+		<%= form_for(@mail_account) do |f| %>
+				    <% if @mail_account.errors.any? %>
+						<strong class="error-counter"><%= pluralize(@mail_account.errors.count, d4x_sanitizer(t("error"))) %> :</strong> </p>
+						 <div id="error-list">
+							 <% @mail_account.errors.full_messages.each do |msg| %>
+						        <li><%= msg %></li>
+						      <% end %>
+					     </div>
+				 	<% end %>
+				<br />
+				<br />
+				<%= label_tag d4x_sanitizer(t("change your password")),nil,{:class=>'lcd lcd-bigger grey'} %>
+				<br />
+				<br />
+				<%= label_tag @mail_account.login,nil,{:class=>'lcd lcd-bigger green'} %>
+				<br />
+				<%= label_tag agadanga_changed_pass(@mail_account.id),nil,{:class=>'lcd lcd-bigger violet'} %>
+				<%= label_tag d4x_sanitizer(t("your password has been updated"))+" "+time_ago_in_words(@mail_account.updated_at)+" "+d4x_sanitizer(t("ago")),nil,{:class=>'lcd yellow'} %>
+				<br />
+				<br />
+				<div id="agadanga-change-password">
+				    <%= f.label d4x_sanitizer(t("from name")),:class=>"show-item-label" %><br />
+				    <%= f.text_field :name , :class=>"thin-control center agadanga_from_name" %>
+					<br />
+					<br />
+				    <%= f.label d4x_sanitizer(t('new password')),:class=>"show-item-label " %><br>
+				    <%= f.password_field :password , :class=>"thin-control center agadanga_pass"%>
+					<br />
+					<br />
+				    <%= f.label d4x_sanitizer(t(:confirm)),:class=>"show-item-label" %><br>
+				    <%= f.password_field :password , :class=>"thin-control center agadanga_pass" %>
+					<br />
+					
+						<br />
+				    <%= f.submit d4x_sanitizer(t('change password')),:class=>'button-d4x' %>
+					<br />
+			</div>
+				
+	<% end %>
+</div>

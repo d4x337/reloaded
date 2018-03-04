@@ -1,0 +1,78 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "d4x-cart" %>
+<% end %>
+
+<% content_for :menu do %>
+<div id="menu">
+	<ul>
+		<li><a href="/" accesskey="1" title=""><%= d4x_sanitizer(t('menu-create-account'))%></a></li>
+		<li><a href="/configure" accesskey="2" title=""><%= d4x_sanitizer(t('menu-configure'))%></a></li>
+		<li><a href="/demo-inbox" accesskey="3" title=""><%= d4x_sanitizer(t('menu-demo'))%></a></li>
+		<li><a href="/terms" accesskey="4" title=""><%= d4x_sanitizer(t('menu-terms'))%></a></li>
+		<li class="current_page_item"><a href="/contact" accesskey="5" title=""><%= d4x_sanitizer(t('menu-contact'))%></a></li>
+		<li><a href="/about" accesskey="6" title=""><%= d4x_sanitizer(t('menu-about'))%></a></li>
+	</ul>
+</div>
+<% end %>
+
+<br />
+	<%= "select package for " %>
+	<%= label_tag(@cart.nick+"@"+@cart.domain,nil,{:id=>'choosen-address',:class=>'grey'})%>
+<br />
+<br />
+<table class="d4x-shopping" align="center">
+	  <tr>
+	    <td colspan="6" class="grey">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td><%= hidden_field_tag(:cart_id,@cart.id) %></td>
+	    <td><%= label_tag(d4x_sanitizer(t('package')),nil,{:class=>'grey'})%></td>
+	    <td><%= label_tag(d4x_sanitizer(t('menu-subscribe')),nil,{:class=>'grey'})%></td>
+	    <td width="20px">		
+		</td>
+    <td class="price"><%= label_tag(d4x_sanitizer(t('month')),nil,{:class=>'grey'})%></td>
+  	    <td><%= label_tag(d4x_sanitizer(t('annual subscription')),nil,{:class=>'grey'}	)%></td>
+	  </tr>
+	  <tr>
+	     <td></td>
+	     <td class="price">
+	      <%= select_tag(:prod_id,options_for_select([[d4x_sanitizer(t('mailbox'))+' 1 GB', '2'], [d4x_sanitizer(t('mailbox'))+' 3 GB', '3'],[d4x_sanitizer(t('mailbox'))+' 20 GB', '4']], @cart.prod_id), {:class =>  "agadanga-selects"}) %><br />
+     	 </td>
+	     <td class="qty">
+		      <%= form_for(@cart) do |f| %>
+			      <%= f.hidden_field :id,:value=>@cart.id%>
+			      <%= f.hidden_field :product_id,:value=>@cart.prod_id%>
+				  <%= f.select(:items,options_for_select([['1 ' +d4x_sanitizer(t('year')), '1'], ['2 '+d4x_sanitizer(t('years')), '2'],['3 '+d4x_sanitizer(t('years')), '3'],['4 '+d4x_sanitizer(t('years')), '4'],['5 '+d4x_sanitizer(t('years')), '5']], '0'),:class =>  "agadanga-selects") %><br />
+	     	  <% end %>
+		 </td>
+           <td width="20px">		
+		 </td>
+	     <td class="price"><%= label_tag((@cart.total_price/12).to_s+"0",nil,{:class=>'white',:id=>'total_month'})%></td>
+	     <td class="price"><%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>'white',:id=>'total_price'})%></td>
+	  </tr>
+	  <tr>
+		 <td class="" colspan="6">
+ 		    <span id="product-name" class="yellow">
+ 		    		<%= @cart.status %>
+			 </span>
+ 		  </td>
+	  </tr>
+	  <tr>
+		  <td class="total price yellow" colspan="6">
+		   	<br />
+		     <%= label_tag(d4x_sanitizer(t('total')),nil,{:class=>'yellow'})%>
+		     <%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>'black',:id=>'total_cart'})%>
+		  </td>
+	  </tr>
+	  <tr>
+		  <td class="" colspan="6">
+
+		  </td>
+	  </tr>
+</table>
+<br />
+<br />
+<div >
+	<%= link_to "Continue",new_order_path %>
+</div>

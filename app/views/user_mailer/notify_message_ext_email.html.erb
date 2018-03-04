@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Reloaded</title>
+  <style type="text/css">
+  body, td { color:#000000; font-size:14px; font-family:Verdana,Helvetica,Arial; }
+  .divider { background-color:#555555; height:2px; }
+  .episode h2 { margin-top:0; margin-bottom:8px; font-size:18px; }
+  .episode p { margin:8px 0; }
+  .episode img { border:solid 1px #777777; }
+  .episode .duration { font-size:11px;color:#555555; }
+  #footer { font-size:11px; color:#555555; }
+  #footer a { color:#555555;}
+  .btn-primary{
+  	text-decoration:none;
+  	color:#FFF;
+  	background-color:#1ab394;
+  	border:solid #1ab394;
+  	border-width:5px 10px;
+  	line-height:2;
+  	font-weight:700;
+  	text-align:center;
+  	cursor:pointer;
+  	display:inline-block;
+  	border-radius:5px;
+  	text-transform:capitalize;
+  }
+   
+  </style>
+</head>
+<body>
+  <table width="100%" id="background" border="0" cellpadding="0" cellspacing="0">
+    <tr><td align="center" valign="top">
+      <table width="650" id="main" border="0" cellpadding="0" cellspacing="20">
+        <tr>
+          <td class="divider" colspan="2" bgcolor="#555555" height="1"></td>
+        </tr>
+        <tr class="episodes">
+          <td valign="top">
+            <h2>Hello <%= @target_name %>,</h2>
+           	<p>You have a private encrypted message.</p>
+            <p>To read it just follow the link below </p>
+            <p><%= @read_url %></p>
+            <p>After the delivery it will be destroyed.</p><br />
+            <br />
+            <p>Best Regards,</p>
+            <p>Reloaded</p>
+            <br /><br />
+            <a href="<%= @read_url %>" id="btn" class="btn-primary">Read Message</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="divider" colspan="2" bgcolor="#555555" height="2"></td>
+        </tr>
+        <tr>
+          <td id="footer" colspan="2" align="center">
+            <p>&copy; 2014-2017 Reloaded</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

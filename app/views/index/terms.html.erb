@@ -1,0 +1,105 @@
+<style>
+	.info{
+		word-wrap: break-word;
+		text-align:left;
+		color:white;
+	}
+	.whiteee{
+		color:white;
+	}
+	h2,h4{
+		color:white;
+	}
+  #tortuga-terms{
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:5px;
+    margin-right:5px;
+    font-family: Verdana, Arial, Helvetica, Courier, sans-serif;
+    color: white;
+    padding:10px;
+
+    width:97%;
+    border-top-right-radius: 10px 10px;
+    border-top-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    border-left: 2px lime solid;
+    border-right: 2px lime solid;
+    border-bottom: 2px lime solid;
+    border-top: 2px lime solid;
+    font-size:12px;
+    line-height: 1.3;
+    text-align:left;
+
+    box-shadow:1px 1px 1px black;
+    word-wrap: break-word;
+  }
+
+</style>
+<div class="messages middle-box text-center animated">
+
+<div>
+    <div class="col-sm-2 col-xs-2 d4xlogo">
+      <%=link_to(image_tag("logo15.png",:class=>'imagelogo'),"/")%>
+    </div>
+    <div class="col-sm-8  col-xs-8 left">
+      <%= form_tag "/search",:method => "get",:role=>'search' do %>
+          <%= hidden_field_tag :area, 'firstname' %>
+          <div class="form-group none" id="searchbox">
+            <div class="input-group">
+              <div id="remote">
+                <%= text_field_tag :findthis,params[:query],{:class=>'typeahead form-controls input-sm',:placeholder=>d4x_sanitizer(t('search'))} %>
+              </div>
+              <span class="input-group-btn">
+				   				<%= button_tag raw('<i class="fa fa-search white"></i>'),:id => "search-submit",:class=>'btn btn-primary btn-sm',:method => "post",:title=>d4x_sanitizer(t('search'))%>
+					   		</span>
+            </div>
+          </div>
+      <% end %>
+      <%= image_tag "tortuga.gif" %>
+    </div>
+
+    <div class="col-sm-1 col-xs-1">
+      <a href="#" title="Compose" id="link-compose" >
+        <i class="fa fa-2x fa-search" id="icon-compose"></i>
+      </a>
+      <div class="sk-spinner sk-spinner-wave none" id="spinner">
+        <div class="sk-rect1"></div>
+        <div class="sk-rect2"></div>
+        <div class="sk-rect3"></div>
+        <div class="sk-rect4"></div>
+        <div class="sk-rect5"></div>
+      </div>
+    </div>
+
+  </div>
+
+<div>
+
+  <div id="tortuga-terms">
+    <h4 class="whiteee">Term and Conditions of Use</h4>
+    Cookies on the Tortuga website. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the Tortuga website. However, if you would like to, you can change your cookie settings at any time.
+  </div>
+  <br />
+  <div id="tortuga-terms">
+    <h4 class="whiteee">Privacy Policy</h4>
+    Cookies on the Tortuga website. We use cookies to ensure that we give you the best experience on our website.
+  </div>
+  <br />
+    <br>
+    <div id="tortuga-terms">
+      <h4 class="whiteee">Cookies</h4>
+        Cookies on the Tortuga website. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the Tortuga website. However, if you would like to, you can change your cookie settings at any time.
+    </div>
+    <br />
+</div>
+<script>
+	$(function(){
+		$('.info').slimScroll({
+			height: '470'
+		});
+	});
+</script>
+</div>

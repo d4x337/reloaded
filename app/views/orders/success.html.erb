@@ -1,0 +1,24 @@
+<% content_for :head do %>
+	  <%= javascript_include_tag "d4x-signup.js" %>
+	  <%= javascript_include_tag 'd4x-check-nick' %>
+<% end %>
+<h3 align="center" id="reg-title"><%= d4x_sanitizer(t('congratulations')) %></h3>
+<%= form_for("user", :url => user_registration_path) do |f| %>
+		<%= f.hidden_field :order_id,:value=>@order.id %>		
+			<p align="center">
+					<%= f.text_field :firstname,:class=> "form-control firstname",:size =>"21",:placeholder=>d4x_sanitizer(t('firstname')),:value=>@order.first_name+' '+@order.last_name%>
+					<span id="pFirstname"></span>
+					<%= f.text_field :nickname,:class=> "form-control nickname",:size =>"21",:placeholder=>d4x_sanitizer(t('nickname')) %>
+				  	<span id="pNickname"></span>
+					<%= f.email_field :email,:class=> "form-control email",:size =>"21" ,:placeholder=>d4x_sanitizer(t('email'))%>
+					<span id="pEmail"></span>
+ 					<%= f.password_field :password, :class=> "form-control password",:size =>"21",:placeholder=>d4x_sanitizer(t('password'))%>
+					<span id="strength"></span>
+ 	 				<h5><%= check_box_tag :agreement %>&nbsp;<%= d4x_sanitizer(t("i agree with terms and conditions"))%></h5>
+					<%= image_tag "registering-spinner.gif",:class=>'none',:id=>'reg-spinner' %>
+					<br />
+					<%= f.submit d4x_sanitizer(t("register")), :id => "signup-submit",:class=>'button-d4x' %><br />
+			</p>
+<% end %>
+
+<% flash[:notice] = "Your Transaction is #{params[:st]} fort amount of €#{params[:amt]}. " if params[:st] %>

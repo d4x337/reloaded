@@ -1,0 +1,41 @@
+<% @option =  Option.where(:name=>'http://www.comune.viguzzolo.al.it/index_interno.htm').first %>
+<% if @option.present? %>
+	<% if @option.value == "Y" %>
+		<% if post_for_homepage? %>
+		  <% @posts = Post.where(:pinged=>'h0m3p4g3') %>
+			  <% post = @posts.first %>
+		    	<div id ="homepage-post-2013">
+		    		<div id="evo-card-2013">
+						<%= image_tag("d4x150.jpg",:height=>"48", :border =>0, :mouseover => "d4x150.jpg", :title => "blog post",:class=>"round3" ) %>
+					</div>
+					
+					<div id="homepage-post-data">
+						<%= label_tag post.published.to_s(:long),nil,{:class=>"orange"} %>
+					</div>
+					<br /><br>
+				 	<div id="title-post-2013">
+						<%= label_tag post.title,nil,{:class=>"lime"} %><br>
+					</div>
+				
+				 	<div id="body-post">
+				 		<div id="body-post-text">
+					    	<%= raw(post.content) %>
+				    	</div>
+					</div>
+					<div id="footer-post">
+						<div id="footer-post-tags" class="yellow micro">
+							<% if post.post_tag.count > 0 %>
+								<%= image_tag "tagsicon.gif" ,:class=> "d4xicon",:alt=>'tags',:tooltip=>"tags" %>
+								<% post.post_tag.each do |post_tag| %>
+									<%= Tag.find(post_tag.tag_id).name %>; 
+								<% end %>
+						<% end %>
+						</div>
+					</div>
+				</div>
+				<div id="vert-spacer">
+						&nbsp;
+				</div>
+		<% end %>
+	<% end %>	
+<% end %>

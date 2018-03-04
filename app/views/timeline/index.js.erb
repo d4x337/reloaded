@@ -1,0 +1,9 @@
+var delimiter =
+        $('<div class="page-delimiter" data-page="<%= params[:page] %>"></div>');
+$('#my-posts').append(delimiter);
+$('#my-posts').append('<%= j render :partial => "wall/mini_post", :collection => @mini_posts %>');
+$('.pagination').replaceWith('<%= j will_paginate @mini_posts %>');
+preparePagination(delimiter);
+<% unless @mini_posts.next_page %>
+$('#infinite-scrolling .pagination').remove();
+<% end %>

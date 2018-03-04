@@ -1,0 +1,5 @@
+<% unless @mini_posts.blank? %>
+  $('.list').attr('last', '<%=@mini_posts.last.created_at %>')
+<% else %>
+  $('#infinite-scroll').detach();
+<% end %>

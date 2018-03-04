@@ -1,0 +1,21 @@
+<div class="block">       
+  <div class="content">                       
+   <div class="inner">
+    <%= render :partial => "shared/d4x_share_box" %>
+    </div>      
+		<br />
+		<br />
+	    <% unless @mini_posts.blank?%>
+	       <ul class='list' last="<%=@mini_posts.to_a.last.created_at %>">
+	          <%=render :partial => "mini_post", :collection => @mini_posts%>
+	          <div id="infinite-scroll"></div>
+	       </ul>
+	    <% end %>
+   	<p align="center">
+		<%=image_tag "loading-spinner.gif", :class => 'loading none',:id=>"d4x-spinner" %>
+	</p>
+
+  </div>
+</div>
+
+

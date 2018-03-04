@@ -1,0 +1,141 @@
+<% @title = d4x_sanitizer(t('admin quotes')) %>
+<div id="megamax-header">
+		<div id="megamax-icon">
+			<% if current_user.role? :author  %> 
+				<%= link_to image_tag("ubermail.jpg", :border =>0, :title => "famous quotes" ), new_quote_path %>
+			<% else %>
+				<%= image_tag("ubermail.jpg", :mouseover => "ubermail.jpg", :title => d4x_sanitizer(t("quotes")) ) %>
+			<% end %>
+		</div>
+		<div id="last-top-most-div">
+			<br />	
+	    			<%= link_to("/last-added-quotes") do %>
+						<div id="top-last-most">
+							 <%= d4x_sanitizer(t("last added")) %>
+						</div>		
+					<% end %>
+			<br />				
+			<br />				
+					<%= link_to("/top-rated-quotes") do %>
+						<div id="top-last-most">
+							 <%= d4x_sanitizer(t("top rated")) %>
+						</div>		
+					<% end %>
+			<br />				
+			<br />				
+					<%= link_to("/most-viewed-quotes") do %>
+						<div id="top-last-most-selected">
+							 <%= d4x_sanitizer(t("most viewed")) %>
+						</div>		
+					<% end %>
+			<br />				
+		</div>
+		<div id="d4x-title-megamax" align="center">
+			<%= d4x_sanitizer(t('quotes')) %>	
+		</div>
+
+		<div id="megamax-icons-a" align="center">
+			<br />	
+	    		<%= link_to("/ispirational-quotes") do %>
+					<div id="megamax-header-button" >
+						 <%= d4x_sanitizer(t("ispirational")) %>
+					</div>		
+				<% end %>
+				<br />				
+				<br />				
+				<%= link_to("/famous-quotes") do %>
+					<div id="megamax-header-button" >
+						 <%= d4x_sanitizer(t("famous")) %>
+					</div>		
+				<% end %>
+				<br />				
+				<br />				
+				<%= link_to("/movie-quotes") do %>
+					<div id="megamax-header-button" >
+						 <%= d4x_sanitizer(t("movie")) %>
+					</div>		
+				<% end %>
+				<br />				
+				<br />				
+		</div>
+
+		<div id="megamax-icons-b" align="center">
+			<br />	
+	    		<%= link_to("/proverbs") do %>
+					<div id="megamax-header-button" >
+						 <%= d4x_sanitizer(t("proverbs")) %>
+					</div>		
+				<% end %>
+				<br />				
+				<br />				
+				<%= link_to("/author-quotes") do %>
+					<div id="megamax-header-button" >
+						 <%= d4x_sanitizer(t("by author")) %>
+					</div>		
+				<% end %>
+				<br />				
+				<br />				
+				<%= link_to("/language-quotes") do %>
+					<div id="megamax-header-button" >
+						 <%= d4x_sanitizer(t("by lang")) %>
+					</div>		
+				<% end %>
+				<br />				
+				<br />
+		</div>
+	
+</div>
+	
+
+<div id="big-card">
+		<table width="100%" class="d4x-grid">
+	 	  <tr class="d4x-grid-title">
+		  	<th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t(:author)) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t(:qtext)) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t("lang.")) %></th>
+		    <th class="td-grid-tit"><%= d4x_sanitizer(t("appr")) %></th>
+		    <th class="td-grid-tit"></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		<% @quotes.each do |quote| %>
+		     <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		  	<td class="td-grid-data" width="2%">&nbsp;</td>
+		    <td width="10%"><%= quote.author.fullname %></td>
+		    <td width="65%"><%= link_to quote.qtext,quote %></td>
+		    <td width="2%">
+		    	<% if quote.lang.downcase == "en" %>
+		    		<%= image_tag "us.png",:title=>"English" %>
+		    	<% elsif quote.lang.downcase == "it" %>
+		    		<%= image_tag "it.png",:title=>"Italian" %>
+		    	<% end %>
+		   	</td>
+		   	  <td width="2%">
+		    	<% if quote.approved? %>
+		    		<%= image_tag "tick.png" ,:title=>"approved"%>
+		    	<% else %>
+		    		<%= image_tag "time.png" ,:title=>"approvation is pending"%>
+		    	<% end %>
+		   	</td>
+	    	<td width="2%">
+				<%= link_to image_tag("comment.png", :border =>0 , :mouseover => "comment.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16"), quote %>
+			</td>
+			<td width="2%">
+			<% if current_user.role? :operator %>
+				<%= link_to image_tag("comment_edit.png", :border =>0, :mouseover => "comment_edit.png", :title => d4x_sanitizer(t("icon-edit")),:size => "16x16" ), edit_quote_path(quote)%>
+			<% end %>
+			</td>
+			<td width="2%">
+			<% if current_user.role? :operator %>
+				<%= button_to "", quote, :confirm => 'are you sure?', :method => :delete, :class => 'quote-destroy',:name => 'zdestroy',:size => "16x16" %>
+			<% end %>
+			</td>
+		  </tr>
+		 <% end %>
+		</table>
+		<div id="paginator">
+			<%= will_paginate @quotes,:per_page => 50 %>
+		</div>
+</div>
+

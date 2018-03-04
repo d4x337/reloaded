@@ -1,0 +1,125 @@
+<style>
+	.picimage{
+		margin-left:-10px;
+	}
+</style>
+
+<style>
+  .received-list{
+    margin-left:10px;
+    min-height:290px;
+  }
+  .panel-body{
+    padding:0;
+  }
+  .xname{
+    color:white;
+    font-weight: bold;
+    font-size:12px;
+    margin-left:-5px;
+  }
+  .xtitle{
+    color:white;
+    font-weight: bold;
+  }
+  .orange{
+    color:orange;
+  }
+  .onoff{
+    margin-right: 40px;
+  }
+    .white{
+      color:white;
+    }
+  .sent-list{
+    margin-left:5px;
+  }
+</style>
+<br>
+<h4 class="white">
+  <%=@results.length if @results%> <%=t('results found for')%> <span class="text-navy">"<%=@searched_item if @searched_item%>"</span>
+</h4>
+<small><%=t('request time')%>  (0.21 seconds)</small>
+<br><br>
+
+<div class="received-list">
+		<% if @results != nil %>
+			<% if @results.length > 0 %>
+				<% @results.each do |result| %>
+					<% area =  %>
+					<% if result.searchable_type.downcase == "user" %>
+						<% user = User.find(result.searchable_id)%>
+
+						<% if not is_banned(current_user.id,user.id)%>
+						  <%= link_to user_path(user) do %>
+							  <div class="chat-user">
+								    <div class="row">
+								    	<div class="col-sm-2 col-xs-2">
+								    		<% if have_to_show_photo(current_user.id,user.id) %>
+												 <% if user.avatar(:thumb).present? %>
+									           	 	<img class="chat-avatar" src="<%= user.avatar.url(:thumb) %>" alt="">
+									           	 <% else %>
+									        		<img class="chat-avatar" src="/assets/missing_avatar.png" alt="">
+									   			 <% end %>
+									   		<% else %>
+									        	<img class="chat-avatar" src="/assets/missing_avatar.png" alt="">
+									   		<% end %>
+							    		</div>
+							    		<div class="col-sm-7 col-xs-7" align="left">
+                        <div class="row white" id="starget">&nbsp;<small><%= label_tag user.firstname,nil,{:class=>'xname'} %>&nbsp;&nbsp;<%= label_tag "@"+user.nickname.downcase,nil,{:class=>'lcd orange'} %></small></div>
+
+
+							    			<div class="row yellow">
+                          <% if current_user.id == user.id %>
+                              <div class="">
+                                <%= label_tag "You",nil,{:class=>""} %>
+                              </div>
+                          <% elsif (is_friend(current_user.id.to_s, user.id.to_s) == true) %>
+                              <% friend = Friend.where(:user_id=>current_user.id,:friend_id=>user.id).first %>
+                              <%= form_for(friend) do |f| %>
+                                  <%= f.hidden_field :friend_id, :value=> friend.id %>
+                                  <%= link_to friend,:class=>"btn btn-xs btn-info",:method => :delete,:confirm => 'Are you sure you want to disconnect this person?' do %>
+                                      <%= label_tag d4x_sanitizer(t("Connected")),nil,{:class=>""} %></span>
+                                  <% end %>
+                              <% end %>
+                          <% elsif (already_requested_and_not_answered(current_user.id.to_s, user.id.to_s) == true) %>
+                              <div class="">
+                                <%= label_tag d4x_sanitizer(t("Request Sent")),nil,{:class=>"label-bt-boot"} %></span>
+                              </div>
+                          <% else %>
+                              <% if current_user.id != user.id %>
+                                  <%= form_for(Request.new) do |f| %>
+                                      <%= f.hidden_field :target_id, :value=> user.id %>
+                                      <%= button_to d4x_sanitizer(t("request connection")),nil,:class=>'btn btn-xs btn-primary', :form_class=>'friend', :action => 'create',:confirm => 'Are you sure you want to add to your network?',:id=>"add-to-ring" %>
+                                  <% end %>
+                              <% end %>
+                          <% end %>
+							    			</div>
+							    		</div>
+							    		<div class="col-sm-2 col-xs-2">
+							    			<div class="row">
+							    				<% if have_to_show_last_access(current_user.id,user.id) %>
+
+								    				<% if user.online? %>
+								    					<%=image_tag "online.png",:class=>'pull-right onoff',:title=>'online'%>
+								    				<% else %>
+									    				<% if current_user.last_seen.present? %>
+								            				<small class="white lastseen pull-right" title="<%= current_user.last_seen.to_s(:long)%>"><%= time_ago_in_words_converter(current_user.last_seen) %></small>
+								                		<% else %>
+															<small class="white lastseen"><%= t('never') %></small>
+									               	  	<% end %>
+								    				<% end %>
+								    			<% end %>
+
+							    				<span class="pull-right" id="button-message"><%= link_to raw('<i class="fa fa-envelope white"></i>'), "/compose?target_id="+user.id.to_s, :class=>'btn btn-xs btn-primary',:title=>'send message' %></span>
+							    			</div>
+							    		</div>
+								    </div>
+							    </div>
+								<% end %>
+						<% end %>
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+</div>

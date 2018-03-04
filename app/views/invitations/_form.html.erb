@@ -1,0 +1,43 @@
+<%= form_for(@invitation) do |f| %>
+  <% if @invitation.errors.any? %>
+    <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center"><strong class="error-counter"><%= pluralize(@invitation.errors.count, d4x_sanitizer(t("error"))) %> :</strong></p>
+			 <div id="error-list">
+				 <% @invitation.errors.full_messages.each do |msg| %>
+			        <li><%= d4x_sanitizer(msg) %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+
+  <% end %>
+  <table width="100%">
+  	<tr>
+  		<td align="center">
+  				<%= label_tag(t("from"),nil,:class=>'grey' )%>	<%= label_tag(current_user.firstname,nil,:class=>'grey')%>	
+				<br />
+  				<br />
+  		</td>
+  	</tr>
+ 	<tr>
+  		<td align="center">
+				<%= f.text_field :subject ,:class=>'form-control center',:placeholder=>d4x_sanitizer(t("fullname")) %>			
+				<br />
+    		</td>
+  	</tr>
+ 	<tr>
+  		<td align="center">
+				<%= f.email_field :recipient_email,:class=>'form-control center',:placeholder=>d4x_sanitizer(t("email")) %>
+  		</td>
+  	</tr>
+ 	<tr>
+  		<td align="center">
+  			<br />
+				<%= f.submit d4x_sanitizer(t('send')) ,:class=>'button-d4x-tiny' %>
+  		</td>
+  	</tr>
+  </table>
+
+<% end %>

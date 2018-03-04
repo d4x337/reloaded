@@ -1,0 +1,48 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-messages').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-sent').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
+<h4 class="card-title lightlime"><i class="zmdi zmdi-present-to-all lightlime"></i>&nbsp;&nbsp;&nbsp;Sent Messages</h4>
+<h6 class="card-subtitle">Select to delete it before the user reads.</h6>
+<div class="sent-list">
+  <div class="listview listview--hover">
+    <% unless @sent.blank? %>
+        <% @sent.each do |message| %>
+            <a href="/reveal?token=<%= message.read_token %>" class="listview__item traspa">
+
+              <% if message.target_name.blank?%>
+                  <% @target = User.find(message.target_id)%>
+                  <% if @target.avatar(:thumb).present? %>
+                      <img class="listview__img" src="<%= @target.avatar.url(:thumb) %>">
+                  <% else %>
+                      <img class="listview__img" src="/assets/demo/img/profile-pics/1.jpg" alt="">
+                  <% end %>
+              <% else %>
+                  <img class="listview__img" src="demo/img/profile-pics/1.jpg" alt="">
+              <% end %>
+              <div class="listview__content">
+                <div class="listview__heading">
+                  <% if message.target_id %>&nbsp;
+                    <%= label_tag user_fullname(message.target_id),nil,{:class=>'xname'} %>&nbsp;
+                    <%= label_tag "@"+user_nick(message.target_id),nil,{:class=>'orange'} %>
+                  <% else %>
+                    <%= label_tag message.target_name,nil,{:class=>'xemail'} %>&nbsp;
+                    <%= label_tag "Not a Member",nil,{:class=>'red'} %>
+                  <% end %>
+                  <small><%= time_ago_in_words_converter(message.created_at) %>&nbsp;<%= t('ago') %></small>
+                </div>
+                <p><%= message.read_token%>
+                  <%= button_to message, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-sm btn-outline-danger pull-right msgdel" do %>
+                      <i class='fa fa-trash-o white'></i>
+                  <% end %>
+                </p>
+
+              </div>
+            </a>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,37 @@
+
+	<table class="table table-striped table-bordered table-hover dataTables-example">
+		<thead>
+		<tr>
+		    <th><%=t(:country_name) %></th>
+		    <th><%=t(:country_code) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		</tr>
+		</thead>
+			<tbody>
+				<% unless @countrys.blank? %>
+					<% @countrys.each do |country| %>
+					  <tr>
+					    <td class="center"><%= country.country_code %></td>
+					    <td class="center"><%= country.country_name %></td>
+					    <td align="center">
+						<%= link_to(country) do %>
+						    <span class="btn btn-xs btn-success"><i class='fa fa-file-text'></i></span>
+						<% end %>
+					 	</td>
+						<td align="center">
+							<%= link_to(edit_country_path(country)) do %>
+							   <span class="btn btn-xs btn-success"><i class='fa fa-eye'></i></span>
+							<% end %>
+						</td>
+						<td align="center">
+							<%= button_to country, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-xs btn-success" do %>
+							    <i class='fa fa-trash-o'></i>
+							<% end %>
+						</td>
+					  </tr>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>

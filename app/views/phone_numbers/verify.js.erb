@@ -1,0 +1,17 @@
+<% if @phone_number.verified %>
+	<% if @phone_number.authenticated %>
+	  $('#verify-pin').hide()
+	  $('#status-box').show()
+	  $('#status-box').addClass('alert alert-success')
+	  $('#status-message').text('PIN Verified. Success!')
+	  $('#continue').show()
+   <% else %>
+	  $('#status-box').show()
+	  $('#status-box').addClass('alert alert-warning')
+	  $('#status-message').text("Sorry, that wasn't the right PIN.")
+	<% end %>
+<% else %>
+  $('#status-box').show()
+  $('#status-box').addClass('alert alert-warning')
+  $('#status-message').text("Sorry, that wasn't the right PIN.")
+<% end %>

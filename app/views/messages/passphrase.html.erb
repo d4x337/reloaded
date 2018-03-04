@@ -1,0 +1,183 @@
+<h4 class="card-title lightlime"><i class="zmdi zmdi-inbox lightlime"></i>&nbsp;&nbsp;&nbsp;Revealing Encrypted Message</h4>
+<h6 class="card-subtitle">Please protect your device from unsolicited eyes.</h6>
+<style>
+	.none{
+		display:none;
+	}
+	#message_efile,
+	#pubkey,
+	#privkey
+	{
+		background-color:black;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:12px;
+		height:80px;
+	}
+	#input,
+	#message_content{
+		background-color: #001100;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:14px;
+		height:105px;
+	}
+	.d4xcontrol{
+		background-color:white;
+		border:0px;
+	}
+	#remote{
+		
+	}
+	.tt-suggestions,
+	.tt-suggestion{
+		color:yellow;
+	}
+	.tt-dropdown-menu{
+		background-color:#001100;
+		color:yellow;
+		border:none;
+		border-top-left-radius:0px;
+		border-top-right-radius:0px; 
+	}
+	.none{
+		display:none;
+	}
+	.orange{
+		color:orange;
+	}
+	.lime{
+		color:lime;
+	}
+	.red{
+		color:red;
+	}
+	#spinner{
+		margin-top:10px;
+		margin-left:-20px;
+	}
+	#target_name{
+		margin-left:7px;
+		background-color:#001100;
+		border:0px solid white;
+		color:yellow;
+		border-radius:3px;
+		width:93%;
+	}
+	.ttt{
+		background-color:#1AB393;
+		color:white;
+	}
+
+	#message_content{
+		background-color:#001100;
+		border: 2px solid #4F6260;
+		border-radius: 3px;
+		color:lime;
+		font-size:14px;
+	}
+	.minicons{
+		border:0px solid white;
+		
+	}
+	.shipgrey{
+		background-color:#4F6260;
+		border: 2px solid darkgrey;
+	}
+	.d4xsearch{
+		margin-left:7px;
+		border:0px solid white;
+		color:yellow;
+		border-top-left-radius:3px;
+		border-bottom-left-radius:3px;
+		width:auto;
+		max-width:290px;
+		background-color:#001100;
+		
+	}
+	
+	#execute,
+	#anti-shoulder-on,
+	#add-attachment,
+	#add-shared-pass,
+	#anti-shoulder-on,
+	#change-keyss,
+	#anti-shoulder-off,
+	#shoulders{
+		margin-top:10px;
+		margin-left:0px;
+		border-top-left-radius:0px;
+		border-bottom-left-radius:0px;
+	}
+	#external-user{
+		margin-top:10px;
+		margin-left:0px;
+		border-radius:0px;
+	}
+	#internal-user{
+		margin-top:10px;
+		margin-left:0px;
+		border-top-left-radius:0px;
+		border-bottom-left-radius:0px;
+	}
+</style>
+<% if @sender_id.present? and @target_id.present? %>
+    ok
+<% end %>
+<%= form_tag("check_passphrase") do |f| %>
+<%= hidden_field_tag :token, params[:token] %>
+
+<div id="tab-compose" class="tab-pane">
+  <h5 align="center">The sender required one more step for you to decrypt this message</h5>
+  <br />
+  <h2 align="center" class="lightlime"><%= params[:token]%></h2>
+	<br />
+	<div class="row">
+		<div class="col-xs-1">
+		
+		</div>
+		<div class="col-xs-4">
+       <% if current_user.avatar(:thumb).present? %>
+          <img class="chat-avatara round3" src="<%= current_user.avatar.url(:thumb) %>" alt="" width="120">
+       <% else %>
+          <img class="chat-avatara round3" src="/assets/missing_avatar.png" alt="" width="120">
+       <% end %>
+    </div>
+    <div class="col-xs-2">
+		
+		</div>
+		<div class="col-xs-4 right">
+			<% if current_user.avatar(:thumb).present? %>
+         <img class="chat-avatara round3 right" src="<%= current_user.avatar.url(:thumb) %>" alt="" width="120">
+      <% else %>
+         <img class="chat-avatara round3 right" src="/assets/missing_avatar.png" alt="" width="120">
+      <% end %>
+		</div>
+
+	</div>
+	<br />
+    <div class="row">
+    	<div class="col-xs-1">
+    		</div>
+    	<div class="col-xs-10">
+	    	<%= password_field_tag :aespass,nil,:class=>'form-control input-lg center',:id=>'aespass',:placeholder=>'Shared Passphrase'%>
+		</div>
+		<div class="col-xs-1">
+		</div>
+		
+	</div>
+	<br />
+    <div class="row">
+    	<div class="col-xs-1">
+		</div>
+		<div class="col-xs-10">
+	    	 <button id="sendmsg" class="btn btn-outline-success btn-lg block full-width m-b">Reveal Message</button>
+		</div>
+		<div class="col-xs-1">
+		</div>
+	</div>		
+    <br /> 
+</div>
+<% end %>

@@ -1,0 +1,41 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "d4x-changepass" %>
+<% end %>
+<div class="login__block active" id="l-login">
+  <div class="login__block__header">
+    <i class="zmdi zmdi-account-circle"></i>
+    <h4 class="orange"><%= d4x_sanitizer(t("change password")) %></h4><br>
+    <%= t('we need your current password to perform changes') %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <br><%= t('currently waiting confirmation for')%>: <%= resource.unconfirmed_email %>
+    <% end %>
+    <div class="actions actions--inverse login__block__actions">
+      <div class="dropdown">
+        <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+        <div class="dropdown-menu dropdown-menu-right ddd4x">
+          <%= render :partial => 'devise/shared/dropdown_confirmation' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login__block__body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+      <div class="form-group">
+        <%= f.password_field :current_password, autocomplete: "off" ,:class=>'form-control center',:placeholder=>d4x_sanitizer(t("current password"))%>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", :class=> "form-control password center",:placeholder=>d4x_sanitizer(t('new password'))%>
+        <span id="strength"></span>
+      </div>
+      <div id="group-pass-confirmation" class="form-group">
+        <%= f.password_field :password_confirmation , autocomplete: "off",:class=>'form-control center',:placeholder=>"Password Confirmation"%>
+        <span id="pass-confirmation-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      </div>
+      <%= f.submit t("change password"), :id => "bt-signin",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
+
+    <% end %>
+  </div>
+  <%= render :partial => '/shared/devise_footer' %>
+</div>

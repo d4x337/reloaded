@@ -1,0 +1,72 @@
+
+				<div id="single-folder">
+					<%= link_to("/agadanga-inbox") do %>
+					<div id="inbox" class="folder-item">
+						<%= image_tag "archive7.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('inbox')),nil,{:class=>'folder-name'}) %>
+						
+						<% if current_user.theme == 'agared'%>
+							<%= image_tag "agared-checking-folder.gif",:id=>"checking-current",:class=>"none"%>
+						<% elsif current_user.theme == 'agalight'%>
+							<%= image_tag "agalight-checking-folder.gif",:id=>"checking-current",:class=>"none"%>
+						<% elsif current_user.theme == 'agablue'%>
+							<%= image_tag "agablue-checking-folder.gif",:id=>"checking-current",:class=>"none"%>
+						<% elsif current_user.theme == 'agadanga'%>
+							<%= image_tag "agandanga-checking-folder.gif",:id=>"checking-current",:class=>"none"%>
+						<% elsif current_user.theme == 'agaevo'%>
+							<%= image_tag "agaevo-checking-folder.gif",:id=>"checking-current",:class=>"none"%>
+						<% end %>
+		
+						<div id="counter-agadanga"><%= @tot_inbox %></div>
+					</div>	
+					<% end %>
+					<br />
+					<%= link_to("/agadanga-sent") do %>
+					<div id="sent" class="folder-item">
+						<%= image_tag "sent.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('sent')),nil,{:class=>'folder-name'}) %>
+						<div id="counter-agadanga"><%= @tot_sent %></div>
+					</div>
+					<% end %>
+					<br />
+					<%= link_to("/agadanga-drafts") do %>
+					<div id="drafts" class="folder-item">
+						<%= image_tag "compose2.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('draft')),nil,{:class=>'folder-name'}) %>
+						<div id="counter-agadanga"><%= @tot_draft %></div>
+					</div>
+					<% end %>
+					<br />
+					<%= link_to("/agadanga-junk") do %>
+					<div id="junk" class="folder-item">
+						<%= image_tag "junk.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('junk')),nil,{:class=>'folder-name'}) %>
+						<div id="counter-agadanga" class="middle"><%= @tot_spam %></div>
+					</div>
+					<% end %>
+					<br />
+					<%= link_to("/agadanga-important") do %>
+					<div id="favourite" class="folder-item">
+						<%= image_tag "flag.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('important')),nil,{:class=>'folder-name'}) %>
+						<div id="counter-agadanga"><%= @tot_important %></div>
+					</div>
+					<% end %>
+					<br />
+					<%= link_to("/agadanga-archivied") do %>
+					<div id="archive" class="folder-item">
+						<%= image_tag "archive3.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('archive')),nil,{:class=>'folder-name'}) %>
+						<div id="counter-agadanga"><%= @tot_archivied %></div>
+					</div>
+					<% end %>
+					<br />
+					<%= link_to("/agadanga-trash") do %>
+					<div id="trash" class="folder-item">
+						<%= image_tag "trash4.png",:size=>"40x40",:class=>'left folder-icon'%>
+						<%= label_tag(d4x_sanitizer(t('trash')),nil,{:class=>'folder-name'}) %>
+						<div id="counter-agadanga"><%= @tot_trash %></div>
+					</div>
+					<% end %>
+					<br />
+				</div>

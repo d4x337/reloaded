@@ -1,0 +1,37 @@
+<% content_for :head do %>
+		<script language="JavaScript">
+			$( document ).submit(function() {
+				$('#spinner').removeClass('none');
+				$('#link-compose').addClass('none');
+			});
+		</script>
+<% end %>
+	<%= form_for(current_user, :html => { :multipart => true })  do |f| %>
+		<% if current_user.errors.any? %>
+		  <h5><%= pluralize(current_user.errors.count, "error") %> prohibited from being saved:</h5>
+		  <ul>
+			  <% current_user.errors.full_messages.each do |msg| %>
+			    <li><%= d4x_sanitizer(msg) %></li>
+			  <% end %>
+		  </ul>
+		<% end %>
+		<h3 class="white"><%= t('choose your language') %></h3>
+			<%= image_tag("us.png",:alt=>"English",:title=>'English',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("es.png",:alt=>"Spanish",:title=>'Spanish',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("fr.png",:alt=>"French",:title=>'French',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("de.png",:alt=>"German",:title=>'German',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("england.png",:alt=>"English",:title=>'English',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("pt.png",:alt=>"Portuguese",:title=>'Portuguese',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("it.png",:title=>'Italian',:alt=>"Italian",:class=>'d4xicon')%>&nbsp;
+			<%= image_tag("nl.png",:alt=>"Dutch",:title=>'Dutch',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("ru.png",:alt=>"Russian",:title=>'Russian',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("cn.png",:alt=>"Chinese",:title=>'Chinese',:class=>'d4xicon') %>&nbsp;
+			<%= image_tag("se.png",:alt=>"Swedish",:title=>'Swedish',:class=>'d4xicon') %>&nbsp;
+		<br /><br />
+		<div class="row">
+			<div class="col-sm-12  col-xs-12">
+				<%= f.select(:locale,options_for_select([['English', 'en'],['Italian', 'it'],['Spanish', 'es'],['Portoguese', 'pt'],['French', 'fr'],['Dutch', 'nl'],['German', 'de'],['Swedish', 'se'],['Russian', 'ru'],['Chinese', 'cn']],current_user.locale),{},{:class=>'btn btn-dark block full-width m-b'}) %>
+			</div>
+		</div>
+		<%= f.submit d4x_sanitizer(t('update')),:class=>'btn btn-dark block full-width m-b' %>
+	<% end %>

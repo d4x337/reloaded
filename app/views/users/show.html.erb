@@ -1,0 +1,121 @@
+<style>
+  .ddd4x{
+    width:170px;
+  }
+</style>
+<div class="card profile">
+  <div id="profpic" class="profile__img">
+    <a href="" class="contacts__img">
+      <% if @user.avatar(:thumb).present? %>
+          <img src="<%= @user.avatar.url(:thumb) %>" alt="">
+      <% else %>
+          <img src="/images/missing_avatar.png" alt="">
+      <% end %>
+    </a>
+  </div>
+  <div class="profile__info">
+    <h1><%=@user.firstname%></h1><p>@<%=@user.nickname %></p>
+    <h4 class="grey"><%=@user.headline%></h4>
+    <p><h5 class="orange"><%=get_current_status(@user.id)%></h5>
+  </div>
+  <div class="action__info">
+  <% if current_user.id != @user.id %>
+      <% if is_banned(current_user.id,@user.id) %>
+          <% blocked_user = get_blocked_user(current_user.id,@user.id) %>
+          <%= button_to "Remove Block",blocked_user, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-warning btn-md" %>
+      <% else %>
+          <%= form_for(BlockedUser.new) do |f| %>
+              <%= f.hidden_field :user_id, :value=> current_user.id.to_s,:class=>'mpid' %>
+              <%= f.hidden_field :blocked_id, :value=> @user.id.to_s,:class=>'mplid_' %>
+              <%= f.submit "Block This Person",:class=> "btn btn-dark btn-md"  %>
+
+          <% end %>
+      <% end %>
+  <% else %>
+      <div class="dropdown-demo pull-right ddd4x" >
+        <div class="dropdown">
+          <button class="btn btn-dark btn-sm pull-right" data-toggle="dropdown"><i class="zmdi zmdi-settings"></i> <%= t("settings") %></button>
+          <div class="dropdown-menu pull-right  ">
+            <a href="<%= edit_user_path(current_user) %>" class="dropdown-item"><i class="zmdi zmdi-account"></i>&nbsp;<%= t("edit profile") %> </a>
+            <a href="/avatar" class="dropdown-item"><i class="zmdi zmdi-picture-in-picture"></i>&nbsp;<%= t("profile") %>&nbsp;<%= t("picture") %> </a>
+            <a href="/privacy-settings" class="dropdown-item"><i class="zmdi zmdi-eye"></i>&nbsp;<%= t("privacy settings") %>  </a>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <br>
+  <br>
+    <% if current_user.id != @user.id %>
+      <% if is_contact(current_user.id,@user.id) %>
+        <% user_contact = get_user_contact(current_user.id,@user.id) %>
+        <%= button_to "Remove from Contacts",user_contact, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-warning btn-md" %>
+      <% else %>
+        <%= form_for(UserContact.new) do |f| %>
+          <%= f.hidden_field :user_id, :value=> current_user.id.to_s,:class=>'mpid' %>
+          <%= f.hidden_field :contact_id, :value=> @user.id.to_s,:class=>'mplid_' %>
+          <%= f.submit "Add To Contacts",:class=> "btn btn-dark btn-md"  %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <% if @user.about.present? %>
+        <h6 class="lightlime"><%=t("about")%>&nbsp;<%=@user.firstname%></h6>
+        <p><%=@user.about %></p>
+        <br>
+    <% end %>
+    <% if @user.quote.present? %>
+        <h6 class="lightlime"><%=t("favorite quote")%></h6>
+        <p><%=@user.quote %></p>
+        <br>
+    <% end %>
+    <h6 class="lightlime"><%=t("contacts")%></h6>
+    <ul class="icon-list">
+      <% if @user.location.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-pin"></i><%=@user.location %></li>
+      <% end %>
+      <% if @user.mobile.present? and @user.show_mobile %>
+          <li class="listview__item "><i class="zmdi zmdi-phone"></i><%=@user.mobile %></li>
+      <% end %>
+      <% if @user.email.present? and @user.show_email %>
+          <li class="listview__item "><i class="zmdi zmdi-email"></i><%=@user.email %></li>
+      <% end %>
+      <% if @user.linkedin_url.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-linkedin"></i><%=@user.linkedin_url %></li>
+      <% end %>
+      <% if @user.skype_id.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-skype"></i><%=@user.skype_id %></li>
+      <% end %>
+      <% if @user.instagram_id.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-instagram"></i><%=@user.instagram_id %></li>
+      <% end %>
+      <% if @user.facebook_user.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-facebook"></i><%=@user.facebook_user %></li>
+      <% end %>
+      <% if @user.github_id.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-github"></i><%=@user.github_id %></li>
+      <% end %>
+      <% if @user.twitter_user.present? %>
+          <li class="listview__item "><i class="zmdi zmdi-twitter"></i><%=@user.twitter_user %></li>
+      <% end %>
+
+      <% if @user.online? %>
+          <li><i class="zmdi zmdi-eye"></i><%= image_tag "online.png" %>&nbsp; <%= t('online') %></li>
+      <% else %>
+          <% if @user.last_seen.present? %>
+              <li><i class="zmdi zmdi-eye"></i><%= image_tag "online.png" %>&nbsp; <%= @user.last_seen.to_s(:short)%>&nbsp;-&nbsp;<%= time_ago_in_words(@user.last_seen) %>&nbsp;<%= t('ago') %></li>
+          <% else %>
+              <%= t('never') %>
+          <% end %>
+      <% end %>
+
+      <li><i class="zmdi zmdi-account"></i><%= @user.created_at.to_s(:short) %>&nbsp;-&nbsp;<%= time_ago_in_words(@user.created_at) %>&nbsp;<%= t('ago')%></li>
+
+    </ul>
+  </div>
+</div>
+
+

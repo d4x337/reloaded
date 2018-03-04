@@ -1,0 +1,63 @@
+<%= form_for(@link) do |f| %>
+  <% if @link.errors.any? %>
+    <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center">
+			<strong class="error-counter"><%= pluralize(@link.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @link.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+   <div id="center-content2">
+   <div class="field">
+    <%= f.label t(:name),:class=>'show-item-label' %><br />
+    <%= f.text_field :name ,:size => 90,:class=>'def-input' %>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:url),:class=>'show-item-label' %><br />
+    <%= f.url_field :url ,:size => 90%>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:description),:class=>'show-item-label' %><br />
+    <%= f.text_field :description ,:size => 90,:class=>'def-input'%>
+  </div><br>
+  <div class="field">
+    <%= f.label t(:summary),:class=>'show-item-label' %><br />
+    <%= f.text_area :notes,:size=>'87x12' %>
+  </div><br>
+   <div class="field">
+    <%= f.label t(:image),:class=>'show-item-label' %><br />
+    <%= f.text_field :image,:class=>'def-input' %><%= f.file_field :image%>
+  </div><br>
+   <div class="field">
+    <%= f.label t(:target),:class=>'show-item-label' %><br />
+  	<%= f.select(:target, options_for_select([['_blank', '_blank'],['_window', '_window'],['_self', '_self'],['_parent', '_parent']], @link.target)) %>
+  </div><br>
+    <div class="field">
+    <%= f.label t(:visible) ,:class=>'show-item-label' %><br />
+    <%= f.check_box(:visible) %>
+  </div><br>
+
+
+   <div class="field">
+    <%= f.label t(:rating),:class=>'show-item-label' %><br />
+    <%= f.select(:rating, options_for_select([
+    	['0 - unrated', '0'],['1 - disaster', '1'],['2 - two', '2'],['3 - heavy insufficient', '3'],
+    	['4 - insuffient', '4'],['5 - scarso', '5'],['6 - sufficient', '6'],['7 - average', '7'],
+    	['8 - good', '8'],['9 - very good', '9'],['10- cool', '10']], @link.rating)) %>
+  </div><br>
+ 
+  <%= image_tag @link.image.url,:class=>"snapshot" %>
+  <div class="actions center">
+ <%= f.submit :class=>'button-d4x' %>
+  </div>
+  <br>
+  
+  </div>
+<% end %>

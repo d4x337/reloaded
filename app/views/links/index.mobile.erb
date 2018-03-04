@@ -1,0 +1,43 @@
+<% @title = t('events') %>
+
+	<div id="d4x-title-evo">
+		<%= t("cool links") %>
+	</div>
+	<table width="100%" class="d4x-grid">
+      <tr class="d4x-grid-title">
+      	<th></th>
+	    <th class="td-grid-tit" width="15%" ><%=t(:name) %></th>
+	    <th class="td-grid-tit" width="20%" ><%=t(:url) %></th>
+	    <th class="td-grid-tit" width="25%" ><%=t(:description) %></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	 <% @links.each do |link| %>
+	  <tr class="<%= cycle("odd","even")%> d4x-mobile-row-grid">
+    	<td class="td-grid-data" width="2%">&nbsp;</td>
+	    <td class="td-grid-data"><%= link_to link.name,link %></td>
+	    <td class="td-grid-data"><%= link_to link.url, link.url, :target => "blank"%></td>
+	    <td class="td-grid-data"><%= link.description %></td>
+	   	<td class="td-grid-data">
+			<%= link_to image_tag("link.png", :border =>0 , :mouseover => "link.png", :title => t("icon-show") ,:size => "16x16"), link %>
+		</td>
+		<td class="td-grid-data">
+			<% if current_user.role? :operator  %>
+				<%= link_to image_tag("link_edit.png", :border =>0, :mouseover => "link_edit.png", :title => t("icon-edit"),:size => "16x16" ), edit_link_path(link) %>
+			<% end %>
+		</td>
+		<td class="td-grid-data">
+			<% if current_user.role? :operator  %>
+				<%= button_to "", link, :confirm => 'are you sure?', :method => :delete, :class => 'ldestroy',:name => 'destroy',:size => "16x16" %>
+			<% end %>
+		</td>
+		<td class="td-grid-data" width="2%">&nbsp;</td>
+	  </tr>
+	<% end %>
+</table>
+<div id="paginator">
+	<%= will_paginate @links,:per_page => 25 %>
+</div>
+

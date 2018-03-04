@@ -1,0 +1,53 @@
+<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+				<%= link_to image_tag("shape_square_add.png", :border =>0, :mouseover => "shape_square_add.png", :title => t("icon-quotes") ), new_quote_type_path %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= t("Types of Quote") %>
+			</div>
+		</div>
+		<table width="100%" class="d4x-grid">
+	   	  <tr class="d4x-grid-title">
+		  	<th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"><%=t(:type_of_quote) %></th>
+		    <th class="td-grid-tit"><%=t(:visible) %></th>
+		    <th class="td-grid-tit"><%=t(:created) %></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"></th>
+		    <th class="td-grid-tit"></th>
+		  </tr>
+		 <% @quote_types.each do |quote_type| %>
+		 <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+	    	<td class="td-grid-data" width="2%">&nbsp;</td>
+		    <td class="td-grid-data"><%= quote_type.type_of_quote %></td>
+		    <td class="td-grid-data"><%= quote_type.visible %></td>
+		    <td class="td-grid-data"><%= quote_type.created_at %></td>
+		    
+			<td>
+				<%= link_to image_tag("shape_square.png", :border =>0 , :mouseover => "shape_square.png", :title => t("icon-show") ,:size => "16x16"), quote_type %>
+			</td>
+			<td>
+			<% if can? :update, @quote_type %>  
+				<%= link_to image_tag("shape_square_edit.png", :border =>0, :mouseover => "shape_square_edit.png", :title => t("icon-edit"),:size => "16x16" ), edit_quote_type_path(quote_type)%>
+			<% end %>
+			</td>
+			<td>
+			<% if can? :destroy, @quote_type %>  
+				<%= button_to "", quote_type, :confirm => 'are you sure you want to delete this type of quote?', :method => :delete, :class => 'zdestroy',:name => 'zdestroy',:size => "16x16" %>
+			<% end %>
+			</td>
+			
+			
+			<td class="td-grid-data" width="2%">&nbsp;</td>
+		  </tr>
+		<% end %>
+		</table>
+		<div id="paginator">
+			
+		</div>
+</div>
+
+
+

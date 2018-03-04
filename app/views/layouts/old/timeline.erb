@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= get_setting_value('PROJECT_NAME') %></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+  <meta name="description" content="<%= get_setting_value('PROJECT_MOTTO') %>">
+  <meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
+  <meta name="keywords" content="<%= get_setting_value('PROJECT_KEYWORDS')%>" />
+  <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'users' %>
+  <%= javascript_include_tag 'devise' %>
+  <% javascript_include_tag "application" %>
+  <%= javascript_include_tag "bootbox" %>
+  <%= javascript_include_tag "bootstrap-maxlength" %>
+  <%= javascript_include_tag "jquery.tablecloth" %>
+  <%= javascript_include_tag "jquery.tablesorter" %>
+  <%= javascript_include_tag 'modernizr' %>
+  <%= javascript_include_tag 'typeahead.bundle.min' %>
+  <%= javascript_include_tag 'tinymce/tinymce.min' %>
+  <% stylesheet_link_tag "bootstrap" %>
+  <% stylesheet_link_tag "tablecloth" %>
+  <% stylesheet_link_tag "prettify" %>
+  <% stylesheet_link_tag "typeaheadjs" %>
+  <% stylesheet_link_tag "navbar-violet" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-grey" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-red" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-blue" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-green" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-yellow" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-violet" %>
+  <%= stylesheet_link_tag "bootstrap.icon-large-cyan" %>
+  <%= csrf_meta_tags %>
+  <%= yield :javascript_includes %>
+  <%= yield :head %>
+  <script type="text/javascript">
+    $(function() {
+      setTimeout(function() {
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-center",
+          "onclick": null,
+          "showDuration": "400",
+          "hideDuration": "1000",
+          "timeOut": "4000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "hideMethod": "fadeOut",
+          "showMethod": 'slideDown'
+        };
+      }, 1300);
+    });
+  </script>
+  <style>
+    .minicons{
+      margin-left:-30px;
+      margin-top:12px;
+    }
+    .settings-item{
+      padding-top:4px;
+      padding-bottom:4px;
+      height:42px;
+      border-bottom:1px solid grey;
+    }
+
+    .settings-item:hover{
+      background-color:#1c1c1c;
+    }
+
+    .counter-received{
+      z-index:9999;
+      margin-left:-30px;
+
+    }
+
+    .counter-sent{
+      z-index:9999;
+      margin-left:-40px;
+    }
+    .onoff{
+      margin-right:7px;
+    }
+    .d4xlist{
+      background-color:#FFFFFF;
+      border-bottom:grey;
+      width:100%;
+      height:30px;
+    }
+    .chat-avatara{
+      margin-left:5px;
+    }
+    .chat-avatar{
+      margin-left:0px;
+      margin-top:2px;
+
+    }
+    #message_content{
+      height:150px;
+      padding-right:10px;
+      padding-left:10px;
+      background-color:white;
+      color:black;
+      font-size:14px;
+      font-family: arial;
+    }
+    #daily_tip{
+      height:120px;
+      padding-right:10px;
+      padding-left:10px;
+      background-color:white;
+      color:black;
+      font-size:14px;
+      font-family: arial;
+    }
+    i {
+      color:grey;
+    }
+    i:hover {
+      cursor:pointer;
+      color:darkgrey;
+    }
+    .count-sent{
+      margin-left:10px;
+      margin-top:10px;
+    }
+    .white{
+      color:white;
+    }
+    #findthis{
+      min-width:196px;
+      max-width:196px;
+      border-bottom-left-radius:15px;
+      border-top-left-radius:15px;
+      border-left:2px solid white;
+      border-top:2px solid white;
+      border-bottom:2px solid white;
+      background-color:#001100;
+      color:white;
+      z-index:2000;
+
+    }
+
+
+    #searchbox{
+      margin-top:8px;
+      margin-left:-10px;
+
+    }
+
+    #icon-reveal{
+      margin-right:-20px;
+    }
+
+    #ccthumb{
+      width:64px;
+    }
+    .thumb-custom{
+      height:48px;
+      width:48px;
+      border-radius:3px;
+
+    }
+
+    .tt-suggestion{
+      margin-left:10px;
+    }
+    .motto{
+      color:white;
+      margin-top:-14px;
+    }
+    .tt-dropdown-menu{
+      background-color:black;
+      text-align:left;
+      width:92%;
+      font-size:12px;
+      margin-left:10px;
+      color:yellow;
+    }
+
+    #search-submit{
+      margin-top:0px;
+      margin-left:-12px;
+      border-bottom-right-radius:15px;
+      border-top-right-radius:15px;
+      border-right:2px solid white;
+      border-top:2px solid white;
+      border-bottom:2px solid white;
+      border-left:0px;
+      height:30px;
+      z-index:3000;
+    }
+    #starget,
+    #token{
+      overflow:hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+      max-width:98%;
+
+    }
+    .btn-xs{
+      padding-top:0px;
+      padding-bottom:0px;
+    }
+    .btdel{
+      margin-top:-5px;
+      padding-left:2px;
+      padding-right:2px;
+    }
+    #tagoin{
+      margin-top:-3px;
+    }
+
+    #remote{
+      width:100px;
+    }
+    .ttt{
+      width:170px;
+      margin-top:10px;
+      background-color:#white;
+      color:#4231A3;
+      border-style:none;
+      font-size:14px;
+    }
+    .imagelogo{
+      margin-left:10px;
+      margin-top:4px;
+    }
+    #icon-compose{
+      margin-right:20px;
+      margin-top:10px;
+      color:white;
+    }
+    #icon-compose:hover{
+      color:yellow;
+    }
+    #logolink{
+      margin-top:-5px;
+      margin-left:0px;
+      font-size:36px;
+      font-family: Impact;
+      font-stretch:expanded;
+      color:white;
+    }
+    .footer.zerozerofixed {
+      position: fixed;
+      margin-top:0px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background:white;
+      height:45px;
+      border-top: 1px solid grey;
+
+    }
+    .none{
+      display:none;
+    }
+    #spinner{
+      margin-top:10px;
+      margin-left:0px;
+    }
+    #main_logo{
+      margin-left:-20px;
+    }
+    #ttgif{
+      margin-left:5px;
+    }
+    .prjname{
+      font-family:Arial;
+      color:white;
+      font-size:34px;
+      text-shadow: 3px 3px 3px black;
+      margin-top:-5px;
+      height:28px;
+      font-family: Impact;
+      font-stretch:expanded;
+    }
+    .prjmotto{
+      padding-top:-25px;
+    }
+    .d4xlogo{
+      margin-left:0px;
+    }
+
+    .round3{
+      border-radius:3px;
+    }
+    .round5{
+      border-radius:5px;
+    }
+    .round10{
+      border-radius:10px;
+    }
+    .icon-compose{
+      margin-right:-15px;
+    }
+    .main_logo_text{
+      color: lime;
+      font-family:Arial;
+      font-size:34px;
+      border: 0px solid white;
+      text-shadow: 1px 1px green;
+      font-weight:bold;
+    }
+  </style>
+  <%= javascript_include_tag 'typeahead.bundle.min' %>
+  <%= javascript_include_tag 'bootstrap-maxlength' %>
+  <script language="JavaScript">
+    $( document ).ready(function() {
+      $('#areaaa').change(function(){
+        $('#area').val($('#areaaa').val());
+      });
+
+      var loadResults = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: '/complete?area='+$('#area').val()+'&this=%QUERY'
+      });
+
+      loadResults.initialize();
+
+      $('#remote .typeahead').typeahead(null, {
+        name: 'results-list',
+        displayKey: 'result',
+        hint: true,
+        highlight: true,
+        minLength: 1,
+        source: loadResults.ttAdapter()
+      });
+      $('#search-submit').click(function(){
+        $('#spinner').removeClass('none');
+        $('#link-compose').addClass('none');
+      });
+      $('#icon-received').click(function(){
+        $('#icon-compose-new').css('color','grey');
+        $('#icon-received').css('color','lime');
+        $('#icon-sent').css('color','grey');
+        $('#icon-contacts').css('color','grey');
+        $('#icon-profile').css('color','grey');
+        $('#icon-settings').css('color','grey');
+        $('.imagelogo').addClass('animated rotateIn');
+      //  $('#spinner').removeClass('none');
+      //  $('#link-compose').addClass('none');
+      });
+      $('#icon-sent').click(function(){
+        $('#icon-compose-new').css('color','grey');
+        $('#icon-sent').css('color','lime');
+        $('#icon-received').css('color','grey');
+        $('#icon-contacts').css('color','grey');
+        $('#icon-profile').css('color','grey');
+        $('#icon-settings').css('color','grey');
+      //  $('#spinner').removeClass('none');
+      //  $('#link-compose').addClass('none');
+        $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-contacts').click(function(){
+        $('#icon-compose-new').css('color','grey');
+        $('#icon-received').css('color','grey');
+        $('#icon-sent').css('color','grey');
+        $('#icon-contacts').css('color','lime');
+        $('#icon-profile').css('color','grey');
+        $('#icon-settings').css('color','grey');
+      //  $('#spinner').removeClass('none');
+      //  $('#link-compose').addClass('none');
+        $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-settings').click(function(){
+        $('#icon-compose-new').css('color','grey');
+        $('#icon-received').css('color','grey');
+        $('#icon-sent').css('color','grey');
+        $('#icon-contacts').css('color','grey');
+        $('#icon-profile').css('color','grey');
+        $('#icon-settings').css('color','lime');
+      //  $('#spinner').removeClass('none');
+      //  $('#link-compose').addClass('none');
+        $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-compose-new').click(function(){
+        $('#icon-compose-new').css('color','lime');
+        $('#icon-received').css('color','grey');
+        $('#icon-sent').css('color','grey');
+        $('#icon-contacts').css('color','grey');
+        $('#icon-profile').css('color','grey');
+        $('#icon-settings').css('color','#grey');
+      //  $('#spinner').removeClass('none');
+      //  $('#link-compose').addClass('none');
+        $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('#icon-profile').click(function(){
+        $('#icon-compose-new').css('color','grey');
+        $('#icon-received').css('color','grey');
+        $('#icon-sent').css('color','grey');
+        $('#icon-contacts').css('color','grey');
+        $('#icon-profile').css('color','lime');
+        $('#icon-settings').css('color','grey');
+      //  $('#spinner').removeClass('none');
+      //  $('#link-compose').addClass('none');
+        $('.imagelogo').addClass('animated rotateIn');
+      });
+
+      $('.imagelogo').mouseover(function(){
+        $('.imagelogo').addClass('animated rotateIn');
+      });
+      $('.imagelogo').mouseout(function(){
+        $('.imagelogo').removeClass('animated rotateIn');
+      });
+
+      $('#icon-compose').click(function(){
+        $('#icon-compose').toggle(function(){
+          $('#logolink').addClass('none');
+          $('.motto').addClass('none');
+          $('#ttgif').addClass('none');
+          $('#main_logo').addClass('none');
+          $('#searchbox').removeClass('none');
+          $('#icon-compose').removeClass('fa-search').addClass('fa-star');
+          $('.prjname').addClass('none');
+          $('.prjmotto').addClass('none');
+
+        });
+      });
+
+      $('.fa fa-2x fa-star').click(function(){
+        $('#logolink').removeClass('none');
+        $('.motto').removeClass('none');
+        $('#searchbox').addClass('none');
+        $('#main_logo').addClass('none');
+        $('#icon-compose').removeClass('fa-star').addClass('fa-search');
+      });
+
+
+
+    });
+  </script>
+  <script>
+      $( document ).ready(function() {
+
+          $( document ).submit(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#icon-settings').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#icon-contacts').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#icon-profile').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#forgot-link').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#signup-link').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#confirm-link').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+          $('#activation-link').click(function() {
+              //$('#spinner').removeClass('none');
+              $('.imagelogo').addClass('animated rotateIn');
+          });
+
+      });
+  </script>
+</head>
+<body>
+<div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+  <div id="maindiv" class="middle-box messages text-center">
+  <%= render 'shared/timeline_header_logo'%>
+    <% if not flash[:notice].blank? %>
+        <script language="JavaScript">
+          toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "onclick": null,
+            "showDuration": "400",
+            "hideDuration": "1000",
+            "timeOut": "4000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
+          toastr.success('<%= flash[:notice].to_s %>','<%= t('notice') %>');
+        </script>
+    <% end %>
+    <% if not flash[:alert].blank? %>
+        <script language="JavaScript">
+          toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "onclick": null,
+            "showDuration": "400",
+            "hideDuration": "1000",
+            "timeOut": "4000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
+          toastr.warning('<%= flash[:alert].to_s %>','<%= t('warning') %>');
+        </script>
+    <% end %>
+    <% if not flash[:error].blank? %>
+        <script language="JavaScript">
+          toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "onclick": null,
+            "showDuration": "400",
+            "hideDuration": "1000",
+            "timeOut": "4000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
+          toastr.error('<%= flash[:error].to_s %>','<%= t('error') %>');
+        </script>
+    <% end %>
+    <div class="panel-body" id="messages-panel">
+      <div class="tab-content">
+        <div id="tab-contacts" class="tab-pane active" >
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render 'wall/footer'%>
+  </div>
+  <% content_for :javascript do %>
+      <script type="text/javascript">
+        $(function() {
+          setTimeout(function() {
+            toastr.options = {
+              "closeButton": true,
+              "debug": false,
+              "progressBar": true,
+              "positionClass": "toast-top-center",
+              "onclick": null,
+              "showDuration": "400",
+              "hideDuration": "1000",
+              "timeOut": "4000",
+              "extendedTimeOut": "1000",
+              "showEasing": "swing",
+              "hideEasing": "linear",
+              "hideMethod": "fadeOut",
+              "showMethod": 'slideDown'
+            };
+          }, 1300);
+        });
+      </script>
+<% end %>

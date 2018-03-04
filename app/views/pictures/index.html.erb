@@ -1,0 +1,72 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-social').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-pictures').removeClass("navigation__sub").addClass("navigation__active");
+
+        $('.deletepic').click(function(){
+            var id = $(this).attr('id');
+            $(this).parent('span').next('#stoca').remove();
+            $(this).remove();
+            $.ajax({
+                type: 'DELETE',
+                beforeSend: function(xhr){
+                    xhr.setRequestHeader('X-CSRF-Token',$('meta[name="csrf-token"]').attr('content'))
+                },
+                cache: false,
+                url: '/pictures/' + id,
+                success: function(data){
+                    alert('ok');
+
+                }
+
+            });
+        });
+
+
+    });
+</script>
+
+<div class="content__inner">
+  <h4 class="card-title socialblue"><i class="zmdi zmdi-accounts-list socialblue"></i>&nbsp;<%= t("pictures") %>&nbsp;(<%= @pictures.count.to_s %>)</h4>
+  <h4 class="card-title">Drag and drop file to upload</h4>
+  <%= form_for(Picture.new, html: { multipart: true, class: "dropzone dz-clickable", id: "dropzone-upload"}) do |f|  %>
+    <div class="dz-default dz-message">
+      <span>-> Drop files here <-</span>
+    </div>
+  <% end %>
+  <br>
+  <div class="toolbar">
+    <div class="toolbar__label"><span class="hidden-xs-down">Total</span> <%=@pictures.count%> <%= t("pictures") %></div>
+    <div class="actions">
+      <i class="actions__item zmdi zmdi-search" data-sa-action="toolbar-search-open"></i>
+      <a href="" class="actions__item zmdi zmdi-time"></a>
+      <div class="dropdown actions__item">
+        <i class="zmdi zmdi-sort" data-toggle="dropdown"></i>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a href="" class="dropdown-item">Last Modified</a>
+          <a href="" class="dropdown-item">Name</a>
+          <a href="" class="dropdown-item">Size</a>
+        </div>
+      </div>
+      <a href="" class="actions__item zmdi zmdi-help-outline"></a>
+    </div>
+    <div class="toolbar__search">
+      <input type="text" placeholder="<%= t("search") %>">
+      <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-sa-action="toolbar-search-close"></i>
+    </div>
+  </div>
+  <div class="row lightbox photos">
+    <% unless @pictures.empty? %>
+      <% @pictures.each do |pic| %>
+        <span><i class="fa fa-trash-o deletepic" id="<%= pic.id %>"></i></span>
+        <a href="<%= pic.pic.url(:original) %>" class="col-md-2 col-4" id="stoca">
+          <div class="lightbox__item photos__item divpic">
+            <img src="<%= pic.pic.url(:thumb) %>" height="150" class="pic" />
+          </div>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

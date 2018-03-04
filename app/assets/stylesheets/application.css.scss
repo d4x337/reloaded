@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require font-awesome
+ *= require animate/animate.css
+ *= require style
+ *= require toastr/toastr.min.css
+ *= require dropzone/dropzone
+ *= require custom.css
+ *= require chat.css
+ */
+
+@import "bootstrap-sprockets";
+@import "../../../doc/bootstrap";
+
+// Variables, Mixins
+@import "../../../../reloaded/app/assets/stylesheets/base/variables";
+@import "../../../../reloaded/app/assets/stylesheets/base/mixins";
+
+// INSPINIA Theme Elements
+@import "../../../../reloaded/app/assets/stylesheets/base/typography";
+@import "../../../../reloaded/app/assets/stylesheets/base/navigation";
+@import "../../../../reloaded/app/assets/stylesheets/base/top_navigation";
+@import "../../../../reloaded/app/assets/stylesheets/base/buttons";
+@import "../../../../reloaded/app/assets/stylesheets/base/badgets_labels";
+@import "../../../../reloaded/app/assets/stylesheets/base/elements";
+@import "../../../../reloaded/app/assets/stylesheets/base/sidebar";
+@import "../../../../reloaded/app/assets/stylesheets/base/base";
+@import "../../../../reloaded/app/assets/stylesheets/base/pages";
+@import "../../../../reloaded/app/assets/stylesheets/base/chat";
+@import "../../../../reloaded/app/assets/stylesheets/base/spinners";
+
+// RTL Support
+@import "../../../../reloaded/app/assets/stylesheets/base/rtl";
+
+
+// For demo only - config box style
+@import "../../../../reloaded/app/assets/stylesheets/base/theme-config";
+
+// INSPINIA Skins
+@import "../../../../reloaded/app/assets/stylesheets/base/skins";
+
+// Media query style
+@import "../../../../reloaded/app/assets/stylesheets/base/media";
+
+// Custom style
+// Your custom style to override base style
+@import "../../../../reloaded/app/assets/stylesheets/base/custom";

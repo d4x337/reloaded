@@ -1,0 +1,43 @@
+<%= form_for(@contact) do |f| %>
+	  <% if @contact.errors.any? %>
+	      	<h3><%= pluralize(@contact.errors.count, "error") %> prohibited this bigisp from being saved:</h3>
+	     	 <ul>
+		      <% @contact.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+	     	 </ul>
+	  <% end %>
+  
+		  <div class="field">
+		    <%= f.text_field :fullname,:class=>'form-control center',:placeholder=>t('fullname') %>
+		  </div><br>
+		  <div class="field">
+		    <%= f.text_field :email,:class=>'form-control center',:placeholder=>t('email') %>
+		  </div><br>
+		  <div class="field">
+		    <%= f.text_field :mobile,:class=>'form-control center',:placeholder=>t('mobile') %>
+		  </div><br>
+		   <div class="field">
+		    <%= f.text_field :address,:class=>'form-control center' ,:placeholder=>t('address') %>
+		  </div><br>
+		   <div class="field">
+		    <%= f.text_field :city,:class=>'form-control center',:placeholder=>t('city') %>
+		  </div><br>
+		   <div class="field">
+		    <%= f.text_field :country,:class=>'form-control center' ,:placeholder=>t('country')%>
+		  </div><br>
+		  <div class="input-group">
+		  <span class="input-group-btn">
+		    <span class="btn btn-small btn-success btn-inverse" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-picture-o white"></i></span>
+		    <%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+		  </span>
+		  <span class="form-control">
+		  	
+		  </span>
+		 </div>
+		 <br />
+	      <div class="actions">
+	     	<%= f.submit t('update'),:class=>'btn btn-success block full-width m-b' %></span>
+	      </div>
+
+<% end %>

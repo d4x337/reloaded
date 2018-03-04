@@ -1,0 +1,53 @@
+<%= form_for(@post_tags) do |f| %>
+  <% if @post_tags.errors.any? %>
+    <div  id="login-messages" class="ui-widget">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+			<p align="center"><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<strong class="error-counter"><%= pluralize(@post_tags.errors.count, t("error")) %> :</strong> </p>
+			 <div id="error-list">
+				 <% @post_tags.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      <br />
+		      </div>
+		</div>
+	</div>
+	<br />
+  <% end %>
+   <div class="field">
+    <%= f.label t("id") %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label t("term_id") %><br />
+    <%= f.text_field :term_id %>
+  </div>
+ <div class="field">
+    <%= f.label t("taxonomy") %><br />
+    <%= f.select(:taxonomy,options_for_select([
+    	['Category', 'category'], 
+		['Links Category', 'link_category'],
+		['Quote Category', 'quote_category'],
+		['Snippet Category', 'snippet_category'],
+		['Nav Menu', 'nav_menu'],
+		['Post Tag', 'post_tag'],
+		['::choose::', '0']
+		], '0'), :class =>  "d4xItem") %>
+
+  </div>
+ <div class="field">
+    <%= f.label t("description") %><br />
+    <%= f.text_field :description %>
+  </div>
+ <div class="field">
+    <%= f.label t("parent") %><br />
+    <%= f.text_field :parent %>
+  </div>
+ <div class="field">
+    <%= f.label t("count") %><br />
+    <%= f.text_field :count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

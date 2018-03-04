@@ -1,0 +1,27 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-home').addClass("navigation__active");
+    });
+</script>
+<h2><%= t("welcome")%>&nbsp;@<%= current_user.nickname %></h2>
+
+<div class="card">
+  <img class="card-img-top" src="demo/img/widgets/note.jpg" alt="">
+  <div class="card-body">
+    <h3 class="card-title">Benvenuto su Reloaded</h3>
+    <h6 class="card-subtitle">by Davide Gonnella on 14th February 2018 at 13:37</h6>
+    <p><%= t('home main') %>Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra.</p>
+    <br>
+    <h5><%= t('tips') %></h5>
+    <p><%= t('home tips') %></p>
+    <br>
+    <br>
+    <h5><%= t('rules') %></h5>
+    <p><%= t('home rules') %></p>
+    <br>
+    <br>
+    <h5><%= t('philosophy') %></h5>
+    <p><%= t('home philosophy') %></p>
+    <br>
+  </div>
+</div>

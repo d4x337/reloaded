@@ -1,0 +1,65 @@
+<%= content_for :head do %>
+
+<% end %>
+
+<%= content_for :big_icons_menu do %>
+	<%= render :partial => "/agadanga/big_icons_some_active" %>
+<% end %>
+
+<%= content_for :folders_list do %>
+		<%= render :partial => "/agadanga/no_folder_selected" %>
+<% end %>
+<div id="settings-pane">
+<div id="center-content2">
+	<div id="big-card-title"><br />
+		<div id="evo-card-icon">
+		</div>
+		<div id="d4x-title-evo">
+			<%= "Partners" %>	
+	
+		</div>
+	</div><br />
+	<table width="100%" class="d4x-grid">
+	   <tr class="d4x-grid-title">
+	  	 	<th></th>
+		     <th class="td-grid-tit"><%=d4x_sanitizer(t(:firstname)) %></th>
+		    <th class="td-grid-tit"><%=d4x_sanitizer(t(:lastname)) %></th>
+		    <th class="td-grid-tit"><%=d4x_sanitizer(t(:email)) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		 <% unless @staff.blank? %>
+		 <% @staff.each do |partner| %>
+		   <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		   	<td class="td-grid-data" width="2%">&nbsp;</td>
+		    <td class="td-grid-data"><%= partner.firstname %></td>
+		    <td class="td-grid-data"><%= partner.lastname %></td>
+		    <td class="td-grid-data"><%= partner.email %></td>
+		 	<td>
+				<%= link_to image_tag("cog.png", :border =>0 , :mouseover => "cog.png", :title => t("show") ,:size => "16x16"), partner %>
+		 	</td>
+			<td>
+				<% if can? :update, @staff %>  
+					<%= link_to image_tag("cog_edit.png", :border =>0, :mouseover => "cog_edit.png", :title => t("edit"),:size => "16x16" ), edit_partner_path(partner) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @staff %>  
+					<%= button_to "", partner, :confirm => 'are you sure?', :method => :delete, :class => 'odestroy',:title=>t('delete'),:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+			<td class="td-grid-data" width="2%">&nbsp;</td>
+		  </tr>
+		<% end %>
+		<% end %>
+	</table>
+		<div id="paginator">
+			
+		</div>
+</div>
+</div>
+
+
+

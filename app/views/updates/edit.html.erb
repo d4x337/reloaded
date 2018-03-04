@@ -1,0 +1,14 @@
+<% @title =t('Editing update') %>
+<div id="center-right-welcome">
+	<div id="text-content">
+		<p id="notice">
+			<%= notice %>
+		</p>
+		<h2><%= t('Editing update') %></h2>
+		
+		<%= render 'form' %>
+		
+		<%= link_to t('Show'), @update %> |
+		<%= link_to t('Back'), updates_path %>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+	<%= link_to("/agadanga-refresh") do %>
+		<span id="refresh-icon" class="header-icon lcd green">
+			<%= image_tag "refresh.png",:size=>"50x50",:class=>'d4x-icon'%><br />
+		   <%= d4x_sanitizer(t('refresh')) %>
+		</span>
+		<% end %>
+		
+		<%= link_to("/agadanga-compose") do %>
+		<span id="compose-icon" class="header-icon lcd">   
+			<%= image_tag "compose.png",:size=>"50x50",:class=>'d4x-icon'%><br />
+			<%= d4x_sanitizer(t('compose')) %>
+		</span>
+		<% end %>
+	
+		<%= link_to("/agadanga-reply") do %>
+		<span id="reply-icon"  class="header-icon lcd green">
+			<%= image_tag "reply.png",:size=>"50x50",:class=>'d4x-icon'%><br />
+			<%= d4x_sanitizer(t('reply')) %>
+		</span>
+		<% end %>
+	
+		<span id="mark-icon" class="header-icon lcd green">
+			<%= submit_tag "flag",:type=>:image,:src=>"/images/flag.png",:height=>50,:name=>"flag",:id=>"flag",:class=>'button-bigmenu' %><br>
+			<%= d4x_sanitizer(t('mark')) %>
+		</span>
+	
+		<span id="junk-icon" class="header-icon lcd green">
+			<%= submit_tag "junk",:type=>:image,:src=>"/images/junk.png",:height=>50,:name=>"junk",:id=>"junk",:class=>'button-bigmenu' %><br>
+			<%= d4x_sanitizer(t('junk')) %>
+		</span>
+		
+		<span id="archive-icon" class="header-icon lcd green">
+			<%= submit_tag "archive",:type=>:image,:src=>"/images/archive3.png",:height=>50,:name=>"archive",:id=>"archive",:class=>'button-bigmenu' %>
+			<%= d4x_sanitizer(t('archive')) %>
+		</span>
+		
+		<span id="trash-icon" class="header-icon lcd green">
+			<%= submit_tag "delete",:type=>:image,:src=>"/images/trash4.png",:height=>50,:name=>"delete",:id=>"delete",:class=>'button-bigmenu' %>
+			<%= d4x_sanitizer(t('delete')) %>
+		</span>
+	
+		
+	
+		<%= link_to("/agadanga-address-book") do %>
+		<span id="address-book-icon"  class="header-icon lcd green">
+			<%= image_tag "address-book2.png",:size=>"50x50",:class=>'d4x-icon'%><br />
+			<%= d4x_sanitizer(t('address book')) %>
+		</span>
+		<% end %>
+		
+	

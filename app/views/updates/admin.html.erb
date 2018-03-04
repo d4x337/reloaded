@@ -1,0 +1,49 @@
+<% @title =t('admin updates') %>
+<div id="big-card">
+	<div id="big-card-title">
+		
+		<div id="evo-card-icon">
+			<% if can? :update, @update %>  
+				<%= link_to image_tag("bell.png", :border =>0, :mouseover => "bell.png", :title => t("icon-updates") ), new_update_path %>
+			<% end %>
+		</div>
+		<div id="d4x-title-evo">
+			<%= t('updates') %>	
+		</div>
+	</div>
+	<table width="100%" class="d4x-grid">
+		  <tr>
+		  	<th align="left" width="5%" ><%=t(:id) %></th>
+		    <th align="left" width="30%" ><%=t(:title) %></th>
+		    <th align="left" width="15%" ><%=t(:published) %></th>
+		    <th align="left" width="15%" ><%=t(:severity) %></th>
+		    <th align="left" width="15%" ><%=t(:cve) %></th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		 <% @updates.each do |update| %>
+		    <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		  	<td><%= update.id %></td>
+		    <td><%= update.title %></td>
+		    <td><%= update.published %></td>
+		    <td><%= update.severity %></td>
+		    <td><%= update.cve %></td>
+		    
+		      <td>
+				<%= link_to image_tag("bell.png", :border =>0 , :mouseover => "bell.png", :title => t("icon-show") ,:size => "16x16"), update %>
+		 	</td>
+			<td>
+				<% if can? :update, @update %>  
+					<%= link_to image_tag("edit.png", :border =>0, :mouseover => "update.gif", :title => t("icon-edit"),:size => "16x16" ), edit_update_path(update) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @update %>  
+						<%= button_to "", update, :confirm => 'are you sure?', :method => :delete, :class => 'destroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+		    	  </tr>
+		<% end %>
+		</table>
+	</div>

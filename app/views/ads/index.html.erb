@@ -1,0 +1,50 @@
+<% @title =d4x_sanitizer(t('Advertisings')) %>
+	<div id="big-card">
+		<div id="big-card-title">
+			<div id="evo-card-icon">
+		    	<% if current_user.role? :master  %> 
+					<%= link_to image_tag("layout_add.png", :border =>0, :mouseover => "layout_add.png", :title => "Advertisings" ), new_ad_path %>
+				<% else %>
+					<%= image_tag("layout.png", :border =>0, :mouseover => "layout.png", :title => "Advertisings" ) %>
+				<% end %>
+			</div>
+			<div id="d4x-title-evo">
+				<%= t('Advertisings') %>	
+			</div>
+		</div>
+		<table width="100%" class="d4x-grid">
+	 	 <% @ads.each do |ad| %>
+		  <tr class="<%= cycle("odd","even")%> d4x-row-grid">
+		 	<td class="td-grid-data" width="2%">&nbsp;</td>
+		   <td><% if not ad.expire_at.blank? %>
+						<%= ad.expire_at.strftime("%Y-%m-%d") %>
+					<% end %>
+		  </td>
+		     <td><%= link_to ad.title,ad %></td>
+		    <td><%= ad.url %></td>
+		    <td>
+		    
+		    	<%= ad.active? ? 'yes' : 'no' %>
+		    </td>
+		    
+		      <td>
+				<%= link_to image_tag("layout.png", :border =>0 , :mouseover => "layout.png", :title => d4x_sanitizer(t("icon-show")) ,:size => "16x16"), ad %>
+		 	</td>
+			<td>
+				<% if can? :update, @ad %>  
+					<%= link_to image_tag("layout_edit.png", :border =>0, :mouseover => "layout_edit.png", :title => d4x_sanitizer(t("icon-edit")),:size => "16x16" ), edit_ad_path(ad) %>
+				<% end %>
+			</td>
+		    <td>
+		    	<% if can? :destroy, @ad %>  
+						<%= button_to "", ad, :confirm => 'are you sure?', :method => :delete, :class => 'adestroy',:name => 'destroy',:size => "16x16" %>
+				<% end %>
+			</td>
+			 <td class="td-grid-data" width="2%">&nbsp;</td>
+    	  </tr>
+		<% end %>
+		</table>
+		<div id="paginator" align="center">
+			<%= will_paginate @ads,:per_page => 25 %>
+		</div>
+	</div>

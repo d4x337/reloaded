@@ -1,0 +1,43 @@
+	<br />
+	<table class="d4x-shopping" align="center">
+		
+	  <tr>
+		    <th><%= hidden_field_tag(:cart_id,@cart.id) %></th>
+		    <th><%= label_tag(d4x_sanitizer(t('package')),nil,{:class=>'white'})%></th>
+		    <th><%= label_tag(d4x_sanitizer(t('months')),nil,{:class=>'white'})%></th>
+		    <th width="20px">		
+			</th>
+		    <th class="price"><%= label_tag(d4x_sanitizer(t('month')),nil,{:class=>'white'})%></th>
+	  	    <th><%= label_tag(d4x_sanitizer(t('annual subscription')),nil,{:class=>'white'})%></th>
+		  </tr>
+			    <tr class="<%= cycle :odd, :even %>">
+			      <td></td>
+			      <td class="price"><%= label_tag(@cart.prod_id,nil,{:class=>'white'})%></td>
+			      <td class="qty">
+			      <%= form_for(@cart) do |f| %>
+				      <%= f.hidden_field :id,:value=>@cart.id%>
+				      <%= f.hidden_field :product_id,:value=>@cart.prod_id%>
+				      
+		
+					<%= f.select(:items,options_for_select([['1 year', '1'], ['2 years', '2'],['3 years', '3'],['4 years', '4'],['5 years', '5']], '0'), {:class =>  "agadanga-selects"}) %><br />
+				   <% end %>
+	
+				 </td>
+			      <td width="20px">		
+				 </td>
+			      <td class="price"><%= label_tag(number_to_currency(@cart.total_price/12,{:unit=>"€"}),nil,{:class=>'white'})%></td>
+			      <td class="price"><%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>'white'})%></td>
+			    </tr>
+			  <tr>
+			    <td class="total price lcd yellow" colspan="6">
+			   	<br />
+			     <%= label_tag(d4x_sanitizer(t('total')),nil,{:class=>'lcd lcd-bigger white'})%>
+			     <%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>'white'})%>
+			    </td>
+			  </tr>
+			  <tr>
+			    <td class="total price lcd yellow" colspan="6">
+			
+ 			    </td>
+			  </tr>
+	</table>

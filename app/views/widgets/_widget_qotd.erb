@@ -1,0 +1,10 @@
+
+    <% @quote  = Quote.first %>
+    <% unless @quote.blank? %>
+      <div id="quote-of-the-day-2013">
+        <div id="quote-text" class="center lcd">QOTD:</div>
+        <div class="center"><%= @quote.qtext %></div>
+        <div id="author-name-prof" class="center"><%= @quote.author.fullname %>  <%= @quote.author.headline %></div>
+        <div id="author-dates" class="center"><%= @quote.author.dates %></div>
+      </div>
+    <% end %>

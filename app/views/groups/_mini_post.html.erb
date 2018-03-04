@@ -1,0 +1,152 @@
+	<div id="post-2013-load">	
+			<div id="mini-post-body-2013">
+				<div id="mp-left-2013">
+					 <%= image_tag mini_post.user.avatar.url,:class => "thumbnail" %>
+				</div>
+				<div id="mp-right-2013">
+					<div id="mini-post-author-2013">
+						 <%= link_to mini_post.user.nickname,mini_post.user %> 
+					</div>
+					<div id="mini-post-settings">
+						<% if current_user.id == mini_post.user.id %>  
+							<%= button_to "", mini_post, :confirm => 'Are you sure you want to delete this post?', :title=>"delete post",:method => :delete ,:size => "16x16",:class => 'destroy2013',:id=>"mini-post-del"%>
+						<% end %>
+					</div>
+					<div id="mini-post-text-2013" class="post-body">
+						<%= raw(mini_post.content_html) %>
+					</div>
+					<% if not mini_post.image_file_name.blank? %>
+						<div id="post-image-2013">
+							<%= image_tag mini_post.image,:class=>'mini-post-image' %>
+						</div>
+					<% end %>
+					<div id="mini-post-user-feed-2013">
+						<% if user_has_voted(mini_post.id) %>
+							<%= user_feed(mini_post.id) %>
+					</div>		
+								<% mini_post.mini_post_liking.each do |mini_post_liking| %>
+									<% if (current_user.id == mini_post_liking.user_id) && mini_post_liking.liking %>  
+									<div id="undo">
+										<%= form_for(mini_post_liking) do |f| %>
+											<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s %>
+											<%= button_to t("unlike"), [mini_post_liking.mini_post, mini_post_liking], :confirm => 'Are you sure you want to unlike?',:alt =>'unlike', :class=>"button-like", :method => :delete ,:id=>"bt-unlike" %>
+										<% end %>	
+									</div>
+									<% elsif (current_user.id==mini_post_liking.user_id) && !mini_post_liking.liking %>
+										<%= form_for(mini_post_liking) do |f| %>
+											<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s %>
+											<%= button_to t("undislike"), [mini_post_liking.mini_post, mini_post_liking], :confirm => 'Are you sure you want to undislike?', :alt =>'undislike', :class=>"button-like",:method => :delete ,:id=>"bt-undislike" %>
+										<% end %>	
+									<% end %>
+								<% end %>
+						<% else %>
+							<div id="like-2013">
+							<%= form_for(mini_post.mini_post_liking.build) do |f| %>
+								<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s %>
+								<%= f.hidden_field :liking, :value=> true %>
+								<%= submit_tag t("like"),:name=>"feed",:id=>"feed-icon-2013",:class=>'button-like' %>&nbsp;::&nbsp;
+							<% end %>	
+							</div>
+							<div id="dislike-2013">
+							<%= form_for(mini_post.mini_post_liking.build) do |f| %>
+								<%= f.hidden_field :mini_post_id, :value=> mini_post.id.to_s %>
+								<%= f.hidden_field :liking, :value=> false %>
+								<%= submit_tag t("dislike"),:name=>"feed",:id=>"feed-icon-2013",:class=>'button-like' %>&nbsp;::&nbsp;
+							<% end %>	
+							</div>
+					 	
+					 		<div id="time-ago-2013" class="time-ago">
+								 <%= time_ago_in_words(mini_post.created_at) %> <%= t("ago") %> 
+					 		</div>
+					</div>
+						<% end %>
+					
+					
+					<div id="count-likes">
+						<%= tot_likes_13(mini_post.id) %>  	
+					</div>
+			
+					<div id="mini-post-actions-2013"> 
+						<% if mini_post.mini_post_comment.count > 0%>
+							<div id="comments-list">
+							<% mini_post.mini_post_comment.each do |mpcomment| %>
+							 	<div id="single-comment-2013">
+							 		<div id="comm-left">
+							 			<div id="commenter-image">
+											  <%= image_tag mpcomment.user.avatar.url,:class => "thumbnail-comment" %>
+										</div>
+									</div>
+							 		
+							 		<div id="comm-right">
+							 			<div id="comment-author" class="post-comment">
+										    <%= link_to mpcomment.user.nickname,mpcomment.user %>&nbsp;
+											<%= raw(cr2br(h(mpcomment.content))) %>
+										</div>
+											 
+										<div id="comment-settings-2013">
+											<% if (current_user.id == mpcomment.user.id) or (current_user.id == mpcomment.mini_post.user.id) %>  
+												<%= button_to "", [mpcomment.mini_post, mpcomment], :class => 'destroy2013',:confirm => 'are you sure?', :method => :delete  %>
+											<% end %>
+										</div>
+										
+										<div id="time-ago-comment">
+											<%= time_ago_in_words(mpcomment.created_at) %>
+											<%= t("ago") %> :: 
+										</div>
+																			
+										<div id="comment-liking">
+							 		    	<% if user_has_voted_comm(mpcomment.id) %>
+												<%= user_feed_comm(mpcomment.id) %>
+													<% mpcomment.mini_post_comment_liking.each do |mini_post_comm_liking| %>
+														<% if (current_user.id == mini_post_comm_liking.user_id) && mini_post_comm_liking.liking %> 
+															<div id="undo-comm-liking">
+																<%= form_for(mini_post_comm_liking) do |f| %>
+																	<%= f.hidden_field :mini_post_comment_liking_id, :value=> mini_post_comm_liking.id.to_s %>
+																	<%= button_to t("unlike"), mini_post_comm_liking,:class => 'button-unlike', :confirm => 'Are you sure?',:title=>'delete_comment', :method => :delete,:id=>"del-comment"%>
+																<% end %>	
+															</div>
+														<% elsif (current_user.id == mini_post_comm_liking.user_id) && !mini_post_comm_liking.liking  %>
+															<%= form_for(mini_post_comm_liking) do |f| %>
+																<%= f.hidden_field :mini_post_comment_liking_id, :value=> mini_post_comm_liking.id.to_s %>
+																<%= button_to t("undislike"), mini_post_comm_liking,:class => 'button-undislike', :confirm => 'Are you sure?', :title=>'delete_comment',:method => :delete,:id=>"del-comment"%>
+															<% end %>	
+														<% end %>	
+													<% end %>
+											<% else %>
+											<div id="like-2013">
+												<%= form_for(mpcomment.mini_post_comment_liking.build) do |f| %>
+													<%= f.hidden_field :liking, :value=> true %>
+											    	<%= f.hidden_field :mini_post_comment_id, :value=> mpcomment.id.to_s %>
+													<%= submit_tag t("like"),:name=>"feed",:id=>"feed-icon-2013",:class=>'button-like' %>&nbsp;::&nbsp;
+												<% end %>
+											</div>
+											<div id="dislike-2013">	
+												<%= form_for(mpcomment.mini_post_comment_liking.build) do |f| %>
+													<%= f.hidden_field :liking, :value=> false %>
+											    	<%= f.hidden_field :mini_post_comment_id, :value=> mpcomment.id.to_s %>
+													<%= submit_tag t("dislike"),:name=>"feed",:id=>"feed-icon-2013",:class=>'button-like' %>
+												<% end %>
+											</div>	
+											<% end %>
+						    			</div>
+						 			</div>
+							    </div>
+							<% end %>
+							</div>
+						<% end %>
+						<div id="add-new-comment-2013">
+							<%= form_for([mini_post, mini_post.mini_post_comment.build]) do |f| %>
+								<div id="tb-comment-2013">
+									<%= f.text_field :content ,:size=>"50x1",:id => "comment-textbox",:value=>t("newcomment"),:class=>'def-input' %>
+									<%= f.submit "",:id => "comment-button",:class =>'addcomment',:mouseover => '/images/comment1.png',:title=>t('comment')%>
+		
+								</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div id="mini-post-spacer-2013b">
+		&nbsp;
+	</div>

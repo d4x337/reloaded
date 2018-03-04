@@ -1,0 +1,56 @@
+
+<h4 class="card-title"><%= t('product') %></h4>
+<%= form_for(@product) do |f| %>
+  <div class="field">
+    <%= f.text_field :name ,:size =>50,:class=>'form-control',:placeholder=>t('product')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :description ,:size =>50,:class=>'form-control',:placeholder=>t('description')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_area :summary ,:size =>50,:class=>'form-control',:placeholder=>t('summary')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :final_price ,:size =>50,:class=>'form-control',:placeholder=>t('price')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :costs ,:size =>50,:class=>'form-control',:placeholder=>t('costs')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :category ,:size =>50,:class=>'form-control',:placeholder=>t('category')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :currency ,:size =>50,:class=>'form-control',:placeholder=>t('currency')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :subscription ,:size =>50,:class=>'form-control',:placeholder=>t('subscription')%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :in_stock,:class=>"show-item-label" %>
+    <%= f.check_box :in_stock%>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :promo,:class=>"show-item-label" %>
+    <%= f.check_box :promo%>
+  </div>
+  <div class="field">
+    <%= f.text_field :photo_file_name ,:size =>40,:class=>'form-control'%>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :active,:class=>"show-item-label" %><br />
+    <%= f.check_box :active%>
+  </div><br>
+
+    <%= f.submit t('update') ,:class=>'btn btn-outline-warning btn-sm block full-width m-b' %>
+
+<% end %>

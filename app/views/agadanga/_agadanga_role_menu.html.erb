@@ -1,0 +1,34 @@
+<% if current_user.role? :master %>
+<%= label_tag "MASTER", nil, {:class=>"lcd orange"} %>
+&nbsp;
+<%= link_to image_tag("monitor.png", :border =>0, :mouseover => "monitor.png",:class=>'bullet' ,:title => "dashboard" ), "/agadanga-dashboard" %>
+&nbsp;
+&nbsp;
+    <%= @option = Option.find_by_name('MASTER_DD00R').value %>
+&nbsp;
+<%= link_to image_tag("cog.png", :border =>0, :mouseover => "cog.png",:class=>'bullet' ,:title => "global settings" ), "/options" %>
+&nbsp;
+<%= link_to image_tag("group.png", :border =>0, :mouseover => "group.png",:class=>'bullet' ,:title => "registrations" ), "/users" %>
+&nbsp;
+<%= link_to image_tag("email.png", :border =>0, :mouseover => "email.png",:class=>'bullet' ,:title => "mailboxes" ), "/mailboxes" %>
+&nbsp;
+<%= link_to image_tag("application_view_tile.png", :border =>0, :mouseover => "application_view_tile.png",:class=>'bullet' ,:title => "products and services" ), "/products" %>
+&nbsp;
+<% elsif current_user.role? :admin %>
+<%= label_tag "ADMIN", nil, {:class=>"lcd orange"} %>
+&nbsp;
+<%= link_to image_tag("monitor.png", :border =>0, :mouseover => "monitor.png",:class=>'bullet' ,:title => "dashboard" ), "/agadanga-dashboard" %>
+<% elsif current_user.role? :cpr %>
+<%= label_tag "CPR", nil, {:class=>"lcd orange"} %>
+&nbsp;
+<%= link_to image_tag("monitor.png", :border =>0, :mouseover => "monitor.png",:class=>'bullet' ,:title => "dashboard" ), "/agadanga-dashboard" %>
+<% elsif current_user.role? :pr %>
+<%= label_tag "PR", nil, {:class=>"lcd orange"} %>
+&nbsp;
+<%= link_to image_tag("user_add.png", :border =>0, :mouseover => "user_add.png",:class=>'bullet' ,:title => "requests" ), "/requests" %>
+<% elsif current_user.role? :prj %>
+<%= label_tag "PRJ", nil, {:class=>"lcd orange"} %>
+&nbsp;
+<%= link_to image_tag("monitor.png", :border =>0, :mouseover => "monitor.png",:class=>'bullet' ,:title => "dashboard" ), "/agadanga-dashboard" %>
+<% end %>
+

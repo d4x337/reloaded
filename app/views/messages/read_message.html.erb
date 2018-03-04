@@ -1,0 +1,157 @@
+<% content_for :head do %>
+ 		
+<% end %>
+
+<div class="wrapper wrapper-content">
+  <div class="row animated fadeInRight">
+    <%= form_for(@message) do |f| %>
+	  <% if @message.errors.any? %>
+	      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+	      <ul>
+		      <% @message.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+	      </ul>
+	  <% end %>
+      <div class="col-md-8 col-xs-8">
+    	 <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Compose</h5>
+                <div class="ibox-tools">
+                   
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div>
+	                <div class="row">
+					  	<div id="remote" >
+				     		 <%= text_field_tag :remote,params[:query],{:class=>'typeahead form-control ttt',:placeholder=>"Destination Name"} %>
+						</div>
+					</div>	
+				   	<div class="row">
+						<div class="input-group">
+							     <%= f.text_area :content,:class=>'form-control custom-control',:placeholder=>"Content",:maxlength=>"337",:rows=>3,:style=>"resize:none" %>   
+							    <span class="input-group-addon btn btn-primary" onclick="$('#new_message').submit();">Send</span>
+							    <script>
+							$("#message_content").maxlength({alwaysShow: true,validate: false,allowOverMax: false});
+						</script>
+						</div>
+				    </div>
+				
+		        </div>
+            </div> 
+            <% end %>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Sent Messages</h5>
+                <div class="ibox-tools">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+                <div>
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+						<thead>
+						  <tr>
+							<th class="bold"><%= "Destination" %></th>
+						    <th class="bold"><%= "Sent" %></th>
+						    <th></th>
+						    <th></th>
+						  </tr>
+						</thead>
+							<tbody>
+								<% unless @messages.blank? %>
+									<% @messages.each do |message| %>
+									  <tr>
+								   	    <td><%= user_fullname(message.target_id) %></td>
+									    <td><%= message.created_at.to_s(:short) %></td>
+										    
+									    <td align="center"><%= link_to 'Reveal & Destroy', "/read_message?token="+message.read_token, :class=>'btn btn-xs btn-success' %></td>
+								        <td align="center"><%= button_to 'Revoke', message, method: :delete, data: { confirm: 'Are you sure?' },:class=>'btn btn-xs btn-danger' %></td>
+									  </tr>
+									<% end %>
+								<% end %>
+							</tbody>
+						</table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+	<div class="col-md-4">
+		<% if @sender_id.present? and @target_id.present? %>
+      	<div class="ibox-title">
+	    <h5>
+	 		Decrypted Message. This is the first and last read: Message has been destroyed
+		</h5>
+	    <% end %>
+	</div>
+	
+	<div class="ibox-content">
+		<div class="field">
+		   <%= label_tag 'sender' if @sender_id.present?%><br />
+		   <%= user_fullname(@sender_id) if @sender_id.present? %>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag 'destination' if @target_id.present?%><br />
+		   <%= user_fullname(@target_id) if @target_id.present? %>
+	    </div><br>
+	    <div class="field">
+		    <%= label_tag 'content' if @content.present? %><br />
+		    <%= @content  if @content.present? %>
+	    </div><br>
+	</div>
+ 
+</div>
+</div>
+
+
+<% content_for :javascript do %>
+	<script type="text/javascript">
+		$(function() {
+		    $("span.pie").peity("pie", {
+		        fill: ['#1ab394', '#d7d7d7', '#ffffff']
+		    })
+		
+		    $(".line").peity("line", {
+		        fill: '#1ab394',
+		        stroke: '#169c81',
+		    })
+		
+		    $(".bar").peity("bar", {
+		        fill: ["#1ab394", "#d7d7d7"]
+		    })
+		});
+	</script>
+<% end %>
+

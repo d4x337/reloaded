@@ -1,0 +1,11 @@
+<% @title =t('New update') %>
+<div id="center-right-welcome">
+	<div id="text-content">
+		<% if can? :update, @update %>  
+			<h2><%= t('New update') %></h2>
+		<% end %>
+		<br />
+		<%= render 'form' %>
+		<%= link_to t('Back'), updates_path %>
+	</div>
+</div>

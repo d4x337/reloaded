@@ -1,0 +1,2 @@
+class WorldmapController < ApplicationController
+end

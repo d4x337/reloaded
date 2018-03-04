@@ -1,0 +1,39 @@
+	<br />
+	<table class="d4x-shopping" align="center">
+		
+	  <tr>
+	  	     <% @cart = Cart.find(session[:cart_id]) %>
+		    <td> <%= hidden_field_tag :cart_id, session[:cart_id] %></td>
+		    <td align="center"><%= label_tag(d4x_sanitizer(t('package')),nil,{:class=>'white'})%></td>
+		    <td align="center"><%= label_tag(d4x_sanitizer(t('email')),nil,{:class=>'white'})%></td>
+		    <td align="center"><%= label_tag(d4x_sanitizer(t('years')),nil,{:class=>'white'})%></td>
+		    <td width="20px">		
+			</td>
+		    <td class="price"><%= label_tag(d4x_sanitizer(t('month')),nil,{:class=>'white'})%></td>
+	  	    <td><%= label_tag(d4x_sanitizer(t('annual subscription')),nil,{:class=>'white'})%></td>
+	  </tr>
+	    <tr>
+	        <td></td>
+			      <td class="price" align="center"><%= label_tag(product_name(@cart.prod_id),nil,{:class=>'white'})%></td>
+			      <td class="price" align="center"><%= label_tag((@cart.nick+"@"+@cart.domain),nil,{:class=>'white'})%></td>
+			      <td class="qty" align="center">
+			      	<%= label_tag(@cart.items,nil,{:class=>'white'})%>
+			     </td>
+			      <td width="20px">		
+				 </td>
+			      <td class="price" align="center"><%= label_tag(number_to_currency(@cart.total_price/12,{:unit=>"€"}),nil,{:class=>'white'})%></td>
+			      <td class="price" align="center"><%= label_tag(number_to_currency(@cart.total_price,{:unit=>"€"}),nil,{:class=>'white'})%></td>
+			    </tr>
+			  <tr>
+			    <td class="total price yellow" colspan="8" align="center">
+			   	<br />
+			     <%= label_tag(d4x_sanitizer(t('total')),nil,{:class=>'white'})%>
+			     <%= label_tag(number_to_currency(@cart.total_price*@cart.items,{:unit=>"€"}),nil,{:class=>'white'})%>
+			    </td>
+			  </tr>
+			  <tr>
+			    <td class="total price lcd yellow" colspan="8">
+			
+ 			    </td>
+			  </tr>
+	</table>
