@@ -1,13 +1,23 @@
-# Simple Role Syntax
-# ==================
-# Supports bulk-adding hosts to roles, the primary server in each group
-# is considered to be the first unless any hosts have the primary
-# property set.  Don't declare `role :all`, it's a meta role.
-
 role :app, %w{d4x@192.168.1.4}
 role :web, %w{d4x@192.168.1.4}
 role :db,  %w{d4x@192.168.1.4}
 
+server '192.168.1.4', port: 41337, roles: [:web, :app, :db], primary: true
+
+set :repo_url,        'd4x@192.168.1.4:/var/www/repo/reloaded.git'
+set :application,     'reloaded'
+set :user,            'd4x'
+
+set :pty,             true
+set :use_sudo,        false
+set :stage,           :staging
+set :deploy_via,      :remote_cache
+set :deploy_to,       "/var/www/apps/tmpdeploy/#{fetch(:application)}"
+
+
+## Linked Files & Directories (Default None):
+#append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
+#append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 # Extended Server Syntax
 # ======================
@@ -15,7 +25,6 @@ role :db,  %w{d4x@192.168.1.4}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '192.168.1.4', user: 'd4x', roles: %w{web app}, my_property: :my_value
 
 
 # Custom SSH Options

@@ -1,12 +1,12 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.1"
+#lock "~> 3.10.1"
 
 # Change these
 server '192.168.1.4', port: 41337, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@reloaded.online:/var/www/repo/reloaded.git'
+set :repo_url,        'd4x@192.168.1.4:/var/www/repo/reloaded.git'
 set :application,     'reloaded'
-set :user,            'deploy'
+set :user,            'd4x'
 
 set :pty,             true
 set :use_sudo,        false
@@ -15,11 +15,11 @@ set :deploy_via,      :remote_cache
 set :deploy_to,       "/var/www/apps/tmpdeploy/#{fetch(:application)}"
 #set :deploy_to,       "/var/www/apps/#{fetch(:application)}"
 
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+#set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
 ## Linked Files & Directories (Default None):
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
+#append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
+#append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 namespace :nginx do
   desc 'Create Directories for Nginx Pids and Socket'
@@ -30,20 +30,20 @@ namespace :nginx do
     end
   end
 
-  before :start, :make_dirs
+  #before :start, :make_dirs
 end
 
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
-  task :check_revision do
-    on roles(:app) do
-      unless `git rev-parse HEAD` == `git rev-parse origin/master`
-        puts "WARNING: HEAD is not the same as origin/master"
-        puts "Run `git push` to sync changes."
-        exit
-      end
-    end
-  end
+  #task :check_revision do
+  #  on roles(:app) do
+  #    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+  #      puts "WARNING: HEAD is not the same as origin/master"
+  #      puts "Run `git push` to sync changes."
+  #      exit
+  #    end
+  #  end
+  #end
 
   desc 'Initial Deploy'
   task :initial do
@@ -60,10 +60,10 @@ namespace :deploy do
     end
   end
 
-  before :starting,     :check_revision
-  after  :finishing,    :compile_assets
-  after  :finishing,    :cleanup
-  after  :finishing,    :restart
+  #before :starting,     :check_revision
+  #after  :finishing,    :compile_assets
+  #after  :finishing,    :cleanup
+  #after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid

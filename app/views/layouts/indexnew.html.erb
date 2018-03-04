@@ -1,27 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-			  <title><%= get_setting_value('PROJECT_NAME') %></title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <title><%= get_setting_value('PROJECT_NAME') %></title>
+       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta charset="utf-8">
-		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	   <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		    <meta name="description" content="<%= get_setting_value('PROJECT_MOTTO') %>">
 		    <meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
     		<meta name="keywords" content="" />
-
   			<%= csrf_meta_tags %>
-
-
         <%= javascript_include_tag 'jquery-3.2.1.min.js' %>
-
-        <!-- Royal Preloader CSS -->
         <%= stylesheet_link_tag 'css/royal_preloader.css' %>
-
-        <!-- Parallax File -->
         <script type="text/javascript" src="js/parallax.min.js"></script>
-
-        <!-- Royal Preloader -->
         <script type="text/javascript" src="js/royal_preloader.min.js"></script>
         <script type="text/javascript">
             Royal_Preloader.config({
@@ -30,20 +21,12 @@
                 background:     '#1d1d1d'
             });
         </script>
-
-        <!-- Stylesheets -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/ionicons.min.css" rel="stylesheet">
         <link href="css/pe-icon-7-stroke.css" rel="stylesheet">
         <link href="css/magnific-popup.css" rel="stylesheet">
         <link href="css/logoiconfont.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" title="main-css">
-
-        <!-- Style Switcher / remove for production -->
-        <link href="css/style-switcher.css" rel="stylesheet">
-
-
-
         <% @weekday = Date.today.strftime("%A").downcase
 
            case @weekday
@@ -71,15 +54,11 @@
 
            end
         %>
-        <link rel="alternate stylesheet" type="text/css" href="css/colors/<%= @skin %>" title="blue">
-
-        <link rel="alternate stylesheet" type="text/css" href="css/base-light.css" title="base-light">
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/<%= @skin %>" title="main-css">
         <%= yield :javascript_includes %>
         <%= yield :head %>
 	</head>
-
   <body class="royal_preloader" data-spy="scroll" data-target=".navbar" data-offset="70">
     <%= yield %>
   </body>
-
 </html>
