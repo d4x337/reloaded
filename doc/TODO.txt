@@ -5,7 +5,7 @@ Bugs:
 - do backoffice: permissions on maildir
 - do backoffice: create blog
 
-Requested Features
+Requested Core Features
 - web sockets - push notifications
 - login with user o email o tel
 - new languages support
@@ -13,13 +13,13 @@ Requested Features
 - hashtags
 - likes page
 - fav page
-- secure message rating
+- secure message rating (widget)
 
 GDPR Ready:
 - User record encrypted
 - Photos encrypted
-- Delete My Account
-- Complete management of own data record
+- Delete My Account (ok)
+- Complete management of own data record (ok)
 
 Security:
 - ACL Review
@@ -28,11 +28,11 @@ Security:
 - Two factor authentication (draft)
 
 UX Tests:
-- Tablet view
-- Mobile view
+- Tablet view (ongoing)
+- Mobile view (ongoing)
 
 Produzione:
-- git repo
+- git repo (OK)
 - RubyEncoder
 
 Monitoring:

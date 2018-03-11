@@ -25,8 +25,8 @@ class CreateMailAccounts < ActiveRecord::Migration
   end
   
   def self.load
-    MailAccount.create(:user_id=>1,:login=>'davide.gonnella@d4x337.com',:name=>'d4x',:password=>'Blaster..14',:maildir=>'d4x337.com/davide.gonnella/',:quota=>'100000000000S',:active=>1)
-    MailAccount.create(:user_id=>2,:login=>'system@tortuga.tech',:name=>'Tortuga System',:password=>'Pl0kta...',:maildir=>'tortuga.tech/system/',:quota=>'20000000000S',:active=>1)
+    MailAccount.create(:user_id=>1,:login=>'davide@d4x337.com',:name=>'d4x',:password=>'Blaster..14',:maildir=>'d4x337.com/davide/',:quota=>'100000000000S',:active=>1)
+    MailAccount.create(:user_id=>2,:login=>'admin@reloaded.online',:name=>'Reloaded',:password=>'Pl0kta,,,',:maildir=>'reloaded.online/admin/',:quota=>'20000000000S',:active=>1)
   end
   
 end

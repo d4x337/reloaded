@@ -25,7 +25,6 @@ class CreateDomains < ActiveRecord::Migration
     
   def self.load
     Domain.create :domain => 'd4x337.com',   :homedir=>'d4x337.com',  :vmaildir=>'/var/vmail', :active =>0
-    Domain.create :domain => 'tecnobike.biz',:homedir=>'tecnobike.biz',:vmaildir=>'/var/vmail', :active =>0
     Domain.create :domain => 'reloaded.online',   :homedir=>'reloaded.online',  :vmaildir=>'/var/vmail', :active =>0
     Domain.create :domain => 'reloaded.fun',   :homedir=>'reloaded.fun',  :vmaildir=>'/var/vmail', :active =>0
     Domain.create :domain => 'reloaded.club',   :homedir=>'reloaded.club',  :vmaildir=>'/var/vmail', :active =>0

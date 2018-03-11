@@ -10,7 +10,7 @@
 	h2,h4{
 		color:white;
 	}
-  #tortuga-terms{
+  #Reloaded-terms{
     float:left;
     margin-top:10px;
     margin-bottom:10px;
@@ -41,65 +41,21 @@
 <div class="messages middle-box text-center animated">
 
 <div>
-    <div class="col-sm-2 col-xs-2 d4xlogo">
-      <%=link_to(image_tag("logo15.png",:class=>'imagelogo'),"/")%>
-    </div>
-    <div class="col-sm-8  col-xs-8 left">
-      <%= form_tag "/search",:method => "get",:role=>'search' do %>
-          <%= hidden_field_tag :area, 'firstname' %>
-          <div class="form-group none" id="searchbox">
-            <div class="input-group">
-              <div id="remote">
-                <%= text_field_tag :findthis,params[:query],{:class=>'typeahead form-controls input-sm',:placeholder=>d4x_sanitizer(t('search'))} %>
-              </div>
-              <span class="input-group-btn">
-				   				<%= button_tag raw('<i class="fa fa-search white"></i>'),:id => "search-submit",:class=>'btn btn-primary btn-sm',:method => "post",:title=>d4x_sanitizer(t('search'))%>
-					   		</span>
-            </div>
-          </div>
-      <% end %>
-      <%= image_tag "tortuga.gif" %>
-    </div>
 
-    <div class="col-sm-1 col-xs-1">
-      <a href="#" title="Compose" id="link-compose" >
-        <i class="fa fa-2x fa-search" id="icon-compose"></i>
-      </a>
-      <div class="sk-spinner sk-spinner-wave none" id="spinner">
-        <div class="sk-rect1"></div>
-        <div class="sk-rect2"></div>
-        <div class="sk-rect3"></div>
-        <div class="sk-rect4"></div>
-        <div class="sk-rect5"></div>
-      </div>
-    </div>
-
-  </div>
-
-<div>
-
-  <div id="tortuga-terms">
+  <div id="Reloaded-termsa">
     <h4 class="whiteee">Term and Conditions of Use</h4>
-    Cookies on the Tortuga website. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the Tortuga website. However, if you would like to, you can change your cookie settings at any time.
+    Cookies on the Reloaded website. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the Reloaded website. However, if you would like to, you can change your cookie settings at any time.
   </div>
   <br />
-  <div id="tortuga-terms">
+  <div id="Reloaded-termas">
     <h4 class="whiteee">Privacy Policy</h4>
-    Cookies on the Tortuga website. We use cookies to ensure that we give you the best experience on our website.
+    Cookies on the Reloaded website. We use cookies to ensure that we give you the best experience on our website.
   </div>
   <br />
     <br>
-    <div id="tortuga-terms">
+    <div id="Reloaded-termsa">
       <h4 class="whiteee">Cookies</h4>
-        Cookies on the Tortuga website. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the Tortuga website. However, if you would like to, you can change your cookie settings at any time.
+        Cookies on the Reloaded website. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the Reloaded website. However, if you would like to, you can change your cookie settings at any time.
     </div>
     <br />
-</div>
-<script>
-	$(function(){
-		$('.info').slimScroll({
-			height: '470'
-		});
-	});
-</script>
 </div>

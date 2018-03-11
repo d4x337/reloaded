@@ -4,7 +4,7 @@ role :db,  %w{d4x@192.168.1.4}
 
 server '192.168.1.4', port: 41337, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'd4x@192.168.1.4:/var/www/repo/reloaded.git'
+set :repo_url,        'd4x@192.168.1.4:/var/www/reloaded.git'
 set :application,     'reloaded'
 set :user,            'd4x'
 

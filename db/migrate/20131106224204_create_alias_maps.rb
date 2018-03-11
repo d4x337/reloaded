@@ -15,7 +15,8 @@ class CreateAliasMaps < ActiveRecord::Migration
   end
 
   def self.load
-    AliasMap.create(:address=>'d4x337@d4x337.com3x',:alias=>'root@d4x337.com',:domain=>'d4x337.com')
-    AliasMap.create(:address=>'root@tortuga.tech',:alias=>'d4x@tortuga.tech',:domain=>'tortuga.tech')
+    AliasMap.create(:address=>'root@mail.reloaded.online',:alias=>'root@d4x337.com',:domain=>'d4x337.com')
+    AliasMap.create(:address=>'davide@d4x337.com',:alias=>'root@d4x337.com',:domain=>'d4x337.com')
+    AliasMap.create(:address=>'admin@reloaded.online',:alias=>'admin@reloaded.online',:domain=>'reloaed.online')
   end
 end

@@ -2,21 +2,20 @@
 #lock "~> 3.10.1"
 
 # Change these
-server '192.168.1.4', port: 41337, roles: [:web, :app, :db], primary: true
+server '192.168.1.2', port: 41337, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'd4x@192.168.1.4:/var/www/repo/reloaded.git'
 set :application,     'reloaded'
 set :user,            'd4x'
 
 set :pty,             true
 set :use_sudo,        false
-set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/var/www/apps/tmpdeploy/#{fetch(:application)}"
-#set :deploy_to,       "/var/www/apps/#{fetch(:application)}"
+
+set :keep_releases, 5
+set :passenger_restart_with_touch, true
 
 #set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
-
 ## Linked Files & Directories (Default None):
 #append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 #append :linked_files, 'config/database.yml', 'config/secrets.yml'
@@ -65,6 +64,9 @@ namespace :deploy do
   #after  :finishing,    :cleanup
   #after  :finishing,    :restart
 end
+
+### touch tmp/restart.txt
+
 
 # ps aux | grep puma    # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
