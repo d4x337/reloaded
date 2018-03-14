@@ -1,9 +1,9 @@
 class UberMailer < ActionMailer::Base
 
   SMTP_SETTINGS = {
-      :address              => "www.reloaded.com",
+      :address              => "www.reloaded.online",
       :port                 => 465,
-      :domain               => "reloaded.com",
+      :domain               => "reloaded.online",
       :authentication       => :plain,
       :enable_starttls_auto => false,
       :ssl                  => true,

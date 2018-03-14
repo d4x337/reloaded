@@ -28,17 +28,12 @@ class CreateProducts < ActiveRecord::Migration
   end
   
   def self.load
-    Product.create :name => "Agadanga Beta Test 50Mb",:description => "VPN Access",:category =>'service',:quota=>"50000000S",:currency => "Euro",:final_price => 0.00,:summary=>"FREE",:subscription => "free"
-    Product.create :name => "AgadangaBox 1GB",:description => "1GB email agadanga",:category =>'service',:quota=>"1000000000S",:currency => "Euro",:final_price => 5.00,:subscription => "unatantum"
-    Product.create :name => "AgadangaBox 3GB",:description => "3GB email agadanga",:category =>'service',:quota=>"3000000000S",:currency => "Euro",:final_price => 10.00,:subscription => "unatantum"
-    Product.create :name => "AgadangaBox 20GB",:description => "20GB email Agadanga",:category =>'service',:quota=>"20000000000S",:currency => "Euro",:final_price => 30.00,:subscription => "unatantum"
-    Product.create :name => "T-shirt",:description => "Official T-shirt ",:category =>'product',:currency => "Euro",:final_price => 25.00,:subscription => "single"
-    Product.create :name => "Hat",:description => "Official Agadanga Hat",:category =>'product',:currency => "Euro",:final_price => 20.00,:subscription => "single"
-    Product.create :name => "Mug",:description => "Official Agadanga Mug",:category =>'product',:currency => "Euro",:final_price => 15.00,:subscription => "single"
-    Product.create :name => "Sweater",:description => "Official Agadanga Sweater",:category =>'product',:currency => "Euro",:final_price => 40.00,:subscription => "single"
-    Product.create :name => "Bag",:description => "Official Agadanga Bag",:category =>'product',:currency => "Euro",:final_price => 50.00,:subscription => "single"
-    Product.create :name => "Poster",:description => "agadanga Posters",:category =>'product',:currency => "Euro",:final_price => 20.00,:subscription => "single"
-    Product.create :name => "OpenBSD 5.5",:description => "Operating System DVD Cases",:category =>'product',:currency => "Euro",:final_price => 50.00,:subscription => "single"
-    Product.create :name => "VPN Access",:description => "VPN Access",:category =>'service',:currency => "Euro",:final_price => 20.00,:subscription => "annual"
+    Product.create :name => "Reloaded Blog",:description => "Reloaded Blog Service",:category =>'service',:quota=>"3000000000S",:currency => "Euro",:final_price => 25.00,:subscription => "anual"
+    Product.create :name => "Reloaded Mailbox 3GB",:description => "3GB Mailbox",:category =>'service',:quota=>"3000000000S",:currency => "Euro",:final_price => 3.00,:subscription => "anual"
+    Product.create :name => "Reloaded Mailbox 10GB",:description => "10GB Mailbox",:category =>'service',:quota=>"10000000000S",:currency => "Euro",:final_price => 10.00,:subscription => "anual"
+    Product.create :name => "Reloaded Mailbox 20GB",:description => "20GB Mailbox",:category =>'service',:quota=>"20000000000S",:currency => "Euro",:final_price => 20.00,:subscription => "anual"
+    Product.create :name => "T-shirt",:description => "Reloaded T-shirt ",:category =>'product',:currency => "Euro",:final_price => 20.00,:subscription => "single"
+    Product.create :name => "Mug",:description => "Reloaded Mug",:category =>'product',:currency => "Euro",:final_price => 15.00,:subscription => "single"
+    Product.create :name => "Stickers",:description => "Reloaded Stickers",:category =>'product',:currency => "Euro",:final_price => 5.00,:subscription => "single"
   end
 end

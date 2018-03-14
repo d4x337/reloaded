@@ -77,11 +77,11 @@ Reloaded::Application.configure do
   #works in production, if marked as spam switch to 465 with auth
   config.action_mailer.smtp_settings = {
       :address              =>"127.0.0.1",
-      :port                 => 25,
-      #      :domain               => "Reloaded.tech",
-      #      :user_name            => "system@Reloaded.tech",
-      ##      :password             => "Pl0kta...",
-      #      :authentication       => :plain,
+      :port                 => 465,
+      :domain               => "reloaded.online",
+      :user_name            => "admin@reloaded.online",
+      :password             => "Pl0kta,,,",
+      :authentication       => :plain,
       :openssl_verify_mode  => 'none'
       #      :enable_starttls_auto => true
   }

@@ -61,6 +61,7 @@
           <li id="menu-account-setings"><a href="/agadanga-settings"><i class="zmdi zmdi-hc-lg zmdi-account-box-o orange"></i>&nbsp;&nbsp;&nbsp;<%= t('account settings')%></a></li>
         </ul>
       </li>
+      <% if current_user.role? :admin %>
       <li class="navigation__sub" id="main-menu-blog">
         <a href=""><i class="fa fa-calendar red"></i>&nbsp;<%= t('blog')%></a>
         <ul>
@@ -89,6 +90,7 @@
           <li id="menu-chat"><a href="/chat"><i class="zmdi zmdi-hc-lg zmdi-comments pink"></i>&nbsp;&nbsp;&nbsp;<%= t('chat')%></a></li>
         </ul>
       </li>
+      <% end %>
       <li class="navigation__sub" id="main-menu-settings">
         <a href=""><i class="fa fa-wrench yellow"></i> <%= t('settings')%></a>
         <ul>
