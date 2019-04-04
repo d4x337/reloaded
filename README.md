@@ -25,11 +25,11 @@ Run the database migration:
     
     bundle exec rake db:migrate
 
-Then migrate your database if you did not run during installation generator:
+Compile assets
 
-    bundle exec rake db:migrate
+    bundle exec rake assets:precompile
     
-Evaluate the secrets as passwords, keys, entropies    
+Evaluate the secrets as passwords, keys, entropy.   
 
 And reboot your server:
 
