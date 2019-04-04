@@ -119,11 +119,14 @@ JQuery and many others.
 Special Thanks
 ------------
 
+SOON
+
 
 Donating
 --------
 
+Direct donations to: 
 
-Bitcoin donations may be sent to: 
+Bitcoin donations may be sent to: TBD
 
 Copyright (c) 2013-2019 Davide Gonnella, released under the [New BSD License](https://github.com/d4x337/reloaded/tree/master/LICENSE).
