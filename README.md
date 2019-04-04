@@ -1,6 +1,4 @@
 
-### Check out the latest, officially maintained [Spree Multi Vendor marketplace](https://github.com/spree-contrib/spree_multi_vendor) extension
-
 # Reloaded
 
 What is Reloaded?
@@ -14,8 +12,7 @@ Once an order is placed for a product that belongs to a supplier a shipment is c
 This shipment is then sent to the supplier (via Email by default). The supplier then follows a link to the shipment
 within the email where they are prompted to confirm the shipment.
 
-Spree Drop Ship used with [Spree Marketplace](https://github.com/jdutil/spree_marketplace) allows handling payments to your suppliers via ACH direct deposits.  
-This is still currently a work in progress, and any input is welcome.
+
 .
 
 Installation
@@ -122,6 +119,6 @@ Here are some ways *you* can contribute:
 Donating
 --------
 
-Bitcoin donations may be sent to: 1L6akT6Aus9r6Ashw1wDtLg7D8zJCVVZac
+Bitcoin donations may be sent to: 
 
 Copyright (c) 2013-2019 Davide Gonnella, released under the [New BSD License](https://github.com/d4x337/reloaded/tree/master/LICENSE).
