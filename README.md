@@ -3,9 +3,8 @@
 
 What is Reloaded?
 
-TBD
-
-.
+Reloaded is a portal that offers you a set of complex features such as Secure Messaging, Social Media, Web Mail,
+Online Shop and Instant Chat .
 
 Installation
 ------------
@@ -119,14 +118,22 @@ JQuery and many others.
 Special Thanks
 ------------
 
-SOON
+Family, friends, colleagues and to some women that have been my inspiration and strength with their deep love.
+I hope to have the change to return your priceless emotive support. Just some names to maintain their privacy, each
+one have been very special to me in their own way, no competition or compares because you have been just awesome.
+Thank you  Paola, Camilla, Frederique and Kim <3
+
 
 
 Donating
 --------
 
-Direct donations to: 
+You can contribute also with Direct donations in order to improve and accelerate developments. Transfer to: 
 
-Bitcoin donations may be sent to: TBD
+NL48 ABNA 0459 2935 32
+or
+IT18E0760105138231481831485
+
+Anonymous Bitcoin donations may be sent to: TBD 
 
 Copyright (c) 2013-2019 Davide Gonnella, released under the [New BSD License](https://github.com/d4x337/reloaded/tree/master/LICENSE).
