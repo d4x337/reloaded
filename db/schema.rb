@@ -210,7 +210,7 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.datetime "birthdate"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
-    t.integer  "picture_file_size"
+    t.integer  "picture_file_size",    limit: 8
     t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.integer  "user_id"
     t.string   "original_file_name"
     t.string   "original_content_type"
-    t.integer  "original_file_size"
+    t.integer  "original_file_size",     limit: 8
     t.datetime "original_updated_at"
     t.string   "encoded_filename"
     t.string   "encoded_size"
@@ -266,7 +266,7 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.string   "encrypted_entropy"
     t.string   "encrypted_entropy_salt"
     t.string   "encrypted_entropy_iv"
-    t.boolean  "compressed",             default: false
+    t.boolean  "compressed",                       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "message_id"
@@ -292,10 +292,10 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.string   "locale"
     t.string   "feedicon_file_name"
     t.string   "feedicon_content_type"
-    t.integer  "feedicon_file_size"
+    t.integer  "feedicon_file_size",    limit: 8
     t.datetime "feedicon_updated_at"
     t.integer  "vote"
-    t.boolean  "active",                default: true
+    t.boolean  "active",                          default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -796,17 +796,17 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.datetime "modified"
     t.datetime "modified_gmt"
     t.text     "content_filtered"
-    t.integer  "parent",             default: 0
+    t.integer  "parent",                       default: 0
     t.string   "guid"
-    t.integer  "menu_order",         default: 0
+    t.integer  "menu_order",                   default: 0
     t.string   "content_type"
     t.string   "mime_type"
-    t.integer  "comment_count",      default: 0
+    t.integer  "comment_count",                default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.integer  "image_file_size",    limit: 8
     t.datetime "image_updated_at"
     t.integer  "blog_id"
     t.text     "description"
@@ -940,9 +940,9 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.integer  "image_file_size",        limit: 8
     t.datetime "image_updated_at"
-    t.boolean  "is_encrypted",           default: false
+    t.boolean  "is_encrypted",                     default: false
     t.string   "encoded_filename"
     t.string   "encoded_size"
     t.string   "encrypted_key"
@@ -951,7 +951,7 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.string   "encrypted_entropy"
     t.string   "encrypted_entropy_salt"
     t.string   "encrypted_entropy_iv"
-    t.boolean  "compressed",             default: false
+    t.boolean  "compressed",                       default: false
   end
 
   create_table "user_contacts", force: :cascade do |t|
@@ -1001,15 +1001,15 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.integer  "roles_mask"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
-    t.integer  "photo_file_size"
+    t.integer  "photo_file_size",               limit: 8
     t.datetime "photo_updated_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
+    t.integer  "avatar_file_size",              limit: 8
     t.datetime "avatar_updated_at"
     t.string   "cover_file_name"
     t.string   "cover_content_type"
-    t.integer  "cover_file_size"
+    t.integer  "cover_file_size",               limit: 8
     t.datetime "cover_updated_at"
     t.string   "skype_id"
     t.string   "twitter_url"
@@ -1051,7 +1051,7 @@ ActiveRecord::Schema.define(version: 20171228113752) do
     t.text     "favourite_quote"
     t.string   "invitations_list_file_name"
     t.string   "invitations_list_content_type"
-    t.integer  "invitations_list_file_size"
+    t.integer  "invitations_list_file_size",    limit: 8
     t.datetime "invitations_list_updated_at"
     t.binary   "iv"
     t.binary   "key"

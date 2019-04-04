@@ -235,7 +235,7 @@ class User < ActiveRecord::Base
   end
 
   def create_mailbox
-    #if Rails.env.production?
+    if Rails.env.production?
       @nick = self.nickname
       @domain = "reloaded.com"
       maildir = '/var/vmail'
@@ -249,7 +249,7 @@ class User < ActiveRecord::Base
       @trashdir   = Maildir.new(maildir+"/"+@domain+"/"+@nick+"/.Trash",true)
       system "chown -R vmail "+maildir+"/"+@domain+"/"+@nick
       system "chmod -R 700 "+maildir+"/"+@domain+"/"+@nick
-    #end
+    end
   end
 
   def do_backoffice

@@ -1,43 +1,54 @@
 
+Features:
++ Webmail
++ Blog
++ ECommerce
++ Chat
++ Dating
+
 Bugs:
-- compose message - contacts
-- compose message - picture
-- do backoffice: permissions on maildir
-- do backoffice: create blog
+- compose message - contacts                BUG FIX URGENT
+- compose message - picture                 BUG FIX URGENT
+- do backoffice: permissions on maildir     BUG FIX URGENT
+- do backoffice: create blog                BUG FIX URGENT
 
 Requested Core Features
-- web sockets - push notifications
-- login with user o email o tel
-- new languages support
-- use slugs for nicknames
-- hashtags
-- likes page
-- fav page
-- secure message rating (widget)
+- web sockets - push notifications          RAILS5 branch
+- login with user o email o tel             RAILS5 branch
+- clean unsed translation tags              OP
+- new languages support                     RAILS5 branch
+- use slugs for nicknames                   GEM
+- hashtags                                  GEM
+- likes page (MV ok - missing controller)   ONGOING
+- fav page (MV ok - missing controller)     ONGOING
+- secure message rating (widget)            TODO
+- enlarge gallery pic da 1M a 5M            OK
 
 GDPR Ready:
-- User record encrypted
-- Photos encrypted
-- Delete My Account (ok)
-- Complete management of own data record (ok)
+- User record encrypted                     TODO
+- Photos encrypted                          TODO
+- Delete My Account                         OK
+- Complete management of own data record    OK
 
 Security:
-- ACL Review
-- Improved Model Validations
-- brakeman audit - applied fixes
-- Two factor authentication (draft)
+- ACL Review                                TODO
+- Improved Model Validations                ONGOING
+- Burp Scan (with your config!)             TODO
+- brakeman audit - applied fixes            OK
+- Two factor authentication (draft)         BUY SMS
+- Conjour for secrets                       ONGOING
 
 UX Tests:
-- Tablet view (ongoing)
-- Mobile view (ongoing)
+- Tablet view                               ONGOING
+- Mobile view                               ONGOING
 
 Produzione:
-- git repo (OK)
-- RubyEncoder
+- git repo                                  OK
+- RubyEncoder                               BUY LICENSE
 
 Monitoring:
-- New Relic
-- Rollbar
-- CircleCI
-- WorldPing
-- Grafana
+- New Relic                                 BUY LICENSE
+- Rollbar                                   BUY LICENSE
+- CircleCI                                  BUY SERVICE
+- WorldPing                                 BUY LICENCE
+- Grafana                                   VM on CENTOS7

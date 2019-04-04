@@ -1,546 +1,2000 @@
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
-ruby /home/d4x337/tortuga00/test/signup_tortuga.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb
+sudo killall -HUP tor
+ruby signup_reloaded.rb

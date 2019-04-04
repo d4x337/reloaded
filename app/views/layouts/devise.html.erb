@@ -9,18 +9,26 @@
   <meta name="description" content="<%= get_setting_value('PROJECT_MOTTO') %>">
   <meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
   <meta name="keywords" content="<%= get_setting_value('PROJECT_KEYWORDS')%>" />
-  <%= stylesheet_link_tag 'users' %>
+
+
+
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'users' %>
   <!-- Vendor styles -->
   <link rel="stylesheet" href="/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
   <link rel="stylesheet" href="/vendors/bower_components/animate.css/animate.min.css">
-  <%= stylesheet_link_tag 'css/app.min.css' %>
+  <%= stylesheet_link_tag 'css/newstyle.css' %>
+  <%= stylesheet_link_tag 'css/app.css' %>
+
   <%= javascript_include_tag 'js/app.min.js' %>
   <%= javascript_include_tag 'devise' %>
   <%= yield :javascript_includes %>
   <%= yield :head %>
   <style>
+    .form-control{
+      height:32px;
+    }
     a,a:hover{color:lightgreen;}
       .ddd4x{
         width:170px;
@@ -28,7 +36,7 @@
   </style>
 </head>
 
-<body data-sa-theme="1">
+<body data-sa-theme="7">
 <div class="login">
   <% if notice.present? %>
     <script language="JavaScript">

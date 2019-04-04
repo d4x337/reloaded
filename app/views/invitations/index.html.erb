@@ -61,7 +61,7 @@
         <br />
         <%= f.email_field :recipient_email,:class=>'form-control center',:placeholder=>d4x_sanitizer(t("email")) %>
       </p>
-      <p align="center"><%= f.submit d4x_sanitizer(t('send')) ,:class=>'btn btn-outline-primary block full-width m-b' %></p>
+      <p align="center"><%= f.submit d4x_sanitizer(t('send')) ,:class=>'btn btn-outline-primary btn-block' %></p>
     <% end %>
     <br>
     <br>
@@ -71,8 +71,8 @@
         <br>
         <%= hidden_field_tag :import,:invitations %>
         <p align="center">
-          <%= f.file_field :invitations_list,:class=>'btn btn-outline-primary block full-width m-b' %>
+          <%= f.file_field :invitations_list,:class=>'btn btn-outline-primary btn-block' %>
         </p>
-        <p align="center"><%= f.submit d4x_sanitizer(t('upload')),:class=>'btn btn-outline-primary block full-width m-b' %></p>
+        <p align="center"><%= f.submit d4x_sanitizer(t('upload')),:class=>'btn btn-outline-primary btn-block' %></p>
     <% end %>
 <% end %>

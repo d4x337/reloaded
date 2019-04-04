@@ -41,7 +41,7 @@
       </td>
       </td>
       <td class="col-sm-2">
-        <%= button_to d4x_sanitizer(t("delete")), item ,  :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger block full-width m-b', :title => d4x_sanitizer(t("delete")),:name => 'destroy' %>
+        <%= button_to d4x_sanitizer(t("delete")), item ,  :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger btn-block', :title => d4x_sanitizer(t("delete")),:name => 'destroy' %>
       </td>
     </tr>
    <% elsif is_service(item.product_id)%>
@@ -71,7 +71,7 @@
         <%= number_to_currency(item.total_price,{:unit=>"€"}) %>
          </td>
         <td class="col-sm-2">
-          <%= button_to d4x_sanitizer(t("delete")), item , :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger block full-width m-b', :title => d4x_sanitizer(t("delete")),:name => 'destroy' %>
+          <%= button_to d4x_sanitizer(t("delete")), item , :confirm => 'are you sure?', :method => :delete, :class => 'btn btn-sm btn-outline-danger btn-block', :title => d4x_sanitizer(t("delete")),:name => 'destroy' %>
          </td>
       </tr>
    <% end %>
@@ -89,12 +89,12 @@
         <%= number_to_currency(@cart.total_price,{:unit=>"€"})%>
        </td>
       <td class="col-sm-3">
-          <%= link_to t("go to checkout"),new_order_path,:class=>'btn btn-outline-warning btn-sm block full-width m-b' %>
+          <%= link_to t("go to checkout"),new_order_path,:class=>'btn btn-outline-warning btn-sm btn-block' %>
        </td>
     </tr>
     </td>
    </tr>
  <% end %>
 </table>
-<p align="center"><%= link_to d4x_sanitizer(t("continue shopping")), "/store",:class=>'btn btn-sm btn-outline-success block full-width m-b' %></p>
+<p align="center"><%= link_to d4x_sanitizer(t("continue shopping")), "/store",:class=>'btn btn-sm btn-outline-success btn-block' %></p>
  

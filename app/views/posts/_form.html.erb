@@ -44,7 +44,7 @@
 	<%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display:;" %>
 
  	<div class="actions">
-		  	<%= f.submit :class=>'btn btn-primary btn-sm block full-width m-b' %>
+		  	<%= f.submit :class=>'btn btn-primary btn-sm btn-block' %>
 	 </div>
 
 <% end %>

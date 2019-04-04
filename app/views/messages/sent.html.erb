@@ -33,12 +33,11 @@
                   <% end %>
                   <small><%= time_ago_in_words_converter(message.created_at) %>&nbsp;<%= t('ago') %></small>
                 </div>
-                <p><%= message.read_token%>
+                <p><%= image_tag "lock.png" %> &nbsp;<%= message.read_token%>
                   <%= button_to message, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-sm btn-outline-danger pull-right msgdel" do %>
                       <i class='fa fa-trash-o white'></i>
                   <% end %>
                 </p>
-
               </div>
             </a>
         <% end %>

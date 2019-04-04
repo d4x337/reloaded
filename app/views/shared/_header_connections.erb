@@ -1,13 +1,14 @@
 <div class="dropdown-header"><%= t('connections') %></div>
 <div class="listview listview--hover">
-  <% @users = current_user.friends %>
-  <% @users.each do |user| %>
-    <% @xuser = User.find(friend_id) %>
+  <% @friends = current_user.friends %>
+  <% @friends.each do |friend| %>
+    <% @friend_id = friend.friend_id %>
+    <% @xuser = User.find(@friend_id) %>
     <a href="<%= edit_user_path(@xuser) %>" class="listview__item">
-      <% if user.avatar.present? %>
-          <img src="<%= @xuser.avatar.url(:thumb) %>" class="listview__img" alt="">
+      <% if @xuser.avatar.present? %>
+        <img src="<%= @xuser.avatar.url(:thumb) %>" class="listview__img" alt="">
       <% else %>
-          <img src="/demo/img/profile-pics/1.jpg" class="listview__img" alt="">
+        <img src="/demo/img/profile-pics/1.jpg" class="listview__img" alt="">
       <% end %>
       <div class="listview__content">
         <div class="listview__heading"><%= @xuser.firstname %>&nbsp;@<%= @xuser.nickname %></div>

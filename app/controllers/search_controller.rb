@@ -71,6 +71,7 @@ class SearchController < ApplicationController
   
    def index
      @dircode = Option.where(:name=>'DIR_CODE').first
+
      if params[:findthis] == @dircode.value
        respond_to do |format|
         format.html  { redirect_to("/directory", :notice => 'Full Directory.') }

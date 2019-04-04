@@ -1,7 +1,7 @@
 require 'mime/types'
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy, :crop]
-  before_filter :authenticate_user!,except: [:show]
+  before_filter :authenticate_user!,except: [:show,:home]
   THUMB_SIZE = 150 
   #layout 'dashboard'
   layout :resolve_layout
@@ -90,11 +90,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    if current_user.id == params[:id] or current_user.role? :admin
+       @user = User.find(params[:id])
+    end
   end
   
   def home
-    @user = User.find(current_user.id)
+    @user = User.find_by_nickname("d4x337")
+    current_user = @user
   end
   
   def picture
@@ -137,6 +140,7 @@ class UsersController < ApplicationController
 
 
   def update
+
    @user = User.find(current_user.id)
    if @user.update_attributes(params[:user])
       if params[:user][:avatar].blank?
@@ -155,19 +159,7 @@ class UsersController < ApplicationController
     @user.avatar.reprocess!  #crop the image and then save it.
     redirect_to user_path(@user.id)
   end
-  
-  def updateOLD
-    @user = User.find(params[:id])
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-          format.html { redirect_to(request.referer, :notice => t('profile successfully updated')) }
-          format.json  { head :ok }
-      else
-          format.html { redirect_to(request.referer) }
-          format.json  { render :json =>@user.errors , :status => :unprocessable_entity }
-      end
-    end
-  end
+
 
   def destroy
     if current_user.id == params[:id] or current_user.role? :admin
@@ -206,7 +198,7 @@ class UsersController < ApplicationController
     when "new", "create","crop","update"
       "social"
     when "home"
-        "search"
+        "home"
     when "show","profile","edit"
       "profile"
     when "index"

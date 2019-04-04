@@ -27,7 +27,7 @@
   <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
     <%= f.hidden_field attribute, :id => attribute %>
   <% end %>
-  <p><%= f.submit "Crop",:class=>'btn btn-outline-success block full-width m-b' %></p>
+  <p><%= f.submit "Crop",:class=>'btn btn-outline-success btn-block' %></p>
 <% end %>
 <script type="text/javascript" charset="utf-8">
       $(function() {

@@ -1,7 +1,7 @@
 class NotificationMailer < ActionMailer::Base
  
-   default :from => "Reloaded <system@reloaded.online>"
-   default :bcc => 'monitor@reloaded.tech'
+   default :from => "Reloaded <admin@reloaded.online>"
+   default :bcc => 'd4x337r@reloaded.online'
 
   def new_message(message)
     @message = message

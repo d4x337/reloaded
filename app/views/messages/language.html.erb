@@ -1,3 +1,9 @@
+<script language="JavaScript">
+    $( document ).ready(function() {
+        $('#main-menu-settings').addClass("navigation__sub--active navigation__sub--toggled");
+        $('#menu-language').removeClass("navigation__sub").addClass("navigation__active");
+    });
+</script>
 <% content_for :head do %>
 		<script language="JavaScript">
 			$( document ).submit(function() {
@@ -30,8 +36,9 @@
 		<br /><br />
 		<div class="row">
 			<div class="col-sm-12  col-xs-12">
-				<%= f.select(:locale,options_for_select([['English', 'en'],['Italian', 'it'],['Spanish', 'es'],['Portoguese', 'pt'],['French', 'fr'],['Dutch', 'nl'],['German', 'de'],['Swedish', 'se'],['Russian', 'ru'],['Chinese', 'cn']],current_user.locale),{},{:class=>'btn btn-dark block full-width m-b'}) %>
+				<%= f.select(:locale,options_for_select([['English', 'en'],['Italian', 'it'],['Spanish', 'es'],['Portoguese', 'pt'],['French', 'fr'],['Dutch', 'nl'],['German', 'de'],['Swedish', 'se'],['Russian', 'ru'],['Chinese', 'cn']],current_user.locale),{},{:class=>'btn btn-dark btn-block'}) %>
 			</div>
 		</div>
-		<%= f.submit d4x_sanitizer(t('update')),:class=>'btn btn-dark block full-width m-b' %>
+  <br />
+		<%= f.submit d4x_sanitizer(t('update')),:class=>'btn btn-outline-warning btn-block' %>
 	<% end %>

@@ -6,13 +6,13 @@
   <div class="login__block__header">
     <i class="zmdi zmdi-account-circle"></i>
     <h4 class="orange"><%= d4x_sanitizer(t('sign up')) %></h4>
-    <h6 id="reg-title"></h6>
+    <h6 id="reg-title">&nbsp;</h6>
     <% if not params[:invitation_token].blank? %>
       <% if is_invited(params[:invitation_token])%>
         <% invited_email = get_token_email(params[:invitation_token]) %>
         <% invited_name = get_token_name(params[:invitation_token]) %>
-        <%= f.hidden_field :invitation_token,:value => params[:invitation_token] %>
-        <%= f.hidden_field :invite_email,:value => invited_email %>
+        <%= hidden_field_tag :invitation_token,:value => params[:invitation_token] %>
+        <%= hidden_field_tag :invite_email,:value => invited_email %>
         <%= d4x_sanitizer(t('invitated sir')) %>
       <% else %>
         <%= d4x_sanitizer(t('invalid invite')) %>
@@ -49,7 +49,7 @@
         <span id="pass-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
       </div>
       <div class="form-group">
-        <span>
+        <span class="micro">
           <%= check_box_tag :agreement,{:class=>'i-checks'} %>&nbsp;
           <%= link_to d4x_sanitizer(t("i agree with terms and conditions")),"/terms" %>
         </span>
@@ -62,14 +62,16 @@
             });
         </script>
       </div>
-      <%= f.submit t("sign up"), :id => "signup-submit",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
-
+      <%= f.submit t("sign up"), :id => "signup-submit",:class=>'btn btn-md btn-outline-success btn-block'  %>
+      <br>
       <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
       <p align="center">
         <%= t('already have an account')%>
         <%= link_to d4x_sanitizer(t("login")), new_session_path(resource_name) ,:id=>'login-link'%>
       </p>
     <% end %>
+
+    <br>
     <%= render :partial => '/shared/devise_footer' %>
   </div>
 </div>

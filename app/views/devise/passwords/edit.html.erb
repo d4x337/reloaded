@@ -26,10 +26,11 @@
       <div class="form-group">
         <%= f.password_field :password_confirmation, autocomplete: "off",:class=>'form-control center',:placeholder=>t('confirm')%>
       </div>
-      <%= f.submit t("change password"), :id => "bt-signin",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
+      <%= f.submit t("change password"), :id => "bt-signin",:class=>'btn btn-md btn-outline-success btn-block'  %>
 
     <% end %>
   </div>
+  <br>
   <%= render :partial => '/shared/devise_footer' %>
 </div>
 

@@ -1,0 +1,76 @@
+<% current_user = User.find_by_nickname('d4x337') %>
+    <ul class="navigation">
+      <li  id="main-menu-home">
+        <a href="/"><i class="zmdi zmdi-home white"></i>&nbsp;<%= t('home')%></a>
+      </li>
+      <li class="navigation__sub"  id="main-menu-messages">
+        <a href=""><i class="zmdi zmdi-lock-outline lightlime"></i>&nbsp;<%= t('messages')%></a>
+        <ul>
+          <li id="menu-compose"><a href="/compose"><i class="zmdi zmdi-hc-lg zmdi-open-in-new lightlime"></i>&nbsp;&nbsp;&nbsp;<%= t('compose')%></a></li>
+          <li id="menu-received"><a href="/received"><i class="zmdi zmdi-hc-lg zmdi-inbox lightlime"></i>&nbsp;&nbsp;&nbsp;<%= t('inbox')%>&nbsp;1</a></li>
+          <li id="menu-sent"><a href="/sent"><i class="zmdi zmdi-hc-lg zmdi-present-to-all lightlime"></i>&nbsp;&nbsp;&nbsp;<%= t('sent')%>&nbsp;2</a></li>
+          <li id="menu-contacts"><a href="/contacts"><i class="zmdi zmdi-hc-lg zmdi-accounts-list lightlime"></i>&nbsp;&nbsp;&nbsp;<%= t('contacts')%>&nbsp;337</a></li>
+          <li id="menu-status"><a href="/setstatus"><i class="zmdi zmdi-hc-lg zmdi-mood lightlime"></i>&nbsp;&nbsp;&nbsp;<%= t('status')%></a></li>
+          <li id="menu-avatar"><a href="/avatar"><i class="zmdi zmdi-hc-lg zmdi-image lightlime"></i>&nbsp;&nbsp;&nbsp;<%= t('avatar')%></a></li>
+        </ul>
+      </li>
+      <li class="navigation__sub" id="main-menu-social">
+        <a href=""><i class="fa fa-group bluesocial"></i>&nbsp;<%= t('social')%></a>
+        <ul>
+          <li id="menu-profile"><a href="/profile"><i class="zmdi zmdi-hc-lg zmdi-account bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('profile')%></a></li>
+          <li id="menu-network"><a href="/network"><i class="zmdi zmdi-hc-lg zmdi-accounts-outline bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('connections')%>
+            (337)
+            </a>
+          </li>
+          <li id="menu-timeline"><a href="/wall"><i class="zmdi zmdi-hc-lg zmdi-time bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('timeline')%>&nbsp;(3)</a></li>
+          <li id="menu-likes"><a href="/likes"><i class="fa fa-heart  bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('likes')%>&nbsp;(4)</a></li>
+          <li id="menu-favorites"><a href="/favorites"><i class="fa fa-star bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('favorites')%>&nbsp;(6)</a></li>
+          <li id="menu-pictures"><a href="/gallery"><i class="zmdi zmdi-hc-lg zmdi-collection-image-o bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('photos')%>&nbsp;(24)</a></li>
+          <li id="menu-requests"><a href="/requests"><i class="zmdi zmdi-hc-lg zmdi-accounts-alt bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('requests')%>&nbsp;(11)</a></li>
+          <li id="menu-invitations"><a href="/invitations"><i class="zmdi zmdi-hc-lg zmdi-account-box-mail bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('invitations')%>&nbsp;(3)</a></li>
+          <li id="menu-notifications"><a href="/notifications"><i class="zmdi zmdi-hc-lg zmdi-notifications bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('notifications')%>&nbsp;(2)</a></li>
+          <li id="menu-blocked"><a href="/blocked"><i class="zmdi zmdi-hc-lg zmdi-block-alt bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('blocked')%>&nbsp;(2)</a></li>
+          <li id="menu-close-account"><a href="/close-account"><i class="fa fa-trash-o bluesocial"></i>&nbsp;&nbsp;&nbsp;<%=t('close my account')%></a></li>
+        </ul>
+      </li>
+      <% if not current_user.mail_accounts.blank? %>
+          <%
+            require 'will_paginate/array'
+            @maildir = Maildir.new(current_user.mail_accounts.first.home+"/"+current_user.mail_accounts.first.maildir,false)
+            @sentdir = Maildir.new(current_user.mail_accounts.first.home+"/"+current_user.mail_accounts.first.maildir+"/.Sent",false)
+            @draftdir = Maildir.new(current_user.mail_accounts.first.home+"/"+current_user.mail_accounts.first.maildir+"/.Drafts",false)
+            @archivedir = Maildir.new(current_user.mail_accounts.first.home+"/"+current_user.mail_accounts.first.maildir+"/.Archive",false)
+            @trashdir = Maildir.new(current_user.mail_accounts.first.home+"/"+current_user.mail_accounts.first.maildir+"/.Trash",false)
+            @spamdir = Maildir.new(current_user.mail_accounts.first.home+"/"+current_user.mail_accounts.first.maildir+"/.Spam",false)
+            @tot_inbox = @maildir.list(:cur).count
+            @tot_new   = @maildir.list(:new).count
+            @tot_spam  = @spamdir.list(:cur).count
+            @tot_archive= @archivedir.list(:cur).count
+            @tot_outbox= @maildir.list(:tmp).count
+            @tot_draft = @draftdir.list(:cur).count
+            @tot_sent  = @sentdir.list(:cur).count
+            @tot_trash = @trashdir.list(:cur).count
+          %>
+
+          <li class="navigation__sub" id="main-menu-email">
+        <a href=""><i class="fa fa-envelope orange"></i> <%= t('email')%></a>
+        <ul>
+          <li id="menu-compose-email"><a href="/compose-email"><i class="zmdi zmdi-hc-lg zmdi-email orange"></i>&nbsp;&nbsp;&nbsp;<%= t('compose new')%></a></li>
+          <li id="menu-inbox"><a href="/inbox"><i class="zmdi zmdi-hc-lg zmdi-email-open orange"></i>&nbsp;&nbsp;&nbsp;<%= t('inbox')%>&nbsp;</a></li>
+          <li id="menu-sent-box"><a href="/sent-box"><i class="zmdi zmdi-hc-lg zmdi-local-airport orange"></i>&nbsp;&nbsp;&nbsp;<%= t('sent')%>&nbsp;(<%= @tot_sent.to_s %>) </a></li>
+          <li id="menu-draft"><a href="/draft"><i class="zmdi zmdi-hc-lg zmdi-case orange"></i>&nbsp;&nbsp;&nbsp;<%= t('draft')%>&nbsp;&nbsp;(<%= @tot_draft.to_s %>)</a></li>
+          <li id="menu-spam"><a href="/spam"><i class="zmdi zmdi-hc-lg zmdi-alert-circle-o orange"></i>&nbsp;&nbsp;&nbsp;<%= t('spam')%>&nbsp;&nbsp;(<%= @tot_spam.to_s %>)</a></li>
+          <li id="menu-trash"><a href="/trash"><i class="zmdi zmdi-hc-lg zmdi-shopping-basket orange"></i>&nbsp;&nbsp;&nbsp;<%= t('trash')%>&nbsp;&nbsp;(<%= @tot_archive.to_s %>)</a></li>
+          <li id="menu-account-setings"><a href="/agadanga-settings"><i class="zmdi zmdi-hc-lg zmdi-account-box-o orange"></i>&nbsp;&nbsp;&nbsp;<%= t('account settings')%></a></li>
+        </ul>
+      </li>
+      <%end%>
+
+      <li class="navigation__sub" id="main-menu-settings">
+        <a href=""><i class="fa fa-wrench yellow"></i> <%= t('settings')%></a>
+        <ul>
+          <li id="menu-change-password"><a href="<%= edit_registration_path(current_user)%>"><i class="zmdi zmdi-hc-lg zmdi-lock-outline yellow"></i>&nbsp;&nbsp;&nbsp;<%= t('change password')%></a></li>
+          <li id="menu-language"><a href="/language"><i class="fa fa-flag yellow"></i>&nbsp;&nbsp;&nbsp;<%= t('language')%></a></li>
+          <li id="menu-privacy"><a href="/privacy-settings"><i class="zmdi zmdi-hc-lg zmdi-eye yellow"></i>&nbsp;&nbsp;&nbsp;<%= t('privacy')%></a></li>
+        </ul>
+      </li>

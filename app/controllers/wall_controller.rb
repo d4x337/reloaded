@@ -15,6 +15,29 @@ class WallController < ApplicationController
     end
   end
 
+  def likes
+    last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
+    @mini_posts = MiniPost.where('author_id in (?) and created_at < ?',current_user.friends.map(&:friend_id).push(current_user.id),last).page(params[:page]).limit(10).order(:created_at).reverse_order
+    @feedlist = Feed.where(:locale=>current_user.locale,:active=>true).order(:feedtext)
+    respond_to do |format|
+      format.html
+      format.js
+      format.xml  { render :xml => @mini_posts }
+    end
+  end
+
+  def favorites
+    last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
+    @mini_posts = MiniPost.where('author_id in (?) and created_at < ?',current_user.friends.map(&:friend_id).push(current_user.id),last).page(params[:page]).limit(10).order(:created_at).reverse_order
+    @feedlist = Feed.where(:locale=>current_user.locale,:active=>true).order(:feedtext)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.js
+      format.xml  { render :xml => @mini_posts }
+    end
+  end
+
+
   def liked
     last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
     @mini_posts = MiniPost.where('author_id in (?) and created_at < ?',current_user.friends.map(&:friend_id).push(current_user.id),last).page(params[:page]).limit(10).order(:created_at).reverse_order

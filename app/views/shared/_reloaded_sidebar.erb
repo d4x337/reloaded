@@ -22,6 +22,8 @@
             </a>
           </li>
           <li id="menu-timeline"><a href="/wall"><i class="zmdi zmdi-hc-lg zmdi-time bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('timeline')%>&nbsp;(<%= my_posts_count(current_user.id.to_s) %>)</a></li>
+          <li id="menu-likes"><a href="/likes"><i class="fa fa-heart  bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('likes')%>&nbsp;(<%= user_tot_likes(current_user.id.to_s) %>)</a></li>
+          <li id="menu-favorites"><a href="/favorites"><i class="fa fa-star bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('favorites')%>&nbsp;(<%= user_tot_favorites(current_user.id.to_s) %>)</a></li>
           <li id="menu-pictures"><a href="/gallery"><i class="zmdi zmdi-hc-lg zmdi-collection-image-o bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('photos')%>&nbsp;(<%= current_user.pictures.count.to_s %>)</a></li>
           <li id="menu-requests"><a href="/requests"><i class="zmdi zmdi-hc-lg zmdi-accounts-alt bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('requests')%>&nbsp;(<%= current_user.requests.count.to_s %>)</a></li>
           <li id="menu-invitations"><a href="/invitations"><i class="zmdi zmdi-hc-lg zmdi-account-box-mail bluesocial"></i>&nbsp;&nbsp;&nbsp;<%= t('invitations')%>&nbsp;(<%= current_user.sent_invitations.count %>)</a></li>
@@ -48,7 +50,7 @@
             @tot_sent  = @sentdir.list(:cur).count
             @tot_trash = @trashdir.list(:cur).count
           %>
-          <%end%>
+
           <li class="navigation__sub" id="main-menu-email">
         <a href=""><i class="fa fa-envelope orange"></i> <%= t('email')%></a>
         <ul>
@@ -61,6 +63,7 @@
           <li id="menu-account-setings"><a href="/agadanga-settings"><i class="zmdi zmdi-hc-lg zmdi-account-box-o orange"></i>&nbsp;&nbsp;&nbsp;<%= t('account settings')%></a></li>
         </ul>
       </li>
+      <%end%>
       <% if current_user.role? :admin %>
       <li class="navigation__sub" id="main-menu-blog">
         <a href=""><i class="fa fa-calendar red"></i>&nbsp;<%= t('blog')%></a>
@@ -71,25 +74,14 @@
         </ul>
       </li>
       <li class="navigation__sub" id="main-menu-dating">
-        <a href=""><i class="zmdi zmdi-hc-lg zmdi-store-24 strumpa"></i>&nbsp;<%= t('store')%></a>
+        <a href=""><i class="zmdi zmdi-hc-lg zmdi-store-24 strumpa"></i>&nbsp;<%= t('shop')%></a>
         <ul>
           <li id="menu-dating-profile"><a href="/store"><i class="zmdi zmdi-hc-lg zmdi-star strumpa"></i>&nbsp;&nbsp;<%= t('articles')%></a></li>
           <li id="menu-swipe"><a href="/carts/<%= @cart.id.to_s%>"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus strumpa"></i>&nbsp;&nbsp;&nbsp;<%= t('your shopping cart')%></a></li>
         </ul>
       </li>
 
-      <li class="navigation__sub" id="main-menu-dating">
-        <a href=""><i class="zmdi zmdi-favorite-outline pink"></i>&nbsp;<%= t('dating')%></a>
-        <ul>
-          <li id="menu-dating-profile"><a href="/dating"><i class="zmdi zmdi-hc-lg zmdi-star pink"></i>&nbsp;&nbsp;&nbsp;<%= t('profile')%></a></li>
-          <li id="menu-swipe"><a href="/swipe"><i class="zmdi zmdi-hc-lg zmdi-favorite pink"></i>&nbsp;&nbsp;&nbsp;<%= t('swipe')%></a></li>
-          <li id="menu-radar"><a href="/radar"><i class="zmdi zmdi-hc-lg zmdi-portable-wifi-changes pink"></i>&nbsp;&nbsp;&nbsp;<%= t('radar')%></a></li>
-          <li id="menu-guests"><a href="/guests"><i class="zmdi zmdi-hc-lg zmdi-eye pink"></i>&nbsp;&nbsp;&nbsp;<%= t('guests')%></a></li>
-          <li id="menu-likes"><a href="/likes"><i class="zmdi zmdi-hc-lg zmdi-fire pink"></i>&nbsp;&nbsp;&nbsp;<%= t('likes')%></a></li>
-          <li id="menu-matches"><a href="/matches"><i class="zmdi zmdi-hc-lg zmdi-male-female pink"></i>&nbsp;&nbsp;&nbsp;<%= t('matches')%></a></li>
-          <li id="menu-chat"><a href="/chat"><i class="zmdi zmdi-hc-lg zmdi-comments pink"></i>&nbsp;&nbsp;&nbsp;<%= t('chat')%></a></li>
-        </ul>
-      </li>
+
       <% end %>
       <li class="navigation__sub" id="main-menu-settings">
         <a href=""><i class="fa fa-wrench yellow"></i> <%= t('settings')%></a>
@@ -103,25 +95,25 @@
       <li class="navigation__sub"  id="main-menu-admin">
         <a href=""><i class="fa fa-lock lime"></i> <%= t('admin')%></a>
         <ul>
-          <li id="menu-dashboard"><a href="/dashboard"><i class="fa fa-dashboard grey"></i>&nbsp;&nbsp;&nbsp;<%= t('dashboard')%></a></li>
-          <li id="menu-options"><a href="/options"><i class="zmdi zmdi-hc-lg zmdi-wrench grey"></i>&nbsp;&nbsp;&nbsp;<%= t('options')%></a></li>
-          <li id="menu-registrations"><a href="/users"><i class="zmdi zmdi-hc-lg zmdi-accounts grey"></i>&nbsp;&nbsp;&nbsp;<%= t('registrations')%></a></li>
-          <li id="menu-registrations"><a href="/quotes"><i class="zmdi zmdi-hc-lg zmdi-quote grey"></i>&nbsp;&nbsp;&nbsp;<%= t('quotes')%></a></li>
-          <li id="menu-registrations"><a href="/links"><i class="zmdi zmdi-hc-lg zmdi-link grey"></i>&nbsp;&nbsp;&nbsp;<%= t('link')%></a></li>
+          <li id="menu-dashboard"><a href="/dashboard"><i class="fa fa-dashboard lime"></i>&nbsp;&nbsp;&nbsp;<%= t('dashboard')%></a></li>
+          <li id="menu-options"><a href="/options"><i class="zmdi zmdi-hc-lg zmdi-wrench lime"></i>&nbsp;&nbsp;&nbsp;<%= t('options')%></a></li>
+          <li id="menu-registrations"><a href="/users"><i class="zmdi zmdi-hc-lg zmdi-accounts lime"></i>&nbsp;&nbsp;&nbsp;<%= t('registrations')%></a></li>
+          <li id="menu-registrations"><a href="/quotes"><i class="zmdi zmdi-hc-lg zmdi-quote lime"></i>&nbsp;&nbsp;&nbsp;<%= t('quotes')%></a></li>
+          <li id="menu-registrations"><a href="/links"><i class="zmdi zmdi-hc-lg zmdi-link lime"></i>&nbsp;&nbsp;&nbsp;<%= t('link')%></a></li>
 
 
         </ul>
       </li>
         <li class="navigation__sub"  id="main-menu-admin">
-          <a href=""><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus lime"></i> <%= t('backstore')%></a>
+          <a href=""><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus orange"></i> <%= t('backstore')%></a>
           <ul>
-            <li id="menu-registrations"><a href="/stock"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus grey"></i>&nbsp;&nbsp;&nbsp;<%= t('in stock')%></a></li>
-            <li id="menu-registrations"><a href="/products"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus grey"></i>&nbsp;&nbsp;&nbsp;<%= t('products')%></a></li>
-            <li id="menu-registrations"><a href="/carts"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus grey"></i>&nbsp;&nbsp;&nbsp;<%= t('carts')%></a></li>
-            <li id="menu-registrations"><a href="/orders"><i class="zmdi zmdi-hc-lg zmdi-truck grey"></i>&nbsp;&nbsp;&nbsp;<%= t('orders')%></a></li>
-            <li id="menu-registrations"><a href="/payments"><i class="zmdi zmdi-hc-lg zmdi-money grey"></i>&nbsp;&nbsp;&nbsp;<%= t('payments')%></a></li>
-            <li id="menu-registrations"><a href="/transactions"><i class="zmdi zmdi-hc-lg zmdi-card grey"></i>&nbsp;&nbsp;&nbsp;<%= t('transactions')%></a></li>
-            <li id="menu-registrations"><a href="/invoices"><i class="zmdi zmdi-hc-lg zmdi-view-headline grey"></i>&nbsp;&nbsp;&nbsp;<%= t('invoices')%></a></li>
+            <li id="menu-registrations"><a href="/stock"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus orange"></i>&nbsp;&nbsp;&nbsp;<%= t('in stock')%></a></li>
+            <li id="menu-registrations"><a href="/products"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus orange"></i>&nbsp;&nbsp;&nbsp;<%= t('products')%></a></li>
+            <li id="menu-registrations"><a href="/carts"><i class="zmdi zmdi-hc-lg zmdi-shopping-cart-plus orange"></i>&nbsp;&nbsp;&nbsp;<%= t('carts')%></a></li>
+            <li id="menu-registrations"><a href="/orders"><i class="zmdi zmdi-hc-lg zmdi-truck orange"></i>&nbsp;&nbsp;&nbsp;<%= t('orders')%></a></li>
+            <li id="menu-registrations"><a href="/payments"><i class="zmdi zmdi-hc-lg zmdi-money orange"></i>&nbsp;&nbsp;&nbsp;<%= t('payments')%></a></li>
+            <li id="menu-registrations"><a href="/transactions"><i class="zmdi zmdi-hc-lg zmdi-card orange"></i>&nbsp;&nbsp;&nbsp;<%= t('transactions')%></a></li>
+            <li id="menu-registrations"><a href="/invoices"><i class="zmdi zmdi-hc-lg zmdi-view-headline orange"></i>&nbsp;&nbsp;&nbsp;<%= t('invoices')%></a></li>
           </ul>
         </li>
 

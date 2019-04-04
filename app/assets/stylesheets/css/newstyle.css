@@ -1,0 +1,108 @@
+
+/* =Common Styles
+-------------------------------------------------------------- */
+body {
+	background-color: #1d1d1d;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+
+	color: #A2A2A2;
+	height: 100%;
+	min-height: 100% !important;
+}
+
+html {
+	height: 100%;
+}
+
+a:active, a:focus {
+   outline: none;
+}
+
+a {
+    color: lightgreen;
+    outline: none;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
+    border-color: lightgreen;
+}
+
+a:focus, a:hover {
+    color: lightgreen;
+
+
+}
+
+.mini-hr {
+    border-style: solid none;
+    border-color: #424242;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    width: 20px;
+    height: 1px;
+    text-align: left;
+    position: relative;
+    clear: both;
+}
+
+span.divider {
+    display: block;
+    margin: 25px 0px;
+    width: 100px;
+    height: 2px;
+    background-color: lightgreen;
+}
+
+span.divider.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+#contact .form-control:focus,
+#contact .form-control:hover,
+#contact .form-control:active {
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+    border-color: lightgreen;
+}
+
+.ticker {
+    overflow: hidden;
+    height: 70px;
+    vertical-align: baseline;
+}
+
+.ticker h1 {
+    margin: 0px;
+    height: 70px;
+    -webkit-transition: margin-top 0.5s ease-in-out;
+    -moz-transition: margin-top 0.5s ease-in-out;
+    -o-transition: margin-top 0.5s ease-in-out;
+    transition: margin-top 0.5s ease-in-out;
+}
+
+.big-logo {
+    font-size: 70px;
+}
+
+.background1 { background-color: #212121; }
+.background2 { background-color: #1d1d1d; }

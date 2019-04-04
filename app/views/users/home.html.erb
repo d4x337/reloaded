@@ -1,27 +1,120 @@
+<% content_for :head do %>
+  <% javascript_include_tag "d4x-signup" %>
+<% end %>
+
+
 <script language="JavaScript">
     $( document ).ready(function() {
         $('#main-menu-home').addClass("navigation__active");
     });
 </script>
-<h2><%= t("welcome")%>&nbsp;@<%= current_user.nickname %></h2>
 
-<div class="card">
-  <img class="card-img-top" src="demo/img/widgets/note.jpg" alt="">
-  <div class="card-body">
-    <h3 class="card-title">Benvenuto su Reloaded</h3>
-    <h6 class="card-subtitle">by Davide Gonnella on 14th February 2018 at 13:37</h6>
-    <p><%= t('home main') %>Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra.</p>
-    <br>
-    <h5><%= t('tips') %></h5>
-    <p><%= t('home tips') %></p>
-    <br>
-    <br>
-    <h5><%= t('rules') %></h5>
-    <p><%= t('home rules') %></p>
-    <br>
-    <br>
-    <h5><%= t('philosophy') %></h5>
-    <p><%= t('home philosophy') %></p>
-    <br>
+
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body traspa">
+        <h3><%=   t("welcome to") %> Reloaded </h3>
+        <br>
+        <p><%= t("home_intro0") %></p>
+        <p><%= t("home_intro1") %></p>
+        <p><%= t("home_intro2") %></p>
+        <h3><%= t("about the author") %></h3>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <p><%= t("about_me_p0") %></p>
+            <p><%= t("about_me_p1") %></p>
+            <p><%= t("about_me_p2") %></p>
+            <p><%= t("about_me_p3") %></p>
+          </div>
+          <div class="col-lg-5 col-md-5 col-md-5">
+            <%= image_tag "d4x337.jpg", size: "180x180" %>
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="linkedin" href="" title="Linkedin"><i class="zmdi zmdi-hc-2x zmdi-linkedin"></i></a>
+                &nbsp;&nbsp;
+                <a class="instagram" href="" title="Instagram"><i class="zmdi zmdi-hc-2x zmdi-instagram"></i></a>
+                &nbsp;&nbsp;
+                <a class="twitter" href="" title="Twitter"><i class="zmdi zmdi-hc-2x zmdi-twitter"></i></a>
+                &nbsp;&nbsp;
+                <a class="github" href="" title="github"><i class="zmdi zmdi-hc-2x zmdi-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="col-lg-5">
+    <div class="login__block active" id="l-login">
+      <div class="login__block__header">
+        <i class="zmdi zmdi-account-circle"></i>
+        <h4 class="orange"><%= d4x_sanitizer(t('sign up')) %></h4>
+        <h6 id="reg-title">&nbsp;</h6>
+        <% if not params[:invitation_token].blank? %>
+          <% if is_invited(params[:invitation_token])%>
+            <% invited_email = get_token_email(params[:invitation_token]) %>
+            <% invited_name = get_token_name(params[:invitation_token]) %>
+            <%= hidden_field_tag :invitation_token,:value => params[:invitation_token] %>
+            <%= hidden_field_tag :invite_email,:value => invited_email %>
+            <%= d4x_sanitizer(t('invitated sir')) %>
+          <% else %>
+            <%= d4x_sanitizer(t('invalid invite')) %>
+          <% end %>
+        <% end %>
+        <div class="actions actions--inverse login__block__actions">
+          <div class="dropdown">
+            <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+            <div class="dropdown-menu dropdown-menu-right ddd4x">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login__block__body">
+        <%= form_for(new_users_path) do |f| %>
+          <div class="form-group">
+            <%= f.text_field :firstname,:class=> "form-control firstname center",:placeholder=>d4x_sanitizer(t('fullname'))%>
+            <span id="pFirstname"></span>
+          </div>
+          <div id="group-email" class="form-group">
+            <%= f.email_field :email,:value => invited_email,:class=> "form-control email center" ,:placeholder=>t('current email')%>
+            <span id="pEmail"></span>
+            <span id="email-icon"class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          </div>
+          <div id="group-nick" class="form-group" >
+            <%= f.text_field :nickname,:value => invited_name,:class=> "form-control nickname center",:placeholder=>d4x_sanitizer(t('nickname')) %>
+            <span id="pNickname"></span>
+            <span id="nick-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          </div>
+          <div id="group-pass" class="form-group">
+            <%= f.password_field :password, :class=> "form-control password center",:placeholder=>d4x_sanitizer(t('new password'))%>
+            <span id="strength"></span>
+            <span id="pass-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+                <span class="micro">
+                  <%= check_box_tag :agreement,{:class=>'i-checks'} %>&nbsp;
+                  <%= link_to d4x_sanitizer(t("i agree with terms and conditions")),"/terms" %>
+                </span>
+            <script type="text/javascript">
+                $(function() {
+                    $('#agreement').iCheck({
+                        checkboxClass: 'icheckbox_square-green',
+                        radioClass: 'iradio_square-green',
+                    });
+                });
+            </script>
+          </div>
+          <%= f.submit t("sign up"), :id => "signup-submit",:class=>'btn btn-md btn-outline-success btn-block'  %>
+          <br>
+          <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
+          <p align="center">
+            <%= t('already have an account')%>
+            <%= link_to d4x_sanitizer(t("login")), new_session_path(User.new) ,:id=>'login-link'%>
+          </p>
+        <% end %>
+        <br>
+        <%= render :partial => '/shared/devise_footer' %>
+      </div>
+    </div>
+  </div>
+

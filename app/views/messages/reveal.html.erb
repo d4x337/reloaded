@@ -1,44 +1,43 @@
 <h4 class="card-title lightlime"><i class="zmdi zmdi-present-to-all lightlime"></i>&nbsp;&nbsp;&nbsp;&nbsp;<%= t('revealing encrypted message')%></h4>
-<h6 class="card-subtitle"><%= t('the message has been destroyed')%></h6>
+<h6 class="card-subtitle"><%= image_tag "lock_open.png" %> &nbsp;<%= t('the message has been destroyed')%></h6>
 <% if @sender_id.present? and @target_id.present? %>
 <% @target = User.find(@target_id) %>
 <div id="sender">
-    <div class="row">
-    	<div class="col-sm-3 col-xs-3">
-        <% if @sender.avatar(:thumb).present? %>
-          <img class="round3" src="<%= @sender.avatar.url(:thumb) %>" alt="" width="60">
-            <% else %>
-          <img class="round3" src="/assets/demo/img/profile-pics/1.jpg" width="60" alt="">
-        <% end %>
-      </div>
-      <div class="col-sm-3 col-xs-3" align="left">
-        <div class="row"><a href="#"><%= user_fullname(@sender_id) if @sender_id.present? %>
-        <br />@<%= user_nick(@sender_id) if @sender_id.present? %></a></div>
-      </div>
-      <div class="col-sm-3 col-xs-3">
-        <div class="row">
-          </span class="white"><%= @sent_at.to_s(:short) %></span>
-          <br />
-          <span class="white"><%= time_ago_in_words(@sent_at) %>&nbsp;<%= t('ago') %></span>
+      <div class="row">
+        <div class="col-xs-4 col-4">
+          <% if @sender.avatar(:thumb).present? %>
+            <img class="chat-avatara round3" src="<%= @sender.avatar.url(:thumb) %>" alt="" width="120">
+          <% else %>
+            <img class="chat-avatara round3" src="/assets/missing_avatar.png" alt="" width="120">
+          <% end %>
+        </div>
+        <div class="col-xs-4 col-3">
+          <div class="row">
+            </span class="white"><%= @sent_at.to_s(:short) %></span>
+            <br />
+            <span class="white"><%= time_ago_in_words(@sent_at) %>&nbsp;<%= t('ago') %></span>
+          </div>
+        </div>
+        <div class="col-xs-4 col-4 right">
+          <% if @target.avatar(:thumb).present? %>
+            <img class="chat-avatara round3 right" src="<%= @target.avatar.url(:thumb) %>" alt="" width="120">
+          <% else %>
+            <img class="chat-avatara round3 right" src="/assets/missing_avatar.png" alt="" width="120">
+          <% end %>
         </div>
       </div>
-      <div class="col-sm-3 col-xs-3 right">
-        <% if @target.avatar(:thumb).present? %>
-            <img class="round3" src="<%= @target.avatar.url(:thumb) %>" alt="" width="60">
-        <% else %>
-            <img class="round3" src="/assets/demo/img/profile-pics/1.jpg" width="60" alt="">
-        <% end %>
+
+
+      <div class="row">
+        <div class="col-sm-12 col-xs-12 center">
+          <br />
+          <span class="btn btn-dark btn-block center" id="decrypted">
+            <%= @content if @content.present? %>
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-xs-12">
-        <br />
-        <h5 class="center" id="decrypted">
-          <%= @content if @content.present? %>
-        </h5>
-      </div>
-    </div>
-  <br>
+
+    <br>
     <% if @efile.present? %>
       <div class="row">
         <div class="col-sm-12 col-xs-12" align="center">
@@ -46,7 +45,7 @@
               <%= link_to image_tag(@efile.original.url(),:width=>'150px'), @efile.original.url() %>
               <br />
           <% else %>
-              <span class="btn btn-outline-success block full-width m-b" id="download-attachment">
+              <span class="btn btn-outline-success btn-block" id="download-attachment">
                 <%= t('attachment')%>&nbsp;<%= link_to @efile.original_file_name, @efile.original.url() %>
               </span>
           <% end %>
@@ -54,4 +53,12 @@
       </div>
     <% end %>
 </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-xs-12">
+    	<span class="btn btn-danger btn-block">
+    		<%= t('the message has been destroyed')%>
+ 		  </span>
+    </div>
+  </div>
 <% end %>

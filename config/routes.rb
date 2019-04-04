@@ -67,6 +67,8 @@ Reloaded::Application.routes.draw do
   resources :wall do 
     resources :mini_post_comments,:mini_post_tags,:mini_post_likings,:mini_post_comment_likings
       get 'wall', :controller => 'wall', :action => 'index', :method => :get
+      get 'likes', :controller => 'wall', :action => 'likes', :method => :get
+      get 'favorites', :controller => 'wall', :action => 'favorites', :method => :get
       get 'updwall', :controller => 'wall', :action => 'indexupd', :method => :get
   end
 
@@ -159,6 +161,9 @@ Reloaded::Application.routes.draw do
 
   get 'revealed'       => 'messages#revealed'
 
+  get 'likes'                => 'wall#likes'
+  get 'favorites'            => 'wall#favorites'
+
   get 'store'                => 'products#store'
   get 'visitors'             => 'users#visitors'
   get 'links'                => 'links#index'
@@ -210,8 +215,9 @@ Reloaded::Application.routes.draw do
   #get 'blog2'          => 'posts#blog2'
 
   post 'savesettings'  => 'posts#savesettings'
+  get 'd4x337'      => 'posts#d4x337'
   get 'blog-tags'      => 'tags#index'
-  get'blog-author'     => 'posts#d4x337'
+  get 'blog-author'    => 'posts#d4x337'
   get 'tags-d4x337'    => 'posts#tags'
   get 'author-d4x337'  => 'posts#d4x337'
   post 'like'          => 'mini_posts#like'

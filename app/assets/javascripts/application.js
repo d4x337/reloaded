@@ -5,16 +5,14 @@
 // or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
 //
-//= require jquery/jquery-2.1.1.js
+//= require jquery
 //= require jquery_ujs
-
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require jquery.history.js
 //= require bind_with_delay
 //= require waypoints
 //= require pagination
 
-//= require bootstrap-sprockets
 //= require metisMenu/jquery.metisMenu.js
 //= require pace/pace.min.js
 //= require peity/jquery.peity.min.js

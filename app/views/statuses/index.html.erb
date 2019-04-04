@@ -29,7 +29,7 @@
                         </div>
                       </div>
 						          <br />
-						          <%= f.submit d4x_sanitizer(t("update")), :id => "signup-submit",:class=>'btn btn-dark block full-width m-b'  %>
+						          <%= f.submit d4x_sanitizer(t("update")), :id => "signup-submit",:class=>'btn btn-dark btn-block'  %>
 				        <% end %>
               <% @statuses = Status.where(:user_id=>current_user.id).order(:set_at).reverse_order %>
 							<% unless @statuses.blank? %>

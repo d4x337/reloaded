@@ -14,7 +14,7 @@
 	<br />
 	<%= f.email_field :recipient_email,:class=>'form-control center',:placeholder=>d4x_sanitizer(t("email")) %>
 	<br />
-	<%= f.submit d4x_sanitizer(t('send')) ,:class=>'btn btn-dark block full-width m-b' %>
+	<%= f.submit d4x_sanitizer(t('send')) ,:class=>'btn btn-dark btn-block' %>
 <% end %>
 
 <br />
@@ -31,6 +31,6 @@
 	  	<span class="form-control"></span>
 	</div>
 	<br />
-	<%= f.submit d4x_sanitizer(t('upload')),:class=>'btn btn-dark block full-width m-b' %>
+	<%= f.submit d4x_sanitizer(t('upload')),:class=>'btn btn-dark btn-block' %>
 <% end %>
 

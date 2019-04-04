@@ -18,7 +18,7 @@ $('.process-box').hover(function() {
 $("#contactForm").validator().on("submit", function(event) {
     if (event.isDefaultPrevented()) {
         formError();
-        submitMSG(false, "Did you fill in the form properly?");
+        submitMSG(false, ">!<");
     } else {
         event.preventDefault();
         submitForm();
@@ -30,6 +30,7 @@ function submitForm() {
     var email = $("#feedback_email").val();
     var msg_subject = $("#feedback_reason").val();
     var message = $("#feedback_message").val();
+
     $.ajax({
 
         type: "POST",
@@ -40,14 +41,14 @@ function submitForm() {
         data: "name=" + name + "&email=" + email + "&msg_subject=" +
             msg_subject + "&message=" + message,
             success: function(text) {
+                $('#feedback_from').val('');
+                $('#feedback_email').val('');
+                $('#feedback_reason').val('');
+                $('#feedback_message').val('');
 
-                if (text == "success") {
-                    formSuccess();
-                    alert(text);
-                } else {
-                    formError();
-                    submitMSG(false, text);
-                }
+                $('#msgSubmit').removeClass('hidden');
+                $('#msgSubmit').text('Thank you, We have received your feedback!');
+
             }
     });
 }

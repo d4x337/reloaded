@@ -7,15 +7,6 @@ $(document).ready(function(){
 		$('.imagelogo').removeClass('animated rotateIn');
 	});
 
-	$("#user_nickname").focus(function(){
-		$("#user_nickname").addClass('border-neon').text;
-		$("#user_password").removeClass('border-neon').text;
-	});
-
-	$("#user_password").focus(function(){
-		$("#user_nickname").removeClass('border-neon').text;
-		$("#user_password").addClass('border-neon').text;
-	});
 
 	$("#user_nickname").keypress(function(){
 	    this.value = this.value.replace(/[^0-9a-zA-Z\@._-]/g,'');
@@ -39,15 +30,17 @@ $(document).ready(function(){
 	
 	$("#bt-signin").click(function(){
 
-		var whole_return = true;
+        var whole_return = true;
 		if ($("#user_nickname").val().length < 3) {
+            $("#user_nickname").removeClass('border-green').addClass('border-red');
 			whole_return = false;
 		} 
 
 		if ($("#user_password").val().length < 8) {
+            $("#user_password").removeClass('border-green').addClass('border-red');
 			whole_return = false;
-		} 
-		
+		}
+
 		if (whole_return == true) {
 			$("#spinner").removeClass("none");
 			$(".motto").html('Logging in.. Please Wait');

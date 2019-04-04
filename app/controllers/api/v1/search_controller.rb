@@ -49,15 +49,25 @@ class Api::V1::SearchController < ApplicationController
     end
   end
 
-  def destroy
-    respond_to do |format|
-      if @search.destroy
-        format.json { head :no_content, status: :ok }
-        format.xml { head :no_content, status: :ok }
-      else
-        format.json { render json: @search.errors, status: :unprocessable_entity }
-        format.xml { render xml: @search.errors, status: :unprocessable_entity }
+  def rebuild_pg_search_documents
+    if current_user.role? :admin
+      Product.find_each{ |record| record.update_pg_search_document }
+      Paper.find_each{ |record| record.update_pg_search_document }
+      Download.find_each{ |record| record.update_pg_search_document }
+      Post.find_each{ |record| record.update_pg_search_document }
+      Link.find_each{ |record| record.update_pg_search_document }
+      Group.find_each{ |record| record.update_pg_search_document }
+      User.find_each{ |record| record.update_pg_search_document }
+      respond_to do |format|
+        format.json { head :no_content, status: 200 }
+        format.xml { head :no_content, status: 200 }
+      end
+    else
+      respond_to do |format|
+        format.json { head :no_content, status: 403 }
+        format.xml { head :no_content, status: 403 }
       end
     end
   end
+
 end

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title><%= get_setting_value('PROJECT_NAME') %></title>
+  	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	  <meta charset="UTF-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <meta name="description" content="<%= get_setting_value('PROJECT_MOTTO') %>">
+    <meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
+	  <meta name="keywords" content="<%= get_setting_value('PROJECT_KEYWORDS')%>" />
+
+    <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
+	  <%= stylesheet_link_tag 'application', media: 'all' %>
+	  <%= stylesheet_link_tag 'users' %>
+	  <%= javascript_include_tag 'pictures.js' %>
+    <%= stylesheet_link_tag 'css/dstyle.css',:title=> 'main-css' %>
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+
+    <!-- App styles -->
+    <%= stylesheet_link_tag 'css/app.css' %>
+
+	  <%= csrf_meta_tags %>
+ 	  <%= yield :javascript_includes %>
+	  <%= yield :head %>
+</head>
+<% current_user = @user %>
+<% @bg = current_user.background %>
+<% if !@bg.blank? %>
+    <body data-sa-theme="<%= @bg %>">
+<% else %>
+    <body data-sa-theme="1">
+<% end %>
+  <main class="main">
+    <%= render :partial => '/shared/reloaded_loader' %>
+    <%= render :partial => '/shared/reloaded_header_demo' %>
+    <aside class="sidebar">
+      <div class="scrollbar-inner">
+        <% if params[:id].present? %>
+            <% user = User.find(params[:id]) %>
+        <% else %>
+            <% user = current_user %>
+        <% end %>
+        <%= render :partial => '/shared/reloaded_summary_demo' %>
+        <%= render :partial => '/shared/reloaded_sidebar_demo' %>
+      </div>
+    </aside>
+    <section class="content">
+      <%= render :partial => '/shared/alerts_toaster' %>
+      <div class="row">
+              <%= yield %>
+      </div>
+    </section>
+  </main>
+
+  <!-- Older IE warning message -->
+  <!--[if IE]>
+  <div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+    <div class="ie-warning__downloads">
+      <a href="http://www.google.com/chrome">
+        <img src="img/browsers/chrome.png" alt="">
+      </a>
+
+      <a href="https://www.mozilla.org/en-US/firefox/new">
+        <img src="img/browsers/firefox.png" alt="">
+      </a>
+
+      <a href="http://www.opera.com">
+        <img src="img/browsers/opera.png" alt="">
+      </a>
+
+      <a href="https://support.apple.com/downloads/safari">
+        <img src="img/browsers/safari.png" alt="">
+      </a>
+
+      <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+        <img src="img/browsers/edge.png" alt="">
+      </a>
+
+      <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+        <img src="img/browsers/ie.png" alt="">
+      </a>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+  </div>
+  <![endif]-->
+  <script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+  <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+  <%= javascript_include_tag 'js/app.min.js' %>
+  </body>
+</html>

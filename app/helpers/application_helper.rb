@@ -992,7 +992,30 @@ module ApplicationHelper
      end 
      return voted  
    end
-   
+
+  def user_tot_likes(user_id)
+    html = ""
+    likes = MiniPostLiking.where(:user_id => user_id, :liking => true).count
+    #html << likes.to_s+ " "
+    if (likes.eql? 0)
+      html << "0"
+    else
+      html << likes.to_s
+    end
+    raw(html)
+  end
+
+  def user_tot_favorites(user_id)
+    html = ""
+    likes = MiniPostFavorite.where(:user_id => user_id, :favorite => true).count
+    if (likes.eql? 0)
+      html << "0"
+    else
+      html << likes.to_s
+    end
+    raw(html)
+  end
+
    def mp_tot_likes(mini_post_id)
        html = ""
        likes = MiniPostLiking.where(:mini_post_id => mini_post_id, :liking => true).count

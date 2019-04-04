@@ -40,7 +40,7 @@
 <% if @sender_id.present? and @target_id.present? %>
     <div class="row">
     	<div class="col-sm-12 col-xs-12">
-	    	<span class="btn btn-primary block full-width m-b">
+	    	<span class="btn btn-primary btn-block">
 	    		<%= t('revealing encrypted message')%>
 	 		</span>
  		</div>
@@ -79,7 +79,7 @@
 		<%= link_to image_tag(@efile.original.url(),:width=>'150px'), @efile.original.url() %>
 		<br />
 	<% else %>
-		<span class="btn btn-success block full-width m-b" id="download-attachment">
+		<span class="btn btn-success btn-block" id="download-attachment">
 			<%= t('attachment')%>&nbsp;<%= link_to @efile.original_file_name, @efile.original.url() %>
 		</span>
 	<% end %>
@@ -87,7 +87,7 @@
 <br />
  <div class="row">
 	<div class="col-sm-12 col-xs-12">
-    	<span class="btn btn-danger block full-width m-b">
+    	<span class="btn btn-danger btn-block">
     		<%= t('the message has been destroyed')%>
  		</span>
 	</div>

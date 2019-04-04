@@ -12,35 +12,31 @@
 			});
 		</script>
 <% end %>
-<h4 class="card-title lightlime"><i class="zmdi zmdi-image lightlime"></i> <%= label_tag("profile picture",nil,:class=>'lightlime ' )%></h4>
-<h6 class="card-subtitle">Set a new Profile Picture</h6>
+<h4 class="card-title lightlime"><i class="zmdi zmdi-image lightlime"></i>&nbsp;&nbsp;<%= label_tag("profile picture",nil,:class=>'lightlime ' )%></h4>
+<h6 class="card-subtitle"></h6>
 
 <%= form_for(current_user, :html => { :multipart => true })  do |f| %>
-  <% if current_user.errors.any? %>
-    <h5><%= pluralize(current_user.errors.count, "error") %> prohibited from being saved:</h5>
-    <ul>
-      <% current_user.errors.full_messages.each do |msg| %>
-        <li><%= d4x_sanitizer(msg) %></li>
-      <% end %>
-    </ul>
-  <% end %>
+    <% if current_user.errors.any? %>
+      <h5><%= pluralize(current_user.errors.count, "error") %> prohibited from being saved:</h5>
+      <ul>
+        <% current_user.errors.full_messages.each do |msg| %>
+          <li><%= d4x_sanitizer(msg) %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-  <div class="input-group">
-    <span class="input-group-btn">
-      <span class="btn btn-sm btn-dark" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-picture-o white"></i></span>
+   <div class="col-xs-12">
+      <span class="btn btn-sm btn-outline-success btn-block" onclick="$(this).parent().find('input[type=file]').click();">
+        <span class="form-control"><%= t('upload')%> <%= t('photo')%></span>
+      </span>
       <%= f.file_field :avatar, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
-    </span>
-    <span class="form-control">
-
-    </span>
-   </div>
-
      <br />
+   </div>
    <p align="center">
     <%= image_tag current_user.avatar.url(:large),:class=>"jcrop-preview", :id=>"target", :width=>"70%" %>
    </p>
    <br />
-   <%= f.submit d4x_sanitizer(t('upload')),:class=>'btn btn-outline-success block full-width m-b' %>
+   <%= f.submit d4x_sanitizer(t('upload')),:class=>'btn btn-outline-success btn-block' %>
 <% end %>
 
 

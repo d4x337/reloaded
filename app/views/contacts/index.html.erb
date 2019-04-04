@@ -6,20 +6,21 @@
 </script>
 <h4 class="card-title lightlime"><i class="zmdi zmdi-accounts-list lightlime"></i>&nbsp;<%= t("contacts") %> (<%= @contacts.count.to_s %>)</h4>
 <h6 class="card-subtitle">Your messaging contacts.</h6>
+
 <div class="contacts row">
   <% @contacts.each do |contact|%>
-    <% user = User.find(contact.contact_id)%>
-      <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 col-6">
+      <% user = User.find(contact.contact_id)%>
+      <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="contacts__item">
           <a href="<%=user_path(user.id)%>" class="contacts__img">
             <% if have_to_show_photo(current_user.id,user.id) %>
-                <% if user.avatar(:thumb).present? %>
-                    <img src="<%= user.avatar.url(:thumb) %>" alt="">
-                <% else %>
-                    <img src="/demo/img/profile-pics/2.jpg" alt="">
-                <% end %>
-            <% else %>
+              <% if user.avatar(:thumb).present? %>
+                <img src="<%= user.avatar.url(:thumb) %>" alt="">
+              <% else %>
                 <img src="/demo/img/profile-pics/2.jpg" alt="">
+              <% end %>
+            <% else %>
+              <img src="/demo/img/profile-pics/2.jpg" alt="">
             <% end %>
           </a>
           <div class="contacts__info">
@@ -32,16 +33,15 @@
           <%= link_to raw('<i class="fa fa-envelope white"></i>'), "/compose?target_id="+user.id.to_s, :class=>'contacts__btn',:title=>'send message' %></span>
           <br><br>
           <% if current_user.id != user.id %>
-              <% if is_contact(current_user.id,user.id) %>
-                  <% user_contact = get_user_contact(current_user.id,user.id) %>
-                  <%= button_to "Remove from Contacts",user_contact, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-outline-success btn-md" %>
-              <% end %>
+            <% if is_contact(current_user.id,user.id) %>
+              <% user_contact = get_user_contact(current_user.id,user.id) %>
+              <%= button_to "Remove from Contacts",user_contact, method: :delete,data: { confirm: "Are you sure?" },:class=> "btn btn-outline-success btn-md" %>
+            <% end %>
           <% end %>
         </div>
       </div>
-<% end %>
+  <% end %>
 </div>
-
 
 
 

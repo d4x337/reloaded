@@ -348,7 +348,7 @@
 						   </div>
                <div class="row" id="actions-div">
                   <div class="col-sm-1 col-xs-1">
-                    <span class="btn btn-sm white" id="internal-user" title="Notify to Tortuga Member (default)"><i class='fa fa-user lime' id="internal-icon"></i></span>
+                    <span class="btn btn-sm white" id="internal-user" title="Notify to Reloaded Member (default)"><i class='fa fa-user lime' id="internal-icon"></i></span>
                   </div>
                   <div class="col-sm-1 col-xs-1">
                     <span class="btn btn-sm white" id="external-user" title="Notify to External Email Address"><i class='fa fa-envelope white' id="external-icon"></i></span>
@@ -396,16 +396,16 @@
 	  	<div class="row" id="attachment-div">
         <br />
         <div class="col-xs-12">
-                <span class="btn btn-sm btn-outline-primary block full-width m-b" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-upload white"></i>&nbsp;&nbsp;&nbsp;&nbsp; Attach a File<span class="form-control"></span></span>
+                <span class="btn btn-sm btn-dark btn-block" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-upload white"></i>&nbsp;&nbsp;&nbsp;&nbsp; Attach a File<span class="form-control"></span></span>
                 <%= f.file_field :efile, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
          </div>
 	    </div>
 
 	    <div class="row">
 	    	<div class="col-xs-12">
-          <div class="btn btn-md btn-outline-warning block full-width m-b" id="execute" title="Encrypt / Decrypt"><i class='fa fa-unlock orange' id="execute-icon"></i>&nbsp;&nbsp;&nbsp;    Encrypt / Decrypt</div>
+          <div class="btn btn-md btn-outline-warning btn-block" id="execute" title="Encrypt / Decrypt"><i class='fa fa-unlock orange' id="execute-icon"></i>&nbsp;&nbsp;&nbsp;    Encrypt / Decrypt</div>
           <br />
-          <button id="sendmsg" class="btn btn-outline-success btn-md block full-width m-b" onclick="$('#new_message').submit();" disabled="true">Send Message</button>
+          <button id="sendmsg" class="btn btn-outline-success btn-md btn-block" onclick="$('#new_message').submit();" disabled="true">Send Message</button>
 			  </div>
       </div>
 

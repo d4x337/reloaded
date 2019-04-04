@@ -65,21 +65,21 @@ class PaymentNotification < ActiveRecord::Base
        
        if @seller.role? :prj
          #Grant income to PRJ 5%
-         Income.create(:user_id=>@user.invitation.user_id,:income=>@income5,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+         Income.create(:user_id=>@user.invitation.user_id,:income=>@income5,:income_id=>@user.id,:order_id=>@order.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
    
          @prj_parent_pr = prj_parent_pr(@seller.id)
          if not @prj_parent_pr.blank?
            #Grant income to PR 5%
-           Income.create(:user_id=>@prj_parent_pr.user_id,:income=>@income5,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+           Income.create(:user_id=>@prj_parent_pr.user_id,:income=>@income5,:income_id=>@user.id,:order_id=>@order.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
    
            #parent PR has a parent CPR?
            @cpr_parent_pr = prj_parent_pr(@prj_parent_pr.user_id)
            if not @cpr_parent_pr.blank?
              #Grant income to CPR 10%
-             Income.create(:user_id=>@cpr_parent_pr.user_id,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+             Income.create(:user_id=>@cpr_parent_pr.user_id,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            else  
              #Grant income to Gestione 10%
-             Income.create(:user_id=>0,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+             Income.create(:user_id=>0,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            end
          else  
            @prj_parent_cpr = prj_parent_cpr(@seller.id)
@@ -87,28 +87,28 @@ class PaymentNotification < ActiveRecord::Base
            #check this for bugs (double parent jump with no pr in the middle)
            if not @prj_parent_cpr.blank?
              #Grant income to CPR 15%
-             Income.create(:user_id=>@prj_parent_cpr.user_id,:income=>@income10+@income5,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+             Income.create(:user_id=>@prj_parent_cpr.user_id,:income=>@income10+@income5,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            else  
              #Grant income to Gestione 15% 
-             Income.create(:user_id=>0,:income=>@income10+@income5,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+             Income.create(:user_id=>0,:income=>@income10+@income5,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            end
          end
          
          elsif @seller.role? :pr
            #Grant income to PR 10%
-           Income.create(:user_id=>@user.invitation.user_id,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+           Income.create(:user_id=>@user.invitation.user_id,:income=>@income10,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            @cpr_parent_pr = cpr_parent_pr(@seller.id)
    
            if not @cpr_parent_pr.blank?
             #Grant income to CPR 10%
-            Income.create(:user_id=>@cpr_parent_pr.user_id,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+            Income.create(:user_id=>@cpr_parent_pr.user_id,:income=>@income10,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            else  
             #Grant income to Gestione 10%
-            Income.create(:user_id=>0,:income=>@income10,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+            Income.create(:user_id=>0,:income=>@income10,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
            end
   
        elsif @seller.role? :cpr
-         Income.create(:user_id=>@user.invitation.user_id,:income=>@income20,:income_id=>@user.id,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
+         Income.create(:user_id=>@user.invitation.user_id,:income=>@income20,:order_id=>@order.id,:income_id=>@user.id,:expiration=>DateTime.now+1.year,:income_type=>"ANNUAL",:status=>"ACTIVE",:auto_renew=>false)
        end
     else
        #Grant income to Gestione

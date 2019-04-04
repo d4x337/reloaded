@@ -10,7 +10,8 @@
     <meta name="author" content="<%= get_setting_value('PROJECT_AUTHOR')%>">
 	  <meta name="keywords" content="<%= get_setting_value('PROJECT_KEYWORDS')%>" />
     <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
-	  <%= stylesheet_link_tag 'application', media: 'all' %>
+	  <%= stylesheet_link_tag 'application', media: 'all' %>s
+
 	  <%= stylesheet_link_tag 'users' %>
 	  <%= javascript_include_tag 'devise' %>
     <%= javascript_include_tag "bootbox" %>

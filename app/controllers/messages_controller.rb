@@ -108,85 +108,6 @@ class MessagesController < ApplicationController
 
   end
 
-  def createOLD
-    @message = Message.new(params[:message])
-    @message.sender_id = current_user.id
-    @target = User.find_by_firstname(params[:remote])
-    if @target.present?
-      @message.target_id = @target.id
-      respond_to do |format|
-        if @message.save
-            flash[:notice] = t('Message created, notification Sent')
-            format.html  { redirect_to("/sent", :notice => t('Message created, notification Sent')) }
-            format.json  { head :no_content }
-        else
-          format.html  { render :action => "new" }
-          format.json  { render :json => @message.errors,:status => :unprocessable_entity }
-        end
-      end
-    else
-      if params[:target_name].present?
-        @message.target_name = params[:target_name]
-        respond_to do |format|
-          if @message.save
-              Invitation.create(:user_id=>current_user.id,:recipient_email=>params[:target_name])
-              flash[:notice] = t('Message created, invitation sent')
-              format.html  { redirect_to("/sent", :notice => t('Message created, invitation sent')) }
-              format.json  { head :no_content }
-          else
-            format.html  { redirect_to(request.referer, :notice => t('Message contains invalid characters')) }
-            format.json  { render :json => @message.errors,:status => :unprocessable_entity }
-          end
-        end
-      else
-        respond_to do |format|
-          format.html  { redirect_to(request.referer, :notice => t('Destination not found')) }
-          format.json  { head :no_content }
-        end  
-      end
-    end    
-  end
- 
-  def language
-    
-  end
-  
-  def close_account
-    
-  end
-  
-  def avatar
-    
-  end
-  
-  def revealmsg
-    @token = params[:token]
-    @message = Message.find_by_read_token(@token)
-    if @message.present?
-      if @message.efiles.count > 0
-        @message.efiles.first.do_decrypt
-        @attachment = @message.efiles.first.original_file_name
-        puts "ok decrypted "+@message.efiles.first.original_file_name
-      end
-      @sender_id = @message.sender_id
-      @target_id = @message.target_id
-      @content  = @message.reveal_message
-     # render :json => {:sender => @sender_id,:target => @target_id,:content=>@content }
-      respond_to do |format|
-          #flash[:notice] = "Message created, notification Sent"
-          format.html  { redirect_to("/zerozero", :notice => 'Private message revealed for you') }
-          format.json  { render :json => {:sender => @sender_id,:target => @target_id,:content=>@content } }
-      end
-      @message.destroy
-    else
-      @sender_id = 0
-      @target_id = 0
-      @content= "Message does not exist"
-      render :json => {:sender => @sender_id,:target => @target_id,:content=>@content }
- 
-    end
-  end
-
   def read_message
     @token = params[:token]
     @message = Message.find_by_read_token(@token)
@@ -401,7 +322,7 @@ class MessagesController < ApplicationController
     @invitations = Invitation.where(:user_id=>current_user.id).order(:created_at).reverse_order
     @user = User.find(current_user.id)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json  { render :json => @invitations }
       format.json  { render :json => @user }
     end
@@ -427,6 +348,57 @@ class MessagesController < ApplicationController
   end
 
   def profile
+
+  end
+
+  def createOLD
+    @message = Message.new(params[:message])
+    @message.sender_id = current_user.id
+    @target = User.find_by_firstname(params[:remote])
+    if @target.present?
+      @message.target_id = @target.id
+      respond_to do |format|
+        if @message.save
+          flash[:notice] = t('Message created, notification Sent')
+          format.html  { redirect_to("/sent", :notice => t('Message created, notification Sent')) }
+          format.json  { head :no_content }
+        else
+          format.html  { render :action => "new" }
+          format.json  { render :json => @message.errors,:status => :unprocessable_entity }
+        end
+      end
+    else
+      if params[:target_name].present?
+        @message.target_name = params[:target_name]
+        respond_to do |format|
+          if @message.save
+            Invitation.create(:user_id=>current_user.id,:recipient_email=>params[:target_name])
+            flash[:notice] = t('Message created, invitation sent')
+            format.html  { redirect_to("/sent", :notice => t('Message created, invitation sent')) }
+            format.json  { head :no_content }
+          else
+            format.html  { redirect_to(request.referer, :notice => t('Message contains invalid characters')) }
+            format.json  { render :json => @message.errors,:status => :unprocessable_entity }
+          end
+        end
+      else
+        respond_to do |format|
+          format.html  { redirect_to(request.referer, :notice => t('Destination not found')) }
+          format.json  { head :no_content }
+        end
+      end
+    end
+  end
+
+  def language
+
+  end
+
+  def close_account
+
+  end
+
+  def avatar
 
   end
 

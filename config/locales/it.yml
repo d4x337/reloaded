@@ -85,7 +85,7 @@ it:
   used space: "Utilizzato"
   available: "Disponibile"
   resend_unlock_instructions: "Resend Unlock Instructions"
-  rights2: "(c) 2014 tortuga.tech - Sistema Ideato e Sviluppato da Davide Gonnella - Tutti i diritti sono riservati"
+  rights2: "(c) 2014 .tech - Sistema Ideato e Sviluppato da Davide Gonnella - Tutti i diritti sono riservati"
   compose: "Scrivi Mail"
   refresh: "Aggiorna"
   junk: "Spam"
@@ -494,7 +494,7 @@ it:
   about_staff_p0: "Potete utilizzare questo indirizzo email per un feedback direttamente allo Staff di tortuga. Cerchiamo di rispondere a tutte le mail in modo tempestivo, ogni tanto però ci possono essere ritardi nella risposta. Se trovate un errore sul sito, dato che utilizziamo i browser più aggiornati e moderni, è possibile che il sito venga visualizzato in modo diverso a seconda del browser prescelto."
   about_staff_p1: "Se volete inviare nuovi file nell'archivio tortuga, includete una descrizione del file, i dettagli d'autore, eventuale fonte e tutte le informazioni pertinenti"
   about_staff_tit: "staff[at]Tortuga"
-  about_me_p0: "Davide Gonnella è l'ideatore e fondatore di Tortuga."
+  about_me_p0: "Davide Gonnella è l'ideatore e creatore di Reloaded."
   about_me_p1: "Esperto di sicurezza informatica e sviluppo software da oltre 20 anni, avvia nel 2003, questo progetto senza scopo di lucro, con la missione di fornire alla comunità di sicurezza informatica un punto di riferimento altamente tecnico e di sostenere la libertà di pensiero, parola ed informazione. "
   about_me_p2: "Nel 2012 riprende attivamente il progetto con nuovi collaboratori, idee e rinnovata filosofia, per dar vita ad una versione che implementi le azioni tipiche dei social odierni, un database di informazioni tecniche, news e servizi fruibili da web."
   about_me_p3: "Conosciuto anche come d4x nasce a Milano nel 1974."
@@ -587,7 +587,7 @@ it:
   conditions_user_agr: "Accedendo a questo sito web, l'utente ne accetta i termini, le condizioni d'uso, tutte le leggi e i regolamenti applicabili. Accetta altresì di essere responsabile del rispetto di qualsiasi legge locale vigente. Se l'utente non è d'accordo con nessuna di queste condizioni, gli è vietato l'utilizzo e/o l'accesso al sito. "
   conditionz: Condizioni
   confirm: Conferma
-  contact: Contatti
+  contact: Contatta
   content: Contenuto
   content_type: "Contenuto File"
   ? "cool links"

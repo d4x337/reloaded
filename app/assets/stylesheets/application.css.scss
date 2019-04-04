@@ -11,7 +11,6 @@
  *= require_self
  *= require font-awesome
  *= require animate/animate.css
- *= require style
  *= require toastr/toastr.min.css
  *= require dropzone/dropzone
  *= require custom.css
@@ -19,38 +18,4 @@
  */
 
 @import "bootstrap-sprockets";
-@import "../../../doc/bootstrap";
-
-// Variables, Mixins
-@import "../../../../reloaded/app/assets/stylesheets/base/variables";
-@import "../../../../reloaded/app/assets/stylesheets/base/mixins";
-
-// INSPINIA Theme Elements
-@import "../../../../reloaded/app/assets/stylesheets/base/typography";
-@import "../../../../reloaded/app/assets/stylesheets/base/navigation";
-@import "../../../../reloaded/app/assets/stylesheets/base/top_navigation";
-@import "../../../../reloaded/app/assets/stylesheets/base/buttons";
-@import "../../../../reloaded/app/assets/stylesheets/base/badgets_labels";
-@import "../../../../reloaded/app/assets/stylesheets/base/elements";
-@import "../../../../reloaded/app/assets/stylesheets/base/sidebar";
-@import "../../../../reloaded/app/assets/stylesheets/base/base";
-@import "../../../../reloaded/app/assets/stylesheets/base/pages";
-@import "../../../../reloaded/app/assets/stylesheets/base/chat";
-@import "../../../../reloaded/app/assets/stylesheets/base/spinners";
-
-// RTL Support
-@import "../../../../reloaded/app/assets/stylesheets/base/rtl";
-
-
-// For demo only - config box style
-@import "../../../../reloaded/app/assets/stylesheets/base/theme-config";
-
-// INSPINIA Skins
-@import "../../../../reloaded/app/assets/stylesheets/base/skins";
-
-// Media query style
-@import "../../../../reloaded/app/assets/stylesheets/base/media";
-
-// Custom style
-// Your custom style to override base style
-@import "../../../../reloaded/app/assets/stylesheets/base/custom";
+@import "bootstrap";

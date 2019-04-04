@@ -1,0 +1,696 @@
+<% content_for :head do %>
+	<meta name="ROBOTS" content="INDEX FOLLOW">
+<% end %>
+
+<% if not params[:invitation_token].blank? %>
+	<% if is_invited(params[:invitation_token])%>
+		<% invited_email = get_token_email(params[:invitation_token]) %>
+		<% invited_name = get_token_name(params[:invitation_token]) %>
+		<%= hidden_field_tag :invitation_token,:value => params[:invitation_token] %>
+		<%= hidden_field_tag :invite_email,:value => invited_email %>
+		<%= hidden_field_tag :invite_name,:value => invited_name %>
+		<%= d4x_sanitizer(t('invitated sir')) %>
+	<% else %>
+		<%= d4x_sanitizer(t('invalid invite')) %>
+	<% end %>
+<% end %>
+
+<% if not params[:request_token].blank? %>
+	<% if is_invited(params[:request_token])%>
+		<% requested_email = get_token_email_for_requests(params[:request_token]) %>
+		<% requested_name = get_token_name_for_requests(params[:request_token]) %>
+		<%= hidden_field_tag :request_token,:value => params[:request_token] %>
+		<%= hidden_field_tag :request_email,:value => requested_email %>
+		<%= hidden_field_tag :request_name,:value => requested_name %>
+		<%= d4x_sanitizer(t('requested sir')) %>
+	<% else %>
+		<%= d4x_sanitizer(t('invalid request')) %>
+	<% end %>
+<% end %>
+
+<div id="royal_preloader"></div>
+
+<!-- Begin Header -->
+<header>
+  <!-- Begin Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand scroll-link" href="#home" data-id="home"><%= get_setting_value('PROJECT_NAME') %><span class=" logo"></span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#home" data-id="home" class="scroll-link">Home</a></li>
+            <li><a href="#ideology" data-id="ideology" class="scroll-link"><%= t("ideology")%></a></li>
+            <li><a href="#services" data-id="services" class="scroll-link"><%= t("services")%></a></li>
+            <li><a href="#about" data-id="about" class="scroll-link"><%= t("about")%></a></li>
+            <li><a href="#contact" data-id="contact" class="scroll-link"><%= t("contact")%></a></li>
+            <li><a href="signup" ><%= d4x_sanitizer(t("register"))%></a></li>
+            <li><a href="signin" ><%= d4x_sanitizer(t("login"))%></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!-- Endoribus Navigation -->
+</header>
+<!-- End Header -->
+
+<!-- Begin Jumbotron -->
+<div class="jumbotron jumbotron-main" id="home">
+  <div id="particles-js"></div><!-- /.particles div -->
+  <div class="container center-vertically-holder">
+    <div class="center-vertically">
+      <div id="scaleReveal" class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
+
+        <% if not alert.blank? %>
+            <%= label_tag(d4x_sanitizer(alert)) %>
+        <% end %>
+        <% if not notice.blank? %>
+            <%= label_tag(d4x_sanitizer(notice)) %>
+        <% end %>
+        <div class="ticker">
+          <h1><%= get_setting_value('PROJECT_NAME') %></h1>
+          <h3><%= get_setting_value('PROJECT_MOTTO') %></h3>
+        </div>
+        <hr>
+        <p><%= t("welcome")%></p>
+        <a href="signup" data-id="work" class="btn-default btn-white btn-lg mt15"><%= d4x_sanitizer("enter")%><span class="ion-android-arrow-down"></span></a>
+      </div><!-- /.column -->
+    </div><!-- /.vertical center -->
+  </div><!-- /.container -->
+</div>
+<!-- End Jumbotron -->
+
+<!-- Begin Intro -->
+<section id="ideology">
+
+  <!-- Begin Hello Intro -->
+  <div id="hello-intro" class="pt60 pb60">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-sm-3">
+          <h2 class="no-margin rotateLeftReveal"><%= t("hello")%></h2>
+        </div>
+        <div class="col-lg-10 col-sm-9 mt30-xs">
+          <h3 class="no-margin rightReveal"><%= t("who_we_are")%></h3>
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.div -->
+  <!-- End Hello Intro -->
+
+  <!-- Begin Our Process Title -->
+  <div id="our-process-title" class="pt30 pb30">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h4 class="no-margin"><%= t("our ideology")%></h4>
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.div -->
+  <!-- End Our Process Title -->
+
+  <!-- Begin Our Process -->
+  <div id="our-process">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4 process-box text-center pt50 pb50">
+          <div class="leftReveal">
+            <div class="process-intro">
+              <h3 class="process-number">01</h3>
+              <div><span class="process-icons pe-7s-users rotateBottomReveal"></span></div>
+              <h2><%= t("Effective Impact")%></h2>
+              <h3><%= t("ICT Consultancy")%></h3>
+            </div>
+            <div class="process-content">
+              <div><span class="process-icons pe-7s-users"></span></div>
+              <h2 class="mt15 mb20"><%= t("Effective")%><br><%= t("Impact")%></h2>
+              <p class="no-margin"><%= t("consultancy shot")%></p>
+            </div>
+          </div><!-- /.animation -->
+        </div><!-- /.column -->
+        <div class="col-sm-4 col-md-4 col-lg-4 process-box text-center pt50 pb50">
+          <div class="bottomReveal">
+            <div class="process-intro">
+              <h3 class="process-number">02</h3>
+              <div><span class="process-icons pe-7s-diamond rotateBottomReveal"></span></div>
+              <h2><%= t("High Quality")%></h2>
+              <h3><%= t("Software Engineering")%> & <%= t("Cyber Security")%></h3>
+            </div>
+            <div class="process-content">
+              <div><span class="process-icons pe-7s-diamond"></span></div>
+              <h2 class="mt15 mb20"><%= t("High Quality")%><br><%= t("Cyber Security")%></h2>
+              <p class="no-margin"><%= t("software e security shot")%></p>
+            </div>
+          </div><!-- /.animation -->
+        </div><!-- /.column -->
+        <div class="col-sm-4 col-md-4 col-lg-4 process-box text-center pt50 pb50 no-border-right">
+          <div class="rightReveal">
+            <div class="process-intro">
+              <h3 class="process-number">03</h3>
+              <div><span class="process-icons pe-7s-rocket rotateBottomReveal"></span></div>
+              <h2><%= t("Education")%></h2>
+              <h3><%= t("Programming and ICT Security")%></h3>
+            </div>
+            <div class="process-content">
+              <div><span class="process-icons pe-7s-rocket"></span></div>
+              <h2 class="mt15 mb20"><%= t("Rocketship")%><br><%= t("Education")%></h2>
+              <p class="no-margin"><%= t("education shot")%></p>
+            </div>
+          </div><!-- /.animation -->
+        </div><!-- /.column -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.div -->
+  <!-- End Our Process -->
+
+  <!-- Begin Quote Carousel -->
+  <div id="carousel" class="testimonial-carousel pt40 pb20">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center">
+
+          <h2 class="heading-3"><%= t('testimonials')%></h2>
+          <div class="fade-quote-carousel carousel slide" id="quote-carousel" data-ride="carousel" data-interval="3000">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#quote-carousel" data-slide-to="1"></li>
+              <li data-target="#quote-carousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div class="active item">
+                <blockquote>
+                  <p>"<%= t("testimonial_quote_01")%>"</p>
+                </blockquote>
+              </div>
+              <div class="item">
+                <blockquote>
+                  <p>"<%= t("testimonial_quote_02")%>"</p>
+                </blockquote>
+              </div>
+
+            </div>
+
+          </div><!-- /.carousel -->
+        </div><!-- /.column -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.carousel -->
+  <!-- End Quote Carousel -->
+
+</section><!-- /.section -->
+<!-- End Intro -->
+
+<!-- Begin Services -->
+<section id="services" class="background2 section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 section-title text-center">
+        <h2><%= t("Services")%></h2>
+        <span class="section-divider"></span>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+
+    <div class="row">
+      <!-- Item 1 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="services-box leftReveal">
+          <span class="pe-7s-look services-icon"></span>
+          <h3 class="service-name">1. <%= t("Cyber Security")%></h3>
+          <p class="text-small"><%= t("cyber security text")%></p>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item1-services"><%= t("Info")%></button>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item1-services"><%= t("menu-contact")%></button>
+        </div>
+      </div><!-- /.column -->
+      <!-- Item 1 Modal -->
+      <div class="modal fade" id="item1-services" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+              </button>
+
+              <span class="pe-7s-look services-icon-2"></span>
+              <h4 class="service-title"><%= t("Cyber Security")%></h4>
+            </div>
+            <div class="modal-body">
+              <p><%= t("cybersecurity main")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("why us")%> us</h5>
+              <p><%= t("cybersecurity whyus")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
+              <p><%= t("cybersecurity technologies")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("solutions")%></h5>
+              <p><%= t("cybersecurity solutions")%></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!-- Item 2 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30-xs">
+        <div class="services-box topReveal">
+          <span class="services-badge badge"></span>
+          <span class="pe-7s-phone services-icon"></span>
+          <h3 class="service-name">2. <%= t("Software Engineering")%></h3>
+          <p class="text-small"><%= t("software engineering text")%></p>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item2-services"><%= t("Info")%></button>
+        </div>
+      </div><!-- /.column -->
+      <!-- Item 2 Modal -->
+      <div class="modal fade" id="item2-services" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+              </button>
+              <span class="pe-7s-phone services-icon-2"></span>
+              <h4 class="service-title"><%= t("Software Engineering")%></h4>
+            </div>
+            <div class="modal-body">
+              <p><%= t("software main")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("why us")%></h5>
+              <p><%= t("software whyus")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
+              <p><%= t("software technologies")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("solutions")%></h5>
+              <p><%= t("software solutions")%></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!-- Item 3 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30-sm mt30-xs">
+        <div class="services-box rightReveal">
+          <span class="pe-7s-airplay services-icon"></span>
+          <h3 class="service-name">3. <%= t("Web Design")%></h3>
+          <p class="text-small"><%= t("web design text")%></p>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item3-services"><%= t("Info")%></button>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item3-services"><%= t("menu-contact")%></button>
+        </div>
+      </div><!-- /.column -->
+      <!-- Item 3 Modal -->
+      <div class="modal fade" id="item3-services" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+              </button>
+              <span class="pe-7s-airplay services-icon-2"></span>
+              <h4 class="service-title"><%= t("Web Design")%></h4>
+            </div>
+            <div class="modal-body">
+              <p><%= t("webdesign main")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("why us")%></h5>
+              <p><%= t("webdesign whyus")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
+              <p><%= t("webdesign technologies")%></p></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("solutions")%></h5>
+              <p class="no-margin-bottom"><%= t("webdesign solutions")%></p></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!-- Item 4 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30">
+        <div class="services-box leftReveal">
+          <span class="pe-7s-network services-icon"></span>
+          <h3 class="service-name">4. <%= t("Education")%></h3>
+          <p class="text-small"><%= t("education text")%></p>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item4-services"><%= t("Info")%></button>
+        </div>
+      </div><!-- /.column -->
+      <!-- Item 4 Modal -->
+      <div class="modal fade" id="item4-services" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+              </button>
+              <span class="pe-7s-network services-icon-2"></span>
+              <h4 class="service-title"><%= t("Education")%></h4>
+            </div>
+            <div class="modal-body">
+              <p><%= t("education main")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("why us")%> us</h5>
+              <p><%= t("education whyus")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
+              <p><%= t("education technologies")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("solutions")%></h5>
+              <p class="no-margin-bottom"><%= t("education solutions")%></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!-- Item 5 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30">
+        <div class="services-box bottomReveal">
+          <span class="pe-7s-users services-icon"></span>
+          <h3 class="service-name">5. <%= t("ICT Services")%></h3>
+          <p class="text-small"><%= t("ict services text")%></p>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item5-services"><%= t("Info")%></button>
+        </div>
+      </div><!-- /.column -->
+      <!-- Item 5 Modal -->
+      <div class="modal fade" id="item5-services" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+              </button>
+              <span class="pe-7s-users services-icon-2"></span>
+              <h4 class="service-title"><%= t("ICT Services")%></h4>
+            </div>
+            <div class="modal-body">
+              <p><%= t("ictservices main")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("why us")%> us</h5>
+              <p><%= t("ictservices whyus")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
+              <p><%= t("ictservices technologies")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("solutions")%></h5>
+              <p class="no-margin-bottom"><%= t("ictservices solutions")%></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!-- Item 6 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30">
+        <div class="services-box rightReveal">
+          <span class="services-badge badge"></span>
+          <span class="pe-7s-mail services-icon"></span>
+          <h3 class="service-name">6. <%= t("Social Media")%></h3>
+          <p class="text-small"><%= t("social media text")%></p>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services"><%= t("info")%></button>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services"><%= t("login")%></button>
+          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services"><%= t("register")%></button>
+        </div>
+      </div><!-- /.column -->
+      <!-- Item 6 Modal -->
+      <div class="modal fade" id="item6-services" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+              </button>
+              <span class="pe-7s-mail services-icon-2"></span>
+              <h4 class="service-title"><%= t("Social Media")%></h4>
+            </div>
+            <div class="modal-body">
+              <p><%= t("home main")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("tips")%></h5>
+              <p><%= t("home tips")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("rules")%></h5>
+              <p><%= t("home rules")%></p>
+              <h5 class="heading-1 modal-heading mb20"><%= t("philosophy")%></h5>
+              <p class="no-margin-bottom"><%= t("home philosophy")%></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section><!-- /.section -->
+<!-- End Services -->
+
+<!-- Begin About -->
+<section id="about" class="background1 section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 section-title text-center">
+        <h2><%= t("What is")%> <%= get_setting_value('PROJECT_NAME') %>.online</h2>
+        <span class="section-divider"></span>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+    <div class="row mb15">
+      <div class="col-sm-5 leftReveal">
+        <h5 class="heading-1 mb20"><%= t("Our Mission")%></h5>
+        <p class="no-margin text-small"><%= t("our mission text")%></p>
+      </div><!-- /.column -->
+      <div class="col-sm-7 mt30-xs rightReveal">
+        <h5 class="heading-1 mb20"><%= t("How we started it")%></h5>
+        <span class="icon-handle-streamline-vector logo-about"></span>
+        <p><%= t("how we started text01")%></p>
+        <p><%= t("how we started text02")%></p>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+    <div class="row mb30">
+      <div class="col-sm-9 leftReveal">
+        <h5 class="heading-1 mb20"><%= t("Why?")%></h5>
+        <p class="lead no-margin"><%= t("why text")%></p>
+      </div><!-- /.column -->
+      <div class="col-sm-3 mt30-xs rightReveal">
+        <h5 class="heading-1 mb20"><%= t("Favorite Quote")%></h5>
+        <p class="no-margin text-small"><i>"<%= t("favorite quote text")%>"</i></p>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+    <div class="row">
+      <div class="col-lg-7 col-sm-5 bottomReveal">
+        <h5 class="heading-1 mb20"><%= t("Skills")%></h5>
+        <div class="progress">
+          <div class="progress-bar text-left" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" style="width: 96%;">
+            <%= t("Software Engineering")%>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar text-left" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+            <%= t("Web Design")%>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar text-left" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%;">
+            <%= t("Cyber Security")%>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar text-left" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+            <%= t("Education")%>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar text-left" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+            <%= t("Consultancy")%>
+          </div>
+        </div>
+        <div class="progress-meter mb30-xs">
+          <div class="meter meter-left" style="width: 30%;"><span class="meter-text"><%= t("Beginner")%></span></div>
+          <div class="meter meter-left" style="width: 20%;"><span class="meter-text"><%= t("Intermediate")%></span></div>
+          <div class="meter meter-right" style="width: 20%;"><span class="meter-text"><%= t("Pro")%></span></div>
+          <div class="meter meter-right" style="width: 30%;"><span class="meter-text"><%= t("Master")%></span></div>
+        </div>
+      </div><!-- /.column -->
+      <div class="col-lg-5 col-sm-7 mt10 rotateLeftReveal">
+        <div id="about-carousel" class="basic-carousel carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#about-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#about-carousel" data-slide-to="1"></li>
+            <li data-target="#about-carousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="images/work/6.jpg" alt="..." class="img-responsive">
+            </div>
+            <div class="item">
+              <img src="images/work/7.jpg" alt="..." class="img-responsive">
+            </div>
+            <div class="item">
+              <img src="images/work/9.jpg" alt="..." class="img-responsive">
+            </div>
+          </div>
+        </div>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section><!-- /.section -->
+<!-- End About -->
+
+
+<!-- Begin Contact -->
+<section id="contact" class="background2 section-padding">
+  <div class="container">
+    <div class="row mb30">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 section-title text-center">
+        <h2><%= t("Contact")%></h2>
+        <span class="section-divider mb15"></span>
+        <p class="no-margin scaleReveal"><% t("Our team")%></p>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+    <div class="row">
+      <div class="col-sm-5 col-lg-4">
+        <h5 class="heading-1 mb20"><%= t("Where we are")%></h5>
+        <h4 class="mb15"><%= get_setting_value('PROJECT_NAME') %></h4>
+        <h4 class="mb15"><% get_setting_value('ADDRESS') %> <br><% get_setting_value('POSTCODE') %> <% get_setting_value('LOCATION') %></h4>
+        <p class="no-margin text-xs-small"><% t("About Us")%></p>
+        <hr class="mini-hr">
+        <p class="text-xs-small mb5"><strong class="text-switch"><%= t("email")%>:</strong> <%= get_setting_value('CONTACT_EMAIL') %></p>
+        <p class="text-xs-small mb5"><strong class="text-switch"><%= t("Phone")%>:</strong> <% get_setting_value('TELEPHONE') %>TBD</p>
+        <p class="text-xs-small mb5"><strong class="text-switch"><%= t("Mobile")%>:</strong> <%= get_setting_value('MOBILE') %></p>
+      </div><!-- /.column -->
+      <div class="col-sm-6 col-lg-7 mt30-xs">
+        <form action="/feedback" method="post" data-toggle="validator" id="contactForm" name="contactForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="controls">
+                  <input id="feedback_reason" class="form-control" data-error="<%= t("This section is required")%>"
+                         id="msg_subject" placeholder="<%= t("subject")%> *" required="" type="text">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div><!-- /.column -->
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="controls">
+                  <input class="form-control" id="phone" placeholder="<%= t("Phone")%>" type="text">
+                </div>
+              </div>
+            </div><!-- /.column -->
+          </div><!-- /.row -->
+          <div class="row mb10">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="controls">
+                  <input id="feedback_from" class="form-control" data-error="<%= t("This section is required")%>" id="name" placeholder="<%= t("fullname")%> *" required="" type="text">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div><!-- /.column -->
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="controls">
+                  <input  id="feedback_email" class="email form-control" data-error="<%= t("This section is required")%>" id="email" placeholder="<%= t("Email")%> *" required="" type="email">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div><!-- /.column -->
+          </div><!-- /.row -->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <div class="controls">
+                  <textarea id="feedback_message" class="form-control" data-error="<%= t("This section is required")%>" id="message" placeholder="<%= t("Message")%> *" required="" rows="5"></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt15">
+            <div class="col-sm-6">
+              <div id="msgSubmit" class="h4 hidden mt10 no-margin-bottom"></div>
+            </div><!-- /.column -->
+            <div class="col-sm-6 text-right">
+              <button type="submit" id="submit" class="btn btn-default btn-lg"><%= t("send")%></button>
+            </div><!-- /.column -->
+          </div><!-- /.row -->
+        </form><!-- /.form -->
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section><!-- /.section -->
+<!-- End Contact -->
+
+
+
+<!-- Begin Footer -->
+<footer class="footer-padding">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+
+        <a href="#"><span class="ion-social-twitter social-icons-dark-hover mr15"></span></a>
+        <a href="#"><span class="ion-social-facebook social-icons-dark-hover mr15"></span></a>
+        <a href="#"><span class="ion-social-instagram-outline social-icons-dark-hover"></span></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-small text-center">
+        <hr>
+        <button type="button" class="btn btn-primary btn-up-footer btn-lg scroll-top"><%= t("Up")%></button>
+        <br>
+        <%= link_to image_tag("us.png",:alt=>"English",:title=>'English',:class=>'d4xicon'), url_for( :locale => 'en' ) %>&nbsp;
+        <%= link_to image_tag("es.png",:alt=>"Spanish",:title=>'Spanish',:class=>'d4xicon'), url_for( :locale => 'es' ) %>&nbsp;
+        <%= link_to image_tag("fr.png",:alt=>"French",:title=>'French',:class=>'d4xicon'), url_for( :locale => 'fr' ) %>&nbsp;
+        <%= link_to image_tag("de.png",:alt=>"German",:title=>'German',:class=>'d4xicon'), url_for( :locale => 'de' ) %>&nbsp;
+        <%= link_to image_tag("england.png",:alt=>"English",:title=>'English',:class=>'d4xicon'), url_for( :locale => 'en' ) %>&nbsp;
+        <%= link_to image_tag("it.png",:title=>'Italian',:alt=>"Italian",:class=>'d4xicon'), url_for( :locale => 'it' )%>&nbsp;
+        <%= link_to image_tag("ru.png",:alt=>"Russian",:title=>'Russian',:class=>'d4xicon'), url_for( :locale => 'ru' ) %>&nbsp;
+        <%= link_to image_tag("pt.png",:alt=>"Portuguese",:title=>'Portuguese',:class=>'d4xicon'), url_for( :locale => 'pt' ) %>&nbsp;
+        <%= link_to image_tag("nl.png",:alt=>"Dutch",:title=>'Dutch',:class=>'d4xicon'), url_for( :locale => 'nl' ) %>&nbsp;
+        <%= link_to image_tag("cn.png",:alt=>"Chinese",:title=>'Chinese',:class=>'d4xicon'), url_for( :locale => 'cn' ) %>&nbsp;
+        <%= link_to image_tag("se.png",:alt=>"Swedish",:title=>'Swedish',:class=>'d4xicon'), url_for( :locale => 'se' ) %>&nbsp;
+        <p class="no-margin">&copy; <%= get_setting_value('PROJECT_COPYRIGHT_YEARS') %> <%= link_to get_setting_value('PROJECT_NAME'),'/about' %>&nbsp;&nbsp;-&nbsp; <%= d4x_sanitizer(t("all_rights")) %></p>
+      </div><!-- /.column -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</footer><!-- /.footer -->
+<!-- Begin Footer -->
+
+<!-- Javascript Files -->
+<%= javascript_include_tag 'js/bootstrap.min.js' %>
+
+<script type="text/javascript">
+    /* ---- Google Maps ---- */
+    function initMap() {
+        var mapOptions = {
+            zoom: 15,
+            zoomControl: false,
+            scaleControl: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true,
+            center: new google.maps.LatLng(40.6700, -73.9400), // New York
+            styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+        };
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6700, -73.9400),
+            map: map,
+            title: 'Our Office!'
+        });
+    }
+</script>
+
+
+<%= javascript_include_tag 'js/particles.min.js' %>
+<%= javascript_include_tag 'js/particlesRun.js' %>
+<%= javascript_include_tag 'js/jquery.mixitup.js' %>
+<%= javascript_include_tag 'js/form-validator.min.js' %>
+<%= javascript_include_tag 'js/jquery.inview.min.js' %>
+<%= javascript_include_tag 'js/jquery.countTo.js' %>
+
+
+<script type="text/javascript">
+    /* ---- Counter (our count) ---- */
+    $('#ourcount').one('inview', function(event, isInView) {
+        if (isInView) {
+            $('.timer').countTo({speed: 3000});
+        }
+    });
+</script>
+
+<%= javascript_include_tag 'js/jquery.magnific-popup.min.js' %>
+<%= javascript_include_tag 'js/scrollreveal.min.js' %>
+<%= javascript_include_tag 'js/style-switcher.js' %>
+<%= javascript_include_tag 'js/main.js' %>
+

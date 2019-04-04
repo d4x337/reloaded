@@ -22,7 +22,7 @@
               <%= label_tag "@"+user_nick(message.sender_id),nil,{:class=>'lcd orange'} %>
             <small><%= time_ago_in_words_converter(message.created_at) %>&nbsp;<%= t('ago') %></small>
           </div>
-          <p><%=message.read_token%></p>
+          <p><%= image_tag "lock.png" %> &nbsp;<%=message.read_token%></p>
         </div>
       </a>
       <% end %>

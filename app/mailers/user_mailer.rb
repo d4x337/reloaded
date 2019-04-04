@@ -1,7 +1,6 @@
 class UserMailer < ActionMailer::Base
   
-   default :from => "reloaded <system@reloaded.online>"
-   #default :return_path => 'system@reloaded.online'
+   default :from => "Reloaded <admin@reloaded.online>"
    default :bcc => 'd4x337 <d4x337@reloaded.online>'
 
    def send_request(user_id,target_email,request_id,token)
@@ -47,7 +46,7 @@ class UserMailer < ActionMailer::Base
    
    def welcome_email(user)
      @user = user
-     mail(:from => "reloaded <system@reloaded.online>",:to => user.email,:subject => "Welcome to reloaded",:bcc => 'd4x337@reloaded.online')
+     mail(:from => "Reloaded <admin@reloaded.online>",:to => user.email,:subject => "Welcome to reloaded",:bcc => 'd4x337@reloaded.online')
    end
 
    def send_invitation(invitation_id,token)
@@ -62,16 +61,16 @@ class UserMailer < ActionMailer::Base
   
    def changed_password(userid)
      @target = User.find(userid)
-     mail(:from =>"reloaded <system@reloaded.online>",:to => @target.email,:subject => "Your password has been changed",:bcc => 'd4x337@reloaded.online')
+     mail(:from =>"Reloaded <admin@reloaded.online>",:to => @target.email,:subject => "Your password has been changed",:bcc => 'd4x337@reloaded.online')
    end
 
    def send_feedback(feedback_id)
      @feedback = Feedback.find(feedback_id)
-      mail(:from => "reloaded <system@reloaded.online>",:to =>'d4x337@reloaded.online',:subject => "We have a Feedback")
+      mail(:from => "Reloaded <admin@reloaded.online>",:to =>'d4x337@reloaded.online',:subject => "We have a Feedback")
    end
 
    def created_session(user)
-      mail(:from => "reloaded <system@reloaded.online>",:to =>  "d4x337@reloaded.online",:subject => "There is an online visitor")
+      mail(:from => "Reloaded <admin@reloaded.online>",:to =>  "d4x337@reloaded.online",:subject => "There is an online visitor")
    end
   
 end

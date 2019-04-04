@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.10'
+gem 'rails', '4.2.11'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
-gem 'pg'
+gem 'pg','0.21.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -23,7 +23,6 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -81,6 +80,13 @@ gem 'jekyll-feed'
 gem 'jekyll-gist'
 gem 'jekyll-paginate'
 
+#gem 'solidus'
+
+group :production do
+  gem 'unicorn'
+  gem 'unicorn-worker-killer'
+end
+
 group :test do
   gem 'rspec'
   gem 'rspec-rails', '>= 2.12.2'
@@ -108,3 +114,4 @@ group :development do
   gem 'thin'
   gem 'brakeman', :require => false
 end
+

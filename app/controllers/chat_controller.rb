@@ -1,7 +1,7 @@
 class ChatController < ApplicationController
 
   before_filter :authenticate_user!, :set_arrays
-    protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session
    
   def index
       @chats = Chat.where('sender_id = (?) or target_id = ? and sender_id != target_id',current_user.id,current_user.id).order(:created_at).reverse_order

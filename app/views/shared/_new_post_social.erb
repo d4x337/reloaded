@@ -1,16 +1,15 @@
 <%= form_for(MiniPost.new,:html => { :multipart => true })  do |f| %>
   <div class="input-group input-sm" id="">
     <span class="input-group-btn">
-      <span class="btn btn-sm btn-outline-warning" onclick="$(this).parent().find('input[type=file]').click();"><i class="fa fa-2x fa-camera-retro white" id="icon-photo"></i> Attach a picture</span>
-      <%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+      <span class="btn btn-sm btn-outline-warning" onclick="$(this).parent().find('input[type=file]').click();">
+        <i class="fa fa-2x fa-camera-retro white" id="icon-photo"></i> Attach a picture
+      </span>
+        <%= f.file_field :image, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
       <span class="form-control none" id="pic-span"></span>
   </div>
-  <div class="toggle-switch pull-right">
-    <input class="toggle-switch__checkbox" checked="" type="checkbox">
-    <i class="toggle-switch__helper"></i>
-  </div>
+
   <br>
   <%= f.text_area :content,:multiline=>false,:class=>'form-control', :placeholder=>d4x_sanitizer(t('Share your status or thoughts with your network'))%>
   <br>
-  <%= button_to d4x_sanitizer(t('post')),nil,:class=> 'btn btn-outline-success btn-md block full-width m-b",:id => "share-submit-2013' %>
+  <%= button_to d4x_sanitizer(t('post')),nil,:class=> 'btn btn-outline-success btn-md btn-block',:id => 'share-submit-2013' %>
 <% end %>

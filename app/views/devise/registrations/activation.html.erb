@@ -24,7 +24,7 @@
                 src="https://checkout.stripe.com/checkout.js" data-label="<%= d4x_sanitizer(t('Activate and Pay')) %> <%= get_setting_value('CONTRIBUTION').to_i/100%>€ <%= d4x_sanitizer(t('with Credit Card')) %>" class="stripe-button"
                 data-key="pk_live_Lu6ibTa04s1Np4M2TkGu98PN"
                 data-amount="<%= get_setting_value('CONTRIBUTION')%>"
-                data-name="Reloaded 1 Year Subscription"
+                data-name="Reloaded Donation"
                 data-description="Use the email you already registered."
                 data-locale="auto"
                 data-zip-code="true"
@@ -32,9 +32,11 @@
         </script>
 
       </div>
-      <%= f.submit t("activate_account"), :id => "bt-signin",:class=>'btn btn-sm btn-outline-success block full-width m-b'  %>
+      <%= f.submit t("activate_account"), :id => "bt-signin",:class=>'btn btn-md btn-outline-success btn-block'  %>
 
     <% end %>
   </div>
+
+  <br>
   <%= render :partial => '/shared/devise_footer' %>
 </div>

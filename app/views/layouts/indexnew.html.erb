@@ -21,7 +21,7 @@
                 background:     '#1d1d1d'
             });
         </script>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <%= stylesheet_link_tag 'css/bootstrap.min.css' %>
         <link href="css/ionicons.min.css" rel="stylesheet">
         <link href="css/pe-icon-7-stroke.css" rel="stylesheet">
         <link href="css/magnific-popup.css" rel="stylesheet">
@@ -32,7 +32,7 @@
            case @weekday
 
              when 'monday'
-               @skin = 'seagul.css'
+               @skin = 'blue.css'
 
              when 'tuesday'
                @skin = 'orange.css'
@@ -41,7 +41,7 @@
                @skin = 'orangelight.css'
 
              when 'thursday'
-               @skin = 'blue.css'
+               @skin = 'flamingo.css'
 
              when 'friday'
                @skin = 'pinkish.css'

@@ -20,10 +20,11 @@ Reloaded::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  #config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -76,14 +77,14 @@ Reloaded::Application.configure do
 
   #works in production, if marked as spam switch to 465 with auth
   config.action_mailer.smtp_settings = {
-      :address              =>"127.0.0.1",
-      :port                 => 465,
+      :address              =>"mail.reloaded.online",
+      :port                 => 587,
       :domain               => "reloaded.online",
       :user_name            => "admin@reloaded.online",
       :password             => "Pl0kta,,,",
       :authentication       => :plain,
-      :openssl_verify_mode  => 'none'
-      #      :enable_starttls_auto => true
+      :openssl_verify_mode  => 'none',
+      :enable_starttls_auto => true
   }
 
 

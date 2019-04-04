@@ -27,7 +27,16 @@
 		<%= d4x_sanitizer(t('invalid request')) %>
 	<% end %>
 <% end %>
-
+<style>
+  .micro{
+    font-family:mono;
+    font-size:12px;
+  }
+  .d4xLogo{
+    font-size: 20px;
+    color:white;
+  }
+</style>
 <div id="royal_preloader"></div>
 
 <!-- Begin Header -->
@@ -44,13 +53,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand scroll-link" href="#home" data-id="home"><%= get_setting_value('PROJECT_NAME') %><span class=" logo"></span></a>
+          <a class="navbar-brand scroll-link" href="#home" data-id="home"><span class="d4xLogo"><%= get_setting_value('PROJECT_NAME') %></span> <br><small>ONLINE</small></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home" data-id="home" class="scroll-link">Home</a></li>
+            <li><a href="#home" data-id="home" class="scroll-link"><%= t("home")%></a></li>
             <li><a href="#ideology" data-id="ideology" class="scroll-link"><%= t("ideology")%></a></li>
             <li><a href="#services" data-id="services" class="scroll-link"><%= t("services")%></a></li>
             <li><a href="#about" data-id="about" class="scroll-link"><%= t("about")%></a></li>
@@ -81,11 +90,14 @@
         <% end %>
         <div class="ticker">
           <h1><%= get_setting_value('PROJECT_NAME') %></h1>
-          <h3><%= get_setting_value('PROJECT_MOTTO') %></h3>
+          <h1>ICT Consulting</h1>
+          <h1>Cyber Security</h1>
+          <h1>Software</h1>
+          <h1>Tech Education</h1>
+          <h1>Social ReLOVEution</h1>
         </div>
         <hr>
-        <p><%= t("welcome")%></p>
-        <a href="signup" data-id="work" class="btn-default btn-white btn-lg mt15"><%= d4x_sanitizer("enter")%><span class="ion-android-arrow-down"></span></a>
+        <p><%= t("welcome to")%> <%= get_setting_value('PROJECT_NAME') %></p>
       </div><!-- /.column -->
     </div><!-- /.vertical center -->
   </div><!-- /.container -->
@@ -137,7 +149,7 @@
             <div class="process-content">
               <div><span class="process-icons pe-7s-users"></span></div>
               <h2 class="mt15 mb20"><%= t("Effective")%><br><%= t("Impact")%></h2>
-              <p class="no-margin"><%= t("consultancy shot")%></p>
+              <p class="no-margin"><%= t("cyber security text")%></p>
             </div>
           </div><!-- /.animation -->
         </div><!-- /.column -->
@@ -152,7 +164,8 @@
             <div class="process-content">
               <div><span class="process-icons pe-7s-diamond"></span></div>
               <h2 class="mt15 mb20"><%= t("High Quality")%><br><%= t("Cyber Security")%></h2>
-              <p class="no-margin"><%= t("software e security shot")%></p>
+              <p class="no-margin"><%= t("software engineering text")%></p>
+
             </div>
           </div><!-- /.animation -->
         </div><!-- /.column -->
@@ -232,8 +245,8 @@
           <span class="pe-7s-look services-icon"></span>
           <h3 class="service-name">1. <%= t("Cyber Security")%></h3>
           <p class="text-small"><%= t("cyber security text")%></p>
+
           <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item1-services"><%= t("Info")%></button>
-          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item1-services"><%= t("menu-contact")%></button>
         </div>
       </div><!-- /.column -->
       <!-- Item 1 Modal -->
@@ -241,14 +254,12 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
-              </button>
-
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span></button>
               <span class="pe-7s-look services-icon-2"></span>
               <h4 class="service-title"><%= t("Cyber Security")%></h4>
             </div>
             <div class="modal-body">
-              <p><%= t("cybersecurity main")%></p>
+
               <h5 class="heading-1 modal-heading mb20"><%= t("why us")%> us</h5>
               <p><%= t("cybersecurity whyus")%></p>
               <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
@@ -267,6 +278,7 @@
           <span class="pe-7s-phone services-icon"></span>
           <h3 class="service-name">2. <%= t("Software Engineering")%></h3>
           <p class="text-small"><%= t("software engineering text")%></p>
+
           <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item2-services"><%= t("Info")%></button>
         </div>
       </div><!-- /.column -->
@@ -281,7 +293,7 @@
               <h4 class="service-title"><%= t("Software Engineering")%></h4>
             </div>
             <div class="modal-body">
-              <p><%= t("software main")%></p>
+
               <h5 class="heading-1 modal-heading mb20"><%= t("why us")%></h5>
               <p><%= t("software whyus")%></p>
               <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
@@ -300,7 +312,7 @@
           <h3 class="service-name">3. <%= t("Web Design")%></h3>
           <p class="text-small"><%= t("web design text")%></p>
           <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item3-services"><%= t("Info")%></button>
-          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item3-services"><%= t("menu-contact")%></button>
+
         </div>
       </div><!-- /.column -->
       <!-- Item 3 Modal -->
@@ -346,13 +358,11 @@
               <h4 class="service-title"><%= t("Education")%></h4>
             </div>
             <div class="modal-body">
-              <p><%= t("education main")%></p>
               <h5 class="heading-1 modal-heading mb20"><%= t("why us")%> us</h5>
               <p><%= t("education whyus")%></p>
               <h5 class="heading-1 modal-heading mb20"><%= t("technologies")%></h5>
               <p><%= t("education technologies")%></p>
-              <h5 class="heading-1 modal-heading mb20"><%= t("solutions")%></h5>
-              <p class="no-margin-bottom"><%= t("education solutions")%></p>
+
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -364,7 +374,8 @@
           <span class="pe-7s-users services-icon"></span>
           <h3 class="service-name">5. <%= t("ICT Services")%></h3>
           <p class="text-small"><%= t("ict services text")%></p>
-          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item5-services"><%= t("Info")%></button>
+
+          <a href="#contact" data-id="contact" class="scroll-link btn btn-default mt10"><%= t("contact")%></a>
         </div>
       </div><!-- /.column -->
       <!-- Item 5 Modal -->
@@ -397,9 +408,8 @@
           <span class="pe-7s-mail services-icon"></span>
           <h3 class="service-name">6. <%= t("Social Media")%></h3>
           <p class="text-small"><%= t("social media text")%></p>
-          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services"><%= t("info")%></button>
-          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services"><%= t("login")%></button>
-          <button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services"><%= t("register")%></button>
+          <a class="btn btn-default mt10" href="/signin"><%= t("login")%></a>
+          <a class="btn btn-default mt10" href="/signup"><%= t("register")%></a>
         </div>
       </div><!-- /.column -->
       <!-- Item 6 Modal -->
@@ -538,11 +548,12 @@
       <div class="col-sm-5 col-lg-4">
         <h5 class="heading-1 mb20"><%= t("Where we are")%></h5>
         <h4 class="mb15"><%= get_setting_value('PROJECT_NAME') %></h4>
-        <h4 class="mb15"><% get_setting_value('ADDRESS') %> <br><% get_setting_value('POSTCODE') %> <% get_setting_value('LOCATION') %></h4>
+        <h4 class="mb15"><%= get_setting_value('ADDRESS') %> <br><%= get_setting_value('POSTCODE') %> <%= get_setting_value('LOCATION') %> - Italy</h4>
+
         <p class="no-margin text-xs-small"><% t("About Us")%></p>
         <hr class="mini-hr">
         <p class="text-xs-small mb5"><strong class="text-switch"><%= t("email")%>:</strong> <%= get_setting_value('CONTACT_EMAIL') %></p>
-        <p class="text-xs-small mb5"><strong class="text-switch"><%= t("Phone")%>:</strong> <% get_setting_value('TELEPHONE') %>TBD</p>
+        <p class="text-xs-small mb5"><strong class="text-switch"><%= t("Phone")%>:</strong> <%= get_setting_value('TELEPHONE') %></p>
         <p class="text-xs-small mb5"><strong class="text-switch"><%= t("Mobile")%>:</strong> <%= get_setting_value('MOBILE') %></p>
       </div><!-- /.column -->
       <div class="col-sm-6 col-lg-7 mt30-xs">
@@ -618,28 +629,27 @@
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
 
-        <a href="#"><span class="ion-social-twitter social-icons-dark-hover mr15"></span></a>
-        <a href="#"><span class="ion-social-facebook social-icons-dark-hover mr15"></span></a>
-        <a href="#"><span class="ion-social-instagram-outline social-icons-dark-hover"></span></a>
+
       </div>
     </div>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-small text-center">
         <hr>
-        <button type="button" class="btn btn-primary btn-up-footer btn-lg scroll-top"><%= t("Up")%></button>
+        <button type="button" class="btn btn-primary btn-up-footer btn-lg scroll-top"><%= t("up")%></button>
         <br>
-        <%= link_to image_tag("us.png",:alt=>"English",:title=>'English',:class=>'d4xicon'), url_for( :locale => 'en' ) %>&nbsp;
+        <%= link_to image_tag("it.png",:alt=>"Italian",:title=>'Italian',:class=>'d4xicon'), url_for( :locale => 'it' ) %>&nbsp;
         <%= link_to image_tag("es.png",:alt=>"Spanish",:title=>'Spanish',:class=>'d4xicon'), url_for( :locale => 'es' ) %>&nbsp;
-        <%= link_to image_tag("fr.png",:alt=>"French",:title=>'French',:class=>'d4xicon'), url_for( :locale => 'fr' ) %>&nbsp;
         <%= link_to image_tag("de.png",:alt=>"German",:title=>'German',:class=>'d4xicon'), url_for( :locale => 'de' ) %>&nbsp;
         <%= link_to image_tag("england.png",:alt=>"English",:title=>'English',:class=>'d4xicon'), url_for( :locale => 'en' ) %>&nbsp;
-        <%= link_to image_tag("it.png",:title=>'Italian',:alt=>"Italian",:class=>'d4xicon'), url_for( :locale => 'it' )%>&nbsp;
-        <%= link_to image_tag("ru.png",:alt=>"Russian",:title=>'Russian',:class=>'d4xicon'), url_for( :locale => 'ru' ) %>&nbsp;
-        <%= link_to image_tag("pt.png",:alt=>"Portuguese",:title=>'Portuguese',:class=>'d4xicon'), url_for( :locale => 'pt' ) %>&nbsp;
         <%= link_to image_tag("nl.png",:alt=>"Dutch",:title=>'Dutch',:class=>'d4xicon'), url_for( :locale => 'nl' ) %>&nbsp;
-        <%= link_to image_tag("cn.png",:alt=>"Chinese",:title=>'Chinese',:class=>'d4xicon'), url_for( :locale => 'cn' ) %>&nbsp;
+        <%= link_to image_tag("pt.png",:alt=>"Portuguese",:title=>'Portuguese',:class=>'d4xicon'), url_for( :locale => 'pt' ) %>&nbsp;
+        <%= link_to image_tag("fr.png",:alt=>"French",:title=>'French',:class=>'d4xicon'), url_for( :locale => 'fr' ) %>&nbsp;
+        <%= link_to image_tag("no.png",:alt=>"Norvay",:title=>'Norvay',:class=>'d4xicon'), url_for( :locale => 'no' ) %>&nbsp;
         <%= link_to image_tag("se.png",:alt=>"Swedish",:title=>'Swedish',:class=>'d4xicon'), url_for( :locale => 'se' ) %>&nbsp;
+        <%= link_to image_tag("cn.png",:alt=>"Chinese",:title=>'Chinese',:class=>'d4xicon'), url_for( :locale => 'cn' ) %>&nbsp;
+        <%= link_to image_tag("ru.png",:alt=>"Russian",:title=>'Russian',:class=>'d4xicon'), url_for( :locale => 'ru' ) %>&nbsp;
         <p class="no-margin">&copy; <%= get_setting_value('PROJECT_COPYRIGHT_YEARS') %> <%= link_to get_setting_value('PROJECT_NAME'),'/about' %>&nbsp;&nbsp;-&nbsp; <%= d4x_sanitizer(t("all_rights")) %></p>
+        <span class="micro">Made in Italy - Runs Anywhere</span>
       </div><!-- /.column -->
     </div><!-- /.row -->
   </div><!-- /.container -->

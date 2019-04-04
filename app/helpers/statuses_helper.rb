@@ -5,7 +5,7 @@ module StatusesHelper
     if @status.present?
       return @status.first.status
     else
-      return "Hey There! I'm using Tortuga"
+      return "Hey There! I'm using Reloaded"
     end    
   end
   
