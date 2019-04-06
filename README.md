@@ -55,6 +55,10 @@ Here are some ways *you* can contribute:
 Developers
 ------------
 
+Know issues in features that need a fix:
+* Shop online
+
+
 * by reporting [bugs](https://github.com/d4x337/reloaded/issues)
 * by suggesting new features
 * by refactoring code

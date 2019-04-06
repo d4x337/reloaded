@@ -23,6 +23,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -36,7 +37,11 @@ gem 'devise','3.4.1'
 gem 'cancan'
 gem 'sanitize'
 gem 'ya2yaml'
+
 gem 'paperclip'
+
+
+
 gem 'useragent'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'i18n-js'
@@ -114,4 +119,3 @@ group :development do
   gem 'thin'
   gem 'brakeman', :require => false
 end
-
