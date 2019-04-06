@@ -4,7 +4,7 @@
 What is Reloaded?
 
 Reloaded is a portal that offers you a set of complex features such as Secure Messaging, Social Media, Web Mail,
-Online Shop and Instant Chat .
+Online Shop and Instant Chat.
 
 Installation
 ------------
@@ -81,10 +81,7 @@ English, German, French, Dutch, Swedish, Chinese, Russian, Portoguese and Spanis
 Application Security Specialists
 ------------
 
-* find security bugs for a web application
-* fix bugs discovered and reported as issues
-* propose security improvements to raise the current level.
-
+* by starting to fix the vulnerabilities reported [here](https://github.com/d4x337/reloaded/brakeman_report_06042019.txt))
 
 DevOps
 ------------
@@ -128,16 +125,17 @@ one have been very special to me in their own way, no competition or compares be
 Thank you  Paola, Camilla, Frederique and Kim <3
 
 
-
-Donating
+Contributing
 --------
 
-You can contribute also with Direct donations in order to improve and accelerate developments. Transfer to: 
+You can contribute publicly with causal and name to: 
 
 NL48 ABNA 0459 2935 32
 or
 IT18E0760105138231481831485
 
-Anonymous Bitcoin donations may be sent to: TBD 
+or Anonymously with Bitcoin 
+
+may be sent to: 
 
 Copyright (c) 2013-2019 Davide Gonnella, released under the [New BSD License](https://github.com/d4x337/reloaded/tree/master/LICENSE).
