@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:firstname, :mobile, :nickname, :email, :locale, :secret_answer)
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :mobile, :nickname, :email, :locale, :secret_answer])
   end
  
 end

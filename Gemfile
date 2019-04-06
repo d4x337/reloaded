@@ -33,7 +33,8 @@ gem 'tzinfo-data'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-gem 'devise','3.4.1'
+#gem 'devise','3.4.1'
+gem 'devise'
 gem 'cancan'
 gem 'sanitize'
 gem 'ya2yaml'
@@ -45,7 +46,10 @@ gem 'paperclip'
 gem 'useragent'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'i18n-js'
-gem 'mini_magick','3.5.0'
+
+#gem 'mini_magick','3.5.0'
+gem 'mini_magick'
+
 gem 'will_paginate'
 gem 'pg_search'
 gem 'devise_lastseenable'
