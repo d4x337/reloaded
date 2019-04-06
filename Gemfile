@@ -4,52 +4,23 @@ gem 'rails', '4.2.11'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-
 gem 'pg','0.21.0'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
 gem 'tzinfo-data'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-#gem 'devise','3.4.1'
 gem 'devise'
 gem 'cancan'
 gem 'sanitize'
 gem 'ya2yaml'
-
 gem 'paperclip'
-
-
-
 gem 'useragent'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'i18n-js'
-
-#gem 'mini_magick','3.5.0'
 gem 'mini_magick'
-
 gem 'will_paginate'
 gem 'pg_search'
 gem 'devise_lastseenable'
@@ -72,24 +43,18 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
-
 gem 'auto_html','1.6.4'
 gem 'doorkeeper'
 gem 'doorkeeper-jwt'
-
 gem 'dropzonejs-rails'
 gem 'simple_hashtag'
-
 gem 'stripe'
 gem 'stripe_event'
 gem 'ideal'
-
 gem 'jekyll'
 gem 'jekyll-feed'
 gem 'jekyll-gist'
 gem 'jekyll-paginate'
-
-#gem 'solidus'
 
 group :production do
   gem 'unicorn'
@@ -122,4 +87,8 @@ group :development do
   gem 'quiet_assets'
   gem 'thin'
   gem 'brakeman', :require => false
+end
+
+group :doc do
+  gem 'sdoc', require: false
 end
