@@ -56,7 +56,10 @@ Developers
 ------------
 
 Know issues in features that need a fix:
-* Shop online
+* Shop online - implement spree for RoR 4
+* Shop online - implement payments gateways with Stripe
+
+
 
 
 * by reporting [bugs](https://github.com/d4x337/reloaded/issues)
@@ -134,8 +137,6 @@ NL48 ABNA 0459 2935 32
 or
 IT18E0760105138231481831485
 
-or Anonymously with Bitcoin 
-
-may be sent to: 
+or Anonymously with Bitcoin may be sent to: qr54hjmahnwpuclz03ult9gknqck5z42xc58xvnrlc
 
 Copyright (c) 2013-2019 Davide Gonnella, released under the [New BSD License](https://github.com/d4x337/reloaded/tree/master/LICENSE).
