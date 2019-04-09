@@ -92,7 +92,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-      @group = Group.new(params[:group])
+      @group = Group.new(group_params)
       @group.user_id = current_user.id
       @group.creation_date = DateTime.now
       @group.founder = current_user.nickname
@@ -113,7 +113,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     respond_to do |format|
-    if @group.update_attributes(params[:group])
+    if @group.update_attributes(group_params)
       format.html  { redirect_to(@group, :notice => 'group was successfully updated.') }
       format.json  { head :no_content }
     else
@@ -121,6 +121,29 @@ class GroupsController < ApplicationController
       format.json  { render :json => @group.errors, :status => :unprocessable_entity }
     end
     end
+  end
+
+  def group_params
+    params.fetch(:group,{}).permit(
+        :utf8,
+        :user_id,
+        :title,
+        :headline,
+        :description,
+        :motto,
+        :founder,
+        :members,
+        :admins,
+        :visibility,
+        :creation_date,
+        :mission,
+        :deleted,
+        :image_file_name,
+        :image_content_type,
+        :image_file_size,
+        :cover_file_name,
+        :cover_content_type,
+        :cover_file_size)
   end
 
   def destroy

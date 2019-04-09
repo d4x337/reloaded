@@ -187,7 +187,7 @@ end
 def update
   @quote = Quote.find(params[:id])
     respond_to do |format|
-      if @quote.update_attributes(params[:quote])
+      if @quote.update_attributes(quote_params)
         format.html  { redirect_to(quotes_url, :notice => 'Quote was successfully updated.') }
         format.json  { head :no_content }
       else
@@ -206,6 +206,23 @@ end
        format.html { redirect_to quotes_url }
        format.json { head :no_content }
     end
+  end
+
+  def quote_params
+    params.fetch(:quote,{}).permit(
+                                        :utf8,
+                                        :qtext,
+                                        :lang,
+                                        :author_id,
+                                        :user_id,
+                                        :quote_type_id,
+                                        :notes,
+                                        :last_seen,
+                                        :next_seen,
+                                        :online_count,
+                                        :visible,
+                                        :approved,
+                                        :today)
   end
   
    private
