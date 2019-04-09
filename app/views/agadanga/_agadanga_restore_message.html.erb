@@ -195,7 +195,7 @@
 %>
 
 <div id="settings-pane">
-<%= form_tag 'actions',:method=>'post', :multipart =>'true' do -%>
+  <%= form_tag 'actions',:method=>'post', :multipart =>'true' do -%>
 	<%= hidden_field_tag :action, "reply" %>
 	<%= hidden_field_tag :reply_message, @message_id %>
 					<div class="field" id="to-div">
@@ -361,5 +361,6 @@
 					<br />	
 				<br />
 				<br />
+  <% end %>
 </div>  
 			
