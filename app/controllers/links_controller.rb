@@ -3,7 +3,22 @@ class LinksController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
   layout 'dashboard'
-  
+
+	attr_accessible :url,
+									:name,
+									:image_file_name,
+									:image_content_type,
+									:image_file_size,
+									:target,
+									:description,
+									:current_pos,
+									:last_pos,
+									:trend,
+									:user_id,
+									:visible,
+									:rating,
+									:rss,
+									:notes
    
 	def index
       if current_user.role? :author
@@ -81,7 +96,7 @@ class LinksController < ApplicationController
 	end
 
 	def create
-		@link = Link.new(params[:link])
+		@link = Link.new(links_params)
     @link.user_id = current_user.id
   #  @tags_ids = params[:link][:tags].delete_if{ |x| x.empty?}
 		
@@ -126,6 +141,24 @@ class LinksController < ApplicationController
 		   format.html { redirect_to links_url }
 		   format.json { head :no_content }
 		end
+	end
+
+	def links_params
+		params.fetch(:link,{}).permit(:utf8,:url,
+																										:name,
+																										:image_file_name,
+																										:image_content_type,
+																										:image_file_size,
+																										:target,
+																										:description,
+																										:current_pos,
+																										:last_pos,
+																										:trend,
+																										:user_id,
+																										:visible,
+																										:rating,
+																										:rss,
+																										:notes)
 	end
 	
 	private
