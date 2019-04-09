@@ -50,7 +50,7 @@ class FeedbacksController < ApplicationController
 	def update
 		@feedback = Feedback.find(params[:id])
 		respond_to do |format|
-			if @feedback.update_attributes(params[:feedback])
+			if @feedback.update_attributes(feedback_params)
 				format.html  { redirect_to(feedbacks_url, :notice =>  t('feedback successfully updated')) }
 				format.json  { head :no_content }
 			else
@@ -67,6 +67,21 @@ class FeedbacksController < ApplicationController
 			format.html { redirect_to feedbacks_url }
 			format.json { head :no_content }
 		end
+	end
+
+	def feedback_params
+		params.fetch(:feedback,{}).permit(
+				:utf8,
+				:from,
+				:email,
+				:reason,
+				:message,
+				:rating,
+				:ip,
+				:country,
+				:sent_at,
+				:deleted)
+
 	end
 
 	private
