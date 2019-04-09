@@ -55,13 +55,6 @@ Here are some ways *you* can contribute:
 Developers
 ------------
 
-Know issues in features that need a fix:
-* Shop online - implement spree for RoR 4
-* Shop online - implement payments gateways with Stripe
-
-
-
-
 * by reporting [bugs](https://github.com/d4x337/reloaded/issues)
 * by suggesting new features
 * by refactoring code
@@ -84,7 +77,7 @@ English, German, French, Dutch, Swedish, Chinese, Russian, Portoguese and Spanis
 Application Security Specialists
 ------------
 
-* by starting to fix the vulnerabilities reported [here](https://github.com/d4x337/reloaded/brakeman_report_06042019.txt))
+* by starting to fix the vulnerabilities reported [here](https://github.com/d4x337/reloaded/blob/master/brakeman_report_06042019.txt)
 
 DevOps
 ------------
