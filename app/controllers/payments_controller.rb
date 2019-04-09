@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   layout "dashboard"
 
   def create
-    payment = Payment.create(params[:payment].merge(
+    payment = Payment.create(payments_params.merge(
         :price_in_cents => 1000,                  # €10.00 in cents
         :return_url => payment_url(payment),      # This is where the customer will be returned to
         :description => 'A Dutch windmill'        # This will end up on the customer's bank statement (max 32 ASCII chars)
@@ -34,7 +34,22 @@ class PaymentsController < ApplicationController
        format.html # index.html.erb
        format.json  { render :json => @payments }
      end
- end
+  end
+
+
+  def payments_params
+    params.fetch(:payment,{}).permit(:utf8,
+                                                :user_id,
+                                                :income_id,
+                                                :order_id,
+                                                :status,
+                                                :una_tantum,
+                                                :income,
+                                                :income_type,
+                                                :expiration,
+                                                :auto_renew,
+                                                :deleted)
+  end
 
   def show
     @payment = Payment.find(params[:id])
