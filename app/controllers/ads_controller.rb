@@ -48,7 +48,7 @@ class AdsController < ApplicationController
   end
 
   def create
-    @ad = Ad.new(params[:ad])
+    @ad = Ad.new(ads_params)
       respond_to do |format|
       if @ad.save
         format.html  { redirect_to(ads_url,:notice => t('Advertising successfully created')) }
@@ -83,6 +83,25 @@ class AdsController < ApplicationController
     end
   end
   
+  def ads_params
+    params.fetch(:ad,{}).permit(
+        :utf8,
+        :title,
+        :content,
+        :url,
+        :action,
+        :active,
+        :expire_at,
+        :customer_id,
+        :image_file_name,
+        :image_content_type,
+        :image_file_size,
+        :type,
+        :locale,
+        :viewed,
+        :visibility)
+  end
+
   private
   def custom_layout
        if current_user.role? :admin  
