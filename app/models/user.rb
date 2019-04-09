@@ -374,9 +374,10 @@ class User < ActiveRecord::Base
              @spamdir    = Maildir.new(maildir+"/"+@domain+"/"+@nick+"/.Spam",true)
              @archivedir = Maildir.new(maildir+"/"+@domain+"/"+@nick+"/.Archive",true)
              @trashdir   = Maildir.new(maildir+"/"+@domain+"/"+@nick+"/.Trash",true)
-        
-             system "chown -R vmail "+maildir+"/"+@domain+"/"+@nick
-             system "chmod -R 700 "+maildir+"/"+@domain+"/"+@nick
+
+            # remote Command injection fix - use cron or review folders creation
+           #  system "chown -R vmail "+maildir+"/"+@domain+"/"+@nick
+           #  system "chmod -R 700 "+maildir+"/"+@domain+"/"+@nick
 
           end      
         end  
