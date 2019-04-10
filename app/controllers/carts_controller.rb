@@ -55,7 +55,7 @@ class CartsController < ApplicationController
 
   def create
      
-      @cart  = Cart.new(params[:cart])
+      @cart  = Cart.new(cart_params)
       session[:cart_id] = @cart.id
    
       @prod = Product.find(params[:prod_id])
@@ -380,7 +380,29 @@ class CartsController < ApplicationController
       end
 
   end
-  
+
+  protected
+
+
+  def cart_params
+    params.fetch(:cart,{}).permit(
+    :order_id,
+    :domain,
+    :nick,
+    :prod_id,
+    :items,
+    :currency,
+    :status,
+    :promo,
+    :total_price,
+    :ip,
+    :purchased_at,
+    :last_operation,
+    :deleted)
+
+  end
+
+
   private
   def resolve_layout
     case action_name 
