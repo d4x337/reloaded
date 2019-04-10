@@ -37,7 +37,7 @@ class PostTagsController < ApplicationController
   end
 
   def create
-    @post_tags = PostTag.new(params[:post_tag])
+    @post_tags = PostTag.new(post_tags_params)
     
   
     respond_to do |format|
@@ -77,6 +77,10 @@ class PostTagsController < ApplicationController
        format.html { redirect_to post_tags_url }
        format.json { head :no_content }
     end
+  end
+
+  def post_tags_params
+    params.fetch(:post_tag,{}).permit(:mini_post_id,:tag_id)
   end
   
   private
