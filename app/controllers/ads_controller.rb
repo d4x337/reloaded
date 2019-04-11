@@ -64,7 +64,7 @@ class AdsController < ApplicationController
   def update
     @ad = Ad.find(params[:id])
     respond_to do |format|
-      if @ad.update_attributes(params[:ad])
+      if @ad.update_attributes(ads_params)
         format.html  { redirect_to(ads_url, :notice =>  t('Advertising successfully updated')) }
         format.json  { head :no_content }
       else
