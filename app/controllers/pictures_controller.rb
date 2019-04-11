@@ -61,7 +61,7 @@ class PicturesController < ApplicationController
   end
 
   def createOLD
-    @picture  = Picture.new(params[:picture])
+    @picture  = Picture.new(picture_params)
     respond_to do |format|
       if @picture.save
         format.html  { redirect_to(picture_url, :notice => 'Picture created successfully.') }
@@ -78,7 +78,7 @@ class PicturesController < ApplicationController
     @picture  = Picture.find(params[:id])
     respond_to do |format|
       if @picture.update_attributes(params[:picture])
-        format.html  { redirect_to(picture_url, :notice => 'Picture updated successfully.') }
+        format.html  { redirect_to(pictures_url, :notice => 'Picture updated successfully.') }
         format.json  { head :no_content }
       else
         format.html  { render :action => "edit" }
@@ -91,9 +91,20 @@ class PicturesController < ApplicationController
     @picture  = Picture.find(params[:id])
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to picture_url, :notice => 'Picture deleted successfully.' }
+      format.html { redirect_to pictures_url, :notice => 'Picture deleted successfully.' }
       format.json { head :no_content }
     end
+  end
+
+  def picture_params
+    params.fetch(:picture,{}).permit(
+        :user_id,
+      :album_id,
+      :caption,
+      :pic_file_name,
+      :pic_content_type,
+      :pic_file_size,
+      :deleted)
   end
 
 end
