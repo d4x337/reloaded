@@ -1,7 +1,7 @@
 class CartItemsController < ApplicationController
   
   def create
-    current_cart.cart_items.create!(params[:cart_item])
+    current_cart.cart_items.create!(cart_items_params)
     flash[:notice] = "Product added to cart"
     session[:last_product_page] = request.env['HTTP_REFERER'] || products_url
     redirect_to current_cart_url
@@ -38,7 +38,7 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    @cart_items = CartItem.new(params[:cart_item])
+    @cart_items = CartItem.new(cart_items_params)
     respond_to do |format|
       if @cart_items.save
         format.html  { redirect_to(request.referer,:notice => 'Item was successfully created.') }
@@ -100,6 +100,20 @@ class CartItemsController < ApplicationController
        format.html { redirect_to "/cart" }
        format.json { head :no_content }
     end
+  end
+
+  def cart_items_params
+    params.fetch(:cart_item,{}).permit(
+        :cart_id,
+        :product_id,
+        :quantity,
+        :single_price,
+        :vats,
+        :total_price,
+        :shipping_costs,
+        :is_in_stock,
+        :last_operation,
+        :deleted)
   end
 
 end
