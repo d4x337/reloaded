@@ -106,7 +106,7 @@ class MailAccountsController < ApplicationController
           @mail_account.home    = "/var/vmail"
           @mail_account.gid     = 2000
           @mail_account.uid     = 2000
-          @mail_account.tip     = Digest::MD5.hexdigest(params[:mail_account][:password])
+          @mail_account.tip     = Digest::SHA256.hexdigest(params[:mail_account][:password])
    
             if @mail_account.save
                @maildir = Maildir.new("/var/vmail/"+@mail_account.maildir,true)
@@ -125,7 +125,7 @@ class MailAccountsController < ApplicationController
               end
             end
     else
-        @tip = Digest::MD5.hexdigest(params[:mail_account][:password])
+        @tip = Digest::SHA256.hexdigest(params[:mail_account][:password])
         @mail_account = MailAccount.new(params[:mail_account])
           respond_to do |format|
           if @mail_account.save
