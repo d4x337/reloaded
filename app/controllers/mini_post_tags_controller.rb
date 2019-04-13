@@ -36,7 +36,7 @@ class MiniMiniPostTagsController < ApplicationController
   end
 
   def create
-    @mini_post_tags = MiniPostTag.new(params[:mini_post_tag])
+    @mini_post_tags = MiniPostTag.new(mini_post_tag_params)
     respond_to do |format|
       if @mini_post_tags.save
         format.html  { redirect_to(mini_post_tags_url,:notice => 'Post-Tag was successfully created.') }
@@ -52,7 +52,7 @@ class MiniMiniPostTagsController < ApplicationController
     @mini_post_tags = MiniPostTag.find(params[:id])
   
     respond_to do |format|
-      if @mini_post_tags.update_attributes(params[:mini_post_tag])
+      if @mini_post_tags.update_attributes(mini_post_tag_params)
         format.html  { redirect_to(mini_post_tags_url, :notice => 'Term Relationship was successfully updated.') }
         format.json  { head :no_content }
       else
@@ -72,7 +72,12 @@ class MiniMiniPostTagsController < ApplicationController
        format.json { head :no_content }
     end
   end
-  
+
+  protected
+  def mini_post_tag_params
+    params.fetch(:mini_post_tag,{}).permit(:mini_post_id, :tag_id)
+  end
+
   private
   def custom_layout
        if current_user.role? :admin  
