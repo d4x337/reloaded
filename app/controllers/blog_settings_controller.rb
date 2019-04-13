@@ -31,7 +31,7 @@ class BlogSettingsController < ApplicationController
   end
 
   def create
-    @blog_settings = BlogSettings.new(params[:blog_settings])
+    @blog_settings = BlogSettings.new(blog_settings_params)
     respond_to do |format|
       if @blog_settings.save
         format.html  { redirect_to(post_tags_url,:notice => 'Settings updated.') }
@@ -46,7 +46,7 @@ class BlogSettingsController < ApplicationController
   def update
     @blog_settings = BlogSettings.find(params[:id])
     respond_to do |format|
-      if @blog_settings.update_attributes(params[:blog_settings])
+      if @blog_settings.update_attributes(blog_settings_params)
         format.html  { redirect_to(post_tags_url, :notice => 'Settings successfully updated.') }
         format.json  { head :no_content }
       else
@@ -64,6 +64,16 @@ class BlogSettingsController < ApplicationController
        format.html { redirect_to post_tags_url }
        format.json { head :no_content }
     end
+  end
+
+  protected
+  def blog_settings_params
+    params.fetch(:blog_settings,{}).permit(
+        :blog_id,
+        :border_color,
+        :text_color,
+        :background_color,
+        :allow_comments)
   end
   
   private
