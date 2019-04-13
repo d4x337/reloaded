@@ -402,6 +402,24 @@ class CartsController < ApplicationController
 
   end
 
+  protected
+  def cart_params
+    params.fetch(:cart,{}).permit(
+        :order_id,
+        :domain,
+        :nick,
+        :prod_id,
+        :items,
+        :currency,
+        :status,
+        :promo,
+        :total_price,
+        :ip,
+        :purchased_at,
+        :last_operation,
+        :deleted)
+  end
+
 
   private
   def resolve_layout

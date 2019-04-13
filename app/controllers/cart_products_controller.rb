@@ -48,7 +48,7 @@ class CartProductsController < ApplicationController
          if current_user
           @cart = Cart.where(:user_id=>current_user.id).first
             if not @cart
-              @cart  = Cart.new(params[:cart])
+              @cart  = Cart.new(cart_params)
               session[:cart_id] = @cart.id
               @cart.user_id = current_user.id
               @cart.currency = 'euro'
@@ -191,6 +191,24 @@ class CartProductsController < ApplicationController
        format.html  { redirect_to("/cart", :notice => 'Successfully removed '+@product.name) }
         format.json  { render :json => @cart,:status => :updated, :location => @cart }
      end
+  end
+
+  protected
+  def cart_params
+    params.fetch(:cart,{}).permit(
+    :order_id,
+    :domain,
+    :nick,
+    :prod_id,
+    :items,
+    :currency,
+    :status,
+    :promo,
+    :total_price,
+    :ip,
+    :purchased_at,
+    :last_operation,
+    :deleted)
   end
 
 end
