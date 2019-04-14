@@ -1,10 +1,7 @@
 class CartItem < ActiveRecord::Base
 
-  #acts_as_shopping_cart_item
-
   belongs_to :product,:foreign_key=> :product_id
-  #belongs_to :cart, :foreign_key => :cart_id,:class_name=>'Cart'
-  
+  attr_accessible :cart_id, :product_id, :quantity, :single_price, :vats, :total_price, :shipping_costs, :is_in_stock, :last_operation, :deleted
   before_create :default_quantity_to_one
   
   def unit_price
