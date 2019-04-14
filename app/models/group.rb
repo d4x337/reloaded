@@ -1,8 +1,10 @@
 class Group < ActiveRecord::Base
-   
+  
+    attr_accessible :user_id,:title,:headline,:description,:motto,:founder,:members,:admins,:visibility,:creation_date,:mission :deleted,:image_file_name,:image_content_type,:image_file_size,:cover_file_name,:cover_content_type,:cover_file_size
+    
     GROUP_TYPES = %w[PUBLIC CLOSED SECRET]
-   
     belongs_to :user
+  
     has_many :group_members, :class_name => 'GroupMember', :foreign_key => :group_id
     
     validates :title, :headline, :description, :presence => true
