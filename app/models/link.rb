@@ -1,7 +1,7 @@
 class Link < ActiveRecord::Base
   
-  #before_save :clean_html
-  
+  attr_accessible :url,:name,:image_file_name,:image_content_type,:image_file_size,:target,:description,:current_pos,:last_pos,:trend,:user_id,:visible,:rating,:rss
+
   LINKTARGETS = %w[_blank _window _parent _self]  
   
   belongs_to :user, :foreign_key => :shared_by
