@@ -1,5 +1,7 @@
 class PhoneNumber < ActiveRecord::Base
 
+  attr_accessible :user_id, :phone_number, :pin, :action_type,:verified,:authenticated,:verified_at, :confirm
+
   def generate_pin
     self.pin = rand(0000000..9999999).to_s.rjust(7, "0")
     save
