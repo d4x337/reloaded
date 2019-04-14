@@ -3,11 +3,11 @@ class Quote < ActiveRecord::Base
 	validates :qtext,:lang, :presence => true;
 	validates_uniqueness_of :qtext;
 	belongs_to :author, :foreign_key => :author_id
+	attr_accessible :qtext, :lang, :author_id, :user_id, :quote_type_id,:notes, :last_seen, :next_seen, :online_count, :visible, :approved, :today
 	
 	include PgSearch
   multisearchable :against => [:qtext]
- # ajaxful_rateable :stars =>10
-  
+
 	def QOTD(locale)
 	  if locale.blank?
 	     locale == "en"
