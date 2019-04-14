@@ -3,17 +3,11 @@ class Income < ActiveRecord::Base
   INCOME_TYPES = %w[UNA_TANTUM MONTHLY ANNUAL]
  
   belongs_to :user
-  
   has_one :order, :foreign_key=>:order_id
-  
   validates :user_id,:income_id, :presence => true
-  
   validates :income_type, :inclusion => { :in => INCOME_TYPES }
+  attr_accessible :user_id,:income_id,:order_id,:status,:una_tantum, :income,:income_type,:expiration,:auto_renew,:deleted
 
-# after_create :congrats_new_income
-  
- # after_destroy :send_removed_from_ring_message
-  
   private
   def congrats_new_income
     UserMailer.added_to_ring(self.id).deliver
