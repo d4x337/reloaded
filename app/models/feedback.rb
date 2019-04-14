@@ -1,8 +1,10 @@
 class Feedback < ActiveRecord::Base
   
+  attr_accessible :from,:email,:reason,:message,:rating,:ip,:country,:sent_at,:deleted
+
   after_create :send_feedback
   TYPES = %w[bug feedback translation help abuse]
- 
+
    # validates :from ,:presence => true, :length => { :in => 3..100 },:format => { :with => /\A[a-zA-Z\s]+\z/, :message => "This is not a valid name"}
    # validates :email ,:presence => true, :length => { :in => 8..100 },:format => { :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i, :message => "This is not a valid address" }
    # validates :message  ,:presence => true, :length => { :in => 1..400 },:format => { :with => /\A[a-zA-Z0-9\s]+\z/, :message => "This is not a valid message"}
