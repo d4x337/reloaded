@@ -1,9 +1,7 @@
 class Cart < ActiveRecord::Base
 
-#   attr_accessible :user_id
-#   acts_as_shopping_cart
-#   has_many :cart_items,:class_name=>'CartItem',:foreign_key=>:cart_id, :dependent => :destroy
     has_many :cart_products,:class_name=>'CartProduct',:foreign_key=>:cart_id, :dependent => :destroy
+    attr_accessible  :order_id, :domain, :nick, :prod_id, :items, :currency, :status, :promo, :total_price, :ip, :purchased_at, :last_operation, :deleted
   
   def test_paypal_url(return_url,notify_url)
    values = {
