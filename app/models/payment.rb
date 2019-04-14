@@ -1,5 +1,8 @@
 class Payment < ActiveRecord::Base
   # Validation code used to validate returning notifications from iDeal
+  #
+  attr_accessible :user_id,:income_id,:order_id,:status,:una_tantum,:income,:income_type, :expiration,:auto_renew,:deleted
+
   def ideal_entrance_code
     Digest::SHA1.hexdigest("#{id}-#{created_at}-#{access_token}")
   end
